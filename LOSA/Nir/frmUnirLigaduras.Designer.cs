@@ -124,6 +124,7 @@ namespace LOSA.Nir
             this.labelControl2.Size = new System.Drawing.Size(173, 21);
             this.labelControl2.TabIndex = 12;
             this.labelControl2.Text = "Codigo de produccion:";
+            this.labelControl2.Visible = false;
             // 
             // labelControl3
             // 
@@ -156,6 +157,7 @@ namespace LOSA.Nir
             this.txtodoo.Properties.Appearance.Options.UseForeColor = true;
             this.txtodoo.Size = new System.Drawing.Size(448, 28);
             this.txtodoo.TabIndex = 15;
+            this.txtodoo.Visible = false;
             // 
             // txtsap
             // 
@@ -461,7 +463,6 @@ namespace LOSA.Nir
             this.Controls.Add(this.txtmp);
             this.Controls.Add(this.txtsap);
             this.Controls.Add(this.txtodoo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUnirLigaduras";
             this.Text = "Unir Lecturas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

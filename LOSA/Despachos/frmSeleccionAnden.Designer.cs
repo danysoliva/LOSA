@@ -68,7 +68,7 @@ namespace LOSA.Despachos
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(598, 28);
+            this.btnatras.Location = new System.Drawing.Point(938, 28);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(109, 44);
             this.btnatras.TabIndex = 48;
@@ -87,7 +87,7 @@ namespace LOSA.Despachos
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(138, 28);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(398, 40);
+            this.labelControl1.Size = new System.Drawing.Size(738, 40);
             this.labelControl1.TabIndex = 49;
             this.labelControl1.Text = "Seleccion de Andenes";
             // 
@@ -103,7 +103,7 @@ namespace LOSA.Despachos
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.grd_data.Size = new System.Drawing.Size(725, 460);
+            this.grd_data.Size = new System.Drawing.Size(1065, 570);
             this.grd_data.TabIndex = 50;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -261,7 +261,7 @@ namespace LOSA.Despachos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 560);
+            this.ClientSize = new System.Drawing.Size(1069, 670);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnatras);

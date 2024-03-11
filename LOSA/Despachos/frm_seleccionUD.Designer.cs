@@ -35,14 +35,20 @@
             this.btnConfirmar = new DevExpress.XtraEditors.SimpleButton();
             this.btnUP = new DevExpress.XtraEditors.SimpleButton();
             this.btnDown = new DevExpress.XtraEditors.SimpleButton();
+            this.lblPendiente = new DevExpress.XtraEditors.LabelControl();
+            this.txtPendiente = new DevExpress.XtraEditors.TextEdit();
+            this.txtEnTarima = new DevExpress.XtraEditors.TextEdit();
+            this.lblEnTarima = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPendiente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEnTarima.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(29, 128);
+            this.labelControl1.Location = new System.Drawing.Point(30, 128);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(113, 32);
             this.labelControl1.TabIndex = 0;
@@ -70,7 +76,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(357, 12);
+            this.cmdHome.Location = new System.Drawing.Point(357, 3);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(200, 71);
             this.cmdHome.TabIndex = 7;
@@ -109,11 +115,65 @@
             this.btnDown.TabIndex = 10;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
+            // lblPendiente
+            // 
+            this.lblPendiente.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendiente.Appearance.Options.UseFont = true;
+            this.lblPendiente.Location = new System.Drawing.Point(30, 4);
+            this.lblPendiente.Name = "lblPendiente";
+            this.lblPendiente.Size = new System.Drawing.Size(122, 32);
+            this.lblPendiente.TabIndex = 11;
+            this.lblPendiente.Text = "Pendiente:";
+            this.lblPendiente.Visible = false;
+            // 
+            // txtPendiente
+            // 
+            this.txtPendiente.EditValue = "0";
+            this.txtPendiente.Enabled = false;
+            this.txtPendiente.Location = new System.Drawing.Point(184, 1);
+            this.txtPendiente.Name = "txtPendiente";
+            this.txtPendiente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPendiente.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtPendiente.Properties.Appearance.Options.UseFont = true;
+            this.txtPendiente.Properties.Appearance.Options.UseForeColor = true;
+            this.txtPendiente.Size = new System.Drawing.Size(167, 56);
+            this.txtPendiente.TabIndex = 12;
+            this.txtPendiente.Visible = false;
+            // 
+            // txtEnTarima
+            // 
+            this.txtEnTarima.EditValue = "0";
+            this.txtEnTarima.Enabled = false;
+            this.txtEnTarima.Location = new System.Drawing.Point(184, 63);
+            this.txtEnTarima.Name = "txtEnTarima";
+            this.txtEnTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnTarima.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtEnTarima.Properties.Appearance.Options.UseFont = true;
+            this.txtEnTarima.Properties.Appearance.Options.UseForeColor = true;
+            this.txtEnTarima.Size = new System.Drawing.Size(167, 56);
+            this.txtEnTarima.TabIndex = 13;
+            this.txtEnTarima.Visible = false;
+            // 
+            // lblEnTarima
+            // 
+            this.lblEnTarima.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnTarima.Appearance.Options.UseFont = true;
+            this.lblEnTarima.Location = new System.Drawing.Point(29, 66);
+            this.lblEnTarima.Name = "lblEnTarima";
+            this.lblEnTarima.Size = new System.Drawing.Size(121, 32);
+            this.lblEnTarima.TabIndex = 14;
+            this.lblEnTarima.Text = "En Tarima:";
+            this.lblEnTarima.Visible = false;
+            // 
             // frm_seleccionUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 309);
+            this.Controls.Add(this.lblEnTarima);
+            this.Controls.Add(this.txtEnTarima);
+            this.Controls.Add(this.txtPendiente);
+            this.Controls.Add(this.lblPendiente);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUP);
             this.Controls.Add(this.btnConfirmar);
@@ -124,6 +184,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_seleccionUD";
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPendiente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEnTarima.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +199,9 @@
         private DevExpress.XtraEditors.SimpleButton btnConfirmar;
         private DevExpress.XtraEditors.SimpleButton btnUP;
         private DevExpress.XtraEditors.SimpleButton btnDown;
+        private DevExpress.XtraEditors.LabelControl lblPendiente;
+        private DevExpress.XtraEditors.TextEdit txtPendiente;
+        private DevExpress.XtraEditors.TextEdit txtEnTarima;
+        private DevExpress.XtraEditors.LabelControl lblEnTarima;
     }
 }

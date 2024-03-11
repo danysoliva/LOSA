@@ -50,6 +50,7 @@
             this.txtDescripcionCorta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcionCorta.Properties.Appearance.Options.UseFont = true;
             this.txtDescripcionCorta.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcionCorta.Properties.MaxLength = 10;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(512, 28);
             this.txtDescripcionCorta.TabIndex = 1;
             this.txtDescripcionCorta.Enter += new System.EventHandler(this.txtDescripcionCorta_Enter);
@@ -97,6 +98,7 @@
             this.memoDescripcion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoDescripcion.Properties.Appearance.Options.UseFont = true;
             this.memoDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.memoDescripcion.Properties.MaxLength = 50;
             this.memoDescripcion.Size = new System.Drawing.Size(614, 91);
             this.memoDescripcion.TabIndex = 0;
             this.memoDescripcion.Enter += new System.EventHandler(this.memoDescripcion_Enter);

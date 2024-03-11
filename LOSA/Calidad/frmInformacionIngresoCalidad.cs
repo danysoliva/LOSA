@@ -33,7 +33,7 @@ namespace LOSA.Calidad
         string full_pathImagen = "";
         string fileNameImagen = "";
         string code_sap;
-        string codigo;
+        string codigo = "";
         string usercreadorIngreso;
         bool cambioImagen = false;
         string Direccion;
@@ -1238,7 +1238,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
         private void DownloadFile(string pathSource, string pathDestination)
@@ -1311,7 +1311,7 @@ namespace LOSA.Calidad
             try
             {
 
-                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text,Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
+                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text,Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text), IdMP);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
 
@@ -1344,7 +1344,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
         private bool Upload(string pathFile, string fileName)
@@ -1688,7 +1688,7 @@ namespace LOSA.Calidad
 
         private void btnNoConformidad_Click(object sender, EventArgs e)
         {
-            frmNoConfirmidadMP frm = new frmNoConfirmidadMP(Id_ingreso);
+            frmNoConfirmidadMP frm = new frmNoConfirmidadMP(Id_ingreso, "", UsuarioLogeado, NumeroTransaccion);
             if (frm.ShowDialog()== DialogResult.OK)
             {
 
@@ -1736,7 +1736,7 @@ namespace LOSA.Calidad
 
         private void cmdSearchFabricantePrv_Click(object sender, EventArgs e)
         {
-            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor,NombreSAP_Proveedor);
+            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor,NombreSAP_Proveedor, IdMP);
             if(frm.ShowDialog()== DialogResult.OK)
             {
                 txtFabricante.Text = frm.NombreFabricanteSeleccionado;
@@ -1769,7 +1769,7 @@ namespace LOSA.Calidad
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor, NombreSAP_Proveedor);
+            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor, NombreSAP_Proveedor, IdMP);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtFabricante.Text = frm.NombreFabricanteSeleccionado;

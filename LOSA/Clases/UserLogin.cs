@@ -29,16 +29,16 @@ namespace LOSA.Clases
         public string Pass { get => pass; set => pass = value; }
         public int Idnivel { get => idnivel; set => idnivel = value; }
         public string Tipo { get => tipo; set => tipo = value; }
-
+        public string HostNameConnected { get; set; }
 
         //Migracion ACS
 
         #region Members
-        int vUserid;
+        //int vUserid;
         string vNombre;
         string vAlias;
         bool vRecuperado;
-        DataOperations dp;
+        //DataOperations dp;
         bool vSuperUser;
         string vPassword;
         #endregion
@@ -51,8 +51,8 @@ namespace LOSA.Clases
         //}
         public int UserId
         {
-            get { return vUserid; }
-            set { vUserid = value; }
+            get { return id; }
+            set { id = value; }
         }
         public string Nombre
         {
@@ -91,7 +91,8 @@ namespace LOSA.Clases
                 string sql = @"SELECT top 1 id, 
                                        nombre, 
 	                                   id_grupo_losa,
-                                       ADUser
+                                       ADUser,
+                                        super_user
                                 FROM [ACS].dbo.conf_usuarios 
                                 where [ADUser] ='" + pUser + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -103,6 +104,7 @@ namespace LOSA.Clases
                     nombreUser = dr.GetString(1);
                     idGrupo = dr.GetInt32(2);
                     ADuser = dr.GetString(3);
+                    IsSuperUser = dr.GetBoolean(4);
                     recuperado = true;
                 }
                 dr.Close();
@@ -127,7 +129,8 @@ namespace LOSA.Clases
                 string sql = @"SELECT id, 
                                        nombre, 
 	                                   id_grupo_losa,
-                                       tipo
+                                       tipo,
+                                        super_user
                                 FROM [ACS].dbo.conf_usuarios 
                                 where id ="+ pId;
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -139,6 +142,8 @@ namespace LOSA.Clases
                     nombreUser = dr.GetString(1);
                     idGrupo = dr.GetInt32(2);
                     Tipo = dr.GetString(3);
+                    IsSuperUser = dr.GetBoolean(4);
+
                     recuperado = true;
                 }
                 dr.Close();

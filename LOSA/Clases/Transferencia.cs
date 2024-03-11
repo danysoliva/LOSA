@@ -163,6 +163,7 @@ namespace LOSA.Clases
                     Id_ingreso = dr.GetInt32(2);
                     DocEntryH1 = dr.GetInt32(3);
                     Numero_transaccion = dr.GetInt32(4);
+                    Bodega_in = dr.GetString(5);
                     recuperado = true;
                 }
                 dr.Close();

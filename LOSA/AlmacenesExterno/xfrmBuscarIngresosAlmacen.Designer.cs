@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcIngreso = new DevExpress.XtraGrid.GridControl();
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,10 +50,11 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbodega_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).BeginInit();
@@ -76,7 +77,7 @@
             this.gcIngreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtCantIngresar,
             this.btnSeleccionar});
-            this.gcIngreso.Size = new System.Drawing.Size(1119, 526);
+            this.gcIngreso.Size = new System.Drawing.Size(1326, 526);
             this.gcIngreso.TabIndex = 37;
             this.gcIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIngreso});
@@ -110,7 +111,8 @@
             this.gridColumn3,
             this.colfactura,
             this.colid_presentacion,
-            this.colDocNum});
+            this.colDocNum,
+            this.colbodega_name});
             this.gvIngreso.DetailHeight = 284;
             this.gvIngreso.GridControl = this.gcIngreso;
             this.gvIngreso.Name = "gvIngreso";
@@ -128,7 +130,7 @@
             this.colid.OptionsFilter.AllowFilter = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
-            this.colid.Width = 54;
+            this.colid.Width = 53;
             // 
             // colcardcode
             // 
@@ -140,7 +142,7 @@
             this.colcardcode.OptionsFilter.AllowFilter = false;
             this.colcardcode.Visible = true;
             this.colcardcode.VisibleIndex = 3;
-            this.colcardcode.Width = 88;
+            this.colcardcode.Width = 85;
             // 
             // colCardName
             // 
@@ -152,7 +154,7 @@
             this.colCardName.OptionsFilter.AllowFilter = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 4;
-            this.colCardName.Width = 88;
+            this.colCardName.Width = 85;
             // 
             // colfecha_ingreso
             // 
@@ -164,7 +166,7 @@
             this.colfecha_ingreso.OptionsFilter.AllowFilter = false;
             this.colfecha_ingreso.Visible = true;
             this.colfecha_ingreso.VisibleIndex = 5;
-            this.colfecha_ingreso.Width = 88;
+            this.colfecha_ingreso.Width = 85;
             // 
             // colDocEntrySAP
             // 
@@ -173,8 +175,6 @@
             this.colDocEntrySAP.Name = "colDocEntrySAP";
             this.colDocEntrySAP.OptionsColumn.AllowEdit = false;
             this.colDocEntrySAP.OptionsFilter.AllowFilter = false;
-            this.colDocEntrySAP.Visible = true;
-            this.colDocEntrySAP.VisibleIndex = 7;
             this.colDocEntrySAP.Width = 77;
             // 
             // colpeso
@@ -186,8 +186,8 @@
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.OptionsFilter.AllowFilter = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 9;
-            this.colpeso.Width = 64;
+            this.colpeso.VisibleIndex = 8;
+            this.colpeso.Width = 63;
             // 
             // colunidades
             // 
@@ -198,8 +198,7 @@
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.OptionsFilter.AllowFilter = false;
             this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 10;
-            this.colunidades.Width = 64;
+            this.colunidades.VisibleIndex = 9;
             // 
             // colSeleccionar
             // 
@@ -215,9 +214,9 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap24px;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap24px;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
@@ -232,7 +231,7 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 68;
+            this.gridColumn1.Width = 76;
             // 
             // gridColumn2
             // 
@@ -244,7 +243,7 @@
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 111;
+            this.gridColumn2.Width = 107;
             // 
             // gridColumn3
             // 
@@ -254,8 +253,8 @@
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 11;
-            this.gridColumn3.Width = 67;
+            this.gridColumn3.VisibleIndex = 10;
+            this.gridColumn3.Width = 58;
             // 
             // colfactura
             // 
@@ -263,13 +262,33 @@
             this.colfactura.Name = "colfactura";
             this.colfactura.OptionsColumn.AllowEdit = false;
             this.colfactura.Visible = true;
-            this.colfactura.VisibleIndex = 8;
-            this.colfactura.Width = 124;
+            this.colfactura.VisibleIndex = 7;
+            this.colfactura.Width = 119;
             // 
             // colid_presentacion
             // 
             this.colid_presentacion.FieldName = "id_presentacion";
             this.colid_presentacion.Name = "colid_presentacion";
+            // 
+            // colDocNum
+            // 
+            this.colDocNum.Caption = "OC Sap";
+            this.colDocNum.FieldName = "DocNum";
+            this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.AllowEdit = false;
+            this.colDocNum.Visible = true;
+            this.colDocNum.VisibleIndex = 6;
+            this.colDocNum.Width = 49;
+            // 
+            // colbodega_name
+            // 
+            this.colbodega_name.Caption = "BG Descripcion";
+            this.colbodega_name.FieldName = "bodega_name";
+            this.colbodega_name.Name = "colbodega_name";
+            this.colbodega_name.OptionsColumn.AllowEdit = false;
+            this.colbodega_name.Visible = true;
+            this.colbodega_name.VisibleIndex = 11;
+            this.colbodega_name.Width = 151;
             // 
             // txtCantIngresar
             // 
@@ -286,7 +305,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(947, 20);
+            this.btnAtras.Location = new System.Drawing.Point(1154, 20);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 44;
@@ -303,27 +322,17 @@
             this.labelControl1.TabIndex = 45;
             this.labelControl1.Text = "Seleccione la Materia Prima";
             // 
-            // colDocNum
-            // 
-            this.colDocNum.Caption = "Orden de Compra SAP";
-            this.colDocNum.FieldName = "DocNum";
-            this.colDocNum.Name = "colDocNum";
-            this.colDocNum.OptionsColumn.AllowEdit = false;
-            this.colDocNum.Visible = true;
-            this.colDocNum.VisibleIndex = 6;
-            this.colDocNum.Width = 130;
-            // 
             // xfrmBuscarIngresosAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 602);
+            this.ClientSize = new System.Drawing.Size(1326, 602);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcIngreso);
+            this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmBuscarIngresosAlmacen";
-            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).EndInit();
@@ -357,5 +366,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colfactura;
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colDocNum;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega_name;
     }
 }

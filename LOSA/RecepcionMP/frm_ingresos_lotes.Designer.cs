@@ -72,16 +72,19 @@
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btneliminarTm = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colub_rack = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
-            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtVentana = new System.Windows.Forms.TextBox();
+            this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -117,9 +120,9 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(140, 6);
+            this.btnAgregar.Location = new System.Drawing.Point(172, 35);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(110, 73);
+            this.btnAgregar.Size = new System.Drawing.Size(114, 41);
             this.btnAgregar.TabIndex = 29;
             this.btnAgregar.Text = "Agregar \r\nlote";
             this.btnAgregar.Visible = false;
@@ -192,12 +195,13 @@
             this.colcantidad,
             this.colEliminar,
             this.colestado_tarima,
-            this.colseleccionado});
+            this.colseleccionado,
+            this.colub_rack});
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // colid
             // 
@@ -222,7 +226,7 @@
             this.colmateriaprima.OptionsColumn.AllowEdit = false;
             this.colmateriaprima.Visible = true;
             this.colmateriaprima.VisibleIndex = 2;
-            this.colmateriaprima.Width = 64;
+            this.colmateriaprima.Width = 67;
             // 
             // colid_proveedor
             // 
@@ -240,7 +244,7 @@
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
             this.colproveedor.VisibleIndex = 3;
-            this.colproveedor.Width = 64;
+            this.colproveedor.Width = 67;
             // 
             // colfecha_ingreso
             // 
@@ -251,7 +255,7 @@
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
             this.colfecha_ingreso.VisibleIndex = 4;
-            this.colfecha_ingreso.Width = 64;
+            this.colfecha_ingreso.Width = 67;
             // 
             // colnumero_transaccion
             // 
@@ -262,7 +266,7 @@
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
             this.colnumero_transaccion.VisibleIndex = 5;
-            this.colnumero_transaccion.Width = 64;
+            this.colnumero_transaccion.Width = 67;
             // 
             // collote_materia_prima
             // 
@@ -273,7 +277,7 @@
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 6;
-            this.collote_materia_prima.Width = 64;
+            this.collote_materia_prima.Width = 67;
             // 
             // colid_boleta
             // 
@@ -291,8 +295,8 @@
             this.colPrint.MinWidth = 17;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
-            this.colPrint.VisibleIndex = 11;
-            this.colPrint.Width = 59;
+            this.colPrint.VisibleIndex = 12;
+            this.colPrint.Width = 90;
             // 
             // btnPrint
             // 
@@ -311,8 +315,8 @@
             this.colDuplicar.MinWidth = 17;
             this.colDuplicar.Name = "colDuplicar";
             this.colDuplicar.Visible = true;
-            this.colDuplicar.VisibleIndex = 12;
-            this.colDuplicar.Width = 59;
+            this.colDuplicar.VisibleIndex = 13;
+            this.colDuplicar.Width = 90;
             // 
             // cmdDuplicar
             // 
@@ -331,8 +335,8 @@
             this.Editar.MinWidth = 17;
             this.Editar.Name = "Editar";
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 13;
-            this.Editar.Width = 67;
+            this.Editar.VisibleIndex = 14;
+            this.Editar.Width = 60;
             // 
             // btnEditar
             // 
@@ -352,7 +356,7 @@
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 8;
-            this.colpresentacion.Width = 99;
+            this.colpresentacion.Width = 105;
             // 
             // colnum
             // 
@@ -363,7 +367,21 @@
             this.colnum.OptionsColumn.AllowEdit = false;
             this.colnum.Visible = true;
             this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 46;
+            this.colnum.Width = 48;
+            // 
+            // colexistencia
+            // 
+            this.colexistencia.Caption = "Existencia";
+            this.colexistencia.DisplayFormat.FormatString = "n0";
+            this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia.FieldName = "existencia";
+            this.colexistencia.Name = "colexistencia";
+            this.colexistencia.OptionsColumn.AllowEdit = false;
+            this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:n1}")});
+            this.colexistencia.Visible = true;
+            this.colexistencia.VisibleIndex = 10;
+            this.colexistencia.Width = 79;
             // 
             // colcodigo_barra
             // 
@@ -373,7 +391,7 @@
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 1;
-            this.colcodigo_barra.Width = 90;
+            this.colcodigo_barra.Width = 95;
             // 
             // colcantidad
             // 
@@ -381,9 +399,11 @@
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:#.##}")});
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 7;
-            this.colcantidad.Width = 90;
+            this.colcantidad.Width = 95;
             // 
             // colEliminar
             // 
@@ -391,8 +411,8 @@
             this.colEliminar.ColumnEdit = this.btneliminarTm;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 14;
-            this.colEliminar.Width = 71;
+            this.colEliminar.VisibleIndex = 15;
+            this.colEliminar.Width = 93;
             // 
             // btneliminarTm
             // 
@@ -412,7 +432,7 @@
             this.colestado_tarima.OptionsColumn.AllowEdit = false;
             this.colestado_tarima.Visible = true;
             this.colestado_tarima.VisibleIndex = 9;
-            this.colestado_tarima.Width = 83;
+            this.colestado_tarima.Width = 88;
             // 
             // colseleccionado
             // 
@@ -420,8 +440,18 @@
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 15;
-            this.colseleccionado.Width = 121;
+            this.colseleccionado.VisibleIndex = 16;
+            this.colseleccionado.Width = 76;
+            // 
+            // colub_rack
+            // 
+            this.colub_rack.Caption = "Rack";
+            this.colub_rack.FieldName = "ub_rack";
+            this.colub_rack.Name = "colub_rack";
+            this.colub_rack.OptionsColumn.AllowEdit = false;
+            this.colub_rack.Visible = true;
+            this.colub_rack.VisibleIndex = 11;
+            this.colub_rack.Width = 79;
             // 
             // simpleButton1
             // 
@@ -431,9 +461,9 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(12, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 35);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(96, 73);
+            this.simpleButton1.Size = new System.Drawing.Size(103, 44);
             this.simpleButton1.TabIndex = 53;
             this.simpleButton1.Text = "Lotes";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -448,9 +478,9 @@
             this.btnPrintSeleccionados.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPrintSeleccionados.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnPrintSeleccionados.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrintSeleccionados.ImageOptions.SvgImage")));
-            this.btnPrintSeleccionados.Location = new System.Drawing.Point(991, 6);
+            this.btnPrintSeleccionados.Location = new System.Drawing.Point(974, 34);
             this.btnPrintSeleccionados.Name = "btnPrintSeleccionados";
-            this.btnPrintSeleccionados.Size = new System.Drawing.Size(183, 73);
+            this.btnPrintSeleccionados.Size = new System.Drawing.Size(183, 44);
             this.btnPrintSeleccionados.TabIndex = 55;
             this.btnPrintSeleccionados.Text = "Imprimir Seleccionado";
             this.btnPrintSeleccionados.Click += new System.EventHandler(this.btnPrintSeleccionados_Click);
@@ -460,7 +490,7 @@
             this.checkBoxSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxSelectAll.AutoSize = true;
             this.checkBoxSelectAll.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxSelectAll.Location = new System.Drawing.Point(873, 59);
+            this.checkBoxSelectAll.Location = new System.Drawing.Point(856, 59);
             this.checkBoxSelectAll.Name = "checkBoxSelectAll";
             this.checkBoxSelectAll.Size = new System.Drawing.Size(112, 17);
             this.checkBoxSelectAll.TabIndex = 66;
@@ -468,20 +498,39 @@
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
             // 
-            // colexistencia
+            // txtVentana
             // 
-            this.colexistencia.Caption = "Existencia";
-            this.colexistencia.FieldName = "existencia";
-            this.colexistencia.Name = "colexistencia";
-            this.colexistencia.OptionsColumn.AllowEdit = false;
-            this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 10;
+            this.txtVentana.Location = new System.Drawing.Point(331, 6);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 117;
+            this.txtVentana.Text = "frm_ingresos_lotes";
+            this.txtVentana.Visible = false;
+            // 
+            // cmdRefresh
+            // 
+            this.cmdRefresh.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.cmdRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRefresh.Appearance.Options.UseBackColor = true;
+            this.cmdRefresh.Appearance.Options.UseFont = true;
+            this.cmdRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRefreshDisponibles.ImageOptions.Image")));
+            this.cmdRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdRefresh.Location = new System.Drawing.Point(331, 35);
+            this.cmdRefresh.Name = "cmdRefresh";
+            this.cmdRefresh.Size = new System.Drawing.Size(117, 41);
+            this.cmdRefresh.TabIndex = 118;
+            this.cmdRefresh.Text = "Refresh";
+            this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
             // 
             // frm_ingresos_lotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 720);
+            this.Controls.Add(this.cmdRefresh);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.checkBoxSelectAll);
             this.Controls.Add(this.btnPrintSeleccionados);
             this.Controls.Add(this.btnAgregar);
@@ -489,9 +538,9 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnAtras);
+            this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_ingresos_lotes";
-            this.ShowIcon = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
@@ -539,5 +588,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colestado_tarima;
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
+        private DevExpress.XtraGrid.Columns.GridColumn colub_rack;
+        private System.Windows.Forms.TextBox txtVentana;
+        private DevExpress.XtraEditors.SimpleButton cmdRefresh;
     }
 }

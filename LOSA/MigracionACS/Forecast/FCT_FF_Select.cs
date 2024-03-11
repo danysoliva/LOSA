@@ -73,7 +73,7 @@ namespace LOSA.MigracionACS.Forecast
 
         private void btn_Select_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (id_formula_format > 0 && id_formula_format != null) 
+            if (id_formula_format > 0) 
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();

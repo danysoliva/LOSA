@@ -39,12 +39,12 @@ namespace LOSA.Calidad
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colversion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtVersionForanea = new DevExpress.XtraEditors.TextEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.colversion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtFFIF.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueFormula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).BeginInit();
@@ -59,8 +59,9 @@ namespace LOSA.Calidad
             this.txtFFIF.Name = "txtFFIF";
             this.txtFFIF.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFFIF.Properties.Appearance.Options.UseFont = true;
-            this.txtFFIF.Properties.Mask.EditMask = "f";
-            this.txtFFIF.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtFFIF.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtFFIF.Properties.MaskSettings.Set("mask", "n4");
+            this.txtFFIF.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtFFIF.Size = new System.Drawing.Size(168, 26);
             this.txtFFIF.TabIndex = 0;
             // 
@@ -129,6 +130,14 @@ namespace LOSA.Calidad
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
+            // colversion
+            // 
+            this.colversion.FieldName = "version";
+            this.colversion.Name = "colversion";
+            this.colversion.OptionsColumn.AllowEdit = false;
+            this.colversion.Visible = true;
+            this.colversion.VisibleIndex = 2;
+            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,14 +196,6 @@ namespace LOSA.Calidad
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Cancelar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // colversion
-            // 
-            this.colversion.FieldName = "version";
-            this.colversion.Name = "colversion";
-            this.colversion.OptionsColumn.AllowEdit = false;
-            this.colversion.Visible = true;
-            this.colversion.VisibleIndex = 2;
             // 
             // xfrmCertificadoCalidadCRUD
             // 

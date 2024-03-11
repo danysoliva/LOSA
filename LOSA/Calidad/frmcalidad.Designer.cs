@@ -71,9 +71,9 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(121, 12);
+            this.labelControl3.Location = new System.Drawing.Point(230, 54);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(563, 39);
+            this.labelControl3.Size = new System.Drawing.Size(406, 39);
             this.labelControl3.TabIndex = 32;
             this.labelControl3.Text = "Ingresos";
             // 
@@ -84,13 +84,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_ingreso.DataMember = "IngresosMP";
             this.grd_ingreso.DataSource = this.dsRecepcionMPx;
-            this.grd_ingreso.Location = new System.Drawing.Point(-1, 99);
+            this.grd_ingreso.Location = new System.Drawing.Point(-1, 115);
             this.grd_ingreso.MainView = this.grdv_ingreso;
             this.grd_ingreso.Name = "grd_ingreso";
             this.grd_ingreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnver,
             this.btnprint});
-            this.grd_ingreso.Size = new System.Drawing.Size(831, 542);
+            this.grd_ingreso.Size = new System.Drawing.Size(831, 526);
             this.grd_ingreso.TabIndex = 33;
             this.grd_ingreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_ingreso});
@@ -118,6 +118,7 @@
             this.colid,
             this.colprint,
             this.collote});
+            this.grdv_ingreso.CustomizationFormBounds = new System.Drawing.Rectangle(-1329, 477, 260, 272);
             this.grdv_ingreso.GridControl = this.grd_ingreso;
             this.grdv_ingreso.Name = "grdv_ingreso";
             this.grdv_ingreso.OptionsView.ShowAutoFilterRow = true;
@@ -231,9 +232,9 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(627, 4);
+            this.cmdHome.Location = new System.Drawing.Point(642, 54);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 71);
+            this.cmdHome.Size = new System.Drawing.Size(175, 48);
             this.cmdHome.TabIndex = 34;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);

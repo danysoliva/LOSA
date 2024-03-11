@@ -21,16 +21,73 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.DatosBromatologicos
         DataOperations dp;
         int pIdRowPRB_H;
         UserLogin UsuarioLogeado;
+        public bool CerrarForm;
+
         public frmDatosBrom(UserLogin pUser)
         {
             InitializeComponent();
-            UsuarioLogeado = pUser;
             dp = new DataOperations();
+            UsuarioLogeado = pUser;
+            ValidatePermisos();
+            
+            //pIdRowPRB_H = 0;
+            //dtDesde.EditValue = dp.Now().AddDays(-1); 
+            //dtHasta.EditValue = dp.Now();
+            //LoadRegistros();
+        }
 
-            pIdRowPRB_H = 0;
-            dtDesde.EditValue = dp.Now().AddDays(-1); 
-            dtHasta.EditValue = dp.Now();
-            LoadRegistros();
+
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(60))
+            {
+                cmdAgregar.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(60))
+            {
+                cmdAgregar.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        cmdAgregar.Enabled = false;
+                        AccesoPrevio = true;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        cmdAgregar.Enabled = true;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #60");
+            }
+            else
+            {
+                pIdRowPRB_H = 0;
+                dtDesde.EditValue = dp.Now().AddDays(-1);
+                dtHasta.EditValue = dp.Now();
+                LoadRegistros();
+            }
         }
 
         private void LoadRegistros()
@@ -243,16 +300,5 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.DatosBromatologicos
                 CajaDialogo.Error(ec.Message);
             }
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }

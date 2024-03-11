@@ -1464,6 +1464,8 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
             
             private global::System.Data.DataColumn columndado_name;
             
+            private global::System.Data.DataColumn _columnEficiencia_TM_h;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PRB_Detalle_lotesDataTable() {
@@ -1595,6 +1597,14 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Eficiencia_TM_hColumn {
+                get {
+                    return this._columnEficiencia_TM_h;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1630,7 +1640,7 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PRB_Detalle_lotesRow AddPRB_Detalle_lotesRow(int id, int lote, string codigo, string descripcion, int cantidad, int id_presentacion, System.DateTime desde, System.DateTime hasta, decimal total, int id_alimentacion, int id_dado, string dado_name) {
+            public PRB_Detalle_lotesRow AddPRB_Detalle_lotesRow(int id, int lote, string codigo, string descripcion, int cantidad, int id_presentacion, System.DateTime desde, System.DateTime hasta, decimal total, int id_alimentacion, int id_dado, string dado_name, decimal _Eficiencia_TM_h) {
                 PRB_Detalle_lotesRow rowPRB_Detalle_lotesRow = ((PRB_Detalle_lotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1644,7 +1654,8 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
                         total,
                         id_alimentacion,
                         id_dado,
-                        dado_name};
+                        dado_name,
+                        _Eficiencia_TM_h};
                 rowPRB_Detalle_lotesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPRB_Detalle_lotesRow);
                 return rowPRB_Detalle_lotesRow;
@@ -1679,6 +1690,7 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
                 this.columnid_alimentacion = base.Columns["id_alimentacion"];
                 this.columnid_dado = base.Columns["id_dado"];
                 this.columndado_name = base.Columns["dado_name"];
+                this._columnEficiencia_TM_h = base.Columns["Eficiencia TM/h"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1708,6 +1720,10 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
                 base.Columns.Add(this.columnid_dado);
                 this.columndado_name = new global::System.Data.DataColumn("dado_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndado_name);
+                this._columnEficiencia_TM_h = new global::System.Data.DataColumn("Eficiencia TM/h", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this._columnEficiencia_TM_h.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnEficiencia_TM_h");
+                this._columnEficiencia_TM_h.ExtendedProperties.Add("Generator_UserColumnName", "Eficiencia TM/h");
+                base.Columns.Add(this._columnEficiencia_TM_h);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4278,6 +4294,22 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal _Eficiencia_TM_h {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablePRB_Detalle_lotes._Eficiencia_TM_hColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Eficiencia TM/h\' in table \'PRB_Detalle_lotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePRB_Detalle_lotes._Eficiencia_TM_hColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablePRB_Detalle_lotes.idColumn);
             }
@@ -4418,6 +4450,18 @@ namespace LOSA.MigracionACS.Produccion.DataSet_ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setdado_nameNull() {
                 this[this.tablePRB_Detalle_lotes.dado_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Eficiencia_TM_hNull() {
+                return this.IsNull(this.tablePRB_Detalle_lotes._Eficiencia_TM_hColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Eficiencia_TM_hNull() {
+                this[this.tablePRB_Detalle_lotes._Eficiencia_TM_hColumn] = global::System.Convert.DBNull;
             }
         }
         

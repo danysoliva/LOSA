@@ -160,7 +160,7 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -225,7 +225,7 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
 

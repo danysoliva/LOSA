@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportesVacaciones" targetNamespace="http://tempuri.org/dsReportesVacaciones.xsd" xmlns:mstns="http://tempuri.org/dsReportesVacaciones.xsd" xmlns="http://tempuri.org/dsReportesVacaciones.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportesVacaciones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsReportesVacaciones" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportesVacaciones">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="resumen_vacaciones" msprop:Generator_RowEvHandlerName="resumen_vacacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="resumen_vacacionesRowDeleted" msprop:Generator_RowDeletingName="resumen_vacacionesRowDeleting" msprop:Generator_RowEvArgName="resumen_vacacionesRowChangeEvent" msprop:Generator_TablePropName="resumen_vacaciones" msprop:Generator_RowChangedName="resumen_vacacionesRowChanged" msprop:Generator_UserTableName="resumen_vacaciones" msprop:Generator_RowChangingName="resumen_vacacionesRowChanging" msprop:Generator_RowClassName="resumen_vacacionesRow" msprop:Generator_TableClassName="resumen_vacacionesDataTable" msprop:Generator_TableVarName="tableresumen_vacaciones">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo" msdata:Caption="Codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_UserColumnName="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" type="xs:string" minOccurs="0" />
+              <xs:element name="name" msdata:Caption="Nombre" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnVarNameInTable="columnname" type="xs:string" minOccurs="0" />
+              <xs:element name="dias_cumplidos" msdata:Caption="Dias Acumulados" msprop:Generator_ColumnPropNameInTable="dias_cumplidosColumn" msprop:Generator_ColumnPropNameInRow="dias_cumplidos" msprop:Generator_UserColumnName="dias_cumplidos" msprop:Generator_ColumnVarNameInTable="columndias_cumplidos" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dias_tomados_stand" msdata:Caption="Dias Web RRHH" msprop:Generator_ColumnPropNameInTable="dias_tomados_standColumn" msprop:Generator_ColumnPropNameInRow="dias_tomados_stand" msprop:Generator_UserColumnName="dias_tomados_stand" msprop:Generator_ColumnVarNameInTable="columndias_tomados_stand" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dias_odoo" msdata:Caption="Ausencias ODOO" msprop:Generator_ColumnPropNameInTable="dias_odooColumn" msprop:Generator_ColumnPropNameInRow="dias_odoo" msprop:Generator_UserColumnName="dias_odoo" msprop:Generator_ColumnVarNameInTable="columndias_odoo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dias_pendientes_stand" msdata:Caption="Dias Pendientes" msprop:Generator_ColumnPropNameInTable="dias_pendientes_standColumn" msprop:Generator_ColumnPropNameInRow="dias_pendientes_stand" msprop:Generator_UserColumnName="dias_pendientes_stand" msprop:Generator_ColumnVarNameInTable="columndias_pendientes_stand" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="acumulados" msprop:Generator_RowClassName="acumuladosRow" msprop:Generator_RowEvHandlerName="acumuladosRowChangeEventHandler" msprop:Generator_RowDeletedName="acumuladosRowDeleted" msprop:Generator_RowDeletingName="acumuladosRowDeleting" msprop:Generator_RowEvArgName="acumuladosRowChangeEvent" msprop:Generator_TablePropName="acumulados" msprop:Generator_RowChangedName="acumuladosRowChanged" msprop:Generator_UserTableName="acumulados" msprop:Generator_RowChangingName="acumuladosRowChanging" msprop:Generator_TableClassName="acumuladosDataTable" msprop:Generator_TableVarName="tableacumulados">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="year" msdata:Caption="Año" msprop:Generator_UserColumnName="year" msprop:Generator_ColumnPropNameInTable="yearColumn" msprop:Generator_ColumnPropNameInRow="year" msprop:Generator_ColumnVarNameInTable="columnyear" type="xs:int" minOccurs="0" />
+              <xs:element name="days" msdata:Caption="Días Corresponde" msprop:Generator_UserColumnName="days" msprop:Generator_ColumnPropNameInTable="daysColumn" msprop:Generator_ColumnPropNameInRow="days" msprop:Generator_ColumnVarNameInTable="columndays" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tomados_stand" msprop:Generator_RowClassName="tomados_standRow" msprop:Generator_RowEvHandlerName="tomados_standRowChangeEventHandler" msprop:Generator_RowDeletedName="tomados_standRowDeleted" msprop:Generator_RowDeletingName="tomados_standRowDeleting" msprop:Generator_RowEvArgName="tomados_standRowChangeEvent" msprop:Generator_TablePropName="tomados_stand" msprop:Generator_RowChangedName="tomados_standRowChanged" msprop:Generator_UserTableName="tomados_stand" msprop:Generator_RowChangingName="tomados_standRowChanging" msprop:Generator_TableClassName="tomados_standDataTable" msprop:Generator_TableVarName="tabletomados_stand">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" minOccurs="0" />
+              <xs:element name="id_employee" msprop:Generator_UserColumnName="id_employee" msprop:Generator_ColumnPropNameInTable="id_employeeColumn" msprop:Generator_ColumnPropNameInRow="id_employee" msprop:Generator_ColumnVarNameInTable="columnid_employee" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_inicio" msdata:Caption="Fecha Inicio" msprop:Generator_UserColumnName="fecha_inicio" msprop:Generator_ColumnPropNameInTable="fecha_inicioColumn" msprop:Generator_ColumnPropNameInRow="fecha_inicio" msprop:Generator_ColumnVarNameInTable="columnfecha_inicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_fin" msdata:Caption="Fecha Fin" msprop:Generator_UserColumnName="fecha_fin" msprop:Generator_ColumnPropNameInTable="fecha_finColumn" msprop:Generator_ColumnPropNameInRow="fecha_fin" msprop:Generator_ColumnVarNameInTable="columnfecha_fin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cant_dias_vacaciones" msdata:Caption="Cant. días tomados" msprop:Generator_UserColumnName="cant_dias_vacaciones" msprop:Generator_ColumnPropNameInTable="cant_dias_vacacionesColumn" msprop:Generator_ColumnPropNameInRow="cant_dias_vacaciones" msprop:Generator_ColumnVarNameInTable="columncant_dias_vacaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="observaciones" msdata:Caption="Observaciones" msprop:Generator_UserColumnName="observaciones" msprop:Generator_ColumnPropNameInTable="observacionesColumn" msprop:Generator_ColumnPropNameInRow="observaciones" msprop:Generator_ColumnVarNameInTable="columnobservaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="id_estado" msprop:Generator_UserColumnName="id_estado" msprop:Generator_ColumnPropNameInTable="id_estadoColumn" msprop:Generator_ColumnPropNameInRow="id_estado" msprop:Generator_ColumnVarNameInTable="columnid_estado" type="xs:int" minOccurs="0" />
+              <xs:element name="estado_name" msdata:Caption="Estado" msprop:Generator_UserColumnName="estado_name" msprop:Generator_ColumnPropNameInTable="estado_nameColumn" msprop:Generator_ColumnPropNameInRow="estado_name" msprop:Generator_ColumnVarNameInTable="columnestado_name" type="xs:string" minOccurs="0" />
+              <xs:element name="sincronizado_en_odoo" msprop:Generator_UserColumnName="sincronizado_en_odoo" msprop:Generator_ColumnPropNameInTable="sincronizado_en_odooColumn" msprop:Generator_ColumnPropNameInRow="sincronizado_en_odoo" msprop:Generator_ColumnVarNameInTable="columnsincronizado_en_odoo" type="xs:boolean" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_UserColumnName="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnVarNameInTable="columnenable" type="xs:boolean" minOccurs="0" />
+              <xs:element name="created_date" msdata:Caption="Fecha Posteo" msprop:Generator_UserColumnName="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tomados_odoo" msprop:Generator_RowClassName="tomados_odooRow" msprop:Generator_RowEvHandlerName="tomados_odooRowChangeEventHandler" msprop:Generator_RowDeletedName="tomados_odooRowDeleted" msprop:Generator_RowDeletingName="tomados_odooRowDeleting" msprop:Generator_RowEvArgName="tomados_odooRowChangeEvent" msprop:Generator_TablePropName="tomados_odoo" msprop:Generator_RowChangedName="tomados_odooRowChanged" msprop:Generator_UserTableName="tomados_odoo" msprop:Generator_RowChangingName="tomados_odooRowChanging" msprop:Generator_TableClassName="tomados_odooDataTable" msprop:Generator_TableVarName="tabletomados_odoo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" minOccurs="0" />
+              <xs:element name="state" msdata:Caption="Estado" msprop:Generator_UserColumnName="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnVarNameInTable="columnstate" type="xs:string" minOccurs="0" />
+              <xs:element name="employee_id" msprop:Generator_UserColumnName="employee_id" msprop:Generator_ColumnPropNameInTable="employee_idColumn" msprop:Generator_ColumnPropNameInRow="employee_id" msprop:Generator_ColumnVarNameInTable="columnemployee_id" type="xs:int" minOccurs="0" />
+              <xs:element name="department_id" msprop:Generator_UserColumnName="department_id" msprop:Generator_ColumnPropNameInTable="department_idColumn" msprop:Generator_ColumnPropNameInRow="department_id" msprop:Generator_ColumnVarNameInTable="columndepartment_id" type="xs:int" minOccurs="0" />
+              <xs:element name="date_from" msdata:Caption="Fecha Desde" msprop:Generator_UserColumnName="date_from" msprop:Generator_ColumnPropNameInTable="date_fromColumn" msprop:Generator_ColumnPropNameInRow="date_from" msprop:Generator_ColumnVarNameInTable="columndate_from" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_to" msdata:Caption="Fecha Hasta" msprop:Generator_UserColumnName="date_to" msprop:Generator_ColumnPropNameInTable="date_toColumn" msprop:Generator_ColumnPropNameInRow="date_to" msprop:Generator_ColumnVarNameInTable="columndate_to" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="number_of_days" msdata:Caption="Cant Dias Tomados" msprop:Generator_UserColumnName="number_of_days" msprop:Generator_ColumnPropNameInTable="number_of_daysColumn" msprop:Generator_ColumnPropNameInRow="number_of_days" msprop:Generator_ColumnVarNameInTable="columnnumber_of_days" type="xs:decimal" minOccurs="0" />
+              <xs:element name="holiday_status_id" msprop:Generator_UserColumnName="holiday_status_id" msprop:Generator_ColumnPropNameInTable="holiday_status_idColumn" msprop:Generator_ColumnPropNameInRow="holiday_status_id" msprop:Generator_ColumnVarNameInTable="columnholiday_status_id" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_creado" msdata:Caption="Fecha posteo" msprop:Generator_UserColumnName="fecha_creado" msprop:Generator_ColumnPropNameInTable="fecha_creadoColumn" msprop:Generator_ColumnPropNameInRow="fecha_creado" msprop:Generator_ColumnVarNameInTable="columnfecha_creado" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -36,6 +36,8 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnResumenTarimas = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEntregaBines = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDevolucionesMacro = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -100,7 +102,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(323, 174);
+            this.simpleButton1.Location = new System.Drawing.Point(323, 172);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(274, 67);
             this.simpleButton1.TabIndex = 19;
@@ -112,7 +114,7 @@
             this.btnDevoluciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnDevoluciones.Appearance.Options.UseFont = true;
             this.btnDevoluciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDevoluciones.ImageOptions.Image")));
-            this.btnDevoluciones.Location = new System.Drawing.Point(323, 247);
+            this.btnDevoluciones.Location = new System.Drawing.Point(323, 243);
             this.btnDevoluciones.Name = "btnDevoluciones";
             this.btnDevoluciones.Size = new System.Drawing.Size(274, 67);
             this.btnDevoluciones.TabIndex = 21;
@@ -124,12 +126,39 @@
             this.btnResumenTarimas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnResumenTarimas.Appearance.Options.UseFont = true;
             this.btnResumenTarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResumenTarimas.ImageOptions.Image")));
-            this.btnResumenTarimas.Location = new System.Drawing.Point(323, 320);
+            this.btnResumenTarimas.Location = new System.Drawing.Point(323, 384);
             this.btnResumenTarimas.Name = "btnResumenTarimas";
             this.btnResumenTarimas.Size = new System.Drawing.Size(274, 67);
             this.btnResumenTarimas.TabIndex = 22;
             this.btnResumenTarimas.Text = "Tarimas Por Ingreso";
             this.btnResumenTarimas.Click += new System.EventHandler(this.btnResumenTarimas_Click);
+            // 
+            // btnEntregaBines
+            // 
+            this.btnEntregaBines.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntregaBines.Appearance.Options.UseFont = true;
+            this.btnEntregaBines.ImageOptions.Image = global::LOSA.Properties.Resources.tanque;
+            this.btnEntregaBines.Location = new System.Drawing.Point(323, 454);
+            this.btnEntregaBines.Name = "btnEntregaBines";
+            this.btnEntregaBines.Size = new System.Drawing.Size(274, 67);
+            this.btnEntregaBines.TabIndex = 23;
+            this.btnEntregaBines.Text = "Entrega de Bines a PRD";
+            this.btnEntregaBines.Visible = false;
+            this.btnEntregaBines.Click += new System.EventHandler(this.btnEntregaBines_Click);
+            // 
+            // btnDevolucionesMacro
+            // 
+            this.btnDevolucionesMacro.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnDevolucionesMacro.Appearance.Options.UseFont = true;
+            this.btnDevolucionesMacro.Appearance.Options.UseTextOptions = true;
+            this.btnDevolucionesMacro.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnDevolucionesMacro.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnDevolucionesMacro.Location = new System.Drawing.Point(323, 314);
+            this.btnDevolucionesMacro.Name = "btnDevolucionesMacro";
+            this.btnDevolucionesMacro.Size = new System.Drawing.Size(274, 67);
+            this.btnDevolucionesMacro.TabIndex = 24;
+            this.btnDevolucionesMacro.Text = "Macro Ingredientes Devoluciones ";
+            this.btnDevolucionesMacro.Click += new System.EventHandler(this.btnDevolucionesMacro_Click);
             // 
             // frmEntregaMontaCarga
             // 
@@ -137,6 +166,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.btnDevolucionesMacro);
+            this.Controls.Add(this.btnEntregaBines);
             this.Controls.Add(this.btnResumenTarimas);
             this.Controls.Add(this.btnDevoluciones);
             this.Controls.Add(this.simpleButton1);
@@ -161,5 +192,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
         private DevExpress.XtraEditors.SimpleButton btnResumenTarimas;
+        private DevExpress.XtraEditors.SimpleButton btnEntregaBines;
+        private DevExpress.XtraEditors.SimpleButton btnDevolucionesMacro;
     }
 }

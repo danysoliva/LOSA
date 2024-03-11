@@ -11,8 +11,6 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
-using System.Data;
-using LOSA.Clases;
 namespace LOSA.Calidad
 {
     public partial class frmSelectCausaRechazo : DevExpress.XtraEditors.XtraForm 

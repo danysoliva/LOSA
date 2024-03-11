@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
+using LOSA.Clases;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
 {
     public partial class frmGestionAccesosEncuesta : Form
     {
-        public frmGestionAccesosEncuesta()
+        UserLogin UsuarioLogeado;
+        public frmGestionAccesosEncuesta(UserLogin pUsuario)
         {
             InitializeComponent();
+            UsuarioLogeado = pUsuario;
             LoadDetalleCodigos();
         }
 
@@ -200,8 +203,8 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
 
         private void btnEncuesta_Click(object sender, EventArgs e)
         {
-            xfrmGenerarEncuesta frm = new xfrmGenerarEncuesta();
-
+            //xfrmGenerarEncuesta frm = new xfrmGenerarEncuesta();
+            frmCRUD_EncuestaH frm = new frmCRUD_EncuestaH(this.UsuarioLogeado);
             frm.ShowDialog();
         }
     }

@@ -84,7 +84,7 @@ namespace LOSA.Produccion
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(556, 8);
+            this.cmdHome.Location = new System.Drawing.Point(1510, 8);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 71);
             this.cmdHome.TabIndex = 7;
@@ -102,7 +102,7 @@ namespace LOSA.Produccion
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(111, 23);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(497, 39);
+            this.labelControl3.Size = new System.Drawing.Size(1451, 39);
             this.labelControl3.TabIndex = 32;
             this.labelControl3.Text = "Requisas";
             // 
@@ -119,7 +119,7 @@ namespace LOSA.Produccion
             this.btn_reqmanual,
             this.btnImprimir,
             this.btnImprimirprevisualizacion});
-            this.grd_data.Size = new System.Drawing.Size(766, 474);
+            this.grd_data.Size = new System.Drawing.Size(1720, 547);
             this.grd_data.TabIndex = 33;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -168,6 +168,7 @@ namespace LOSA.Produccion
             this.colImprimir,
             this.colid_requisa_manual,
             this.gridColumn1});
+            this.grdv_data.CustomizationFormBounds = new System.Drawing.Rectangle(-960, 383, 260, 312);
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -175,9 +176,13 @@ namespace LOSA.Produccion
             // 
             // colid
             // 
+            this.colid.Caption = "# Requisa Origen";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
+            this.colid.Visible = true;
+            this.colid.VisibleIndex = 0;
+            this.colid.Width = 222;
             // 
             // colid_orden
             // 
@@ -193,7 +198,7 @@ namespace LOSA.Produccion
             this.colfecha_solicitada.OptionsColumn.AllowEdit = false;
             this.colfecha_solicitada.Visible = true;
             this.colfecha_solicitada.VisibleIndex = 4;
-            this.colfecha_solicitada.Width = 96;
+            this.colfecha_solicitada.Width = 152;
             // 
             // colLote
             // 
@@ -202,7 +207,7 @@ namespace LOSA.Produccion
             this.colLote.OptionsColumn.AllowEdit = false;
             this.colLote.Visible = true;
             this.colLote.VisibleIndex = 1;
-            this.colLote.Width = 59;
+            this.colLote.Width = 150;
             // 
             // colDocEntry
             // 
@@ -210,8 +215,6 @@ namespace LOSA.Produccion
             this.colDocEntry.FieldName = "DocEntry";
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
-            this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 0;
             this.colDocEntry.Width = 58;
             // 
             // colItemCode
@@ -222,7 +225,7 @@ namespace LOSA.Produccion
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 2;
-            this.colItemCode.Width = 96;
+            this.colItemCode.Width = 246;
             // 
             // colItemName
             // 
@@ -232,7 +235,7 @@ namespace LOSA.Produccion
             this.colItemName.OptionsColumn.AllowEdit = false;
             this.colItemName.Visible = true;
             this.colItemName.VisibleIndex = 3;
-            this.colItemName.Width = 123;
+            this.colItemName.Width = 318;
             // 
             // colAgregar
             // 
@@ -241,7 +244,7 @@ namespace LOSA.Produccion
             this.colAgregar.Name = "colAgregar";
             this.colAgregar.Visible = true;
             this.colAgregar.VisibleIndex = 6;
-            this.colAgregar.Width = 51;
+            this.colAgregar.Width = 151;
             // 
             // btn_reqmanual
             // 
@@ -260,7 +263,7 @@ namespace LOSA.Produccion
             this.colImprimir.Name = "colImprimir";
             this.colImprimir.Visible = true;
             this.colImprimir.VisibleIndex = 7;
-            this.colImprimir.Width = 37;
+            this.colImprimir.Width = 108;
             // 
             // btnImprimir
             // 
@@ -278,7 +281,7 @@ namespace LOSA.Produccion
             this.colid_requisa_manual.Name = "colid_requisa_manual";
             this.colid_requisa_manual.Visible = true;
             this.colid_requisa_manual.VisibleIndex = 5;
-            this.colid_requisa_manual.Width = 53;
+            this.colid_requisa_manual.Width = 159;
             // 
             // gridColumn1
             // 
@@ -287,7 +290,7 @@ namespace LOSA.Produccion
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 8;
-            this.gridColumn1.Width = 50;
+            this.gridColumn1.Width = 196;
             // 
             // btnImprimirprevisualizacion
             // 
@@ -303,7 +306,7 @@ namespace LOSA.Produccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 560);
+            this.ClientSize = new System.Drawing.Size(1717, 633);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);

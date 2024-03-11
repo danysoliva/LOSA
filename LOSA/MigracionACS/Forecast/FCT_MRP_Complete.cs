@@ -48,7 +48,8 @@ namespace ACS.Forecast
                                                                             ,B.[nombre] AS usuario
                                                                         FROM [dbo].[FCT_MRP] A
                                                                     INNER JOIN [dbo].[conf_usuarios] B ON A.[usuario_c] = B.[id]
-                                                                        WHERE [status] = 'a'").Tables[0];
+                                                                        WHERE [status] = 'a'
+                                                                    order by fecha_c  ").Tables[0];
             }
             catch (Exception ex)
             {
@@ -292,21 +293,24 @@ namespace ACS.Forecast
 
                 //Evaluar si se requiere actualizar alguna materia prima
                 string id_mrp = cmb_MRPs.EditValue.ToString();
-                string sql = @"SELECT distinct ff.id as 'id_mat_prima'
-                                FROM [dbo].[FCT_Proyecciones_Venta_D_v2] dd inner join
-                                 [dbo].[FML_Formulas_FF_D] ee on dd.id_form = ee.id_h inner join
-                                 [dbo].[MP_MateriasPrimas] ff on ee.source_mat_code = ff.codigo inner join
-                                 [dbo].[FCT_MRP_Proyecciones_v2] gg on dd.id_proy = gg.id_pro
-                                where gg.id_mrp = " + id_mrp + " " + "and " +
-                                      "ff.id not in (select distinct dd.id_mp " +
-                                      "from [dbo].[FCT_MRP_D] dd " +
-                                      "where dd.id_mrp = " + id_mrp + ")";
+                //string sql = @"SELECT distinct ff.id as 'id_mat_prima'
+                //                FROM [dbo].[FCT_Proyecciones_Venta_D_v2] dd inner join
+                //                 [dbo].[FML_Formulas_FF_D] ee on dd.id_form = ee.id_h inner join
+                //                 [dbo].[MP_MateriasPrimas] ff on ee.source_mat_code = ff.codigo inner join
+                //                 [dbo].[FCT_MRP_Proyecciones_v2] gg on dd.id_proy = gg.id_pro
+                //                where gg.id_mrp = " + id_mrp + " " + "and " +
+                //                      "ff.id not in (select distinct dd.id_mp " +
+                //                      "from [dbo].[FCT_MRP_D] dd " +
+                //                      "where dd.id_mrp = " + id_mrp + ")";
 
+                string sql = @"SP_get_id_mrp_for_fct_mrp";
                 DataOperations dp = new DataOperations();
                 SqlConnection Conn = new SqlConnection(dp.ConnectionStringCostos);
                 Conn.Open();
 
                 SqlCommand cmd = new SqlCommand(sql, Conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mrp", id_mrp);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -386,6 +390,7 @@ namespace ACS.Forecast
                                                       FROM [dbo].[FCT_MRP_D]
                                                      WHERE [id_mrp] = " + cmb_MRPs.EditValue.ToString() + "");
 
+                #region CodigoViejo
                 //DataSet IniStructure = dp.ACS_GetSelectData(@"  SELECT A.[id]
                 //                                                  ,A.[id_mp]
                 //                                               ,CONCAT(B.[material],' - Costo Actual: $ ', D.[valor_tm]) AS material
@@ -472,6 +477,8 @@ namespace ACS.Forecast
                 //                                                    WHERE [id_mrp] = " + cmb_MRPs.EditValue.ToString() + @") as tableConsumoReal
 
                 //                                                 )as megaRMP order by 4,2 asc");
+                #endregion
+
                 DataSet IniStructure = new DataSet();
                 try
                 {
@@ -513,7 +520,7 @@ namespace ACS.Forecast
                 string mes;
                 string InvIniRowID = "x";
 
-
+                #region CodigoViejo
                 //foreach (DataRow rowMP in RawMat.Tables[0].Rows) 
                 //{
                 //    foreach (DataRow rowMPR in IniStructure.Tables[0].Rows) 
@@ -714,6 +721,9 @@ namespace ACS.Forecast
                 //}
 
                 //grd_mrp.DataSource = ReportData.Tables[0];
+
+                #endregion 
+
                 grd_mrp.DataSource = IniStructure.Tables[0];
                 CheckGroupStatus();
 

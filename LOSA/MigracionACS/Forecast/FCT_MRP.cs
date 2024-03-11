@@ -126,24 +126,25 @@ namespace LOSA.MigracionACS.Forecast
             try
             {
                 OutputData = dp.ACS_GetSelectData(@"  SELECT 0 AS id
-                                                        ,A.[id] AS id_mp
-                                                        ,CONCAT(A.[material],' - Costo Actual: $ ', D.[valor_tm]) AS material
-                                                        ,CONCAT(B.[orden], ' - ', B.[tipo]) AS tipo
-                                                        ,3 AS kind
-                                                        ,'Consumos Proyectados' AS kindN
-	                                                    ,0.00000000 AS ene
-	                                                    ,0.00000000 AS feb
-	                                                    ,0.00000000 AS mar
-	                                                    ,0.00000000 AS abr
-	                                                    ,0.00000000 AS may
-	                                                    ,0.00000000 AS jun
-	                                                    ,0.00000000 AS jul
-	                                                    ,0.00000000 AS ago
-	                                                    ,0.00000000 AS sep
-	                                                    ,0.00000000 AS oct
-	                                                    ,0.00000000 AS nov
-	                                                    ,0.00000000 AS dic
-	                                                    ,0.00000000 AS total
+                                                            ,A.[id] AS id_mp
+                                                            ,CONCAT(A.[material],' - Costo Actual: $ ', D.[valor_tm]) AS material
+                                                            ,CONCAT(B.[orden], ' - ', B.[tipo]) AS tipo
+                                                            ,3 AS kind
+                                                            ,'Consumos Proyectados' AS kindN
+	                                                        ,0.00000000 AS ene
+	                                                        ,0.00000000 AS feb
+	                                                        ,0.00000000 AS mar
+	                                                        ,0.00000000 AS abr
+	                                                        ,0.00000000 AS may
+	                                                        ,0.00000000 AS jun
+	                                                        ,0.00000000 AS jul
+	                                                        ,0.00000000 AS ago
+	                                                        ,0.00000000 AS sep
+	                                                        ,0.00000000 AS oct
+	                                                        ,0.00000000 AS nov
+	                                                        ,0.00000000 AS dic
+	                                                        ,0.00000000 AS total
+                                                            
                                                     FROM [dbo].[MP_MateriasPrimas] A
                                             INNER JOIN [dbo].[MP_TipoFMateriaPrima] B ON A.[tipof] = B.[id]
                                             INNER JOIN [dbo].[MP_UltimoCosto] D ON A.[id] = D.[idMP]
@@ -291,20 +292,23 @@ namespace LOSA.MigracionACS.Forecast
 
                 //Evaluar si se requiere actualizar alguna materia prima
                 string id_mrp = cmb_MRPs.EditValue.ToString();
-                string sql = @"SELECT distinct ff.id as 'id_mat_prima'
-                                FROM [dbo].[FCT_Proyecciones_Venta_D_v2] dd inner join
-	                                [dbo].[FML_Formulas_FF_D] ee on dd.id_form = ee.id_h inner join
-	                                [dbo].[MP_MateriasPrimas] ff on ee.source_mat_code = ff.codigo inner join
-	                                [dbo].[FCT_MRP_Proyecciones_v2] gg on dd.id_proy = gg.id_pro
-                                where gg.id_mrp = " + id_mrp + " " + "and "+
-                                      "ff.id not in (select distinct dd.id_mp "+
-				                                  "from [dbo].[FCT_MRP_D] dd "+
-				                                  "where dd.id_mrp = " + id_mrp +")";
+                //string sql = @"SELECT distinct ff.id as 'id_mat_prima'
+                //                FROM [dbo].[FCT_Proyecciones_Venta_D_v2] dd inner join
+                //                 [dbo].[FML_Formulas_FF_D] ee on dd.id_form = ee.id_h inner join
+                //                 [dbo].[MP_MateriasPrimas] ff on ee.source_mat_code = ff.codigo inner join
+                //                 [dbo].[FCT_MRP_Proyecciones_v2] gg on dd.id_proy = gg.id_pro
+                //                where gg.id_mrp = " + id_mrp + " " + "and "+
+                //                      "ff.id not in (select distinct dd.id_mp "+
+                //                      "from [dbo].[FCT_MRP_D] dd "+
+                //                      "where dd.id_mrp = " + id_mrp +")";
+                string sql = @"SP_get_id_mrp_for_fct_mrp";
                 DataOperations dp = new DataOperations();
                 SqlConnection Conn = new SqlConnection(dp.ConnectionStringCostos);
                 Conn.Open();
 
                 SqlCommand cmd = new SqlCommand(sql, Conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mrp", id_mrp);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -382,6 +386,7 @@ namespace LOSA.MigracionACS.Forecast
                                                                   ,A.[nov]
                                                                   ,A.[dic]
                                                                   ,0.00000 AS total
+                                                        
                                                               FROM [dbo].[FCT_MRP_D] A
                                                               INNER JOIN [dbo].[MP_MateriasPrimas] B ON A.[id_mp] = B.[id]
                                                               INNER JOIN [dbo].[MP_TipoFMateriaPrima] C ON B.[tipof] = C.[id]

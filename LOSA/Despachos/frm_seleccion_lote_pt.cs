@@ -111,8 +111,8 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
 
-              
             }
         }
         private bool IsNotActive(GridView view, int row)
@@ -253,7 +253,7 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
 
@@ -329,8 +329,8 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
+                Console.Write(ex.Message);
 
-               
             }
         }
 

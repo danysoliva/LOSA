@@ -111,7 +111,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
                 }
                 catch (Exception ex)
                 {
-
+                    Console.WriteLine(ex.Message);
 
                 }
 

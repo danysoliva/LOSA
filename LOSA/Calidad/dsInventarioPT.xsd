@@ -12,7 +12,7 @@
   <xs:element name="dsInventarioPT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsInventarioPT" msprop:Generator_UserDSName="dsInventarioPT">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="transacciones" msprop:Generator_TableClassName="transaccionesDataTable" msprop:Generator_TableVarName="tabletransacciones" msprop:Generator_RowChangedName="transaccionesRowChanged" msprop:Generator_TablePropName="transacciones" msprop:Generator_RowDeletingName="transaccionesRowDeleting" msprop:Generator_RowChangingName="transaccionesRowChanging" msprop:Generator_RowEvHandlerName="transaccionesRowChangeEventHandler" msprop:Generator_RowDeletedName="transaccionesRowDeleted" msprop:Generator_RowClassName="transaccionesRow" msprop:Generator_UserTableName="transacciones" msprop:Generator_RowEvArgName="transaccionesRowChangeEvent">
+        <xs:element name="transacciones" msprop:Generator_TableClassName="transaccionesDataTable" msprop:Generator_TableVarName="tabletransacciones" msprop:Generator_TablePropName="transacciones" msprop:Generator_RowDeletingName="transaccionesRowDeleting" msprop:Generator_RowChangingName="transaccionesRowChanging" msprop:Generator_RowEvHandlerName="transaccionesRowChangeEventHandler" msprop:Generator_RowDeletedName="transaccionesRowDeleted" msprop:Generator_UserTableName="transacciones" msprop:Generator_RowChangedName="transaccionesRowChanged" msprop:Generator_RowEvArgName="transaccionesRowChangeEvent" msprop:Generator_RowClassName="transaccionesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="entrada" msprop:Generator_ColumnVarNameInTable="columnentrada" msprop:Generator_ColumnPropNameInRow="entrada" msprop:Generator_ColumnPropNameInTable="entradaColumn" msprop:Generator_UserColumnName="entrada" type="xs:decimal" minOccurs="0" />
@@ -22,10 +22,12 @@
               <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
               <xs:element name="turno" msprop:Generator_ColumnVarNameInTable="columnturno" msprop:Generator_ColumnPropNameInRow="turno" msprop:Generator_ColumnPropNameInTable="turnoColumn" msprop:Generator_UserColumnName="turno" type="xs:string" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="codigo_barra" msdata:Caption="Código Barra Tarima" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
+              <xs:element name="operacion" msprop:Generator_ColumnVarNameInTable="columnoperacion" msprop:Generator_ColumnPropNameInRow="operacion" msprop:Generator_ColumnPropNameInTable="operacionColumn" msprop:Generator_UserColumnName="operacion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="libres" msprop:Generator_TableClassName="libresDataTable" msprop:Generator_TableVarName="tablelibres" msprop:Generator_TablePropName="libres" msprop:Generator_RowDeletingName="libresRowDeleting" msprop:Generator_RowChangingName="libresRowChanging" msprop:Generator_RowEvHandlerName="libresRowChangeEventHandler" msprop:Generator_RowDeletedName="libresRowDeleted" msprop:Generator_UserTableName="libres" msprop:Generator_RowChangedName="libresRowChanged" msprop:Generator_RowEvArgName="libresRowChangeEvent" msprop:Generator_RowClassName="libresRow">
+        <xs:element name="libres" msprop:Generator_TableClassName="libresDataTable" msprop:Generator_TableVarName="tablelibres" msprop:Generator_RowChangedName="libresRowChanged" msprop:Generator_TablePropName="libres" msprop:Generator_RowDeletingName="libresRowDeleting" msprop:Generator_RowChangingName="libresRowChanging" msprop:Generator_RowEvHandlerName="libresRowChangeEventHandler" msprop:Generator_RowDeletedName="libresRowDeleted" msprop:Generator_RowClassName="libresRow" msprop:Generator_UserTableName="libres" msprop:Generator_RowEvArgName="libresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ubicacion" msprop:Generator_ColumnVarNameInTable="columnubicacion" msprop:Generator_ColumnPropNameInRow="ubicacion" msprop:Generator_ColumnPropNameInTable="ubicacionColumn" msprop:Generator_UserColumnName="ubicacion" type="xs:string" minOccurs="0" />
@@ -38,7 +40,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="retenidos" msprop:Generator_TableClassName="retenidosDataTable" msprop:Generator_TableVarName="tableretenidos" msprop:Generator_TablePropName="retenidos" msprop:Generator_RowDeletingName="retenidosRowDeleting" msprop:Generator_RowChangingName="retenidosRowChanging" msprop:Generator_RowEvHandlerName="retenidosRowChangeEventHandler" msprop:Generator_RowDeletedName="retenidosRowDeleted" msprop:Generator_UserTableName="retenidos" msprop:Generator_RowChangedName="retenidosRowChanged" msprop:Generator_RowEvArgName="retenidosRowChangeEvent" msprop:Generator_RowClassName="retenidosRow">
+        <xs:element name="retenidos" msprop:Generator_TableClassName="retenidosDataTable" msprop:Generator_TableVarName="tableretenidos" msprop:Generator_RowChangedName="retenidosRowChanged" msprop:Generator_TablePropName="retenidos" msprop:Generator_RowDeletingName="retenidosRowDeleting" msprop:Generator_RowChangingName="retenidosRowChanging" msprop:Generator_RowEvHandlerName="retenidosRowChangeEventHandler" msprop:Generator_RowDeletedName="retenidosRowDeleted" msprop:Generator_RowClassName="retenidosRow" msprop:Generator_UserTableName="retenidos" msprop:Generator_RowEvArgName="retenidosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ubicacion" msprop:Generator_ColumnVarNameInTable="columnubicacion" msprop:Generator_ColumnPropNameInRow="ubicacion" msprop:Generator_ColumnPropNameInTable="ubicacionColumn" msprop:Generator_UserColumnName="ubicacion" type="xs:string" minOccurs="0" />
@@ -51,7 +53,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="resumen" msprop:Generator_TableClassName="resumenDataTable" msprop:Generator_TableVarName="tableresumen" msprop:Generator_TablePropName="resumen" msprop:Generator_RowDeletingName="resumenRowDeleting" msprop:Generator_RowChangingName="resumenRowChanging" msprop:Generator_RowEvHandlerName="resumenRowChangeEventHandler" msprop:Generator_RowDeletedName="resumenRowDeleted" msprop:Generator_UserTableName="resumen" msprop:Generator_RowChangedName="resumenRowChanged" msprop:Generator_RowEvArgName="resumenRowChangeEvent" msprop:Generator_RowClassName="resumenRow">
+        <xs:element name="resumen" msprop:Generator_TableClassName="resumenDataTable" msprop:Generator_TableVarName="tableresumen" msprop:Generator_RowChangedName="resumenRowChanged" msprop:Generator_TablePropName="resumen" msprop:Generator_RowDeletingName="resumenRowDeleting" msprop:Generator_RowChangingName="resumenRowChanging" msprop:Generator_RowEvHandlerName="resumenRowChangeEventHandler" msprop:Generator_RowDeletedName="resumenRowDeleted" msprop:Generator_RowClassName="resumenRow" msprop:Generator_UserTableName="resumen" msprop:Generator_RowEvArgName="resumenRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
@@ -60,7 +62,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="despachos" msprop:Generator_TableClassName="despachosDataTable" msprop:Generator_TableVarName="tabledespachos" msprop:Generator_TablePropName="despachos" msprop:Generator_RowDeletingName="despachosRowDeleting" msprop:Generator_RowChangingName="despachosRowChanging" msprop:Generator_RowEvHandlerName="despachosRowChangeEventHandler" msprop:Generator_RowDeletedName="despachosRowDeleted" msprop:Generator_UserTableName="despachos" msprop:Generator_RowChangedName="despachosRowChanged" msprop:Generator_RowEvArgName="despachosRowChangeEvent" msprop:Generator_RowClassName="despachosRow">
+        <xs:element name="despachos" msprop:Generator_TableClassName="despachosDataTable" msprop:Generator_TableVarName="tabledespachos" msprop:Generator_RowChangedName="despachosRowChanged" msprop:Generator_TablePropName="despachos" msprop:Generator_RowDeletingName="despachosRowDeleting" msprop:Generator_RowChangingName="despachosRowChanging" msprop:Generator_RowEvHandlerName="despachosRowChangeEventHandler" msprop:Generator_RowDeletedName="despachosRowDeleted" msprop:Generator_RowClassName="despachosRow" msprop:Generator_UserTableName="despachos" msprop:Generator_RowEvArgName="despachosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cliente" msprop:Generator_ColumnVarNameInTable="columncliente" msprop:Generator_ColumnPropNameInRow="cliente" msprop:Generator_ColumnPropNameInTable="clienteColumn" msprop:Generator_UserColumnName="cliente" type="xs:string" minOccurs="0" />
@@ -69,6 +71,20 @@
               <xs:element name="clienteextension" msprop:Generator_ColumnVarNameInTable="columnclienteextension" msprop:Generator_ColumnPropNameInRow="clienteextension" msprop:Generator_ColumnPropNameInTable="clienteextensionColumn" msprop:Generator_UserColumnName="clienteextension" type="xs:string" minOccurs="0" />
               <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lotes_finalizados" msprop:Generator_TableClassName="lotes_finalizadosDataTable" msprop:Generator_TableVarName="tablelotes_finalizados" msprop:Generator_TablePropName="lotes_finalizados" msprop:Generator_RowDeletingName="lotes_finalizadosRowDeleting" msprop:Generator_RowChangingName="lotes_finalizadosRowChanging" msprop:Generator_RowEvHandlerName="lotes_finalizadosRowChangeEventHandler" msprop:Generator_RowDeletedName="lotes_finalizadosRowDeleted" msprop:Generator_UserTableName="lotes_finalizados" msprop:Generator_RowChangedName="lotes_finalizadosRowChanged" msprop:Generator_RowEvArgName="lotes_finalizadosRowChangeEvent" msprop:Generator_RowClassName="lotes_finalizadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="mp" msprop:Generator_ColumnVarNameInTable="columnmp" msprop:Generator_ColumnPropNameInRow="mp" msprop:Generator_ColumnPropNameInTable="mpColumn" msprop:Generator_UserColumnName="mp" type="xs:string" minOccurs="0" />
+              <xs:element name="lote_mp" msprop:Generator_ColumnVarNameInTable="columnlote_mp" msprop:Generator_ColumnPropNameInRow="lote_mp" msprop:Generator_ColumnPropNameInTable="lote_mpColumn" msprop:Generator_UserColumnName="lote_mp" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="operacion" msprop:Generator_ColumnVarNameInTable="columnoperacion" msprop:Generator_ColumnPropNameInRow="operacion" msprop:Generator_ColumnPropNameInTable="operacionColumn" msprop:Generator_UserColumnName="operacion" type="xs:string" minOccurs="0" />
+              <xs:element name="id_referencia_kardex" msprop:Generator_ColumnVarNameInTable="columnid_referencia_kardex" msprop:Generator_ColumnPropNameInRow="id_referencia_kardex" msprop:Generator_ColumnPropNameInTable="id_referencia_kardexColumn" msprop:Generator_UserColumnName="id_referencia_kardex" type="xs:int" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

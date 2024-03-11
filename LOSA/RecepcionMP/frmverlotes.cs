@@ -102,41 +102,45 @@ namespace LOSA.RecepcionMP
                 {
                     return;
                 }
+
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                string query = @"sp_eliminar_lote_of_ingreso_v2";
+
+                string query = @"sp_eliminar_lote_of_ingreso_v3";
                 SqlConnection CN = new SqlConnection(dp.ConnectionStringLOSA);
                 CN.Open();
                 SqlCommand cmd = new SqlCommand(query,CN);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_lote", row.id);
+                //cmd.Parameters.AddWithValue("@id_lote", row.id);
+                cmd.Parameters.AddWithValue("@lote", row.lote);
+                cmd.Parameters.AddWithValue("@numero_transaccion", row.numero_transaccion);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
 
                 cmd.ExecuteNonQuery();
-                CajaDialogo.Information("Ajuste Realizado");
+                CajaDialogo.Information("Eliminacion de Lote Realizada!");
                 CN.Close();
+                load_data();
             }
             catch (Exception ex)
             {
-
-                throw;
+                CajaDialogo.Error(ex.Message);
             }
         }
 
         private void btnver_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var gridview = (GridView)grd_data.FocusedView;
-                var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                frmShowOnlyLote frm = new frmShowOnlyLote(row.id,UsuarioLogeado);
-                frm.Show();
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    var gridview = (GridView)grd_data.FocusedView;
+            //    var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
+            //    frmShowOnlyLote frm = new frmShowOnlyLote(row.id,UsuarioLogeado);
+            //    frm.Show();
+            //}
+            //catch (Exception ex)
+            //{
 
-                CajaDialogo.Error(ex.Message);
-            }
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         private void btn_imprimir_Click(object sender, EventArgs e)
@@ -145,10 +149,18 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rptLoteRotulo report = new rptLoteRotulo(row.numero_transaccion, row.lote);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool printReport = new ReportPrintTool(report);
-                printReport.ShowPreview();   
+
+                //rptLoteRotulo report = new rptLoteRotulo(row.numero_transaccion, row.lote);
+                //report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                //ReportPrintTool printReport = new ReportPrintTool(report);
+                //printReport.ShowPreview();
+
+                ReportPrintTool tool;
+
+                tool = new ReportPrintTool(new rptLoteRotulo(row.numero_transaccion, row.lote));
+                tool.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                (tool.Report as XtraReport).Tag = tool;
+                tool.ShowPreview();
             }
             catch (Exception ex)
             {
@@ -163,7 +175,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                frmeditarLote frm = new frmeditarLote(row.id);
+                frmeditarLote frm = new frmeditarLote(row.numero_transaccion, row.lote);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     load_data();

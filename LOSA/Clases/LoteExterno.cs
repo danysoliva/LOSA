@@ -17,7 +17,7 @@ namespace LOSA.Clases
         int Unidades;
         string Lote;
         int Cantidad;
-        int id_detalle = 0;
+        //int id_detalle = 0;
         DateTime FechaProduccion;
         DateTime FechaVencimiento;
 

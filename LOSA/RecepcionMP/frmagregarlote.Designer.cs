@@ -87,14 +87,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedorName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -170,6 +170,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(55, 41);
             this.simpleButton1.TabIndex = 32;
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl2
@@ -770,6 +771,7 @@
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(55, 41);
             this.btnMP.TabIndex = 85;
+            this.btnMP.Visible = false;
             this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
             // 
             // Tg_presentacion_promedio
@@ -780,7 +782,7 @@
             this.Tg_presentacion_promedio.Properties.Appearance.Options.UseFont = true;
             this.Tg_presentacion_promedio.Properties.OffText = "Activar presentacion promedio";
             this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
-            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
+            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 26);
             this.Tg_presentacion_promedio.TabIndex = 86;
             this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
             // 
@@ -804,7 +806,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 521);
-            this.Controls.Add(this.txtpresentacionPromedio);
             this.Controls.Add(this.Tg_presentacion_promedio);
             this.Controls.Add(this.btnMP);
             this.Controls.Add(this.groupControl2);
@@ -841,6 +842,7 @@
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.txtpresentacionPromedio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmagregarlote";

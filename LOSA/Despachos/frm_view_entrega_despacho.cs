@@ -151,43 +151,44 @@ namespace LOSA.Despachos
            
             var gridView = (GridView)grd_data.FocusedView;
             var row = (ds_despachos.producto_cargaRow)gridView.GetFocusedDataRow();
-
             int contaBoleta = 0;
 
+            //try
+            //{
+
+            //    string query = @"sp_get_validar_si_boleta_salio";
+            //    SqlConnection cn = new SqlConnection(dp.ConnectionStringBascula);
+            //    cn.Open();
+            //    SqlCommand cmd = new SqlCommand(query, cn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@boleta",Convert.ToInt32(txtNumBoleta.Text));
+            //    //cmd.ExecuteNonQuery();
+            //    contaBoleta = Convert.ToInt32(cmd.ExecuteScalar());
+            //    cn.Close();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
+
+            //if (contaBoleta == 0) //Si es 0! ya existe un registro de salida de este vehiculo y furgon.
+            //{
+            //    CajaDialogo.Error("No puede eliminar el despacho por que ya existe un Registro de Salida del Vehículo!");
+            //    return;
+            //}
+
             try
             {
-
-                string query = @"sp_get_validar_si_boleta_salio";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringBascula);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@boleta",Convert.ToInt32(txtNumBoleta.Text));
-                //cmd.ExecuteNonQuery();
-                contaBoleta = Convert.ToInt32(cmd.ExecuteScalar());
-                cn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
-
-            if (contaBoleta == 0) //Si es 0! ya existe un registro de salida de este vehiculo y furgon.
-            {
-                CajaDialogo.Error("No puede eliminar el despacho por que ya existe un Registro de Salida del Vehículo!");
-                return;
-            }
-
-            try
-            {
-                string query = @"sp_deshabilitar_row_of_despachos_tarimaV2";
+                string query = @"sp_deshabilitar_row_of_despachos_tarimaV3";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", row.id);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                cmd.Parameters.AddWithValue("@CantidadUd", row.cantidad);
+                cmd.Parameters.AddWithValue("@pesoKg", row.peso);
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 load_filas();
@@ -245,8 +246,8 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
 
-                
             }
         }
 
@@ -285,7 +286,7 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
 
             }
         }
@@ -309,11 +310,34 @@ namespace LOSA.Despachos
         {
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsReporte.detalleRow)gridView.GetFocusedDataRow();
-            Despachos.Reportes.frm_plan cp = new Despachos.Reportes.frm_plan(dp.ValidateNumberInt32(txtNumDoc.Text), this.UsuarioLogeado);
+            Despachos.Reportes.frm_plan cp = new Despachos.Reportes.frm_plan(Pid, this.UsuarioLogeado);
 
             cp.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(cp);
             printReport.ShowPreview();
+        }
+
+        private void btnImpresion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Pid > 0)
+                {
+                    rpt_despacho frm = new rpt_despacho(Pid);
+                    frm.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(frm);
+                    printReport.ShowPreview();
+                }
+                else
+                {
+                    CajaDialogo.Error("Error al imprimir, Contacte al Dpto de IT");
+                }
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
         }
     }
 }

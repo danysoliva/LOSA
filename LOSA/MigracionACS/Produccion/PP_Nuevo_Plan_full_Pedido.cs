@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.MigracionACS.DataSetx;
 using LOSA.Clases;
+using System.Collections;
 
 namespace LOSA.MigracionACS.Produccion
 {
@@ -36,23 +37,75 @@ namespace LOSA.MigracionACS.Produccion
         int Id_Pedido;
         int id_gestion_lote;
         int lote_fp = 0;
-        //public string ActiveUserCodeP
-        //{
-        //    get { return ActiveUserCode; }
-        //    set { ActiveUserCode = value; }
-        //}
 
-        //public string ActiveUserNameP
-        //{
-        //    get { return ActiveUserName; }
-        //    set { ActiveUserName = value; }
-        //}
+        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, UserLogin pUsuarioLogeado, int pLotePT)
+        {
+            InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
+            LotePT = pLotePT;
+            btn_NewOP.Enabled = false;
+            this.FormAction = "new";
+            Id_Pedido1 = PiDPedido;
+            btn_Save.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            dp = new DataOperations();
+            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
+            nc.Open();
+            string qeri;
+            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
+            SqlCommand cmmd = new SqlCommand(qeri, nc);
+            SqlDataReader rd = cmmd.ExecuteReader();
+            if (rd.Read())
+            {
+                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
+                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
+                dt_desde.Text = dt_desde.EditValue.ToString();
+                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
+            }
 
-        //public string ActiveUserTypeP
-        //{
-        //    get { return ActiveUserType; }
-        //    set { ActiveUserType = value; }
-        //}
+            chk_AutoGen.Checked = false;
+            chk_AutoGen.Checked = true;
+            llenado_mp_all_Reck();
+        }
+        int Especie;
+        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
+        {
+            InitializeComponent();
+            LotePT = pLotePt;
+            UsuarioLogeado = pUsuarioLogeado;
+            load_unidades_por_tarima();
+            load_presentacion();
+            TypeTrans = 2;
+            btn_NewOP.Enabled = false;
+            this.FormAction = "new";
+            Id_Pedido1 = PiDPedido;
+            IdPedidoDetalle = pIdPedidoDetalle;
+            dp = new DataOperations();
+            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
+            nc.Open();
+            string qeri;
+            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
+            SqlCommand cmmd = new SqlCommand(qeri, nc);
+            SqlDataReader rd = cmmd.ExecuteReader();
+            if (rd.Read())
+            {
+                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
+                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
+                dt_desde.Text = dt_desde.EditValue.ToString();
+                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
+            }
+
+            chk_AutoGen.Checked = false;
+            chk_AutoGen.Checked = true;
+            Especie = PEspecie;
+        }
+
+        public class DatoOrdenFabricacion
+        {
+            public int idOrdenACS;
+            public int CantBatch;
+            public int LotePT;
+            public string CodigoOrden;
+        }
 
         public int Id_Pedido1
         {
@@ -353,7 +406,7 @@ namespace LOSA.MigracionACS.Produccion
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_4";
+                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_5";
                         id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
                         int PesajeidManual = InsertOrdenPesajeManual(id_inserted, lote_fp, Convert.ToInt32(row["batch"]));
@@ -421,106 +474,275 @@ namespace LOSA.MigracionACS.Produccion
                     }
 
                 }
-                lote_fp = lote_fp == 0 ? fmop.pp_order_get_next_lot_number() : lote_fp;
-                foreach (DataRow row in dSProductos.OrdenCamaron.Rows)
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(new SqlParameter("@id_plan", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@pp_code", SqlDbType.VarChar, 10));
-                    cmd.Parameters.Add(new SqlParameter("@id_pt", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@id_formula", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@form_wincc", SqlDbType.VarChar, 18));
-                    cmd.Parameters.Add(new SqlParameter("@kg_production", SqlDbType.Decimal));
-                    cmd.Parameters.Add(new SqlParameter("@bag_production", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@lot_number", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@line_id", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@date_prouction", SqlDbType.Date));
-                    cmd.Parameters.Add(new SqlParameter("@priority", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@status", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@created_by", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@last_mod_by", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@kg_reached", SqlDbType.Decimal));
-                    cmd.Parameters.Add(new SqlParameter("@kg_difference", SqlDbType.Decimal));
-                    cmd.Parameters.Add(new SqlParameter("@cant_paradas", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@id_Pedido_Detalle", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@cant_tm", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@unidades", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@id_presentacion", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@ud_x_tarima", SqlDbType.Int));
-                    cmd.Parameters.Add(new SqlParameter("@id_lotereservado", SqlDbType.Int));
-                    string save = Recuperar_id_For(row["formula_code"].ToString()).ToString();
-                    cmd.Parameters["@id_plan"].Value = idPlan;
-                    cmd.Parameters["@pp_code"].Value = Get_Prod_Orden_Code();
-                    cmd.Parameters["@id_pt"].Value = Recuperar_Id_pt(row["Codigo"].ToString());
-                    cmd.Parameters["@id_formula"].Value = Recuperar_id_For(row["formula_code"].ToString());
-                    cmd.Parameters["@form_wincc"].Value = (Get_Formula_Wincc_Code(save).Substring(0, 11) + Get_Prod_Orden_Code().Substring(3, 7));
-                    cmd.Parameters["@kg_production"].Value = Convert.ToDouble((Convert.ToDouble(row["Peso_Pedido"]) * 1000));
-                    cmd.Parameters["@bag_production"].Value = unidades;
-                    cmd.Parameters["@lot_number"].Value = lote_fp;
-                    cmd.Parameters["@line_id"].Value = Convert.ToInt32(row["line_id"].ToString());
-                    cmd.Parameters["@date_prouction"].Value = Convert.ToDateTime(string.Format("{0:yyyy-MM-dd HH:mm:ss}", row["fecha_de_trabajo"]));
-                    cmd.Parameters["@priority"].Value = row["Prioridad"];
-                    cmd.Parameters["@status"].Value = 40;
-                    cmd.Parameters["@created_by"].Value = this.UsuarioLogeado.UserId;
-                    cmd.Parameters["@last_mod_by"].Value = this.UsuarioLogeado.UserId; //int.Parse(ActiveUserCode);
-                    cmd.Parameters["@kg_reached"].Value = 0.00;
-                    cmd.Parameters["@kg_difference"].Value = 0.00;
-                    cmd.Parameters["@cant_paradas"].Value = row["batch"];
-                    cmd.Parameters["@id_Pedido_Detalle"].Value = row["id_Pedido_Detalle"];
-                    cmd.Parameters["@cant_tm"].Value = txtcant_tm.Text;
-                    cmd.Parameters["@unidades"].Value = txt_Sacos.Text;
-                    cmd.Parameters["@id_presentacion"].Value = grd_presentacion.EditValue;  //
-                    cmd.Parameters["@ud_x_tarima"].Value = unidades;
-                    cmd.Parameters["@id_lotereservado"].Value = id_gestion_lote;
-                    int id_inserted = 0;
+                lote_fp = lote_fp == 0 ? fmop.pp_order_get_next_lot_number() : lote_fp;
+
+
+
+                //SqlCommand cmd = new SqlCommand();
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                //cmd.Parameters.Add(new SqlParameter("@id_plan", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@pp_code", SqlDbType.VarChar, 10));
+                //cmd.Parameters.Add(new SqlParameter("@id_pt", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@id_formula", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@form_wincc", SqlDbType.VarChar, 18));
+                //cmd.Parameters.Add(new SqlParameter("@kg_production", SqlDbType.Decimal));
+                //cmd.Parameters.Add(new SqlParameter("@bag_production", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@lot_number", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@line_id", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@date_prouction", SqlDbType.Date));
+                //cmd.Parameters.Add(new SqlParameter("@priority", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@status", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@created_by", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@last_mod_by", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@kg_reached", SqlDbType.Decimal));
+                //cmd.Parameters.Add(new SqlParameter("@kg_difference", SqlDbType.Decimal));
+                //cmd.Parameters.Add(new SqlParameter("@cant_paradas", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@id_Pedido_Detalle", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@cant_tm", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@unidades", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@id_presentacion", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@ud_x_tarima", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@id_lotereservado", SqlDbType.Int));
+
+
+                //try
+                //{
+                //    SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                //    cn.Open();
+                //    cmd.Connection = cn;
+                //    cmd.CommandType = CommandType.StoredProcedure;
+                //    cmd.CommandText = @"PP_Plan_Ordenes_Insertv_4";
+                //    id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
+                //    cn.Close();
+
+                //    int PesajeidManual = InsertOrdenPesajeManual(id_inserted,lote_fp,Convert.ToInt32(row["batch"]));
+                //    InsertOrdenPesajeManualDetalle(PesajeidManual, id_inserted);
+
+                //}
+                //catch (Exception ex)
+                //{
+
+                //    CajaDialogo.Error(ex.Message);
+                //}
+                ArrayList ListaInserted = new ArrayList();
+
+                using (SqlConnection connection = new SqlConnection(dp.ConnectionStringCostos))
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+                    SqlTransaction transaction;
+
+                    // Start a local transaction.
+                    transaction = connection.BeginTransaction("SampleTransaction");
+
+                    // Must assign both transaction object and connection
+                    // to Command object for a pending local transaction
+                    command.Connection = connection;
+                    command.Transaction = transaction;
+
                     try
                     {
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
-                        cn.Open();
-                        cmd.Connection = cn;
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_4";
-                        id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
-                        cn.Close();
-                        int PesajeidManual = InsertOrdenPesajeManual(id_inserted,lote_fp,Convert.ToInt32(row["batch"]));
-                        InsertOrdenPesajeManualDetalle(PesajeidManual, id_inserted);
+                        foreach (DataRow row in dSProductos.OrdenCamaron.Rows)
+                        {
+                            //string save = Recuperar_id_For(row["formula_code"].ToString()).ToString();
+                            //command.CommandText = "PP_Plan_Ordenes_Insertv_4";
+                            //command.CommandType = CommandType.StoredProcedure;
+                            //command.Parameters.Clear();
+
+                            ProductoTerminado prod1 = new ProductoTerminado(dp.ConnectionStringCostos);
+                            if (prod1.Recuperar_producto(row["Codigo"].ToString() ))
+                            {
+                                //int status = fmop.local_formula_get_status(Recuperar_id_For(row["formula_code"].ToString()));
+                                int id_formulaLocal = Convert.ToInt32(Recuperar_id_For(row["formula_code"].ToString()));
+                                command.CommandText = "sp_get_estado_formula_from_id";
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.Clear();
+                                command.Parameters.AddWithValue("@id", id_formulaLocal);
+                                int EstadoFormulaInt = Convert.ToInt32(command.ExecuteScalar());
+                                int CantBatch = dp.ValidateNumberInt32(row["batch"]);
+                                
+                                string CodigoOrden = Get_Prod_Orden_Code();
+
+                                command.CommandText = "[PP_Plan_Ordenes_Insertv_5]";
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.Clear();
+
+                                command.Parameters.AddWithValue("@id_plan", idPlan);
+                                command.Parameters.AddWithValue("@pp_code", CodigoOrden);// Get_Prod_Orden_Code());
+                                //command.Parameters.AddWithValue("@id_pt", Recuperar_Id_pt(row["Codigo"].ToString()));
+                                command.Parameters.AddWithValue("@id_pt", prod1.id);
+                                //command.Parameters.AddWithValue("@id_formula", Recuperar_id_For(row["formula_code"].ToString())); 
+                                command.Parameters.AddWithValue("@id_formula", id_formulaLocal);
+                                command.Parameters.AddWithValue("@form_wincc", (Get_Formula_Wincc_Code(id_formulaLocal.ToString()).Substring(0, 11) + /*Get_Prod_Orden_Code()*/CodigoOrden.Substring(3, 7)));
+                                command.Parameters.AddWithValue("@kg_production", Convert.ToDouble((Convert.ToDouble(row["Peso_Pedido"]) * 1000)));
+                                command.Parameters.AddWithValue("@bag_production", unidades);
+                                command.Parameters.AddWithValue("@lot_number", lote_fp);
+                                command.Parameters.AddWithValue("@line_id", Convert.ToInt32(row["line_id"].ToString()));
+                                command.Parameters.AddWithValue("@date_prouction", Convert.ToDateTime(string.Format("{0:yyyy-MM-dd HH:mm:ss}", row["fecha_de_trabajo"])));
+                                command.Parameters.AddWithValue("@priority", row["Prioridad"]);
+                                command.Parameters.AddWithValue("@status", 40);
+                                command.Parameters.AddWithValue("@created_by", this.UsuarioLogeado.UserId);
+                                command.Parameters.AddWithValue("@last_mod_by", this.UsuarioLogeado.UserId); //int.Parse(ActiveUserCode));
+                                command.Parameters.AddWithValue("@kg_reached", 0.00);
+                                command.Parameters.AddWithValue("@kg_difference", 0.00);
+                                command.Parameters.AddWithValue("@cant_paradas", CantBatch);
+                                command.Parameters.AddWithValue("@id_Pedido_Detalle", row["id_Pedido_Detalle"]);
+                                command.Parameters.AddWithValue("@cant_tm", txtcant_tm.Text);
+                                command.Parameters.AddWithValue("@unidades", txt_Sacos.Text);
+                                command.Parameters.AddWithValue("@id_presentacion", grd_presentacion.EditValue);  //
+                                command.Parameters.AddWithValue("@ud_x_tarima", unidades);
+                                command.Parameters.AddWithValue("@id_lotereservado", id_gestion_lote);
+                                int id_inserted = 0;
+                                id_inserted = Convert.ToInt32(command.ExecuteScalar());
+                                if (id_inserted > 0)
+                                {
+                                    DatoOrdenFabricacion Dato1 = new DatoOrdenFabricacion();
+                                    Dato1.idOrdenACS = id_inserted;
+                                    Dato1.CantBatch = CantBatch;
+                                    Dato1.LotePT = lote_fp;
+                                    Dato1.CodigoOrden = CodigoOrden;
+                                    ListaInserted.Add(Dato1);
+                                }
+
+                                //command.CommandText = "sp_create_traslado_auto_graneles_gestion_lotes";
+                                //command.Parameters.Clear();
 
 
+
+
+                                if (EstadoFormulaInt < 50)
+                                {
+                                    //fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
+                                    //Actualizamos el estado de la formula padre y de la formula de nucleo de un solo
+                                    command.CommandText = "FM_FL_Change_Status_v2";
+                                    command.CommandType = CommandType.StoredProcedure;
+                                    command.Parameters.Clear();
+                                    command.Parameters.AddWithValue("@id_formula", id_formulaLocal);
+                                    command.Parameters.AddWithValue("@user_change", this.UsuarioLogeado.Id);
+                                    command.Parameters.AddWithValue("@status", 50);
+                                    command.ExecuteNonQuery();
+
+                                    ////int nucleo = int.Parse(dp.ACS_GetSelectData(string.Format(@"SELECT COALESCE([nucleo], 0 ) AS nucleo FROM [dbo].[FML_Ingredientes_v2] WHERE [formula] = {0} AND [tipo] = 'NC' ", save)).Tables[0].Rows[0][0].ToString());
+                                    //command.CommandText = "sp_get_estado_formula_tipo_nucleo_from_id_formula_padre";
+                                    //command.CommandType = CommandType.StoredProcedure;
+                                    //command.Parameters.Clear();
+                                    //command.Parameters.AddWithValue("@id", id_formulaLocal);
+                                    //int idFormula_Nucleo = Convert.ToInt32(command.ExecuteScalar());
+
+                                    //if (idFormula_Nucleo > 0)
+                                    //{
+                                    //    command.CommandText = "sp_get_estado_formula_from_id";
+                                    //    command.CommandType = CommandType.StoredProcedure;
+                                    //    command.Parameters.Clear();
+                                    //    command.Parameters.AddWithValue("@id", idFormula_Nucleo);
+                                    //    int idEstadoNucleo = Convert.ToInt32(command.ExecuteScalar());
+
+                                    //    //EstadoFormulaInt = fmop.local_formula_get_status(nucleo);
+
+                                    //    if (idEstadoNucleo < 50)
+                                    //    {
+                                    //        //fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
+                                    //        fmop.local_formula_change_status(nucleo, this.UsuarioLogeado.UserId, 50);
+                                    //    }
+                                    //}
+                                }
+                            }
+
+                            
+
+
+                        }//End foreach
+                        transaction.Commit();
                     }
                     catch (Exception ex)
                     {
-
-                        CajaDialogo.Error(ex.Message);
+                        // Attempt to roll back the transaction.
+                        try
+                        {
+                            transaction.Rollback();
+                            CajaDialogo.Error(ex.Message);
+                        }
+                        catch (Exception ex2)
+                        {
+                            CajaDialogo.Error(ex2.Message);
+                        }
                     }
 
-                    #region Validate & Change Formula Status
 
-                    int status = fmop.local_formula_get_status(Recuperar_id_For(row["formula_code"].ToString()));
 
-                    if (status < 50)
+                }//Fin de Transaccion ACS DB
+
+
+                if (ListaInserted.Count > 0)
+                {
+                    using (SqlConnection connection = new SqlConnection(dp.ConnectionStringAPMS))
                     {
-                        //fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
-                        fmop.local_formula_change_status(Convert.ToInt32(save), this.UsuarioLogeado.UserId, 50);
-                        int nucleo = int.Parse(dp.ACS_GetSelectData(string.Format(@"SELECT COALESCE([nucleo], 0 ) AS nucleo FROM [dbo].[FML_Ingredientes_v2] WHERE [formula] = {0} AND [tipo] = 'NC' ", save)).Tables[0].Rows[0][0].ToString());
+                        connection.Open();
 
-                        if (nucleo > 0)
+                        SqlCommand command = connection.CreateCommand();
+                        SqlTransaction transaction;
+
+                        // Start a local transaction.
+                        transaction = connection.BeginTransaction("SampleTransaction");
+
+                        // Must assign both transaction object and connection
+                        // to Command object for a pending local transaction
+                        command.Connection = connection;
+                        command.Transaction = transaction;
+
+                        try
                         {
-                            status = fmop.local_formula_get_status(nucleo);
-
-                            if (status < 50)
+                            foreach (DatoOrdenFabricacion vDato in ListaInserted)
                             {
-                                //fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
-                                fmop.local_formula_change_status(nucleo, this.UsuarioLogeado.UserId, 50);
+                                //int PesajeidManual = InsertOrdenPesajeManual(vid_inserted, lote_fp, Convert.ToInt32(row["batch"]));
+                                command.CommandText = "sp_insert_orden_produccion_pesaje_manual_v2";
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.AddWithValue("@order_id", vDato.idOrdenACS);
+                                command.Parameters.AddWithValue("@order_code", vDato.CodigoOrden);
+                                command.Parameters.AddWithValue("@lot", vDato.LotePT);
+                                command.Parameters.AddWithValue("@cant_batch", vDato.CantBatch);
+                                int IdOrderManual = Convert.ToInt32(command.ExecuteScalar());
+
+                                //InsertOrdenPesajeManualDetalle(PesajeidManual, vid_inserted);
+                                command.CommandText = "sp_set_insert_detalle_orden_pesaje_manual_v2";
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.Clear();
+                                command.Parameters.AddWithValue("@id_orden_encabezado", IdOrderManual);
+                                command.Parameters.AddWithValue("@order_id", vDato.idOrdenACS);
+                                command.ExecuteNonQuery();
+                            }
+
+                            // Attempt to commit the transaction.
+                            transaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            // Attempt to roll back the transaction.
+                            try
+                            {
+                                transaction.Rollback();
+                                CajaDialogo.Error("Se generaron las Ordenes de Fabricacion, requisiciones y otros datos necesarios de ALOSY." +
+                                                  "\nPero No se pudo generar las Ordenes de Pesaje Manual para Micro Ingredientes! Contacte al Depto de IT." +
+                                                  "\nSP 1 Error: sp_insert_orden_produccion_pesaje_manual_v2" +
+                                                  "\nSP 1 Error: sp_set_insert_detalle_orden_pesaje_manual_v2" +
+                                                  "\nMensaje error Source: " + ex.Message);
+                            }
+                            catch (Exception ex2)
+                            {
+                                CajaDialogo.Error(ex2.Message);
                             }
                         }
                     }
 
-                    
-                    #endregion
-                }
 
+
+
+                    
+                }
+                
                 Try_Drop_TempTables(selectedFormula.ToString(), "Drop");
                 MessageBox.Show("Plan de Producción Generado sin Problemas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
@@ -649,66 +871,7 @@ namespace LOSA.MigracionACS.Produccion
             return Convert.ToInt32(Cmd.ExecuteScalar());
             
         }
-        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, UserLogin pUsuarioLogeado, int pLotePT)
-        {
-            InitializeComponent();
-            UsuarioLogeado = pUsuarioLogeado;
-            LotePT = pLotePT;
-            btn_NewOP.Enabled = false;
-            this.FormAction = "new";
-            Id_Pedido1 = PiDPedido;
-            btn_Save.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            dp = new DataOperations();
-            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
-            nc.Open();
-            string qeri;
-            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
-            SqlCommand cmmd = new SqlCommand(qeri, nc);
-            SqlDataReader rd = cmmd.ExecuteReader();
-            if (rd.Read())
-            {
-                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
-                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
-                dt_desde.Text = dt_desde.EditValue.ToString();
-                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
-            }
-
-            chk_AutoGen.Checked = false;
-            chk_AutoGen.Checked = true;
-            llenado_mp_all_Reck();
-        }
-        int Especie;
-        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
-        {
-            InitializeComponent();
-            LotePT = pLotePt;
-            UsuarioLogeado = pUsuarioLogeado;
-            load_unidades_por_tarima();
-            load_presentacion();
-            TypeTrans = 2;
-            btn_NewOP.Enabled = false;
-            this.FormAction = "new";
-            Id_Pedido1 = PiDPedido;
-            IdPedidoDetalle = pIdPedidoDetalle;
-            dp = new DataOperations();
-            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
-            nc.Open();
-            string qeri;
-            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
-            SqlCommand cmmd = new SqlCommand(qeri, nc);
-            SqlDataReader rd = cmmd.ExecuteReader();
-            if (rd.Read())
-            {
-                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
-                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
-                dt_desde.Text = dt_desde.EditValue.ToString();
-                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
-            }
-
-            chk_AutoGen.Checked = false;
-            chk_AutoGen.Checked = true;
-            Especie = PEspecie;
-        }
+       
         public void load_presentacion()
         {
             string query = @"sp_load_pt_bags";
@@ -1136,6 +1299,7 @@ namespace LOSA.MigracionACS.Produccion
                 bool OP_Generadas = false;
                 foreach (DSProductos.OrdenCamaronRow row in dSProductos.OrdenCamaron.Rows)
                 {
+
                     if (!string.IsNullOrEmpty(row.code_pp))
                     {
                         OP_Generadas = true;
@@ -1189,8 +1353,61 @@ namespace LOSA.MigracionACS.Produccion
                 MessageBox.Show("Debes definir una descripción al plan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
         private void btn_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (grdv_reqMP_Total.RowCount == 0)
+            {
+                CajaDialogo.Error("Debe Seleccionar la Presenteaciacion!");
+                return;
+            }
+            else
+            {
+                bool InventrioDisponible = false;
+                decimal Inventario_Bodega = 0;
+                //Vamos a validar existencia de Granel en Bodegas
+                foreach (DSProductos.MateriaPrimaRow row in dSProductos.MateriaPrima.Rows)
+                {
+                    //Trigo // H.Soya // H.SoyaN // H.SoyaR
+                    if (row.id_mp == 12 || row.id_mp == 14 || row.id_mp == 1062 || row.id_mp == 1063)
+                    {
+                        try
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_get_inve_extistencia_granel", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_mp", row.id_mp);
+                            cmd.Parameters.AddWithValue("@cantidad_solicitada", row.pesokg);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                InventrioDisponible = dr.GetBoolean(0);
+                                Inventario_Bodega = dr.GetDecimal(1);
+                                dr.Close();
+                            }
+                            conn.Close();
+
+                            if (InventrioDisponible == false)
+                            {
+                                MateriaPrima mp = new MateriaPrima();
+                                mp.RecuperarRegistroFromID_RM(row.id_mp);
+                                CajaDialogo.Error("Materia Prima Insuficiente en Bodega \nNo se puede crear la Orden: " + mp.CodeMP_SAP +"-"+mp.NameComercial+"" +
+                                                "\nCantidad Solicitada: "+ String.Format("{0:0,0.00}", row.pesokg) +
+                                                "\nExistencia en Bodega: " + String.Format("{0:0,0.00}", Inventario_Bodega) + 
+                                                "\nContacte al Dpto. de Logistica.");
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
+                    }
+                }
+            }
+
             int ParPlan;
             if (!tgg_reservarlote.IsOn)
             {
@@ -1598,6 +1815,15 @@ namespace LOSA.MigracionACS.Produccion
                 }
 
                 txtcant_tm.Text = cambio.ToString();
+            }
+
+            if (TypeTrans == 1)
+            {
+                llenado_mp_all_Reck();
+            }
+            else
+            {
+                llenado_mp_v2();
             }
         }
 

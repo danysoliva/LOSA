@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmDetalleOrdenesMicros));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -50,7 +51,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcDetalle = new DevExpress.XtraGrid.GridControl();
-            this.detalleOrdenesMicroBindingSource = new System.Windows.Forms.BindingSource();
+            this.detalleOrdenesMicroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.gvDetalle = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaterial = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,6 +61,7 @@
             this.colBatchCompletados = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colkg_real = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.lblTitulo = new DevExpress.XtraEditors.LabelControl();
@@ -77,11 +79,11 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEliminarI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdEliminarI = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnStartPesaje = new DevExpress.XtraEditors.SimpleButton();
             this.cmdConfigurarDetalle = new DevExpress.XtraEditors.SimpleButton();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleOrdenesMicroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -142,9 +144,11 @@
             this.colBatchPlan,
             this.colTotal,
             this.colBatchCompletados,
-            this.colEliminar});
+            this.colEliminar,
+            this.colkg_real});
             this.gvDetalle.GridControl = this.gcDetalle;
             this.gvDetalle.Name = "gvDetalle";
+            this.gvDetalle.OptionsView.ShowAutoFilterRow = true;
             this.gvDetalle.OptionsView.ShowFooter = true;
             this.gvDetalle.OptionsView.ShowGroupPanel = false;
             // 
@@ -156,7 +160,7 @@
             this.colMaterial.OptionsFilter.AllowFilter = false;
             this.colMaterial.Visible = true;
             this.colMaterial.VisibleIndex = 0;
-            this.colMaterial.Width = 191;
+            this.colMaterial.Width = 206;
             // 
             // colPesoporBatch
             // 
@@ -170,7 +174,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Peso por Batch", "SUM={0:0.00}")});
             this.colPesoporBatch.Visible = true;
             this.colPesoporBatch.VisibleIndex = 1;
-            this.colPesoporBatch.Width = 128;
+            this.colPesoporBatch.Width = 144;
             // 
             // colBatchPlan
             // 
@@ -182,10 +186,11 @@
             this.colBatchPlan.OptionsFilter.AllowFilter = false;
             this.colBatchPlan.Visible = true;
             this.colBatchPlan.VisibleIndex = 2;
-            this.colBatchPlan.Width = 104;
+            this.colBatchPlan.Width = 126;
             // 
             // colTotal
             // 
+            this.colTotal.Caption = "Total Plan";
             this.colTotal.DisplayFormat.FormatString = "n2";
             this.colTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotal.FieldName = "Total";
@@ -196,7 +201,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total", "SUM={0:0.00}")});
             this.colTotal.Visible = true;
             this.colTotal.VisibleIndex = 3;
-            this.colTotal.Width = 130;
+            this.colTotal.Width = 127;
             // 
             // colBatchCompletados
             // 
@@ -204,8 +209,6 @@
             this.colBatchCompletados.Name = "colBatchCompletados";
             this.colBatchCompletados.OptionsColumn.AllowEdit = false;
             this.colBatchCompletados.OptionsFilter.AllowFilter = false;
-            this.colBatchCompletados.Visible = true;
-            this.colBatchCompletados.VisibleIndex = 4;
             this.colBatchCompletados.Width = 175;
             // 
             // colEliminar
@@ -215,7 +218,7 @@
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
             this.colEliminar.VisibleIndex = 5;
-            this.colEliminar.Width = 118;
+            this.colEliminar.Width = 127;
             // 
             // cmdEliminar
             // 
@@ -226,6 +229,18 @@
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEliminar_ButtonClick);
+            // 
+            // colkg_real
+            // 
+            this.colkg_real.Caption = "Total Real";
+            this.colkg_real.DisplayFormat.FormatString = "n2";
+            this.colkg_real.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colkg_real.FieldName = "kg_real";
+            this.colkg_real.Name = "colkg_real";
+            this.colkg_real.OptionsColumn.AllowEdit = false;
+            this.colkg_real.Visible = true;
+            this.colkg_real.VisibleIndex = 4;
+            this.colkg_real.Width = 116;
             // 
             // repositoryItemSpinEdit1
             // 
@@ -352,6 +367,7 @@
             this.colid});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
@@ -363,6 +379,7 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 201;
             // 
             // gridColumn2
             // 
@@ -376,6 +393,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Peso por Batch", "SUM={0:0.00}")});
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 149;
             // 
             // gridColumn3
             // 
@@ -387,6 +405,7 @@
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 128;
             // 
             // gridColumn4
             // 
@@ -400,6 +419,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total", "SUM={0:0.00}")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 115;
             // 
             // gridColumn5
             // 
@@ -409,6 +429,7 @@
             this.gridColumn5.OptionsFilter.AllowFilter = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 155;
             // 
             // colEliminarI
             // 
@@ -417,7 +438,7 @@
             this.colEliminarI.Name = "colEliminarI";
             this.colEliminarI.Visible = true;
             this.colEliminarI.VisibleIndex = 5;
-            this.colEliminarI.Width = 93;
+            this.colEliminarI.Width = 98;
             // 
             // cmdEliminarI
             // 
@@ -428,6 +449,12 @@
             this.cmdEliminarI.Name = "cmdEliminarI";
             this.cmdEliminarI.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdEliminarI.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEliminarI_ButtonClick);
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
             // 
             // repositoryItemSpinEdit2
             // 
@@ -471,12 +498,6 @@
             this.cmdConfigurarDetalle.Size = new System.Drawing.Size(75, 55);
             this.cmdConfigurarDetalle.TabIndex = 6;
             this.cmdConfigurarDetalle.Click += new System.EventHandler(this.cmdConfigurarDetalle_Click);
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            this.colid.OptionsColumn.AllowEdit = false;
             // 
             // xfrmDetalleOrdenesMicros
             // 
@@ -550,5 +571,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEliminarI;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEliminarI;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_real;
     }
 }

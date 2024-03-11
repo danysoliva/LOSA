@@ -30,16 +30,16 @@ namespace LOSA.Nir
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_cargar_lecturas));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.btnDescargarPlantilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnupdate = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsNir = new LOSA.Nir.dsNir();
+            this.dsNIR_PRD1 = new LOSA.Nir.dsNIR_PRD();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_h = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +62,7 @@ namespace LOSA.Nir
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtcomentario = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNIR_PRD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarLectura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentario.Properties)).BeginInit();
@@ -77,9 +77,9 @@ namespace LOSA.Nir
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(448, 8);
+            this.cmdHome.Location = new System.Drawing.Point(978, 12);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 54);
+            this.cmdHome.Size = new System.Drawing.Size(142, 41);
             this.cmdHome.TabIndex = 8;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -91,7 +91,7 @@ namespace LOSA.Nir
             this.btnDescargarPlantilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDescargarPlantilla.ImageOptions.Image")));
             this.btnDescargarPlantilla.Location = new System.Drawing.Point(12, 75);
             this.btnDescargarPlantilla.Name = "btnDescargarPlantilla";
-            this.btnDescargarPlantilla.Size = new System.Drawing.Size(177, 52);
+            this.btnDescargarPlantilla.Size = new System.Drawing.Size(177, 41);
             this.btnDescargarPlantilla.TabIndex = 9;
             this.btnDescargarPlantilla.Text = "Descargar Plantilla";
             this.btnDescargarPlantilla.Click += new System.EventHandler(this.btnDescargarPlantilla_Click);
@@ -103,7 +103,7 @@ namespace LOSA.Nir
             this.btnupdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnupdate.ImageOptions.Image")));
             this.btnupdate.Location = new System.Drawing.Point(195, 75);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(177, 52);
+            this.btnupdate.Size = new System.Drawing.Size(142, 41);
             this.btnupdate.TabIndex = 10;
             this.btnupdate.Text = "Subir lecturas";
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
@@ -114,21 +114,21 @@ namespace LOSA.Nir
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "Nir_lecturas";
-            this.grd_data.DataSource = this.dsNir;
+            this.grd_data.DataSource = this.dsNIR_PRD1;
             this.grd_data.Location = new System.Drawing.Point(0, 143);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEliminarLectura});
-            this.grd_data.Size = new System.Drawing.Size(653, 308);
+            this.grd_data.Size = new System.Drawing.Size(1120, 417);
             this.grd_data.TabIndex = 11;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // dsNir
+            // dsNIR_PRD1
             // 
-            this.dsNir.DataSetName = "dsNir";
-            this.dsNir.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsNIR_PRD1.DataSetName = "dsNIR_PRD";
+            this.dsNIR_PRD1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -170,9 +170,12 @@ namespace LOSA.Nir
             this.colenable,
             this.col});
             this.grdv_data.GridControl = this.grd_data;
+            this.grdv_data.LevelIndent = 0;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.PreviewIndent = 0;
             // 
             // colid
             // 
@@ -308,9 +311,9 @@ namespace LOSA.Nir
             // btnEliminarLectura
             // 
             this.btnEliminarLectura.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnEliminarLectura.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminarLectura.Name = "btnEliminarLectura";
             this.btnEliminarLectura.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminarLectura.Click += new System.EventHandler(this.btnEliminarLectura_Click);
@@ -321,7 +324,7 @@ namespace LOSA.Nir
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 457);
+            this.labelControl1.Location = new System.Drawing.Point(12, 597);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(94, 21);
             this.labelControl1.TabIndex = 12;
@@ -332,9 +335,9 @@ namespace LOSA.Nir
             this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(378, 75);
+            this.btnSave.Location = new System.Drawing.Point(343, 75);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(177, 52);
+            this.btnSave.Size = new System.Drawing.Size(142, 41);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Guardar";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -343,19 +346,19 @@ namespace LOSA.Nir
             // 
             this.txtcomentario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtcomentario.Location = new System.Drawing.Point(63, 484);
+            this.txtcomentario.Location = new System.Drawing.Point(112, 595);
             this.txtcomentario.Name = "txtcomentario";
             this.txtcomentario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcomentario.Properties.Appearance.Options.UseFont = true;
             this.txtcomentario.Properties.MaxLength = 350;
-            this.txtcomentario.Size = new System.Drawing.Size(546, 101);
+            this.txtcomentario.Size = new System.Drawing.Size(709, 116);
             this.txtcomentario.TabIndex = 14;
             // 
             // frm_cargar_lecturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 618);
+            this.ClientSize = new System.Drawing.Size(1121, 741);
             this.Controls.Add(this.txtcomentario);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.labelControl1);
@@ -363,12 +366,10 @@ namespace LOSA.Nir
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.btnDescargarPlantilla);
             this.Controls.Add(this.cmdHome);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_cargar_lecturas";
-            this.Text = "frm_cargar_lecturas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNIR_PRD1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarLectura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentario.Properties)).EndInit();
@@ -387,7 +388,6 @@ namespace LOSA.Nir
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.MemoEdit txtcomentario;
-        private dsNir dsNir;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colid_h;
         private DevExpress.XtraGrid.Columns.GridColumn collectura;
@@ -405,5 +405,6 @@ namespace LOSA.Nir
         private DevExpress.XtraGrid.Columns.GridColumn colenable;
         private DevExpress.XtraGrid.Columns.GridColumn col;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEliminarLectura;
+        private dsNIR_PRD dsNIR_PRD1;
     }
 }

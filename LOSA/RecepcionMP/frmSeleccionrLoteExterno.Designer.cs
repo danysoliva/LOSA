@@ -51,7 +51,10 @@ namespace LOSA.RecepcionMP
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsWizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -60,6 +63,8 @@ namespace LOSA.RecepcionMP
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "verLotes";
             this.grd_data.DataSource = this.dsWizard;
             this.grd_data.Location = new System.Drawing.Point(8, 74);
@@ -67,7 +72,7 @@ namespace LOSA.RecepcionMP
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.grd_data.Size = new System.Drawing.Size(722, 406);
+            this.grd_data.Size = new System.Drawing.Size(877, 406);
             this.grd_data.TabIndex = 24;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -111,7 +116,10 @@ namespace LOSA.RecepcionMP
             this.colDescripcionBodega,
             this.colSeleccionar,
             this.colnombre_comercial,
-            this.colproveedor});
+            this.colproveedor,
+            this.colunidades,
+            this.colDocNum,
+            this.colfactura});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -140,15 +148,15 @@ namespace LOSA.RecepcionMP
             // 
             // colExistencia
             // 
-            this.colExistencia.Caption = "Existencia";
+            this.colExistencia.Caption = "Existencia Kg";
             this.colExistencia.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
             this.colExistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colExistencia.FieldName = "Existencia";
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
-            this.colExistencia.VisibleIndex = 2;
-            this.colExistencia.Width = 82;
+            this.colExistencia.VisibleIndex = 4;
+            this.colExistencia.Width = 83;
             // 
             // colfecha_vencimiento
             // 
@@ -157,8 +165,7 @@ namespace LOSA.RecepcionMP
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 3;
-            this.colfecha_vencimiento.Width = 88;
+            this.colfecha_vencimiento.VisibleIndex = 6;
             // 
             // colcode_sap
             // 
@@ -172,8 +179,8 @@ namespace LOSA.RecepcionMP
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 4;
-            this.colfecha_produccion.Width = 86;
+            this.colfecha_produccion.VisibleIndex = 7;
+            this.colfecha_produccion.Width = 77;
             // 
             // colbodega
             // 
@@ -189,7 +196,7 @@ namespace LOSA.RecepcionMP
             this.colDescripcionBodega.OptionsColumn.AllowEdit = false;
             this.colDescripcionBodega.Visible = true;
             this.colDescripcionBodega.VisibleIndex = 1;
-            this.colDescripcionBodega.Width = 216;
+            this.colDescripcionBodega.Width = 124;
             // 
             // colSeleccionar
             // 
@@ -197,7 +204,8 @@ namespace LOSA.RecepcionMP
             this.colSeleccionar.ColumnEdit = this.btnSeleccionar;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 5;
+            this.colSeleccionar.VisibleIndex = 8;
+            this.colSeleccionar.Width = 70;
             // 
             // btnSeleccionar
             // 
@@ -219,23 +227,55 @@ namespace LOSA.RecepcionMP
             this.colproveedor.FieldName = "proveedor";
             this.colproveedor.Name = "colproveedor";
             // 
+            // colunidades
+            // 
+            this.colunidades.Caption = "Exist. Unidades";
+            this.colunidades.DisplayFormat.FormatString = "n0";
+            this.colunidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colunidades.FieldName = "unidades";
+            this.colunidades.Name = "colunidades";
+            this.colunidades.OptionsColumn.AllowEdit = false;
+            this.colunidades.Visible = true;
+            this.colunidades.VisibleIndex = 5;
+            this.colunidades.Width = 88;
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(565, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(724, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(153, 49);
             this.simpleButton1.TabIndex = 25;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // colDocNum
+            // 
+            this.colDocNum.Caption = "OC Sap";
+            this.colDocNum.FieldName = "DocNum";
+            this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.AllowEdit = false;
+            this.colDocNum.Visible = true;
+            this.colDocNum.VisibleIndex = 2;
+            this.colDocNum.Width = 74;
+            // 
+            // colfactura
+            // 
+            this.colfactura.Caption = "Factura";
+            this.colfactura.FieldName = "factura";
+            this.colfactura.Name = "colfactura";
+            this.colfactura.OptionsColumn.AllowEdit = false;
+            this.colfactura.Visible = true;
+            this.colfactura.VisibleIndex = 3;
+            this.colfactura.Width = 144;
+            // 
             // frmSeleccionrLoteExterno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 481);
+            this.ClientSize = new System.Drawing.Size(888, 481);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.grd_data);
             this.Name = "frmSeleccionrLoteExterno";
@@ -268,5 +308,8 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
         private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
         private dsWizard dsWizard;
+        private DevExpress.XtraGrid.Columns.GridColumn colunidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colDocNum;
+        private DevExpress.XtraGrid.Columns.GridColumn colfactura;
     }
 }

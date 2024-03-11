@@ -40,6 +40,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             }
             catch (Exception ex)
             {
+                Console.Write(ex);
             }
 
             //sqlDataSource1.fil

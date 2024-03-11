@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
 using DevExpress.XtraReports.UI;
+using LOSA.Calidad.LoteConfConsumo;
 using LOSA.Clases;
 using System;
 using System.Collections;
@@ -28,10 +29,23 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         int Id_ingreso;
         decimal factor;
-        public frmagregarlote(int id_ingreso, int numero_referencia, UserLogin user)
+        public frmagregarlote(int id_ingreso, int numero_referencia, UserLogin user, string pitemcode)
         {
             InitializeComponent();
             UsuarioLogeado = user;
+            ItemCode = pitemcode;
+            MateriaPrima mp = new MateriaPrima();
+            mp.RecuperarRegistroFromCode(ItemCode);
+
+            txtCodigoMP.Text = ItemCode;
+            txtMP_Name.Text = mp.NameComercial;
+            txtpresentacionPromedio.Visible = false;
+            Tg_presentacion_promedio.IsOn = false;
+            gridLookUpEditPresentacion.Visible = true;
+            gridLookUpEditPresentacion.Enabled = true;
+
+
+
             this.Id_ingreso = id_ingreso;
             LoadPresentaciones();
             Load_Data();
@@ -71,8 +85,9 @@ namespace LOSA.RecepcionMP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    txtCodigoMP.Text = dr.GetString(1);
-                    txtMP_Name.Text = dr.GetString(2);
+                    //txtCodigoMP.Text = dr.GetString(1);
+                    //txtMP_Name.Text = dr.GetString(2);
+
                     txtCodigoProveedor.Text = dr.GetString(3);
                     txtProveedorName.Text = dr.GetString(4);
                     NumBoleta = dr.GetInt32(0);
@@ -250,7 +265,11 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
                     cmd.Parameters.AddWithValue("@idlotes", idloteInserted);
                     cmd.Parameters.AddWithValue("@factor", factor);
-                    cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
+                    //cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
+                    if (Tg_presentacion_promedio.IsOn)
+                        cmd.Parameters.AddWithValue("@bit_promedio", 1);
+                    else
+                        cmd.Parameters.AddWithValue("@bit_promedio", 0);
                     vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                     SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", con);
@@ -450,13 +469,20 @@ namespace LOSA.RecepcionMP
 
         private void btnMP_Click(object sender, EventArgs e)
         {
-            frmSelectMP frm = new frmSelectMP();
+            //frmSelectMP frm = new frmSelectMP();
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    txtCodigoMP.Text = frm.ItemCode;
+            //    txtMP_Name.Text = frm.ItemName;
+            //}
+
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                txtCodigoMP.Text = frm.ItemCode;
-                txtMP_Name.Text = frm.ItemName;
+                txtCodigoMP.Text = frm.ItemSeleccionado.ItemCode;
+                txtMP_Name.Text = frm.ItemSeleccionado.ItemName;
             }
-        
+
         }
 
         public void CalculodelPromedio()

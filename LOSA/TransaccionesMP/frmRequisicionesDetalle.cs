@@ -19,17 +19,176 @@ namespace LOSA.TransaccionesMP
         UserLogin UsuarioLogeado;
         int IdRequisicionHeader;
         DataOperations dp;
+        int idEstadoOld;
+        int IdEstado;
         int LotePT;
-        public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH, int pLote)
+        public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH, int pLote, int pIdEstado, string pNombre_pt)
         {
             InitializeComponent();
             LotePT = pLote;
+            IdEstado = pIdEstado;
+            idEstadoOld = pIdEstado;
+            lblRequisicionH_Num.Text = pIdReqH.ToString();
             txtLote.Text = pLote.ToString();
             UsuarioLogeado = pUsuarioLogeado;
             IdRequisicionHeader = pIdReqH;
+            lblnombre_pt.Text = pNombre_pt;
 
              dp = new DataOperations();
             LoadDatos();
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+
+            ValidarPermisosReqDetalle();
+            if (dsTransaccionesMP1.estados_requisicion_list.Count > 0)
+            {
+                try
+                {
+                    //dateEditDesde.EditValueChanged -= new EventHandler(dateEditDesde_EditValueChanged);
+                    //dateEditDesde.EditValue = dr.GetDateTime(0);
+                    //dateEditDesde.EditValueChanged += new ndler(dateEditDesde_EditValueChanged);
+                    gridLookUpEdit_estados.EditValueChanged -= new EventHandler(gridLookUpEdit_estados_EditValueChanged);
+                    gridLookUpEdit_estados.EditValue = pIdEstado;
+                    gridLookUpEdit_estados.EditValueChanged += new EventHandler(gridLookUpEdit_estados_EditValueChanged);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void ValidarPermisosReqDetalle()
+        {
+            bool CargaPrevia = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    LoadAllEstadosReq();
+                    CargaPrevia = true;
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!CargaPrevia)
+            {
+                ValidarPermisosFromId_permiso();
+            }
+        }
+
+        private void ValidarPermisosFromId_permiso()
+        {
+            if (UsuarioLogeado.ValidarNivelPermisos(85))//Permiso limitado
+            {
+                if(IdEstado == 5) 
+                    LoadPermisos(85);//Cargamos los permisos de habilitar requisicion
+                else
+                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
+            }
+
+            if (dsTransaccionesMP1.estados_requisicion_list.Count == 0)//Verificamos si es un jefe
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(86))
+                {
+                    LoadPermisos(86);//Cargamos los permisos del jefe
+                }
+            }
+
+            if (dsTransaccionesMP1.estados_requisicion_list.Count == 0)
+            {
+                gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;//Significa que no tiene ningun privilegio para cambiar estado
+            }
+
+            if (UsuarioLogeado.ValidarNivelPermisos(93)) //Permiso Limitado: Produccion
+            {
+                switch (IdEstado)
+                {
+                    case 3:
+                        LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                        gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                        break;
+
+                    case 7:
+                        LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                        gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                        break;
+
+                    //case 3:
+                    //    LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                    //    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                    //    break;
+
+                    default:
+                        gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
+                        break;
+                }
+                //if (IdEstado == 3)
+                //{
+                //    LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                //    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                //}
+                //else
+                //    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
+
+            }
+        }
+
+        private void LoadPermisos(int pIPermiso)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_all_estados_req_by_permiso", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_permiso", pIPermiso);
+                dsTransaccionesMP1.estados_requisicion_list.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTransaccionesMP1.estados_requisicion_list);
+
+                if(dsTransaccionesMP1.estados_requisicion_list.Count>0)
+                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void LoadAllEstadosReq()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_all_estados_req", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsTransaccionesMP1.estados_requisicion_list.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTransaccionesMP1.estados_requisicion_list);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void LoadDatos()
@@ -59,6 +218,13 @@ namespace LOSA.TransaccionesMP
             //Boton editar
             var gridView = (GridView)grDetalleLote.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetFocusedDataRow();
+
+            if (row.entregada == 0)
+            {
+                CajaDialogo.Error("No se a entregado Materia Prima");
+                return;
+            }
+
             if (row.asignado == 0)
             {
                 frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado,
@@ -68,7 +234,7 @@ namespace LOSA.TransaccionesMP
                                                            row.id_unidad_medida,
                                                            row.unidad
                                                            , row.pendiente);
-                frm.WindowState = FormWindowState.Maximized;
+                //frm.WindowState = FormWindowState.Maximized;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadDatos();
@@ -85,7 +251,7 @@ namespace LOSA.TransaccionesMP
                                                                 row.id_unidad_medida,
                                                                 row.unidad
                                                                 ,row.pendiente);
-                    frm.WindowState = FormWindowState.Maximized;
+                    //frm.WindowState = FormWindowState.Maximized;
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadDatos();
@@ -110,22 +276,32 @@ namespace LOSA.TransaccionesMP
                 var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetDataRow(e.RowHandle);
                 if (row != null)
                 {
-                    if (row.solicitada == row.asignado)
+                    if (row.__avance >= 95)
                     {
-                        e.Appearance.BackColor = Color.FromArgb(113, 220, 200);
+                        e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
                     }
                     else
                     {
-                        if (row.asignado > 0)
-                        {
-                            //
-                            e.Appearance.BackColor = Color.FromArgb(255, 255, 192);
-                        }
-                        else
-                        {
-                            e.Appearance.BackColor = Color.FromArgb(255, 255, 255);
-                        }
+                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
                     }
+
+
+                    //if (row.solicitada == row.asignado)
+                    //{
+                    //    e.Appearance.BackColor = Color.FromArgb(113, 220, 200);
+                    //}
+                    //else
+                    //{
+                    //    if (row.asignado > 0)
+                    //    {
+                    //        //
+                    //        e.Appearance.BackColor = Color.FromArgb(255, 255, 192);
+                    //    }
+                    //    else
+                    //    {
+                    //        e.Appearance.BackColor = Color.FromArgb(255, 255, 255);
+                    //    }
+                    //}
                 }
             }
         }
@@ -195,6 +371,104 @@ namespace LOSA.TransaccionesMP
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void gridLookUpEdit_estados_EditValueChanged(object sender, EventArgs e)
+        {
+            int vIdEstadoSeleccionado = dp.ValidateNumberInt32(gridLookUpEdit_estados.EditValue);
+            if (vIdEstadoSeleccionado > 0)
+            {
+                if (vIdEstadoSeleccionado == 6) //Se enviara la Requisa a Cancelar
+                {
+                    DialogResult r = CajaDialogo.Pregunta("Se cancelara la Requisa y se Cancelara la Orden de Produccion, esta seguro?\nNo se puede revertir esta accion!");
+                    if (r != DialogResult.Yes)
+                    {
+                        gridLookUpEdit_estados.EditValue = IdEstado;
+                        return;
+                    }
+                    bool PermitirCancelar = false;
+                    string Mensaje = "";
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("[sp_set_update_requisicion_header_estado_cancelar]", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_req_h", IdRequisicionHeader);
+                        cmd.Parameters.AddWithValue("@id_estado", vIdEstadoSeleccionado);
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            PermitirCancelar = dr.GetBoolean(0);
+                            Mensaje = dr.GetString(1);
+                            dr.Close();
+                        }
+                        con.Close();
+
+                        if (PermitirCancelar == true)
+                        {
+                            CajaDialogo.Information(Mensaje);
+                        }
+                        else
+                        {
+                            CajaDialogo.Error(Mensaje);
+                            gridLookUpEdit_estados.EditValue = idEstadoOld;
+                            return;
+                        }
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
+
+                }
+                else
+                {
+                    if (vIdEstadoSeleccionado == 4)
+                    {
+                        DialogResult r = CajaDialogo.Pregunta("Esta seguro del cambio de estado en la requisición?");
+                        if (r != DialogResult.Yes)
+                        {
+                            gridLookUpEdit_estados.EditValue = IdEstado;
+                            return;
+                        }
+                    }
+
+                    if (vIdEstadoSeleccionado != IdEstado)
+                    {
+                        //Update Estado Req
+                        try
+                        {
+                            DataOperations dp = new DataOperations();
+                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                            con.Open();
+
+                            SqlCommand cmd = new SqlCommand("sp_set_update_requisicion_header_estado", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_req_h", IdRequisicionHeader);
+                            cmd.Parameters.AddWithValue("@id_estado", vIdEstadoSeleccionado);
+                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        catch (Exception ec)
+                        {
+                            CajaDialogo.Error(ec.Message);
+                        }
+                    }
+                }
+
+
+                
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadDatos();
         }
     }
 }

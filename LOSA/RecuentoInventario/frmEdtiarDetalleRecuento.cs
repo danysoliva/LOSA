@@ -92,6 +92,9 @@ namespace LOSA.RecuentoInventario
                 cmd.Parameters.AddWithValue("@diferencia_peso", spinDiferencia.EditValue);
                 cmd.Parameters.AddWithValue("@nueva_cantidad", spinNuevaCantidad.EditValue);
                 cmd.ExecuteNonQuery();
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {

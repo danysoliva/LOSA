@@ -51,6 +51,11 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdCancelar = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdGuardar = new DevExpress.XtraEditors.ButtonEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -99,15 +104,16 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSacosLigados = new DevExpress.XtraEditors.ButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCancelar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGuardar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHorasSeleccionadas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalHorasMotor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaf.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaf.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechai.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaf.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechai.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLotePick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -122,6 +128,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_Dado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSacosLigados.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdCancelar
@@ -141,7 +148,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.cmdCancelar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdCancelar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmdCancelar.Size = new System.Drawing.Size(112, 36);
+            this.cmdCancelar.Size = new System.Drawing.Size(112, 38);
             this.cmdCancelar.TabIndex = 74;
             this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
             // 
@@ -160,7 +167,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.cmdGuardar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdGuardar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmdGuardar.Size = new System.Drawing.Size(112, 36);
+            this.cmdGuardar.Size = new System.Drawing.Size(112, 38);
             this.cmdGuardar.TabIndex = 73;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
@@ -624,11 +631,29 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.coldescripcion2.Visible = true;
             this.coldescripcion2.VisibleIndex = 0;
             // 
+            // btnSacosLigados
+            // 
+            this.btnSacosLigados.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSacosLigados.EditValue = "Sacos ya Registrados";
+            this.btnSacosLigados.Location = new System.Drawing.Point(495, 144);
+            this.btnSacosLigados.Name = "btnSacosLigados";
+            this.btnSacosLigados.Properties.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnSacosLigados.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSacosLigados.Properties.Appearance.Options.UseBackColor = true;
+            this.btnSacosLigados.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions5.SvgImage")));
+            this.btnSacosLigados.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSacosLigados.Size = new System.Drawing.Size(205, 40);
+            this.btnSacosLigados.TabIndex = 98;
+            this.btnSacosLigados.Click += new System.EventHandler(this.btnSacosLigados_Click);
+            // 
             // PRB_Lote_Pick_v4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 626);
+            this.Controls.Add(this.btnSacosLigados);
             this.Controls.Add(this.gridLookUpEdit_Dado);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.grd_data);
@@ -674,6 +699,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_Dado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSacosLigados.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -729,5 +755,6 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
         private System.Windows.Forms.BindingSource bindingSourceDado;
         private DevExpress.XtraGrid.Columns.GridColumn colid1;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion2;
+        private DevExpress.XtraEditors.ButtonEdit btnSacosLigados;
     }
 }

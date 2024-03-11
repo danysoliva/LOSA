@@ -13,13 +13,15 @@ namespace LOSA.Calidad
     {
         public int NumberLote;
         DataOperations dp = new DataOperations();
-
-        public rpt_certificado_calidad(int PLote)
+        UserLogin UsuarioLogueado;
+        public rpt_certificado_calidad(int PLote, UserLogin pUserLog)
         {
             InitializeComponent();
+            UsuarioLogueado = pUserLog;
             NumberLote = PLote;
             GetLoteInfo();
             GetLoteParametros();
+            xrUsuario.Text = UsuarioLogueado.NombreUser;
         }
         public void GetLoteInfo()
         {
@@ -38,19 +40,19 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
         public void GetLoteParametros()
         {
             try
             {
-                string query = @"";
+                string query = @"sp_get__parametro_promedio_certificado_calidad_PT";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@LotNumber", NumberLote);
+                cmd.Parameters.AddWithValue("@LotNumber", NumberLote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 drReporteCetificado1.ParametrosLotes.Clear();
                 da.Fill(drReporteCetificado1.ParametrosLotes);
@@ -58,7 +60,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 

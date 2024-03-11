@@ -52,7 +52,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(702, 88);
+            this.labelControl1.Size = new System.Drawing.Size(710, 147);
             this.labelControl1.TabIndex = 1;
             // 
             // cmdAceptar
@@ -61,7 +61,7 @@
             this.cmdAceptar.Appearance.Options.UseFont = true;
             this.cmdAceptar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAceptar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAceptar.ImageOptions.Image")));
-            this.cmdAceptar.Location = new System.Drawing.Point(315, 182);
+            this.cmdAceptar.Location = new System.Drawing.Point(312, 241);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(221, 81);
             this.cmdAceptar.TabIndex = 5;
@@ -71,7 +71,7 @@
             // pictureBoxInfomation
             // 
             this.pictureBoxInfomation.Image = global::LOSA.Properties.Resources.Status_dialog_information_icon72px;
-            this.pictureBoxInfomation.Location = new System.Drawing.Point(357, 106);
+            this.pictureBoxInfomation.Location = new System.Drawing.Point(354, 165);
             this.pictureBoxInfomation.Name = "pictureBoxInfomation";
             this.pictureBoxInfomation.Size = new System.Drawing.Size(95, 70);
             this.pictureBoxInfomation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,7 +82,7 @@
             // pictureBoxError
             // 
             this.pictureBoxError.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxError.Image")));
-            this.pictureBoxError.Location = new System.Drawing.Point(12, 131);
+            this.pictureBoxError.Location = new System.Drawing.Point(9, 190);
             this.pictureBoxError.Name = "pictureBoxError";
             this.pictureBoxError.Size = new System.Drawing.Size(95, 70);
             this.pictureBoxError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -93,7 +93,7 @@
             // msjBoxIcon
             // 
             this.msjBoxIcon.Image = global::LOSA.Properties.Resources.delete_1_icon72px;
-            this.msjBoxIcon.Location = new System.Drawing.Point(3, 117);
+            this.msjBoxIcon.Location = new System.Drawing.Point(0, 176);
             this.msjBoxIcon.Name = "msjBoxIcon";
             this.msjBoxIcon.Size = new System.Drawing.Size(170, 146);
             this.msjBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 275);
+            this.ClientSize = new System.Drawing.Size(726, 324);
             this.Controls.Add(this.msjBoxIcon);
             this.Controls.Add(this.pictureBoxError);
             this.Controls.Add(this.pictureBoxInfomation);

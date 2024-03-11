@@ -501,6 +501,8 @@ namespace LOSA.MigracionACS.OIL {
             
             private global::System.Data.DataColumn columnusuario;
             
+            private global::System.Data.DataColumn columnlote_pt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public requisicionesDataTable() {
@@ -584,6 +586,14 @@ namespace LOSA.MigracionACS.OIL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_ptColumn {
+                get {
+                    return this.columnlote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -619,7 +629,7 @@ namespace LOSA.MigracionACS.OIL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public requisicionesRow AddrequisicionesRow(int id, System.DateTime fecha_p, string estado, string material, decimal Cant, string usuario) {
+            public requisicionesRow AddrequisicionesRow(int id, System.DateTime fecha_p, string estado, string material, decimal Cant, string usuario, int lote_pt) {
                 requisicionesRow rowrequisicionesRow = ((requisicionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -627,7 +637,8 @@ namespace LOSA.MigracionACS.OIL {
                         estado,
                         material,
                         Cant,
-                        usuario};
+                        usuario,
+                        lote_pt};
                 rowrequisicionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrequisicionesRow);
                 return rowrequisicionesRow;
@@ -656,6 +667,7 @@ namespace LOSA.MigracionACS.OIL {
                 this.columnmaterial = base.Columns["material"];
                 this.columnCant = base.Columns["Cant"];
                 this.columnusuario = base.Columns["usuario"];
+                this.columnlote_pt = base.Columns["lote_pt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -673,6 +685,8 @@ namespace LOSA.MigracionACS.OIL {
                 base.Columns.Add(this.columnCant);
                 this.columnusuario = new global::System.Data.DataColumn("usuario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnusuario);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2935,6 +2949,22 @@ namespace LOSA.MigracionACS.OIL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int lote_pt {
+                get {
+                    try {
+                        return ((int)(this[this.tablerequisiciones.lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote_pt\' in table \'requisiciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisiciones.lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerequisiciones.idColumn);
             }
@@ -3003,6 +3033,18 @@ namespace LOSA.MigracionACS.OIL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetusuarioNull() {
                 this[this.tablerequisiciones.usuarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tablerequisiciones.lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_ptNull() {
+                this[this.tablerequisiciones.lote_ptColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -178,7 +178,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmeditarLote";
             this.Text = "frmeditarLote";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtingreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmp.Properties)).EndInit();

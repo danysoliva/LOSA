@@ -30,12 +30,7 @@ namespace LOSA.Produccion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_requisaManual));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -47,13 +42,12 @@ namespace LOSA.Produccion
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad_solicitada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_reqmanual = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.colid_detalle_req = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listampBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_reqmanual)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -96,8 +90,6 @@ namespace LOSA.Produccion
             this.grd_data.Location = new System.Drawing.Point(-2, 122);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btn_reqmanual});
             this.grd_data.Size = new System.Drawing.Size(641, 439);
             this.grd_data.TabIndex = 35;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -140,7 +132,8 @@ namespace LOSA.Produccion
             this.colid_materia_prima,
             this.colcode_sap,
             this.colcantidad_solicitada,
-            this.coldescripcion});
+            this.coldescripcion,
+            this.colid_detalle_req});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -188,15 +181,6 @@ namespace LOSA.Produccion
             this.coldescripcion.VisibleIndex = 1;
             this.coldescripcion.Width = 236;
             // 
-            // btn_reqmanual
-            // 
-            this.btn_reqmanual.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btn_reqmanual.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btn_reqmanual.Name = "btn_reqmanual";
-            this.btn_reqmanual.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
             // cmdGuardar
             // 
             this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -212,6 +196,11 @@ namespace LOSA.Produccion
             this.cmdGuardar.TabIndex = 36;
             this.cmdGuardar.Text = "Solicitar \r\nMateriales";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
+            // 
+            // colid_detalle_req
+            // 
+            this.colid_detalle_req.FieldName = "id_detalle_req";
+            this.colid_detalle_req.Name = "colid_detalle_req";
             // 
             // frm_requisaManual
             // 
@@ -230,7 +219,6 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.listampBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_reqmanual)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,7 +229,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_reqmanual;
         private DevExpress.XtraEditors.SimpleButton cmdGuardar;
         private System.Windows.Forms.BindingSource listampBindingSource;
         private dsProduccion dsProduccion;
@@ -250,5 +237,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad_solicitada;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_detalle_req;
     }
 }

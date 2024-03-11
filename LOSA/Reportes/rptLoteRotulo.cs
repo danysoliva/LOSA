@@ -11,7 +11,7 @@ namespace LOSA.Reportes
     public partial class rptLoteRotulo : DevExpress.XtraReports.UI.XtraReport
     {
         DataOperations dp = new DataOperations();
-        public int Id_detalle, numero_transaccion;
+        public int Id_detalle, numero_transaccion, id_tipo_ingreso;
         public string lote;
         bool isganel = false;
         public rptLoteRotulo(int pId)
@@ -20,7 +20,7 @@ namespace LOSA.Reportes
             isganel = false;
             Id_detalle = pId;
             load_data();
-
+            //Comentario
         }
 
         public rptLoteRotulo(int pnumero_transaccion, string plote)
@@ -32,6 +32,53 @@ namespace LOSA.Reportes
             lote = plote;
             load_data_for_lote();
 
+        }
+        public rptLoteRotulo(int pnumero_transaccion, bool is_tarima_liquido, int pid_tipo_ingreso)
+        {
+            InitializeComponent();
+            
+            //Id_detalle = pId;
+            numero_transaccion = pnumero_transaccion;
+            id_tipo_ingreso = pid_tipo_ingreso;
+            load_data_for_lote_liquidos();
+
+        }
+
+        private void load_data_for_lote_liquidos()
+        {
+            string query = @"[rpt_load_informacion_ingreso_lote_liquidos]";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@iddetalle", Id_detalle);
+                cmd.Parameters.AddWithValue("@numero_transaccion", numero_transaccion);
+                //cmd.Parameters.AddWithValue("@lote", lote);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    txtmp.Text = dr.IsDBNull(0) ? "" : dr.GetString(0);
+                    txtproveedor.Text = dr.IsDBNull(1) ? "" : dr.GetString(1);
+                    txtfechaIng.Text = dr.IsDBNull(2) ? "" : dr.GetDateTime(2).ToString("dd/MM/yyyy");
+                    txtingreso.Text = dr.IsDBNull(3) ? "" : dr.GetInt32(3).ToString();
+                    txtsacos.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
+                    txtfproduccion.Text = dr.IsDBNull(5) ? "" : dr.GetDateTime(5).ToString("dd/MM/yyyy");
+                    txtfvencimiento.Text = dr.IsDBNull(6) ? "" : dr.GetDateTime(6).ToString("dd/MM/yyyy");
+                    //txtrack.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                    txtlote.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                    txtCodigos.Text = dr.IsDBNull(8) ? "" : dr.GetString(8);
+
+                }
+                dr.Close();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void load_data_for_lote()
@@ -80,6 +127,12 @@ namespace LOSA.Reportes
             load_data();
 
         }
+
+        private void rptLoteRotulo_AfterPrint(object sender, EventArgs e)
+        {
+            this.ClosePreview();
+        }
+
         public void load_data()
         {
             string query = @"rpt_load_informacion_ingreso_lote";

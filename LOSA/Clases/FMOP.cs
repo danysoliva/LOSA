@@ -877,39 +877,40 @@ namespace LOSA.Clases
             return dp.ACS_Exec_SP_Get_Data("PP_Get_Plan_PO", cmd);
         }
         public int pp_get_lote_fp_inserted_in_order(int id_orden)
-            {
+        {
             int ID = -1;
             try
-                {
-                  
-                    string query = @"pp_get_lote_from_pp_order";
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(query,cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_orden", id_orden);
-                    SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            ID = dr.GetInt32(0);
-                        }
-                        else
-                        {
-                              ID = -1;
-                        }
-                           dr.Close();
-                         cn.Close();
-                    return ID;
-                                                                                         
-                }
-                catch (Exception ex)
-                {
+            {
 
-                    
-                           ID = -1;
-                         return ID;
+                string query = @"pp_get_lote_from_pp_order";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_orden", id_orden);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    ID = dr.GetInt32(0);
                 }
+                else
+                {
+                    ID = -1;
+                }
+                dr.Close();
+                cn.Close();
+                return ID;
+
             }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+                ID = -1;
+                return ID;
+            }
+        }
+
         public int pp_order_get_next_lot_number() 
         {
             SqlCommand cmd = new SqlCommand();
@@ -1122,7 +1123,7 @@ namespace LOSA.Clases
                 cmd.Parameters["@plan_line"].Value = plan_line;
                 cmd.Parameters["@created_by"].Value = created_by;
                 cmd.Parameters["@created_date"].Value = created_date;
-                cmd.Parameters["@loaded_by"].Value = loaded_by;
+                cmd.Parameters["@loaded_by"].Value = created_by;
                 //cmd.Parameters["@loaded_date"].Value = loaded_date;
                 //cmd.Parameters["@start_prod_by"].Value = start_prod_by;
                 //cmd.Parameters["@start_prod_date"].Value = start_prod_date;
@@ -1132,11 +1133,12 @@ namespace LOSA.Clases
                 //cmd.Parameters["@netx_batch_close"].Value = netx_batch_close;
                 cmd.Parameters["@comment_cancel"].Value = comment_cancel;
                 cmd.Parameters["@comment_operator"].Value = comment_operator;
-
-                return dp.APMS_Exec_SP_GetID("OP_Production_Orders_Insert_Main", cmd, param);
+                int valor_return = dp.APMS_Exec_SP_GetID("OP_Production_Orders_Insert_Main", cmd, param);
+                return valor_return;
             }
             catch (Exception ex) 
             {
+                CajaDialogo.Error(ex.Message);
                 return -1;
             }
         }

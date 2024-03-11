@@ -171,6 +171,7 @@
             // 
             this.coleliminar.Caption = "Eliminar";
             this.coleliminar.ColumnEdit = this.btneliminar;
+            this.coleliminar.FieldName = "eliminar";
             this.coleliminar.MinWidth = 17;
             this.coleliminar.Name = "coleliminar";
             this.coleliminar.Visible = true;

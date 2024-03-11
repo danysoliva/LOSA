@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
 using LOSA.Calidad.Parametros;
+using LOSA.Trazabilidad;
 
 namespace LOSA.Calidad
 {
@@ -105,18 +106,34 @@ namespace LOSA.Calidad
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             frmcrudParametros frm = new frmcrudParametros();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             frmConfiguracionPT frm = new frmConfiguracionPT();
-            frm.Show();
+            frm.MdiParent = this.MdiParent;
+            frm.Show(); 
         }
 
         private void btnCertificado_Click(object sender, EventArgs e)
         {
             xfrmCertificadoCalidad frm = new xfrmCertificadoCalidad();
+            frm.Show();
+        }
+
+        private void cmdProveedores_Click(object sender, EventArgs e)
+        {
+            frmMantoProveedoresMP frm = new frmMantoProveedoresMP(this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void cmdMateriasPrimas_Click(object sender, EventArgs e)
+        {
+            frmMateriaPrimaHome frm = new frmMateriaPrimaHome();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
     }

@@ -12,10 +12,20 @@ namespace LOSA.Requisiciones.Reportes
     public partial class lblNumeroReq : DevExpress.XtraReports.UI.XtraReport
     {
         DataOperations dp = new DataOperations();
-        int ID; 
+        int ID;
+        Requisicion Req1;
         public lblNumeroReq(int Pid, int pLote)
         {
             InitializeComponent();
+            Req1 = new Requisicion(); 
+            if(Req1.RecuperarRegistroFromIdRequisaClass(Pid))
+            {
+                if (Req1.EsMedicado)
+                    txtLote.Visible = lblLote.Visible = true;
+                else
+                    txtLote.Visible = lblLote.Visible = false;
+
+            }
             lblLotePT.Text = pLote.ToString();
             ID = Pid;
             load_data();

@@ -323,6 +323,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

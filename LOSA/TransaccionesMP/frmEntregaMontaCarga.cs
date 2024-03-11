@@ -1,4 +1,5 @@
 ﻿using LOSA.Clases;
+using LOSA.TransaccionesMP.EntregaMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,9 +44,10 @@ namespace LOSA.TransaccionesMP
         private void cmdEntrega_Click(object sender, EventArgs e)
         {
             SelectorFor path = new SelectorFor(3);
-            if (path.Camino == 1)
+            if (path.Camino == 1)//Ultimo camino habilitado
             {
-                frmEntregaTarimaReq_3 frm = new frmEntregaTarimaReq_3(UsuarioLogeado);
+                //frmEntregaTarimaReq_3 frm = new frmEntregaTarimaReq_3(UsuarioLogeado);
+                frmEntregaTarimaReq_4 frm = new frmEntregaTarimaReq_4(UsuarioLogeado);
                 frm.WindowState = FormWindowState.Maximized;
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
@@ -77,6 +79,20 @@ namespace LOSA.TransaccionesMP
         private void btnResumenTarimas_Click(object sender, EventArgs e)
         {
             frmMontaCargaTarimaResumen frm = new frmMontaCargaTarimaResumen();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnEntregaBines_Click(object sender, EventArgs e)
+        {
+            frmEntregaBines frm = new frmEntregaBines(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnDevolucionesMacro_Click(object sender, EventArgs e)
+        {
+            frmDevolucionMacroOP frm = new frmDevolucionMacroOP(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

@@ -18,35 +18,73 @@ namespace LOSA.Nir
     public partial class frmSeleccionarLectura : DevExpress.XtraEditors.XtraForm
     {
         public int id_lectura;
-        public int id_h;
+        public int id_h, numero_transaccion, id_mp;
         public int id_lote;
+        public string Lote;
         UserLogin UsuarioLogeado;
         DataOperations dp = new DataOperations();
-        public frmSeleccionarLectura(UserLogin Puser, int pid_lote)
+        public frmSeleccionarLectura(UserLogin Puser,int pnumer_transaccion, int pid_mp, string pLote)
         {
             InitializeComponent();
+            dtDesde.EditValue = dp.Now().AddDays(-15);
+            dtHasta.EditValue = dp.Now();
             UsuarioLogeado = Puser;
-            id_lote = pid_lote;
+            numero_transaccion = pnumer_transaccion;
+            id_mp = pid_mp;
+            Lote = pLote;
+            //id_lote = pid_lote;
             load_Data();
         }
 
+
+
         public void load_Data() 
         {
-            string Query = @"sp_load_lecturas_to_pick";
-            try
+            if (tsVerTodos.IsOn)
             {
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(Query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                dsNir.seleccion_lectura.Clear();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsNir.seleccion_lectura);
-                cn.Close();
+                try
+                {
+                    string Query = @"sp_load_lecturas_to_pick";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    dsNir.seleccion_lectura.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsNir.seleccion_lectura);
+                    cn.Close();
+
+                    dtDesde.Enabled = false;
+                    dtHasta.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                CajaDialogo.Error(ex.Message);
+                string Query = @"sp_load_lecturas_to_pickV2";
+                try
+                {
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Desde", dtDesde.EditValue);
+                    cmd.Parameters.AddWithValue("@Hasta", dtHasta.EditValue);
+                    dsNir.seleccion_lectura.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsNir.seleccion_lectura);
+                    cn.Close();
+
+                    dtDesde.Enabled = true;
+                    dtHasta.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
 
         }
@@ -72,8 +110,11 @@ namespace LOSA.Nir
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_lectura", id_lectura);
                     cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
+                    //cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
                     cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
+                    cmd.Parameters.AddWithValue("@num_transaccion", numero_transaccion);
+                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                    cmd.Parameters.AddWithValue("@lote", Lote);
                     cmd.ExecuteNonQuery();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -81,7 +122,7 @@ namespace LOSA.Nir
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -102,8 +143,11 @@ namespace LOSA.Nir
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_lectura", id_lectura);
                     cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
+                    //cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
                     cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
+                    cmd.Parameters.AddWithValue("@num_transaccion", numero_transaccion);
+                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                    cmd.Parameters.AddWithValue("@lote", Lote);
                     cmd.ExecuteNonQuery();
                     cn.Close();
                     this.DialogResult = DialogResult.OK;
@@ -112,7 +156,7 @@ namespace LOSA.Nir
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -146,8 +190,10 @@ namespace LOSA.Nir
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id_lectura", id_lectura);
                                 cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                                cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
                                 cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
+                                cmd.Parameters.AddWithValue("@num_transaccion",numero_transaccion);
+                                cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                                cmd.Parameters.AddWithValue("@lote", Lote);
                                 cmd.ExecuteNonQuery();
                                 cn.Close();
                             }
@@ -186,28 +232,64 @@ namespace LOSA.Nir
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
         private void chTodas_CheckedChanged(object sender, EventArgs e)
         {
-            if (chTodas.Checked)
+            //Seleccionar lo Filtrado en Grid
+
+            var gridView = (GridView)grd_data.FocusedView;
+            int conta = dsNir.seleccion_lectura.Count;
+
+            for (int i = 0; i < conta; i++)
             {
-                foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+                dsNir.seleccion_lecturaRow row = (dsNir.seleccion_lecturaRow)gridView.GetDataRow(i);
+                int r = gridView.GetVisibleRowHandle(i);
+                if (r >= 0)
                 {
-                    row.selecionada = true;
-                    row.AcceptChanges();
+                    if (row != null)
+                    {
+                        row.selecionada = chTodas.Checked;
+                    }
+                }
+                else
+                {
+                    if (row != null)
+                    {
+                        row.selecionada = false;
+                    }
                 }
             }
-            else
-            {
-                foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
-                {
-                    row.selecionada = false;
-                    row.AcceptChanges();
-                }
-            }
+
+            //if (chTodas.Checked)
+            //{
+            //    foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+            //    {
+            //        row.selecionada = true;
+            //        row.AcceptChanges();
+            //    }
+            //}
+            //else
+            //{
+            //    foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+            //    {
+            //        row.selecionada = false;
+            //        row.AcceptChanges();
+            //    }
+            //}
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            load_Data();
+        }
+
+        private void tsVerTodos_Toggled(object sender, EventArgs e)
+        {
+            load_Data();
         }
     }
 }

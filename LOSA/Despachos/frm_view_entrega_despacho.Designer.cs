@@ -74,8 +74,10 @@
             this.btnDown = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btneliminarLinea = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.btnImpresion = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -258,16 +260,18 @@
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataSource = this.productocargaBindingSource;
-            this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_data.Location = new System.Drawing.Point(0, 0);
+            this.grd_data.Location = new System.Drawing.Point(0, 42);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnUp,
             this.btnDown,
             this.btnEliminar});
-            this.grd_data.Size = new System.Drawing.Size(872, 350);
+            this.grd_data.Size = new System.Drawing.Size(872, 308);
             this.grd_data.TabIndex = 50;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -312,7 +316,9 @@
             this.colproducto,
             this.colfilaUP,
             this.colfilaDown,
-            this.btneliminarLinea});
+            this.btneliminarLinea,
+            this.colpeso});
+            this.grdv_data.CustomizationFormBounds = new System.Drawing.Rectangle(0, 415, 260, 352);
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -442,6 +448,12 @@
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // colpeso
+            // 
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -459,10 +471,27 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.btnImpresion);
             this.xtraTabPage1.Controls.Add(this.grd_data);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(872, 350);
             this.xtraTabPage1.Text = "Producto Cargado";
+            // 
+            // btnImpresion
+            // 
+            this.btnImpresion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImpresion.Appearance.BackColor = System.Drawing.Color.White;
+            this.btnImpresion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpresion.Appearance.Options.UseBackColor = true;
+            this.btnImpresion.Appearance.Options.UseFont = true;
+            this.btnImpresion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnImpresion.ImageOptions.Image = global::LOSA.Properties.Resources.print_32x32;
+            this.btnImpresion.Location = new System.Drawing.Point(482, 3);
+            this.btnImpresion.Name = "btnImpresion";
+            this.btnImpresion.Size = new System.Drawing.Size(385, 38);
+            this.btnImpresion.TabIndex = 56;
+            this.btnImpresion.Text = "Detalle de Carga Sin Configuracion";
+            this.btnImpresion.Click += new System.EventHandler(this.btnImpresion_Click);
             // 
             // xtraTabPage2
             // 
@@ -776,5 +805,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltm_linea;
         private DevExpress.XtraGrid.Columns.GridColumn colKg_linea;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso;
+        private DevExpress.XtraEditors.SimpleButton btnImpresion;
     }
 }

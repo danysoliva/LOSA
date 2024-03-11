@@ -21,7 +21,11 @@ namespace LOSA
             ProduccionV2 = 5,
             Contabilidad = 6,
             RRHH=8,
-            Forecasting=9
+            Forecasting=9,
+            Bascula=10,
+            Formulacion=11,
+            Tickets = 12,
+            Compras = 13
         }
 
         public GrupoUsuario GrupoUsuarioActivo;

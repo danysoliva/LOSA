@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCT_Proyeccion_Etiquetas));
             this.grp_options = new DevExpress.XtraEditors.GroupControl();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.cmb_proyecciones = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -63,6 +61,8 @@
             this.btnc_deleteFormula = new DevExpress.XtraBars.BarButtonItem();
             this.btnc_saveChanges = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmb_proyecciones = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.grd_proyeccion = new DevExpress.XtraGrid.GridControl();
@@ -96,10 +96,10 @@
             this.ContextMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grp_options)).BeginInit();
             this.grp_options.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_proyecciones.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_proyeccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProyeccionesVentas1)).BeginInit();
@@ -130,34 +130,6 @@
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
             this.standaloneBarDockControl1.Size = new System.Drawing.Size(602, 38);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.cmb_proyecciones);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl1.Location = new System.Drawing.Point(40, 20);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(466, 38);
-            this.panelControl1.TabIndex = 2;
-            // 
-            // cmb_proyecciones
-            // 
-            this.cmb_proyecciones.Location = new System.Drawing.Point(64, 10);
-            this.cmb_proyecciones.MenuManager = this.barManager1;
-            this.cmb_proyecciones.Name = "cmb_proyecciones";
-            this.cmb_proyecciones.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_proyecciones.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "Código"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "Proyección")});
-            this.cmb_proyecciones.Properties.DisplayMember = "name";
-            this.cmb_proyecciones.Properties.ValueMember = "id";
-            this.cmb_proyecciones.Size = new System.Drawing.Size(397, 20);
-            this.cmb_proyecciones.TabIndex = 0;
-            this.cmb_proyecciones.EditValueChanged += new System.EventHandler(this.cmb_proyecciones_EditValueChanged);
             // 
             // barManager1
             // 
@@ -446,6 +418,34 @@
             this.barButtonItem3.Caption = "barButtonItem3";
             this.barButtonItem3.Id = 13;
             this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.cmb_proyecciones);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl1.Location = new System.Drawing.Point(40, 20);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(466, 38);
+            this.panelControl1.TabIndex = 2;
+            // 
+            // cmb_proyecciones
+            // 
+            this.cmb_proyecciones.Location = new System.Drawing.Point(64, 10);
+            this.cmb_proyecciones.MenuManager = this.barManager1;
+            this.cmb_proyecciones.Name = "cmb_proyecciones";
+            this.cmb_proyecciones.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_proyecciones.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "Código"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "Proyección")});
+            this.cmb_proyecciones.Properties.DisplayMember = "name";
+            this.cmb_proyecciones.Properties.ValueMember = "id";
+            this.cmb_proyecciones.Size = new System.Drawing.Size(397, 20);
+            this.cmb_proyecciones.TabIndex = 0;
+            this.cmb_proyecciones.EditValueChanged += new System.EventHandler(this.cmb_proyecciones_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -835,11 +835,11 @@
             this.Load += new System.EventHandler(this.FCT_Proyeccion_Etiquetas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grp_options)).EndInit();
             this.grp_options.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_proyecciones.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_proyeccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProyeccionesVentas1)).EndInit();

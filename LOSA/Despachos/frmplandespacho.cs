@@ -26,6 +26,12 @@ namespace LOSA.Despachos
             InitializeComponent();
             ParId = IdOrdendeVenta;
             ParUser = UsuarioLogeado;
+            if (ParUser.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = true;
+            else
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = false;
+
+
             exe_sp_get_plan();
             txtcliente.Text = "(" + CardCode + ") - " + CardName;
             txtdocnum.Text = DocNum.ToString();
@@ -134,11 +140,13 @@ namespace LOSA.Despachos
                 var gridview = (GridView)grd_detalle.FocusedView;
                 var row = (ds_despachos.plan_despachoRow)gridview.GetFocusedDataRow();
                 LOSA.Despachos.frm_generar_despacho frm = new frm_generar_despacho(row.DocNum, row.iddetalle, ParUser);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
 
-                   // exe_sp_get_plan();
-                }
+                //   // exe_sp_get_plan();
+                //}
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
             catch (Exception ex)
             {
@@ -161,7 +169,7 @@ namespace LOSA.Despachos
             catch (Exception ex)
             {
 
-                
+                Console.WriteLine(ex.Message);
             }
         }
     }

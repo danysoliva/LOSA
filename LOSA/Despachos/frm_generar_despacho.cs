@@ -26,6 +26,11 @@ namespace LOSA.Despachos
         private int Id_despacho;
         UserLogin UsuarioLogeado;
         string codigo_selected;
+        private int destino_id, id_presentacion, estiba_id;
+        private decimal sacos_totales;
+        string DestinoTxt;
+        string TipoTxt;
+        decimal PresentacionTxt;
         public enum OpType
         {
             Update = 1,
@@ -40,8 +45,15 @@ namespace LOSA.Despachos
             this.DocEntry = DocEntry;
             this.LineNum = LineNum;
             UsuarioLogeado = Puser;
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = true;
+            else
+                txtNameForIT_Support.Visible = false;
+
             LoadPresentaciones();
-            load_informacion();     
+            load_informacion();
+            LoadPresentacionesHabilitadas();
 
         }
 
@@ -57,10 +69,58 @@ namespace LOSA.Despachos
             this.Id_despacho = id_Despacho;
             grd_destino.Enabled = true;
             LoadPresentaciones();
+            LoadPresentacionesHabilitadas();
             load_informacion();
-
+            //LoadPresentacionesHabilitadas();
+            
             btn_guardar.Text = "Guardar Cambios";
         }
+
+        private void LoadPresentacionesGuardada(decimal psacos_totales , int pestiba_id, int pid_present,  int pDestinoID)
+        {
+            try
+            {
+                string query = @"sp_get_grid_lista_destinos_config_despacho_pt_guardada";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SacosTotal", psacos_totales);
+                cmd.Parameters.AddWithValue("@destino_id", pDestinoID);
+                cmd.Parameters.AddWithValue("@estiba_id", pestiba_id);
+                cmd.Parameters.AddWithValue("@id_presentacion", pid_present);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                ds_despachos.destinos_empaques.Clear();
+                adat.Fill(ds_despachos.destinos_empaques);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void LoadPresentacionesHabilitadas()
+        {
+            try
+            {
+                string query = @"sp_get_grid_lista_destinos_config_despacho_pt_";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@cantidad", pcantidad_Ud_Despachos);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                ds_despachos.destinos_empaques.Clear();
+                adat.Fill(ds_despachos.destinos_empaques);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void LoadPresentaciones()
         {
             try
@@ -107,7 +167,50 @@ namespace LOSA.Despachos
                             DocEntry = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
                             grd_destino.EditValue = dr.IsDBNull(6) ? 0 : dr.GetInt32(6);
                             codigo_selected = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                            sacos_totales = dr.IsDBNull(8) ? 0 : dr.GetDecimal(8);
+                            estiba_id = dr.IsDBNull(9) ? 0 : dr.GetInt32(9);
+                            id_presentacion = dr.IsDBNull(10) ? 0 : dr.GetInt32(10);
+                            destino_id = dr.IsDBNull(11) ? 0 : dr.GetInt32(11);
                             load_destinos(codigo_selected);
+                            if (id_presentacion != 0)
+                            {
+                                Destinos_empaques destino_emp = new Destinos_empaques();
+                                destino_emp.RecuperarRegistroIDConfDespacho(destino_id, estiba_id, id_presentacion);
+                                //LoadPresentacionesGuardada(sacos_totales, estiba_id, id_presentacion, destino_id);
+                                grd_conf_filas.EditValue = destino_emp.Id;
+
+
+                                destino_emp.RecuperarRegistro(destino_emp.Id);
+                                txtInfoConFilas.Text = destino_emp.detalle_filas;
+                                
+                                //try
+                                //{
+                                    
+                                //    //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                //    //conn.Open();
+                                //    //SqlCommand cmd2 = new SqlCommand("sp_get_grid_lista_destinos_config_despacho_pt_clase", conn);
+                                //    //cmd2.CommandType = CommandType.StoredProcedure;
+                                //    //cmd2.Parameters.AddWithValue("@destino_id", destino_id);
+                                //    //cmd2.Parameters.AddWithValue("@estiba_id", estiba_id);
+                                //    //cmd2.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                                //    //SqlDataReader dr2 = cmd2.ExecuteReader();
+                                //    //if (dr2.Read())
+                                //    //{
+                                //    //    TipoTxt = dr2.IsDBNull(2) ? "" : dr2.GetString(2).ToString();
+                                //    //    DestinoTxt = dr2.IsDBNull(3) ? "" : dr2.GetString(3).ToString();
+                                //    //    PresentacionTxt = dr2.IsDBNull(4) ? 0 : dr2.GetDecimal(4);
+                                //    //}
+
+                                //    //txtInfoConFilas.Text = "Destino: " + DestinoTxt + " - Tipo: " + TipoTxt + " - Presentacion: " + PresentacionTxt;
+
+                                //    dr2.Close();
+                                //    conn.Close();
+                                //}
+                                //catch (Exception ex)
+                                //{
+                                //    CajaDialogo.Error(ex.Message);
+                                //}
+                            }
                         }
                         dr.Close();
                         cn.Close();
@@ -119,8 +222,6 @@ namespace LOSA.Despachos
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_h", Id_despacho);
 
-
-                       
                         break;
                     case OpType.Nuevo:
                         query = @"sp_get_data_of_orden_venta_detalle_por_crear";  
@@ -233,7 +334,7 @@ namespace LOSA.Despachos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frm_mostar_otros_detalles frm = new frm_mostar_otros_detalles(DocEntry);
+            frm_mostar_otros_detalles frm = new frm_mostar_otros_detalles(DocEntry, this.Id_despacho);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -357,9 +458,42 @@ namespace LOSA.Despachos
             //}
         }
 
+        private void grd_conf_filas_EditValueChanged(object sender, EventArgs e)
+        {
+            //DataRowView datarowView = grd_conf_filas.GetSelectedDataRow() as DataRowView;
+
+
+            //if (datarowView != null)
+            //{
+            //    DataRow row = datarowView.Row;
+
+            //    destino_id =Convert.ToInt32(row[0]);
+            //    sacos_totales = Convert.ToDecimal(row.ItemArray[1]);
+            //    estiba_id = Convert.ToInt32(row.ItemArray[5]);
+            //    id_presentacion = Convert.ToInt32(row.ItemArray[6]);
+            //    txtInfoConFilas.Text = "Destino: " +row[3] +" - Tipo: "+ row[2] +" - Presentacion: "+row[4];
+            //}
+            if (string.IsNullOrEmpty(grd_conf_filas.Text))
+            {
+                return;
+            }
+
+            Destinos_empaques destino_em = new Destinos_empaques();
+            int id = dp.ValidateNumberInt32(grd_conf_filas.EditValue);
+
+            if (destino_em.RecuperarRegistro(id))
+            {
+                destino_id = destino_em.Destino_id;
+                sacos_totales = 0;
+                estiba_id = destino_em.Estiba_id;
+                id_presentacion = destino_em.Id_presentacion;
+                txtInfoConFilas.Text = destino_em.detalle_filas;
+            }
+        }
+
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-                ds_despachos.detalle_despachosComplete.AcceptChanges();
+            ds_despachos.detalle_despachosComplete.AcceptChanges();
             if (txtboleta.Text == "")
             {
                 if (MessageBox.Show("Desea crear la orden de carga sin ligar una boleta? Se puede ligar en cualquier momento del proceso.", "Mensaje del sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
@@ -400,7 +534,11 @@ namespace LOSA.Despachos
 
 
             // Aqui va la seleccion de lote.
-           
+            if (grd_conf_filas.Text == "")
+            {
+                CajaDialogo.Error("Debe seleccionar una configuracion de Filas y Destino!");
+            }
+
 
 
             int SeAsingna = 0;
@@ -412,9 +550,7 @@ namespace LOSA.Despachos
             {    
                 case OpType.Update:
 
-
-
-                    query = @"sp_update_despacho_header";//insert heades     
+                    query = @"sp_update_despacho_headerv2";//insert heades     
                     cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_despacho", Id_despacho);
@@ -429,6 +565,10 @@ namespace LOSA.Despachos
                         cmd.Parameters.AddWithValue("@boleta", txtboleta.Text);
                         SeAsingna = 1;
                     }
+                    cmd.Parameters.AddWithValue("@sacos_totales", sacos_totales);
+                    cmd.Parameters.AddWithValue("@estiba_id", estiba_id);
+                    cmd.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                    cmd.Parameters.AddWithValue("@destino_id",destino_id);
                     cmd.ExecuteNonQuery();
                     foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
                     {
@@ -451,7 +591,7 @@ namespace LOSA.Despachos
                         {
                             // Aqui hay que validar si ya se entrego algo y que cantidad se entrego.
                             query = @"sp_validar_detalla_de_despacho";
-                            cmd = new SqlCommand(query,cn);
+                            cmd = new SqlCommand(query, cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_detalle", row.id);
                             cmd.Parameters.AddWithValue("@pesoIn", row.Kg_linea);
@@ -519,7 +659,8 @@ namespace LOSA.Despachos
                         DataTable dt = frrm.dt;
 
 
-                        query = @"sp_insert_orden_venta_h_v2";//insert heades     
+                        //query = @"sp_insert_orden_venta_h_v2";//insert heades
+                        query = @"sp_insert_orden_venta_h_v3";                                     
                         cmd = new SqlCommand(query, cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@userId", UsuarioLogeado.Id);
@@ -535,6 +676,10 @@ namespace LOSA.Despachos
                         }
                         cmd.Parameters.AddWithValue("@DocEntry", DocEntry);
                         cmd.Parameters.AddWithValue("@id_destino", grd_destino.EditValue == null ? 0 : grd_destino.EditValue);
+                        cmd.Parameters.AddWithValue("@sacos_totales", sacos_totales);
+                        cmd.Parameters.AddWithValue("@estiba_id", estiba_id);
+                        cmd.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                        cmd.Parameters.AddWithValue("@destino_id", destino_id);
 
                         Id_despacho = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
@@ -686,7 +831,7 @@ namespace LOSA.Despachos
             catch (Exception ex)
             {
 
-
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

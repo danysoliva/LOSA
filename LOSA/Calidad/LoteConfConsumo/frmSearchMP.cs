@@ -18,19 +18,24 @@ namespace LOSA.Calidad.LoteConfConsumo
     public partial class frmSearchMP : DevExpress.XtraEditors.XtraForm
     {
         //public MateriaPrima MateriaPrimaSelected;
+        DataOperations dp = new DataOperations();
         public ItemBusqueda ItemSeleccionado;
         DataView dv;// = new DataView(dsConfigLoteConsumo1.search_mp);
+        string StoreProcedureConfigActual = "";
         public enum TipoBusqueda
         {
             MateriaPrima = 1,
             ProductoTerminado = 2,
             Empleados = 3,
             PresentacionEmpaqueALOSY = 4,
-            BodegasALOSY = 5
+            BodegasALOSY = 5,
+            MaterialEmpaque = 6,
+            Reproceso = 7,
+            Proveedores = 8,
+            Items = 9
         }
 
         TipoBusqueda TipoBusquedaActual;
-        string StoreProcedureConfigActual;
         public frmSearchMP(TipoBusqueda pTipo)
         {
             InitializeComponent();
@@ -38,22 +43,77 @@ namespace LOSA.Calidad.LoteConfConsumo
             StoreProcedureConfigActual = "sp_get_lista_materias_primas";
 
             //MateriaPrimaSelected = new MateriaPrima();
+            switch (TipoBusquedaActual)
+            {
+                case TipoBusqueda.MateriaPrima:
+                    LoadData();
+                    break;
+                case TipoBusqueda.ProductoTerminado:
+                    break;
+                case TipoBusqueda.Empleados:
+                    break;
+                case TipoBusqueda.PresentacionEmpaqueALOSY:
+                    break;
+                case TipoBusqueda.BodegasALOSY:
+                    break;
+                case TipoBusqueda.MaterialEmpaque:
+                    LoadData();
+                    break;
+                case TipoBusqueda.Reproceso:
+                    LoadData();
+                    break;
+                case TipoBusqueda.Proveedores:
+                    LoadData();
+                    break;
+                case TipoBusqueda.Items:
+                    LoadData();
+                    break;
+               
+                default:
+                    break;
+            }
             ItemSeleccionado = new ItemBusqueda();
-            LoadData();
+            
+        }
+
+        private void load_data_material_empaque()
+        {
+            string sql = @"sp_get_lista_materias_primas";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@parametro_busqueda", Convert.ToInt32(TipoBusquedaActual));
+
+                dsConfigLoteConsumo1.search_mp.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsConfigLoteConsumo1.search_mp);
+                dv = new DataView(dsConfigLoteConsumo1.search_mp);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void LoadData()
         {
             try
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlConnection con;
+                if (TipoBusquedaActual == TipoBusqueda.MaterialEmpaque)
+                    con = new SqlConnection(dp.ConnectionStringAMS);
+                else
+                    con = new SqlConnection(dp.ConnectionStringLOSA);
+
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand("sp_get_lista_materias_primas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@parametro_busqueda", Convert.ToInt32(TipoBusquedaActual));
-
 
                 dsConfigLoteConsumo1.search_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);

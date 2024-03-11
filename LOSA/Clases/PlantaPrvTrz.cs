@@ -84,7 +84,10 @@ namespace LOSA.Clases
                 cmd.Parameters.AddWithValue("@comentario", comentario_);
                 cmd.Parameters.AddWithValue("@id_user", id_user_);
                 cmd.Parameters.AddWithValue("@cardcode", pCardCode);
-                cmd.ExecuteNonQuery();
+                int id_planta = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+
                 r = true;
                 con.Close();
             }

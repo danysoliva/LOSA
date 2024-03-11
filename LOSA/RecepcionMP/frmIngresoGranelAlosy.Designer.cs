@@ -33,12 +33,12 @@ namespace LOSA.RecepcionMP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngresoGranelAlosy));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
             this.txtLote = new DevExpress.XtraEditors.TextEdit();
             this.dtFechaVencimiento = new DevExpress.XtraEditors.DateEdit();
@@ -115,14 +115,15 @@ namespace LOSA.RecepcionMP
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.cmdBuscarIngresoExterno = new DevExpress.XtraEditors.SimpleButton();
             this.txtIngresoExterno = new DevExpress.XtraEditors.TextEdit();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -155,9 +156,9 @@ namespace LOSA.RecepcionMP
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(102, 32);
@@ -168,7 +169,6 @@ namespace LOSA.RecepcionMP
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Enabled = false;
             this.txtLote.Location = new System.Drawing.Point(210, 113);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -871,7 +871,7 @@ namespace LOSA.RecepcionMP
             this.tggNuevoIngreso.Properties.Appearance.Options.UseFont = true;
             this.tggNuevoIngreso.Properties.OffText = "No";
             this.tggNuevoIngreso.Properties.OnText = "Si";
-            this.tggNuevoIngreso.Size = new System.Drawing.Size(147, 32);
+            this.tggNuevoIngreso.Size = new System.Drawing.Size(147, 26);
             this.tggNuevoIngreso.TabIndex = 105;
             this.tggNuevoIngreso.Toggled += new System.EventHandler(this.tggNuevoIngreso_Toggled);
             // 
@@ -923,11 +923,22 @@ namespace LOSA.RecepcionMP
             this.txtIngresoExterno.TabIndex = 109;
             this.txtIngresoExterno.Visible = false;
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(24, 14);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 20);
+            this.txtVentana.TabIndex = 118;
+            this.txtVentana.Text = "frmIngresoGranelAlosy";
+            this.txtVentana.Visible = false;
+            // 
             // frmIngresoGranelAlosy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 621);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.txtIngresoExterno);
             this.Controls.Add(this.cmdBuscarIngresoExterno);
             this.Controls.Add(this.labelControl11);
@@ -1074,5 +1085,6 @@ namespace LOSA.RecepcionMP
         private LabelControl labelControl11;
         private SimpleButton cmdBuscarIngresoExterno;
         private TextEdit txtIngresoExterno;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }

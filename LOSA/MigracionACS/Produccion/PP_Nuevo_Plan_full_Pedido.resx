@@ -419,7 +419,7 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>34</value>
+    <value>135</value>
   </metadata>
   <metadata name="dSProductos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>151, 9</value>
@@ -433,7 +433,7 @@
   <data name="pictureEdit1.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAdoAAADjCAYAAAAi5tV+AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsQAAA7EAZUrDhsAAI7WSURBVHhe7b0HdFRHm+e9Z2f2
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAI7WSURBVHhe7b0HdFRHm+e9Z2f2
         m519d2b37H5z5rwePLb5yDkIBEIGY8DgHF6csF8nbLDBBpNNNmCCSQaTc5ZABIGQSDI5moxAImeRRDDZ
         AUx99a++T6v66rndt1vdiqVzfhZ031u3bjW+v34qPPVfhBAhsWFFn38weDh7YtM/Xb2c/j+uXTnyl+LA
         pcx9/7wldfA/cm1hyD3c/2+hwJVdGNiaOuQfN63ux75ncMe+HdP+8XLm/n/m/v81hA73/5kb2BcNBoPB
@@ -1148,8 +1148,8 @@
         2SpLL2esqDmvVjlWHVBDfbG2bv+lxcvZV+Qb31w9f83/hl4LfxuqfbFjpKuzu6Gnsq/kXsGDvP7cwdyh
         rOGEUecn0uPfJpufBbwQe/l26sK016z43Op8x7u0Rb33q8vHP3z+ZLSSvdry+dWX5a8b3+a+P1zLX9+3
         /nYjdWPjR+CPuc2Dm7e3GLcoW10/GX9SfnZtU21bbBdvv94R2Qnaadm1f5iX3O8HWIhGBwD01M7OF2EA
-        sPkA/Mzb2dms3Nn5WQUHGy8B6Pb//X/Fr7OGHoCy9v/8QgrAfwGQO5PcIwYp9QAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAAIbNJREFUeF7tnUvMJUd1x0N4vzHvN+YNMW8IjwCJTYhJMg42FrKFwMI2oBgFO0a2xMAC
+        sPkA/Mzb2dms3Nn5WQUHGy8B6Pb//X/Fr7OGHoCy9v/8QgrAfwGQO5PcIwYp9QAAAAlwSFlzAAALEgAA
+        CxIB0t1+/AAAIbNJREFUeF7tnUvMJUd1x0N4vzHvN+YNMW8IjwCJTYhJMg42FrKFwMI2oBgFO0a2xMAC
         RpFAjECyZhOh2VjyimiisHAUZTGSN7OcyItoskAaeYHkRRZjsTK7L/9/u87NuXVPd1Xfr+69de/8/59+
         6u5Tp7q7qrvPra6u7u+Pjo6OhBBCbJjQKIQQoi2hUQghRFtCoxBCiLaERiGEEG0JjUIIIdoSGoUQQrQl
         NAohhGhLaBRCCNGW0CiEEKItoVEIIURbQqMQQoi2hEYhhBBtCY1CCCHaEhqFEEK0JTQKIYRoS2gUQgjR
@@ -1296,7 +1296,7 @@
         v+d2mcnoAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PP_Nuevo_Plan_full_Pedido.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAAAAAAAEAIADPQgAAlgAAAICAAAABACAAKAgBAGVDAABgYAAAAQAgAKiUAACNSwEASEgAAAEA
         IACIVAAANeABAEBAAAABACAAKEIAAL00AgAwMAAAAQAgAKglAADldgIAICAAAAEAIACoEAAAjZwCABgY

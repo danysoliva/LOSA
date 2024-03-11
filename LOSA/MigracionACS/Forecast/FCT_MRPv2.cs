@@ -47,7 +47,8 @@ namespace ACS.Forecast
                                                                             ,B.[nombre] AS usuario
                                                                         FROM [dbo].[FCT_MRP] A
                                                                     INNER JOIN [dbo].[conf_usuarios] B ON A.[usuario_c] = B.[id]
-                                                                        WHERE [status] = 'a'").Tables[0];
+                                                                        WHERE [status] = 'a'
+                                                                        order by fecha_c  ").Tables[0];
             }
             catch (Exception ex)
             {

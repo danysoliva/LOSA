@@ -28,12 +28,20 @@ namespace LOSA.TransaccionesMP
         public decimal factor;
         public decimal ud_enviar = 0;
         public decimal kg_enviar = 0;
+        public int BasculaID = 0;
+        int IsMacroIngrediente;
 
         DataOperations dp = new DataOperations();
-        
-        
+
+        enum Basculas
+        {
+            Bascula1 = 1,
+            Bascula2 = 2
+        }
+
+        //RUTA PRINCIPAL PARA ENTREGA DE MATERIA PRIMA!
         public frmResumenToEntregar(
-                                    decimal ExistenciaTarima_kg,//Kg
+                                    decimal ExistenciaTarima_kg,
                                     decimal pExistenciaTarima_Unidades,
                                     decimal PEntregado_Kg,
                                     decimal psolicitado_Kg,
@@ -54,9 +62,6 @@ namespace LOSA.TransaccionesMP
             entregado = PEntregado_Kg;
             Solicitado = psolicitado_Kg;
             id_tm = Pid_tm;
-
-
-
 
             Calculo();
             txtEnviados.Text = string.Format("{0:###,##0.00}", entregado);
@@ -91,7 +96,117 @@ namespace LOSA.TransaccionesMP
                 txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
                 CalcularKg(dp.ValidateNumberInt32(Math.Round(ud_enviar, 0)));
             }
+
+
+
+            Tarima tm = new Tarima();
+            tm.ValidarSiEsMPBscula(id_tm);
+            if (tm.IsMacroIngrediente)
+            {
+                btnBasc1.Visible = true;
+                btnBasc2.Visible = true;
+                DisponibilidadDeBascula();
+            }
+
         }
+
+        private void DisponibilidadDeBascula()
+        {
+            try
+            {
+                int DisponibleBascula1 = 1;
+                int DisponibleBascula2 = 1;
+
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_disponibilidad_bascula", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    DisponibleBascula1 = dr.GetInt32(0);
+                    DisponibleBascula2 = dr.GetInt32(1);
+                    
+                }
+                dr.Close();
+                conn.Close();
+
+                if (DisponibleBascula2 == 0)
+                {
+                    BasculaID = (int)Basculas.Bascula1;
+                    btnBasc1.Appearance.BackColor = default(Color);
+                    btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+                    simpleButton1.Enabled = true;
+                    BasculaID = Convert.ToInt32(Basculas.Bascula2);
+                }
+                else
+                {
+                    btnBasc2.Enabled = false;
+                }
+                
+
+                if (DisponibleBascula1 == 0)
+                {
+                    BasculaID = (int)Basculas.Bascula1;
+                    btnBasc2.Appearance.BackColor = default(Color);
+                    btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+                    simpleButton1.Enabled = true;
+                    BasculaID = Convert.ToInt32(Basculas.Bascula1);
+                }
+                else
+                {
+                    btnBasc1.Enabled = false;
+                }
+                
+                if (DisponibleBascula1 > 0 && DisponibleBascula2 > 0)
+                {
+                    simpleButton1.Enabled = false;
+                    lblErrorBascula.Text = "BASCULAS CON TARIMAS PENDIENTES DE ENTREGA\nSe debe Completar los Pesajes Pendientes!";
+                    lblErrorBascula.Visible = true;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public frmResumenToEntregar(int pid_tm, decimal pExistenciaTarimaKg, decimal pExistenciaTarimaUnidades, decimal pEntregadoRequisa, decimal pSolicitadoRequisa)
+        {
+            InitializeComponent();
+            //vGridControl1.DataSource = Tarima;
+            ExistenciaTarimaUnidades = pExistenciaTarimaUnidades;
+            ExistenciaTarimaKg = pExistenciaTarimaKg;
+            ExistenciaKg = ExistenciaTarimaKg;
+            lblTotalUd_en_tarima.Text = string.Format("{0:###,##0}", ExistenciaTarimaUnidades) + " Ud";
+            entregado = pEntregadoRequisa;
+            Solicitado = pSolicitadoRequisa;
+            id_tm = pid_tm;
+            btnUP.Enabled = false;
+            btnDown.Enabled = false;
+            
+            txtEnviados.Text = string.Format("{0:###,##0.00}", entregado);
+            txtSolicitados.Text = string.Format("{0:###,##0.00}", Solicitado);
+            
+            txtPorEnviar.Text= string.Format("{0:###,##0.00}", ExistenciaTarimaUnidades);
+            txtKgAEnviar.Text = string.Format("{0:###,##0.00}", ExistenciaKg);
+            txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", ExistenciaTarimaUnidades);
+
+            txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
+
+            Tarima tm = new Tarima();
+            tm.ValidarSiEsMPBscula(id_tm);
+            if (tm.IsMacroIngrediente)
+            {
+                btnBasc1.Visible = true;
+                btnBasc2.Visible = true;
+                DisponibilidadDeBascula();
+            }
+
+        }
+
         public void Calculo()
         {
             RestanteReq = Solicitado - entregado;
@@ -180,6 +295,7 @@ namespace LOSA.TransaccionesMP
             //}
             #endregion
             int ud_enviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
+            
             if (ud_enviar == 0)
             {
                 if (Solicitado > 0)
@@ -196,15 +312,27 @@ namespace LOSA.TransaccionesMP
             }
             else
             {
-                if (ud_enviar < this.ExistenciaTarimaKg)
+                if (ud_enviar == ExistenciaTarimaUnidades)
                 {
-                    if (kg_enviar + entregado < Solicitado)
+                    //Si entra aqui, no puede subir mas por que no hay mas unidades en la tarima!
+                }
+                else
+                {
+                    if (ud_enviar < this.ExistenciaTarimaKg)
                     {
-                        ud_enviar++;
-                        txtPorEnviar.Text = string.Format("{0:###,##0}", (ud_enviar));
+                        if (kg_enviar + entregado < Solicitado)
+                        {
+                            ud_enviar++;
+                            txtPorEnviar.Text = string.Format("{0:###,##0}", (ud_enviar));
+                        }
                     }
                 }
             }
+
+            //if (ud_enviar == Convert.ToInt32(lblTotalUd_en_tarima.Text))
+            //{
+            //    //SI lo enviado es igual a lo que existe en tarima! que no permita sumar mas
+            //}
 
             CalcularKg(ud_enviar);
             this.ud_enviar = ud_enviar;
@@ -262,6 +390,20 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            Tarima tm = new Tarima();
+            tm.ValidarSiEsMPBscula(id_tm);
+            if (tm.IsMacroIngrediente)
+            {
+                if (BasculaID == 0)
+                {
+                    Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar una Bascula");
+                    frm.ShowDialog();
+                    return;
+                }
+            }
+
+            
+
             if (ExistenciaKg == 0 )
             {
                 Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar aun que sea una unidad");
@@ -301,5 +443,23 @@ namespace LOSA.TransaccionesMP
         {
             //chConsumirPendientes.Checked = true;
         }
+
+        private void btnBasc1_Click(object sender, EventArgs e)
+        {
+            BasculaID = (int)Basculas.Bascula1;
+            btnBasc2.Appearance.BackColor = default(Color);
+            btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+            simpleButton1.Enabled = true;
+        }
+
+        private void btnBasc2_Click(object sender, EventArgs e)
+        {
+            BasculaID = (int)Basculas.Bascula2;
+            btnBasc1.Appearance.BackColor = default(Color);
+            btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+            simpleButton1.Enabled = true;
+        }
+
+        
     }
 }

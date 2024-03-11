@@ -49,6 +49,7 @@ namespace LOSA.Reportes
             this.colbarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_requisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,6 +88,10 @@ namespace LOSA.Reportes
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.colid_usuario,
@@ -103,9 +108,12 @@ namespace LOSA.Reportes
             this.colcomentario,
             this.colbarcode,
             this.colid_requisa,
-            this.colcodigo});
+            this.colcodigo,
+            this.colLote});
             this.gridView1.GridControl = this.gridDetalleReq;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid
             // 
@@ -113,8 +121,8 @@ namespace LOSA.Reportes
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
             this.colid.Visible = true;
-            this.colid.VisibleIndex = 0;
-            this.colid.Width = 111;
+            this.colid.VisibleIndex = 1;
+            this.colid.Width = 117;
             // 
             // colid_usuario
             // 
@@ -128,8 +136,8 @@ namespace LOSA.Reportes
             this.colusuario_s.Name = "colusuario_s";
             this.colusuario_s.OptionsColumn.AllowEdit = false;
             this.colusuario_s.Visible = true;
-            this.colusuario_s.VisibleIndex = 1;
-            this.colusuario_s.Width = 111;
+            this.colusuario_s.VisibleIndex = 4;
+            this.colusuario_s.Width = 100;
             // 
             // colcantidad_solicitada
             // 
@@ -138,8 +146,8 @@ namespace LOSA.Reportes
             this.colcantidad_solicitada.Name = "colcantidad_solicitada";
             this.colcantidad_solicitada.OptionsColumn.AllowEdit = false;
             this.colcantidad_solicitada.Visible = true;
-            this.colcantidad_solicitada.VisibleIndex = 2;
-            this.colcantidad_solicitada.Width = 103;
+            this.colcantidad_solicitada.VisibleIndex = 5;
+            this.colcantidad_solicitada.Width = 125;
             // 
             // colid_materia_prima
             // 
@@ -153,8 +161,8 @@ namespace LOSA.Reportes
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 4;
-            this.colmp.Width = 109;
+            this.colmp.VisibleIndex = 6;
+            this.colmp.Width = 89;
             // 
             // colid_orden
             // 
@@ -170,8 +178,8 @@ namespace LOSA.Reportes
             this.colfecha_solicitada.Name = "colfecha_solicitada";
             this.colfecha_solicitada.OptionsColumn.AllowEdit = false;
             this.colfecha_solicitada.Visible = true;
-            this.colfecha_solicitada.VisibleIndex = 5;
-            this.colfecha_solicitada.Width = 109;
+            this.colfecha_solicitada.VisibleIndex = 7;
+            this.colfecha_solicitada.Width = 106;
             // 
             // colfecha_a_producir
             // 
@@ -191,8 +199,8 @@ namespace LOSA.Reportes
             this.colestado_descripcion.Name = "colestado_descripcion";
             this.colestado_descripcion.OptionsColumn.AllowEdit = false;
             this.colestado_descripcion.Visible = true;
-            this.colestado_descripcion.VisibleIndex = 6;
-            this.colestado_descripcion.Width = 109;
+            this.colestado_descripcion.VisibleIndex = 8;
+            this.colestado_descripcion.Width = 82;
             // 
             // colDocEntry
             // 
@@ -206,8 +214,8 @@ namespace LOSA.Reportes
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 7;
-            this.colcomentario.Width = 109;
+            this.colcomentario.VisibleIndex = 9;
+            this.colcomentario.Width = 102;
             // 
             // colbarcode
             // 
@@ -215,8 +223,8 @@ namespace LOSA.Reportes
             this.colbarcode.Name = "colbarcode";
             this.colbarcode.OptionsColumn.AllowEdit = false;
             this.colbarcode.Visible = true;
-            this.colbarcode.VisibleIndex = 8;
-            this.colbarcode.Width = 109;
+            this.colbarcode.VisibleIndex = 0;
+            this.colbarcode.Width = 102;
             // 
             // colid_requisa
             // 
@@ -224,16 +232,24 @@ namespace LOSA.Reportes
             this.colid_requisa.Name = "colid_requisa";
             this.colid_requisa.OptionsColumn.AllowEdit = false;
             this.colid_requisa.Visible = true;
-            this.colid_requisa.VisibleIndex = 9;
-            this.colid_requisa.Width = 114;
+            this.colid_requisa.VisibleIndex = 2;
+            this.colid_requisa.Width = 113;
             // 
             // colcodigo
             // 
             this.colcodigo.Caption = "Codigo";
             this.colcodigo.FieldName = "codigo";
             this.colcodigo.Name = "colcodigo";
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 3;
+            // 
+            // colLote
+            // 
+            this.colLote.Caption = "Lote PT";
+            this.colLote.FieldName = "Lote";
+            this.colLote.Name = "colLote";
+            this.colLote.OptionsColumn.AllowEdit = false;
+            this.colLote.Visible = true;
+            this.colLote.VisibleIndex = 3;
+            this.colLote.Width = 67;
             // 
             // btnAtras
             // 
@@ -391,5 +407,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colbarcode;
         private DevExpress.XtraGrid.Columns.GridColumn colid_requisa;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn colLote;
     }
 }

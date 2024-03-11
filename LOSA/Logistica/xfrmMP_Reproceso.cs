@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using LOSA.Clases;
+using LOSA.Produccion;
 using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
@@ -48,8 +49,8 @@ namespace LOSA.Logistica
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@tipo_tarima", 2); //Tipo de Tarima 2: Producto Terminado
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsProduccion.lista_causas_pt.Clear();
-                adat.Fill(dsProduccion.lista_causas_pt);
+                dsProduccion1.lista_causas_pt.Clear();
+                adat.Fill(dsProduccion1.lista_causas_pt);
                 conn.Close();
             }
             catch (Exception ec)
@@ -69,8 +70,8 @@ namespace LOSA.Logistica
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsProduccion.turnoV2.Clear();
-                adat.Fill(dsProduccion.turnoV2);
+                dsProduccion1.turnoV2.Clear();
+                adat.Fill(dsProduccion1.turnoV2);
                 conn.Close();
             }
             catch (Exception ec)
@@ -201,6 +202,21 @@ namespace LOSA.Logistica
                     CajaDialogo.Error("Debe seleccionar un Lote de Producto Terminado");
                     return;
                 }
+            }
+
+            bool permitir = false;
+            foreach (dsProduccion.lista_causas_ptRow row in dsProduccion1.lista_causas_pt.Rows)
+            {
+                if (row.seleccionado == true)
+                {
+                    permitir = true;
+                }
+            }
+
+            if (!permitir)
+            {
+                CajaDialogo.Error("Debe seleccionar por lo menos 1 causa de la creacion del Reproces!");
+                return;
             }
 
             if (string.IsNullOrEmpty(slueMP.Text))
@@ -352,6 +368,8 @@ namespace LOSA.Logistica
                     }
                     drx.Close();
 
+                    int IdTarima = 0;
+                    List<int> ListaTarimas = new List<int>();
 
                     for (int i = 1; i <= cantTarimas; i++)
                     {
@@ -368,7 +386,7 @@ namespace LOSA.Logistica
                         //SqlCommand command = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp_v3", connection);
                         //command.CommandType = CommandType.StoredProcedure;
                         //command.Transaction = transaction;
-                        command.CommandText = "sp_insert_new_tarima_sin_boleta_mp_v4";
+                        command.CommandText = "sp_insert_new_tarima_sin_boleta_mp_v5_reproceso";
                         command.Parameters.Clear();
                         command.Parameters.AddWithValue("@itemcode", this.ItemCode);
                         command.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
@@ -385,13 +403,30 @@ namespace LOSA.Logistica
                         command.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
                         command.Parameters.AddWithValue("@id_ingreso", id_ingreso_); //Ingreso de Reproceso
                         command.Parameters.AddWithValue("@id_turno", gridLookUpTurno.EditValue);
-                        command.ExecuteNonQuery();
+                        IdTarima = Convert.ToInt32(command.ExecuteScalar());
 
-                        //Aqui va ir el foreach con las causas 
-                        //En proceso..
-
+                        ListaTarimas.Add(IdTarima);
+                       
                         CantGuardo++;
 
+                    }
+
+                    foreach (var item in ListaTarimas)
+                    {
+                        foreach (dsProduccion.lista_causas_ptRow row in dsProduccion1.lista_causas_pt.Rows)
+                        {
+                            if (row.seleccionado)
+                            {
+                                //Vamos a Guardar a id_tariam de la Lista de la Causa.
+                                command.CommandText = "sp_reproceso_insert_causas_rechazo";
+                                command.Parameters.Clear();
+                                command.Parameters.AddWithValue("@id_tarima",item);
+                                command.Parameters.AddWithValue("@id_causa",row.id);
+                                command.Parameters.AddWithValue("@user_creador",usuarioLogueado.Id);
+                                command.Parameters.AddWithValue("@comentario",row.comentario);
+                                command.ExecuteNonQuery();
+                            }
+                        }
                     }
 
                     transaction.Commit();

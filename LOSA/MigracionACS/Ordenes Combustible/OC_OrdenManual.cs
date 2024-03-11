@@ -72,13 +72,12 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
 
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int contador;
+            //int contador;
 
             if (gridView1.DataRowCount == 0)
             {
@@ -109,6 +108,7 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
             for (int i = 0; i < gridView1.DataRowCount; i++)
             {
                 DataRow row = gridView1.GetDataRow(i);
+
                 if (row[0] != null)
                 {
                     if (string.IsNullOrEmpty(row[0].ToString()))
@@ -187,7 +187,7 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
 
                     SqlConnection conn2 = new SqlConnection(dp.ConnectionStringCostos);
                     conn2.Open();
-                    SqlCommand cmd2 = new SqlCommand("FuelOrderManualOrder", conn2);
+                    SqlCommand cmd2 = new SqlCommand("[FuelOrderManualOrderV2]", conn2);
                     cmd2.CommandType = CommandType.StoredProcedure;
                     cmd2.Parameters.AddWithValue("@idperfil", id_perfil);
                     cmd2.Parameters.AddWithValue("@id_usercreate", UsuarioLogeado.UserId);
@@ -195,6 +195,8 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
                     cmd2.Parameters.AddWithValue("@tanque_lleno", Convert.ToBoolean(row["bit_tanquelleno"]));
                     cmd2.Parameters.AddWithValue("@obs", Convert.ToString(row["obs"]));
                     cmd2.Parameters.AddWithValue("@fuel_id", Convert.ToInt32(row["id_fuel"]));
+                    cmd2.Parameters.AddWithValue("@license_plate",txtPlaca.Text.Trim());
+                    cmd2.Parameters.AddWithValue("@car",txtCar.Text.Trim());                    
                     cmd2.ExecuteNonQuery();
                     conn2.Close();
                 }
@@ -233,6 +235,22 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
                     }
                     dsOrdenesCombustible1.AcceptChanges();
                 }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void repositoryItemDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)gridFuelManual.FocusedView;
+            var row = (dsOrdenesCombustible.OrdenManualRow)gridview.GetFocusedDataRow();
+
+            try
+            {
+                gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                dsOrdenesCombustible1.AcceptChanges();
             }
             catch (Exception ex)
             {

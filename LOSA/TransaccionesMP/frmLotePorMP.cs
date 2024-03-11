@@ -28,6 +28,7 @@ namespace LOSA.TransaccionesMP
         {
             InitializeComponent();
             Id_MP = pid_mp;
+            gcLotePorMP.Visible = true;
             cargarlotespormp();
         }
 
@@ -37,13 +38,16 @@ namespace LOSA.TransaccionesMP
             {
                 DataOperations dp = new DataOperations();
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                SqlCommand cmd = new SqlCommand("sp_get_lotes_for_mp", cn);
+                string query = "sp_get_lotes_for_mp"; ;            
+                SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                 dsRecepcionMPx1.lista_lotes_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsRecepcionMPx1.lista_lotes_mp);
                 cn.Close();
+
+
 
             }
             catch (Exception ec)

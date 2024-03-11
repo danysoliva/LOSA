@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,14 +19,19 @@ namespace LOSA.Calidad
     {
         public int IdFabricanteSeleccionado;
         public string NombreFabricanteSeleccionado;
-        public frmListaFabricantes(string pproveedor, string provName)
+        public int IdMp;
+        public bool AprobadoASC;
+        public frmListaFabricantes(string pproveedor, string provName, int PidMP)
         {
             InitializeComponent();
-            txtproveedor.Text = pproveedor + " - " + provName;
-            LoadFabricantes(pproveedor);
+            Proveedor prov = new Proveedor();
+            prov.RecuperarRegistroWithRTN(pproveedor);
+
+            txtproveedor.Text = pproveedor + " - " + prov.Nombre;
+            LoadFabricantes(pproveedor, PidMP);
         }
 
-        private void LoadFabricantes(string pProveedor)
+        private void LoadFabricantes(string pProveedor, int pid_mp)
         {
             try
             {
@@ -33,12 +39,13 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_get_lista_plantas_prv_trz]", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_lista_plantas_prv_trzV2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cardcode", pProveedor);
-                dsTRZ_Reports1.plantas.Clear();
+                cmd.Parameters.AddWithValue("@id_mp", pid_mp);
+                dsTRZ_Reports1.plantas_por_materia_prima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTRZ_Reports1.plantas);
+                adat.Fill(dsTRZ_Reports1.plantas_por_materia_prima);
 
                 con.Close();
             }
@@ -57,21 +64,58 @@ namespace LOSA.Calidad
         private void cmdSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsTRZ_Reports.plantasRow)gridView.GetFocusedDataRow();
-            IdFabricanteSeleccionado = row.id;
+            var row = (dsTRZ_Reports.plantas_por_materia_primaRow)gridView.GetFocusedDataRow();
+            IdFabricanteSeleccionado = row.id_planta;
+
             NombreFabricanteSeleccionado = row.nombre;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+
+            txtFabricante.Text = row.nombre;
+            txtTipo.Text = row.tipo_gmo;
+            if (row.aprobado_asc == "Si")
+                tsAprobadoASC.IsOn = true;
+            else
+                tsAprobadoASC.IsOn = false;
+
+            navigationFrame1.SelectedPageIndex = 1;
+            
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsTRZ_Reports.plantasRow)gridView.GetFocusedDataRow();
-            IdFabricanteSeleccionado = row.id;
-            NombreFabricanteSeleccionado = row.nombre;
+            var row = (dsTRZ_Reports.plantas_por_materia_primaRow)gridView.GetFocusedDataRow();
+
+            if (gridView1.RowCount != 0)
+            {
+                IdFabricanteSeleccionado = row.id_planta;
+
+                NombreFabricanteSeleccionado = row.nombre;
+
+                txtFabricante.Text = row.nombre;
+                txtTipo.Text = row.tipo_gmo;
+                if (row.aprobado_asc == "Si")
+                    tsAprobadoASC.IsOn = true;
+                else
+                    tsAprobadoASC.IsOn = false;
+
+                navigationFrame1.SelectedPageIndex = 1;
+            }
+
+           
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            AprobadoASC = tsAprobadoASC.IsOn;
+
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            navigationFrame1.SelectedPageIndex = 0;
         }
     }
 }

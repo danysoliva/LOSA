@@ -41,6 +41,7 @@ namespace LOSA.RecepcionMP
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsDevoluciones.mp.Clear();
                 da.Fill(dsDevoluciones.mp);
+                
                 cn.Close();
             }
             catch (Exception ex)
@@ -156,11 +157,13 @@ namespace LOSA.RecepcionMP
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             bool Guardado = false;
+            int validacion_bloqueo;
             //int vid_tarima = 0;
 
             if (gvTarima.RowCount <= 0)
             {
                 CajaDialogo.Error("Debe seleccionar una tarima");
+                beTarima.Focus();
                 return;
             }
 
@@ -184,6 +187,27 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+            foreach (dsDevoluciones.mpRow item in dsDevoluciones.mp.Rows)
+            {
+                if (item.selected)
+                {
+                    if (item.consumido)
+                    {
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se puede devolver este Registro de Entrega por que ya fue Consumido!");
+                        if (frm.ShowDialog() == DialogResult.Cancel)
+                        {
+                            beTarima.Text = "";
+                            gcTarima.DataSource = null;
+                            //dsDevoluciones.mp.Clear();
+                           
+                            txtCantidadT.EditValue = 0;
+                            txtPeso.EditValue = 0;
+                            beTarima.Focus();
+                            return;
+                        }
+                    }
+                }
+            }
 
             try
             {
@@ -212,7 +236,7 @@ namespace LOSA.RecepcionMP
                         //}
                         //else
                         //{
-                        SqlCommand cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_form", con);
+                        SqlCommand cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_formv2", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
                         cmd.Parameters.AddWithValue("@id_entrega", item.id);
@@ -221,17 +245,83 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                         //cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
                         cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(item.cantidad_entregada));
-                        cmd.ExecuteNonQuery();
+                        validacion_bloqueo = Convert.ToInt32(cmd.ExecuteScalar());
 
+                        switch (validacion_bloqueo)
+                        {
+                            case 1:
+
+                                Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se puede devolver la tarima por que la requisa " + item.barcode + " esta Cerrada! ");
+                                if (frm.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    beTarima.Text = "";
+                                    gcTarima.DataSource = null;
+                                    //dsDevoluciones.mp.Clear();
+                                    txtCantidadT.EditValue = 0;
+                                    txtPeso.EditValue = 0;
+                                    beTarima.Focus();
+                                }
+
+                                break;
+
+                            case 2:
+                                Guardado = true;
+                                break;
+
+                            case 3:
+
+                                Utileria.frmMensajeCalidad frm1 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No existe Inventario en B018 del lote " + item.lote_materia_prima + ", para realizar esta devolucion.");
+                                if (frm1.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    beTarima.Text = "";
+                                    gcTarima.DataSource = null;
+                                    //dsDevoluciones.mp.Clear();
+                                    txtCantidadT.EditValue = 0;
+                                    txtPeso.EditValue = 0;
+                                    beTarima.Focus();
+                                }
+                                break;
+
+                            default:
+                                break;
+                        }
+
+
+                        if (validacion_bloqueo == 1)
+                        {
+                            CajaDialogo.Error("No se puede devolver la tarima por que la requisa " + item.barcode + " esta Cerrada!");
+                            beTarima.Text = "";
+                            gcTarima.DataSource = null;
+                            grd_requisa.DataSource = null;
+                            txtCantidadT.EditValue = 0;
+                            txtPeso.EditValue = 0;
+
+                            beTarima.Focus();
+                        }
+                        if (validacion_bloqueo == 3)
+                        {
+                            CajaDialogo.Error("No existe Inventario en B018 del lote " + item.lote_materia_prima + ", para realizar esta devolucion.");
+                            beTarima.Text = "";
+                            gcTarima.DataSource = null;
+                            grd_requisa.DataSource = null;
+                            txtCantidadT.EditValue = 0;
+                            txtPeso.EditValue = 0;
+
+                            beTarima.Focus();
+                        }
+                        else
+                        {
                             Guardado = true;
+                        }
                         //}
+
 
                         con.Close();
                     }
 
                 }
 
-                
+
 
 
 
@@ -282,6 +372,16 @@ namespace LOSA.RecepcionMP
             {
                 var gridView = (GridView)grd_requisa.FocusedView;
                 var row = (dsDevoluciones.mpRow)gridView.GetFocusedDataRow();
+                //if (row.consumido)
+                //{
+                //    CajaDialogo.Error("MP Consumida: No se puede realizar la Devolucion!");
+                //}
+                //else
+                //{
+                //    row.selected = Convert.ToBoolean(e.Value);
+                //    row.AcceptChanges();
+                //}
+
                 if (e.Column.FieldName == "selected")
                 {
                     row.selected = Convert.ToBoolean(e.Value);
@@ -291,6 +391,7 @@ namespace LOSA.RecepcionMP
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -300,6 +401,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridView = (GridView)grd_requisa.FocusedView;
                 var row = (dsDevoluciones.mpRow)gridView.GetDataRow(e.RowHandle);
+              
                 if (e.RowHandle >= 0)
                 {
 
@@ -331,10 +433,11 @@ namespace LOSA.RecepcionMP
                     txtPeso.Text = Kilogramos.ToString();
                     txtCantidadT.Text = Unidades.ToString();
                 }
+                
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

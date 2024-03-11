@@ -175,6 +175,7 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 //CajaDialogo.Error(ex.Message);
                 return Desicion;
             }

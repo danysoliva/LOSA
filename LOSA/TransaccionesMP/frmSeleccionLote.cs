@@ -36,7 +36,8 @@ namespace LOSA.TransaccionesMP
 
             if (MP.RecuperarRegistroFromID_RM(IdRM))
             {
-                txtCodigoMP.Text = MP.Codigo;
+                //txtCodigoMP.Text = MP.Codigo;
+                txtCodigoMP.Text = MP.CodeMP_SAP;
                 txtMP_Name.Text = MP.Name;
             }
 
@@ -285,9 +286,6 @@ namespace LOSA.TransaccionesMP
             {
                 CajaDialogo.Error(ec.Message);
             }
-
-
-
         }
 
         private void gvTarimas_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

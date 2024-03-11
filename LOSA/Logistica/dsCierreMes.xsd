@@ -146,6 +146,11 @@
               <xs:element name="bodega_in" msprop:Generator_ColumnVarNameInTable="columnbodega_in" msprop:Generator_ColumnPropNameInRow="bodega_in" msprop:Generator_ColumnPropNameInTable="bodega_inColumn" msprop:Generator_UserColumnName="bodega_in" type="xs:string" minOccurs="0" />
               <xs:element name="id_detalle" msprop:Generator_ColumnVarNameInTable="columnid_detalle" msprop:Generator_ColumnPropNameInRow="id_detalle" msprop:Generator_ColumnPropNameInTable="id_detalleColumn" msprop:Generator_UserColumnName="id_detalle" type="xs:int" minOccurs="0" />
               <xs:element name="id_presentacion" msprop:Generator_ColumnVarNameInTable="columnid_presentacion" msprop:Generator_ColumnPropNameInRow="id_presentacion" msprop:Generator_ColumnPropNameInTable="id_presentacionColumn" msprop:Generator_UserColumnName="id_presentacion" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="util_unidades" msprop:Generator_ColumnVarNameInTable="columnutil_unidades" msprop:Generator_ColumnPropNameInRow="util_unidades" msprop:Generator_ColumnPropNameInTable="util_unidadesColumn" msprop:Generator_UserColumnName="util_unidades" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -167,6 +172,7 @@
               <xs:element name="bodega_in" msprop:Generator_ColumnVarNameInTable="columnbodega_in" msprop:Generator_ColumnPropNameInRow="bodega_in" msprop:Generator_ColumnPropNameInTable="bodega_inColumn" msprop:Generator_UserColumnName="bodega_in" type="xs:string" minOccurs="0" />
               <xs:element name="id_detalle" msprop:Generator_ColumnVarNameInTable="columnid_detalle" msprop:Generator_ColumnPropNameInRow="id_detalle" msprop:Generator_ColumnPropNameInTable="id_detalleColumn" msprop:Generator_UserColumnName="id_detalle" type="xs:int" minOccurs="0" />
               <xs:element name="id_presentacion" msprop:Generator_ColumnVarNameInTable="columnid_presentacion" msprop:Generator_ColumnPropNameInRow="id_presentacion" msprop:Generator_ColumnPropNameInTable="id_presentacionColumn" msprop:Generator_UserColumnName="id_presentacion" type="xs:int" minOccurs="0" />
+              <xs:element name="util_unidades" msprop:Generator_ColumnVarNameInTable="columnutil_unidades" msprop:Generator_ColumnPropNameInRow="util_unidades" msprop:Generator_ColumnPropNameInTable="util_unidadesColumn" msprop:Generator_UserColumnName="util_unidades" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -188,6 +194,7 @@
               <xs:element name="bodega_in" msprop:Generator_ColumnVarNameInTable="columnbodega_in" msprop:Generator_ColumnPropNameInRow="bodega_in" msprop:Generator_ColumnPropNameInTable="bodega_inColumn" msprop:Generator_UserColumnName="bodega_in" type="xs:string" minOccurs="0" />
               <xs:element name="id_detalle" msprop:Generator_ColumnVarNameInTable="columnid_detalle" msprop:Generator_ColumnPropNameInRow="id_detalle" msprop:Generator_ColumnPropNameInTable="id_detalleColumn" msprop:Generator_UserColumnName="id_detalle" type="xs:int" minOccurs="0" />
               <xs:element name="id_presentacion" msprop:Generator_ColumnVarNameInTable="columnid_presentacion" msprop:Generator_ColumnPropNameInRow="id_presentacion" msprop:Generator_ColumnPropNameInTable="id_presentacionColumn" msprop:Generator_UserColumnName="id_presentacion" type="xs:int" minOccurs="0" />
+              <xs:element name="util_unidades" msprop:Generator_ColumnVarNameInTable="columnutil_unidades" msprop:Generator_ColumnPropNameInRow="util_unidades" msprop:Generator_ColumnPropNameInTable="util_unidadesColumn" msprop:Generator_UserColumnName="util_unidades" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -264,6 +271,17 @@
               <xs:element name="Toma_x0020_Física_x0020_Kg" msprop:Generator_ColumnVarNameInTable="columnToma_Física_Kg" msprop:Generator_ColumnPropNameInRow="Toma_Física_Kg" msprop:Generator_ColumnPropNameInTable="Toma_Física_KgColumn" msprop:Generator_UserColumnName="Toma Física Kg" type="xs:decimal" minOccurs="0" />
               <xs:element name="Bodega" msprop:Generator_ColumnVarNameInTable="columnBodega" msprop:Generator_ColumnPropNameInRow="Bodega" msprop:Generator_ColumnPropNameInTable="BodegaColumn" msprop:Generator_UserColumnName="Bodega" type="xs:string" minOccurs="0" />
               <xs:element name="seleccion" msdata:Caption="Ajuste de Lote" msprop:Generator_ColumnVarNameInTable="columnseleccion" msprop:Generator_ColumnPropNameInRow="seleccion" msprop:Generator_ColumnPropNameInTable="seleccionColumn" msprop:Generator_UserColumnName="seleccion" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lotes_recuento" msprop:Generator_TableClassName="lotes_recuentoDataTable" msprop:Generator_TableVarName="tablelotes_recuento" msprop:Generator_RowChangedName="lotes_recuentoRowChanged" msprop:Generator_TablePropName="lotes_recuento" msprop:Generator_RowDeletingName="lotes_recuentoRowDeleting" msprop:Generator_RowChangingName="lotes_recuentoRowChanging" msprop:Generator_RowEvHandlerName="lotes_recuentoRowChangeEventHandler" msprop:Generator_RowDeletedName="lotes_recuentoRowDeleted" msprop:Generator_RowClassName="lotes_recuentoRow" msprop:Generator_UserTableName="lotes_recuento" msprop:Generator_RowEvArgName="lotes_recuentoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="id_unidadmedida" msprop:Generator_ColumnVarNameInTable="columnid_unidadmedida" msprop:Generator_ColumnPropNameInRow="id_unidadmedida" msprop:Generator_ColumnPropNameInTable="id_unidadmedidaColumn" msprop:Generator_UserColumnName="id_unidadmedida" type="xs:int" minOccurs="0" />
+              <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

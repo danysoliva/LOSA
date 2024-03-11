@@ -29,6 +29,7 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividualBatchV3));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,12 +40,12 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.lblCompletados = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.lblSuperior = new DevExpress.XtraEditors.LabelControl();
             this.lblInferior = new DevExpress.XtraEditors.LabelControl();
             this.lblRequerido = new DevExpress.XtraEditors.LabelControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.lblValorBascula2 = new DevExpress.XtraEditors.LabelControl();
             this.lblBascula2 = new DevExpress.XtraEditors.LabelControl();
@@ -55,7 +56,7 @@ namespace LOSA.MicroIngredientes
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsMicrosBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsMicrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvPesaje = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -102,7 +103,6 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula1.Size = new System.Drawing.Size(367, 30);
             this.lblValorBascula1.TabIndex = 21;
             this.lblValorBascula1.Text = "Valor en Báscula: 0.00 Kg";
-            this.lblValorBascula1.Click += new System.EventHandler(this.lblValorBascula1_Click);
             // 
             // btnGuardar
             // 
@@ -112,7 +112,7 @@ namespace LOSA.MicroIngredientes
             this.btnGuardar.Enabled = false;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(635, 649);
+            this.btnGuardar.Location = new System.Drawing.Point(633, 669);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(97, 63);
             this.btnGuardar.TabIndex = 22;
@@ -135,7 +135,7 @@ namespace LOSA.MicroIngredientes
             // 
             // timer1
             // 
-            this.timer1.Interval = 900;
+            this.timer1.Interval = 650;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblError
@@ -483,6 +483,7 @@ namespace LOSA.MicroIngredientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 777);
+            this.Controls.Add(this.lblCompletados);
             this.Controls.Add(this.lblLoteName);
             this.Controls.Add(this.btnBascAmbas);
             this.Controls.Add(this.btnBasc2);
@@ -502,7 +503,6 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblValorBascula1);
             this.Controls.Add(this.lblBascula1);
-            this.Controls.Add(this.lblCompletados);
             this.Controls.Add(this.lblRequerido);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

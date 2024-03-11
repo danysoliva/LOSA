@@ -33,11 +33,13 @@ namespace LOSA.RecepcionMP
         public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado, string pItemCode)
         {
             InitializeComponent();
-            
+            UsuarioLogeado = Puser;
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
 
             Numero_transaccion = Pnumero_transaccion;
             Id_ingreso = Pid_ingreso;
-            UsuarioLogeado = Puser;
+            
             //btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
             ItemCode = pItemCode;
             LoadTarimas();
@@ -45,6 +47,13 @@ namespace LOSA.RecepcionMP
             if (Id_traslado == 0)
             {
                 btnAgregar.Visible = true;
+            }
+
+            if (ItemCode == "MP00080" || ItemCode == "MP00081")
+            {
+                btnAgregar.Visible = false;
+                simpleButton1.Visible = false;
+
             }
         }
 
@@ -108,7 +117,7 @@ namespace LOSA.RecepcionMP
                         break;
                     case 2://En Bodega
                         Error = false;
-                        //mensaje = "Calidad tiene En Observación ésta tarima.!";
+                        mensaje = "Calidad tiene En Observación ésta tarima.!";
                         break;
                     case 3://Retenido
                         Error = false;
@@ -125,13 +134,13 @@ namespace LOSA.RecepcionMP
                         Error = true;
                         mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
                         break;
-                    //case 7://
-                    //    error = true;
-                    //    mensaje = "Calidad tiene Retenida ésta tarima.!";
-                    //    break;
+                    case 7://Retenido por Calidad
+                        Error = true;
+                        mensaje = "Calidad tiene Retenida ésta tarima.!";
+                        break;
                     case 8://Parcialmente Entregado
                         Error = false;
-                        //mensaje = "Calidad ha Rechazado ésta tarima.!";
+                        mensaje = "Calidad ha Rechazado ésta tarima.!";
                         break;
                     case 9://Rechazado
                         Error = true;
@@ -140,6 +149,9 @@ namespace LOSA.RecepcionMP
                     case 10://Ajuste de Inventario
                         Error = true;
                         mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                        break;
+                    case 11:///Ret Logistica
+                        Error = false;
                         break;
                 }
 
@@ -389,14 +401,25 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
-            TimeSpan diasaprox = dp.Now() - row.fecha_ingreso;
+            Boolean Bloquea_activo = true;
+            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("validacion_para_edicion_tarimas", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            Bloquea_activo = Convert.ToBoolean(cmd.ExecuteScalar());
+            con.Close();
 
-            int Dias = Convert.ToInt32(diasaprox.Days);
-
-            if (Dias > 3)//Si es mayor que 3, la tarima lleve mas de dos dias en la bodega.
+            if (Bloquea_activo)
             {
-                CajaDialogo.Error("No puede editar tarimas que tengan mas de dos dias de ingreso.");
-                return;
+                TimeSpan diasaprox = dp.Now() - row.fecha_ingreso;
+
+                int Dias = Convert.ToInt32(diasaprox.Days);
+
+                if (Dias > 4)//Si es mayor que 4, la tarima lleve mas de 3 dias en la bodega.
+                {
+                    CajaDialogo.Error("No puede editar tarimas que tengan mas de dos dias de ingreso.");
+                    return;
+                }
             }
 
             string mensaje = "";
@@ -474,7 +497,7 @@ namespace LOSA.RecepcionMP
             }
             else
             {
-                frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+                frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado, Id_traslado);
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
             }
@@ -485,7 +508,7 @@ namespace LOSA.RecepcionMP
             //Debemos validar si es compra puede agregar mas tarimas
             //if () //Es Compra
             //{
-                frmagregarlote frm = new frmagregarlote(Id_ingreso, Numero_transaccion, UsuarioLogeado);
+                frmagregarlote frm = new frmagregarlote(Id_ingreso, Numero_transaccion, UsuarioLogeado, ItemCode);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadTarimas();
@@ -603,98 +626,203 @@ namespace LOSA.RecepcionMP
 
             int contador_print = 0;
             rptReporteIngresoTarima reportResumen = null;
-            for (int i = 0; i < gridView.RowCount; i++)
+            LOSA.Reproceso.rptTarimaReproceso reportResumenReproceso = null;
+
+            if (ItemCode == "MP00080" || ItemCode == "MP00081")
             {
-                var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetDataRow(i);
-
-                bool Error = false;
-                string mensaje = " ";
-                switch (row.id_estado_tarima)
+                for (int i = 0; i < gridView.RowCount; i++)
                 {
-                    case 1://Recepcionado
-                        Error = false;
-                        break;
-                    case 2://En Bodega
-                        Error = false;
-                        //mensaje = "Calidad tiene En Observación ésta tarima.!";
-                        break;
-                    case 3://Retenido
-                        Error = false;
-                        break;
-                    case 4://Comprometido
-                        Error = true;
-                        mensaje = "Algunas tarima ya esta comprometida!";
-                        break;
-                    case 5://En Produccion
-                        Error = true;
-                        mensaje = "Esta tarima no se puede imprimir por que ya fue entregada a Produccion";
-                        break;
-                    case 6://Consumido
-                        Error = true;
-                        mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
-                        break;
-                    //case 7://
-                    //    error = true;
-                    //    mensaje = "Calidad tiene Retenida ésta tarima.!";
-                    //    break;
-                    case 8://Parcialmente Entregado
-                        Error = false;
-                        //mensaje = "Calidad ha Rechazado ésta tarima.!";
-                        break;
-                    case 9://Rechazado
-                        Error = true;
-                        mensaje = "Esta tarima fue Rechazada!";
-                        break;
-                    case 10://Ajuste de Inventario
-                        Error = true;
-                        mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
-                        break;
-                }
+                    var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetDataRow(i);
 
-                if (Error)
-                {
-                    CajaDialogo.Error(mensaje);
-                    return;
-                }
-
-                if (row.seleccionado == true)
-                {
-                    if (row.id > 0)
+                    bool Error = false;
+                    string mensaje = " ";
+                    switch (row.id_estado_tarima)
                     {
-                        Tarima tar1 = new Tarima();
-                        if (tar1.RecuperarRegistro(row.id))
-                        {
-                            if (contador_print == 0)
-                            {
-                                reportResumen = new rptReporteIngresoTarima(row.id);
-                                reportResumen.CreateDocument();
-                                contador_print++;
-                            }
-                            else
-                            {
-                                // Create the second report and generate its document.
-                                rptReporteIngresoTarima report2 = new rptReporteIngresoTarima(row.id);
-                                report2.CreateDocument();
+                        case 1://Recepcionado
+                            Error = false;
+                            break;
+                        case 2://En Bodega
+                            Error = false;
+                            //mensaje = "Calidad tiene En Observación ésta tarima.!";
+                            break;
+                        case 3://Retenido
+                            Error = false;
+                            break;
+                        case 4://Comprometido
+                            Error = true;
+                            mensaje = "Algunas tarima ya esta comprometida!";
+                            break;
+                        case 5://En Produccion
+                            Error = true;
+                            mensaje = "Esta tarima no se puede imprimir por que ya fue entregada a Produccion";
+                            break;
+                        case 6://Consumido
+                            Error = true;
+                            mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
+                            break;
+                        //case 7://
+                        //    error = true;
+                        //    mensaje = "Calidad tiene Retenida ésta tarima.!";
+                        //    break;
+                        case 8://Parcialmente Entregado
+                            Error = false;
+                            //mensaje = "Calidad ha Rechazado ésta tarima.!";
+                            break;
+                        case 9://Rechazado
+                            Error = true;
+                            mensaje = "Esta tarima fue Rechazada!";
+                            break;
+                        case 10://Ajuste de Inventario
+                            Error = true;
+                            mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                            break;
+                        case 11: //Retenido Log
+                            Error = false;
+                            break;
+                    }
 
-                                if (reportResumen != null)
+                    if (Error)
+                    {
+                        CajaDialogo.Error(mensaje);
+                        return;
+                    }
+
+                    if (row.seleccionado == true)
+                    {
+                        if (row.id > 0)
+                        {
+                            Tarima tar1 = new Tarima();
+                            if (tar1.RecuperarRegistro(row.id))
+                            {
+                                if (contador_print == 0)
                                 {
-                                    // Add all pages of the second report to the end of the first report.
-                                    reportResumen.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                    reportResumenReproceso = new LOSA.Reproceso.rptTarimaReproceso(row.id);
+                                    reportResumenReproceso.CreateDocument();
+                                    contador_print++;
+                                }
+                                else
+                                {
+                                    // Create the second report and generate its document.
+                                    LOSA.Reproceso.rptTarimaReproceso report2 = new LOSA.Reproceso.rptTarimaReproceso(row.id);
+                                    report2.CreateDocument();
+
+                                    if (reportResumenReproceso != null)
+                                    {
+                                        // Add all pages of the second report to the end of the first report.
+                                        reportResumenReproceso.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                    }
                                 }
                             }
-                        }
-                    }//if row.id>0
-                }//if seleccionado is true
-            }//For
-            if (reportResumen != null)
-            {
-                reportResumen.ShowPrintMarginsWarning = false;
-
-                using (ReportPrintTool printTool = new ReportPrintTool(reportResumen))
+                        }//if row.id>0
+                    }//if seleccionado is true
+                }//For
+                if (reportResumenReproceso != null)
                 {
-                    printTool.ShowPreviewDialog();
+                    reportResumenReproceso.ShowPrintMarginsWarning = false;
+
+                    using (ReportPrintTool printTool = new ReportPrintTool(reportResumenReproceso))
+                    {
+                        printTool.ShowPreviewDialog();
+                    }
                 }
             }
+            else
+            {
+                for (int i = 0; i < gridView.RowCount; i++)
+                {
+                    var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetDataRow(i);
+
+                    bool Error = false;
+                    string mensaje = " ";
+                    switch (row.id_estado_tarima)
+                    {
+                        case 1://Recepcionado
+                            Error = false;
+                            break;
+                        case 2://En Bodega
+                            Error = false;
+                            //mensaje = "Calidad tiene En Observación ésta tarima.!";
+                            break;
+                        case 3://Retenido
+                            Error = false;
+                            break;
+                        case 4://Comprometido
+                            Error = true;
+                            mensaje = "Algunas tarima ya esta comprometida!";
+                            break;
+                        case 5://En Produccion
+                            Error = true;
+                            mensaje = "Esta tarima no se puede imprimir por que ya fue entregada a Produccion";
+                            break;
+                        case 6://Consumido
+                            Error = true;
+                            mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
+                            break;
+                        //case 7://
+                        //    error = true;
+                        //    mensaje = "Calidad tiene Retenida ésta tarima.!";
+                        //    break;
+                        case 8://Parcialmente Entregado
+                            Error = false;
+                            //mensaje = "Calidad ha Rechazado ésta tarima.!";
+                            break;
+                        case 9://Rechazado
+                            Error = true;
+                            mensaje = "Esta tarima fue Rechazada!";
+                            break;
+                        case 10://Ajuste de Inventario
+                            Error = true;
+                            mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                            break;
+                    }
+
+                    if (Error)
+                    {
+                        CajaDialogo.Error(mensaje);
+                        return;
+                    }
+
+                    if (row.seleccionado == true)
+                    {
+                        if (row.id > 0)
+                        {
+                            Tarima tar1 = new Tarima();
+                            if (tar1.RecuperarRegistro(row.id))
+                            {
+                                if (contador_print == 0)
+                                {
+                                    reportResumen = new rptReporteIngresoTarima(row.id);
+                                    reportResumen.CreateDocument();
+                                    contador_print++;
+                                }
+                                else
+                                {
+                                    // Create the second report and generate its document.
+                                    rptReporteIngresoTarima report2 = new rptReporteIngresoTarima(row.id);
+                                    report2.CreateDocument();
+
+                                    if (reportResumen != null)
+                                    {
+                                        // Add all pages of the second report to the end of the first report.
+                                        reportResumen.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                    }
+                                }
+                            }
+                        }//if row.id>0
+                    }//if seleccionado is true
+                }//For
+                if (reportResumen != null)
+                {
+                    reportResumen.ShowPrintMarginsWarning = false;
+
+                    using (ReportPrintTool printTool = new ReportPrintTool(reportResumen))
+                    {
+                        printTool.ShowPreviewDialog();
+                    }
+                }
+            }
+
+            
 
         }
 
@@ -722,6 +850,11 @@ namespace LOSA.RecepcionMP
                     }
                 }
             }
+        }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            LoadTarimas();
         }
     }
 }

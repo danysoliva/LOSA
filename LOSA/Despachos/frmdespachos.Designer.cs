@@ -50,10 +50,12 @@
             this.Colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_ver = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnNuevoOrdenCarga = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNameForIT_Support = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameForIT_Support.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -75,7 +77,6 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelControl1.Appearance.Options.UseFont = true;
@@ -84,7 +85,7 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(172, 32);
+            this.labelControl1.Location = new System.Drawing.Point(198, 52);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(312, 33);
             this.labelControl1.TabIndex = 35;
@@ -134,8 +135,11 @@
             this.Colseleccionar});
             this.grdv_despachos.DetailHeight = 284;
             this.grdv_despachos.GridControl = this.grd_despachos;
+            this.grdv_despachos.LevelIndent = 0;
             this.grdv_despachos.Name = "grdv_despachos";
+            this.grdv_despachos.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_despachos.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_despachos.PreviewIndent = 0;
             // 
             // colid
             // 
@@ -254,24 +258,36 @@
             this.btnNuevoOrdenCarga.Visible = false;
             this.btnNuevoOrdenCarga.Click += new System.EventHandler(this.btnNuevoOrdenCarga_Click);
             // 
+            // txtNameForIT_Support
+            // 
+            this.txtNameForIT_Support.EditValue = "frmdespachos";
+            this.txtNameForIT_Support.Location = new System.Drawing.Point(12, 2);
+            this.txtNameForIT_Support.Name = "txtNameForIT_Support";
+            this.txtNameForIT_Support.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameForIT_Support.Properties.Appearance.Options.UseFont = true;
+            this.txtNameForIT_Support.Size = new System.Drawing.Size(199, 24);
+            this.txtNameForIT_Support.TabIndex = 38;
+            this.txtNameForIT_Support.Visible = false;
+            // 
             // frmdespachos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 560);
+            this.Controls.Add(this.txtNameForIT_Support);
             this.Controls.Add(this.btnNuevoOrdenCarga);
             this.Controls.Add(this.grd_despachos);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnAtras);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmdespachos";
-            this.Text = "frmdespachos";
+            this.Text = "Despachos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameForIT_Support.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +309,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Colseleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_ver;
         private DevExpress.XtraEditors.SimpleButton btnNuevoOrdenCarga;
+        private DevExpress.XtraEditors.TextEdit txtNameForIT_Support;
     }
 }

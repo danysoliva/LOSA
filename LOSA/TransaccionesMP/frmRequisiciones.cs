@@ -74,7 +74,7 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grRequisicoinesMP.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
 
-            frmRequisicionesDetalle frm = new frmRequisicionesDetalle(UsuarioLogeado, row.id, row.Lote);
+            frmRequisicionesDetalle frm = new frmRequisicionesDetalle(UsuarioLogeado, row.id, row.Lote, row.id_estado, row.nombre_comercial);
             frm.WindowState = FormWindowState.Maximized;
             if(frm.ShowDialog()== DialogResult.OK)
             {
@@ -98,7 +98,8 @@ namespace LOSA.TransaccionesMP
             report.ShowPrintMarginsWarning = false;
             //report.ShowPreview();
             report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-            report.Print();
+            //report.Print();
+            report.ShowPreviewDialog();
 
         }
         private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
@@ -114,36 +115,92 @@ namespace LOSA.TransaccionesMP
                 var gridView = (GridView)grRequisicoinesMP.FocusedView;
                 var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
 
-                if (row.finalizado)
+                switch (row.id_estado)
                 {
-                    if (MessageBox.Show("Desea Abrir de nuevo la requisa en cuestion?","Pregunta" , MessageBoxButtons.OKCancel, MessageBoxIcon.Question ) == DialogResult.OK)
-                    {
-                        string query = "sp_reactivar_requisa";
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        cn.Open();
-                        SqlCommand cmd = new SqlCommand(query, cn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@req", row.id);
-                        cmd.ExecuteNonQuery();
-                        cn.Close();
-
-
-                        if (tggView.IsOn)
+                    case 1://Habilitada
+                    case 2://Seleccion de Lotes
+                    case 3://En Proceso
+                        break;
+                    case 4://Cerrada
+                        Utileria.frmMensajeCalidad frm1 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
+                                                     "Esta requisición ya se encuentra en estado: Cerrada!");
+                        if (frm1.ShowDialog() == DialogResult.Cancel)
                         {
-                            LoadDatos();
+                            return;
                         }
-                        else
+                        break;
+                    case 5://Nueva
+                        Utileria.frmMensajeCalidad frm2 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
+                                                     "No se puede finalizar una requisición en estado: Nuevo!");
+                        if (frm2.ShowDialog() == DialogResult.Cancel)
                         {
-                            LoadDatos_Finalizadas();
+                            return;
                         }
-                    }
-
+                        break;
+                    default:
+                        break;
                 }
-                else
-                {
-                    if (MessageBox.Show("Desea finalizar la requisa? No podra seguir enviando materia prima despues de esta accion", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                    {
 
+
+                #region codigo anterior
+                //if (row.finalizado)
+                //{
+                //    if (MessageBox.Show("Desea Abrir de nuevo la requisa en cuestion?","Pregunta" , MessageBoxButtons.OKCancel, MessageBoxIcon.Question ) == DialogResult.OK)
+                //    {
+                //        string query = "sp_reactivar_requisa";
+                //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                //        cn.Open();
+                //        SqlCommand cmd = new SqlCommand(query, cn);
+                //        cmd.CommandType = CommandType.StoredProcedure;
+                //        cmd.Parameters.AddWithValue("@req", row.id);
+                //        cmd.ExecuteNonQuery();
+                //        cn.Close();
+
+
+                //        if (tggView.IsOn)
+                //        {
+                //            LoadDatos();
+                //        }
+                //        else
+                //        {
+                //            LoadDatos_Finalizadas();
+                //        }
+                //    }
+
+                //}
+                //else
+                //{
+                //    if (MessageBox.Show("Desea finalizar la requisa? No podra seguir enviando materia prima despues de esta accion", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                //    {
+
+                //        string query = "sp_finalizar_requisa_v2";
+                //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                //        cn.Open();
+                //        SqlCommand cmd = new SqlCommand(query, cn);
+                //        cmd.CommandType = CommandType.StoredProcedure;
+                //        cmd.Parameters.AddWithValue("@req", row.id);
+                //        cmd.Parameters.AddWithValue("@user_end", UsuarioLogeado.Id);
+                //        cmd.ExecuteNonQuery();
+                //        cn.Close();
+
+
+                //        if (tggView.IsOn)
+                //        {
+                //            LoadDatos();
+                //        }
+                //        else
+                //        {
+                //            LoadDatos_Finalizadas();
+                //        }
+                //    }
+                //}
+                #endregion
+
+                RequisicionesValidaciones val1 = new RequisicionesValidaciones();
+                if (val1.PermitirCerrarRequisicionMP(row.id))
+                {
+                    if (CajaDialogo.Pregunta("Confirme si desea Cerrar la Requisición?") == DialogResult.Yes)
+                    {
                         string query = "sp_finalizar_requisa_v2";
                         SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                         cn.Open();
@@ -154,18 +211,25 @@ namespace LOSA.TransaccionesMP
                         cmd.ExecuteNonQuery();
                         cn.Close();
 
-
                         if (tggView.IsOn)
-                        {
                             LoadDatos();
-                        }
                         else
-                        {
                             LoadDatos_Finalizadas();
-                        }
                     }
                 }
-
+                else
+                {
+                    //Hay materia prima pendiente de entregar.
+                    //No se permite cerrar una requisicion si hay materia prima pendiente de entregar
+                    Utileria.frmMensajeCalidad frm2 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
+                                                     "No se puede finalizar esta requisición, no se han entregado completamente!\n" +
+                                                     "Ejemplo: ItemName: " + val1.NameMP+
+                                                     "\nCantidad Pendiente en Kg: " + string.Format("{0:###,##0.00}", val1.CantidadPendiente));
+                    if (frm2.ShowDialog() == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -176,6 +240,18 @@ namespace LOSA.TransaccionesMP
         }
 
         private void tggView_Toggled(object sender, EventArgs e)
+        {
+            if (tggView.IsOn)                 // vista Activas
+            {
+                LoadDatos();
+            }
+            else
+            {
+                LoadDatos_Finalizadas();
+            }
+        }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
         {
             if (tggView.IsOn)                 // vista Activas
             {

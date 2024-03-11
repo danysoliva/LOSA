@@ -3,30 +3,8 @@ namespace LOSA.TransaccionesMP
 {
     partial class frmResumenToEntregar
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResumenToEntregar));
@@ -63,6 +41,9 @@ namespace LOSA.TransaccionesMP
             this.lblTotalUd_en_tarima = new DevExpress.XtraEditors.LabelControl();
             this.txtKgAEnviar = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.btnBasc2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBasc1 = new DevExpress.XtraEditors.SimpleButton();
+            this.lblErrorBascula = new DevExpress.XtraEditors.LabelControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEnviados.Properties)).BeginInit();
@@ -83,8 +64,7 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(327, 531);
+            this.cmdHome.Location = new System.Drawing.Point(315, 608);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(175, 48);
             this.cmdHome.TabIndex = 7;
@@ -100,7 +80,7 @@ namespace LOSA.TransaccionesMP
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(134, 531);
+            this.simpleButton1.Location = new System.Drawing.Point(122, 608);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(175, 48);
             this.simpleButton1.TabIndex = 8;
@@ -237,7 +217,7 @@ namespace LOSA.TransaccionesMP
             // 
             // chConsumirPendientes
             // 
-            this.chConsumirPendientes.Location = new System.Drawing.Point(1, 543);
+            this.chConsumirPendientes.Location = new System.Drawing.Point(5, 614);
             this.chConsumirPendientes.Name = "chConsumirPendientes";
             this.chConsumirPendientes.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.chConsumirPendientes.Properties.Appearance.Options.UseFont = true;
@@ -259,6 +239,7 @@ namespace LOSA.TransaccionesMP
             this.vGridControl1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.vGridControl1.Location = new System.Drawing.Point(10, 3);
             this.vGridControl1.Name = "vGridControl1";
+            this.vGridControl1.OptionsView.AllowReadOnlyRowAppearance = DevExpress.Utils.DefaultBoolean.True;
             this.vGridControl1.RecordWidth = 453;
             this.vGridControl1.RowHeaderWidth = 130;
             this.vGridControl1.RowHeaderWidthChangeStep = 4;
@@ -284,6 +265,7 @@ namespace LOSA.TransaccionesMP
             this.rowid.Name = "rowid";
             this.rowid.Properties.Caption = "id";
             this.rowid.Properties.FieldName = "id";
+            this.rowid.Properties.ReadOnly = true;
             this.rowid.Visible = false;
             // 
             // rownombreTarima
@@ -291,44 +273,51 @@ namespace LOSA.TransaccionesMP
             this.rownombreTarima.Name = "rownombreTarima";
             this.rownombreTarima.Properties.Caption = "Código Barra";
             this.rownombreTarima.Properties.FieldName = "nombreTarima";
+            this.rownombreTarima.Properties.ReadOnly = true;
             // 
             // rownombreProveedor
             // 
             this.rownombreProveedor.Name = "rownombreProveedor";
             this.rownombreProveedor.Properties.Caption = "Proveedor";
             this.rownombreProveedor.Properties.FieldName = "nombreProveedor";
+            this.rownombreProveedor.Properties.ReadOnly = true;
             // 
             // rowfecha_ingreso
             // 
             this.rowfecha_ingreso.Name = "rowfecha_ingreso";
             this.rowfecha_ingreso.Properties.Caption = "Fecha Ingreso";
             this.rowfecha_ingreso.Properties.FieldName = "fecha_ingreso";
+            this.rowfecha_ingreso.Properties.ReadOnly = true;
             // 
             // rownumero_transaccion
             // 
-            this.rownumero_transaccion.Appearance.Options.UseTextOptions = true;
-            this.rownumero_transaccion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.rownumero_transaccion.AppearanceCell.Options.UseTextOptions = true;
+            this.rownumero_transaccion.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.rownumero_transaccion.Name = "rownumero_transaccion";
             this.rownumero_transaccion.Properties.Caption = "# Ingreso";
             this.rownumero_transaccion.Properties.FieldName = "numero_transaccion";
+            this.rownumero_transaccion.Properties.ReadOnly = true;
             // 
             // rowlote_materia_prima
             // 
             this.rowlote_materia_prima.Name = "rowlote_materia_prima";
             this.rowlote_materia_prima.Properties.Caption = "Lote";
             this.rowlote_materia_prima.Properties.FieldName = "lote_materia_prima";
+            this.rowlote_materia_prima.Properties.ReadOnly = true;
             // 
             // rowpresentacion
             // 
             this.rowpresentacion.Name = "rowpresentacion";
             this.rowpresentacion.Properties.Caption = "Presentación";
             this.rowpresentacion.Properties.FieldName = "presentacion";
+            this.rowpresentacion.Properties.ReadOnly = true;
             // 
             // rowtipo_tarima
             // 
             this.rowtipo_tarima.Name = "rowtipo_tarima";
             this.rowtipo_tarima.Properties.Caption = "tipo_tarima";
             this.rowtipo_tarima.Properties.FieldName = "tipo_tarima";
+            this.rowtipo_tarima.Properties.ReadOnly = true;
             this.rowtipo_tarima.Visible = false;
             // 
             // rowid_boleta
@@ -336,6 +325,7 @@ namespace LOSA.TransaccionesMP
             this.rowid_boleta.Name = "rowid_boleta";
             this.rowid_boleta.Properties.Caption = "id_boleta";
             this.rowid_boleta.Properties.FieldName = "id_boleta";
+            this.rowid_boleta.Properties.ReadOnly = true;
             this.rowid_boleta.Visible = false;
             // 
             // rownum
@@ -343,6 +333,7 @@ namespace LOSA.TransaccionesMP
             this.rownum.Name = "rownum";
             this.rownum.Properties.Caption = "num";
             this.rownum.Properties.FieldName = "num";
+            this.rownum.Properties.ReadOnly = true;
             this.rownum.Visible = false;
             // 
             // rowIsMicro
@@ -350,6 +341,7 @@ namespace LOSA.TransaccionesMP
             this.rowIsMicro.Name = "rowIsMicro";
             this.rowIsMicro.Properties.Caption = "Is Micro";
             this.rowIsMicro.Properties.FieldName = "IsMicro";
+            this.rowIsMicro.Properties.ReadOnly = true;
             this.rowIsMicro.Visible = false;
             // 
             // rowitemcode
@@ -357,6 +349,7 @@ namespace LOSA.TransaccionesMP
             this.rowitemcode.Name = "rowitemcode";
             this.rowitemcode.Properties.Caption = "ItemCode";
             this.rowitemcode.Properties.FieldName = "itemcode";
+            this.rowitemcode.Properties.ReadOnly = true;
             // 
             // rowmp_name
             // 
@@ -364,6 +357,7 @@ namespace LOSA.TransaccionesMP
             this.rowmp_name.Properties.AllowEdit = false;
             this.rowmp_name.Properties.Caption = "Materia Prima";
             this.rowmp_name.Properties.FieldName = "mp_name";
+            this.rowmp_name.Properties.ReadOnly = true;
             // 
             // labelControl7
             // 
@@ -406,6 +400,46 @@ namespace LOSA.TransaccionesMP
             this.labelControl5.TabIndex = 116;
             this.labelControl5.Text = "Por enviar de esta Tarima (Kg):";
             // 
+            // btnBasc2
+            // 
+            this.btnBasc2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnBasc2.Appearance.Options.UseFont = true;
+            this.btnBasc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBasc2.Location = new System.Drawing.Point(353, 555);
+            this.btnBasc2.Name = "btnBasc2";
+            this.btnBasc2.Size = new System.Drawing.Size(112, 49);
+            this.btnBasc2.TabIndex = 119;
+            this.btnBasc2.Text = "Báscula 2";
+            this.btnBasc2.Visible = false;
+            this.btnBasc2.Click += new System.EventHandler(this.btnBasc2_Click);
+            // 
+            // btnBasc1
+            // 
+            this.btnBasc1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBasc1.Appearance.Options.UseFont = true;
+            this.btnBasc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBasc1.Location = new System.Drawing.Point(171, 555);
+            this.btnBasc1.Name = "btnBasc1";
+            this.btnBasc1.Size = new System.Drawing.Size(112, 49);
+            this.btnBasc1.TabIndex = 118;
+            this.btnBasc1.Text = "Báscula 1";
+            this.btnBasc1.Visible = false;
+            this.btnBasc1.Click += new System.EventHandler(this.btnBasc1_Click);
+            // 
+            // lblErrorBascula
+            // 
+            this.lblErrorBascula.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorBascula.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorBascula.Appearance.Options.UseFont = true;
+            this.lblErrorBascula.Appearance.Options.UseForeColor = true;
+            this.lblErrorBascula.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblErrorBascula.Location = new System.Drawing.Point(122, 488);
+            this.lblErrorBascula.Name = "lblErrorBascula";
+            this.lblErrorBascula.Size = new System.Drawing.Size(400, 61);
+            this.lblErrorBascula.TabIndex = 120;
+            this.lblErrorBascula.Text = "NO EXISTE BASCULA DISPONIBLE";
+            this.lblErrorBascula.Visible = false;
+            // 
             // dsTransaccionesMP1
             // 
             this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
@@ -415,7 +449,10 @@ namespace LOSA.TransaccionesMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 584);
+            this.ClientSize = new System.Drawing.Size(640, 668);
+            this.Controls.Add(this.lblErrorBascula);
+            this.Controls.Add(this.btnBasc2);
+            this.Controls.Add(this.btnBasc1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtKgAEnviar);
             this.Controls.Add(this.labelControl5);
@@ -453,9 +490,7 @@ namespace LOSA.TransaccionesMP
             this.PerformLayout();
 
         }
-
         #endregion
-
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -490,5 +525,8 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.LabelControl lblTotalUd_en_tarima;
         private DevExpress.XtraEditors.TextEdit txtKgAEnviar;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.SimpleButton btnBasc2;
+        private DevExpress.XtraEditors.SimpleButton btnBasc1;
+        private DevExpress.XtraEditors.LabelControl lblErrorBascula;
     }
 }

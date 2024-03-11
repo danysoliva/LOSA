@@ -35,8 +35,8 @@ namespace LOSA.TransaccionesPT
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cant_rows", spinEdit1.EditValue);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsPT.loadtml.Clear();
-                da.Fill(dsPT.loadtml);
+                dsPT1.loadtml.Clear();
+                da.Fill(dsPT1.loadtml);
 
                 //Tarimas No Activadas
                 query = @"[sp_load_lista_de_tarimas_activas_v3]";
@@ -44,8 +44,8 @@ namespace LOSA.TransaccionesPT
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cant_rows", spinEdit1.EditValue);
                 da = new SqlDataAdapter(cmd);
-                dsPT.loadtml_no_activadas.Clear();
-                da.Fill(dsPT.loadtml_no_activadas);
+                dsPT1.loadtml_no_activadas.Clear();
+                da.Fill(dsPT1.loadtml_no_activadas);
 
                 cn.Close();
                 

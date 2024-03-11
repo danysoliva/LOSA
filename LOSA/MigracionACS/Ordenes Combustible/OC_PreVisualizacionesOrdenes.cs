@@ -25,6 +25,7 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
             UsuarioLogeado = pUserC;
             LoadOrdenes();
             LoadFuel();
+            checkBoxSelectAll.Checked = true;
         }
 
         private void LoadFuel()
@@ -357,6 +358,32 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void checkBoxSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            var gridView = (GridView)grPerfiles.FocusedView;
+            int conta = dsOrdenesCombustible1.tempo_ordenes.Count;
+
+            for (int i = 0; i < conta; i++)
+            {
+                dsOrdenesCombustible.tempo_ordenesRow row = (dsOrdenesCombustible.tempo_ordenesRow)gridView.GetDataRow(i);
+                int r = gridView.GetVisibleRowHandle(i);
+                if (r >= 0)
+                {
+                    if (row != null)
+                    {
+                        row.seleccionar = checkBoxSelectAll.Checked;
+                    }
+                }
+                else
+                {
+                    if (row != null)
+                    {
+                        row.seleccionar = false;
+                    }
+                }
             }
         }
     }

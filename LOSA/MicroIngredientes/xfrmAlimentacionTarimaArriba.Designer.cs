@@ -49,6 +49,21 @@ namespace LOSA.MicroIngredientes
             this.txtOrden1 = new System.Windows.Forms.TextBox();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_orden = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltotal_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_batch1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_rm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorder_id1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorder_code1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_turno1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collot1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colacumulado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbatch_pendientes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtLotePT1 = new System.Windows.Forms.TextBox();
             this.txtProducto1 = new System.Windows.Forms.TextBox();
@@ -64,6 +79,7 @@ namespace LOSA.MicroIngredientes
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.teCodBarra = new DevExpress.XtraEditors.TextEdit();
+            this.colkg_por_batch = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -71,6 +87,9 @@ namespace LOSA.MicroIngredientes
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCodBarra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,6 +152,7 @@ namespace LOSA.MicroIngredientes
             this.collot,
             this.gridColumn1,
             this.gridColumn2});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(-839, 382, 260, 352);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -254,14 +274,185 @@ namespace LOSA.MicroIngredientes
             this.xtraTabControl1.Size = new System.Drawing.Size(1294, 399);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1});
+            this.xtraTabPage1,
+            this.xtraTabPage2});
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1288, 363);
-            this.xtraTabPage1.Text = "Resumen Pesajes";
+            this.xtraTabPage1.Text = "Pesaje Nucleo";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.gridControl2);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(1288, 363);
+            this.xtraTabPage2.Text = "Pesaje Individual";
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataMember = "resumen_pesaje_individual_pendiente";
+            this.gridControl2.DataSource = this.dsMicrosBindingSource;
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(1288, 363);
+            this.gridControl2.TabIndex = 1;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.Empty.Options.UseFont = true;
+            this.gridView2.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView2.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView2.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView2.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView2.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.Preview.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_orden,
+            this.coltotal_kg1,
+            this.colfecha1,
+            this.colcant_batch1,
+            this.colid_rm,
+            this.colitemname,
+            this.colorder_id1,
+            this.colorder_code1,
+            this.colid_turno1,
+            this.collot1,
+            this.colacumulado,
+            this.colbatch_pendientes,
+            this.colkg_por_batch});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_orden
+            // 
+            this.colid_orden.FieldName = "id_orden";
+            this.colid_orden.Name = "colid_orden";
+            this.colid_orden.OptionsColumn.AllowEdit = false;
+            this.colid_orden.Width = 127;
+            // 
+            // coltotal_kg1
+            // 
+            this.coltotal_kg1.Caption = "Total KG";
+            this.coltotal_kg1.FieldName = "total_kg";
+            this.coltotal_kg1.Name = "coltotal_kg1";
+            this.coltotal_kg1.OptionsColumn.AllowEdit = false;
+            this.coltotal_kg1.Visible = true;
+            this.coltotal_kg1.VisibleIndex = 6;
+            this.coltotal_kg1.Width = 103;
+            // 
+            // colfecha1
+            // 
+            this.colfecha1.Caption = "Fecha";
+            this.colfecha1.FieldName = "fecha";
+            this.colfecha1.Name = "colfecha1";
+            this.colfecha1.OptionsColumn.AllowEdit = false;
+            this.colfecha1.Visible = true;
+            this.colfecha1.VisibleIndex = 1;
+            this.colfecha1.Width = 113;
+            // 
+            // colcant_batch1
+            // 
+            this.colcant_batch1.Caption = "Cant. Batch Inicial";
+            this.colcant_batch1.FieldName = "cant_batch";
+            this.colcant_batch1.Name = "colcant_batch1";
+            this.colcant_batch1.OptionsColumn.AllowEdit = false;
+            this.colcant_batch1.Visible = true;
+            this.colcant_batch1.VisibleIndex = 7;
+            this.colcant_batch1.Width = 174;
+            // 
+            // colid_rm
+            // 
+            this.colid_rm.FieldName = "id_rm";
+            this.colid_rm.Name = "colid_rm";
+            this.colid_rm.OptionsColumn.AllowEdit = false;
+            // 
+            // colitemname
+            // 
+            this.colitemname.Caption = "MP";
+            this.colitemname.FieldName = "itemname";
+            this.colitemname.Name = "colitemname";
+            this.colitemname.OptionsColumn.AllowEdit = false;
+            this.colitemname.Visible = true;
+            this.colitemname.VisibleIndex = 0;
+            this.colitemname.Width = 125;
+            // 
+            // colorder_id1
+            // 
+            this.colorder_id1.Caption = "Order Id";
+            this.colorder_id1.FieldName = "order_id";
+            this.colorder_id1.Name = "colorder_id1";
+            this.colorder_id1.OptionsColumn.AllowEdit = false;
+            this.colorder_id1.Visible = true;
+            this.colorder_id1.VisibleIndex = 2;
+            this.colorder_id1.Width = 102;
+            // 
+            // colorder_code1
+            // 
+            this.colorder_code1.Caption = "Order Code";
+            this.colorder_code1.FieldName = "order_code";
+            this.colorder_code1.Name = "colorder_code1";
+            this.colorder_code1.OptionsColumn.AllowEdit = false;
+            this.colorder_code1.Visible = true;
+            this.colorder_code1.VisibleIndex = 3;
+            this.colorder_code1.Width = 152;
+            // 
+            // colid_turno1
+            // 
+            this.colid_turno1.FieldName = "id_turno";
+            this.colid_turno1.Name = "colid_turno1";
+            this.colid_turno1.OptionsColumn.AllowEdit = false;
+            // 
+            // collot1
+            // 
+            this.collot1.FieldName = "lot";
+            this.collot1.Name = "collot1";
+            this.collot1.OptionsColumn.AllowEdit = false;
+            this.collot1.Visible = true;
+            this.collot1.VisibleIndex = 4;
+            this.collot1.Width = 97;
+            // 
+            // colacumulado
+            // 
+            this.colacumulado.Caption = "Batch Adicionados";
+            this.colacumulado.FieldName = "acumulado";
+            this.colacumulado.Name = "colacumulado";
+            this.colacumulado.OptionsColumn.AllowEdit = false;
+            this.colacumulado.Visible = true;
+            this.colacumulado.VisibleIndex = 8;
+            this.colacumulado.Width = 119;
+            // 
+            // colbatch_pendientes
+            // 
+            this.colbatch_pendientes.Caption = "Batch Pendientes";
+            this.colbatch_pendientes.FieldName = "batch_pendientes";
+            this.colbatch_pendientes.Name = "colbatch_pendientes";
+            this.colbatch_pendientes.OptionsColumn.AllowEdit = false;
+            this.colbatch_pendientes.Visible = true;
+            this.colbatch_pendientes.VisibleIndex = 9;
+            this.colbatch_pendientes.Width = 155;
             // 
             // labelControl1
             // 
@@ -424,6 +615,16 @@ namespace LOSA.MicroIngredientes
             this.teCodBarra.TabIndex = 0;
             this.teCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.teCodBarra_KeyDown);
             // 
+            // colkg_por_batch
+            // 
+            this.colkg_por_batch.Caption = "KG Por Batch";
+            this.colkg_por_batch.FieldName = "kg_por_batch";
+            this.colkg_por_batch.Name = "colkg_por_batch";
+            this.colkg_por_batch.OptionsColumn.AllowEdit = false;
+            this.colkg_por_batch.Visible = true;
+            this.colkg_por_batch.VisibleIndex = 5;
+            this.colkg_por_batch.Width = 130;
+            // 
             // xfrmAlimentacionTarimaArriba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,6 +656,9 @@ namespace LOSA.MicroIngredientes
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCodBarra.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -496,5 +700,21 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.TextEdit teCodBarra;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_orden;
+        private DevExpress.XtraGrid.Columns.GridColumn coltotal_kg1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_batch1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_rm;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemname;
+        private DevExpress.XtraGrid.Columns.GridColumn colorder_id1;
+        private DevExpress.XtraGrid.Columns.GridColumn colorder_code1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_turno1;
+        private DevExpress.XtraGrid.Columns.GridColumn collot1;
+        private DevExpress.XtraGrid.Columns.GridColumn colacumulado;
+        private DevExpress.XtraGrid.Columns.GridColumn colbatch_pendientes;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_por_batch;
     }
 }

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LOSA.Utileria;
 
 namespace LOSA.MicroIngredientes
 {
@@ -27,6 +28,7 @@ namespace LOSA.MicroIngredientes
         public int BasculaId;
         public DateTime fecha;
         public long id_tarima_micros;
+        decimal existencia_kg_micros = 0;
 
         enum Basculas
         {
@@ -186,9 +188,10 @@ namespace LOSA.MicroIngredientes
                         Lote = row.lote,
                         MateriaPrima = row.mp,
                         TarimaOrigeId = row.id_tarima_origen,
-
+                        TarimaMicroId = row.id_tarima_micro,
+                        Peso = row.peso,
                     });
-
+                    id_tarima_micros = row.id_tarima_micro;
                 }
 
                 peso_bascula_finish = PesajeAcumulado.Sum(t => t.Peso);
@@ -261,16 +264,54 @@ namespace LOSA.MicroIngredientes
                 try
                 {
                     TarimaMicroingrediente tarima = new TarimaMicroingrediente();
+                    tarima.RecuperarRegistroTarimaMicros(0,txtCodBarra.Text);
+                   
 
                     if (!string.IsNullOrEmpty(txtCodBarra.Text))
                     {
-                        //if (pesaje.MateriaPrimaID != tarima.Id_materiaprima)
+                        if (pesaje.MateriaPrimaID != tarima.IdRM)
+                        {
+                            CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
+                            txtCodBarra.Text = "";
+                            return;
+                        }
+
+                        TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
+                        existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(tarima.Id));
+                        if (existencia_kg_micros <= 0)
+                        {
+                            string mensaje = "Tarima " + txtCodBarra.Text + " de Micro Ingrediente consumida en su Totalidad.";
+                            frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+
+                            }
+                            txtCodBarra.Text = "";
+                            return;
+                        }
+
+                        //if (pesoBascula1 > existencia_kg_micros)
                         //{
-                        //    CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
-                        //    txtCodBarra.Text = "";
+                        //    string mensaje = "El peso en Bascula es mayor que lo disponible en tarima!\nDisponible en Tarima: "+ existencia_kg_micros;
+                        //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                        //    if (frm.ShowDialog() == DialogResult.OK)
+                        //    {
+
+                        //    }
+                        //    btnBascula1.Enabled = false;
                         //    return;
                         //}
+                        //if (pesoBascula2 > existencia_kg_micros)
+                        //{
+                        //    string mensaje = "El peso en Bascula es mayor que lo disponible en tarima!\nDisponible en Tarima: " + existencia_kg_micros;
+                        //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                        //    if (frm.ShowDialog() == DialogResult.OK)
+                        //    {
 
+                        //    }
+                        //    btnBascula2.Enabled = false;
+                        //    return;
+                        //}
 
                         timer1.Enabled = true;
                         indicePeso = 0;
@@ -292,8 +333,6 @@ namespace LOSA.MicroIngredientes
 
 
                             var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
-
-
 
                             row.mp = tarima.MateriaPrima;
                             row.lote = tarima.LoteMP;
@@ -335,8 +374,8 @@ namespace LOSA.MicroIngredientes
                             limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
                             //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-                            lblInferior.Text = "Límite Mínimo: " + limiteInferior.ToString("N2");
-                            lblSuperior.Text = "Límite Máximo: " + limiteSuperior.ToString("N2");
+                            lblInferior.Text = "Límite Minimo: " + limiteInferior.ToString("N2");
+                            lblSuperior.Text = "Límite Maximo: " + limiteSuperior.ToString("N2");
 
 
                             switch (BasculaId)
@@ -471,9 +510,9 @@ namespace LOSA.MicroIngredientes
             pesoBascula1 = 0;
             pesoBascula2 = 0;
 
-            pesoBasculaAcumulado1= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-            pesoBasculaAcumulado2= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-            pesoBasculaAcumuladoALL= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+            //pesoBasculaAcumulado1= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+            //pesoBasculaAcumulado2= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+            //pesoBasculaAcumuladoALL= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
 
            
 
@@ -482,6 +521,7 @@ namespace LOSA.MicroIngredientes
                 cnx.Open();
                 dsMicros.Pesaje_Bascula.Clear();
                 SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
+                //SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value_pruebas", cnx);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.Fill(dsMicros.Pesaje_Bascula);
 
@@ -544,25 +584,27 @@ namespace LOSA.MicroIngredientes
                 }
 
                 //decimal peso_test = 0.95M;
-                //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";MI0000000095
+                //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
 
             }
 
 
 
-            var row = (dsMicros.MP_EscaneoRow)gvPesaje.GetDataRow(indicePeso);            
+            var row = (dsMicros.MP_EscaneoRow)gvPesaje.GetDataRow(indicePeso);
 
             limiteInferior = pesaje.PesoPorBatch - (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
             limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
-            //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-            lblInferior.Text = "Límite Máximo: " + limiteInferior.ToString("N2") + " Kg";
-            lblSuperior.Text = "Límite Mínimo: " + limiteSuperior.ToString("N2") + " Kg";
+            ////lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
+            lblInferior.Text = "Límite Minimo: " + limiteInferior.ToString("N2") + " Kg";
+            lblSuperior.Text = "Límite Maximo: " + limiteSuperior.ToString("N2") + " Kg";
 
             //pesoBasculaAcumulado1 = 0.95M;
+
+
             switch (BasculaId)
             {
-                
+
                 case (int)Basculas.Bascula1:
 
                     if (pesoBasculaAcumulado1 >= limiteInferior && pesoBasculaAcumulado1 <= limiteSuperior)
@@ -597,7 +639,7 @@ namespace LOSA.MicroIngredientes
                         pesoBasculaAcumuladoTMP_ALL = 0;
                         pesoBasculaAcumuladoTMP2 = 0;
 
-                        if (indicePeso >= 0 && gvPesaje.RowCount>0)
+                        if (indicePeso >= 0 && gvPesaje.RowCount > 0)
                         {
                             row.peso = pesoBascula1;
 
@@ -730,6 +772,7 @@ namespace LOSA.MicroIngredientes
                     break;
             }
         }
+
 
         public class LoteMPAcumulado
         {

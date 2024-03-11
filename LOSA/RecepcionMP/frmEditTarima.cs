@@ -22,13 +22,20 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         decimal factor;
         public string ItemCode;
-        public frmEditTarima(int pIdTarima, UserLogin pUser)
+        public frmEditTarima(int pIdTarima, UserLogin pUser, int pId_traslado)
         {
             InitializeComponent();
             UsuarioLogeado = pUser;
             LoadPresentaciones();
             IdTarima = pIdTarima;
             LoadDataTarima(pIdTarima);
+            if (pId_traslado > 0)
+            {
+                txtLote.Enabled = false;
+                txtNumIngreso.Enabled = false;
+                dtFechaIngreso.Enabled = false;
+                glueProveedor.Enabled = false;
+            }
             cargarDatosProveedor();
         }
 
@@ -214,7 +221,19 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                 cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(txtUnidades.Text));
-                cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
+
+                PresentacionX pres1 = new PresentacionX();
+                pres1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue));
+                if (Convert.ToDecimal(txtPesoKg.Text) == 0)
+                {
+                    decimal pesokg = 0;
+                    pesokg = pres1.Factor * Convert.ToDecimal(txtUnidades.Text);
+                    cmd.Parameters.AddWithValue("@peso", pesokg);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
+                }
                 cmd.Parameters.AddWithValue("@id_proveedor", glueProveedor.EditValue.ToString());
                 cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                 cmd.Parameters.AddWithValue("@id", this.IdTarima);

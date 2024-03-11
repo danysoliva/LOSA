@@ -81,7 +81,7 @@ namespace LOSA.Calidad
             this.cmdVerConfExistente.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdVerConfExistente.Appearance.Options.UseFont = true;
             this.cmdVerConfExistente.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdVerConfExistente.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.cmdVerConfExistente.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdVerConfExistente.ImageOptions.SvgImage")));
             this.cmdVerConfExistente.Location = new System.Drawing.Point(307, 145);
             this.cmdVerConfExistente.Name = "cmdVerConfExistente";
             this.cmdVerConfExistente.Size = new System.Drawing.Size(152, 48);
@@ -107,7 +107,7 @@ namespace LOSA.Calidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 200);
+            this.ClientSize = new System.Drawing.Size(522, 192);
             this.ControlBox = false;
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.cmdVerConfExistente);

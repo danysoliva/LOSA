@@ -36,7 +36,9 @@ namespace LOSA.Clases
         string Itemcode;
         string _MateriaPrima;
         int _idTarimaOrigen;
-
+        int _idRM;
+        int _lotept;
+        decimal factor;
 
 
         public Int64 Id { get => _id; set => _id = value; }
@@ -60,6 +62,9 @@ namespace LOSA.Clases
         public string ItemCode { get => Itemcode; set => Itemcode = value; }
         public string MateriaPrima { get => _MateriaPrima; set => _MateriaPrima = value; }
         public int IdTarimaOrigen { get => _idTarimaOrigen; set => _idTarimaOrigen = value; }
+        public int IdRM { get => _idRM; set => _idRM = value; }
+        public int Lotept { get => _lotept; set => _lotept = value; }
+        public decimal Factor { get => factor; set => factor = value; }
 
         public TarimaMicroingrediente()
         {
@@ -138,7 +143,19 @@ namespace LOSA.Clases
                     else
                         MateriaPrima = null;
 
-                    Recuperado = true;
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_rm")))
+                        IdRM = dr.GetInt32(17);
+                    else
+                        _idRM = 0;
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("lote_pt")))
+                        Lotept = dr.GetInt32(18);
+                    else
+                        Lotept = 0;
+
+                    Factor = dr.GetDecimal(19);
+
+                     Recuperado = true;
                 }
                 dr.Close();
                 con.Close();
@@ -149,6 +166,53 @@ namespace LOSA.Clases
                 CajaDialogo.Error(ec.Message);
             }
             return Recuperado;
+        }
+
+        public  decimal GetKgEntregadosA_Micros_from_tarima_ALOSY(int pIdTarimaOrigenALOSY, int pIdDetalleRequisicion)
+        {
+            decimal val = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_kg_entregados_por_tarima_micros", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima_ALOSY", pIdTarimaOrigenALOSY);
+                cmd.Parameters.AddWithValue("@IdDetalleRequisicion", pIdDetalleRequisicion);
+                val = dp.ValidateNumberDecimal(cmd.ExecuteScalar());
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return val;
+        }
+
+        public decimal GetKgExistenciaEnMicros(int pIdTarima)
+        {
+            decimal val = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_kg_existencia_for_tarima_micro", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima_micro", pIdTarima);
+                val = dp.ValidateNumberDecimal(cmd.ExecuteScalar());
+
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return val;
         }
 
         public bool RecuperarRegistroPorCodBarra(string codBarra)

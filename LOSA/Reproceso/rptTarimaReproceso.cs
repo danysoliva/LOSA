@@ -4,16 +4,20 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
+using System.Data.SqlClient;
+using ACS.Classes;
+using LOSA.RecepcionMP;
 
 namespace LOSA.Reproceso
 {
     public partial class rptTarimaReproceso : DevExpress.XtraReports.UI.XtraReport
     {
+        int id_tarima_PT;
         public rptTarimaReproceso(int idTarima)
         {
             InitializeComponent();
 
-            int id_tarima_PT;
+            
             Tarima tar1 = new Tarima();
             if (tar1.RecuperarRegistro(idTarima, ""))
             {
@@ -26,7 +30,7 @@ namespace LOSA.Reproceso
                 lblCantidad.Text = tar1.Cantidad.ToString();
                 //lblNombreProducto.Text = tar1.ProductoTerminadoName;
                 lblFechaIngreso.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaIngreso);
-                lblNumeroIngreso.Text = tar1.NumeroTransaccion.ToString();
+                //lblNumeroIngreso.Text = tar1.NumeroTransaccion.ToString();
                 lblFechaProduccion.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaProduccionMP);
                 lblFechadeVencimiento.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaVencimiento);
                 txtcodigo.Text = tar1.ItemCode;
@@ -55,8 +59,32 @@ namespace LOSA.Reproceso
                 
             }
 
+            CargarCausasReproceso(idTarima, id_tarima_PT);
+
 
         }
 
+        private void CargarCausasReproceso(int pidTarima, int pid_tarima_pt)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_causas_reproceso_for_tarima", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima", pidTarima);
+                cmd.Parameters.AddWithValue("@id_tarima_pt", pid_tarima_pt);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsRecepcionMPx1.causas_reproceso.Clear();
+                adat.Fill(dsRecepcionMPx1.causas_reproceso);
+                connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }

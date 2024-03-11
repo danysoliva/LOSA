@@ -39,6 +39,7 @@ namespace LOSA.Accesos.GestionGrupos
             this.descripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.habilitado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
@@ -88,6 +89,8 @@ namespace LOSA.Accesos.GestionGrupos
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.id,
             this.grupo,
@@ -142,6 +145,7 @@ namespace LOSA.Accesos.GestionGrupos
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.simpleButton2);
             this.panel2.Controls.Add(this.simpleButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -150,20 +154,35 @@ namespace LOSA.Accesos.GestionGrupos
             this.panel2.Size = new System.Drawing.Size(648, 79);
             this.panel2.TabIndex = 1;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnClose.Appearance.Options.UseBackColor = true;
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(542, 9);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(103, 45);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Cancelar";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(84, 53);
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(126, 9);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.Size = new System.Drawing.Size(103, 45);
             this.simpleButton2.TabIndex = 4;
             this.simpleButton2.Text = "Editar";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(3, 53);
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(3, 9);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(103, 45);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Crear";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
@@ -198,5 +217,6 @@ namespace LOSA.Accesos.GestionGrupos
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
     }
 }

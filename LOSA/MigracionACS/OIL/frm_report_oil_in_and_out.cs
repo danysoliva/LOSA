@@ -13,18 +13,72 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 
 namespace LOSA.MigracionACS.OIL
 {
     public partial class frm_report_oil_in_and_out : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public frm_report_oil_in_and_out()
+        public bool CerrarForm;
+        UserLogin UsuarioLogeado;
+        public frm_report_oil_in_and_out(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
             dp = new DataOperations();
             dtDesde.EditValue = dp.Now().AddDays(-1);
             dtHasta.EditValue = dp.Now();
+            UsuarioLogeado = pUsuarioLogeado;
+        }
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(9))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(9))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        //btnc_VerifyReach.Enabled = false;
+                        AccesoPrevio = true;
+                        cmdExportar.Visible = false;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        //btnc_VerifyReach.Enabled = true;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #9");
+            }
+            else
+            {
+
+            }
         }
 
         private void cmdExportar_Click(object sender, EventArgs e)

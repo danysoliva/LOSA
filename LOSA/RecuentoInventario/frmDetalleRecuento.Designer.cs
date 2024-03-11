@@ -32,6 +32,7 @@ namespace LOSA.RecuentoInventario
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleRecuento));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnFinContabilziacion = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMP = new DevExpress.XtraTab.XtraTabPage();
@@ -51,6 +52,7 @@ namespace LOSA.RecuentoInventario
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcontabilizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdv_mps = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,8 +87,7 @@ namespace LOSA.RecuentoInventario
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colcontabilizado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -120,6 +121,7 @@ namespace LOSA.RecuentoInventario
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.txtVentana);
             this.panelControl2.Controls.Add(this.btnRefresh);
             this.panelControl2.Controls.Add(this.btnFinContabilziacion);
             this.panelControl2.Controls.Add(this.xtraTabControl1);
@@ -135,6 +137,19 @@ namespace LOSA.RecuentoInventario
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1270, 668);
             this.panelControl2.TabIndex = 2;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Appearance.Options.UseFont = true;
+            this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(794, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(116, 50);
+            this.btnRefresh.TabIndex = 18;
+            this.btnRefresh.Text = "Actualizar";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnFinContabilziacion
             // 
@@ -169,7 +184,7 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPageMP.Appearance.Header.Options.UseFont = true;
             this.xtraTabPageMP.Controls.Add(this.grd_mps);
             this.xtraTabPageMP.Name = "xtraTabPageMP";
-            this.xtraTabPageMP.Size = new System.Drawing.Size(1260, 555);
+            this.xtraTabPageMP.Size = new System.Drawing.Size(1264, 558);
             this.xtraTabPageMP.Text = "Materia Prima";
             // 
             // grd_mps
@@ -182,7 +197,7 @@ namespace LOSA.RecuentoInventario
             this.grd_mps.Name = "grd_mps";
             this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryGridBodega});
-            this.grd_mps.Size = new System.Drawing.Size(1260, 555);
+            this.grd_mps.Size = new System.Drawing.Size(1264, 558);
             this.grd_mps.TabIndex = 0;
             this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMP,
@@ -349,6 +364,11 @@ namespace LOSA.RecuentoInventario
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             // 
+            // colcontabilizado
+            // 
+            this.colcontabilizado.FieldName = "contabilizado";
+            this.colcontabilizado.Name = "colcontabilizado";
+            // 
             // grdv_mps
             // 
             this.grdv_mps.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -505,7 +525,7 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPagePT.Controls.Add(this.grd_pt);
             this.xtraTabPagePT.Name = "xtraTabPagePT";
             this.xtraTabPagePT.PageVisible = false;
-            this.xtraTabPagePT.Size = new System.Drawing.Size(1260, 555);
+            this.xtraTabPagePT.Size = new System.Drawing.Size(1264, 558);
             this.xtraTabPagePT.Text = "Producto Terminado";
             // 
             // grd_pt
@@ -577,6 +597,7 @@ namespace LOSA.RecuentoInventario
             // 
             // txtComentario
             // 
+            this.txtComentario.Enabled = false;
             this.txtComentario.Location = new System.Drawing.Point(259, 10);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
@@ -756,23 +777,15 @@ namespace LOSA.RecuentoInventario
             this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
-            // colcontabilizado
+            // txtVentana
             // 
-            this.colcontabilizado.FieldName = "contabilizado";
-            this.colcontabilizado.Name = "colcontabilizado";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Appearance.Options.UseFont = true;
-            this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(794, 12);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(116, 50);
-            this.btnRefresh.TabIndex = 18;
-            this.btnRefresh.Text = "Actualizar";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.txtVentana.Location = new System.Drawing.Point(293, 63);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 117;
+            this.txtVentana.Text = "frmDetalleRecuento";
+            this.txtVentana.Visible = false;
             // 
             // frmDetalleRecuento
             // 
@@ -870,5 +883,6 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.SimpleButton btnFinContabilziacion;
         private DevExpress.XtraGrid.Columns.GridColumn colcontabilizado;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }

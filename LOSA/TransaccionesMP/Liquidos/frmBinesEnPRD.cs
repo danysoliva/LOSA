@@ -96,7 +96,7 @@ namespace LOSA.TransaccionesMP.Liquidos
 
                 if (id_req_detalle == Default_Value)
                 {
-                    CajaDialogo.Error("Error en la opeacion, por favor revisar el procedimiento 'sp_obtener_pendiente_rq' ");
+                    CajaDialogo.Error("Error en la operacion, por favor revisar el procedimiento 'sp_obtener_pendiente_rq' ");
                     return;
                 }
             }
@@ -163,6 +163,9 @@ namespace LOSA.TransaccionesMP.Liquidos
             Entregar_componentes(row.PendienteAsignacion, row.id_tarima);
             CajaDialogo.Information("Entregado correctamente.");
             load_bines_disponibles();
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
          }
     }
 }

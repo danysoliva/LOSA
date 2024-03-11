@@ -152,12 +152,15 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grp_mainOptions)).BeginInit();
             this.grp_mainOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tgg_reservarlote.Properties)).BeginInit();
@@ -176,16 +179,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_prioridad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KgProduccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TG_especie.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_Hasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Hasta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_desde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_Hasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_desde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_desde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_AutoGen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Descripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Codigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineasproduccionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTilapia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTilapia)).BeginInit();
@@ -209,6 +216,7 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn7
@@ -223,6 +231,8 @@
             // 
             // grp_mainOptions
             // 
+            this.grp_mainOptions.Controls.Add(this.labelControl17);
+            this.grp_mainOptions.Controls.Add(this.toggleSwitch1);
             this.grp_mainOptions.Controls.Add(this.tgg_reservarlote);
             this.grp_mainOptions.Controls.Add(this.btnBuscarLote);
             this.grp_mainOptions.Controls.Add(this.txtloteselec);
@@ -257,7 +267,7 @@
             this.grp_mainOptions.Controls.Add(this.txt_Codigo);
             this.grp_mainOptions.Controls.Add(this.labelControl1);
             this.grp_mainOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grp_mainOptions.Location = new System.Drawing.Point(0, 47);
+            this.grp_mainOptions.Location = new System.Drawing.Point(0, 40);
             this.grp_mainOptions.Name = "grp_mainOptions";
             this.grp_mainOptions.Size = new System.Drawing.Size(1224, 193);
             this.grp_mainOptions.TabIndex = 0;
@@ -265,14 +275,14 @@
             // 
             // tgg_reservarlote
             // 
-            this.tgg_reservarlote.Location = new System.Drawing.Point(967, 103);
+            this.tgg_reservarlote.Location = new System.Drawing.Point(987, 98);
             this.tgg_reservarlote.MenuManager = this.barManager1;
             this.tgg_reservarlote.Name = "tgg_reservarlote";
             this.tgg_reservarlote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.tgg_reservarlote.Properties.Appearance.Options.UseFont = true;
             this.tgg_reservarlote.Properties.OffText = "Sin reservacion";
             this.tgg_reservarlote.Properties.OnText = "Con reservacion";
-            this.tgg_reservarlote.Size = new System.Drawing.Size(230, 30);
+            this.tgg_reservarlote.Size = new System.Drawing.Size(230, 24);
             this.tgg_reservarlote.TabIndex = 48;
             this.tgg_reservarlote.Toggled += new System.EventHandler(this.tgg_reservarlote_Toggled);
             // 
@@ -480,7 +490,7 @@
             this.standaloneBarDockControl2.Location = new System.Drawing.Point(0, 70);
             this.standaloneBarDockControl2.Manager = this.barManager1;
             this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
-            this.standaloneBarDockControl2.Size = new System.Drawing.Size(668, 41);
+            this.standaloneBarDockControl2.Size = new System.Drawing.Size(663, 41);
             this.standaloneBarDockControl2.Text = "standaloneBarDockControl2";
             // 
             // barDockControlTop
@@ -489,7 +499,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1224, 47);
+            this.barDockControlTop.Size = new System.Drawing.Size(1224, 40);
             // 
             // barDockControlBottom
             // 
@@ -503,17 +513,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 714);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 721);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1224, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(1224, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 714);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 721);
             // 
             // barButtonItem1
             // 
@@ -525,7 +535,7 @@
             // 
             this.btnBuscarLote.Enabled = false;
             this.btnBuscarLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarLote.ImageOptions.Image")));
-            this.btnBuscarLote.Location = new System.Drawing.Point(1169, 71);
+            this.btnBuscarLote.Location = new System.Drawing.Point(1189, 66);
             this.btnBuscarLote.Name = "btnBuscarLote";
             this.btnBuscarLote.Size = new System.Drawing.Size(28, 29);
             this.btnBuscarLote.TabIndex = 47;
@@ -534,7 +544,7 @@
             // txtloteselec
             // 
             this.txtloteselec.Enabled = false;
-            this.txtloteselec.Location = new System.Drawing.Point(1057, 74);
+            this.txtloteselec.Location = new System.Drawing.Point(1077, 69);
             this.txtloteselec.Name = "txtloteselec";
             this.txtloteselec.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtloteselec.Properties.Appearance.Options.UseFont = true;
@@ -545,7 +555,7 @@
             // 
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(958, 78);
+            this.labelControl16.Location = new System.Drawing.Point(978, 73);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(93, 20);
             this.labelControl16.TabIndex = 45;
@@ -944,7 +954,7 @@
             this.TG_especie.Properties.OffText = "Tilapia";
             this.TG_especie.Properties.OnText = "Camarón";
             this.TG_especie.Properties.ShowText = false;
-            this.TG_especie.Size = new System.Drawing.Size(83, 28);
+            this.TG_especie.Size = new System.Drawing.Size(83, 22);
             this.TG_especie.TabIndex = 12;
             this.TG_especie.Visible = false;
             this.TG_especie.EditValueChanged += new System.EventHandler(this.TG_especie_EditValueChanged);
@@ -1083,18 +1093,24 @@
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 240);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 233);
             this.splitContainerControl1.Name = "splitContainerControl1";
+            // 
+            // splitContainerControl1.Panel1
+            // 
             this.splitContainerControl1.Panel1.Controls.Add(this.gridTilapia);
             this.splitContainerControl1.Panel1.Controls.Add(this.gridCamaron);
             this.splitContainerControl1.Panel1.Controls.Add(this.standaloneBarDockControl1);
             this.splitContainerControl1.Panel1.Controls.Add(this.panelControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel2.Controls.Add(this.standaloneBarDockControl2);
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1224, 521);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1224, 528);
             this.splitContainerControl1.SplitterPosition = 551;
             this.splitContainerControl1.TabIndex = 8;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -1111,7 +1127,7 @@
             this.gridTilapia.Name = "gridTilapia";
             this.gridTilapia.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit2});
-            this.gridTilapia.Size = new System.Drawing.Size(551, 256);
+            this.gridTilapia.Size = new System.Drawing.Size(551, 263);
             this.gridTilapia.TabIndex = 15;
             this.gridTilapia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdTilapia});
@@ -1536,8 +1552,7 @@
             this.pictureEdit1.MenuManager = this.barManager1;
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 896.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pictureEdit1.Properties.Appearance.FontSizeDelta = 14;
+            this.pictureEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 910.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.Appearance.Options.UseFont = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -1555,7 +1570,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 111);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(668, 410);
+            this.groupControl3.Size = new System.Drawing.Size(663, 417);
             this.groupControl3.TabIndex = 14;
             this.groupControl3.Text = "Requerimiento Total";
             // 
@@ -1564,11 +1579,11 @@
             this.grd_reqMP_Total.DataMember = "MateriaPrima";
             this.grd_reqMP_Total.DataSource = this.dSProductos;
             this.grd_reqMP_Total.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_reqMP_Total.Location = new System.Drawing.Point(2, 20);
+            this.grd_reqMP_Total.Location = new System.Drawing.Point(2, 23);
             this.grd_reqMP_Total.MainView = this.grdv_reqMP_Total;
             this.grd_reqMP_Total.MenuManager = this.barManager1;
             this.grd_reqMP_Total.Name = "grd_reqMP_Total";
-            this.grd_reqMP_Total.Size = new System.Drawing.Size(664, 388);
+            this.grd_reqMP_Total.Size = new System.Drawing.Size(659, 392);
             this.grd_reqMP_Total.TabIndex = 7;
             this.grd_reqMP_Total.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_reqMP_Total});
@@ -1581,7 +1596,8 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn5,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.colid_mp});
             this.grdv_reqMP_Total.DetailHeight = 284;
             this.grdv_reqMP_Total.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             gridFormatRule1.ApplyToRow = true;
@@ -1650,6 +1666,11 @@
             this.gridColumn5.VisibleIndex = 3;
             this.gridColumn5.Width = 63;
             // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.labelControl6);
@@ -1657,7 +1678,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(668, 70);
+            this.panelControl2.Size = new System.Drawing.Size(663, 70);
             this.panelControl2.TabIndex = 12;
             // 
             // labelControl6
@@ -1668,7 +1689,7 @@
             this.labelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl6.Location = new System.Drawing.Point(119, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(547, 66);
+            this.labelControl6.Size = new System.Drawing.Size(542, 66);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Requerimiento de Materia Prima";
             // 
@@ -1681,8 +1702,7 @@
             this.pictureEdit2.MenuManager = this.barManager1;
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 910.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pictureEdit2.Properties.Appearance.FontSizeDelta = 14;
+            this.pictureEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 924.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit2.Properties.Appearance.Options.UseFont = true;
             this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -1723,6 +1743,30 @@
             this.bindingSource1.DataMember = "lineas_produccion";
             this.bindingSource1.DataSource = this.dsProduccion1;
             // 
+            // toggleSwitch1
+            // 
+            this.toggleSwitch1.Location = new System.Drawing.Point(987, 127);
+            this.toggleSwitch1.MenuManager = this.barManager1;
+            this.toggleSwitch1.Name = "toggleSwitch1";
+            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitch1.Properties.OffText = "No";
+            this.toggleSwitch1.Properties.OnText = "Si";
+            this.toggleSwitch1.Size = new System.Drawing.Size(230, 24);
+            this.toggleSwitch1.TabIndex = 49;
+            this.toggleSwitch1.Visible = false;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(799, 129);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(182, 20);
+            this.labelControl17.TabIndex = 50;
+            this.labelControl17.Text = "Orden Producto Medicado";
+            this.labelControl17.Visible = false;
+            // 
             // PP_Nuevo_Plan_full_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1734,7 +1778,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PP_Nuevo_Plan_full_Pedido.IconOptions.Icon")));
             this.Name = "PP_Nuevo_Plan_full_Pedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plan de Producción - Crear";
@@ -1768,6 +1812,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Codigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineasproduccionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTilapia)).EndInit();
@@ -1792,6 +1840,7 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1925,5 +1974,8 @@
         private DevExpress.XtraEditors.SimpleButton btnBuscarLote;
         private DevExpress.XtraEditors.TextEdit txtloteselec;
         private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
     }
 }

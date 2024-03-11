@@ -122,31 +122,35 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(498, 47);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlTop.Size = new System.Drawing.Size(996, 78);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 504);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 969);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(498, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlBottom.Size = new System.Drawing.Size(996, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 78);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 457);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 891);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(498, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(996, 78);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 457);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 891);
             // 
             // grp_Nombre
             // 
@@ -154,9 +158,10 @@
             this.grp_Nombre.Controls.Add(this.labelControl1);
             this.grp_Nombre.Controls.Add(this.txt_name);
             this.grp_Nombre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grp_Nombre.Location = new System.Drawing.Point(0, 47);
+            this.grp_Nombre.Location = new System.Drawing.Point(0, 78);
+            this.grp_Nombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grp_Nombre.Name = "grp_Nombre";
-            this.grp_Nombre.Size = new System.Drawing.Size(498, 78);
+            this.grp_Nombre.Size = new System.Drawing.Size(996, 150);
             this.grp_Nombre.TabIndex = 4;
             this.grp_Nombre.Text = "Descripción del MRP";
             this.grp_Nombre.Paint += new System.Windows.Forms.PaintEventHandler(this.grp_Nombre_Paint);
@@ -175,50 +180,56 @@
             "2028",
             "2029",
             "2030"});
-            this.comboBox1.Location = new System.Drawing.Point(102, 46);
+            this.comboBox1.Location = new System.Drawing.Point(204, 88);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(238, 33);
             this.comboBox1.TabIndex = 2;
             // 
             // labelControl1
             // 
             this.labelControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl1.Location = new System.Drawing.Point(13, 49);
+            this.labelControl1.Location = new System.Drawing.Point(26, 94);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(83, 13);
+            this.labelControl1.Size = new System.Drawing.Size(165, 25);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Año de aplicación";
             // 
             // txt_name
             // 
             this.txt_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_name.Location = new System.Drawing.Point(2, 20);
+            this.txt_name.Location = new System.Drawing.Point(3, 45);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_name.MenuManager = this.barManager1;
             this.txt_name.Name = "txt_name";
             this.txt_name.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Properties.Appearance.Options.UseFont = true;
             this.txt_name.Properties.MaxLength = 80;
-            this.txt_name.Size = new System.Drawing.Size(494, 22);
+            this.txt_name.Size = new System.Drawing.Size(990, 46);
             this.txt_name.TabIndex = 0;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.grd_disponibles);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl2.Location = new System.Drawing.Point(0, 125);
+            this.groupControl2.Location = new System.Drawing.Point(0, 228);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(498, 205);
+            this.groupControl2.Size = new System.Drawing.Size(996, 394);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Proyecciones Activas";
             // 
             // grd_disponibles
             // 
             this.grd_disponibles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_disponibles.Location = new System.Drawing.Point(2, 20);
+            this.grd_disponibles.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_disponibles.Location = new System.Drawing.Point(3, 45);
             this.grd_disponibles.MainView = this.grdv_disponibles;
+            this.grd_disponibles.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_disponibles.MenuManager = this.barManager1;
             this.grd_disponibles.Name = "grd_disponibles";
-            this.grd_disponibles.Size = new System.Drawing.Size(494, 183);
+            this.grd_disponibles.Size = new System.Drawing.Size(990, 346);
             this.grd_disponibles.TabIndex = 0;
             this.grd_disponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_disponibles});
@@ -230,10 +241,12 @@
             this.col_codigo,
             this.col_nombre,
             this.col_usuario});
+            this.grdv_disponibles.DetailHeight = 673;
             this.grdv_disponibles.GridControl = this.grd_disponibles;
             this.grdv_disponibles.Name = "grdv_disponibles";
             this.grdv_disponibles.OptionsBehavior.Editable = false;
             this.grdv_disponibles.OptionsCustomization.AllowGroup = false;
+            this.grdv_disponibles.OptionsEditForm.PopupEditFormWidth = 1600;
             this.grdv_disponibles.OptionsView.ShowAutoFilterRow = true;
             this.grdv_disponibles.OptionsView.ShowGroupPanel = false;
             this.grdv_disponibles.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_disponibles_FocusedRowChanged);
@@ -243,54 +256,62 @@
             // 
             this.col_id.Caption = "Id";
             this.col_id.FieldName = "id";
+            this.col_id.MinWidth = 40;
             this.col_id.Name = "col_id";
+            this.col_id.Width = 150;
             // 
             // col_codigo
             // 
             this.col_codigo.Caption = "Código";
             this.col_codigo.FieldName = "codigo";
+            this.col_codigo.MinWidth = 40;
             this.col_codigo.Name = "col_codigo";
             this.col_codigo.OptionsColumn.AllowEdit = false;
             this.col_codigo.Visible = true;
             this.col_codigo.VisibleIndex = 0;
-            this.col_codigo.Width = 79;
+            this.col_codigo.Width = 158;
             // 
             // col_nombre
             // 
             this.col_nombre.Caption = "Proyección";
             this.col_nombre.FieldName = "nombre";
+            this.col_nombre.MinWidth = 40;
             this.col_nombre.Name = "col_nombre";
             this.col_nombre.Visible = true;
             this.col_nombre.VisibleIndex = 1;
-            this.col_nombre.Width = 240;
+            this.col_nombre.Width = 480;
             // 
             // col_usuario
             // 
             this.col_usuario.Caption = "Creada Por";
             this.col_usuario.FieldName = "usuario";
+            this.col_usuario.MinWidth = 40;
             this.col_usuario.Name = "col_usuario";
             this.col_usuario.Visible = true;
             this.col_usuario.VisibleIndex = 2;
-            this.col_usuario.Width = 159;
+            this.col_usuario.Width = 318;
             // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.grd_seleccionadas);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(0, 330);
+            this.groupControl3.Location = new System.Drawing.Point(0, 622);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(498, 174);
+            this.groupControl3.Size = new System.Drawing.Size(996, 347);
             this.groupControl3.TabIndex = 6;
             this.groupControl3.Text = "Proyecciones Seleccionadas";
             // 
             // grd_seleccionadas
             // 
             this.grd_seleccionadas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_seleccionadas.Location = new System.Drawing.Point(2, 20);
+            this.grd_seleccionadas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_seleccionadas.Location = new System.Drawing.Point(3, 45);
             this.grd_seleccionadas.MainView = this.grdv_seleccionadas;
+            this.grd_seleccionadas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_seleccionadas.MenuManager = this.barManager1;
             this.grd_seleccionadas.Name = "grd_seleccionadas";
-            this.grd_seleccionadas.Size = new System.Drawing.Size(494, 152);
+            this.grd_seleccionadas.Size = new System.Drawing.Size(990, 299);
             this.grd_seleccionadas.TabIndex = 0;
             this.grd_seleccionadas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_seleccionadas});
@@ -302,10 +323,12 @@
             this.col_codigos,
             this.col_nombres,
             this.col_usuarios});
+            this.grdv_seleccionadas.DetailHeight = 673;
             this.grdv_seleccionadas.GridControl = this.grd_seleccionadas;
             this.grdv_seleccionadas.Name = "grdv_seleccionadas";
             this.grdv_seleccionadas.OptionsBehavior.Editable = false;
             this.grdv_seleccionadas.OptionsCustomization.AllowGroup = false;
+            this.grdv_seleccionadas.OptionsEditForm.PopupEditFormWidth = 1600;
             this.grdv_seleccionadas.OptionsView.ShowAutoFilterRow = true;
             this.grdv_seleccionadas.OptionsView.ShowGroupPanel = false;
             this.grdv_seleccionadas.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_seleccionadas_FocusedRowChanged);
@@ -314,41 +337,46 @@
             // 
             this.col_ids.Caption = "id";
             this.col_ids.FieldName = "id";
+            this.col_ids.MinWidth = 40;
             this.col_ids.Name = "col_ids";
+            this.col_ids.Width = 150;
             // 
             // col_codigos
             // 
             this.col_codigos.Caption = "Código";
             this.col_codigos.FieldName = "codigo";
+            this.col_codigos.MinWidth = 40;
             this.col_codigos.Name = "col_codigos";
             this.col_codigos.OptionsColumn.AllowEdit = false;
             this.col_codigos.Visible = true;
             this.col_codigos.VisibleIndex = 0;
-            this.col_codigos.Width = 81;
+            this.col_codigos.Width = 162;
             // 
             // col_nombres
             // 
             this.col_nombres.Caption = "Proyección";
             this.col_nombres.FieldName = "nombre";
+            this.col_nombres.MinWidth = 40;
             this.col_nombres.Name = "col_nombres";
             this.col_nombres.Visible = true;
             this.col_nombres.VisibleIndex = 1;
-            this.col_nombres.Width = 240;
+            this.col_nombres.Width = 480;
             // 
             // col_usuarios
             // 
             this.col_usuarios.Caption = "Creada Por";
             this.col_usuarios.FieldName = "usuario";
+            this.col_usuarios.MinWidth = 40;
             this.col_usuarios.Name = "col_usuarios";
             this.col_usuarios.Visible = true;
             this.col_usuarios.VisibleIndex = 2;
-            this.col_usuarios.Width = 157;
+            this.col_usuarios.Width = 314;
             // 
             // FCT_MRP_New
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 504);
+            this.ClientSize = new System.Drawing.Size(996, 969);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.grp_Nombre);
@@ -357,7 +385,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FCT_MRP_New.IconOptions.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FCT_MRP_New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo MRP";

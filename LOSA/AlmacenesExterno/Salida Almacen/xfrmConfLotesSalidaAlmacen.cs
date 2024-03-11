@@ -24,8 +24,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         List<Ingresos_Externos_D> lista = new List<Ingresos_Externos_D>();
         Ingreso_Almacenes_Externos_H ingreso_h = new Ingreso_Almacenes_Externos_H();
         int id_salida_h;
-        string bodega;
-        int id_mp;
+        string bodega = "";
+        int id_mp = 0;
         int id_salida_d;
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
@@ -75,7 +75,9 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 workRow["DocEntrySAP"] = item.DocEntry;
                 workRow["from_almacen"] = item.BodegaIN;
                 workRow["to_almacen"] = item.BodegaOUT;
-
+                workRow["factura"] = item.factura;
+                workRow["DocNum"] = item.docnum;
+ 
                 dsSalidasAlmacenesExternos.Transferencia_Stock.Rows.Add(workRow);
             }
         }
@@ -135,11 +137,12 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                     cnx.Open();
 
                     dsSalidasAlmacenesExternos.Lote.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_almacenes_externos_get_lotes_disponibles_by_id_detalle_salida_externa_V2]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_almacenes_externos_get_lotes_disponibles_by_id_detalle_salida_externa_V3]", cnx);
 
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.Add("@id_mp", SqlDbType.Int).Value = id_mp;
                     da.SelectCommand.Parameters.Add("@id_bodega", SqlDbType.VarChar).Value = bodega_in;
+                    da.SelectCommand.Parameters.AddWithValue("@id_d", id_d);
 
                     da.Fill(dsSalidasAlmacenesExternos.Lote);
 
@@ -599,7 +602,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         private void btnDelete_Click(object sender, EventArgs e)
         {
             gvLote.PostEditor();
-            int contarRepetidos = 0;
+            //int contarRepetidos = 0;
             var gvl = (GridView)gcLotesSeleccionados.FocusedView;
             var row_lote = (dsSalidasAlmacenesExternos.Lote_SeleccionadosRow)gvl.GetDataRow(gvl.FocusedRowHandle);
 

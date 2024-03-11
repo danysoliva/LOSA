@@ -50,8 +50,10 @@ namespace LOSA.Despachos.Reportes
                     txttransporte.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
                     txtdestino.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
                     txtoc.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
-                    txttotalUD.Text = dr.IsDBNull(8) ? 0.ToString() : dr.GetInt32(8).ToString();
+                    //txttotalUD.Text = dr.IsDBNull(8) ? 0.ToString() : dr.GetInt32(8).ToString();
                     txtunidades.Text = dr.IsDBNull(8) ? 0.ToString() : dr.GetInt32(8).ToString();
+                    txtCliente.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
+                    txtCodCliente.Text = dr.IsDBNull(10) ? "" : dr.GetString(10);
                     //txtfactor.Text = dr.IsDBNull(9) ? 0.ToString() : dr.GetInt32(9).ToString();
                 }
                 dr.Close();

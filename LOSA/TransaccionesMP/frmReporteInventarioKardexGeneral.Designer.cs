@@ -29,12 +29,12 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteInventarioKardexGeneral));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteInventarioKardexGeneral));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -70,12 +70,13 @@ namespace LOSA.TransaccionesMP
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.repositoryAjuste = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.cmdActualizarResumenPorLote = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsTarima = new LOSA.TransaccionesMP.dsTarima();
+            this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -150,6 +151,7 @@ namespace LOSA.TransaccionesMP
             this.colproveedor1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTipoName2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btnActReproceso = new DevExpress.XtraEditors.SimpleButton();
             this.gridReproceso = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colexistencia2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -165,9 +167,11 @@ namespace LOSA.TransaccionesMP
             this.coldescripcion_pt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colunidades_totales = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryAjuste = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.cmAjusteReproceso = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.tggMostrarTotasInv_por_mp_y_bodega = new DevExpress.XtraEditors.ToggleSwitch();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.grdMPBodega = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -186,17 +190,20 @@ namespace LOSA.TransaccionesMP
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLogKardex = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnSearchMP = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTitulo_Inv_Por_MPyBodega = new DevExpress.XtraEditors.TextEdit();
+            this.lblTitulo_Inv_Por_MPyBodega = new DevExpress.XtraEditors.LabelControl();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorkerPRD = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
+            this.btnTrasladoKardex = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdVerBorradorDeAjustes = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryAjuste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_logmovimiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit_AjusteINV)).BeginInit();
@@ -214,15 +221,24 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReproceso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryAjuste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmAjusteReproceso)).BeginInit();
             this.tabNavigationPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdMPBodega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // repositoryAjuste
+            // 
+            this.repositoryAjuste.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.edit24px;
+            this.repositoryAjuste.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryAjuste.Name = "repositoryAjuste";
+            this.repositoryAjuste.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // btnClose
             // 
@@ -263,9 +279,9 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4,
             this.tabNavigationPage5,
             this.tabNavigationPage6});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1362, 680);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1362, 478);
             this.tabPane1.SelectedPage = this.tabNavigationPage2;
-            this.tabPane1.Size = new System.Drawing.Size(1362, 680);
+            this.tabPane1.Size = new System.Drawing.Size(1362, 478);
             this.tabPane1.TabIndex = 1;
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
             // 
@@ -275,7 +291,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage1.Controls.Add(this.cmdActualizarResumenPorLote);
             this.tabNavigationPage1.Controls.Add(this.grd_data);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1362, 445);
             // 
             // cmdActualizarResumenPorLote
             // 
@@ -296,22 +312,22 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "kardex_by_lot";
-            this.grd_data.DataSource = this.dsTarima;
+            this.grd_data.DataSource = this.dsTarima1;
             this.grd_data.Location = new System.Drawing.Point(0, 48);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_logmovimiento,
             this.buttonEdit_AjusteINV});
-            this.grd_data.Size = new System.Drawing.Size(1362, 598);
+            this.grd_data.Size = new System.Drawing.Size(1362, 397);
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // dsTarima
+            // dsTarima1
             // 
-            this.dsTarima.DataSetName = "dsTarima";
-            this.dsTarima.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsTarima1.DataSetName = "dsTarima1";
+            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -355,9 +371,12 @@ namespace LOSA.TransaccionesMP
             this.colentrada,
             this.colTIpoName});
             this.grdv_data.GridControl = this.grd_data;
+            this.grdv_data.LevelIndent = 0;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
+            this.grdv_data.PreviewIndent = 0;
             this.grdv_data.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_data_RowStyle);
             // 
             // colexistencia
@@ -502,9 +521,9 @@ namespace LOSA.TransaccionesMP
             // btn_logmovimiento
             // 
             this.btn_logmovimiento.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.log_file24px;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.log_file24px;
             this.btn_logmovimiento.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_logmovimiento.Name = "btn_logmovimiento";
             this.btn_logmovimiento.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_logmovimiento.Click += new System.EventHandler(this.btn_logmovimiento_Click);
@@ -533,9 +552,9 @@ namespace LOSA.TransaccionesMP
             // buttonEdit_AjusteINV
             // 
             this.buttonEdit_AjusteINV.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.edit24px;
+            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.edit24px;
             this.buttonEdit_AjusteINV.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.buttonEdit_AjusteINV.Name = "buttonEdit_AjusteINV";
             this.buttonEdit_AjusteINV.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.buttonEdit_AjusteINV.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit_AjusteINV_ButtonClick);
@@ -568,7 +587,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage2.Controls.Add(this.btnRefreshRptMP);
             this.tabNavigationPage2.Controls.Add(this.grd_data_resumen);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRefreshRptMP
             // 
@@ -589,11 +608,11 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data_resumen.DataMember = "totales";
-            this.grd_data_resumen.DataSource = this.dsTarima;
+            this.grd_data_resumen.DataSource = this.dsTarima1;
             this.grd_data_resumen.Location = new System.Drawing.Point(0, 48);
             this.grd_data_resumen.MainView = this.grdv_data_resumen;
             this.grd_data_resumen.Name = "grd_data_resumen";
-            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 598);
+            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 397);
             this.grd_data_resumen.TabIndex = 0;
             this.grd_data_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data_resumen});
@@ -629,10 +648,13 @@ namespace LOSA.TransaccionesMP
             this.colTipoId,
             this.colTipoName1});
             this.grdv_data_resumen.GridControl = this.grd_data_resumen;
+            this.grdv_data_resumen.LevelIndent = 0;
             this.grdv_data_resumen.Name = "grdv_data_resumen";
+            this.grdv_data_resumen.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_data_resumen.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data_resumen.OptionsView.ShowFooter = true;
             this.grdv_data_resumen.OptionsView.ShowGroupPanel = false;
+            this.grdv_data_resumen.PreviewIndent = 0;
             // 
             // colid_mp1
             // 
@@ -702,7 +724,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage3.Controls.Add(this.btnRptPRD);
             this.tabNavigationPage3.Controls.Add(this.gridControl1);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRptPRD
             // 
@@ -723,14 +745,14 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "informacionPRD";
-            this.gridControl1.DataSource = this.dsTarima;
+            this.gridControl1.DataSource = this.dsTarima1;
             this.gridControl1.Location = new System.Drawing.Point(8, 49);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1354, 594);
+            this.gridControl1.Size = new System.Drawing.Size(1354, 393);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -774,9 +796,12 @@ namespace LOSA.TransaccionesMP
             this.gridColumn16,
             this.gridColumn17});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.LevelIndent = 0;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 400;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.PreviewIndent = 0;
             // 
             // gridColumn1
             // 
@@ -829,7 +854,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn6.Caption = "Lote";
             this.gridColumn6.FieldName = "lote";
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
             this.gridColumn6.Width = 98;
@@ -909,7 +934,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn15.Caption = "Codigo SAP";
             this.gridColumn15.FieldName = "code_sap";
             this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.OptionsColumn.ReadOnly = true;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 0;
             this.gridColumn15.Width = 54;
@@ -924,9 +949,9 @@ namespace LOSA.TransaccionesMP
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.log_file24px;
+            editorButtonImageOptions4.Image = global::LOSA.Properties.Resources.log_file24px;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -940,9 +965,9 @@ namespace LOSA.TransaccionesMP
             // repositoryItemButtonEdit2
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::LOSA.Properties.Resources.edit24px;
+            editorButtonImageOptions5.Image = global::LOSA.Properties.Resources.edit24px;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -952,7 +977,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4.Controls.Add(this.btnRptMPyBod);
             this.tabNavigationPage4.Controls.Add(this.gridControl2);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRptMPyBod
             // 
@@ -973,11 +998,11 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl2.DataMember = "totales_bodegav2";
-            this.gridControl2.DataSource = this.dsTarima;
+            this.gridControl2.DataSource = this.dsTarima1;
             this.gridControl2.Location = new System.Drawing.Point(8, 49);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1351, 605);
+            this.gridControl2.Size = new System.Drawing.Size(1351, 403);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1024,9 +1049,12 @@ namespace LOSA.TransaccionesMP
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", this.colexistencia_tm, "(SUM={0:##,###,##0.00 TM})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_ud", this.colexistencia_ud, "(SUM={0:##,###,##0 UD})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "code_sap", this.gridColumn22, "(Conteo={0:##,###,##0 })")});
+            this.gridView2.LevelIndent = 0;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsEditForm.PopupEditFormWidth = 400;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.PreviewIndent = 0;
             this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn19, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
@@ -1147,9 +1175,23 @@ namespace LOSA.TransaccionesMP
             // tabNavigationPage5
             // 
             this.tabNavigationPage5.Caption = "Reproceso";
+            this.tabNavigationPage5.Controls.Add(this.btnActReproceso);
             this.tabNavigationPage5.Controls.Add(this.gridReproceso);
             this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 445);
+            // 
+            // btnActReproceso
+            // 
+            this.btnActReproceso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActReproceso.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnActReproceso.Appearance.Options.UseFont = true;
+            this.btnActReproceso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnActReproceso.ImageOptions.SvgImage")));
+            this.btnActReproceso.Location = new System.Drawing.Point(1244, 4);
+            this.btnActReproceso.Name = "btnActReproceso";
+            this.btnActReproceso.Size = new System.Drawing.Size(114, 39);
+            this.btnActReproceso.TabIndex = 7;
+            this.btnActReproceso.Text = "Actualizar";
+            this.btnActReproceso.Click += new System.EventHandler(this.btnActReproceso_Click);
             // 
             // gridReproceso
             // 
@@ -1157,14 +1199,13 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridReproceso.DataMember = "kardex_by_Reproceso";
-            this.gridReproceso.DataSource = this.dsTarima;
-            this.gridReproceso.Location = new System.Drawing.Point(8, 8);
+            this.gridReproceso.DataSource = this.dsTarima1;
+            this.gridReproceso.Location = new System.Drawing.Point(3, 48);
             this.gridReproceso.MainView = this.gridView3;
             this.gridReproceso.Name = "gridReproceso";
             this.gridReproceso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit3,
-            this.repositoryAjuste});
-            this.gridReproceso.Size = new System.Drawing.Size(1362, 646);
+            this.cmAjusteReproceso});
+            this.gridReproceso.Size = new System.Drawing.Size(1356, 392);
             this.gridReproceso.TabIndex = 1;
             this.gridReproceso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1202,11 +1243,15 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap_pt,
             this.coldescripcion_pt,
             this.colunidades_totales,
-            this.gridColumn23});
+            this.gridColumn23,
+            this.colbodega});
             this.gridView3.GridControl = this.gridReproceso;
+            this.gridView3.LevelIndent = 0;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsEditForm.PopupEditFormWidth = 400;
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
             this.gridView3.OptionsView.ShowFooter = true;
+            this.gridView3.PreviewIndent = 0;
             // 
             // colexistencia2
             // 
@@ -1218,8 +1263,8 @@ namespace LOSA.TransaccionesMP
             this.colexistencia2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:#,###,##0.00} Kg.")});
             this.colexistencia2.Visible = true;
-            this.colexistencia2.VisibleIndex = 8;
-            this.colexistencia2.Width = 114;
+            this.colexistencia2.VisibleIndex = 9;
+            this.colexistencia2.Width = 102;
             // 
             // colnombre_comercial2
             // 
@@ -1228,7 +1273,7 @@ namespace LOSA.TransaccionesMP
             this.colnombre_comercial2.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial2.Visible = true;
             this.colnombre_comercial2.VisibleIndex = 1;
-            this.colnombre_comercial2.Width = 134;
+            this.colnombre_comercial2.Width = 123;
             // 
             // colid_mp2
             // 
@@ -1243,7 +1288,7 @@ namespace LOSA.TransaccionesMP
             this.collote1.OptionsColumn.AllowEdit = false;
             this.collote1.Visible = true;
             this.collote1.VisibleIndex = 2;
-            this.collote1.Width = 133;
+            this.collote1.Width = 122;
             // 
             // colcode_sap2
             // 
@@ -1252,7 +1297,7 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap2.OptionsColumn.AllowEdit = false;
             this.colcode_sap2.Visible = true;
             this.colcode_sap2.VisibleIndex = 0;
-            this.colcode_sap2.Width = 159;
+            this.colcode_sap2.Width = 146;
             // 
             // colingreso1
             // 
@@ -1262,8 +1307,8 @@ namespace LOSA.TransaccionesMP
             this.colingreso1.Name = "colingreso1";
             this.colingreso1.OptionsColumn.AllowEdit = false;
             this.colingreso1.Visible = true;
-            this.colingreso1.VisibleIndex = 6;
-            this.colingreso1.Width = 114;
+            this.colingreso1.VisibleIndex = 7;
+            this.colingreso1.Width = 102;
             // 
             // colsalidas1
             // 
@@ -1273,8 +1318,8 @@ namespace LOSA.TransaccionesMP
             this.colsalidas1.Name = "colsalidas1";
             this.colsalidas1.OptionsColumn.AllowEdit = false;
             this.colsalidas1.Visible = true;
-            this.colsalidas1.VisibleIndex = 7;
-            this.colsalidas1.Width = 114;
+            this.colsalidas1.VisibleIndex = 8;
+            this.colsalidas1.Width = 102;
             // 
             // colTipoId1
             // 
@@ -1297,7 +1342,7 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap_pt.OptionsColumn.AllowEdit = false;
             this.colcode_sap_pt.Visible = true;
             this.colcode_sap_pt.VisibleIndex = 3;
-            this.colcode_sap_pt.Width = 126;
+            this.colcode_sap_pt.Width = 116;
             // 
             // coldescripcion_pt
             // 
@@ -1307,7 +1352,7 @@ namespace LOSA.TransaccionesMP
             this.coldescripcion_pt.OptionsColumn.AllowEdit = false;
             this.coldescripcion_pt.Visible = true;
             this.coldescripcion_pt.VisibleIndex = 4;
-            this.coldescripcion_pt.Width = 189;
+            this.coldescripcion_pt.Width = 174;
             // 
             // colunidades_totales
             // 
@@ -1319,47 +1364,72 @@ namespace LOSA.TransaccionesMP
             this.colunidades_totales.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades_totales", "SUMA={0:0.##} Ud.")});
             this.colunidades_totales.Visible = true;
-            this.colunidades_totales.VisibleIndex = 5;
-            this.colunidades_totales.Width = 173;
+            this.colunidades_totales.VisibleIndex = 6;
+            this.colunidades_totales.Width = 155;
             // 
             // gridColumn23
             // 
             this.gridColumn23.Caption = "Ajuste";
-            this.gridColumn23.ColumnEdit = this.repositoryAjuste;
+            this.gridColumn23.ColumnEdit = this.cmAjusteReproceso;
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 9;
-            this.gridColumn23.Width = 128;
+            this.gridColumn23.VisibleIndex = 10;
+            this.gridColumn23.Width = 119;
             // 
-            // repositoryAjuste
+            // cmAjusteReproceso
             // 
-            this.repositoryAjuste.AutoHeight = false;
-            editorButtonImageOptions5.Image = global::LOSA.Properties.Resources.edit24px;
-            this.repositoryAjuste.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryAjuste.Name = "repositoryAjuste";
-            this.repositoryAjuste.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryAjuste.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryAjuste_ButtonClick);
-            // 
-            // repositoryItemButtonEdit3
-            // 
-            this.repositoryItemButtonEdit3.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.log_file24px;
-            this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmAjusteReproceso.AutoHeight = false;
+            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.edit24px;
+            this.cmAjusteReproceso.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
-            this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmAjusteReproceso.Name = "cmAjusteReproceso";
+            this.cmAjusteReproceso.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmAjusteReproceso.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmAjusteReproceso_ButtonClick);
+            // 
+            // colbodega
+            // 
+            this.colbodega.Caption = "Bodega";
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.OptionsColumn.AllowEdit = false;
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 5;
+            this.colbodega.Width = 83;
             // 
             // tabNavigationPage6
             // 
             this.tabNavigationPage6.Caption = "Materia Prima por Bodega";
+            this.tabNavigationPage6.Controls.Add(this.labelControl1);
+            this.tabNavigationPage6.Controls.Add(this.tggMostrarTotasInv_por_mp_y_bodega);
             this.tabNavigationPage6.Controls.Add(this.simpleButton1);
             this.tabNavigationPage6.Controls.Add(this.grdMPBodega);
             this.tabNavigationPage6.Controls.Add(this.btnSearchMP);
-            this.tabNavigationPage6.Controls.Add(this.textEdit1);
-            this.tabNavigationPage6.Controls.Add(this.labelControl2);
+            this.tabNavigationPage6.Controls.Add(this.txtTitulo_Inv_Por_MPyBodega);
+            this.tabNavigationPage6.Controls.Add(this.lblTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Name = "tabNavigationPage6";
-            this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 445);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(8, 21);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(87, 15);
+            this.labelControl1.TabIndex = 18;
+            this.labelControl1.Text = "Mostrar Toda(s)";
+            // 
+            // tggMostrarTotasInv_por_mp_y_bodega
+            // 
+            this.tggMostrarTotasInv_por_mp_y_bodega.Location = new System.Drawing.Point(101, 16);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Name = "tggMostrarTotasInv_por_mp_y_bodega";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Options.UseFont = true;
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OffText = "No";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OnText = "Si";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(109, 20);
+            this.tggMostrarTotasInv_por_mp_y_bodega.TabIndex = 17;
+            this.tggMostrarTotasInv_por_mp_y_bodega.Toggled += new System.EventHandler(this.tggMostrarTotasInv_por_mp_y_bodega_Toggled);
             // 
             // simpleButton1
             // 
@@ -1380,14 +1450,14 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdMPBodega.DataMember = "mp_bodega_lote";
-            this.grdMPBodega.DataSource = this.dsTarima;
+            this.grdMPBodega.DataSource = this.dsTarima1;
             this.grdMPBodega.Location = new System.Drawing.Point(6, 50);
             this.grdMPBodega.MainView = this.gridView4;
             this.grdMPBodega.Name = "grdMPBodega";
             this.grdMPBodega.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemAjuste,
             this.repositoryItemLogKardex});
-            this.grdMPBodega.Size = new System.Drawing.Size(1351, 596);
+            this.grdMPBodega.Size = new System.Drawing.Size(1351, 395);
             this.grdMPBodega.TabIndex = 15;
             this.grdMPBodega.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1433,9 +1503,12 @@ namespace LOSA.TransaccionesMP
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(SUM={0:##,###,##0.00 TM})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_ud", null, "(SUM={0:##,###,##0 UD})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "code_sap", null, "(Conteo={0:##,###,##0 })")});
+            this.gridView4.LevelIndent = 0;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsEditForm.PopupEditFormWidth = 400;
             this.gridView4.OptionsView.ShowAutoFilterRow = true;
             this.gridView4.OptionsView.ShowFooter = true;
+            this.gridView4.PreviewIndent = 0;
             // 
             // colexistencia3
             // 
@@ -1583,32 +1656,32 @@ namespace LOSA.TransaccionesMP
             this.btnSearchMP.Appearance.Options.UseFont = true;
             this.btnSearchMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSearchMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchMP.ImageOptions.Image")));
-            this.btnSearchMP.Location = new System.Drawing.Point(366, 12);
+            this.btnSearchMP.Location = new System.Drawing.Point(631, 12);
             this.btnSearchMP.Name = "btnSearchMP";
             this.btnSearchMP.Size = new System.Drawing.Size(78, 32);
             this.btnSearchMP.TabIndex = 14;
             this.btnSearchMP.Text = "Buscar";
             this.btnSearchMP.Click += new System.EventHandler(this.btnSearchMP_Click);
             // 
-            // textEdit1
+            // txtTitulo_Inv_Por_MPyBodega
             // 
-            this.textEdit1.Location = new System.Drawing.Point(94, 18);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.ReadOnly = true;
-            this.textEdit1.Size = new System.Drawing.Size(266, 22);
-            this.textEdit1.TabIndex = 13;
+            this.txtTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(359, 18);
+            this.txtTitulo_Inv_Por_MPyBodega.Name = "txtTitulo_Inv_Por_MPyBodega";
+            this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Options.UseFont = true;
+            this.txtTitulo_Inv_Por_MPyBodega.Properties.ReadOnly = true;
+            this.txtTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(266, 22);
+            this.txtTitulo_Inv_Por_MPyBodega.TabIndex = 13;
             // 
-            // labelControl2
+            // lblTitulo_Inv_Por_MPyBodega
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(14, 22);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(78, 15);
-            this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "Materia Prima";
+            this.lblTitulo_Inv_Por_MPyBodega.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo_Inv_Por_MPyBodega.Appearance.Options.UseFont = true;
+            this.lblTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(275, 21);
+            this.lblTitulo_Inv_Por_MPyBodega.Name = "lblTitulo_Inv_Por_MPyBodega";
+            this.lblTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(78, 15);
+            this.lblTitulo_Inv_Por_MPyBodega.TabIndex = 12;
+            this.lblTitulo_Inv_Por_MPyBodega.Text = "Materia Prima";
             // 
             // btnExcel
             // 
@@ -1632,7 +1705,7 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote.Name = "btnAjustePorLote";
             this.btnAjustePorLote.Size = new System.Drawing.Size(185, 56);
             this.btnAjustePorLote.TabIndex = 3;
-            this.btnAjustePorLote.Text = "Agregar Ajuste";
+            this.btnAjustePorLote.Text = "Ajuste de Bodega";
             this.btnAjustePorLote.Click += new System.EventHandler(this.btnAjustePorLote_Click);
             // 
             // backgroundWorkerPRD
@@ -1645,11 +1718,40 @@ namespace LOSA.TransaccionesMP
             this.backgroundWorkerResumenMP.WorkerSupportsCancellation = true;
             this.backgroundWorkerResumenMP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerResumenMP_DoWork);
             // 
+            // btnTrasladoKardex
+            // 
+            this.btnTrasladoKardex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrasladoKardex.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnTrasladoKardex.Appearance.Options.UseFont = true;
+            this.btnTrasladoKardex.Appearance.Options.UseTextOptions = true;
+            this.btnTrasladoKardex.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnTrasladoKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTrasladoKardex.ImageOptions.Image")));
+            this.btnTrasladoKardex.Location = new System.Drawing.Point(942, 6);
+            this.btnTrasladoKardex.Name = "btnTrasladoKardex";
+            this.btnTrasladoKardex.Size = new System.Drawing.Size(158, 56);
+            this.btnTrasladoKardex.TabIndex = 4;
+            this.btnTrasladoKardex.Text = "Traslado Entre Bodegas";
+            this.btnTrasladoKardex.Click += new System.EventHandler(this.btnTrasladoKardex_Click);
+            // 
+            // cmdVerBorradorDeAjustes
+            // 
+            this.cmdVerBorradorDeAjustes.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.cmdVerBorradorDeAjustes.Appearance.Options.UseFont = true;
+            this.cmdVerBorradorDeAjustes.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
+            this.cmdVerBorradorDeAjustes.Location = new System.Drawing.Point(203, 6);
+            this.cmdVerBorradorDeAjustes.Name = "cmdVerBorradorDeAjustes";
+            this.cmdVerBorradorDeAjustes.Size = new System.Drawing.Size(185, 56);
+            this.cmdVerBorradorDeAjustes.TabIndex = 5;
+            this.cmdVerBorradorDeAjustes.Text = "Ver Ajustes";
+            this.cmdVerBorradorDeAjustes.Click += new System.EventHandler(this.cmdVerBorradorDeAjustes_Click);
+            // 
             // frmReporteInventarioKardexGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 758);
+            this.ClientSize = new System.Drawing.Size(1370, 555);
+            this.Controls.Add(this.cmdVerBorradorDeAjustes);
+            this.Controls.Add(this.btnTrasladoKardex);
             this.Controls.Add(this.btnAjustePorLote);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.tabPane1);
@@ -1657,11 +1759,12 @@ namespace LOSA.TransaccionesMP
             this.Name = "frmReporteInventarioKardexGeneral";
             this.Text = "Reporte de Kardex";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryAjuste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_logmovimiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit_AjusteINV)).EndInit();
@@ -1679,15 +1782,15 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridReproceso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryAjuste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmAjusteReproceso)).EndInit();
             this.tabNavigationPage6.ResumeLayout(false);
             this.tabNavigationPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdMPBodega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1702,7 +1805,7 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraGrid.GridControl grd_data_resumen;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data_resumen;
-        private dsTarima dsTarima;
+        private dsTarima dsTarima1;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_vence;
@@ -1776,8 +1879,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
         private DevExpress.XtraGrid.GridControl gridReproceso;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit3;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryAjuste;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia2;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial2;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp2;
@@ -1795,8 +1896,8 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.GridControl grdMPBodega;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.SimpleButton btnSearchMP;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtTitulo_Inv_Por_MPyBodega;
+        private DevExpress.XtraEditors.LabelControl lblTitulo_Inv_Por_MPyBodega;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia3;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_ud1;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_tm1;
@@ -1816,5 +1917,13 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.SimpleButton btnRptPRD;
         private DevExpress.XtraEditors.SimpleButton btnRptMPyBod;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.ToggleSwitch tggMostrarTotasInv_por_mp_y_bodega;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega;
+        private DevExpress.XtraEditors.SimpleButton btnActReproceso;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryAjuste;
+        private DevExpress.XtraEditors.SimpleButton btnTrasladoKardex;
+        private DevExpress.XtraEditors.SimpleButton cmdVerBorradorDeAjustes;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmAjusteReproceso;
     }
 }

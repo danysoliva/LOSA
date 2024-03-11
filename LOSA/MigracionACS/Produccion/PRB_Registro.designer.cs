@@ -154,7 +154,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbBtnEdit = new DevExpress.XtraEditors.PanelControl();
             this.cmdEditar2 = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdEditar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdNew = new DevExpress.XtraEditors.SimpleButton();
             this.grdedit = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -1021,7 +1020,6 @@
             // pbBtnEdit
             // 
             this.pbBtnEdit.Controls.Add(this.cmdEditar2);
-            this.pbBtnEdit.Controls.Add(this.cmdEditar);
             this.pbBtnEdit.Controls.Add(this.cmdNew);
             this.pbBtnEdit.Dock = System.Windows.Forms.DockStyle.Right;
             this.pbBtnEdit.Location = new System.Drawing.Point(1087, 2);
@@ -1037,26 +1035,11 @@
             this.cmdEditar2.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmdEditar2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.cmdEditar2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdEditar2.ImageOptions.SvgImage")));
-            this.cmdEditar2.Location = new System.Drawing.Point(2, 82);
+            this.cmdEditar2.Location = new System.Drawing.Point(2, 42);
             this.cmdEditar2.Name = "cmdEditar2";
             this.cmdEditar2.Size = new System.Drawing.Size(47, 40);
             this.cmdEditar2.TabIndex = 2;
             this.cmdEditar2.Click += new System.EventHandler(this.cmdEditar2_Click);
-            // 
-            // cmdEditar
-            // 
-            this.cmdEditar.Appearance.BackColor = System.Drawing.Color.White;
-            this.cmdEditar.Appearance.Options.UseBackColor = true;
-            this.cmdEditar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdEditar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmdEditar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.cmdEditar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdEditar.ImageOptions.SvgImage")));
-            this.cmdEditar.Location = new System.Drawing.Point(2, 42);
-            this.cmdEditar.Name = "cmdEditar";
-            this.cmdEditar.Size = new System.Drawing.Size(47, 40);
-            this.cmdEditar.TabIndex = 1;
-            this.cmdEditar.Visible = false;
-            this.cmdEditar.Click += new System.EventHandler(this.cmdEditar_Click_1);
             // 
             // cmdNew
             // 
@@ -1882,7 +1865,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colhoras;
         private System.Windows.Forms.BindingSource bindingSourceReprocesoGrafico;
         private DevExpress.XtraEditors.SimpleButton cmdNew;
-        private DevExpress.XtraEditors.SimpleButton cmdEditar;
         private DevExpress.XtraEditors.SimpleButton btnImprimirRpt;
         private DevExpress.XtraBars.BarEditItem dtFechaDesde;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;

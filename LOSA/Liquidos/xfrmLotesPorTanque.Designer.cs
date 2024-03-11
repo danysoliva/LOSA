@@ -30,13 +30,18 @@ namespace LOSA.Liquidos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmLotesPorTanque));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.btnverTarimas = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.grd_boleta = new DevExpress.XtraGrid.GridControl();
             this.lOSAIngresoliquidosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsLiquidos_ = new LOSA.Liquidos.dsLiquidos_();
@@ -51,17 +56,34 @@ namespace LOSA.Liquidos
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_taque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTransferencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repostPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lOSAIngresoliquidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.coloperacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.btnverTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_boleta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLiquidos_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_boleta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnverTarimas
+            // 
+            this.btnverTarimas.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnverTarimas.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnverTarimas.Name = "btnverTarimas";
+            this.btnverTarimas.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // grd_boleta
             // 
@@ -74,7 +96,9 @@ namespace LOSA.Liquidos
             this.grd_boleta.MainView = this.grdv_boleta;
             this.grd_boleta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_boleta.Name = "grd_boleta";
-            this.grd_boleta.Size = new System.Drawing.Size(1053, 456);
+            this.grd_boleta.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repostPrint});
+            this.grd_boleta.Size = new System.Drawing.Size(1550, 456);
             this.grd_boleta.TabIndex = 1;
             this.grd_boleta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_boleta});
@@ -107,12 +131,22 @@ namespace LOSA.Liquidos
             this.colcodigo_mp,
             this.colmp,
             this.colid_taque,
-            this.colTransferencia});
+            this.colTransferencia,
+            this.colfecha_ingreso,
+            this.collote,
+            this.gridColumn1,
+            this.colfecha_produccion,
+            this.colfecha_vencimiento,
+            this.coloperacion});
+            this.grdv_boleta.CustomizationFormBounds = new System.Drawing.Rectangle(-669, 358, 260, 292);
             this.grdv_boleta.DetailHeight = 284;
             this.grdv_boleta.GridControl = this.grd_boleta;
+            this.grdv_boleta.GroupCount = 1;
             this.grdv_boleta.Name = "grdv_boleta";
             this.grdv_boleta.OptionsView.ShowAutoFilterRow = true;
-            this.grdv_boleta.OptionsView.ShowGroupPanel = false;
+            this.grdv_boleta.OptionsView.ShowFooter = true;
+            this.grdv_boleta.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colid
             // 
@@ -122,24 +156,27 @@ namespace LOSA.Liquidos
             // 
             // colid_ingreso
             // 
-            this.colid_ingreso.Caption = "ID Ingreso";
+            this.colid_ingreso.Caption = "Num Ingreso";
             this.colid_ingreso.FieldName = "id_ingreso";
             this.colid_ingreso.Name = "colid_ingreso";
             this.colid_ingreso.OptionsColumn.AllowEdit = false;
             this.colid_ingreso.Visible = true;
             this.colid_ingreso.VisibleIndex = 0;
-            this.colid_ingreso.Width = 106;
+            this.colid_ingreso.Width = 120;
             // 
             // colkg
             // 
-            this.colkg.Caption = "Peso";
+            this.colkg.Caption = "Ingresado";
+            this.colkg.DisplayFormat.FormatString = "n2";
             this.colkg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colkg.FieldName = "kg";
             this.colkg.Name = "colkg";
             this.colkg.OptionsColumn.AllowEdit = false;
+            this.colkg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg", "SUMA={0:n2}")});
             this.colkg.Visible = true;
-            this.colkg.VisibleIndex = 3;
-            this.colkg.Width = 87;
+            this.colkg.VisibleIndex = 9;
+            this.colkg.Width = 91;
             // 
             // colid_serie
             // 
@@ -147,9 +184,7 @@ namespace LOSA.Liquidos
             this.colid_serie.FieldName = "id_serie";
             this.colid_serie.Name = "colid_serie";
             this.colid_serie.OptionsColumn.AllowEdit = false;
-            this.colid_serie.Visible = true;
-            this.colid_serie.VisibleIndex = 4;
-            this.colid_serie.Width = 110;
+            this.colid_serie.Width = 86;
             // 
             // colproveedor
             // 
@@ -158,8 +193,8 @@ namespace LOSA.Liquidos
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 6;
-            this.colproveedor.Width = 177;
+            this.colproveedor.VisibleIndex = 8;
+            this.colproveedor.Width = 92;
             // 
             // colcodigo_prov
             // 
@@ -168,8 +203,8 @@ namespace LOSA.Liquidos
             this.colcodigo_prov.Name = "colcodigo_prov";
             this.colcodigo_prov.OptionsColumn.AllowEdit = false;
             this.colcodigo_prov.Visible = true;
-            this.colcodigo_prov.VisibleIndex = 5;
-            this.colcodigo_prov.Width = 90;
+            this.colcodigo_prov.VisibleIndex = 7;
+            this.colcodigo_prov.Width = 102;
             // 
             // colcodigo_mp
             // 
@@ -179,7 +214,7 @@ namespace LOSA.Liquidos
             this.colcodigo_mp.OptionsColumn.AllowEdit = false;
             this.colcodigo_mp.Visible = true;
             this.colcodigo_mp.VisibleIndex = 1;
-            this.colcodigo_mp.Width = 141;
+            this.colcodigo_mp.Width = 112;
             // 
             // colmp
             // 
@@ -188,8 +223,8 @@ namespace LOSA.Liquidos
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 2;
-            this.colmp.Width = 193;
+            this.colmp.VisibleIndex = 4;
+            this.colmp.Width = 154;
             // 
             // colid_taque
             // 
@@ -199,17 +234,70 @@ namespace LOSA.Liquidos
             // colTransferencia
             // 
             this.colTransferencia.Caption = "Ver Tarimas";
-            repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            repositoryItemButtonEdit1.Name = "btnverTarimas";
-            repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.colTransferencia.ColumnEdit = repositoryItemButtonEdit1;
+            this.colTransferencia.ColumnEdit = this.btnverTarimas;
             this.colTransferencia.Name = "colTransferencia";
             this.colTransferencia.Visible = true;
-            this.colTransferencia.VisibleIndex = 7;
-            this.colTransferencia.Width = 131;
+            this.colTransferencia.VisibleIndex = 10;
+            this.colTransferencia.Width = 89;
+            // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.Caption = "Fecha Ingreso";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 2;
+            this.colfecha_ingreso.Width = 144;
+            // 
+            // collote
+            // 
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 4;
+            this.collote.Width = 135;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Ingreso";
+            this.gridColumn1.ColumnEdit = this.repostPrint;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 11;
+            this.gridColumn1.Width = 226;
+            // 
+            // repostPrint
+            // 
+            this.repostPrint.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.repostPrint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repostPrint.Name = "repostPrint";
+            this.repostPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repostPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostPrint_ButtonClick);
+            // 
+            // colfecha_produccion
+            // 
+            this.colfecha_produccion.Caption = "Fecha Produccion";
+            this.colfecha_produccion.FieldName = "fecha_produccion";
+            this.colfecha_produccion.Name = "colfecha_produccion";
+            this.colfecha_produccion.OptionsColumn.AllowEdit = false;
+            this.colfecha_produccion.Visible = true;
+            this.colfecha_produccion.VisibleIndex = 5;
+            this.colfecha_produccion.Width = 149;
+            // 
+            // colfecha_vencimiento
+            // 
+            this.colfecha_vencimiento.Caption = "Fecha Venci.";
+            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
+            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
+            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
+            this.colfecha_vencimiento.Visible = true;
+            this.colfecha_vencimiento.VisibleIndex = 6;
+            this.colfecha_vencimiento.Width = 113;
             // 
             // lOSAIngresoliquidosBindingSource
             // 
@@ -240,7 +328,7 @@ namespace LOSA.Liquidos
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(905, 12);
+            this.btnAtras.Location = new System.Drawing.Point(1402, 12);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(138, 55);
             this.btnAtras.TabIndex = 96;
@@ -264,11 +352,21 @@ namespace LOSA.Liquidos
             this.simpleButton2.Text = "Actualizar";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // coloperacion
+            // 
+            this.coloperacion.Caption = "Tipo Operacion";
+            this.coloperacion.FieldName = "operacion";
+            this.coloperacion.Name = "coloperacion";
+            this.coloperacion.OptionsColumn.AllowEdit = false;
+            this.coloperacion.Visible = true;
+            this.coloperacion.VisibleIndex = 3;
+            this.coloperacion.Width = 140;
+            // 
             // xfrmLotesPorTanque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 542);
+            this.ClientSize = new System.Drawing.Size(1552, 542);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.simpleButton1);
@@ -277,11 +375,12 @@ namespace LOSA.Liquidos
             this.Name = "xfrmLotesPorTanque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "xfrmLotesPorTanque";
+            ((System.ComponentModel.ISupportInitialize)(this.btnverTarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_boleta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLiquidos_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_boleta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -307,5 +406,13 @@ namespace LOSA.Liquidos
         private dsLiquidos_ dsLiquidos_;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraGrid.Columns.GridColumn colTransferencia;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnverTarimas;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repostPrint;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn coloperacion;
     }
 }

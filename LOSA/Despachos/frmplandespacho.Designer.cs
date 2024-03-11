@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmplandespacho));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnlotes = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btncancel = new DevExpress.XtraEditors.SimpleButton();
@@ -78,6 +78,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dtfechaplan = new DevExpress.XtraEditors.DateEdit();
             this.btnatras = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNameForIT_Support = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_detalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
@@ -86,32 +87,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdocnum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameForIT_Support.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnlotes
             // 
             this.btnlotes.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
             this.btnlotes.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnlotes.Name = "btnlotes";
             this.btnlotes.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(183, 9);
+            this.labelControl1.Location = new System.Drawing.Point(247, 31);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(398, 40);
+            this.labelControl1.Size = new System.Drawing.Size(304, 40);
             this.labelControl1.TabIndex = 36;
             this.labelControl1.Text = "Orden de Venta";
             // 
@@ -125,9 +125,9 @@
             this.btncancel.Enabled = false;
             this.btncancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btncancel.ImageOptions.Image")));
             this.btncancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btncancel.Location = new System.Drawing.Point(135, 6);
+            this.btncancel.Location = new System.Drawing.Point(133, 25);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(101, 44);
+            this.btncancel.Size = new System.Drawing.Size(101, 45);
             this.btncancel.TabIndex = 37;
             this.btncancel.Text = "Cancelar";
             this.btncancel.Visible = false;
@@ -187,9 +187,12 @@
             this.colver});
             this.grdv_detalle.DetailHeight = 284;
             this.grdv_detalle.GridControl = this.grd_detalle;
+            this.grdv_detalle.LevelIndent = 0;
             this.grdv_detalle.Name = "grdv_detalle";
+            this.grdv_detalle.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_detalle.OptionsView.ShowAutoFilterRow = true;
             this.grdv_detalle.OptionsView.ShowGroupPanel = false;
+            this.grdv_detalle.PreviewIndent = 0;
             // 
             // colid
             // 
@@ -333,9 +336,9 @@
             // btnlotess
             // 
             this.btnlotess.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
             this.btnlotess.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnlotess.Name = "btnlotess";
             this.btnlotess.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnlotess.Click += new System.EventHandler(this.btnlotess_Click);
@@ -369,9 +372,9 @@
             // btnver
             // 
             this.btnver.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions9.Image = global::LOSA.Properties.Resources.tap;
             this.btnver.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnver.Name = "btnver";
             this.btnver.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnver.Click += new System.EventHandler(this.btnver_Click);
@@ -380,7 +383,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(19, 98);
+            this.labelControl2.Location = new System.Drawing.Point(19, 111);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(59, 22);
@@ -391,7 +394,7 @@
             // 
             this.txtcliente.EditValue = "";
             this.txtcliente.Enabled = false;
-            this.txtcliente.Location = new System.Drawing.Point(183, 95);
+            this.txtcliente.Location = new System.Drawing.Point(183, 109);
             this.txtcliente.Name = "txtcliente";
             this.txtcliente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcliente.Properties.Appearance.Options.UseFont = true;
@@ -403,7 +406,7 @@
             // 
             this.txtdocnum.EditValue = "";
             this.txtdocnum.Enabled = false;
-            this.txtdocnum.Location = new System.Drawing.Point(183, 61);
+            this.txtdocnum.Location = new System.Drawing.Point(183, 79);
             this.txtdocnum.Name = "txtdocnum";
             this.txtdocnum.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdocnum.Properties.Appearance.Options.UseFont = true;
@@ -415,7 +418,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(20, 63);
+            this.labelControl3.Location = new System.Drawing.Point(20, 81);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(133, 22);
@@ -426,7 +429,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(19, 136);
+            this.labelControl4.Location = new System.Drawing.Point(19, 143);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(115, 22);
@@ -442,7 +445,7 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(11, 4);
+            this.simpleButton1.Location = new System.Drawing.Point(11, 25);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(116, 45);
             this.simpleButton1.TabIndex = 44;
@@ -453,7 +456,7 @@
             // dtfechaplan
             // 
             this.dtfechaplan.EditValue = null;
-            this.dtfechaplan.Location = new System.Drawing.Point(183, 132);
+            this.dtfechaplan.Location = new System.Drawing.Point(183, 139);
             this.dtfechaplan.Name = "dtfechaplan";
             this.dtfechaplan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfechaplan.Properties.Appearance.Options.UseFont = true;
@@ -476,18 +479,30 @@
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(609, 4);
+            this.btnatras.Location = new System.Drawing.Point(609, 25);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(109, 44);
             this.btnatras.TabIndex = 46;
             this.btnatras.Text = "Atras";
             this.btnatras.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // txtNameForIT_Support
+            // 
+            this.txtNameForIT_Support.EditValue = "frmplandespacho";
+            this.txtNameForIT_Support.Location = new System.Drawing.Point(11, 0);
+            this.txtNameForIT_Support.Name = "txtNameForIT_Support";
+            this.txtNameForIT_Support.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameForIT_Support.Properties.Appearance.Options.UseFont = true;
+            this.txtNameForIT_Support.Size = new System.Drawing.Size(199, 24);
+            this.txtNameForIT_Support.TabIndex = 47;
+            this.txtNameForIT_Support.Visible = false;
+            // 
             // frmplandespacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 560);
+            this.Controls.Add(this.txtNameForIT_Support);
             this.Controls.Add(this.btnatras);
             this.Controls.Add(this.dtfechaplan);
             this.Controls.Add(this.simpleButton1);
@@ -499,10 +514,9 @@
             this.Controls.Add(this.grd_detalle);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmplandespacho";
-            this.Text = "frmplandespacho";
+            this.Text = "Plan Despacho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_detalle)).EndInit();
@@ -514,6 +528,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtdocnum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameForIT_Support.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,5 +570,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEnviado;
         private DevExpress.XtraGrid.Columns.GridColumn colver;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnver;
+        private DevExpress.XtraEditors.TextEdit txtNameForIT_Support;
     }
 }

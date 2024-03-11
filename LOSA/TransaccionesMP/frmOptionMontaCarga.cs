@@ -1,5 +1,6 @@
 ﻿using LOSA.Calidad;
 using LOSA.Clases;
+using LOSA.Logistica;
 using LOSA.RecepcionMP;
 using LOSA.TransaccionesPT;
 using System;
@@ -55,6 +56,9 @@ namespace LOSA.TransaccionesMP
         {
             //frmMantenimiento frm = new frmMantenimiento();
             //frm.Show();
+            frmValidacionTarimas frm = new frmValidacionTarimas(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
@@ -124,7 +128,7 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            LOSA.Reportes.frmreporteUbicacion frm = new Reportes.frmreporteUbicacion();
+            LOSA.Reportes.frmreporteUbicacion frm = new LOSA.Reportes.frmreporteUbicacion();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
@@ -160,6 +164,13 @@ namespace LOSA.TransaccionesMP
         private void btntarimasactivadasPT_Click(object sender, EventArgs e)
         {
             frm_rpt_productoT frm = new frm_rpt_productoT();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            frmDevolucionMicros frm = new frmDevolucionMicros(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

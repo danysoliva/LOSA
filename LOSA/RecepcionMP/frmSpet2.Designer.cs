@@ -31,10 +31,11 @@ namespace LOSA.RecepcionMP
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSpet2));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.step1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -44,7 +45,6 @@ namespace LOSA.RecepcionMP
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnyes = new DevExpress.XtraEditors.SimpleButton();
             this.btnNo = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
@@ -71,15 +71,15 @@ namespace LOSA.RecepcionMP
             this.panel1.Size = new System.Drawing.Size(642, 84);
             this.panel1.TabIndex = 9;
             // 
-            // labelControl6
+            // simpleButton3
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(3, 3);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(40, 20);
-            this.labelControl6.TabIndex = 6;
-            this.labelControl6.Text = "Pasos:";
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(371, 34);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(124, 38);
+            this.simpleButton3.TabIndex = 10;
+            this.simpleButton3.Text = "Regresar Paso ";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // pictureEdit4
             // 
@@ -119,6 +119,16 @@ namespace LOSA.RecepcionMP
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Size = new System.Drawing.Size(51, 50);
             this.pictureEdit2.TabIndex = 7;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(3, 3);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(40, 20);
+            this.labelControl6.TabIndex = 6;
+            this.labelControl6.Text = "Pasos:";
             // 
             // simpleButton2
             // 
@@ -218,16 +228,6 @@ namespace LOSA.RecepcionMP
             this.labelControl4.TabIndex = 15;
             this.labelControl4.Text = "Segundo paso:";
             // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(371, 34);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(124, 38);
-            this.simpleButton3.TabIndex = 10;
-            this.simpleButton3.Text = "Regresar Paso ";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
             // btnyes
             // 
             this.btnyes.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,7 +237,7 @@ namespace LOSA.RecepcionMP
             this.btnyes.Name = "btnyes";
             this.btnyes.Size = new System.Drawing.Size(517, 43);
             this.btnyes.TabIndex = 17;
-            this.btnyes.Text = "Si, es un traslado de un almacen externo";
+            this.btnyes.Text = "Si, es un TRASLADO DE UN ALMACEN EXTERNO";
             this.btnyes.Click += new System.EventHandler(this.btnyes_Click);
             this.btnyes.DoubleClick += new System.EventHandler(this.btnyes_DoubleClick);
             // 
@@ -250,7 +250,7 @@ namespace LOSA.RecepcionMP
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(517, 43);
             this.btnNo.TabIndex = 18;
-            this.btnNo.Text = "No, es un ingreso directo.";
+            this.btnNo.Text = "No, es un INGRESO DIRECTO";
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             this.btnNo.DoubleClick += new System.EventHandler(this.btnNo_DoubleClick);
             // 

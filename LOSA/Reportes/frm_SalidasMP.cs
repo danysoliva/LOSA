@@ -21,6 +21,8 @@ namespace LOSA.Reportes
             DataOperations dp = new DataOperations();
             dtDesde.EditValue = dp.Now().AddDays(-3);
             dtHasta.EditValue = dp.Now();
+
+            LoadDatos();
         }
 
         private void dtDesde_Validated(object sender, EventArgs e)
@@ -57,12 +59,12 @@ namespace LOSA.Reportes
 
         private void dtHasta_EditValueChanged(object sender, EventArgs e)
         {
-            LoadDatos();
+            //LoadDatos();
         }
 
         private void dtDesde_EditValueChanged(object sender, EventArgs e)
         {
-            LoadDatos();
+            //LoadDatos();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -81,6 +83,11 @@ namespace LOSA.Reportes
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmdRefreshDisponibles_Click(object sender, EventArgs e)
+        {
+            LoadDatos();
         }
     }
 }

@@ -190,7 +190,6 @@ namespace LOSA.MigracionACS.Produccion
             //this.FormAction = FormAction;
             //this.UserGroups = UserGroups;
         }
-
         #endregion
 
         #region Form Events
@@ -252,12 +251,11 @@ namespace LOSA.MigracionACS.Produccion
             if (!AccesoPrevio)
             {
                 CerrarForm = true;
-                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #69");
             }
             else
             {
                 load_orders();
-
                 conn.ConnectionString = dp.ConnectionStringCostos;
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
@@ -968,8 +966,7 @@ namespace LOSA.MigracionACS.Produccion
             }
             catch (Exception ex)
             {
-                if (ex.Message != "Object reference not set to an instance of an object.")
-                    MessageBox.Show("Caso X: Algo resulto mal, contacta al departamento de sistemas Detalle:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CajaDialogo.Error(ex.Message);
             }
         }
 

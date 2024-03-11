@@ -35,9 +35,11 @@ namespace LOSA.Trazabilidad
             // 
             // vGridControl1
             // 
+            this.vGridControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.vGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vGridControl1.Location = new System.Drawing.Point(0, 0);
             this.vGridControl1.Name = "vGridControl1";
+            this.vGridControl1.OptionsBehavior.Editable = false;
             this.vGridControl1.OptionsView.AllowGlyphSkinning = true;
             this.vGridControl1.OptionsView.AutoScaleBands = true;
             this.vGridControl1.RecordWidth = 200;

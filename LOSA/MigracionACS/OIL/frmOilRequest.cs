@@ -12,75 +12,136 @@ using LOSA.Clases;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using ACS.Classes;
+using LOSA.Utileria;
 
 namespace LOSA.MigracionACS.OIL
 {
     public partial class frmOilRequest : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado;
-        DataOperations dp;
+        DataOperations dp; 
+        public bool CerrarForm;
+        bool OrdenEnProceso = false;
+
         public frmOilRequest(UserLogin pUser)
         {
             InitializeComponent();
             dp = new DataOperations();
             UsuarioLogeado = pUser;
+            ValidatePermisos();
+        }
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(9))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(9))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        AccesoPrevio = true;
+                        simpleButton1.Visible = false;
+                        break;
+                    case 2://Basic No Autorization
+                        //btnc_VerifyReach.Enabled = false;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        //btnc_VerifyReach.Enabled = true;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #9");
+            }
+            else
+            {
+
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmTipoReq frm = new frmTipoReq();
-            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                switch (frm.tipo)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                        frmOilSingle frmx = new frmOilSingle(this.UsuarioLogeado);
-                        if(frmx.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                            CargarRequisiciones();
-                        break;
-                    case 2:
-                        MessageBox.Show("No se han definido los porcentajes de inclusion para un producto Mix.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                }
-            }
+            frmOilSingle frmx = new frmOilSingle(this.UsuarioLogeado);
+            if (frmx.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                CargarRequisiciones();
+
+            //frmTipoReq frm = new frmTipoReq();
+            //if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    switch (frm.tipo)
+            //    {
+            //        case 0:
+            //            break;
+            //        case 1:
+            //            frmOilSingle frmx = new frmOilSingle(this.UsuarioLogeado);
+            //            if(frmx.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //                CargarRequisiciones();
+            //            break;
+            //        case 2:
+            //            MessageBox.Show("No se han definido los porcentajes de inclusion para un producto Mix.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            break;
+            //    }
+            //}
         }
 
         private void CargarRequisiciones()
         {
             try
             {
-                string sql = @"SELECT distinct hh.[id]
-                                        ,[fecha_p],
-	                                    case when dd.process = 1 then
-		                                'En Proceso'
-	                                    else
-		                                case when dd.complete = 1 then
-			                                'Completada'
-		                                else
-			                                'Pendiente'
-		                                end
-	                                    end as estado,
-	                                    rd.long_name as material,
-			                            (select sum(dd1.cant)
-			                             from [dbo].[oil_req_h] hh1 join
-		                                      [dbo].[oil_req_d] dd1 on
-				                              hh1.id = dd1.id_requisicion
-			                             where hh1.id = hh.id and
-			                                   dd1.id_rm = dd.id_rm) as Cant,
-                                        (SELECT [nombre]
-                                         FROM [AQFSVR003].ACS.[dbo].[conf_usuarios] uss
-                                         where uss.[id] = hh.id_usuario) as usuario
-                                FROM [dbo].[oil_req_h] hh join
-                                        [dbo].[oil_req_d] dd 
-	                                    on hh.id = dd.id_requisicion join
-	                                    MD_Raw_Material rd 
-	                                    on rd.id = dd.id_rm
-                                order by hh.[id] desc";
+                //string sql = @"SELECT distinct hh.[id]
+                //                        ,[fecha_p],
+                //                     case when dd.process = 1 then
+                //                  'En Proceso'
+                //                     else
+                //                  case when dd.complete = 1 then
+                //                   'Completada'
+                //                  else
+                //                   'Pendiente'
+                //                  end
+                //                     end as estado,
+                //                     rd.long_name as material,
+                //               (select sum(dd1.cant)
+                //                from [dbo].[oil_req_h] hh1 join
+                //                        [dbo].[oil_req_d] dd1 on
+                //                  hh1.id = dd1.id_requisicion
+                //                where hh1.id = hh.id and
+                //                      dd1.id_rm = dd.id_rm) as Cant,
+                //                        (SELECT [nombre]
+                //                         FROM [AQFSVR003].ACS.[dbo].[conf_usuarios] uss
+                //                         where uss.[id] = hh.id_usuario) as usuario
+                //                FROM [dbo].[oil_req_h] hh join
+                //                        [dbo].[oil_req_d] dd 
+                //                     on hh.id = dd.id_requisicion join
+                //                     MD_Raw_Material rd 
+                //                     on rd.id = dd.id_rm
+                //                order by hh.[id] desc";
+                string sql = @"sp_get_requisas_prod_tanque_ext";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsAceites1.requisiciones.Clear();
                 adat.Fill(dsAceites1.requisiciones);
@@ -216,5 +277,53 @@ namespace LOSA.MigracionACS.OIL
                 
             }
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                gridControl1.ExportToXlsx(dialog.FileName);
+            }
+        }
+
+        private void btnReiniciarOrden_Click(object sender, EventArgs e)
+        {
+            DialogResult r = CajaDialogo.Pregunta("Esto Permite Reescribir la Orden en la Pantalla de Traslados.\nDesea continuar?");
+            if (r != System.Windows.Forms.DialogResult.Yes)
+                return;
+
+            try
+            {
+                string sql = @"sp_reiniciar_seteo_en_pantalla_aceites_traslado";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                OrdenEnProceso = Convert.ToBoolean(cmd.ExecuteScalar());
+                conn.Close();
+
+                if (OrdenEnProceso)
+                {
+                    string mensaje_info = "Se a Actualizo la Orden en la Pantalla de Traslado\nRevisar la Pantalla!";
+                    frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.info, mensaje_info);
+                    frm.Show();
+                }
+                else
+                {
+                    string mensaje_error = "No Existe una Orden de Aceite en Proceso!";
+                    frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, mensaje_error);
+                    frm.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
     }
 }

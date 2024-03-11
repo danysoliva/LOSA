@@ -47,6 +47,7 @@ namespace LOSA
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SaltarLoginPRD = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAbrirTeclado = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdIngresarAdmin = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -204,6 +205,7 @@ namespace LOSA
             this.cmdButtonSaltarLogin.Size = new System.Drawing.Size(199, 59);
             this.cmdButtonSaltarLogin.TabIndex = 11;
             this.cmdButtonSaltarLogin.Text = "Montacarga";
+            this.cmdButtonSaltarLogin.Visible = false;
             this.cmdButtonSaltarLogin.Click += new System.EventHandler(this.cmdButtonSaltarLogin_Click);
             // 
             // cmdMicros
@@ -280,6 +282,23 @@ namespace LOSA
             this.cmdAbrirTeclado.TabIndex = 19;
             this.cmdAbrirTeclado.Click += new System.EventHandler(this.cmdAbrirTeclado_Click);
             // 
+            // cmdIngresarAdmin
+            // 
+            this.cmdIngresarAdmin.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmdIngresarAdmin.Appearance.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.cmdIngresarAdmin.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdIngresarAdmin.Appearance.Options.UseBackColor = true;
+            this.cmdIngresarAdmin.Appearance.Options.UseBorderColor = true;
+            this.cmdIngresarAdmin.Appearance.Options.UseFont = true;
+            this.cmdIngresarAdmin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdIngresarAdmin.Location = new System.Drawing.Point(119, 374);
+            this.cmdIngresarAdmin.Name = "cmdIngresarAdmin";
+            this.cmdIngresarAdmin.Size = new System.Drawing.Size(199, 43);
+            this.cmdIngresarAdmin.TabIndex = 20;
+            this.cmdIngresarAdmin.Text = "Ingresar Admin";
+            this.cmdIngresarAdmin.Visible = false;
+            this.cmdIngresarAdmin.Click += new System.EventHandler(this.simpleButton3_Click_1);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +306,7 @@ namespace LOSA
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 578);
             this.ControlBox = false;
+            this.Controls.Add(this.cmdIngresarAdmin);
             this.Controls.Add(this.cmdAbrirTeclado);
             this.Controls.Add(this.SaltarLoginPRD);
             this.Controls.Add(this.simpleButton2);
@@ -334,6 +354,7 @@ namespace LOSA
         private SimpleButton simpleButton2;
         private SimpleButton SaltarLoginPRD;
         private SimpleButton cmdAbrirTeclado;
+        private SimpleButton cmdIngresarAdmin;
     }
 }
 

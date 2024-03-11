@@ -23,40 +23,46 @@ namespace ACS.Classes
         #region Credenciales Producción
 
         //WINCC
-        public static string CMS_ServerPellet = "AQFSVR003";
-        public static string CMS_ServerExtruder = "AQFSVR003";
-        public static string CMS_DB_User = "sa";
+        public static string CMS_ServerPellet = "AQFSVR010\\AQFSVR010";
+        public static string CMS_ServerExtruder = "AQFSVR010\\AQFSVR010";
+        public static string CMS_DB_User = "losa_user_db";
         public static string CMS_DB_Pass = "";
         public static string CMS_ActiveDB = "process_data";
 
-        //Ttrace
-        public static string ServerAddress = "AQFSVR003";
-        public static string ServerName = "Servidor Productivo";
-        public static string ActiveDB = "ACS";
-        public static string DB_User = "sa";
-        public static string DB_Pass = "AquaF33dHN2014";
+        ////Ttrace
+        //public static string ServerAddress = "AQFSVR010\\AQFSVR010";
+        //public static string ServerName = "Servidor Productivo";
+        //public static string ActiveDB = "ACS";
+        //public static string DB_User = "losa_user_db";
+        //public static string DB_Pass = "AquaF33dHN2014";
 
         //ACS(Costos)
-        public static string CTS_ServerAddress = "AQFSVR003";
+        public static string CTS_ServerAddress = "AQFSVR010\\AQFSVR010";
         public static string CTS_ServerName = "Servidor Productivo";
         public static string CTS_ActiveDB = "ACS";
-        public static string CTS_DB_User = "sa";
+        public static string CTS_DB_User = "losa_user_db";
         public static string CTS_DB_Pass = "AquaF33dHN2014";
 
-        ////Bascula nueva version (desarrollo)
-        public static string Bas_ServerAddress = "AQFSVR003";
-        public static string Bas_ServerName = "Servidor Desarrollo";
+        //Bascula nueva version(desarrollo)
+        public static string Bas_ServerAddress = "AQFSVR010\\AQFSVR010";
+        public static string Bas_ServerName = "Servidor Produccion";
         public static string Bas_ActiveDB = "BASCULA";
-        public static string Bas_DB_User = "sa";
+        public static string Bas_DB_User = "losa_user_db";
         public static string Bas_DB_Pass = "AquaF33dHN2014";
 
-        //LOSA
-        public static string LOSA_ServerAddress = "AQFSVR003";
-        public static string LOSA_ServerName = "AQFSVR003";
+        ////LOSA
+        public static string LOSA_ServerAddress = "AQFSVR010\\AQFSVR010";
+        public static string LOSA_ServerName = "AQFSVR010\\AQFSVR010";
         public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
-        //public static string LOSA_ActiveDB = "LOSA2"; //BASE DE PRUEBAS
-        public static string LOSA_DB_User = "sa";
+        public static string LOSA_DB_User = "losa_user_db";
         public static string LOSA_DB_Pass = " AquaF33dHN2014";
+
+        //LOSA Servidor Produccion AQFSVR010
+        //public static string LOSA_ServerAddress = "AQFSVR010";
+        //public static string LOSA_ServerName = "AQFSVR010";
+        //public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = "AquaF33dHN2022";
 
         ////LOSA Desarrollo
         //public static string LOSA_ServerName = $"AQFSVR003";
@@ -78,6 +84,13 @@ namespace ACS.Classes
         public static string SAP_ActiveDB = "AQUA";
         public static string SAP_DB_User = "sa";
         public static string SAP_DB_Pass = "Aqua2018";
+
+        //SAP_ACS
+        public static string SAP_ACS_ServerAddress = @"AQFSVR006\AQFSVR006";
+        public static string SAP_ACS_ServerName = "Servidor de Desarrollo";
+        public static string SAP_ACS_ActiveDB = "ACS";
+        public static string SAP_ACS_DB_User = "sa";
+        public static string SAP_ACS_DB_Pass = "Aqua2018";
 
 
         // APMS(Aquafeed Pocess Management System)
@@ -114,18 +127,18 @@ namespace ACS.Classes
 
 
         //ODOO4
-        public static string odoo4_ServerAddress = "AQFSVR003";
-        public static string odoo4_ServerName = "Servidor Productivo";
-        public static string odoo4_ActiveDB = "odoo_sap";
-        public static string odoo4_DB_User = "aquafeed";
-        public static string odoo4_DB_Pass = "Aqua3820";
+        public static string odoo4_ServerAddress = "10.50.11.137";
+        public static string odoo4_ServerName = "Servidor Odoo Virtual";
+        public static string odoo4_ActiveDB = "aqua_base";
+        public static string odoo4_DB_User = "vegeta";
+        public static string odoo4_DB_Pass = "aquaf33d19";
 
         //ODOO5
-        public static string odoo5_ServerAddress = "10.50.11.136";
+        public static string odoo5_ServerAddress = "10.50.11.137";
         public static string odoo5_ServerName = "Servidor Odoo Virtual";
-        public static string odoo5_ActiveDB = "dbaquafeed";
+        public static string odoo5_ActiveDB = "dbaquafeed_bk";
         public static string odoo5_DB_User = "vegeta";
-        public static string odoo5_DB_Pass = "innova2020";
+        public static string odoo5_DB_Pass = "aquaf33d19";
 
 
         ////Promix -- TEST ---
@@ -136,10 +149,98 @@ namespace ACS.Classes
         public static string prinin_DB_Pass = "";
 
         //SAP
-        public static string ActiveDBSDK = "AQUA_AF";
-        public static string ServerSDK = "10.50.11.31";
-        public static string ServerlicenseSDK = "10.50.11.31";
+        public static string ActiveDBSDK = "AQUA";
+        public static string ServerSDK = "AQFSVR006\\AQFSVR006";
+        public static string ServerlicenseSDK = "10.50.11.31:30000";
+
+
         #endregion
+
+        #region Credenciales de Testing PC 6G1SST3 - Ruben
+
+        //////ACS(Costos)
+        //public static string CTS_ServerAddress = "6G1SST3";
+        //public static string CTS_ServerName = "6G1SST3";
+        //public static string CTS_ActiveDB = "ACS";
+        //public static string CTS_DB_User = "sa";
+        //public static string CTS_DB_Pass = "Marathones00";
+
+        //////LOSA
+        //public static string LOSA_ServerAddress = "6G1SST3";
+        //public static string LOSA_ServerName = "6G1SST3";
+        //public static string LOSA_ActiveDB = "LOSA"; //BASE de Prueba 
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = " Marathones00";
+
+        //public static string Bas_ServerAddress = "6G1SST3";
+        //public static string Bas_ServerName = "Servidor Desarrollo";
+        //public static string Bas_ActiveDB = "BASCULA";
+        //public static string Bas_DB_User = "sa";
+        //public static string Bas_DB_Pass = "Marathones00";
+
+        //// APMS(Aquafeed Pocess Management System)
+        //public static string APMS_Server = @"6G1SST3";
+        //public static string APMS_DB_User = "sa";
+        //public static string APMS_DB_Pass = "Marathones00";
+        //public static string APMS_ActiveDB = "APMS";
+
+        #endregion
+
+        #region Credenciales de Testing PC 7L12TV3 - Danys Oliva
+        //ACS(Costos)
+        //public static string CTS_ServerAddress = "7L12TV3";
+        //public static string CTS_ServerName = "7L12TV3";
+        //public static string CTS_ActiveDB = "ACS";
+        //public static string CTS_DB_User = "sa";
+        //public static string CTS_DB_Pass = "Aq4x_3Fj2#";
+
+        ////Bascula nueva version (desarrollo)
+        //public static string Bas_ServerAddress = "AQFSVR010\\AQFSVR010";
+        //public static string Bas_ServerName = "Servidor Desarrollo";
+        //public static string Bas_ActiveDB = "BASCULA";
+        //public static string Bas_DB_User = "losa_user_db";
+        //public static string Bas_DB_Pass = "AquaF33dHN2014";
+
+        //LOSA
+        //public static string LOSA_ServerAddress = "7L12TV3";
+        //public static string LOSA_ServerName = "7L12TV3";
+        //public static string LOSA_ActiveDB = "LOSA"; //BASE de Prueba 
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = " Aq4x_3Fj2#";
+
+        #endregion
+
+        #region Credenciales de Testing PC 9SSCBV2 - Ever Erazo
+
+
+        //ACS
+        //public static string CTS_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string CTS_ServerName = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string CTS_ActiveDB = "ACS"; 
+        //public static string CTS_DB_User = "sa";
+        //public static string CTS_DB_Pass = "G3n3R@c10n2023&";
+
+        //LOSA
+        //public static string LOSA_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string LOSA_ServerName = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string LOSA_ActiveDB = "LOSA";
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = "G3n3R@c10n2023&";
+
+        ////LOSA
+        //public static string LOSA_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string LOSA_ActiveDB = "LOSA"; //BASE DE PRUEBAS LOSA
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = "G3n3R@c10n2023&";
+
+        ////ACS
+        //public static string ACS_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string ACS_ActiveDB = "ACS"; //BASE DE PRUEBAS ASC
+        //public static string ACS_DB_User = "sa";
+        //public static string ACS_DB_Pass = "G3n3R@c10n2023&";
+
+        #endregion
+
 
         #region Credenciales Pruebas AQFSVR007\\AQFSVR007
 

@@ -1,5 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -20,13 +22,15 @@ namespace LOSA.Liquidos
         UserLogin usuarioLogueado = new UserLogin();
         bool istraslado = false;
         int id_lote_ext = 0;
-        public xfrmLotesPorTanque(int pIdTanque,UserLogin userLogged)
+        int nueva_mp_tanque = 0;
+        public xfrmLotesPorTanque(int pIdTanque,UserLogin userLogged, int pcambiomp)
         {
             InitializeComponent();
             id_taque = pIdTanque;
             istraslado = false;
             usuarioLogueado = userLogged;
             LoadIngresosLiquidos();
+            nueva_mp_tanque = pcambiomp;
         }
 
         public xfrmLotesPorTanque(int pIdTanque, UserLogin userLogged, bool isTraslado, int idlote)
@@ -47,17 +51,25 @@ namespace LOSA.Liquidos
                 string code_mp="";
                 MateriaPrima mp = new MateriaPrima();
 
-                foreach (var item in dsLiquidos_.LOSA_Ingreso_liquidos)
-                {
-                    code_mp = item.codigo_mp;
-                }
+                //foreach (var item in dsLiquidos_.LOSA_Ingreso_liquidos)
+                //{
+                //    code_mp = item.codigo_mp;
+                //}
 
-                if (grdv_boleta.RowCount==0)
-                {
-                    xfrmChooseMP frm = new xfrmChooseMP(id_taque,usuarioLogueado);
+                Tanque tanqu1 = new Tanque(id_taque);
+                code_mp = tanqu1.Itemcode;
 
+                //if (grdv_boleta.RowCount==0)
+                //{
+                //    xfrmChooseMP frm = new xfrmChooseMP(id_taque,usuarioLogueado);
+
+                //    frm.ShowDialog();
+
+                //}
+                if (nueva_mp_tanque == 1)
+                {
+                    xfrmChooseMP frm = new xfrmChooseMP(id_taque, usuarioLogueado); 
                     frm.ShowDialog();
-
                 }
                 else
                 {
@@ -65,7 +77,7 @@ namespace LOSA.Liquidos
                     {
                         if (istraslado)
                         {
-                            frmIngresoCamion frm = new frmIngresoCamion(usuarioLogueado, mp, id_taque, istraslado,id_lote_ext);
+                            frmIngresoCamion frm = new frmIngresoCamion(usuarioLogueado, mp, id_taque, istraslado, id_lote_ext);
 
                             frm.Show();
                         }
@@ -76,7 +88,7 @@ namespace LOSA.Liquidos
                             frm.Show();
                         }
                     }
-                    
+
                 }
             }
             catch (Exception ex)
@@ -116,6 +128,24 @@ namespace LOSA.Liquidos
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             LoadIngresosLiquidos();
+        }
+
+        private void repostPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_boleta.FocusedView;
+                var row = (dsLiquidos_.LOSA_Ingreso_liquidosRow)gridview.GetFocusedDataRow();
+
+                Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id_ingreso, row.codigo_mp, 1, row.id_mp);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                printReport.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

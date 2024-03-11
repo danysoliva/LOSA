@@ -96,6 +96,7 @@ namespace LOSA.Despachos
             this.colSolicitado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentregado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPendiente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
@@ -410,7 +411,7 @@ namespace LOSA.Despachos
             this.panelNotificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelNotificacion.Controls.Add(this.lblMensaje);
             this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNotificacion.Location = new System.Drawing.Point(0, 718);
+            this.panelNotificacion.Location = new System.Drawing.Point(0, 721);
             this.panelNotificacion.Name = "panelNotificacion";
             this.panelNotificacion.Size = new System.Drawing.Size(1106, 49);
             this.panelNotificacion.TabIndex = 129;
@@ -835,9 +836,9 @@ namespace LOSA.Despachos
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 767);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 770);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1106, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1106, 20);
             // 
             // barDockControlLeft
             // 
@@ -845,7 +846,7 @@ namespace LOSA.Despachos
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 767);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 770);
             // 
             // barDockControlRight
             // 
@@ -853,7 +854,7 @@ namespace LOSA.Despachos
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1106, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 767);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 770);
             // 
             // barButtonItem1
             // 
@@ -1096,11 +1097,22 @@ namespace LOSA.Despachos
             this.colPendiente.VisibleIndex = 4;
             this.colPendiente.Width = 55;
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(197, 25);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(162, 21);
+            this.txtVentana.TabIndex = 158;
+            this.txtVentana.Text = "frm_despacho_v3";
+            this.txtVentana.Visible = false;
+            // 
             // frm_despacho_v3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1106, 790);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.gridDetalleDespacho);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.Anden7);
@@ -1214,5 +1226,6 @@ namespace LOSA.Despachos
         private DevExpress.XtraGrid.Columns.GridColumn colSolicitado;
         private DevExpress.XtraGrid.Columns.GridColumn colentregado;
         private DevExpress.XtraGrid.Columns.GridColumn colPendiente;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }

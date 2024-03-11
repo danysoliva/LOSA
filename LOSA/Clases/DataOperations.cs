@@ -16,10 +16,10 @@ namespace ACS.Classes
     {
         #region Connection Credentials
 
-        internal string ConnectionStringTtrace = @"Server=" + Globals.ServerAddress + @";
-                                                   Database=" + Globals.ActiveDB + @";
-                                                   User Id=" + Globals.DB_User + @";
-                                                   Password=" + Globals.DB_Pass + ";";
+        internal string ConnectionStringTtrace = @"Server=" + Globals.Bas_ServerAddress + @";
+                                                   Database=" + Globals.Bas_ActiveDB + @";
+                                                   User Id=" + Globals.Bas_DB_User + @";
+                                                   Password=" + Globals.Bas_DB_Pass + ";";
 
         internal string ConnectionStringCostos = @"Server=" + Globals.CTS_ServerAddress + @";
                                                    Database=" + Globals.CTS_ActiveDB + @";
@@ -51,6 +51,11 @@ namespace ACS.Classes
                                                         Database=" + Globals.SAP_ActiveDB + @";
                                                          User Id=" + Globals.SAP_DB_User + @";
                                                            Password=" + Globals.SAP_DB_Pass + ";";
+
+        internal string ConnectionSAP_ACS = @"Server=" + Globals.SAP_ACS_ServerAddress + @";
+                                                        Database=" + Globals.SAP_ACS_ActiveDB + @";
+                                                         User Id=" + Globals.SAP_ACS_DB_User + @";
+                                                           Password=" + Globals.SAP_ACS_DB_Pass + ";";
 
         internal string ConnectionStringConsola = @";Database=" + Globals.CMS_ActiveDB + @";
                                                     User Id=" + Globals.CMS_DB_User + @";
@@ -107,6 +112,8 @@ namespace ACS.Classes
         internal string Password_UserFTPServer = "Aqua2021?";
 
         internal string FTP_BannerTv_PRD = @"ftp://10.50.11.32/BannerTV_PRD/";
+
+        internal string FTP_ALOSY_LOGISTICA = @"ftp://10.50.11.32/ALOSY_LOG/";
 
         //       internal string ConnectionStringPRININ = @"Server=" + Globals.prinin_ServerAddress + @";
         //                                                   Database=" + Globals.prinin_ActiveDB + @";
@@ -226,7 +233,7 @@ namespace ACS.Classes
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -290,7 +297,7 @@ namespace ACS.Classes
             }
             else
                 oCmp.Disconnect();
-            error = oCmp.GetLastErrorDescription();
+                error = oCmp.GetLastErrorDescription();
             oCmp.Disconnect();
             return false;
         }
@@ -307,6 +314,65 @@ namespace ACS.Classes
             command.ExecuteNonQuery();
 
             Conn.Close();
+        }
+
+
+        public DataSet ODOO_GetSelectData(string FixedQuery)
+        {
+            DataSet data = new DataSet();
+
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO);
+            //NpgSqlConnection Conn = new NpgSqlConnection(ConnectionStringODOO);
+            Conn.Open();
+
+            PgSqlCommand cmd = new PgSqlCommand(FixedQuery, Conn);
+            PgSqlDataAdapter adapter = new PgSqlDataAdapter(cmd);
+
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
+        }
+
+        public DataSet ODOO_GetSP_Results(string ProcedureName, PgSqlCommand cmd)
+        {
+            DataSet data = new DataSet();
+
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = ProcedureName;
+            cmd.Connection = Conn;
+
+            Conn.Open();
+
+            PgSqlDataAdapter adapter = new PgSqlDataAdapter(cmd);
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
+        }
+
+        public DataSet ODOO2_GetSP_Results(string ProcedureName, PgSqlCommand cmd)
+        {
+            DataSet data = new DataSet();
+
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO2);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = ProcedureName;
+            cmd.Connection = Conn;
+
+            Conn.Open();
+
+            PgSqlDataAdapter adapter = new PgSqlDataAdapter(cmd);
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
         }
         //public Boolean CompanyIsconected(string puser, string ppass)
         //{
@@ -694,6 +760,7 @@ namespace ACS.Classes
             }
             catch (Exception ex)
             {
+                Console.Write(ex.Message);
                 return "Error al generar el codigo no se ha podido obtener el codigo siguiente.";
               
             }
@@ -1084,8 +1151,17 @@ namespace ACS.Classes
             }
             catch 
             {
-                decimal valDecimal = Convert.ToDecimal(val);
-                valor = Decimal.ToInt32(valDecimal);
+                string vals;
+                try
+                {
+                    vals = val.ToString();
+                    decimal valDecimal = Convert.ToDecimal(val);
+                    valor = Decimal.ToInt32(valDecimal);
+                }
+                catch
+                {
+                    valor = 0;
+                }
             }
             return valor;
         }

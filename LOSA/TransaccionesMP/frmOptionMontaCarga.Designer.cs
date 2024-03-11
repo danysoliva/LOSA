@@ -32,6 +32,7 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMateriaPrima = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRequisiciones = new DevExpress.XtraEditors.SimpleButton();
@@ -87,6 +88,7 @@
             // 
             // TabMateriaPrima
             // 
+            this.TabMateriaPrima.Controls.Add(this.simpleButton7);
             this.TabMateriaPrima.Controls.Add(this.simpleButton3);
             this.TabMateriaPrima.Controls.Add(this.simpleButton2);
             this.TabMateriaPrima.Controls.Add(this.cmdRequisiciones);
@@ -96,8 +98,23 @@
             this.TabMateriaPrima.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMateriaPrima.ImageOptions.Image")));
             this.TabMateriaPrima.Name = "TabMateriaPrima";
             this.TabMateriaPrima.PageVisible = false;
-            this.TabMateriaPrima.Size = new System.Drawing.Size(896, 488);
+            this.TabMateriaPrima.Size = new System.Drawing.Size(900, 491);
             this.TabMateriaPrima.Text = "Materia Prima";
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton7.Appearance.Options.UseFont = true;
+            this.simpleButton7.Appearance.Options.UseTextOptions = true;
+            this.simpleButton7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton7.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones;
+            this.simpleButton7.Location = new System.Drawing.Point(220, 214);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton7.TabIndex = 12;
+            this.simpleButton7.Text = "Devoluciones MicroIngredientes";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton3
             // 
@@ -161,14 +178,15 @@
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton1.Location = new System.Drawing.Point(422, 345);
+            this.simpleButton1.Location = new System.Drawing.Point(220, 127);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(199, 71);
             this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Mantenimiento";
-            this.simpleButton1.Visible = false;
+            this.simpleButton1.Text = "Validacion de Tarimas";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // cmdEntradaMP
@@ -197,7 +215,7 @@
             this.TabProductoTerminado.ImageOptions.Image = global::LOSA.Properties.Resources.Container_icon32px;
             this.TabProductoTerminado.Name = "TabProductoTerminado";
             this.TabProductoTerminado.PageVisible = false;
-            this.TabProductoTerminado.Size = new System.Drawing.Size(896, 488);
+            this.TabProductoTerminado.Size = new System.Drawing.Size(900, 491);
             this.TabProductoTerminado.Text = "Producto Terminado";
             // 
             // btntarimasactivadasPT
@@ -357,5 +375,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton btntarimasactivadasPT;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
     }
 }

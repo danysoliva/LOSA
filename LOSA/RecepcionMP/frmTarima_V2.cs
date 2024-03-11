@@ -17,6 +17,7 @@ using Core.Clases.Herramientas;
 using System.Collections;
 using DevExpress.XtraReports.UI;
 using LOSA.Reportes;
+using DevExpress.CodeParser;
 
 namespace LOSA.RecepcionMP
 {
@@ -94,6 +95,12 @@ namespace LOSA.RecepcionMP
             }
             LoadPresentaciones();
             LoadNumeroTransaccion();
+            dtFechaIngreso.EditValue = dp.Now();
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+            {
+                txtVentana.Visible = true;
+            }
         }
         public frmTarima_V2(bool PIstraslado, UserLogin Puser, int Pid_traslado, int Pid_transferencia, int pDocEntry, int pId_mp)
         {
@@ -125,6 +132,12 @@ namespace LOSA.RecepcionMP
 
             LoadPresentaciones();
             LoadNumeroTransaccion();
+            dtFechaIngreso.EditValue = dp.Now();
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+            {
+                txtVentana.Visible = true;
+            }
         }
 
         private void LoadNumeroTransaccion()
@@ -307,6 +320,7 @@ namespace LOSA.RecepcionMP
                             //cmd = new SqlCommand("sp_insert_new_tarima_v4", TransactionIngreso.Connection);
                             cmd = cn.CreateCommand();
                             cmd.CommandText = "sp_insert_new_tarima_v4";
+                            //cmd.CommandText = "[dbo].[sp_insert_new_tarima_v5]";
                             cmd.Connection = cn;
                             cmd.Transaction = TransactionIngreso;
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -322,6 +336,18 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
                             cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                             cmd.Parameters.AddWithValue("@cant", row.udxtarima);
+
+                            //string oc_num = "";
+                            //try 
+                            //{
+                            //    oc_num = row.oc;
+                            //}
+                            //catch {}
+
+                            //if(string.IsNullOrEmpty(oc_num))
+                            //    cmd.Parameters.AddWithValue("@num_oc_sap", DBNull.Value);
+                            //else
+                            //    cmd.Parameters.AddWithValue("@num_oc_sap", oc_num);
 
                             int CantUnidadesTarima = 0;
                             try
@@ -507,12 +533,24 @@ namespace LOSA.RecepcionMP
                 txtIdBoleta.Text = frm.NumBoleta.ToString();
                 this.IdSerie = frm.IdSerie;
                 this.NumBoleta = frm.NumBoleta;
+                Boleta boleta1 = new Boleta();
+                if (boleta1.RecuperarRegistro(frm.IdSerie))
+                {
+                    if (boleta1.CantidadMP > 1)
+                    {
+                        btnSelccionarProveedor.Enabled = true;
+                        btnSelecciondeMp.Enabled = true;
+                        //dtFechaIngreso.Enabled = true;
+                    }
+                }
+
                 if (!Istraslado)
                 {
                     this.ItemCode = frm.ItemCode;
                     txtCodigoMP.Text = frm.ItemCode;
                     LoadDatosBoleta(IdSerie);
                 }
+
                 txtoc.Text = frm.OC;
                 txtfactura.Text = frm.Factura;
                 this.peso_boleta = frm.Peso_Bascula;

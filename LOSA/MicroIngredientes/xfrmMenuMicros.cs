@@ -17,6 +17,7 @@ namespace LOSA.MicroIngredientes
     public partial class xfrmMenuMicros : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado;
+        
         public xfrmMenuMicros(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
@@ -76,6 +77,11 @@ namespace LOSA.MicroIngredientes
             xfrmAlimentacionTarimaArriba frm = new xfrmAlimentacionTarimaArriba();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void cmdTolvasWL__Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

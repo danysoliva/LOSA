@@ -31,12 +31,14 @@ namespace LOSA.RecuentoInventario
         bool contabilizado;
         int id_detalle_recuento;
         bool IsContabilizacion;
+        int Id_bodega = 0;
 
-        public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento)
+        public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento, int pid_bodega)
         {
             //Guardar/Editar Recuento
             InitializeComponent();
             UsuarioLogeado = puserLogin;
+            Id_bodega = pid_bodega;
             
             btnConfirmar.Visible = true;
             //pidyear = Convert.ToInt32(grd_years.EditValue);
@@ -49,12 +51,61 @@ namespace LOSA.RecuentoInventario
             get_years();
             grd_mps.DataSource = pdata;
             fecha_rec = pfecha_recuento;
-
+            
             grd_years.EditValue = id_year;
             grd_meses_disponibles.EditValue = id_mes;
+            FuncionComentario(id_year, id_mes);
             //mes = Convert.ToInt32(grd_meses_disponibles.EditValue);
             IsContabilizacion = false;
             btnFinContabilziacion.Visible = false;
+        }
+
+        private void FuncionComentario(int year_, int mes_)
+        {
+            string Mes_nombre = "";
+            switch (mes_)
+            {
+                case 1:
+                    Mes_nombre = "Enero";
+                    break;
+                case 2:
+                    Mes_nombre = "Febrero";
+                    break;
+                case 3:
+                    Mes_nombre = "Marzo";
+                    break;
+                case 4:
+                    Mes_nombre = "Abril";
+                    break;
+                case 5:
+                    Mes_nombre = "Mayo";
+                    break;
+                case 6:
+                    Mes_nombre = "Junio";
+                    break;
+                case 7:
+                    Mes_nombre = "Julio";
+                    break;
+                case 8:
+                    Mes_nombre = "Agosto";
+                    break;
+                case 9:
+                    Mes_nombre = "Septiembre";
+                    break;
+                case 10:
+                    Mes_nombre = "Octubre";
+                    break;
+                case 11:
+                    Mes_nombre = "Noviembre";
+                    break;
+                case 12:
+                    Mes_nombre = "Diciembre";
+                    break;
+                default:
+                    break;
+            }
+            txtComentario.Text = "Recuento de Inventario Mes de: " + Mes_nombre + " del Año: " + year_;
+
         }
 
         public frmDetalleRecuento(UserLogin puserLogin, int pid_recuento, bool pcontabilizado, int pyear, int pmes, string pcomentario)
@@ -172,11 +223,11 @@ namespace LOSA.RecuentoInventario
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtComentario.Text))
-            {
-                CajaDialogo.Error("Debe agregar un comentario de referencia");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtComentario.Text))
+            //{
+            //    CajaDialogo.Error("Debe agregar un comentario de referencia");
+            //    return;
+            //}
 
             using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
             {
@@ -204,30 +255,51 @@ namespace LOSA.RecuentoInventario
                     command.Parameters.AddWithValue("@year", grd_years.EditValue);
                     command.Parameters.AddWithValue("@fecha_conteo", fecha_rec);
                     command.Parameters.AddWithValue("@comentario", txtComentario.Text);
+                    command.Parameters.AddWithValue("@id_bodega", Id_bodega);
                     int id_header_recuento = Convert.ToInt32(command.ExecuteScalar());
 
+                    //Vamos a validar que de esta Bodega ya se Realizo un Recuento
 
-                    ////Insert en Detalle de Recuento Final MATERIA PRIMA
-                    for (int i = 0; i < gridViewMP.DataRowCount; i++)
-                    {
-                        DataRow row = gridViewMP.GetDataRow(i);
-                        
-                        command.Parameters.Clear();
-                        command.CommandText = "sp_insert_inventario_final_detalle";
-                        command.Parameters.AddWithValue("@id_header", id_header_recuento);
-                        command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
-                        command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
-                        //command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
-                        //command.Parameters.AddWithValue("@id_lote_alosy",);
-                        command.Parameters.AddWithValue("@peso", Convert.ToDecimal(row["peso"])); //nueva existencia
-                        command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
-                        command.Parameters.AddWithValue("@existencia_aprox", Convert.ToDecimal(row["ExistenciaAprox"]));
-                        command.Parameters.AddWithValue("@existencia_fisica", Convert.ToDecimal(row["peso"]));
-                        command.Parameters.AddWithValue("@tipo_producto", 1); //Es Tipo de Producto: Materia Prima
-                        command.ExecuteNonQuery();
-                    }
-                    
+                    //command.CommandText = "sp_validar_recuento_por_bodega";
+                    //command.Parameters.AddWithValue("@id_bodega", Id_bodega);
+                    //command.Parameters.AddWithValue("@id_header_recuento", id_header_recuento);
+                    //bool existe_detalle = Convert.ToBoolean(command.ExecuteScalar()); 
 
+                    //if (existe_detalle)
+                    //{
+                    //    transaction.Rollback();
+                    //    CajaDialogo.Error("Ya existe un Detalle de Recuento de Esta Bodega!");
+                    //}
+                    //else
+                    //{
+                        ////Insert en Detalle de Recuento Final MATERIA PRIMA
+                        for (int i = 0; i < gridViewMP.DataRowCount; i++)
+                        {
+                            DataRow row = gridViewMP.GetDataRow(i);
+
+                            command.Parameters.Clear();
+                            command.CommandText = "sp_insert_inventario_final_detalle";
+                            command.Parameters.AddWithValue("@id_header", id_header_recuento);
+                            command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
+                            command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
+                            //command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
+                            //command.Parameters.AddWithValue("@id_lote_alosy",);
+                            command.Parameters.AddWithValue("@peso", Convert.ToDecimal(row["peso"])); //nueva existencia
+                            command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
+                            command.Parameters.AddWithValue("@existencia_aprox", Convert.ToDecimal(row["ExistenciaAprox"]));
+                            command.Parameters.AddWithValue("@existencia_fisica", Convert.ToDecimal(row["peso"]));
+                            command.Parameters.AddWithValue("@tipo_producto", 1); //Es Tipo de Producto: Materia Prima
+                            command.ExecuteNonQuery();
+                        }
+                        transaction.Commit();
+                        connection.Close();
+
+                        CajaDialogo.Information("Recuento Guardado con Exito!");
+                        this.DialogResult = this.DialogResult;
+                        this.Close();
+                    //}
+
+                    #region PT Algun Dia
                     ////Insert en Detalle de Recuento Final PRODUCTO TERMINADO
                     ///
                     //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
@@ -248,15 +320,8 @@ namespace LOSA.RecuentoInventario
                     //    command.Parameters.AddWithValue("@tipo_producto", 2); //Es Tipo de Producto: Producto Terminado
                     //    command.ExecuteNonQuery();
                     //}
+                    #endregion
 
-                    ////Insert en Detalle de Recuento Final REPROCESO
-
-                    transaction.Commit();
-                    connection.Close();
-
-                    CajaDialogo.Information("Recuento Guardado con Exito!");
-                    this.DialogResult = this.DialogResult;
-                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -296,7 +361,9 @@ namespace LOSA.RecuentoInventario
                             row1.ExistenciaAprox = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(colExistenciaAnterior));
                             row1.toma_fisica = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(colExistencia));
                             row1.diferencia = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(coldiferencia));
+                            row1.code_sap = Convert.ToString(grdv_mps.GetFocusedRowCellValue(colcode_sap));
                             id_detalle_recuento = Convert.ToInt32(grdv_mps.GetFocusedRowCellValue(count_id));
+
 
                             tableOps.AddRecuento_mpRow(row1);
                             tableOps.AcceptChanges();
@@ -369,7 +436,7 @@ namespace LOSA.RecuentoInventario
 
                 try
                 {
-                    if (contabilizado == false)
+                    if (row.contabilizado == false)
                     {
                         using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
                         {
@@ -391,7 +458,9 @@ namespace LOSA.RecuentoInventario
                                 row1.ExistenciaAprox = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(colExistenciaAnterior));
                                 row1.toma_fisica = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(colExistencia));
                                 row1.diferencia = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(coldiferencia));
+                                row1.code_sap = Convert.ToString(gridViewMP.GetFocusedRowCellValue(colcode_sap));
                                 id_detalle_recuento = Convert.ToInt32(gridViewMP.GetFocusedRowCellValue(count_id));
+
 
                                 tableOps.AddRecuento_mpRow(row1);
                                 tableOps.AcceptChanges();
@@ -460,28 +529,36 @@ namespace LOSA.RecuentoInventario
             DialogResult r = CajaDialogo.Pregunta("Desea cerrar este recuento de inventario?");
             if (r != System.Windows.Forms.DialogResult.Yes)
                 return;
-
-            string query = @"sp_update_cerrar_contabilizacion";
-            try
+            if (Id_header > 0)
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+                foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+                {
+                    if (item.contabilizado == false)
+                    {
+                        CajaDialogo.Error("No se realizado la contabilizacion completamente!");
+                        return;
+                    }
+                }
 
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_h_recuento", Id_header);
-                cmd.ExecuteNonQuery();
-                con.Close();
+                try
+                {
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_cerrar_recuento_inventario", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_header", Id_header);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
 
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            } 
         }
 
         private void gridViewMP_RowStyle(object sender, RowStyleEventArgs e)
@@ -491,7 +568,7 @@ namespace LOSA.RecuentoInventario
             GridView View = sender as GridView;
             //string Estado = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Estatus"]);
             string Contabilizado = View.GetRowCellDisplayText(e.RowHandle, View.Columns["contabilizado"] /*["contabilizado"]*/);
-            if (Contabilizado == "Seleccionado")
+            if (Contabilizado == "Checked" )
             {
                 e.Appearance.BackColor = Color.Green;
             }

@@ -35,6 +35,7 @@ namespace LOSA.Classes
         private decimal porcentaje;
         private decimal diasTomados;
         private bool aplica_preaviso;
+        private int dias_trabajados;
 
         public string operacion = "";
 
@@ -114,6 +115,7 @@ namespace LOSA.Classes
         public decimal DiasVacaciones { get => _diasVacaciones; set => _diasVacaciones = value; }
         public string DescripcionVacaciones { get => _descripcionVacaciones; set => _descripcionVacaciones = value; }
         public bool Aplica_preaviso { get => aplica_preaviso; set => aplica_preaviso = value; }
+        public int Dias_trabajados { get => dias_trabajados; set => dias_trabajados = value; }
         #endregion
 
         #region Miembros Detalle Derechos
@@ -254,6 +256,7 @@ namespace LOSA.Classes
                     diasTomados = dr.GetDecimal(18);
                     porcentaje = dr.GetDecimal(19);
                     aplica_preaviso = dr.GetBoolean(20);
+                    Dias_trabajados = dr.GetInt32(21);
                     recuperado = true;
                     dr.Close();
                     conn.Close();

@@ -31,6 +31,8 @@ namespace LOSA.Accesos.NivelAccesoSistema
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NivelAccesoSistema));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BotonGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.botonCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlComboSistemas = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEditSistemas = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,39 +43,63 @@ namespace LOSA.Accesos.NivelAccesoSistema
             this.Asignado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.botonCancelar = new DevExpress.XtraEditors.SimpleButton();
-            this.BotonGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditSistemas.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDetalleAccesos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDetalleAccesos)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.BotonGuardar);
+            this.panel2.Controls.Add(this.botonCancelar);
             this.panel2.Controls.Add(this.labelControlComboSistemas);
             this.panel2.Controls.Add(this.comboBoxEditSistemas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(23, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(437, 117);
+            this.panel2.Size = new System.Drawing.Size(730, 117);
             this.panel2.TabIndex = 2;
+            // 
+            // BotonGuardar
+            // 
+            this.BotonGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BotonGuardar.ImageOptions.Image")));
+            this.BotonGuardar.Location = new System.Drawing.Point(3, 3);
+            this.BotonGuardar.Name = "BotonGuardar";
+            this.BotonGuardar.Size = new System.Drawing.Size(103, 45);
+            this.BotonGuardar.TabIndex = 0;
+            this.BotonGuardar.Text = "Guardar";
+            this.BotonGuardar.Click += new System.EventHandler(this.BotonGuardar_Click);
+            // 
+            // botonCancelar
+            // 
+            this.botonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.botonCancelar.Appearance.BackColor = System.Drawing.Color.Red;
+            this.botonCancelar.Appearance.Options.UseBackColor = true;
+            this.botonCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("botonCancelar.ImageOptions.Image")));
+            this.botonCancelar.Location = new System.Drawing.Point(624, 3);
+            this.botonCancelar.Name = "botonCancelar";
+            this.botonCancelar.Size = new System.Drawing.Size(103, 45);
+            this.botonCancelar.TabIndex = 1;
+            this.botonCancelar.Text = "Cancelar";
+            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // labelControlComboSistemas
             // 
+            this.labelControlComboSistemas.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlComboSistemas.Appearance.Options.UseFont = true;
             this.labelControlComboSistemas.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControlComboSistemas.Location = new System.Drawing.Point(3, 71);
+            this.labelControlComboSistemas.Location = new System.Drawing.Point(3, 85);
             this.labelControlComboSistemas.Name = "labelControlComboSistemas";
-            this.labelControlComboSistemas.Size = new System.Drawing.Size(63, 13);
+            this.labelControlComboSistemas.Size = new System.Drawing.Size(63, 16);
             this.labelControlComboSistemas.TabIndex = 7;
-            this.labelControlComboSistemas.Text = "Sistema";
+            this.labelControlComboSistemas.Text = "Sistema:";
             // 
             // comboBoxEditSistemas
             // 
-            this.comboBoxEditSistemas.Location = new System.Drawing.Point(3, 90);
+            this.comboBoxEditSistemas.Location = new System.Drawing.Point(63, 82);
             this.comboBoxEditSistemas.Name = "comboBoxEditSistemas";
             this.comboBoxEditSistemas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -88,7 +114,7 @@ namespace LOSA.Accesos.NivelAccesoSistema
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(23, 126);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(437, 131);
+            this.panel1.Size = new System.Drawing.Size(730, 315);
             this.panel1.TabIndex = 1;
             // 
             // gridControlDetalleAccesos
@@ -97,7 +123,7 @@ namespace LOSA.Accesos.NivelAccesoSistema
             this.gridControlDetalleAccesos.Location = new System.Drawing.Point(0, 0);
             this.gridControlDetalleAccesos.MainView = this.gridViewDetalleAccesos;
             this.gridControlDetalleAccesos.Name = "gridControlDetalleAccesos";
-            this.gridControlDetalleAccesos.Size = new System.Drawing.Size(437, 131);
+            this.gridControlDetalleAccesos.Size = new System.Drawing.Size(730, 315);
             this.gridControlDetalleAccesos.TabIndex = 2;
             this.gridControlDetalleAccesos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDetalleAccesos});
@@ -105,6 +131,10 @@ namespace LOSA.Accesos.NivelAccesoSistema
             // 
             // gridViewDetalleAccesos
             // 
+            this.gridViewDetalleAccesos.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDetalleAccesos.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridViewDetalleAccesos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDetalleAccesos.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridViewDetalleAccesos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id,
             this.Nivel,
@@ -168,44 +198,22 @@ namespace LOSA.Accesos.NivelAccesoSistema
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(483, 326);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 510);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.botonCancelar);
-            this.panel3.Controls.Add(this.BotonGuardar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(23, 263);
+            this.panel3.Location = new System.Drawing.Point(23, 447);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(437, 40);
+            this.panel3.Size = new System.Drawing.Size(730, 40);
             this.panel3.TabIndex = 3;
-            // 
-            // botonCancelar
-            // 
-            this.botonCancelar.Appearance.BackColor = System.Drawing.Color.Red;
-            this.botonCancelar.Appearance.Options.UseBackColor = true;
-            this.botonCancelar.Location = new System.Drawing.Point(84, 17);
-            this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.botonCancelar.TabIndex = 1;
-            this.botonCancelar.Text = "Cancelar";
-            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
-            // 
-            // BotonGuardar
-            // 
-            this.BotonGuardar.Location = new System.Drawing.Point(3, 17);
-            this.BotonGuardar.Name = "BotonGuardar";
-            this.BotonGuardar.Size = new System.Drawing.Size(75, 23);
-            this.BotonGuardar.TabIndex = 0;
-            this.BotonGuardar.Text = "Guardar";
-            this.BotonGuardar.Click += new System.EventHandler(this.BotonGuardar_Click);
             // 
             // NivelAccesoSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 326);
+            this.ClientSize = new System.Drawing.Size(776, 510);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "NivelAccesoSistema";
             this.Text = "Nivel de Acceso por Sistema";
@@ -215,7 +223,6 @@ namespace LOSA.Accesos.NivelAccesoSistema
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDetalleAccesos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDetalleAccesos)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

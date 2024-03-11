@@ -263,6 +263,7 @@ namespace LOSA.MicroIngredientes
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(76, 83);
             this.btnDown.TabIndex = 121;
+            this.btnDown.Visible = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnUP
@@ -273,6 +274,7 @@ namespace LOSA.MicroIngredientes
             this.btnUP.Name = "btnUP";
             this.btnUP.Size = new System.Drawing.Size(74, 83);
             this.btnUP.TabIndex = 120;
+            this.btnUP.Visible = false;
             this.btnUP.Click += new System.EventHandler(this.btnUP_Click);
             // 
             // txtPorEnviar

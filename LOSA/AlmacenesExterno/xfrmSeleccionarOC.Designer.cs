@@ -46,9 +46,9 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colItemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOC)).BeginInit();
@@ -192,6 +192,15 @@
             this.colItemcode.VisibleIndex = 2;
             this.colItemcode.Width = 84;
             // 
+            // colItemName
+            // 
+            this.colItemName.Caption = "Materia Prima";
+            this.colItemName.FieldName = "ItemName";
+            this.colItemName.Name = "colItemName";
+            this.colItemName.Visible = true;
+            this.colItemName.VisibleIndex = 3;
+            this.colItemName.Width = 130;
+            // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -224,15 +233,6 @@
             this.btnAtras.TabIndex = 37;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // colItemName
-            // 
-            this.colItemName.Caption = "Materia Prima";
-            this.colItemName.FieldName = "ItemName";
-            this.colItemName.Name = "colItemName";
-            this.colItemName.Visible = true;
-            this.colItemName.VisibleIndex = 3;
-            this.colItemName.Width = 130;
             // 
             // xfrmSeleccionarOC
             // 

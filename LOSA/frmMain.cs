@@ -121,10 +121,47 @@ namespace LOSA
                 Thread.Sleep(TiempoP);
                 frmProceso.Close();
 
+                
+
                 //Teclado.cerrarTeclado();
                 UserLogin Log1 = new UserLogin();
                 if (Log1.RecuperarRegistroFromUser(user))
                 {
+                    string HostName = Dns.GetHostName();
+                    string DBActive = Globals.LOSA_ActiveDB;
+                    string IPAddress = "0.0.0.0";
+                    var host = Dns.GetHostEntry(HostName);
+                    foreach (var ip in host.AddressList)
+                    {
+                        if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                        {
+                            IPAddress = ip.ToString();
+                        }
+
+                    }
+
+                    try
+                    {
+                        //Guardar Log de Inicio de Sesion
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_insert_login_user_alosy", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_user", Log1.Id);
+                        cmd.Parameters.AddWithValue("@pc_conexion", HostName);
+                        cmd.Parameters.AddWithValue("@ip_conexion", IPAddress);
+                        cmd.Parameters.AddWithValue("@database_conexion", DBActive);
+                        cmd.Parameters.AddWithValue("@id_grupo", Log1.IdGrupo);
+                        cmd.Parameters.AddWithValue("@version", AssemblyVersion);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+
+
                     Log1.Pass = txtClave.Text;
                     Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                     frmOpciones frm = new frmOpciones(Log1);
@@ -137,7 +174,7 @@ namespace LOSA
                 }
                 else
                 {
-                    CajaDialogo.Error("Usuario No encontrado en AQFSVR003!");
+                    CajaDialogo.Error("Usuario No encontrado en AQFSVR010!");
                 }
             }
             else
@@ -185,15 +222,17 @@ namespace LOSA
         {
             lblVersion.Text = AssemblyVersion;
             string HostName = Dns.GetHostName();
-            if (HostName == "F3DYSQ2" /*Danys Oliva*/ || HostName == "9SSCBV2" || HostName == "9PG91W2" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/)
+            if (HostName == "7L12TV3" /*Danys Oliva*/ || HostName == "9SSCBV2" /*Ever Erazo*/|| HostName == "9PG91W2" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/|| HostName == "EUCEDA-PC" || HostName == "6G1SST3")
             {
                 SaltarLogin.Visible = simpleButton2 .Visible = SaltarLoginPRD.Visible= true;
+                cmdIngresarAdmin.Visible = cmdButtonSaltarLogin.Visible = true;
                 //this.Size = new Size(335, 497);//Grande
 
             }
             else
             {
                 SaltarLogin.Visible = simpleButton2.Visible = SaltarLoginPRD.Visible = false;
+                cmdIngresarAdmin.Visible = cmdButtonSaltarLogin.Visible = false;
                 //this.Size = new Size(335, 442);//Pequeño
             }
         }
@@ -347,6 +386,27 @@ namespace LOSA
         private void cmdAbrirTeclado_Click(object sender, EventArgs e)
         {
             Teclado.abrirTeclado();
+        }
+
+        private void simpleButton3_Click_1(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+            UserLogin Log1 = new UserLogin();
+            if (Log1.RecuperarRegistro(1035))
+            {
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Administradores;
+
+            }
+            else
+            {
+                //Log1.Id = 1069;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
+            }
+            frmOpciones frm = new frmOpciones(Log1);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

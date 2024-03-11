@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionAccesosEncuesta));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsEncuesta1 = new MigracionACS.RRHH.Encuesta.dsEncuesta();
+            this.dsEncuesta1 = new LOSA.MigracionACS.RRHH.Encuesta.dsEncuesta();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colasignado = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -204,9 +204,9 @@
             this.cmdNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevo.ImageOptions.Image")));
             this.cmdNuevo.Location = new System.Drawing.Point(2, 12);
             this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(137, 44);
+            this.cmdNuevo.Size = new System.Drawing.Size(163, 44);
             this.cmdNuevo.TabIndex = 2;
-            this.cmdNuevo.Text = "Nuevo";
+            this.cmdNuevo.Text = "Nuevo Código";
             this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
             // 
             // simpleButton1
@@ -229,34 +229,35 @@
             this.chkTodos.Location = new System.Drawing.Point(725, 71);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Properties.Caption = "Seleccionar Todos";
-            this.chkTodos.Size = new System.Drawing.Size(112, 19);
+            this.chkTodos.Size = new System.Drawing.Size(112, 20);
             this.chkTodos.TabIndex = 5;
             this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
             // 
             // radioGroup1
             // 
-            this.radioGroup1.Location = new System.Drawing.Point(197, 12);
+            this.radioGroup1.Location = new System.Drawing.Point(171, 12);
             this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Columns = 1;
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Ver Todos"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Ver solo Disponibles")});
             this.radioGroup1.Properties.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Column;
-            this.radioGroup1.Size = new System.Drawing.Size(172, 44);
+            this.radioGroup1.Size = new System.Drawing.Size(174, 44);
             this.radioGroup1.TabIndex = 6;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
             // btnEncuesta
             // 
             this.btnEncuesta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEncuesta.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncuesta.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnEncuesta.Appearance.Options.UseFont = true;
             this.btnEncuesta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnEncuesta.ImageOptions.Image = global::LOSA.Properties.Resources.ACS_Icon_32;
-            this.btnEncuesta.Location = new System.Drawing.Point(395, 12);
+            this.btnEncuesta.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEncuesta.ImageOptions.SvgImage")));
+            this.btnEncuesta.Location = new System.Drawing.Point(424, 12);
             this.btnEncuesta.Name = "btnEncuesta";
-            this.btnEncuesta.Size = new System.Drawing.Size(164, 44);
+            this.btnEncuesta.Size = new System.Drawing.Size(137, 44);
             this.btnEncuesta.TabIndex = 7;
-            this.btnEncuesta.Text = "Crear Encuesta";
+            this.btnEncuesta.Text = "Gestión de \r\nEncuesta";
             this.btnEncuesta.Click += new System.EventHandler(this.btnEncuesta_Click);
             // 
             // frmGestionAccesosEncuesta

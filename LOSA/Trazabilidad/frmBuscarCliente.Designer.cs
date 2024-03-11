@@ -66,12 +66,14 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl2.DataMember = "Direccion_Clientes";
             this.gridControl2.DataSource = this.dsCalidad1;
-            this.gridControl2.Location = new System.Drawing.Point(0, 64);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl2.Location = new System.Drawing.Point(0, 123);
             this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdEliminar});
-            this.gridControl2.Size = new System.Drawing.Size(782, 337);
+            this.gridControl2.Size = new System.Drawing.Size(1802, 778);
             this.gridControl2.TabIndex = 98;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -95,97 +97,112 @@ namespace LOSA.Trazabilidad
             this.colnombre1,
             this.colEliminar,
             this.colseleccionado});
+            this.gridView2.DetailHeight = 673;
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsEditForm.PopupEditFormWidth = 1600;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // colid6
             // 
             this.colid6.FieldName = "id";
+            this.colid6.MinWidth = 40;
             this.colid6.Name = "colid6";
             this.colid6.OptionsColumn.AllowEdit = false;
+            this.colid6.Width = 150;
             // 
             // colcodigo1
             // 
             this.colcodigo1.Caption = "Código";
             this.colcodigo1.FieldName = "codigo";
+            this.colcodigo1.MinWidth = 40;
             this.colcodigo1.Name = "colcodigo1";
             this.colcodigo1.OptionsColumn.AllowEdit = false;
             this.colcodigo1.Visible = true;
             this.colcodigo1.VisibleIndex = 1;
-            this.colcodigo1.Width = 60;
+            this.colcodigo1.Width = 120;
             // 
             // colcodigo_pais1
             // 
             this.colcodigo_pais1.FieldName = "codigo_pais";
+            this.colcodigo_pais1.MinWidth = 40;
             this.colcodigo_pais1.Name = "colcodigo_pais1";
             this.colcodigo_pais1.OptionsColumn.AllowEdit = false;
+            this.colcodigo_pais1.Width = 150;
             // 
             // coldireccion11
             // 
             this.coldireccion11.Caption = "Dirección";
             this.coldireccion11.FieldName = "direccion1";
+            this.coldireccion11.MinWidth = 40;
             this.coldireccion11.Name = "coldireccion11";
             this.coldireccion11.OptionsColumn.AllowEdit = false;
             this.coldireccion11.Visible = true;
             this.coldireccion11.VisibleIndex = 5;
-            this.coldireccion11.Width = 105;
+            this.coldireccion11.Width = 210;
             // 
             // coldireccion21
             // 
             this.coldireccion21.Caption = "Dirección 2";
             this.coldireccion21.FieldName = "direccion2";
+            this.coldireccion21.MinWidth = 40;
             this.coldireccion21.Name = "coldireccion21";
             this.coldireccion21.OptionsColumn.AllowEdit = false;
             this.coldireccion21.Visible = true;
             this.coldireccion21.VisibleIndex = 6;
-            this.coldireccion21.Width = 86;
+            this.coldireccion21.Width = 172;
             // 
             // colciudad1
             // 
             this.colciudad1.Caption = "Ciudad";
             this.colciudad1.FieldName = "ciudad";
+            this.colciudad1.MinWidth = 40;
             this.colciudad1.Name = "colciudad1";
             this.colciudad1.OptionsColumn.AllowEdit = false;
             this.colciudad1.Visible = true;
             this.colciudad1.VisibleIndex = 4;
-            this.colciudad1.Width = 100;
+            this.colciudad1.Width = 200;
             // 
             // colpais1
             // 
             this.colpais1.Caption = "País";
             this.colpais1.FieldName = "pais";
+            this.colpais1.MinWidth = 40;
             this.colpais1.Name = "colpais1";
             this.colpais1.OptionsColumn.AllowEdit = false;
             this.colpais1.Visible = true;
             this.colpais1.VisibleIndex = 3;
-            this.colpais1.Width = 79;
+            this.colpais1.Width = 158;
             // 
             // colcliente_aqua1
             // 
             this.colcliente_aqua1.FieldName = "cliente_aqua";
+            this.colcliente_aqua1.MinWidth = 40;
             this.colcliente_aqua1.Name = "colcliente_aqua1";
             this.colcliente_aqua1.OptionsColumn.AllowEdit = false;
+            this.colcliente_aqua1.Width = 150;
             // 
             // colnombre1
             // 
             this.colnombre1.Caption = "Nombre";
             this.colnombre1.FieldName = "nombre";
+            this.colnombre1.MinWidth = 40;
             this.colnombre1.Name = "colnombre1";
             this.colnombre1.OptionsColumn.AllowEdit = false;
             this.colnombre1.Visible = true;
             this.colnombre1.VisibleIndex = 2;
-            this.colnombre1.Width = 225;
+            this.colnombre1.Width = 450;
             // 
             // colEliminar
             // 
             this.colEliminar.Caption = "Eliminar";
             this.colEliminar.ColumnEdit = this.cmdEliminar;
+            this.colEliminar.MinWidth = 40;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
             this.colEliminar.VisibleIndex = 7;
-            this.colEliminar.Width = 43;
+            this.colEliminar.Width = 86;
             // 
             // cmdEliminar
             // 
@@ -199,18 +216,20 @@ namespace LOSA.Trazabilidad
             // colseleccionado
             // 
             this.colseleccionado.FieldName = "seleccionado";
+            this.colseleccionado.MinWidth = 40;
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
             this.colseleccionado.VisibleIndex = 0;
-            this.colseleccionado.Width = 66;
+            this.colseleccionado.Width = 132;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 44);
+            this.label1.Location = new System.Drawing.Point(24, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 17);
+            this.label1.Size = new System.Drawing.Size(382, 36);
             this.label1.TabIndex = 99;
             this.label1.Text = "Seleccione uno o varios Clientes";
             // 
@@ -223,9 +242,10 @@ namespace LOSA.Trazabilidad
             this.cmdCerrar.Appearance.Options.UseFont = true;
             this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCerrar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCerrar.ImageOptions.Image")));
-            this.cmdCerrar.Location = new System.Drawing.Point(638, 20);
+            this.cmdCerrar.Location = new System.Drawing.Point(1514, 38);
+            this.cmdCerrar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmdCerrar.Name = "cmdCerrar";
-            this.cmdCerrar.Size = new System.Drawing.Size(144, 41);
+            this.cmdCerrar.Size = new System.Drawing.Size(288, 79);
             this.cmdCerrar.TabIndex = 100;
             this.cmdCerrar.Text = "Cerrar";
             // 
@@ -238,24 +258,26 @@ namespace LOSA.Trazabilidad
             this.cmdAplicar.Appearance.Options.UseFont = true;
             this.cmdAplicar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAplicar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAplicar.ImageOptions.Image")));
-            this.cmdAplicar.Location = new System.Drawing.Point(488, 20);
+            this.cmdAplicar.Location = new System.Drawing.Point(1214, 38);
+            this.cmdAplicar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmdAplicar.Name = "cmdAplicar";
-            this.cmdAplicar.Size = new System.Drawing.Size(144, 41);
+            this.cmdAplicar.Size = new System.Drawing.Size(288, 79);
             this.cmdAplicar.TabIndex = 101;
             this.cmdAplicar.Text = "Aplicar";
             this.cmdAplicar.Click += new System.EventHandler(this.cmdAplicar_Click);
             // 
             // frmBuscarCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 401);
+            this.ClientSize = new System.Drawing.Size(1802, 901);
             this.Controls.Add(this.cmdAplicar);
             this.Controls.Add(this.cmdCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridControl2);
+            this.IconOptions.ShowIcon = false;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmBuscarCliente";
-            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();

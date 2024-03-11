@@ -29,6 +29,14 @@ namespace LOSA.TransaccionesMP
         bool MostrarExterno;
         private decimal existencia_bodega_selected;
         private string bodega_selected;
+
+        public enum Comportamiento
+        {
+            Reproceso = 1
+        }
+
+        public Comportamiento ComportamientoActual;
+
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -39,6 +47,48 @@ namespace LOSA.TransaccionesMP
             radioLoteExistente.Checked = true;
             LoadPresentaciones();
         }
+
+        public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote, int pid_bodega, Comportamiento pComportamientoActual)
+        {
+            InitializeComponent();
+            //ESTO SOLO ES PARA REPROCESO
+            DataOperations dp1 = new DataOperations();
+            dtFechaDocumento.DateTime = dp1.Now();
+            MateriaPrimaActual = new MateriaPrima();
+            UsuarioLogueado = pUserLogin;
+            ComportamientoActual = pComportamientoActual;
+            radioLoteExistente.Checked = true;
+            LoadPresentaciones();
+
+            if (MateriaPrimaActual.RecuperarRegistroFromID_RM(pIdMP))
+            {
+                Id_MP = pIdMP;
+                txtMP_Name.Text = MateriaPrimaActual.NameComercial;
+                radioLoteExistente.Checked = true;
+                radioLoteNuevo.Checked = false;
+                SearchLoteAuto(pIdMP, pLote);
+                ItemCode = MateriaPrimaActual.CodeMP_SAP;
+                LoadMaestrosBodegas();
+                tsTipoTransaccion.IsOn = false;
+                toggleSwTipoOperacion.Enabled = false;
+                txtNumLote.Text = pLote;
+                gridLookUpEditOrigen.EditValue = pid_bodega;
+
+                if (pid_bodega > 0)
+                {
+                    foreach (dsTarima.bodega_origenRow item in dsTarima1.bodega_origen.Rows)
+                    {
+                        if (item.id == pid_bodega)
+                        {
+                            existencia_bodega_selected = item.existencia;
+                            bodega_selected = item.descripcion;
+                        }
+                    }
+                }
+            }
+
+        }
+
 
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote)
         {
@@ -75,13 +125,13 @@ namespace LOSA.TransaccionesMP
                 //    txtCantidadUnidades.Focus();
                 //}
             }
-            if (Id_MP == 1110 || Id_MP == 1101)
-            {
-                tsTipoTransaccion.IsOn = false;
-                txtNumLote.Text = pLote; 
-                gridLookUpEditDestino.EditValue = 2;
-                gridLookUpEditOrigen.EditValue = 10;
-            }
+            //if (Id_MP == 1110 || Id_MP == 1101)
+            //{
+            //    tsTipoTransaccion.IsOn = false;
+            //    txtNumLote.Text = pLote; 
+            //    gridLookUpEditDestino.EditValue = 2;
+            //    gridLookUpEditOrigen.EditValue = 10;
+            //}
         }
 
         private void LoadMaestrosBodegas()
@@ -215,7 +265,7 @@ namespace LOSA.TransaccionesMP
                 }
             }
 
-            //Reproceso de Camaron
+            ////Reproceso de Camaron
             if (ItemCode == "MP00081")
             {
                 if (tsTipoTransaccion.IsOn == true)
@@ -241,7 +291,8 @@ namespace LOSA.TransaccionesMP
             //    return;
             //}
 
-            //if (Convert.ToDecimal(txtPesoKG.Text) <= 0)
+
+            //HAY QUE DESCOMENTAR ESTO
             if (Convert.ToDecimal(spinEditPesoKg.EditValue) <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
@@ -307,15 +358,21 @@ namespace LOSA.TransaccionesMP
                         
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v4", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v7", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
                         cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
                         cmd.Parameters.AddWithValue("@cant_salida", 0);
                         cmd.Parameters.AddWithValue("@ud_entrada", spinEditUnidades.EditValue);
                         cmd.Parameters.AddWithValue("@ud_salida", 0);
-                        cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
-                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
+                        if(Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
+                        if (Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);
@@ -338,7 +395,10 @@ namespace LOSA.TransaccionesMP
                             cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
                         }
 
-                        cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                        if(Convert.ToInt32(gridLookUpEditPresentacion.EditValue) == 0)
+                            cmd.Parameters.AddWithValue("@id_presentacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.Parameters.AddWithValue("@tipo_operacion", toggleSwTipoOperacion.IsOn);
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -462,7 +522,7 @@ namespace LOSA.TransaccionesMP
             {
                 if (existencia_bodega_selected <= 0)
                 {
-                    CajaDialogo.Error("No puede dar salida al item "+ItemCode+" por que es 0 en la Bodega: "+ bodega_selected);
+                    CajaDialogo.Error("No puede dar salida al item " + ItemCode + " por que es 0 en la Bodega: " + bodega_selected);
                     return;
                 }
                 if (radioLoteExistente.Checked)
@@ -472,12 +532,18 @@ namespace LOSA.TransaccionesMP
                         //DataOperations dp = new DataOperations();
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v4", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v7", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cant_entrada", 0);
                         cmd.Parameters.AddWithValue("@cant_salida", spinEditPesoKg.EditValue);
-                        cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
-                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
+                        if(Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
+                        if (Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);
@@ -495,7 +561,10 @@ namespace LOSA.TransaccionesMP
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
 
-                        cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
+                        if(string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+                            cmd.Parameters.AddWithValue("id_presentacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.Parameters.AddWithValue("@tipo_operacion", 1);//Forzosamente debe ser ajuste
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -517,7 +586,7 @@ namespace LOSA.TransaccionesMP
         private void txtMP_Name_Click(object sender, EventArgs e)
         {
             //frmMP frm = new frmMP();
-            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.Reproceso);
             if (this.MdiParent != null)
             {
                 //frm.MdiParent = this.MdiParent;
@@ -592,6 +661,7 @@ namespace LOSA.TransaccionesMP
         {
             txtLoteNuevo.Enabled = true;
             txtLoteNuevo.Visible = true;
+            txtNumLote.Visible = false;
             buttonProveedores.Enabled = true;
             txtCantidadTarimas.Enabled = true;
             txtUnidadsPorTarima.Enabled = true;
@@ -617,6 +687,7 @@ namespace LOSA.TransaccionesMP
             buttonProveedores.Enabled = false;
             txtCantidadTarimas.Enabled = false;
             txtUnidadsPorTarima.Enabled = false;
+            txtNumLote.Visible = true;
             buttonProveedores.Text = "";
         }
 
@@ -670,15 +741,15 @@ namespace LOSA.TransaccionesMP
                 radioLoteNuevo.Checked = true;
                 radioLoteNuevo.Visible = true;
                 radioLoteExistente.Checked = true;
-                if (Id_MP == 1110 || Id_MP == 1101)
-                {
-                    gridLookUpEditDestino.EditValue = 10;
-                    gridLookUpEditOrigen.EditValue = 2;
-                }
+
 
                 ////Vamos a desbloquear el traslado si es Entrada
                 //toggleSwTipoOperacion.IsOn = true;
                 //toggleSwTipoOperacion.Enabled = false;
+                if (Id_MP == 1110 || Id_MP == 1101)
+                {
+                    radioLoteNuevo.Visible = false;
+                }
 
             }
             else
@@ -686,11 +757,7 @@ namespace LOSA.TransaccionesMP
                 radioLoteNuevo.Checked = false;
                 radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
-                if (Id_MP == 1110 || Id_MP == 1101)
-                {
-                    gridLookUpEditDestino.EditValue = 2;
-                    gridLookUpEditOrigen.EditValue = 10;
-                }
+                
 
                 ////Vamos a bloquear el traslado si es Salida
                 //toggleSwTipoOperacion.IsOn = true;

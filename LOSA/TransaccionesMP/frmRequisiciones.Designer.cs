@@ -49,6 +49,7 @@
             this.grRequisicoinesMP = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.gvTarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_usuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluser_ = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,8 +67,9 @@
             this.colFinalizar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnend = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colfinalizado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tggView = new DevExpress.XtraEditors.ToggleSwitch();
-            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -87,7 +89,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(655, 3);
+            this.btnAtras.Location = new System.Drawing.Point(881, 3);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(148, 47);
             this.btnAtras.TabIndex = 33;
@@ -104,9 +106,9 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(135, 12);
+            this.labelControl1.Location = new System.Drawing.Point(250, 10);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(514, 40);
+            this.labelControl1.Size = new System.Drawing.Size(384, 40);
             this.labelControl1.TabIndex = 35;
             this.labelControl1.Text = "Requisiciones MP";
             // 
@@ -124,7 +126,7 @@
             this.btnVerD,
             this.btnimprimir,
             this.btnend});
-            this.grRequisicoinesMP.Size = new System.Drawing.Size(801, 523);
+            this.grRequisicoinesMP.Size = new System.Drawing.Size(1027, 578);
             this.grRequisicoinesMP.TabIndex = 34;
             this.grRequisicoinesMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -168,7 +170,8 @@
             this.colcomentario,
             this.colimprimir,
             this.colFinalizar,
-            this.colfinalizado});
+            this.colfinalizado,
+            this.colnombre_comercial});
             this.gvTarimas.DetailHeight = 284;
             this.gvTarimas.GridControl = this.grRequisicoinesMP;
             this.gvTarimas.Name = "gvTarimas";
@@ -178,14 +181,25 @@
             this.gvTarimas.OptionsView.ShowGroupPanel = false;
             this.gvTarimas.RowHeight = 16;
             // 
+            // colLote
+            // 
+            this.colLote.FieldName = "Lote";
+            this.colLote.Name = "colLote";
+            this.colLote.OptionsColumn.AllowEdit = false;
+            this.colLote.Visible = true;
+            this.colLote.VisibleIndex = 2;
+            this.colLote.Width = 88;
+            // 
             // colid
             // 
             this.colid.Caption = "Num.";
             this.colid.FieldName = "id";
             this.colid.MinWidth = 15;
             this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
+            this.colid.Width = 73;
             // 
             // colid_usuario
             // 
@@ -203,8 +217,8 @@
             this.coluser_.Name = "coluser_";
             this.coluser_.OptionsColumn.AllowEdit = false;
             this.coluser_.Visible = true;
-            this.coluser_.VisibleIndex = 2;
-            this.coluser_.Width = 76;
+            this.coluser_.VisibleIndex = 3;
+            this.coluser_.Width = 91;
             // 
             // colid_orden
             // 
@@ -221,8 +235,8 @@
             this.colfecha_solicitada.Name = "colfecha_solicitada";
             this.colfecha_solicitada.OptionsColumn.AllowEdit = false;
             this.colfecha_solicitada.Visible = true;
-            this.colfecha_solicitada.VisibleIndex = 3;
-            this.colfecha_solicitada.Width = 76;
+            this.colfecha_solicitada.VisibleIndex = 4;
+            this.colfecha_solicitada.Width = 86;
             // 
             // colfecha_a_producir
             // 
@@ -230,9 +244,10 @@
             this.colfecha_a_producir.FieldName = "fecha_a_producir";
             this.colfecha_a_producir.MinWidth = 15;
             this.colfecha_a_producir.Name = "colfecha_a_producir";
+            this.colfecha_a_producir.OptionsColumn.AllowEdit = false;
             this.colfecha_a_producir.Visible = true;
-            this.colfecha_a_producir.VisibleIndex = 4;
-            this.colfecha_a_producir.Width = 76;
+            this.colfecha_a_producir.VisibleIndex = 5;
+            this.colfecha_a_producir.Width = 97;
             // 
             // colid_estado
             // 
@@ -249,8 +264,8 @@
             this.colestado.Name = "colestado";
             this.colestado.OptionsColumn.AllowEdit = false;
             this.colestado.Visible = true;
-            this.colestado.VisibleIndex = 5;
-            this.colestado.Width = 76;
+            this.colestado.VisibleIndex = 6;
+            this.colestado.Width = 82;
             // 
             // colDocEntry
             // 
@@ -259,9 +274,7 @@
             this.colDocEntry.MinWidth = 15;
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
-            this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 6;
-            this.colDocEntry.Width = 79;
+            this.colDocEntry.Width = 81;
             // 
             // gridColumn1
             // 
@@ -271,7 +284,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 8;
-            this.gridColumn1.Width = 37;
+            this.gridColumn1.Width = 45;
             // 
             // btnVerD
             // 
@@ -292,7 +305,7 @@
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
             this.colcomentario.VisibleIndex = 7;
-            this.colcomentario.Width = 70;
+            this.colcomentario.Width = 88;
             // 
             // colimprimir
             // 
@@ -302,7 +315,7 @@
             this.colimprimir.Name = "colimprimir";
             this.colimprimir.Visible = true;
             this.colimprimir.VisibleIndex = 9;
-            this.colimprimir.Width = 66;
+            this.colimprimir.Width = 74;
             // 
             // btnimprimir
             // 
@@ -321,6 +334,7 @@
             this.colFinalizar.Name = "colFinalizar";
             this.colFinalizar.Visible = true;
             this.colFinalizar.VisibleIndex = 10;
+            this.colFinalizar.Width = 94;
             // 
             // btnend
             // 
@@ -337,6 +351,16 @@
             this.colfinalizado.FieldName = "finalizado";
             this.colfinalizado.Name = "colfinalizado";
             // 
+            // colnombre_comercial
+            // 
+            this.colnombre_comercial.Caption = "Producto";
+            this.colnombre_comercial.FieldName = "nombre_comercial";
+            this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
+            this.colnombre_comercial.Visible = true;
+            this.colnombre_comercial.VisibleIndex = 1;
+            this.colnombre_comercial.Width = 191;
+            // 
             // tggView
             // 
             this.tggView.EditValue = true;
@@ -346,25 +370,34 @@
             this.tggView.Properties.Appearance.Options.UseFont = true;
             this.tggView.Properties.OffText = "Ver todas";
             this.tggView.Properties.OnText = "Solo Activas";
-            this.tggView.Size = new System.Drawing.Size(232, 30);
+            this.tggView.Size = new System.Drawing.Size(232, 24);
             this.tggView.TabIndex = 36;
             this.tggView.Toggled += new System.EventHandler(this.tggView_Toggled);
             // 
-            // colLote
+            // cmdRefresh
             // 
-            this.colLote.FieldName = "Lote";
-            this.colLote.Name = "colLote";
-            this.colLote.OptionsColumn.AllowEdit = false;
-            this.colLote.Visible = true;
-            this.colLote.VisibleIndex = 1;
-            this.colLote.Width = 77;
+            this.cmdRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRefresh.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmdRefresh.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRefresh.Appearance.Options.UseBackColor = true;
+            this.cmdRefresh.Appearance.Options.UseFont = true;
+            this.cmdRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdRefresh.Location = new System.Drawing.Point(727, 3);
+            this.cmdRefresh.Name = "cmdRefresh";
+            this.cmdRefresh.Size = new System.Drawing.Size(148, 47);
+            this.cmdRefresh.TabIndex = 37;
+            this.cmdRefresh.Text = "Recargar";
+            this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
             // 
             // frmRequisiciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(804, 581);
+            this.ClientSize = new System.Drawing.Size(1030, 636);
+            this.Controls.Add(this.cmdRefresh);
             this.Controls.Add(this.tggView);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
@@ -408,5 +441,7 @@
         private DevExpress.XtraEditors.ToggleSwitch tggView;
         private DevExpress.XtraGrid.Columns.GridColumn colfinalizado;
         private DevExpress.XtraGrid.Columns.GridColumn colLote;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
+        private DevExpress.XtraEditors.SimpleButton cmdRefresh;
     }
 }

@@ -42,15 +42,19 @@ namespace LOSA.Logistica
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.grdBodegas = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bodegasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
+            this.grdvBodegas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cmdVerDetalle = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCalcular = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Export = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Import_Excel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
             this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmes = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -105,11 +109,14 @@ namespace LOSA.Logistica
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdBodegas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvBodegas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).BeginInit();
@@ -141,7 +148,7 @@ namespace LOSA.Logistica
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.splitContainerControl1.Panel1.Controls.Add(this.cmdVerDetalle);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton2);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnCalcular);
             this.splitContainerControl1.Panel1.Controls.Add(this.btn_Export);
             this.splitContainerControl1.Panel1.Controls.Add(this.btn_Import_Excel);
             this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton1);
@@ -158,6 +165,50 @@ namespace LOSA.Logistica
             this.splitContainerControl1.Size = new System.Drawing.Size(1368, 659);
             this.splitContainerControl1.TabIndex = 3;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(16, 19);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(49, 17);
+            this.labelControl1.TabIndex = 16;
+            this.labelControl1.Text = "Bodega:";
+            // 
+            // grdBodegas
+            // 
+            this.grdBodegas.EditValue = "";
+            this.grdBodegas.Location = new System.Drawing.Point(85, 16);
+            this.grdBodegas.Name = "grdBodegas";
+            this.grdBodegas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdBodegas.Properties.Appearance.Options.UseFont = true;
+            this.grdBodegas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grdBodegas.Properties.DataSource = this.bodegasBindingSource1;
+            this.grdBodegas.Properties.DisplayMember = "whs_code";
+            this.grdBodegas.Properties.PopupView = this.grdvBodegas;
+            this.grdBodegas.Properties.ValueMember = "id";
+            this.grdBodegas.Size = new System.Drawing.Size(173, 24);
+            this.grdBodegas.TabIndex = 15;
+            this.grdBodegas.EditValueChanged += new System.EventHandler(this.grdBodegas_EditValueChanged);
+            // 
+            // bodegasBindingSource1
+            // 
+            this.bodegasBindingSource1.DataMember = "bodegas";
+            this.bodegasBindingSource1.DataSource = this.dsCierreMes1;
+            // 
+            // dsCierreMes1
+            // 
+            this.dsCierreMes1.DataSetName = "dsCierreMes";
+            this.dsCierreMes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grdvBodegas
+            // 
+            this.grdvBodegas.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.grdvBodegas.Name = "grdvBodegas";
+            this.grdvBodegas.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.grdvBodegas.OptionsView.ShowGroupPanel = false;
+            // 
             // cmdVerDetalle
             // 
             this.cmdVerDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -173,20 +224,20 @@ namespace LOSA.Logistica
             this.cmdVerDetalle.Text = "Detalle de Ajuste";
             this.cmdVerDetalle.Click += new System.EventHandler(this.cmdVerDetalle_Click);
             // 
-            // simpleButton2
+            // btnCalcular
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(1185, 4);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(175, 44);
-            this.simpleButton2.TabIndex = 12;
-            this.simpleButton2.Text = "Imprimir";
-            this.simpleButton2.Visible = false;
+            this.btnCalcular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCalcular.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.btnCalcular.Appearance.Options.UseFont = true;
+            this.btnCalcular.Appearance.Options.UseForeColor = true;
+            this.btnCalcular.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.btnCalcular.Location = new System.Drawing.Point(1185, 4);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(175, 44);
+            this.btnCalcular.TabIndex = 12;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // btn_Export
             // 
@@ -236,7 +287,7 @@ namespace LOSA.Logistica
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(445, 26);
+            this.dateEdit1.Location = new System.Drawing.Point(457, 22);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dateEdit1.Properties.Appearance.Options.UseFont = true;
@@ -255,7 +306,7 @@ namespace LOSA.Logistica
             // 
             this.grd_meses_disponibles.EditValue = "";
             this.grd_meses_disponibles.Enabled = false;
-            this.grd_meses_disponibles.Location = new System.Drawing.Point(114, 56);
+            this.grd_meses_disponibles.Location = new System.Drawing.Point(71, 56);
             this.grd_meses_disponibles.Name = "grd_meses_disponibles";
             this.grd_meses_disponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grd_meses_disponibles.Properties.Appearance.Options.UseFont = true;
@@ -273,11 +324,6 @@ namespace LOSA.Logistica
             // 
             this.mesesBindingSource.DataMember = "meses";
             this.mesesBindingSource.DataSource = this.dsCierreMes1;
-            // 
-            // dsCierreMes1
-            // 
-            this.dsCierreMes1.DataSetName = "dsCierreMes";
-            this.dsCierreMes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -324,7 +370,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(340, 31);
+            this.labelControl4.Location = new System.Drawing.Point(315, 31);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(99, 17);
             this.labelControl4.TabIndex = 6;
@@ -354,7 +400,7 @@ namespace LOSA.Logistica
             // 
             this.grd_years.EditValue = "";
             this.grd_years.Enabled = false;
-            this.grd_years.Location = new System.Drawing.Point(114, 22);
+            this.grd_years.Location = new System.Drawing.Point(71, 22);
             this.grd_years.Name = "grd_years";
             this.grd_years.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_years.Properties.Appearance.Options.UseFont = true;
@@ -445,7 +491,9 @@ namespace LOSA.Logistica
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.Controls.Add(this.labelControl1);
             this.panel2.Controls.Add(this.grd_dataMp);
+            this.panel2.Controls.Add(this.grdBodegas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -459,13 +507,13 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_dataMp.DataMember = "Recuento_mp";
             this.grd_dataMp.DataSource = this.dsCierreMes1;
-            this.grd_dataMp.Location = new System.Drawing.Point(8, 11);
+            this.grd_dataMp.Location = new System.Drawing.Point(8, 46);
             this.grd_dataMp.MainView = this.grdv_dataMP;
             this.grd_dataMp.Name = "grd_dataMp";
             this.grd_dataMp.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEliminar,
             this.grd_bodegas});
-            this.grd_dataMp.Size = new System.Drawing.Size(1347, 501);
+            this.grd_dataMp.Size = new System.Drawing.Size(1347, 466);
             this.grd_dataMp.TabIndex = 0;
             this.grd_dataMp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_dataMP});
@@ -938,11 +986,14 @@ namespace LOSA.Logistica
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdBodegas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvBodegas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).EndInit();
@@ -951,6 +1002,7 @@ namespace LOSA.Logistica
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_dataMp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_dataMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodegas)).EndInit();
@@ -990,7 +1042,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data_pt;
         private System.Windows.Forms.BindingSource yearsBindingSource;
         private System.Windows.Forms.BindingSource mesesBindingSource;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnCalcular;
         private DevExpress.XtraEditors.SimpleButton btn_Export;
         private DevExpress.XtraEditors.SimpleButton btn_Import_Excel;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
@@ -1031,5 +1083,9 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica_kg;
         private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica_ud;
         private dsCierreMes dsCierreMes1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GridLookUpEdit grdBodegas;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdvBodegas;
+        private System.Windows.Forms.BindingSource bodegasBindingSource1;
     }
 }

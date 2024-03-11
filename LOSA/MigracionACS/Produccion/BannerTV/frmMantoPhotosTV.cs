@@ -20,12 +20,69 @@ namespace LOSA.MigracionACS.Produccion.BannerTV
 {
     public partial class frmMantoPhotosTV : DevExpress.XtraEditors.XtraForm
     {
-        UserLogin usuariologeado;
+        UserLogin UsuarioLogeado;
+        public bool CerrarForm;
+        bool AllowEdit;
         public frmMantoPhotosTV(UserLogin pUserlogeado)
         {
             InitializeComponent();
-            usuariologeado = pUserlogeado;
-            LoadTabs();
+            UsuarioLogeado = pUserlogeado;
+            AllowEdit = false;
+            ValidatePermisos();
+        }
+
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(68))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+                AllowEdit = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(68))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+                AllowEdit = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        //btnc_VerifyReach.Enabled = false;
+                        AccesoPrevio = true;
+                        AllowEdit = false;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        //btnc_VerifyReach.Enabled = true;
+                        AccesoPrevio = true;
+                        AllowEdit = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #68");
+            }
+            else
+            {
+                LoadTabs();
+            }
         }
 
         private void LoadTabs()
@@ -53,15 +110,22 @@ namespace LOSA.MigracionACS.Produccion.BannerTV
 
         private void cmdEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsBanner.bannerhomeRow)gridView.GetFocusedDataRow();
-            if (row.use_image)
+            if (AllowEdit)
             {
-                frmAdjuntar frm = new frmAdjuntar(row.id, usuariologeado, frmAdjuntar.TipoAccion.Insert, row.caption);
-                if (frm.ShowDialog() == DialogResult.OK)
+                var gridView = (GridView)gridControl1.FocusedView;
+                var row = (dsBanner.bannerhomeRow)gridView.GetFocusedDataRow();
+                if (row.use_image)
                 {
-                    LoadTabs();
+                    frmAdjuntar frm = new frmAdjuntar(row.id, UsuarioLogeado, frmAdjuntar.TipoAccion.Insert, row.caption);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadTabs();
+                    }
                 }
+            }
+            else
+            {
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #68");
             }
         }
         private void OpenFile(string pathSource, string pathDestination)

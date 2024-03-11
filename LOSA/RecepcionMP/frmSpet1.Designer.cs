@@ -120,7 +120,7 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(12, 155);
+            this.labelControl4.Location = new System.Drawing.Point(17, 155);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(91, 20);
             this.labelControl4.TabIndex = 5;
@@ -130,7 +130,7 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(109, 155);
+            this.labelControl5.Location = new System.Drawing.Point(112, 155);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(361, 20);
             this.labelControl5.TabIndex = 6;
@@ -185,9 +185,12 @@ namespace LOSA.RecepcionMP
             this.coldescripcion,
             this.colselected});
             this.grdv_data.GridControl = this.grd_data;
+            this.grdv_data.LevelIndent = 0;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.PreviewIndent = 0;
             this.grdv_data.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.grdv_data_RowClick);
             this.grdv_data.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_data_RowStyle);
             this.grdv_data.DoubleClick += new System.EventHandler(this.grdv_data_DoubleClick);
@@ -221,9 +224,9 @@ namespace LOSA.RecepcionMP
             this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.step1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 466);
+            this.panel1.Location = new System.Drawing.Point(0, 446);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 84);
+            this.panel1.Size = new System.Drawing.Size(642, 77);
             this.panel1.TabIndex = 8;
             // 
             // pictureEdit4
@@ -302,7 +305,7 @@ namespace LOSA.RecepcionMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 550);
+            this.ClientSize = new System.Drawing.Size(642, 523);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl5);

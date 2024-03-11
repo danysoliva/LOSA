@@ -39,14 +39,26 @@ namespace LOSA.Logistica
             NuevoRecuento = new Recuento();
             get_years();
             get_bodegas();
-            Inicializar_productos();
+            grdBodegas.EditValue = 2; //Bodega Produccion
+            
+
+            Inicializar_productos(Convert.ToInt32(grdBodegas.EditValue));
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            {
+                if (item.whs_equivalente == "N/D")
+                {
+                    item.id_bodega = Convert.ToInt32(grdBodegas.EditValue);
+                }
+            }
+
             dateEdit1.EditValue = dp.Now();
 
             grd_years.Text = Convert.ToString(dateEdit1.DateTime.Year);
-            grd_meses_disponibles.Text = Convert.ToString(dateEdit1.DateTime.Month); 
+            grd_meses_disponibles.Text = Convert.ToString(dateEdit1.DateTime.Month);
+            grd_years.Enabled = true;
         }
 
-        public void Inicializar_productos()
+        public void Inicializar_productos(int pid_bodega)
         {
             string query = @"sp_get_inizializar_grid_for_MP_ajusteV3";
             //string query = @"sp_get_inizializar_grid_for_MP_ajusteV2";
@@ -58,6 +70,7 @@ namespace LOSA.Logistica
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsCierreMes1.Recuento_mp.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.Parameters.AddWithValue("@id_bodega", pid_bodega);
                 da.Fill(dsCierreMes1.Recuento_mp);
                 cn.Close();
 
@@ -333,7 +346,7 @@ namespace LOSA.Logistica
                     if (row.toma_fisica == 0)
                         row.diferencia = row.ExistenciaAprox;
 
-                    row.diferencia = row.toma_fisica - row.ExistenciaAprox;
+                    row.diferencia = row.ExistenciaAprox - row.toma_fisica;
                     row.peso = row.toma_fisica;
 
                     if (row.diferencia != 0)
@@ -363,16 +376,48 @@ namespace LOSA.Logistica
 
         private void cmdVerDetalle_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(grd_years.Text))
-            //{
-            //    CajaDialogo.Error("Debe seleccionar el año!");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(grd_years.Text))
+            {
+                CajaDialogo.Error("Debe seleccionar el año!");
+                return;
+            }
             if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
             {
                 CajaDialogo.Error("Debe seleccionar el mes!");
                 return;
             }
+
+            int id_bodega = Convert.ToInt32(grdBodegas.EditValue);
+            Boolean existe_recuento = false;
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_validar_recuento_por_bodega", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_bodega", id_bodega);
+                cmd.Parameters.AddWithValue("@years", grd_years.EditValue);
+                cmd.Parameters.AddWithValue("@id_mes", grd_meses_disponibles.EditValue);
+                //cmd.Parameters.AddWithValue("@id_header_recuento",);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    existe_recuento = dr.GetBoolean(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            if (existe_recuento)
+            {
+                Bodegas bod = new Bodegas();
+                bod.RecuperarRegistro(id_bodega);
+                CajaDialogo.Error("Ya Existe un Recuento ligado a la Bodega: "+bod.whs_equivalente);
+                return;
+            }
+
 
             var list = dsCierreMes1.Recuento_mp.AsEnumerable();
             if (list.Count(p => p.peso > 0) <= 0)
@@ -419,11 +464,12 @@ namespace LOSA.Logistica
             int id_year = Convert.ToInt32(grd_years.EditValue);
             int id_mese = Convert.ToInt32(grd_meses_disponibles.EditValue);
             DateTime fecha_recuento = Convert.ToDateTime(dateEdit1.EditValue);
+            
 
-            frmDetalleRecuento frm = new frmDetalleRecuento(tableOps, UsuarioLogeado, id_year, id_mese, fecha_recuento);
+            frmDetalleRecuento frm = new frmDetalleRecuento(tableOps, UsuarioLogeado, id_year, id_mese, fecha_recuento, id_bodega);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                Inicializar_productos();
+                Inicializar_productos(Convert.ToInt32(grdBodegas.EditValue));
             }
         }
 
@@ -684,6 +730,36 @@ namespace LOSA.Logistica
             catch (Exception ex) 
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void grdBodegas_EditValueChanged(object sender, EventArgs e)
+        {
+            Inicializar_productos(Convert.ToInt32(grdBodegas.EditValue));
+
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            {
+                if (item.whs_equivalente == "N/D")
+                {
+                    item.id_bodega = Convert.ToInt32(grdBodegas.EditValue);
+                }
+            }
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            {
+                if (item.toma_fisica == 0)
+                    item.diferencia = item.ExistenciaAprox;
+
+                item.diferencia = item.ExistenciaAprox - item.toma_fisica;
+                item.peso = item.toma_fisica;
+
+
+
+                //item.diferencia = item.ExistenciaAprox- item.toma_fisica;
+
             }
         }
     }

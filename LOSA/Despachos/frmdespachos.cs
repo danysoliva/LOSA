@@ -24,7 +24,10 @@ namespace LOSA.Despachos
             InitializeComponent();
             load_data_orden_de_ventas();
             ULogin = UsuarioLogeado;
-
+            if(ULogin.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = true;
+            else
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = false;
 
         }
         public void load_data_orden_de_ventas()
@@ -47,6 +50,7 @@ namespace LOSA.Despachos
                 CajaDialogo.Error(ex.Message);
             }
         }
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -60,11 +64,12 @@ namespace LOSA.Despachos
                 var gridview = (GridView)grd_despachos.FocusedView;
                 var row = (ds_despachos.orden_ventaRow)gridview.GetFocusedDataRow();
                 frmplandespacho frm = new frmplandespacho(row.id, ULogin, row.CardCode, row.CardName , row.DocNum);
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
             catch (Exception ex)
             {
-                
+                CajaDialogo.Error(ex.Message);
             }
         }
 

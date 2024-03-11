@@ -25,7 +25,7 @@ namespace LOSA.MigracionACS.Produccion.Consumos
         DataOperations dp = new DataOperations();
         LotePT LoteActual;
         Int64 OrderIdBalanceMasa;
-
+        UserLogin UsuarioLogueado;
         enum TipoBusqueda
         {
             Ninguna  = 0,
@@ -37,217 +37,58 @@ namespace LOSA.MigracionACS.Produccion.Consumos
         TipoBusqueda TipoBusquedaActual = TipoBusqueda.Ninguna;
         int max_id = 0;
 
-        //private void Load_data() 
-        //{
-        //    try
-        //    {
-        //        #region Old Query
+        public IntakeBatchViewerFull(UserLogin userLogin)
+        {
+            InitializeComponent();
 
-        //        string query = @"   SELECT Consumos.[id] AS 'ID'
-	       //                             ,Consumos.[order_code] AS 'Orden Producción'
-	       //                             ,Consumos.[product_code] AS 'Código PT'
-	       //                             ,Consumos.[product_name] AS 'Producto'
-	       //                             ,Consumos.[lot_number] AS 'Numero Lote'
-	       //                             ,(CASE Consumos.[mix] WHEN 1 THEN 'Mix #1' ELSE 'Mix #2' END) AS 'Mix'
-	       //                             ,Consumos.[bin_code] AS 'Código BIN'
-	       //                             ,Consumos.[bin_name] AS 'Nombre BIN'
-	       //                             ,Consumos.[material_code] AS 'Cod. Material'
-	       //                             ,Consumos.[material_name] AS 'Material'
-	       //                             ,(CASE Consumos.[intake_type] WHEN 'RM' THEN 'Materia Prima' WHEN 'NC' THEN 'Núcleo' WHEN 'SFP' THEN 'Pre-Mezcla' WHEN 'FP' THEN 'Producto Terminado' ELSE 'N/A' END) AS Tipo
-	       //                             ,Consumos.[intake_plan] AS 'Planificado'
-	       //                             ,Consumos.[intake_real] AS 'Real'
-	       //                             ,Consumos.[batch_start] AS 'Registrado'
-        //                        FROM
-        //                        (SELECT A.[id]
-        //                                --,A.[order_id]
-        //                                            ,B.[order_code]
-        //                                            ,C.[code] AS 'product_code'
-        //                                            ,C.[long_name] AS 'product_name'
-        //                                            ,B.[fp_lot_number] AS 'lot_number'
-        //                                --,A.[order_mix_id]
-        //                                            ,D.[mix_fullCode] AS 'order_mix_code'
-        //                                --,A.[material_id]
-        //                                            ,E.[code] AS 'material_code'
-        //                                            ,E.[long_name] AS 'material_name'
-        //                                --,A.[bin_id]
-        //                                            ,F.[code] AS 'bin_code'
-        //                                --,A.[bin_codes]
-        //                                            ,F.[long_name] AS 'bin_name'
-        //                                --,A.[lot_id]
-        //                                ,A.[intake_type]
-        //                                --,A.[batch_no]
-        //                                ,A.[intake_plan]
-        //                                ,A.[intake_real]
-        //                                ,A.[mix]
-        //                                --,A.[logged_user]
-        //                                ,A.[batch_start]
-        //                                ,A.[batch_end]
-        //                            FROM [APMS].[dbo].[OP_Batch_Intake_Data_RM] A
-        //                        INNER JOIN [APMS].[dbo].[OP_Production_Orders_Main] B
-        //                                        ON A.[order_id] = B.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_Finished_Products] C
-        //                                        ON B.[fp_id] = C.[id]
-        //                        INNER JOIN [APMS].[dbo].[OP_Production_Orders_Main_Mix] D
-        //                                        ON A.[order_mix_id] = D.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_Raw_Material] E
-        //                                        ON A.[material_id] = E.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_Bins] F
-        //                                        ON A.[bin_id] = F.[id]
-        //                        WHERE A.[intake_plan] <> 0
-        //                        AND [intake_type] = 'RM'
-        //                        --AND A.id > 2296
+            UsuarioLogueado = userLogin;
 
-        //                        UNION ALL
+            if (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Calidad)
+            {
+                xtraTabPage2.PageVisible = false;
+                xtraTabPage6.PageVisible = false;
+            }
 
-        //                        SELECT A.[id]
-        //                                --,A.[order_id]
-        //                                            ,B.[order_code]
-        //                                            ,C.[code] AS 'product_code'
-        //                                            ,C.[long_name] AS 'product_name'
-        //                                            ,B.[fp_lot_number] AS 'lot_number'
-        //                                --,A.[order_mix_id]
-        //                                            ,D.[mix_fullCode] AS 'order_mix_code'
-        //                                --,A.[material_id]
-        //                                            ,E.[nc_code] AS 'material_code'
-        //                                            ,E.[nc_name] AS 'material_name'
-        //                                --,A.[bin_id]
-        //                                            ,F.[code] AS 'bin_code'
-        //                                --,A.[bin_codes]
-        //                                            ,F.[long_name] AS 'bin_name'
-        //                                --,A.[lot_id]
-        //                                ,A.[intake_type]
-        //                                --,A.[batch_no]
-        //                                ,A.[intake_plan]
-        //                                ,A.[intake_real]
-        //                                ,A.[mix]
-        //                                --,A.[logged_user]
-        //                                ,A.[batch_start]
-        //                                ,A.[batch_end]
-        //                            FROM [APMS].[dbo].[OP_Batch_Intake_Data_RM] A
-        //                        INNER JOIN [APMS].[dbo].[OP_Production_Orders_Main] B
-        //                                        ON A.[order_id] = B.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_Finished_Products] C
-        //                                        ON B.[fp_id] = C.[id]
-        //                        INNER JOIN [APMS].[dbo].[OP_Production_Orders_Main_Mix] D
-        //                                        ON A.[order_mix_id] = D.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_NC_Main] E
-        //                                        ON A.[material_id] = E.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_Bins] F
-        //                                        ON A.[bin_id] = F.[id]
-        //                        WHERE A.[intake_plan] <> 0
-        //                        AND [intake_type] = 'NC'
-        //                        --AND A.id > 2296
+            if (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
 
-        //                        UNION ALL
+            #region Screen Selection
+            if (Screen.AllScreens.Count() > 1)
+            {
+                switch (Screen.AllScreens.Count())
+                {
+                    case 2:
+                        this.Location = Screen.AllScreens[1].WorkingArea.Location;
+                        break;
+                    case 3:
+                        this.Location = Screen.AllScreens[2].WorkingArea.Location;
+                        break;
+                    case 4:
+                        this.Location = Screen.AllScreens[3].WorkingArea.Location;
+                        break;
+                    case 5:
+                        this.Location = Screen.AllScreens[4].WorkingArea.Location;
+                        break;
+                    case 6://Configuración Actual Consola
+                        this.Location = Screen.AllScreens[5].WorkingArea.Location;
+                        break;
+                }
+            }
 
-        //                        SELECT A.[id]
-        //                                --,A.[order_id]
-        //                                            ,B.[order_code]
-        //                                            ,C.[code] AS 'product_code'
-        //                                            ,C.[long_name] AS 'product_name'
-        //                                            ,B.[fp_lot_number] AS 'lot_number'
-        //                                --,A.[order_mix_id]
-        //                                            ,D.[mix_fullCode] AS 'order_mix_code'
-        //                                --,A.[material_id]
-        //                                            ,E.[fp_lot_number] AS 'material_code'
-        //                                            ,E.[mix_fullCode] AS 'material_name'
-        //                                --,A.[bin_id]
-        //                                            ,F.[code] AS 'bin_code'
-        //                                --,A.[bin_codes]
-        //                                            ,F.[long_name] AS 'bin_name'
-        //                                --,A.[lot_id]
-        //                                ,A.[intake_type]
-        //                                --,A.[batch_no]
-        //                                ,A.[intake_plan]
-        //                                ,A.[intake_real]
-        //                                ,A.[mix]
-        //                                --,A.[logged_user]
-        //                                ,A.[batch_start]
-        //                                ,A.[batch_end]
-        //                            FROM [APMS].[dbo].[OP_Batch_Intake_Data_RM] A
-        //                        INNER JOIN [APMS].[dbo].[OP_Production_Orders_Main] B
-        //                                        ON A.[order_id] = B.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_Finished_Products] C
-        //                                        ON B.[fp_id] = C.[id]
-        //                        INNER JOIN [APMS].[dbo].[OP_Production_Orders_Main_Mix] D
-        //                                        ON A.[order_mix_id] = D.[id]
-        //                        INNER JOIN [APMS].[dbo].[OP_Production_Orders_Main_Mix] E
-        //                                        ON A.[material_id] = E.[id]
-        //                        INNER JOIN [APMS].[dbo].[MD_Bins] F
-        //                                        ON A.[bin_id] = F.[id]
-        //                        WHERE A.[intake_plan] <> 0
-        //                        AND [intake_type] = 'SFP'
-        //                        --AND A.id > 2296
-        //                        ) Consumos  ";
-
-        //        if (radioGroup1.SelectedIndex == 0) 
-        //        {
-        //            query += @" WHERE Consumos.[order_code] = '" + txt_OrderCode2.Text + @"'
-        //                        ORDER BY Consumos.[id]";
-        //        }
-        //        #endregion
-
-        //        if (radioGroup1.SelectedIndex == 0) 
-        //        {
-        //            string orderCode = "PP-";
-
-        //            // Amigo, este switch de abajo pudo ser así tambien: 
-        //            // orderCode += txt_OrderCode.Text.Trim().PadLeft(7, '0');
-        //            switch (txt_OrderCode2.Text.Length) 
-        //            {
-        //                case 0:
-        //                    orderCode += "0000000";
-        //                    break;
-        //                case 1:
-        //                    orderCode += "000000" + txt_OrderCode2.Text;
-        //                    break;
-        //                case 2:
-        //                    orderCode += "00000" + txt_OrderCode2.Text;
-        //                    break;
-        //                case 3:
-        //                    orderCode += "0000" + txt_OrderCode2.Text;
-        //                    break;
-        //                case 4:
-        //                    orderCode += "000" + txt_OrderCode2.Text;
-        //                    break;
-        //                case 5:
-        //                    orderCode += "00" + txt_OrderCode2.Text;
-        //                    break;
-        //                case 6:
-        //                    orderCode += "0" + txt_OrderCode2.Text;
-        //                    break;
-        //                case 7:
-        //                    orderCode += txt_OrderCode2.Text;
-        //                    break;
-        //                default:
-        //                    orderCode += txt_OrderCode2.Text;
-        //                    break;
-        //            }
+            #endregion
 
 
-        //            SqlCommand command = new SqlCommand();
-        //            command.CommandType = CommandType.StoredProcedure;
-        //            command.Parameters.AddWithValue("@order_number", int.Parse(txt_OrderCode2.Text.ToString()));
 
-        //            grd_data.DataSource = dp.APMS_Exec_SP_Get_Data("RPT_Batch_Intake_Data_OrderCode", command);   
-        //        }
-        //        else if (radioGroup1.SelectedIndex == 1)
-        //        {
-        //            SqlCommand command = new SqlCommand();
-        //            command.CommandType = CommandType.StoredProcedure;
-        //            command.Parameters.AddWithValue("@start_date", dt_desde.EditValue);
-        //            command.Parameters.AddWithValue("@end_date", dt_hasta.EditValue);
 
-        //            grd_data.DataSource = dp.APMS_Exec_SP_Get_Data("RPT_Batch_Intake_Data_Date", command);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    { throw; }
-        //}
+        }
 
         public IntakeBatchViewerFull()
         {
             InitializeComponent();
+
+            if (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+
 
             #region Screen Selection
             if (Screen.AllScreens.Count() > 1)

@@ -69,7 +69,6 @@ namespace LOSA.Reportes
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
         }
@@ -98,7 +97,7 @@ namespace LOSA.Reportes
                 {
                     if (Especie == 2)
                     {
-                        grd_inventario_camaron.ExportToXlsx(dialog.FileName);
+                        gridControl1.ExportToXlsx(dialog.FileName);
                     }
                     else
                     {

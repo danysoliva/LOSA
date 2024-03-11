@@ -25,7 +25,9 @@ namespace LOSA.Clases
         public int IdRiesgo;
         public bool Auditoria;
         public int IdAprobacion;
-
+        public string Moneda;
+        public int ContactCode;
+        public string ContactName;
         public Proveedor()
         {
         }
@@ -95,6 +97,9 @@ namespace LOSA.Clases
                         Auditoria = dr.GetBoolean(10);
                     if (!dr.IsDBNull(dr.GetOrdinal("id_aprobacion")))
                         IdAprobacion = dr.GetInt32(11);
+                    Moneda = dr.GetString(12);
+                    ContactCode = dr.GetInt32(13);
+                    ContactName = dr.GetString(14);
                     Recuperado = true;
                 }
                 con.Close();
