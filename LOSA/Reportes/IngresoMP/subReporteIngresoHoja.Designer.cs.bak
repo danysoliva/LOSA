@@ -238,7 +238,7 @@ namespace LOSA.Reportes
             // 
             // sqlDataSource2
             // 
-            this.sqlDataSource2.ConnectionName = "localhost_LOSA_Connection 2";
+            this.sqlDataSource2.ConnectionName = "localhost_LOSA_Connection_aqfsvr010";
             this.sqlDataSource2.Name = "sqlDataSource2";
             storedProcQuery1.Name = "sp_rpt_print_detalle_lote";
             queryParameter1.Name = "@id_ingreso";

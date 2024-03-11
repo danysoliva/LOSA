@@ -1,6 +1,13 @@
 ﻿namespace LOSA.TransaccionesPT
 {
-    partial class dsProductos
+}
+
+namespace LOSA.TransaccionesPT
+{
+
+
+    public partial class dsPTdsProductos
     {
     }
 }
+

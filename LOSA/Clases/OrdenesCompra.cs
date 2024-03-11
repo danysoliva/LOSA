@@ -90,8 +90,8 @@ namespace LOSA.Clases
                     Usuario_Modi = dr.IsDBNull(dr.GetOrdinal("usuario_Modi")) ? "" : dr.GetString(dr.GetOrdinal("usuario_Modi"));
                     if (!dr.IsDBNull(dr.GetOrdinal("fecha_modi")))
                         Fecha_Modi = dr.GetDateTime(17);
-                    Id_PuntoVenta = dr.GetInt32(18);
-                    DocNum1 = dr.GetString(19);
+                    //Id_PuntoVenta = dr.GetInt32(18);
+                    //DocNum1 = dr.GetString(19);
                     Recuperado = true;
                 }
                 dr.Close();

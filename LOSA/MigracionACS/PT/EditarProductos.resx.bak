@@ -340,7 +340,7 @@
     <value>Editar Productos</value>
   </data>
   <data name="mainRibbonControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>858, 143</value>
+    <value>858, 158</value>
   </data>
   <data name="&gt;&gt;mainRibbonControl.Name" xml:space="preserve">
     <value>mainRibbonControl</value>
@@ -763,9 +763,6 @@
   <data name="spingrasa.Properties.NullValuePrompt" xml:space="preserve">
     <value>Campo Requerido</value>
   </data>
-  <data name="spingrasa.Properties.NullValuePromptShowForEmptyValue" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="spingrasa.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
@@ -801,9 +798,6 @@
   </data>
   <data name="spinProteina.Properties.NullValuePrompt" xml:space="preserve">
     <value>Campo Requerido</value>
-  </data>
-  <data name="spinProteina.Properties.NullValuePromptShowForEmptyValue" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="spinProteina.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -1061,7 +1055,7 @@
     <value>No</value>
   </data>
   <data name="toggleSwitch1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 32</value>
+    <value>226, 26</value>
   </data>
   <data name="toggleSwitch1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1286,7 +1280,7 @@
     <value>33</value>
   </data>
   <data name="tabNavigationPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>858, 343</value>
+    <value>858, 322</value>
   </data>
   <data name="&gt;&gt;tabNavigationPage2.Name" xml:space="preserve">
     <value>tabNavigationPage2</value>
@@ -1439,10 +1433,10 @@
     <value>Fill</value>
   </data>
   <data name="tabPane1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 143</value>
+    <value>0, 158</value>
   </data>
   <data name="tabPane1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>858, 370</value>
+    <value>858, 355</value>
   </data>
   <data name="tabPane1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1693,7 +1687,7 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>858, 513</value>
   </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="EditarProductos.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAAAAAAAEAIABaWAAAlgAAAICAAAABACAAKAgBAPBYAABgYAAAAQAgAKiUAAAYYQEASEgAAAEA
         IACIVAAAwPUBAEBAAAABACAAKEIAAEhKAgAwMAAAAQAgAKglAABwjAIAICAAAAEAIACoEAAAGLICABgY
@@ -4845,7 +4839,7 @@
     <value>dsProductos1</value>
   </data>
   <data name="&gt;&gt;dsProductos1.Type" xml:space="preserve">
-    <value>ACS.DataSetx.DSProductos, DataSetx.DSProductos.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LOSA.MigracionACS.DataSetx.DSProductos, MigracionACS.DataSetx.DSProductos.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gridView7.Name" xml:space="preserve">
     <value>gridView7</value>

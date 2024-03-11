@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
@@ -24,7 +25,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>450</ApplicationRevision>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>636</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,7 +81,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo1.ico</ApplicationIcon>
@@ -89,14 +91,14 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -107,6 +109,9 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -121,12 +126,28 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.3136.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.PostgreSql, Version=8.1.151.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="ALOSY, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Devart.Data, Version=5.0.3075.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql, Version=8.1.134.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Dashboard.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -142,62 +163,154 @@
     <Reference Include="DevExpress.Dashboard.v23.2.Wpf, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dialogs.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v23.2.Drawing, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v23.2.Export, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.DataVisualization.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Spreadsheet.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraDialogs.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v23.2.Win, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Charts.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v23.2.Extensions, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v23.2.Service, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v23.2.Web, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v23.2.Web.Azure, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraTreeList.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraWizard.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.Data.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.DataVisualization.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Dialogs.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Images.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v23.2.Drawing, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v23.2.Export, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraDialogs.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v23.2.Win, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v23.2.Extensions, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v23.2.Service, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v23.2.Web, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v23.2.Web.Azure, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v23.2.Core.Desktop, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v22.2, Version=22.2.20222.49, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v22.2, Version=22.2.20222.49, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v22.2, Version=22.2.20222.49, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
-    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -208,6 +321,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accesos\AccesosUsuarios\AccesoUsuario.cs">
@@ -297,6 +412,17 @@
     <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.Designer.cs">
       <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accesos\Notificaciones\dsNotificaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\Notificaciones\frmHomeNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\Notificaciones\frmHomeNotificaciones.Designer.cs">
+      <DependentUpon>frmHomeNotificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="ACS\RRHH\dsRRHH_reportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -307,6 +433,46 @@
     </Compile>
     <Compile Include="ACS\RRHH\frmReporteAsistencia.Designer.cs">
       <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\dsInformesRRHH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInformesRRHH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\dsNominasVoucher.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNominasVoucher.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\frmHomePlanillaCatorceavo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\frmHomePlanillaCatorceavo.Designer.cs">
+      <DependentUpon>frmHomePlanillaCatorceavo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\frmHomePrintVoucherPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\frmHomePrintVoucherPlanilla.Designer.cs">
+      <DependentUpon>frmHomePrintVoucherPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanillaHE.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanillaHE.Designer.cs">
+      <DependentUpon>rptPlanillaHE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanilla.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanilla.Designer.cs">
+      <DependentUpon>rptPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptVoucher14vo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptVoucher14vo.Designer.cs">
+      <DependentUpon>rptVoucher14vo.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\AjusteInvAlmaExterno\frmAddAjusteAlmacenExterno.cs">
       <SubType>Form</SubType>
@@ -512,6 +678,29 @@
     <Compile Include="Autorizaciones\frmSolicitudAutorizacion.Designer.cs">
       <DependentUpon>frmSolicitudAutorizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\dsCertificado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCertificado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCertificadoCalidadPTMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCertificadoCalidadPTMain.Designer.cs">
+      <DependentUpon>frmCertificadoCalidadPTMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCrearCertificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCrearCertificado.Designer.cs">
+      <DependentUpon>frmCrearCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\rptCertificadoCalidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\rptCertificadoCalidad.Designer.cs">
+      <DependentUpon>rptCertificadoCalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\ConfiguracionMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,6 +743,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\dsTRZ_Reports.cs">
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\dsTRZ_Reports.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -794,6 +986,12 @@
     <Compile Include="Calidad\frmSeguimientoDespachos.Designer.cs">
       <DependentUpon>frmSeguimientoDespachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmSelecFechasAlimentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmSelecFechasAlimentacion.Designer.cs">
+      <DependentUpon>frmSelecFechasAlimentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmTexturaMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -866,11 +1064,23 @@
     <Compile Include="Calidad\GestionLotesMP\frmcausasRetencionCompletev2.Designer.cs">
       <DependentUpon>frmcausasRetencionCompletev2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\GestionLotesMP\frmLotesFinalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\GestionLotesMP\frmLotesFinalizados.Designer.cs">
+      <DependentUpon>frmLotesFinalizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\frmIngresoTipoMarino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\frmIngresoTipoMarino.Designer.cs">
+      <DependentUpon>frmIngresoTipoMarino.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.cs">
       <SubType>Form</SubType>
@@ -878,6 +1088,7 @@
     <Compile Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.Designer.cs">
       <DependentUpon>frmInspeccionCalidadPorIngresoLoteMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\IngredienteMarino.cs" />
     <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.cs">
       <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
     </Compile>
@@ -904,6 +1115,12 @@
     <Compile Include="Calidad\LoteConfConsumo\frmSearchMP.Designer.cs">
       <DependentUpon>frmSearchMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\LotesFinalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\LotesFinalizados.Designer.cs">
+      <DependentUpon>LotesFinalizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\Model\FFIF_D.cs" />
     <Compile Include="Calidad\Model\FFIF_H.cs" />
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
@@ -915,6 +1132,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsParametros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmAdjuntos_PT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmAdjuntos_PT.Designer.cs">
+      <DependentUpon>frmAdjuntos_PT.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Parametros\frmConfiguracionPT.cs">
       <SubType>Form</SubType>
@@ -951,6 +1174,12 @@
     </Compile>
     <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.Designer.cs">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\FrmSeleccionarRegistroProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\FrmSeleccionarRegistroProduccion.Designer.cs">
+      <DependentUpon>FrmSeleccionarRegistroProduccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Revision_Sanidad\DialogBoxRevision.cs">
       <SubType>Form</SubType>
@@ -1017,6 +1246,12 @@
     <Compile Include="Calidad\Revision_Sanidad\XtraUserControl1.Designer.cs">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\rptReporteAlimentacionTarimasMP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\rptReporteAlimentacionTarimasMP.Designer.cs">
+      <DependentUpon>rptReporteAlimentacionTarimasMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\rpt_certificado_calidad.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1034,6 +1269,12 @@
     </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.Designer.cs">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xfrmReporteLotesAConsumir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmReporteLotesAConsumir.Designer.cs">
+      <DependentUpon>xfrmReporteLotesAConsumir.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\xfrmTrazabilidadClientesLotes.cs">
       <SubType>Form</SubType>
@@ -1059,6 +1300,7 @@
     <Compile Include="Calidad\xrpCertificadoCalidad.Designer.cs">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\AlimentacionBasculas.cs" />
     <Compile Include="Clases\AlimentacionTolvaMicrosPesaje.cs" />
     <Compile Include="Clases\APMS_OrderProduction.cs" />
     <Compile Include="Clases\BagsPT.cs" />
@@ -1067,8 +1309,15 @@
     <Compile Include="Clases\Bodegas.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
+    <Compile Include="Clases\CertificadoPT_H.cs" />
     <Compile Include="Clases\CheckNewVersion.cs" />
+    <Compile Include="Clases\CMOrdenCompraH.cs" />
     <Compile Include="Clases\DataOperations.cs" />
+    <Compile Include="Clases\Despacho.cs" />
+    <Compile Include="Clases\Destinos_empaques.cs" />
+    <Compile Include="Clases\DetalleExoneracion.cs" />
+    <Compile Include="Clases\DetallePlanilla.cs" />
+    <Compile Include="Clases\DetallePlanillaHE.cs" />
     <Compile Include="Clases\dsColleccionesClases.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1081,24 +1330,31 @@
     <Compile Include="Clases\FTP_Class.cs" />
     <Compile Include="Clases\Funciones.cs" />
     <Compile Include="Clases\Globals.cs" />
+    <Compile Include="Clases\Impuesto.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
     <Compile Include="Clases\IngresoExternoH.cs" />
     <Compile Include="Clases\IngresoMP.cs" />
     <Compile Include="Clases\ItemBusqueda.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
+    <Compile Include="Clases\ItemPesajeManualNucleo.cs" />
+    <Compile Include="Clases\ItemsSAP.cs" />
     <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\Liquidacion.cs" />
+    <Compile Include="Clases\LoadXML.cs" />
     <Compile Include="Clases\LoteAlmacenExternoD.cs" />
     <Compile Include="Clases\LoteExterno.cs" />
     <Compile Include="Clases\LoteMP.cs" />
     <Compile Include="Clases\LoteMP_ProximoVencer.cs" />
     <Compile Include="Clases\LotePT.cs" />
+    <Compile Include="Clases\MaterialEmpaque.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\NotificacionesGenerales.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\OrdenesCombustible.cs" />
+    <Compile Include="Clases\OrdenesCompra.cs" />
     <Compile Include="Clases\OrdenProduccionH.cs" />
+    <Compile Include="Clases\PlanillaHeader.cs" />
     <Compile Include="Clases\PlantaPrvTrz.cs" />
     <Compile Include="Clases\Plan_Semanal.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
@@ -1106,11 +1362,14 @@
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\ReporteProceso.cs" />
     <Compile Include="Clases\Requisicion.cs" />
+    <Compile Include="Clases\RequisicionesValidaciones.cs" />
     <Compile Include="Clases\SalidaPlanExterno.cs" />
     <Compile Include="Clases\SecOps.cs" />
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\SeleccionLoteMPAuto.cs" />
     <Compile Include="Clases\SelectorFor.cs" />
+    <Compile Include="Clases\SolicitudesCompraSAP.cs" />
+    <Compile Include="Clases\SolicitudIT.cs" />
     <Compile Include="Clases\Tanque.cs" />
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\TarimaMicroingrediente.cs" />
@@ -1119,6 +1378,41 @@
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
+    <Compile Include="Compras\dsCompras.cs">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\dsCompras.Designer.cs">
+      <DependentUpon>dsCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\dsCompras1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmCopiarDeSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmCopiarDeSolicitud.Designer.cs">
+      <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmGestionAprobaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmGestionAprobaciones.Designer.cs">
+      <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmOrdenesCompraMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmOrdenesCompraMain.Designer.cs">
+      <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmSearchOrdenC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmSearchOrdenC.Designer.cs">
+      <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\dsTransaccionesDespacho.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1131,6 +1425,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ds_despachos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmCrearSolicitudAutorizacionLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmCrearSolicitudAutorizacionLotePT.Designer.cs">
+      <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frmdespachos.cs">
       <SubType>Form</SubType>
@@ -1197,6 +1497,12 @@
     </Compile>
     <Compile Include="Despachos\frmseleccionlote.Designer.cs">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmSolicitudesDespachoLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmSolicitudesDespachoLote.Designer.cs">
+      <DependentUpon>frmSolicitudesDespachoLote.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frm_despachos.cs">
       <SubType>Form</SubType>
@@ -1329,6 +1635,38 @@
     <Compile Include="Despachos\rpt_despacho.Designer.cs">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finanzas\dsExoneracion.cs">
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\dsExoneracion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionAQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionAQ.Designer.cs">
+      <DependentUpon>frmExoneracionAQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionAQ_OP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionAQ_OP.Designer.cs">
+      <DependentUpon>frmExoneracionAQ_OP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionDetalle.Designer.cs">
+      <DependentUpon>frmExoneracionDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionOP.Designer.cs">
+      <DependentUpon>frmExoneracionOP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1399,6 +1737,12 @@
     </Compile>
     <Compile Include="Liquidos\xfrmTanqueCRUD.Designer.cs">
       <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTrasladoTanqueExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTrasladoTanqueExt.Designer.cs">
+      <DependentUpon>xfrmTrasladoTanqueExt.cs</DependentUpon>
     </Compile>
     <Compile Include="Liquidos\xfrm_select_camiones.cs">
       <SubType>Form</SubType>
@@ -1487,6 +1831,12 @@
     </Compile>
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmValidacionTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmValidacionTarimas.Designer.cs">
+      <DependentUpon>frmValidacionTarimas.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\frm_nuevaSemanaPlan.cs">
       <SubType>Form</SubType>
@@ -1745,6 +2095,12 @@
     <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.Designer.cs">
       <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeNucleoV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeNucleoV2.Designer.cs">
+      <DependentUpon>xfrmPesajeNucleoV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1775,6 +2131,12 @@
     <Compile Include="MicroIngredientes\xfrmConfPlanBatch.Designer.cs">
       <DependentUpon>xfrmConfPlanBatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeNucleo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeNucleo.Designer.cs">
+      <DependentUpon>xfrmPesajeNucleo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmResumenMPIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1801,10 +2163,19 @@
     <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\ACSDataSet2.cs">
+      <DependentUpon>ACSDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\ACSDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\ADVD\DeveloperTools\Select_Items_v3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\ADVD\DeveloperTools\Select_Items_v3.designer.cs">
+      <DependentUpon>Select_Items_v3.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\AquaForecast\AFC_ConsumoReal.cs">
       <SubType>Form</SubType>
@@ -1823,6 +2194,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAquaForecastReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\CargarXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\CargarXML.designer.cs">
+      <DependentUpon>CargarXML.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Controles\dsControles.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1840,6 +2217,11 @@
     <Compile Include="MigracionACS\Controles\xxSeleccionLookupEdit.designer.cs">
       <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\DataSetx\dsFormulacion1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFormulacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\DataSetx\dsProduccion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1854,6 +2236,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsProyeccionesVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\dsReportes21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportes2.xsd</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\DataSetx\dsReportPRD.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1874,6 +2261,98 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\PruebaXMLxsd.cs">
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\PruebaXMLxsd.designer.cs">
+      <DependentUpon>PruebaXMLxsd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\PruebaXMLxsd1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\dSRPT1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSRPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Inventarios\frmReportManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Inventarios\frmReportManager.Designer.cs">
+      <DependentUpon>frmReportManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Inventarios\frmSolicitudesAjustesInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Inventarios\frmSolicitudesAjustesInventario.Designer.cs">
+      <DependentUpon>frmSolicitudesAjustesInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>drReportesODOO_RRHH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\ODOO\frmReporteBancosODOO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\ODOO\frmReporteBancosODOO.Designer.cs">
+      <DependentUpon>frmReporteBancosODOO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.designer.cs">
+      <DependentUpon>frmConsumoConsolaReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaTeorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaTeorico.designer.cs">
+      <DependentUpon>frmConsumoConsolaTeorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\datarpt1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datarpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Conta_Varios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Conta_Varios.designer.cs">
+      <DependentUpon>RPT_Conta_Varios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_FL_FF_CostVar_MasterDetailReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_FL_FF_CostVar_MasterDetailReport.designer.cs">
+      <DependentUpon>RPT_FML_FL_FF_CostVar_MasterDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_NC_MasterDetailReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_NC_MasterDetailReport.designer.cs">
+      <DependentUpon>RPT_FML_NC_MasterDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_seleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_seleccion.designer.cs">
+      <DependentUpon>RPT_seleccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Uso_Fml_Costo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Uso_Fml_Costo.designer.cs">
+      <DependentUpon>RPT_Uso_Fml_Costo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\RPT_Teorico_Costo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\RPT_Teorico_Costo.designer.cs">
+      <DependentUpon>RPT_Teorico_Costo.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Forecast\dsForecast_.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2007,11 +2486,41 @@
     <Compile Include="MigracionACS\Formulas\FML_Comment_Add.designer.cs">
       <DependentUpon>FML_Comment_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Costeo_Formulas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Costeo_Formulas.designer.cs">
+      <DependentUpon>FML_Costeo_Formulas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Edit.designer.cs">
+      <DependentUpon>FML_FF_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_Panel.designer.cs">
+      <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Select.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Select.designer.cs">
       <DependentUpon>FML_FF_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Fomula_Format_Masive_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Fomula_Format_Masive_Import.designer.cs">
+      <DependentUpon>FML_Fomula_Format_Masive_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Format_Import_Custom_Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Format_Import_Custom_Error.designer.cs">
+      <DependentUpon>FML_Format_Import_Custom_Error.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_Formulas.cs">
       <SubType>Form</SubType>
@@ -2024,6 +2533,12 @@
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_Formulas_v2.designer.cs">
       <DependentUpon>FML_Formulas_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Formula_Format_Import_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Formula_Format_Import_Interface.designer.cs">
+      <DependentUpon>FML_Formula_Format_Import_Interface.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_Material_Selector.cs">
       <SubType>Form</SubType>
@@ -2061,11 +2576,69 @@
     <Compile Include="MigracionACS\Formulas\FML_NewFormula_view_only.designer.cs">
       <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Formulas\Reports\FML_FF_Main_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\Reports\FML_FF_Main_Report.designer.cs">
+      <DependentUpon>FML_FF_Main_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\sdformula1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sdformula.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\HeadXmlLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\HeadXmlLook.designer.cs">
+      <DependentUpon>HeadXmlLook.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Item_Selecction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\Item_Selecction.designer.cs">
       <DependentUpon>Item_Selecction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\DsIT.cs">
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\DsIT.designer.cs">
+      <DependentUpon>DsIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\DsIT1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\dsSolicitudes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSolicitudes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmConfAccesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmConfAccesos.designer.cs">
+      <DependentUpon>frmConfAccesos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmEditarAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmEditarAcceso.designer.cs">
+      <DependentUpon>frmEditarAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmNuevoAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmNuevoAcceso.designer.cs">
+      <DependentUpon>frmNuevoAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\Model\IT_Solicitud_Info.cs" />
+    <Compile Include="MigracionACS\IT\SolcitudIT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\SolcitudIT.designer.cs">
+      <DependentUpon>SolcitudIT.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.cs">
       <SubType>Form</SubType>
@@ -2154,6 +2727,12 @@
     </Compile>
     <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.designer.cs">
       <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSelectRequisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSelectRequisa.Designer.cs">
+      <DependentUpon>frmSelectRequisa.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.cs">
       <SubType>Form</SubType>
@@ -2342,6 +2921,12 @@
     <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDashboard.designer.cs">
       <DependentUpon>frmReprocesoDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDetalleRuta4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDetalleRuta4.Designer.cs">
+      <DependentUpon>frmReprocesoDetalleRuta4.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\DashBoard\frmResumenBrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2437,6 +3022,12 @@
     <Compile Include="MigracionACS\Produccion\Eficiencia\frm_seleccion_tarimas.designer.cs">
       <DependentUpon>frm_seleccion_tarimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_LotesLigados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_LotesLigados.Designer.cs">
+      <DependentUpon>PRB_LotesLigados.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2477,6 +3068,17 @@
     </Compile>
     <Compile Include="MigracionACS\Produccion\Llenado_Zarandas.designer.cs">
       <DependentUpon>Llenado_Zarandas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMedicionElectrica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\MedicionElectrica\frmMedicionElectricaKWH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\MedicionElectrica\frmMedicionElectricaKWH.Designer.cs">
+      <DependentUpon>frmMedicionElectricaKWH.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2565,6 +3167,12 @@
     </Compile>
     <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.designer.cs">
       <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.designer.cs">
+      <DependentUpon>PP_Nuevo_Plan_full_PedidoWithMedicado.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.cs">
       <SubType>Form</SubType>
@@ -2662,6 +3270,17 @@
     <Compile Include="MigracionACS\Produccion\PRB_Report_v2.designer.cs">
       <DependentUpon>PRB_Report_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.Designer.cs">
+      <DependentUpon>frmAddItemForMedicado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2752,6 +3371,12 @@
     <Compile Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.designer.cs">
       <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\Silos\frmSilosReporteHumedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\Silos\frmSilosReporteHumedades.Designer.cs">
+      <DependentUpon>frmSilosReporteHumedades.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2837,6 +3462,12 @@
     <Compile Include="MigracionACS\PT\EditarProductos.designer.cs">
       <DependentUpon>EditarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\PT\frmCRUDProductoTerminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\PT\frmCRUDProductoTerminado.Designer.cs">
+      <DependentUpon>frmCRUDProductoTerminado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\PT\frmNewProductoUniversal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2866,6 +3497,12 @@
     </Compile>
     <Compile Include="MigracionACS\PT\PT_Productos.designer.cs">
       <DependentUpon>PT_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.designer.cs">
+      <DependentUpon>frm_Reporteador_Validate_byUser.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.cs">
       <SubType>Component</SubType>
@@ -2910,6 +3547,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsEncuesta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\frmCRUD_EncuestaH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\frmCRUD_EncuestaH.Designer.cs">
+      <DependentUpon>frmCRUD_EncuestaH.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\RRHH\Encuesta\frmGestionAccesosEncuesta.cs">
       <SubType>Form</SubType>
@@ -3065,6 +3708,13 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.Designer.cs" />
+    <Compile Include="MigracionACS\RRHH\Reportes\frmDetalleDesechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\frmDetalleDesechos.Designer.cs">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\RRHH\Reportes\frmResumenNominas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3077,11 +3727,449 @@
     <Compile Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.Designer.cs">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesVacaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesDetalles.Designer.cs">
+      <DependentUpon>frmVacacionesDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.Designer.cs">
+      <DependentUpon>frmVacacionesHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\SAP\frmLoginSAP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\SAP\frmLoginSAP.designer.cs">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\dS_SAR.cs">
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\dS_SAR.designer.cs">
+      <DependentUpon>dS_SAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\dS_SAR1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frmPickArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frmPickArticulo.designer.cs">
+      <DependentUpon>frmPickArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frm_select_pv.cd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frm_select_pv.cd.designer.cs">
+      <DependentUpon>frm_select_pv.cd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\OrdenSAP.cs" />
+    <Compile Include="MigracionACS\SAR\SAR_capitulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_capitulos.designer.cs">
+      <DependentUpon>SAR_capitulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_DASHBOARD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_DASHBOARD.designer.cs">
+      <DependentUpon>SAR_DASHBOARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Details.designer.cs">
+      <DependentUpon>SAR_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_detalle.designer.cs">
+      <DependentUpon>SAR_detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_exoneracionNueva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_exoneracionNueva.designer.cs">
+      <DependentUpon>SAR_exoneracionNueva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Main.designer.cs">
+      <DependentUpon>SAR_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_mantimientoXRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_mantimientoXRubro.designer.cs">
+      <DependentUpon>SAR_mantimientoXRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Orden_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Orden_detalle.designer.cs">
+      <DependentUpon>SAR_Orden_detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_orderSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_orderSelector.designer.cs">
+      <DependentUpon>SAR_orderSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Saldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Saldo.designer.cs">
+      <DependentUpon>SAR_Saldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Selection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Selection.designer.cs">
+      <DependentUpon>SAR_Selection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Solicitudes\frmAllsolicitudesUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Solicitudes\frmAllsolicitudesUser.Designer.cs">
+      <DependentUpon>frmAllsolicitudesUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\IT_Solicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\IT_Solicitudes.designer.cs">
+      <DependentUpon>IT_Solicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\dsAdminT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAdminT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketscs.Designer.cs">
+      <DependentUpon>frmAdminTicketscs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketsMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketsMantenimiento.Designer.cs">
+      <DependentUpon>frmAdminTicketsMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmViewInfoTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmViewInfoTicket.Designer.cs">
+      <DependentUpon>frmViewInfoTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmChangePriority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmChangePriority.Designer.cs">
+      <DependentUpon>xfrmChangePriority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmVerAdjuntosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmVerAdjuntosAdmin.Designer.cs">
+      <DependentUpon>xfrmVerAdjuntosAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Clases\Ticket.cs" />
+    <Compile Include="MigracionACS\Tickets\EndUser\dsTickets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTickets.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmCopiarCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmCopiarCorreo.designer.cs">
+      <DependentUpon>frmCopiarCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmMainUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmMainUser.designer.cs">
+      <DependentUpon>frmMainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmNotificaciones.designer.cs">
+      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTickets.designer.cs">
+      <DependentUpon>frmTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento.designer.cs">
+      <DependentUpon>frmTicketSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimientoCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimientoCRUD.designer.cs">
+      <DependentUpon>frmTicketSeguimientoCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI.designer.cs">
+      <DependentUpon>frmTicketSeguimiento_TI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI_CRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI_CRUD.designer.cs">
+      <DependentUpon>frmTicketSeguimiento_TI_CRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew.designer.cs">
+      <DependentUpon>frmTicketsNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_IT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_IT.designer.cs">
+      <DependentUpon>frmTicketsNew_IT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_Mantenimiento.designer.cs">
+      <DependentUpon>frmTicketsNew_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerAdjuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerAdjuntos.designer.cs">
+      <DependentUpon>frmVerAdjuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.designer.cs">
+      <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.Designer.cs">
+      <DependentUpon>PT_Producto_Borrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.designer.cs">
+      <DependentUpon>xfrmChangeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeUserAssigned.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeUserAssigned.designer.cs">
+      <DependentUpon>xfrmChangeUserAssigned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Models\CopiaCorreo.cs" />
+    <Compile Include="MigracionACS\Tickets\Models\EquipoHardwareSelected.cs" />
+    <Compile Include="MigracionACS\Tickets\Models\ProyectoSelected.cs" />
+    <Compile Include="MigracionACS\Tickets\Models\TicketInfo.cs" />
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.Designer.cs">
+      <DependentUpon>rpt_Ticket_Manto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.Designer.cs">
+      <DependentUpon>rpt_Ticket_TI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\dSTtracer.cs">
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\dSTtracer.designer.cs">
+      <DependentUpon>dSTtracer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\dSTtracer1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\frmDetalleDesechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\frmDetalleDesechos.designer.cs">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\TTR_Arribo_Doc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\TTR_Arribo_Doc.designer.cs">
+      <DependentUpon>TTR_Arribo_Doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addetails.designer.cs">
+      <DependentUpon>TT_addetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addpt.Designer.cs">
+      <DependentUpon>TT_addpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addtara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addtara.designer.cs">
+      <DependentUpon>TT_addtara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo.designer.cs">
+      <DependentUpon>TT_Arribo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo_Asociar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo_Asociar.designer.cs">
+      <DependentUpon>TT_Arribo_Asociar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_CargoPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_CargoPlan.designer.cs">
+      <DependentUpon>TT_CargoPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_conductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_conductor.designer.cs">
+      <DependentUpon>TT_conductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadDship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadDship.designer.cs">
+      <DependentUpon>TT_LoadDship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadOrder.designer.cs">
+      <DependentUpon>TT_LoadOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Load_Vehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Load_Vehiculo.designer.cs">
+      <DependentUpon>TT_Load_Vehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_mship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_mship.designer.cs">
+      <DependentUpon>TT_mship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_newPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_newPlan.designer.cs">
+      <DependentUpon>TT_newPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Nuevo.designer.cs">
+      <DependentUpon>TT_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_NuevoShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_NuevoShip.Designer.cs">
+      <DependentUpon>TT_NuevoShip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_reporte_bascula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_reporte_bascula.designer.cs">
+      <DependentUpon>TT_reporte_bascula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SeleccionarPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SeleccionarPlan.designer.cs">
+      <DependentUpon>TT_SeleccionarPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Seleccionempre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Seleccionempre.designer.cs">
+      <DependentUpon>TT_Seleccionempre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipconfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipconfig.designer.cs">
+      <DependentUpon>TT_shipconfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipmant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipmant.designer.cs">
+      <DependentUpon>TT_shipmant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Shipselect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Shipselect.designer.cs">
+      <DependentUpon>TT_Shipselect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_showdetalleship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_showdetalleship.designer.cs">
+      <DependentUpon>TT_showdetalleship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SocioNegocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SocioNegocio.designer.cs">
+      <DependentUpon>TT_SocioNegocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\ViewLogistica\frmCamionesEnPredio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\ViewLogistica\frmCamionesEnPredio.Designer.cs">
+      <DependentUpon>frmCamionesEnPredio.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\WaitForm1.cs">
       <SubType>Form</SubType>
@@ -3096,6 +4184,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsNir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\dsNIR_PRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
     </Compile>
     <Compile Include="Nir\frmLecturas.cs">
       <SubType>Form</SubType>
@@ -3151,6 +4244,31 @@
     <Compile Include="Produccion\BannerTV\frmBannerMainTV_PRD.Designer.cs">
       <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\CierreLote\dsCierreLotesPT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmCierreLoteMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmCierreLoteMain.Designer.cs">
+      <DependentUpon>frmCierreLoteMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmNewCierreLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmNewCierreLotePT.Designer.cs">
+      <DependentUpon>frmNewCierreLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\dsMaterialEmpaque.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\dsProduccion.cs">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3161,6 +4279,18 @@
     </Compile>
     <Compile Include="Produccion\frmAddTarimaPT.Designer.cs">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionBasculasMacros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionBasculasMacros.Designer.cs">
+      <DependentUpon>frmAlimentacionBasculasMacros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionMacros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionMacros.Designer.cs">
+      <DependentUpon>frmAlimentacionMacros.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmAlimentacionManual.cs">
       <SubType>Form</SubType>
@@ -3180,6 +4310,24 @@
     <Compile Include="Produccion\frmAlimentacionPanel.Designer.cs">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmConsumoRealPRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmConsumoRealPRD.Designer.cs">
+      <DependentUpon>frmConsumoRealPRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmCrearRequisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmCrearRequisa.Designer.cs">
+      <DependentUpon>frmCrearRequisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmDetalleEntregadoRequisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmDetalleEntregadoRequisa.Designer.cs">
+      <DependentUpon>frmDetalleEntregadoRequisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmGenerarTarimas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3192,11 +4340,29 @@
     <Compile Include="Produccion\frmHomeEnsacado.Designer.cs">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmPrintTarimasRemanente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmPrintTarimasRemanente.Designer.cs">
+      <DependentUpon>frmPrintTarimasRemanente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmPrioridadRequisas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmPrioridadRequisas.Designer.cs">
+      <DependentUpon>frmPrioridadRequisas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmRequisasManuales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produccion\frmRequisasManuales.Designer.cs">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmRequisasMaterialEmpaque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmRequisasMaterialEmpaque.Designer.cs">
+      <DependentUpon>frmRequisasMaterialEmpaque.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmrptMpEntregadaaProduccion.cs">
       <SubType>Form</SubType>
@@ -3228,6 +4394,12 @@
     <Compile Include="Produccion\ctl_keypadNumber.Designer.cs">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frm_MateriaPrimaEnBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frm_MateriaPrimaEnBodega.Designer.cs">
+      <DependentUpon>frm_MateriaPrimaEnBodega.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frm_requisaManual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3252,7 +4424,22 @@
     <Compile Include="Produccion\xfrmCheckActiveBin.Designer.cs">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\xfrmMP_Por_BIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\xfrmMP_Por_BIN.Designer.cs">
+      <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\xtraReportRequisa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Produccion\xtraReportRequisa.Designer.cs">
+      <DependentUpon>xtraReportRequisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Accesos\dsAccesos.xsc">
       <DependentUpon>dsAccesos.xsd</DependentUpon>
     </None>
@@ -3264,6 +4451,17 @@
     <None Include="Accesos\dsAccesos.xss">
       <DependentUpon>dsAccesos.xsd</DependentUpon>
     </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xsc">
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNotificaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xss">
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </None>
     <None Include="ACS\RRHH\dsRRHH_reportes.xsc">
       <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
     </None>
@@ -3274,6 +4472,28 @@
     </None>
     <None Include="ACS\RRHH\dsRRHH_reportes.xss">
       <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsInformesRRHH.xsc">
+      <DependentUpon>dsInformesRRHH.xsd</DependentUpon>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsInformesRRHH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInformesRRHH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsInformesRRHH.xss">
+      <DependentUpon>dsInformesRRHH.xsd</DependentUpon>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsNominasVoucher.xsc">
+      <DependentUpon>dsNominasVoucher.xsd</DependentUpon>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsNominasVoucher.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNominasVoucher.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsNominasVoucher.xss">
+      <DependentUpon>dsNominasVoucher.xsd</DependentUpon>
     </None>
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsc">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
@@ -3296,6 +4516,17 @@
     </None>
     <None Include="Autorizaciones\dsAutorizaciones.xss">
       <DependentUpon>dsAutorizaciones.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\CertificadoCalidad\dsCertificado.xsc">
+      <DependentUpon>dsCertificado.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\CertificadoCalidad\dsCertificado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCertificado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\CertificadoCalidad\dsCertificado.xss">
+      <DependentUpon>dsCertificado.xsd</DependentUpon>
     </None>
     <None Include="Calidad\drReporteCetificado.xsc">
       <DependentUpon>drReporteCetificado.xsd</DependentUpon>
@@ -3396,6 +4627,18 @@
     <None Include="Clases\dsColleccionesClases.xss">
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </None>
+    <None Include="Compras\dsCompras.xsc">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\dsCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompras1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Compras\dsCompras.xss">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\frmOrdenesCompraMain.resx.bak" />
     <None Include="Despachos\dsTransaccionesDespacho.xsc">
       <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
     </None>
@@ -3417,6 +4660,18 @@
     </None>
     <None Include="Despachos\Reportes\dsReporte.xss">
       <DependentUpon>dsReporte.xsd</DependentUpon>
+    </None>
+    <Fakes Include="Fakes\ALOSY.fakes" />
+    <None Include="Finanzas\dsExoneracion.xsc">
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </None>
+    <None Include="Finanzas\dsExoneracion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsExoneracion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Finanzas\dsExoneracion.xss">
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
     </None>
     <None Include="Liquidos\dsLiquidos_.xsc">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
@@ -3473,6 +4728,17 @@
     <None Include="MigracionACS\Controles\dsControles.xss">
       <DependentUpon>dsControles.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\DataSetx\dsFormulacion.xsc">
+      <DependentUpon>dsFormulacion.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsFormulacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFormulacion1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsFormulacion.xss">
+      <DependentUpon>dsFormulacion.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\DataSetx\dsProduccion.xsc">
       <DependentUpon>dsProduccion.xsd</DependentUpon>
     </None>
@@ -3505,6 +4771,17 @@
     </None>
     <None Include="MigracionACS\DataSetx\dsProyeccionesVentas.xss">
       <DependentUpon>dsProyeccionesVentas.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportes2.xsc">
+      <DependentUpon>dsReportes2.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportes2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportes21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportes2.xss">
+      <DependentUpon>dsReportes2.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\DataSetx\dsReportPRD.xsc">
       <DependentUpon>dsReportPRD.xsd</DependentUpon>
@@ -3550,6 +4827,50 @@
     <None Include="MigracionACS\DataSetx\PRB_DATA.xss">
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\DataSetx\PruebaXMLxsd.xsc">
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\PruebaXMLxsd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PruebaXMLxsd1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\DataSetx\PruebaXMLxsd.xss">
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\dSRPT.xsc">
+      <DependentUpon>dSRPT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\dSRPT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSRPT1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Finanzas\dSRPT.xss">
+      <DependentUpon>dSRPT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.xsc">
+      <DependentUpon>drReportesODOO_RRHH.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>drReportesODOO_RRHH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.xss">
+      <DependentUpon>drReportesODOO_RRHH.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\Reports\datarpt.xsc">
+      <DependentUpon>datarpt.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\Reports\datarpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datarpt1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Finanzas\Reports\datarpt.xss">
+      <DependentUpon>datarpt.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\Forecast\dsForecast_.xsc">
       <DependentUpon>dsForecast_.xsd</DependentUpon>
     </None>
@@ -3560,6 +4881,39 @@
     </None>
     <None Include="MigracionACS\Forecast\dsForecast_.xss">
       <DependentUpon>dsForecast_.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Formulas\sdformula.xsc">
+      <DependentUpon>sdformula.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Formulas\sdformula.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sdformula1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Formulas\sdformula.xss">
+      <DependentUpon>sdformula.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\IT\DsIT.xsc">
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\IT\DsIT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsIT1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\IT\DsIT.xss">
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\IT\dsSolicitudes.xsc">
+      <DependentUpon>dsSolicitudes.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\IT\dsSolicitudes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSolicitudes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\IT\dsSolicitudes.xss">
+      <DependentUpon>dsSolicitudes.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\OIL\dsAceites.xsc">
       <DependentUpon>dsAceites.xsd</DependentUpon>
@@ -3737,6 +5091,17 @@
     <None Include="MigracionACS\Produccion\ForecastPRD\dsFCT_PRD.xss">
       <DependentUpon>dsFCT_PRD.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.xsc">
+      <DependentUpon>dsMedicionElectrica.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMedicionElectrica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.xss">
+      <DependentUpon>dsMedicionElectrica.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia.xsc">
       <DependentUpon>dsMolinosEficiencia.xsd</DependentUpon>
     </None>
@@ -3758,6 +5123,17 @@
     </None>
     <None Include="MigracionACS\Produccion\PlanProductionIntegrated\dsPlanPRD.xss">
       <DependentUpon>dsPlanPRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xsc">
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMedicado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xss">
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.xsc">
       <DependentUpon>dsTemperatura.xsd</DependentUpon>
@@ -3847,6 +5223,81 @@
     <None Include="MigracionACS\RRHH\Reportes\dsReportesRRHH.xss">
       <DependentUpon>dsReportesRRHH.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xsc">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xsd" />
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xss">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.xsc">
+      <DependentUpon>dsReportesVacaciones.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesVacaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.xss">
+      <DependentUpon>dsReportesVacaciones.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\SAR\dS_SAR.xsc">
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\SAR\dS_SAR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dS_SAR1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\SAR\dS_SAR.xss">
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\Admin\dsAdminT.xsc">
+      <DependentUpon>dsAdminT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\Admin\dsAdminT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAdminT.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Tickets\Admin\dsAdminT.xss">
+      <DependentUpon>dsAdminT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\EndUser\dsTickets.xsc">
+      <DependentUpon>dsTickets.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\EndUser\dsTickets.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTickets.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Tickets\EndUser\dsTickets.xss">
+      <DependentUpon>dsTickets.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.Designer.cs.bak" />
+    <None Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.Designer.cs.bak" />
+    <None Include="MigracionACS\Ttracer\dSTtracer.xsc">
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ttracer\dSTtracer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSTtracer1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Ttracer\dSTtracer.xss">
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace.xsc">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesTtrace1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace.xss">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -3858,9 +5309,42 @@
     <None Include="Nir\dsNir.xss">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
+    <None Include="Nir\dsNIR_PRD.xsc">
+      <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
+    </None>
+    <None Include="Nir\dsNIR_PRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNIR_PRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Nir\dsNIR_PRD.xss">
+      <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Produccion\CierreLote\dsCierreLotesPT.xsc">
+      <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\CierreLote\dsCierreLotesPT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCierreLotesPT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\CierreLote\dsCierreLotesPT.xss">
+      <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xsc">
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMaterialEmpaque.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xss">
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
-    <None Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsDevoluciones.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3890,11 +5374,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsWizard.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmagregarloteCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmagregarloteCopy.Designer.cs">
+      <DependentUpon>frmagregarloteCopy.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmCambioIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RecepcionMP\frmCambioIngreso.Designer.cs">
       <DependentUpon>frmCambioIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmDevolucionMicros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmDevolucionMicros.Designer.cs">
+      <DependentUpon>frmDevolucionMicros.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmeditarLote.cs">
       <SubType>Form</SubType>
@@ -3980,6 +5476,12 @@
     <Compile Include="RecepcionMP\frmGestionIngresosTarimas.Designer.cs">
       <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmIngresoAdjuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmIngresoAdjuntos.Designer.cs">
+      <DependentUpon>frmIngresoAdjuntos.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmIngresoGranelAlosy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4027,6 +5529,12 @@
     </Compile>
     <Compile Include="RecepcionMP\frmMP_Granel_Selec_Lote.Designer.cs">
       <DependentUpon>frmMP_Granel_Selec_Lote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmObservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmObservacion.Designer.cs">
+      <DependentUpon>frmObservacion.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmRecepcionMP.cs">
       <SubType>Form</SubType>
@@ -4124,6 +5632,12 @@
     <Compile Include="RecepcionMP\frm_detalle_granel.Designer.cs">
       <DependentUpon>frm_detalle_granel.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frm_detalle_liquidos_tarima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frm_detalle_liquidos_tarima.Designer.cs">
+      <DependentUpon>frm_detalle_liquidos_tarima.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frm_edit_data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4184,6 +5698,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsReportesRecuentosINV.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmAddLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmAddLote.Designer.cs">
+      <DependentUpon>frmAddLote.cs</DependentUpon>
     </Compile>
     <Compile Include="RecuentoInventario\frmAjusteINV_PorTarimas.cs">
       <SubType>Form</SubType>
@@ -4259,6 +5779,12 @@
     </Compile>
     <Compile Include="Reportes\frmprint_ tarimas.Designer.cs">
       <DependentUpon>frmprint_ tarimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmPT_Despachado_Kardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmPT_Despachado_Kardex.Designer.cs">
+      <DependentUpon>frmPT_Despachado_Kardex.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmreport.cs">
       <SubType>Form</SubType>
@@ -4518,6 +6044,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRecepcionMP_AjusteLote.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsGranelLoteactivo.cs">
       <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </Compile>
@@ -4542,11 +6073,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReq_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\EntregaMP\frmShowTarimasEnBascula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\EntregaMP\frmShowTarimasEnBascula.Designer.cs">
+      <DependentUpon>frmShowTarimasEnBascula.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmAjusteLotes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TransaccionesMP\frmAjusteLotes.Designer.cs">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLoteWithAutorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLoteWithAutorization.Designer.cs">
+      <DependentUpon>frmAsjuteInventarioPorLoteWithAutorization.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLote.cs">
       <SubType>Form</SubType>
@@ -4566,11 +6115,23 @@
     <Compile Include="TransaccionesMP\frmDevoluciones.Designer.cs">
       <DependentUpon>frmDevoluciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmDevolucionMacroOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmDevolucionMacroOP.Designer.cs">
+      <DependentUpon>frmDevolucionMacroOP.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmEntradaPT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TransaccionesMP\frmEntradaPT.Designer.cs">
       <DependentUpon>frmEntradaPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaBines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaBines.Designer.cs">
+      <DependentUpon>frmEntregaBines.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmEntregaDeComponentesReq.cs">
       <SubType>Form</SubType>
@@ -4632,6 +6193,12 @@
     <Compile Include="TransaccionesMP\frmLotePorMP.Designer.cs">
       <DependentUpon>frmLotePorMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmLotes_Existencia_Granel_Liquidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmLotes_Existencia_Granel_Liquidos.Designer.cs">
+      <DependentUpon>frmLotes_Existencia_Granel_Liquidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmMontaCargaTarimaResumen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4680,6 +6247,18 @@
     <Compile Include="TransaccionesMP\frmRequisiciones.Designer.cs">
       <DependentUpon>frmRequisiciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmResumenEntregaBines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmResumenEntregaBines.Designer.cs">
+      <DependentUpon>frmResumenEntregaBines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmResumenToDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmResumenToDevolucion.Designer.cs">
+      <DependentUpon>frmResumenToDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmResumenToEntregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4692,11 +6271,29 @@
     <Compile Include="TransaccionesMP\frmSeleccionLote.Designer.cs">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmSeleccionTarimaMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmSeleccionTarimaMP.Designer.cs">
+      <DependentUpon>frmSeleccionTarimaMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmTarimaManual.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TransaccionesMP\frmTarimaManual.Designer.cs">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexLotesExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexLotesExistencia.Designer.cs">
+      <DependentUpon>frmTrasladoKardexLotesExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexMP.Designer.cs">
+      <DependentUpon>frmTrasladoKardexMP.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmUbicacionLotes.cs">
       <SubType>Form</SubType>
@@ -4716,11 +6313,57 @@
     <Compile Include="TransaccionesMP\frmviewrequisas.Designer.cs">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisa_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisa_detalle.Designer.cs">
+      <DependentUpon>frmviewrequisa_detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmWizardEntregaBinesRequisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmWizardEntregaBinesRequisa.Designer.cs">
+      <DependentUpon>frmWizardEntregaBinesRequisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmWizardSelectGranel_Liqu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmWizardSelectGranel_Liqu.Designer.cs">
+      <DependentUpon>frmWizardSelectGranel_Liqu.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.Designer.cs">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Gestion_Granel\dsGestionGranel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGestionGranel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Gestion_Granel\frmAddLoteMP_GranelGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Gestion_Granel\frmAddLoteMP_GranelGestion.Designer.cs">
+      <DependentUpon>frmAddLoteMP_GranelGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Gestion_Granel\frmGestionLoteGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Gestion_Granel\frmGestionLoteGranel.Designer.cs">
+      <DependentUpon>frmGestionLoteGranel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Granel_Planta_Consumo\dsGranelConsumoPlanta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGranelConsumoPlanta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Granel_Planta_Consumo\frmLoteActivoGranel_MP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Granel_Planta_Consumo\frmLoteActivoGranel_MP.Designer.cs">
+      <DependentUpon>frmLoteActivoGranel_MP.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.cs">
       <SubType>Form</SubType>
@@ -4733,6 +6376,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\Reportes\frmReporteKardexGeneralVencimiento.Designer.cs">
       <DependentUpon>frmReporteKardexGeneralVencimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Reportes\frmVerAjustesBorradorAproved.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Reportes\frmVerAjustesBorradorAproved.Designer.cs">
+      <DependentUpon>frmVerAjustesBorradorAproved.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -4760,14 +6409,17 @@
       <DependentUpon>dsProductos.xsd</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\dsProductos.Designer.cs">
+      <DependentUpon>dsProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\dsProductosPRD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsProductos.xsd</DependentUpon>
+      <DependentUpon>dsProductosPRD.xsd</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TransaccionesPT\dsPT.Designer.cs">
+    <Compile Include="TransaccionesPT\dsPT1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPT.xsd</DependentUpon>
@@ -4946,16 +6598,31 @@
     <Compile Include="TransaccionesPT\MantiniemintoCliente.Designer.cs">
       <DependentUpon>MantiniemintoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmProduc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmProduc.Designer.cs">
+      <DependentUpon>frmProduc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\Despachos\frmDetalleDespacho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Trazabilidad\Despachos\frmDetalleDespacho.Designer.cs">
       <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\dsMantoTrazabilidad.cs">
+      <DependentUpon>dsMantoTrazabilidad.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\dsMantoTrazabilidad.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMantoTrazabilidad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\frmAddMP_PlantaFabricante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmAddMP_PlantaFabricante.Designer.cs">
+      <DependentUpon>frmAddMP_PlantaFabricante.cs</DependentUpon>
     </Compile>
     <Compile Include="Trazabilidad\frmAdjuntar.cs">
       <SubType>Form</SubType>
@@ -4992,6 +6659,12 @@
     </Compile>
     <Compile Include="Trazabilidad\frmDetalleIngresoTRZ.Designer.cs">
       <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\frmDetallePorBatchRutasTRZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmDetallePorBatchRutasTRZ.Designer.cs">
+      <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
     </Compile>
     <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
       <SubType>Form</SubType>
@@ -5100,8 +6773,27 @@
     <EmbeddedResource Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.resx">
       <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\Notificaciones\frmHomeNotificaciones.resx">
+      <DependentUpon>frmHomeNotificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\frmReporteAsistencia.resx">
       <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\frmHomePlanillaCatorceavo.resx">
+      <DependentUpon>frmHomePlanillaCatorceavo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\frmHomePrintVoucherPlanilla.resx">
+      <DependentUpon>frmHomePrintVoucherPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\rptPlanillaHE.resx">
+      <DependentUpon>rptPlanillaHE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\rptPlanilla.resx">
+      <DependentUpon>rptPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\rptVoucher14vo.resx">
+      <DependentUpon>rptVoucher14vo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\AjusteInvAlmaExterno\frmAddAjusteAlmacenExterno.resx">
       <DependentUpon>frmAddAjusteAlmacenExterno.cs</DependentUpon>
@@ -5147,6 +6839,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.resx">
       <DependentUpon>xfrmAlmacenesExternosDefinirLotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.resx">
       <DependentUpon>xfrmAlmacenesExternos_Main.cs</DependentUpon>
@@ -5186,6 +6879,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Autorizaciones\frmSolicitudAutorizacion.resx">
       <DependentUpon>frmSolicitudAutorizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CertificadoCalidad\frmCertificadoCalidadPTMain.resx">
+      <DependentUpon>frmCertificadoCalidadPTMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CertificadoCalidad\frmCrearCertificado.resx">
+      <DependentUpon>frmCrearCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CertificadoCalidad\rptCertificadoCalidad.resx">
+      <DependentUpon>rptCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\ConfiguracionMP.resx">
       <DependentUpon>ConfiguracionMP.cs</DependentUpon>
@@ -5307,6 +7009,9 @@
     <EmbeddedResource Include="Calidad\frmSeguimientoDespachos.resx">
       <DependentUpon>frmSeguimientoDespachos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmSelecFechasAlimentacion.resx">
+      <DependentUpon>frmSelecFechasAlimentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmTexturaMantenimiento.resx">
       <DependentUpon>frmTexturaMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -5343,8 +7048,14 @@
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmcausasRetencionCompletev2.resx">
       <DependentUpon>frmcausasRetencionCompletev2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\GestionLotesMP\frmLotesFinalizados.resx">
+      <DependentUpon>frmLotesFinalizados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\InspeccionIngreso\frmIngresoTipoMarino.resx">
+      <DependentUpon>frmIngresoTipoMarino.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.resx">
       <DependentUpon>frmInspeccionCalidadPorIngresoLoteMP.cs</DependentUpon>
@@ -5357,6 +7068,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\LoteConfConsumo\frmSearchMP.resx">
       <DependentUpon>frmSearchMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\LotesFinalizados.resx">
+      <DependentUpon>LotesFinalizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\frmAdjuntos_PT.resx">
+      <DependentUpon>frmAdjuntos_PT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Parametros\frmConfiguracionPT.resx">
       <DependentUpon>frmConfiguracionPT.cs</DependentUpon>
@@ -5375,6 +7092,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Parametros\FrmRegistroMuestreo.resx">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\FrmSeleccionarRegistroProduccion.resx">
+      <DependentUpon>FrmSeleccionarRegistroProduccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Revision_Sanidad\DialogBoxRevision.resx">
       <DependentUpon>DialogBoxRevision.cs</DependentUpon>
@@ -5400,6 +7120,9 @@
     <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmWizardRevisionanidadFirstStep.resx">
       <DependentUpon>xfrmWizardRevisionanidadFirstStep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\rptReporteAlimentacionTarimasMP.resx">
+      <DependentUpon>rptReporteAlimentacionTarimasMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\rpt_certificado_calidad.resx">
       <DependentUpon>rpt_certificado_calidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -5408,6 +7131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidadCRUD.resx">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmReporteLotesAConsumir.resx">
+      <DependentUpon>xfrmReporteLotesAConsumir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmTrazabilidadClientesLotes.resx">
       <DependentUpon>xfrmTrazabilidadClientesLotes.cs</DependentUpon>
@@ -5420,6 +7146,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xrpCertificadoCalidad.resx">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmCopiarDeSolicitud.resx">
+      <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmGestionAprobaciones.resx">
+      <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmOrdenesCompraMain.resx">
+      <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmSearchOrdenC.resx">
+      <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmCrearSolicitudAutorizacionLotePT.resx">
+      <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
@@ -5453,6 +7194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmSolicitudesDespachoLote.resx">
+      <DependentUpon>frmSolicitudesDespachoLote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_despachos.resx">
       <DependentUpon>frm_despachos.cs</DependentUpon>
@@ -5518,6 +7262,18 @@
     <EmbeddedResource Include="Despachos\rpt_despacho.resx">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\frmExoneracionAQ.resx">
+      <DependentUpon>frmExoneracionAQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\frmExoneracionAQ_OP.resx">
+      <DependentUpon>frmExoneracionAQ_OP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\frmExoneracionDetalle.resx">
+      <DependentUpon>frmExoneracionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\frmExoneracionOP.resx">
+      <DependentUpon>frmExoneracionOP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -5548,6 +7304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\xfrmTanqueCRUD.resx">
       <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmTrasladoTanqueExt.resx">
+      <DependentUpon>xfrmTrasladoTanqueExt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\xfrm_select_camiones.resx">
       <DependentUpon>xfrm_select_camiones.cs</DependentUpon>
@@ -5584,6 +7343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmValidacionTarimas.resx">
+      <DependentUpon>frmValidacionTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frm_nuevaSemanaPlan.resx">
       <DependentUpon>frm_nuevaSemanaPlan.cs</DependentUpon>
@@ -5699,6 +7461,9 @@
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.resx">
       <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeNucleoV2.resx">
+      <DependentUpon>xfrmPesajeNucleoV2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.resx">
       <DependentUpon>xfrmPesajeIndividualBatchV3.cs</DependentUpon>
     </EmbeddedResource>
@@ -5714,6 +7479,9 @@
     <EmbeddedResource Include="MicroIngredientes\xfrmConfPlanBatch.resx">
       <DependentUpon>xfrmConfPlanBatch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeNucleo.resx">
+      <DependentUpon>xfrmPesajeNucleo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmResumenMPIndividual.resx">
       <DependentUpon>xfrmResumenMPIndividual.cs</DependentUpon>
     </EmbeddedResource>
@@ -5723,17 +7491,56 @@
     <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\ADVD\DeveloperTools\Select_Items_v3.resx">
+      <DependentUpon>Select_Items_v3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\AquaForecast\AFC_ConsumoReal.resx">
       <DependentUpon>AFC_ConsumoReal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\AquaForecast\AFC_ProyeccionVentas.resx">
       <DependentUpon>AFC_ProyeccionVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\CargarXML.resx">
+      <DependentUpon>CargarXML.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Controles\xCheckBox.resx">
       <DependentUpon>xCheckBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Controles\xxSeleccionLookupEdit.resx">
       <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Inventarios\frmReportManager.resx">
+      <DependentUpon>frmReportManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Inventarios\frmSolicitudesAjustesInventario.resx">
+      <DependentUpon>frmSolicitudesAjustesInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\ODOO\frmReporteBancosODOO.resx">
+      <DependentUpon>frmReporteBancosODOO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.resx">
+      <DependentUpon>frmConsumoConsolaReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaTeorico.resx">
+      <DependentUpon>frmConsumoConsolaTeorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_Conta_Varios.resx">
+      <DependentUpon>RPT_Conta_Varios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_FML_FL_FF_CostVar_MasterDetailReport.resx">
+      <DependentUpon>RPT_FML_FL_FF_CostVar_MasterDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_FML_NC_MasterDetailReport.resx">
+      <DependentUpon>RPT_FML_NC_MasterDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_seleccion.resx">
+      <DependentUpon>RPT_seleccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_Uso_Fml_Costo.resx">
+      <DependentUpon>RPT_Uso_Fml_Costo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\RPT_Teorico_Costo.resx">
+      <DependentUpon>RPT_Teorico_Costo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Forecast\FCT_EDITPRO.resx">
       <DependentUpon>FCT_EDITPRO.cs</DependentUpon>
@@ -5798,14 +7605,32 @@
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Comment_Add.resx">
       <DependentUpon>FML_Comment_Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Costeo_Formulas.resx">
+      <DependentUpon>FML_Costeo_Formulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Edit.resx">
+      <DependentUpon>FML_FF_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Main_Panel.resx">
+      <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Select.resx">
       <DependentUpon>FML_FF_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Fomula_Format_Masive_Import.resx">
+      <DependentUpon>FML_Fomula_Format_Masive_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Format_Import_Custom_Error.resx">
+      <DependentUpon>FML_Format_Import_Custom_Error.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Formulas.resx">
       <DependentUpon>FML_Formulas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Formulas_v2.resx">
       <DependentUpon>FML_Formulas_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Formula_Format_Import_Interface.resx">
+      <DependentUpon>FML_Formula_Format_Import_Interface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Material_Selector.resx">
       <DependentUpon>FML_Material_Selector.cs</DependentUpon>
@@ -5825,8 +7650,26 @@
     <EmbeddedResource Include="MigracionACS\Formulas\FML_NewFormula_view_only.resx">
       <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\Reports\FML_FF_Main_Report.resx">
+      <DependentUpon>FML_FF_Main_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\HeadXmlLook.resx">
+      <DependentUpon>HeadXmlLook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Item_Selecction.resx">
       <DependentUpon>Item_Selecction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\frmConfAccesos.resx">
+      <DependentUpon>frmConfAccesos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\frmEditarAcceso.resx">
+      <DependentUpon>frmEditarAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\frmNuevoAcceso.resx">
+      <DependentUpon>frmNuevoAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\SolcitudIT.resx">
+      <DependentUpon>SolcitudIT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.resx">
       <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
@@ -5866,6 +7709,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.resx">
       <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmSelectRequisa.resx">
+      <DependentUpon>frmSelectRequisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.resx">
       <DependentUpon>frmSetRM_Tantques_Ext.cs</DependentUpon>
@@ -5945,6 +7791,9 @@
     <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmReprocesoDashboard.resx">
       <DependentUpon>frmReprocesoDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmReprocesoDetalleRuta4.resx">
+      <DependentUpon>frmReprocesoDetalleRuta4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmResumenBrom.resx">
       <DependentUpon>frmResumenBrom.cs</DependentUpon>
     </EmbeddedResource>
@@ -5975,6 +7824,9 @@
     <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frm_seleccion_tarimas.resx">
       <DependentUpon>frm_seleccion_tarimas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\PRB_LotesLigados.resx">
+      <DependentUpon>PRB_LotesLigados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v3.resx">
       <DependentUpon>PRB_Lote_Pick_v3.cs</DependentUpon>
     </EmbeddedResource>
@@ -5992,6 +7844,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Llenado_Zarandas.resx">
       <DependentUpon>Llenado_Zarandas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\MedicionElectrica\frmMedicionElectricaKWH.resx">
+      <DependentUpon>frmMedicionElectricaKWH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Molinos\xfrmEficienciaMolinos.resx">
       <DependentUpon>xfrmEficienciaMolinos.cs</DependentUpon>
@@ -6031,6 +7886,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.resx">
       <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.resx">
+      <DependentUpon>PP_Nuevo_Plan_full_PedidoWithMedicado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.resx">
       <DependentUpon>PP_Nuevo_Plan_full_Pedido.cs</DependentUpon>
@@ -6080,6 +7938,9 @@
     <EmbeddedResource Include="MigracionACS\Produccion\PRB_Report_v2.resx">
       <DependentUpon>PRB_Report_v2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.resx">
+      <DependentUpon>frmAddItemForMedicado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.resx">
       <DependentUpon>Prod_Ordenes_Produccion.cs</DependentUpon>
     </EmbeddedResource>
@@ -6124,6 +7985,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.resx">
       <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\Silos\frmSilosReporteHumedades.resx">
+      <DependentUpon>frmSilosReporteHumedades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturas.resx">
       <DependentUpon>rptTemperaturas.cs</DependentUpon>
@@ -6170,6 +8034,9 @@
     <EmbeddedResource Include="MigracionACS\PT\EditarProductos.yo.resx">
       <DependentUpon>EditarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\PT\frmCRUDProductoTerminado.resx">
+      <DependentUpon>frmCRUDProductoTerminado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\PT\frmNewProductoUniversal.resx">
       <DependentUpon>frmNewProductoUniversal.cs</DependentUpon>
     </EmbeddedResource>
@@ -6185,6 +8052,9 @@
     <EmbeddedResource Include="MigracionACS\PT\PT_Productos.resx">
       <DependentUpon>PT_Productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.resx">
+      <DependentUpon>frm_Reporteador_Validate_byUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.resx">
       <DependentUpon>RPT_FB_Manual_RM.cs</DependentUpon>
     </EmbeddedResource>
@@ -6196,6 +8066,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.resx">
       <DependentUpon>RPT_PRD_Formula_Local.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Encuesta\frmCRUD_EncuestaH.resx">
+      <DependentUpon>frmCRUD_EncuestaH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\Encuesta\frmGestionAccesosEncuesta.resx">
       <DependentUpon>frmGestionAccesosEncuesta.cs</DependentUpon>
@@ -6266,14 +8139,212 @@
     <EmbeddedResource Include="MigracionACS\RRHH\RelojFace\frm_Operaciones_Marcas.resx">
       <DependentUpon>frm_Operaciones_Marcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmDetalleDesechos.resx">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenNominas.resx">
       <DependentUpon>frmResumenNominas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.resx">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Vacaciones\frmVacacionesDetalles.resx">
+      <DependentUpon>frmVacacionesDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.resx">
+      <DependentUpon>frmVacacionesHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\frmPickArticulo.resx">
+      <DependentUpon>frmPickArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\frm_select_pv.cd.resx">
+      <DependentUpon>frm_select_pv.cd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_capitulos.resx">
+      <DependentUpon>SAR_capitulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_DASHBOARD.resx">
+      <DependentUpon>SAR_DASHBOARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Details.resx">
+      <DependentUpon>SAR_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_detalle.resx">
+      <DependentUpon>SAR_detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_exoneracionNueva.resx">
+      <DependentUpon>SAR_exoneracionNueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Main.resx">
+      <DependentUpon>SAR_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_mantimientoXRubro.resx">
+      <DependentUpon>SAR_mantimientoXRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Orden_detalle.resx">
+      <DependentUpon>SAR_Orden_detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_orderSelector.resx">
+      <DependentUpon>SAR_orderSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Saldo.resx">
+      <DependentUpon>SAR_Saldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Selection.resx">
+      <DependentUpon>SAR_Selection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Solicitudes\frmAllsolicitudesUser.resx">
+      <DependentUpon>frmAllsolicitudesUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\IT_Solicitudes.resx">
+      <DependentUpon>IT_Solicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\frmAdminTicketscs.resx">
+      <DependentUpon>frmAdminTicketscs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\frmAdminTicketsMantenimiento.resx">
+      <DependentUpon>frmAdminTicketsMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\frmViewInfoTicket.resx">
+      <DependentUpon>frmViewInfoTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\xfrmChangePriority.resx">
+      <DependentUpon>xfrmChangePriority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\xfrmVerAdjuntosAdmin.resx">
+      <DependentUpon>xfrmVerAdjuntosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmCopiarCorreo.resx">
+      <DependentUpon>frmCopiarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmMainUser.resx">
+      <DependentUpon>frmMainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmNotificaciones.resx">
+      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTickets.resx">
+      <DependentUpon>frmTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento.resx">
+      <DependentUpon>frmTicketSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimientoCRUD.resx">
+      <DependentUpon>frmTicketSeguimientoCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI.resx">
+      <DependentUpon>frmTicketSeguimiento_TI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI_CRUD.resx">
+      <DependentUpon>frmTicketSeguimiento_TI_CRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketsNew.resx">
+      <DependentUpon>frmTicketsNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketsNew_IT.resx">
+      <DependentUpon>frmTicketsNew_IT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketsNew_Mantenimiento.resx">
+      <DependentUpon>frmTicketsNew_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmVerAdjuntos.resx">
+      <DependentUpon>frmVerAdjuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.resx">
+      <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.resx">
+      <DependentUpon>PT_Producto_Borrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.resx">
+      <DependentUpon>xfrmChangeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\xfrmChangeUserAssigned.resx">
+      <DependentUpon>xfrmChangeUserAssigned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.resx">
+      <DependentUpon>rpt_Ticket_Manto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.resx">
+      <DependentUpon>rpt_Ticket_TI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\Reportes\frmDetalleDesechos.resx">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\Reportes\TTR_Arribo_Doc.resx">
+      <DependentUpon>TTR_Arribo_Doc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_addetails.resx">
+      <DependentUpon>TT_addetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_addpt.resx">
+      <DependentUpon>TT_addpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_addtara.resx">
+      <DependentUpon>TT_addtara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Arribo.resx">
+      <DependentUpon>TT_Arribo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Arribo_Asociar.resx">
+      <DependentUpon>TT_Arribo_Asociar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_CargoPlan.resx">
+      <DependentUpon>TT_CargoPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_conductor.resx">
+      <DependentUpon>TT_conductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_LoadDship.resx">
+      <DependentUpon>TT_LoadDship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_LoadOrder.resx">
+      <DependentUpon>TT_LoadOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Load_Vehiculo.resx">
+      <DependentUpon>TT_Load_Vehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_mship.resx">
+      <DependentUpon>TT_mship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_newPlan.resx">
+      <DependentUpon>TT_newPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Nuevo.resx">
+      <DependentUpon>TT_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_NuevoShip.resx">
+      <DependentUpon>TT_NuevoShip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_reporte_bascula.resx">
+      <DependentUpon>TT_reporte_bascula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_SeleccionarPlan.resx">
+      <DependentUpon>TT_SeleccionarPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Seleccionempre.resx">
+      <DependentUpon>TT_Seleccionempre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_shipconfig.resx">
+      <DependentUpon>TT_shipconfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_shipmant.resx">
+      <DependentUpon>TT_shipmant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Shipselect.resx">
+      <DependentUpon>TT_Shipselect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_showdetalleship.resx">
+      <DependentUpon>TT_showdetalleship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_SocioNegocio.resx">
+      <DependentUpon>TT_SocioNegocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\ViewLogistica\frmCamionesEnPredio.resx">
+      <DependentUpon>frmCamionesEnPredio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
@@ -6305,11 +8376,23 @@
     <EmbeddedResource Include="Produccion\BannerTV\frmBannerMainTV_PRD.resx">
       <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\CierreLote\frmCierreLoteMain.resx">
+      <DependentUpon>frmCierreLoteMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\CierreLote\frmNewCierreLotePT.resx">
+      <DependentUpon>frmNewCierreLotePT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\ctl_keypadNumber.resx">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAddTarimaPT.resx">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAlimentacionBasculasMacros.resx">
+      <DependentUpon>frmAlimentacionBasculasMacros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAlimentacionMacros.resx">
+      <DependentUpon>frmAlimentacionMacros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
       <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
@@ -6320,14 +8403,32 @@
     <EmbeddedResource Include="Produccion\frmAlimentacionPanel.resx">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmConsumoRealPRD.resx">
+      <DependentUpon>frmConsumoRealPRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmCrearRequisa.resx">
+      <DependentUpon>frmCrearRequisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmDetalleEntregadoRequisa.resx">
+      <DependentUpon>frmDetalleEntregadoRequisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmGenerarTarimas.resx">
       <DependentUpon>frmGenerarTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmPrintTarimasRemanente.resx">
+      <DependentUpon>frmPrintTarimasRemanente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmPrioridadRequisas.resx">
+      <DependentUpon>frmPrioridadRequisas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmRequisasManuales.resx">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmRequisasMaterialEmpaque.resx">
+      <DependentUpon>frmRequisasMaterialEmpaque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmrptMpEntregadaaProduccion.resx">
       <DependentUpon>frmrptMpEntregadaaProduccion.cs</DependentUpon>
@@ -6341,6 +8442,9 @@
     <EmbeddedResource Include="Produccion\frmTolva.resx">
       <DependentUpon>frmTolva.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frm_MateriaPrimaEnBodega.resx">
+      <DependentUpon>frm_MateriaPrimaEnBodega.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frm_requisaManual.resx">
       <DependentUpon>frm_requisaManual.cs</DependentUpon>
     </EmbeddedResource>
@@ -6353,6 +8457,13 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\xfrmMP_Por_BIN.resx">
+      <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
+      <DependentUpon>xtraReportRequisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -6363,8 +8474,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecepcionMP\frmagregarloteCopy.resx">
+      <DependentUpon>frmagregarloteCopy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmCambioIngreso.resx">
       <DependentUpon>frmCambioIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmDevolucionMicros.resx">
+      <DependentUpon>frmDevolucionMicros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmeditarLote.resx">
       <DependentUpon>frmeditarLote.cs</DependentUpon>
@@ -6408,6 +8525,9 @@
     <EmbeddedResource Include="RecepcionMP\frmGestionIngresosTarimas.resx">
       <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmIngresoAdjuntos.resx">
+      <DependentUpon>frmIngresoAdjuntos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmIngresoGranelAlosy.resx">
       <DependentUpon>frmIngresoGranelAlosy.cs</DependentUpon>
     </EmbeddedResource>
@@ -6431,6 +8551,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmMP_Granel_Selec_Lote.resx">
       <DependentUpon>frmMP_Granel_Selec_Lote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmObservacion.resx">
+      <DependentUpon>frmObservacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
@@ -6480,6 +8603,9 @@
     <EmbeddedResource Include="RecepcionMP\frm_detalle_granel.resx">
       <DependentUpon>frm_detalle_granel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frm_detalle_liquidos_tarima.resx">
+      <DependentUpon>frm_detalle_liquidos_tarima.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frm_edit_data.resx">
       <DependentUpon>frm_edit_data.cs</DependentUpon>
     </EmbeddedResource>
@@ -6503,6 +8629,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\rptReporteIngresoTarima.resx">
       <DependentUpon>rptReporteIngresoTarima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecuentoInventario\frmAddLote.resx">
+      <DependentUpon>frmAddLote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecuentoInventario\frmAjusteINV_PorTarimas.resx">
       <DependentUpon>frmAjusteINV_PorTarimas.cs</DependentUpon>
@@ -6530,6 +8659,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmprint_ tarimas.resx">
       <DependentUpon>frmprint_ tarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmPT_Despachado_Kardex.resx">
+      <DependentUpon>frmPT_Despachado_Kardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreport.resx">
       <DependentUpon>frmreport.cs</DependentUpon>
@@ -6652,8 +8784,17 @@
     <EmbeddedResource Include="Tools\xfrmPopup.resx">
       <DependentUpon>xfrmPopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.resx">
+      <DependentUpon>frmEntregaTarimaReq_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\EntregaMP\frmShowTarimasEnBascula.resx">
+      <DependentUpon>frmShowTarimasEnBascula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmAjusteLotes.resx">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmAsjuteInventarioPorLoteWithAutorization.resx">
+      <DependentUpon>frmAsjuteInventarioPorLoteWithAutorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmAsjuteInventarioPorLote.resx">
       <DependentUpon>frmAsjuteInventarioPorLote.cs</DependentUpon>
@@ -6664,8 +8805,14 @@
     <EmbeddedResource Include="TransaccionesMP\frmDevoluciones.resx">
       <DependentUpon>frmDevoluciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmDevolucionMacroOP.resx">
+      <DependentUpon>frmDevolucionMacroOP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntradaPT.resx">
       <DependentUpon>frmEntradaPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaBines.resx">
+      <DependentUpon>frmEntregaBines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntregaDeComponentesReq.resx">
       <DependentUpon>frmEntregaDeComponentesReq.cs</DependentUpon>
@@ -6697,6 +8844,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmLotePorMP.resx">
       <DependentUpon>frmLotePorMP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmLotes_Existencia_Granel_Liquidos.resx">
+      <DependentUpon>frmLotes_Existencia_Granel_Liquidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmMontaCargaTarimaResumen.resx">
       <DependentUpon>frmMontaCargaTarimaResumen.cs</DependentUpon>
     </EmbeddedResource>
@@ -6721,14 +8871,29 @@
     <EmbeddedResource Include="TransaccionesMP\frmRequisiciones.resx">
       <DependentUpon>frmRequisiciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmResumenEntregaBines.resx">
+      <DependentUpon>frmResumenEntregaBines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmResumenToDevolucion.resx">
+      <DependentUpon>frmResumenToDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmResumenToEntregar.resx">
       <DependentUpon>frmResumenToEntregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmSeleccionLote.resx">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmSeleccionTarimaMP.resx">
+      <DependentUpon>frmSeleccionTarimaMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmTarimaManual.resx">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmTrasladoKardexLotesExistencia.resx">
+      <DependentUpon>frmTrasladoKardexLotesExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmTrasladoKardexMP.resx">
+      <DependentUpon>frmTrasladoKardexMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmUbicacionLotes.resx">
       <DependentUpon>frmUbicacionLotes.cs</DependentUpon>
@@ -6739,14 +8904,32 @@
     <EmbeddedResource Include="TransaccionesMP\frmviewrequisas.resx">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmviewrequisa_detalle.resx">
+      <DependentUpon>frmviewrequisa_detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmWizardEntregaBinesRequisa.resx">
+      <DependentUpon>frmWizardEntregaBinesRequisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmWizardSelectGranel_Liqu.resx">
+      <DependentUpon>frmWizardSelectGranel_Liqu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frm_reporte_alimentacion.resx">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Gestion_Granel\frmAddLoteMP_GranelGestion.resx">
+      <DependentUpon>frmAddLoteMP_GranelGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Gestion_Granel\frmGestionLoteGranel.resx">
+      <DependentUpon>frmGestionLoteGranel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\Liquidos\frmBinesEnPRD.resx">
       <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\Reportes\frmReporteKardexGeneralVencimiento.resx">
       <DependentUpon>frmReporteKardexGeneralVencimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Reportes\frmVerAjustesBorradorAproved.resx">
+      <DependentUpon>frmVerAjustesBorradorAproved.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.resx">
       <DependentUpon>frmMP_WithSameLot.cs</DependentUpon>
@@ -6841,8 +9024,14 @@
     <EmbeddedResource Include="TransaccionesPT\MantiniemintoCliente.resx">
       <DependentUpon>MantiniemintoCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmProduc.resx">
+      <DependentUpon>frmProduc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\Despachos\frmDetalleDespacho.resx">
       <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmAddMP_PlantaFabricante.resx">
+      <DependentUpon>frmAddMP_PlantaFabricante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
@@ -6861,6 +9050,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmDetalleIngresoTRZ.resx">
       <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmDetallePorBatchRutasTRZ.resx">
+      <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
       <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>
@@ -7121,6 +9313,17 @@
     <None Include="TransaccionesMP\DataSet\dsLotesProxVencer.xss">
       <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>
     </None>
+    <None Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.xsc">
+      <DependentUpon>dsRecepcionMP_AjusteLote.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRecepcionMP_AjusteLote.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.xss">
+      <DependentUpon>dsRecepcionMP_AjusteLote.xsd</DependentUpon>
+    </None>
     <None Include="TransaccionesMP\dsGranelLoteactivo.xsc">
       <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </None>
@@ -7154,6 +9357,28 @@
     <None Include="TransaccionesMP\dsTransaccionesMP.xss">
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </None>
+    <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xsc">
+      <DependentUpon>dsGestionGranel.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGestionGranel1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xss">
+      <DependentUpon>dsGestionGranel.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\Granel_Planta_Consumo\dsGranelConsumoPlanta.xsc">
+      <DependentUpon>dsGranelConsumoPlanta.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\Granel_Planta_Consumo\dsGranelConsumoPlanta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGranelConsumoPlanta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\Granel_Planta_Consumo\dsGranelConsumoPlanta.xss">
+      <DependentUpon>dsGranelConsumoPlanta.xsd</DependentUpon>
+    </None>
     <None Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.xsc">
       <DependentUpon>dsMP_Lotes.xsd</DependentUpon>
     </None>
@@ -7179,13 +9404,20 @@
     <None Include="TransaccionesPT\dsProductos.xsc">
       <DependentUpon>dsProductos.xsd</DependentUpon>
     </None>
-    <None Include="TransaccionesPT\dsProductos.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsProductos.Designer.cs</LastGenOutput>
-    </None>
+    <None Include="TransaccionesPT\dsProductos.xsd" />
     <None Include="TransaccionesPT\dsProductos.xss">
       <DependentUpon>dsProductos.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductosPRD.xsc">
+      <DependentUpon>dsProductosPRD.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductosPRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProductosPRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesPT\dsProductosPRD.xss">
+      <DependentUpon>dsProductosPRD.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesPT\dsPT.xsc">
       <DependentUpon>dsPT.xsd</DependentUpon>
@@ -7240,6 +9472,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo1.ico" />
+    <None Include="Resources\xml_24x24.png" />
+    <None Include="Resources\_click_24X24.png" />
     <None Include="Resources\year_24x24.png" />
     <None Include="Resources\2264828.png" />
     <None Include="Resources\Accept-icon128px.png" />
@@ -7261,14 +9495,19 @@
     <None Include="Resources\Background.png" />
     <None Include="Resources\Background_test.png" />
     <None Include="Resources\bomba-de-gas_32X32.png" />
+    <None Include="Resources\ani_wait.gif" />
+    <None Include="Resources\bascula_x32.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
     <None Include="Resources\calendar_32x32.png" />
+    <None Include="Resources\calculo.png" />
     <Content Include="Resources\cancel.png" />
     <None Include="Resources\cancel_24x24.png" />
     <Content Include="Resources\cargo.png" />
     <None Include="Resources\CCT-2000C-SQ-800x800.jpg" />
+    <None Include="Resources\Certificado_32px.png" />
+    <None Include="Resources\certificado_24X24.png" />
     <Content Include="Resources\check-in.png" />
     <None Include="Resources\edit-table%281%29.png" />
     <None Include="Resources\Container-icon32px.png" />
@@ -7291,7 +9530,10 @@
     <None Include="Resources\ConsumoMP_24.png" />
     <None Include="Resources\commentv_32x32.png" />
     <None Include="Resources\commentn_32x32.png" />
+    <None Include="Resources\code_24.png" />
+    <None Include="Resources\code2_24.png" />
     <Content Include="Resources\devoluciones.png" />
+    <None Include="Resources\document_aproved_32px.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
@@ -7313,6 +9555,21 @@
     <None Include="Resources\inventory_32x32.png" />
     <None Include="Resources\graph_32X32.png" />
     <None Include="Resources\forecast1_24x24.png" />
+    <None Include="Resources\excel_48x48.png" />
+    <None Include="Resources\hacha_x24.png" />
+    <None Include="Resources\hc_checkLater_24.png" />
+    <None Include="Resources\hc_trash2_24.png" />
+    <None Include="Resources\hc_trash3_24.png" />
+    <None Include="Resources\formula_local_48.png" />
+    <None Include="Resources\Error-en-Windows.png" />
+    <None Include="Resources\hapag-4-icon48px.png" />
+    <None Include="Resources\formula_external_24.png" />
+    <None Include="Resources\formula_external_32.png" />
+    <None Include="Resources\formula_external_48.png" />
+    <None Include="Resources\formula_local_32.png" />
+    <None Include="Resources\formula_market_research.png" />
+    <None Include="Resources\inventory.png" />
+    <None Include="Resources\home-automation_24X24.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
@@ -7320,6 +9577,8 @@
     <None Include="Resources\Logo_x32.png" />
     <None Include="Resources\List-details-icon16px.png" />
     <None Include="Resources\label-icon32px.png" />
+    <None Include="Resources\LogoLimp_x32.png" />
+    <None Include="Resources\materia_prima x32.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />
@@ -7338,12 +9597,24 @@
     <None Include="Resources\Options_32x32.png" />
     <None Include="Resources\MRP_222x222.png" />
     <None Include="Resources\MRP_32x32.png" />
+    <None Include="Resources\oil_pipe-line-icon32px.png" />
+    <None Include="Resources\optionsRound_24.png" />
+    <None Include="Resources\optionsRound_32.png" />
+    <None Include="Resources\planning.png" />
+    <None Include="Resources\planning_32X32.png" />
+    <None Include="Resources\plan_icon48X48.png" />
+    <None Include="Resources\next_x16.png" />
+    <None Include="Resources\Oxygen-Icons.org.png" />
+    <None Include="Resources\pallet.png" />
+    <None Include="Resources\orden de compra.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
     <None Include="Resources\portapapeles32px.png" />
     <Content Include="Resources\production.png" />
     <None Include="Resources\Products_32x32.png" />
+    <None Include="Resources\prohibicion_16x16.png" />
+    <None Include="Resources\prohibicion_16x161.png" />
     <Content Include="Resources\raw-material.png" />
     <Content Include="Resources\raw-material1.png" />
     <None Include="Resources\seo-report24px.png" />
@@ -7356,6 +9627,12 @@
     <None Include="Resources\saveChanges_24x24.png" />
     <None Include="Resources\save_24x24.png" />
     <None Include="Resources\sack_black_32px.png" />
+    <None Include="Resources\refresh_16x16.png" />
+    <None Include="Resources\remove_24x24.png" />
+    <None Include="Resources\Sello de calidad.jpg" />
+    <None Include="Resources\Sello de calidad2.jpg" />
+    <None Include="Resources\Sello de calidad.png" />
+    <None Include="Resources\savia.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />
@@ -7372,6 +9649,8 @@
     <None Include="Resources\sigma_32X32.png" />
     <None Include="Resources\silo.png" />
     <None Include="Resources\tanque cono.jpg" />
+    <None Include="Resources\tank4.png" />
+    <None Include="Resources\tank5.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
@@ -7383,6 +9662,7 @@
     <None Include="Resources\Upload_24x24.png" />
     <None Include="Resources\Upload_32x32.png" />
     <None Include="Resources\up_24x24.png" />
+    <None Include="Resources\txt_24.png" />
     <Content Include="Resources\user.png" />
     <None Include="Resources\weighing-machine_32X32.png" />
     <None Include="Resources\web_apply_32px.png" />
