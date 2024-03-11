@@ -1367,6 +1367,7 @@
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\SeleccionLoteMPAuto.cs" />
     <Compile Include="Clases\SelectorFor.cs" />
+    <Compile Include="Clases\SolicitudesCompraSAP.cs" />
     <Compile Include="Clases\SolicitudIT.cs" />
     <Compile Include="Clases\Tanque.cs" />
     <Compile Include="Clases\Tarima.cs" />
@@ -1398,6 +1399,12 @@
     </Compile>
     <Compile Include="Compras\frmOrdenesCompraMain.Designer.cs">
       <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmSearchOrdenC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmSearchOrdenC.Designer.cs">
+      <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\dsTransaccionesDespacho.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -7135,6 +7142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmOrdenesCompraMain.resx">
       <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmSearchOrdenC.resx">
+      <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmCrearSolicitudAutorizacionLotePT.resx">
       <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>

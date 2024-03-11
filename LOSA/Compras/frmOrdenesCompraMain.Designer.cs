@@ -1134,6 +1134,7 @@ namespace LOSA.Compras
             this.btnShowPopu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnShowPopu.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowPopu.Appearance.Options.UseFont = true;
+            this.btnShowPopu.Enabled = false;
             this.btnShowPopu.Location = new System.Drawing.Point(1213, 118);
             this.btnShowPopu.Name = "btnShowPopu";
             this.btnShowPopu.Size = new System.Drawing.Size(248, 29);
