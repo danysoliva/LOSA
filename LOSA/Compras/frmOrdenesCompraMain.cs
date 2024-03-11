@@ -71,8 +71,8 @@ namespace LOSA.Compras
             }
 
             ValidarAccesosSegunUsuario();
+            btnPrint.Enabled = true;
 
-           
         }
 
         private void CargarBodegas()
@@ -1070,12 +1070,15 @@ namespace LOSA.Compras
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            IdOrdenCompraActual = 4;
             if (IdOrdenCompraActual > 0)
             {
-                //rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual) { DataSource = dsCompras1, DataMember = "oc_detalle", ShowPrintMarginsWarning = false };
-                //report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                //ReportPrintTool reportPrint = new ReportPrintTool(report);
-                //reportPrint.ShowPreview();
+                
+             
+                rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool reportPrint = new ReportPrintTool(report);
+                reportPrint.ShowPreview();
             }
             else
             {
