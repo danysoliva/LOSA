@@ -1312,6 +1312,7 @@
     <Compile Include="Clases\CertificadoPT_H.cs" />
     <Compile Include="Clases\CheckNewVersion.cs" />
     <Compile Include="Clases\CMOrdenCompraH.cs" />
+    <Compile Include="Clases\ConversorNumALetras.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Despacho.cs" />
     <Compile Include="Clases\Destinos_empaques.cs" />
@@ -1412,6 +1413,12 @@
     </Compile>
     <Compile Include="Compras\frmSearchOrdenC.Designer.cs">
       <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\rptOrdenCompra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Compras\rptOrdenCompra.Designer.cs">
+      <DependentUpon>rptOrdenCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\dsTransaccionesDespacho.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -7158,6 +7165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmSearchOrdenC.resx">
       <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\rptOrdenCompra.resx">
+      <DependentUpon>rptOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmCrearSolicitudAutorizacionLotePT.resx">
       <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>

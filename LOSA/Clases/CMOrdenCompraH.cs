@@ -51,6 +51,7 @@ namespace LOSA.Clases
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     SqlCommand command = new SqlCommand(query, connection);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@id_ordencompra", pIdOrdenH);
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
@@ -84,7 +85,7 @@ namespace LOSA.Clases
 
 
                         if (reader.IsDBNull(reader.GetOrdinal("State")))
-                            State = 'O';
+                            State = Convert.ToChar("O");
                         else
                             State = reader.GetChar(reader.GetOrdinal("State"));
 
