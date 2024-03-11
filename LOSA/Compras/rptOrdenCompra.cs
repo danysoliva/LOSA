@@ -31,18 +31,33 @@ namespace LOSA.Compras
             lblDireccion.Text = oc.Address;
             lblTelefono.Text = prov.Telefono1;
             lblContacto.Text = prov.ContactName;
-            lblFechaOrden.Text = oc.DocDate.ToString();
-            lblFechaVencimiento.Text = oc.DocDueDate.ToString();
+            lblFechaOrden.Text = string.Format("{0:d}", oc.DocDate); //oc.DocDate.ToString();
+            lblFechaVencimiento.Text = string.Format("{0:d}", oc.DocDueDate);
             lblTerminoPago.Text = prov.TerminoPago;
             lblEncargado.Text = oc.UsuarioName;
             lblMoneda.Text = oc.DocCur;
             lblReferencia.Text = oc.NumAtCard;
             lblComentario.Text = oc.Comments;
 
+            string SimboloMoneda = "L.";
+            switch (oc.DocCur)
+            {
+                case "LPS       ":
+                    SimboloMoneda = "L.";
+                    break;
 
-            //lblTotal.Text = string.Format("{0:$."+oc.DocTotal +" }");
-            lblIsv15.Text = oc.ISV.ToString();
-            lblSub.Text = Convert.ToString(oc.DocTotal - oc.ISV);
+                case "USD       ":
+                    SimboloMoneda = "$";
+                    break;
+
+                default:
+                    break;
+            }
+
+            lblTotal.Text = (SimboloMoneda + oc.DocTotal).ToString();
+            lblIsv15.Text = (SimboloMoneda + oc.ISV).ToString();
+            //lblisv18.Text = 
+            lblSub.Text = (SimboloMoneda + (oc.DocTotal - oc.ISV)).ToString();
             CargarDetalleOrdenCompra();
 
             
@@ -147,6 +162,7 @@ namespace LOSA.Compras
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblComentario = new DevExpress.XtraReports.UI.XRLabel();
             this.dsCompras1 = new LOSA.Compras.dsCompras();
+            this.Detail2 = new DevExpress.XtraReports.UI.DetailBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -199,7 +215,7 @@ namespace LOSA.Compras
             this.xrPictureBox1,
             this.xrLabel21,
             this.xrLabel17});
-            this.ReportHeader.HeightF = 308.6667F;
+            this.ReportHeader.HeightF = 343.0417F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrLabel23
@@ -227,7 +243,7 @@ namespace LOSA.Compras
             this.lblReferencia.BorderColor = System.Drawing.Color.Black;
             this.lblReferencia.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.lblReferencia.ForeColor = System.Drawing.Color.Black;
-            this.lblReferencia.LocationFloat = new DevExpress.Utils.PointFloat(540.0717F, 259.3751F);
+            this.lblReferencia.LocationFloat = new DevExpress.Utils.PointFloat(540.0717F, 295.0417F);
             this.lblReferencia.Name = "lblReferencia";
             this.lblReferencia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblReferencia.SizeF = new System.Drawing.SizeF(159.0936F, 23F);
@@ -240,7 +256,7 @@ namespace LOSA.Compras
             // xrLabel18
             // 
             this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 259.375F);
+            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 295.0416F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel18.SizeF = new System.Drawing.SizeF(114.0301F, 23F);
@@ -252,7 +268,7 @@ namespace LOSA.Compras
             // lblContacto
             // 
             this.lblContacto.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.lblContacto.LocationFloat = new DevExpress.Utils.PointFloat(84.58659F, 236.375F);
+            this.lblContacto.LocationFloat = new DevExpress.Utils.PointFloat(84.58659F, 272.0416F);
             this.lblContacto.Name = "lblContacto";
             this.lblContacto.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblContacto.SizeF = new System.Drawing.SizeF(341.4551F, 22.99998F);
@@ -261,7 +277,7 @@ namespace LOSA.Compras
             // xrLabel19
             // 
             this.xrLabel19.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(0F, 236.375F);
+            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(0F, 272.0416F);
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel19.SizeF = new System.Drawing.SizeF(84.58659F, 22.99998F);
@@ -275,7 +291,7 @@ namespace LOSA.Compras
             this.lblMoneda.BorderColor = System.Drawing.Color.Black;
             this.lblMoneda.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.lblMoneda.ForeColor = System.Drawing.Color.Black;
-            this.lblMoneda.LocationFloat = new DevExpress.Utils.PointFloat(540.0718F, 236.375F);
+            this.lblMoneda.LocationFloat = new DevExpress.Utils.PointFloat(540.0718F, 272.0416F);
             this.lblMoneda.Name = "lblMoneda";
             this.lblMoneda.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblMoneda.SizeF = new System.Drawing.SizeF(159.0936F, 23F);
@@ -288,7 +304,7 @@ namespace LOSA.Compras
             // xrLabel24
             // 
             this.xrLabel24.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(426.0419F, 236.375F);
+            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(426.0419F, 272.0416F);
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel24.SizeF = new System.Drawing.SizeF(114.0298F, 23.00002F);
@@ -300,7 +316,7 @@ namespace LOSA.Compras
             // lblTelefono
             // 
             this.lblTelefono.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.lblTelefono.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 213.375F);
+            this.lblTelefono.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 249.0416F);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblTelefono.SizeF = new System.Drawing.SizeF(340.6252F, 23.00002F);
@@ -309,19 +325,19 @@ namespace LOSA.Compras
             // lblFechaOrden
             // 
             this.lblFechaOrden.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.lblFechaOrden.LocationFloat = new DevExpress.Utils.PointFloat(540.0729F, 144.375F);
+            this.lblFechaOrden.LocationFloat = new DevExpress.Utils.PointFloat(540.0729F, 180.0416F);
             this.lblFechaOrden.Name = "lblFechaOrden";
             this.lblFechaOrden.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblFechaOrden.SizeF = new System.Drawing.SizeF(159.0936F, 23F);
             this.lblFechaOrden.StylePriority.UseFont = false;
             this.lblFechaOrden.StylePriority.UseTextAlignment = false;
             this.lblFechaOrden.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.lblFechaOrden.TextFormatString = "{0:dd/MM/yyyy}";
+            this.lblFechaOrden.TextFormatString = "{0:d/M/yyyy}";
             // 
             // xrLabel40
             // 
             this.xrLabel40.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 167.375F);
+            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 203.0416F);
             this.xrLabel40.Name = "xrLabel40";
             this.xrLabel40.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel40.SizeF = new System.Drawing.SizeF(114.0315F, 23F);
@@ -333,21 +349,21 @@ namespace LOSA.Compras
             // lblFechaVencimiento
             // 
             this.lblFechaVencimiento.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.lblFechaVencimiento.LocationFloat = new DevExpress.Utils.PointFloat(540.0731F, 167.375F);
+            this.lblFechaVencimiento.LocationFloat = new DevExpress.Utils.PointFloat(540.0731F, 203.0416F);
             this.lblFechaVencimiento.Name = "lblFechaVencimiento";
             this.lblFechaVencimiento.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblFechaVencimiento.SizeF = new System.Drawing.SizeF(159.0934F, 23F);
             this.lblFechaVencimiento.StylePriority.UseFont = false;
             this.lblFechaVencimiento.StylePriority.UseTextAlignment = false;
             this.lblFechaVencimiento.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.lblFechaVencimiento.TextFormatString = "{0:dd/MM/yyyy}";
+            this.lblFechaVencimiento.TextFormatString = "{0:d/M/yyyy}";
             // 
             // lblTerminoPago
             // 
             this.lblTerminoPago.BorderColor = System.Drawing.Color.Black;
             this.lblTerminoPago.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.lblTerminoPago.ForeColor = System.Drawing.Color.Black;
-            this.lblTerminoPago.LocationFloat = new DevExpress.Utils.PointFloat(540.0729F, 190.375F);
+            this.lblTerminoPago.LocationFloat = new DevExpress.Utils.PointFloat(540.0729F, 226.0416F);
             this.lblTerminoPago.Name = "lblTerminoPago";
             this.lblTerminoPago.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblTerminoPago.SizeF = new System.Drawing.SizeF(159.0936F, 23F);
@@ -361,7 +377,7 @@ namespace LOSA.Compras
             // 
             this.lblEncargado.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.lblEncargado.ForeColor = System.Drawing.Color.Black;
-            this.lblEncargado.LocationFloat = new DevExpress.Utils.PointFloat(540.0731F, 213.375F);
+            this.lblEncargado.LocationFloat = new DevExpress.Utils.PointFloat(540.0731F, 249.0416F);
             this.lblEncargado.Name = "lblEncargado";
             this.lblEncargado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblEncargado.SizeF = new System.Drawing.SizeF(159.0936F, 23.00002F);
@@ -373,7 +389,7 @@ namespace LOSA.Compras
             // xrLabel16
             // 
             this.xrLabel16.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 213.375F);
+            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 249.0416F);
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel16.SizeF = new System.Drawing.SizeF(114.0313F, 23.00002F);
@@ -385,7 +401,7 @@ namespace LOSA.Compras
             // xrLabel14
             // 
             this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(426.0418F, 190.375F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(426.0418F, 226.0416F);
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel14.SizeF = new System.Drawing.SizeF(114.0312F, 23.00002F);
@@ -397,7 +413,7 @@ namespace LOSA.Compras
             // xrLabel12
             // 
             this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 144.375F);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 180.0416F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel12.SizeF = new System.Drawing.SizeF(114.0314F, 23F);
@@ -412,7 +428,7 @@ namespace LOSA.Compras
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable1.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0.83F, 283.6667F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0.83F, 318.0417F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
@@ -484,7 +500,7 @@ namespace LOSA.Compras
             // lblDireccion
             // 
             this.lblDireccion.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.lblDireccion.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 190.375F);
+            this.lblDireccion.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 226.0416F);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblDireccion.SizeF = new System.Drawing.SizeF(340.625F, 23F);
@@ -493,7 +509,7 @@ namespace LOSA.Compras
             // lblRTN
             // 
             this.lblRTN.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.lblRTN.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 167.375F);
+            this.lblRTN.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 203.0416F);
             this.lblRTN.Name = "lblRTN";
             this.lblRTN.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblRTN.SizeF = new System.Drawing.SizeF(340.625F, 23F);
@@ -502,7 +518,7 @@ namespace LOSA.Compras
             // xrLabel15
             // 
             this.xrLabel15.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(0F, 167.375F);
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(0F, 203.0416F);
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel15.SizeF = new System.Drawing.SizeF(85.41667F, 23F);
@@ -514,7 +530,7 @@ namespace LOSA.Compras
             // xrLabel9
             // 
             this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(0F, 144.375F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(0F, 180.0416F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel9.SizeF = new System.Drawing.SizeF(85.41667F, 23F);
@@ -526,7 +542,7 @@ namespace LOSA.Compras
             // lblCliente
             // 
             this.lblCliente.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.lblCliente.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 144.375F);
+            this.lblCliente.LocationFloat = new DevExpress.Utils.PointFloat(85.41666F, 180.0416F);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblCliente.SizeF = new System.Drawing.SizeF(340.625F, 23F);
@@ -534,7 +550,7 @@ namespace LOSA.Compras
             // 
             // xrLine2
             // 
-            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 142.2917F);
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 177.9583F);
             this.xrLine2.Name = "xrLine2";
             this.xrLine2.SizeF = new System.Drawing.SizeF(699.9999F, 2.083328F);
             // 
@@ -578,7 +594,7 @@ namespace LOSA.Compras
             // xrLabel21
             // 
             this.xrLabel21.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(0.8300781F, 213.375F);
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(0.8300781F, 249.0416F);
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel21.SizeF = new System.Drawing.SizeF(84.58659F, 23F);
@@ -590,7 +606,7 @@ namespace LOSA.Compras
             // xrLabel17
             // 
             this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(0F, 190.375F);
+            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(0F, 226.0416F);
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel17.SizeF = new System.Drawing.SizeF(85.41667F, 23F);
@@ -935,6 +951,10 @@ namespace LOSA.Compras
             // 
             this.dsCompras1.DataSetName = "dsCompras";
             this.dsCompras1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Detail2
+            // 
+            this.Detail2.Name = "Detail2";
             // 
             // rptOrdenCompra
             // 

@@ -152,7 +152,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="oc_detalle_rpt" msprop:Generator_TableClassName="oc_detalle_rptDataTable" msprop:Generator_TableVarName="tableoc_detalle_rpt" msprop:Generator_TablePropName="oc_detalle_rpt" msprop:Generator_RowDeletingName="oc_detalle_rptRowDeleting" msprop:Generator_RowChangingName="oc_detalle_rptRowChanging" msprop:Generator_RowEvHandlerName="oc_detalle_rptRowChangeEventHandler" msprop:Generator_RowDeletedName="oc_detalle_rptRowDeleted" msprop:Generator_UserTableName="oc_detalle_rpt" msprop:Generator_RowChangedName="oc_detalle_rptRowChanged" msprop:Generator_RowEvArgName="oc_detalle_rptRowChangeEvent" msprop:Generator_RowClassName="oc_detalle_rptRow">
+        <xs:element name="oc_detalle_rpt" msprop:Generator_TableClassName="oc_detalle_rptDataTable" msprop:Generator_TableVarName="tableoc_detalle_rpt" msprop:Generator_RowChangedName="oc_detalle_rptRowChanged" msprop:Generator_TablePropName="oc_detalle_rpt" msprop:Generator_RowDeletingName="oc_detalle_rptRowDeleting" msprop:Generator_RowChangingName="oc_detalle_rptRowChanging" msprop:Generator_RowEvHandlerName="oc_detalle_rptRowChangeEventHandler" msprop:Generator_RowDeletedName="oc_detalle_rptRowDeleted" msprop:Generator_RowClassName="oc_detalle_rptRow" msprop:Generator_UserTableName="oc_detalle_rpt" msprop:Generator_RowEvArgName="oc_detalle_rptRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
@@ -160,6 +160,8 @@
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
               <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:decimal" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="capitulo" msprop:Generator_ColumnVarNameInTable="columncapitulo" msprop:Generator_ColumnPropNameInRow="capitulo" msprop:Generator_ColumnPropNameInTable="capituloColumn" msprop:Generator_UserColumnName="capitulo" type="xs:string" minOccurs="0" />
+              <xs:element name="partida_arancelaria" msprop:Generator_ColumnVarNameInTable="columnpartida_arancelaria" msprop:Generator_ColumnPropNameInRow="partida_arancelaria" msprop:Generator_ColumnPropNameInTable="partida_arancelariaColumn" msprop:Generator_UserColumnName="partida_arancelaria" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

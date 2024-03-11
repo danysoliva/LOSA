@@ -105,8 +105,10 @@ namespace LOSA.Clases
                         Comments = reader.GetString(reader.GetOrdinal("Comments"));
                         ISV = reader.GetDecimal(reader.GetOrdinal("ISV"));
                         DocTotal = reader.GetDecimal(reader.GetOrdinal("DocTotal"));
-                        CurSource = Convert.ToChar(reader.GetOrdinal("CurSource"));
-                        DocCur = Convert.ToString(reader.GetOrdinal("DocCur"));
+                        //CurSource = reader.GetChars((reader.GetOrdinal("CurSource")));
+                        CurSource = Convert.ToChar(reader.GetString(16));
+                        //DocCur = reader.GetSqlChars((reader.GetOrdinal("DocCur"))).ToString();
+                        DocCur = reader.GetString(17);
                         DocRate = reader.GetDecimal(reader.GetOrdinal("DocRate"));
                         DocNumSolicitud = reader.GetInt32(reader.GetOrdinal("DocNumSolicitud"));
                         PostedInSAP = reader.GetBoolean(reader.GetOrdinal("posted_in_sap"));
