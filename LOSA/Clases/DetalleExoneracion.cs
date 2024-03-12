@@ -20,7 +20,7 @@ namespace LOSA.Clases
         int id_presupuesto;
         decimal monto;
         bool recuperado;
-
+        decimal saldoDisponible, unidadesDisponible;
         int id_header;
         int anio;
         DateTime fInicio;
@@ -43,6 +43,8 @@ namespace LOSA.Clases
         public bool Enable { get => enable; set => enable = value; }
         public bool Cerrado { get => cerrado; set => cerrado = value; }
         public string Resolucion_Ex { get => resolucion_Ex; set => resolucion_Ex = value; }
+        public decimal SaldoDisponible { get => saldoDisponible; set => saldoDisponible = value; }
+        public decimal UnidadesDisponible { get => unidadesDisponible; set => unidadesDisponible = value; }
 
         string resolucion_Ex;
 
@@ -75,6 +77,67 @@ namespace LOSA.Clases
             {
                 CajaDialogo.Error(ec.Message);
             }
+            return Recuperado;
+        }
+
+        public bool RecuperarSaldoCapitulo(string pCapitulo)
+        {
+            Recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("sp_cm_get_saldo_disponible_capitulo", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pCapitulo", pCapitulo);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    SaldoDisponible = dr.GetDecimal(0);
+                    UnidadesDisponible = dr.GetDecimal(1);
+                    Recuperado = true;
+                }
+                dr.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                Recuperado = false;
+            }
+
+            return Recuperado;
+        }
+
+        public bool RecuperarSaldoCapituloPartida(string pCapitulo, string pPartArancelari)
+        {
+            Recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("sp_cm_get_saldo_disponible_capitulo_y_partida", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pCapitulo", pCapitulo);
+                cmd.Parameters.AddWithValue("@PartArancelari", pPartArancelari);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    SaldoDisponible = dr.GetDecimal(0);
+                    UnidadesDisponible = dr.GetDecimal(1);
+                    Recuperado = true;
+                }
+                dr.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                Recuperado = false;
+            }
+
             return Recuperado;
         }
 

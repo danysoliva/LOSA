@@ -60,7 +60,7 @@ namespace LOSA.Compras
                 case TipoOperacion.New:
                     txtUsuarioCreador.Text = UsuarioLogueado.NombreUser;
                     txtDocNum.Text = "0";
-                    txtEstado.Text = "Nueva";
+                    txtEstado.Text = "Pendiente (Creada)";
                     cmdNuevo.Enabled = false;
                     dtFechaContabilizacion.EditValue = dp.dNow();
                     break;
@@ -357,8 +357,8 @@ namespace LOSA.Compras
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_header_orden", idSolicitudSeleccionado);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsCompras1.oc_detalle.Clear();
-                adat.Fill(dsCompras1.oc_detalle);
+                dsCompras1.oc_detalle_exonerada.Clear();
+                adat.Fill(dsCompras1.oc_detalle_exonerada);
                 conn.Close();
 
                 CalcularTotal();
@@ -414,6 +414,47 @@ namespace LOSA.Compras
                             //string a = row.capitulo;
                         }
                         break;
+
+                    case "indicador_impuesto": //EXO EXE ISV
+
+                        var gridviewiva = (GridView)grDetalle.FocusedView;
+                        var rowiva = (dsCompras.oc_detalle_exoneradaRow)gridviewiva.GetFocusedDataRow();
+
+                        switch (rowiva.indicador_impuesto)
+                        {
+                            case "EXE"://EXENTO
+
+                                rowiva.isv = 0;
+                                CalcularTotal();
+
+                                break;
+
+                            case "EXO":
+
+                                rowiva.isv = 0;
+                                CalcularTotal();
+
+                                break;
+
+                            case "ISV"://0.15
+
+                                rowiva.isv = rowiva.total * 0.15M;
+                                string.Format("{0:0,0.00}", rowiva.isv);
+                                CalcularTotal();
+
+                                break;
+
+                            case "ISVE"://0.18
+
+                                rowiva.isv = rowiva.total * 0.18M;
+                                string.Format("{0:0,0.00}", rowiva.isv);
+                                CalcularTotal();
+
+                                break;
+                        }
+
+                        break;
+
                 }
 
                 
@@ -426,77 +467,112 @@ namespace LOSA.Compras
 
         private void cmdAddDetalle_Click(object sender, EventArgs e)
         {
-            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.Items);
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (TsExoOIsv.IsOn) //Es Exonerado!
             {
-                bool Agregar = true;
 
-                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                frmAddNewItemOC frm = new frmAddNewItemOC();
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (item.itemcode == frm.ItemSeleccionado.ItemCode)
+                    bool Agregar = true;
+
+                    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
                     {
-                        item.cantidad = item.cantidad + 1;
-                        Agregar = false;
+                        if (item.itemcode == frm.ItemCode)
+                        {
+                            item.cantidad = item.cantidad + 1;
+                            Agregar = false;
+                        }
+
+                    }
+
+                    if (Agregar)
+                    {
+                        ItemsSAP items = new ItemsSAP();
+                        items.RecuperarRegistroItemSAP(frm.ItemCode);
+
+                        DataRow dr = dsCompras1.oc_detalle_exonerada.NewRow();
+                        dr[0] = 0;
+                        dr[1] = 0;
+                        dr[2] = frm.Capitulo;
+                        dr[3] = frm.Partida;
+                        dr[4] = items.ItemCode;
+                        dr[5] = items.DescripcionArticulo;
+                        dr[6] = frm.Unidades; //Cantidad
+                        dr[7] = frm.PrecioUnitario; //Precio por Unidad
+                                   //dr[8] = reposGrdIndicadorIVA.ValueMember = "ISV";
+                        dr[9] = items.Bodega;
+                        dr[10] = frm.Total; //Total
+                        dr[11] = 0;
+
+                        dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
+                    }
+
+                    
+
+                }
+            }
+            else
+            {
+                frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.Items);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    bool Agregar = true;
+
+                    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                    {
+                        if (item.itemcode == frm.ItemSeleccionado.ItemCode)
+                        {
+                            item.cantidad = item.cantidad + 1;
+                            Agregar = false;
+                        }
+
+                    }
+
+                    if (Agregar)
+                    {
+                        ItemsSAP items = new ItemsSAP();
+                        items.RecuperarRegistroItemSAP(frm.ItemSeleccionado.ItemCode);
+
+                        DataRow dr = dsCompras1.oc_detalle_exonerada.NewRow();
+                        dr[0] = 0;
+                        dr[1] = 0;
+                        dr[4] = items.ItemCode;
+                        dr[5] = items.DescripcionArticulo;
+                        dr[6] = 1; //Cantidad
+                        dr[7] = 0; //Precio por Unidad
+                                   //dr[8] = reposGrdIndicadorIVA.ValueMember = "ISV";
+                        dr[9] = items.Bodega;
+                        dr[10] = 0; //Total
+                        dr[11] = 0;
+
+                        dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
 
                 }
-
-                if (Agregar)
-                {
-                    ItemsSAP items = new ItemsSAP();
-                    items.RecuperarRegistroItemSAP(frm.ItemSeleccionado.ItemCode);
-
-                    DataRow dr = dsCompras1.oc_detalle_exonerada.NewRow();
-                    dr[0] = 0;
-                    dr[1] = 0;
-                    dr[4] = items.ItemCode;
-                    dr[5] = items.DescripcionArticulo;
-                    dr[6] = 1; //Cantidad
-                    dr[7] = 0; //Precio por Unidad
-                    //dr[8] = reposGrdIndicadorIVA.ValueMember = "ISV";
-                    dr[9] = items.Bodega;
-                    dr[10] = 0; //Total
-                    dr[11] = 0;
-
-                    dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
-                }
-
             }
 
-            //frmSearchDefault frm = new frmSearchDefault(frmSearchDefault.TipoBusqueda.ProductoTerminado);
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    switch (tipooperacion)
-            //    {
-            //        
+            CalcularTotal();
 
-            //            if (Agregar)
-            //            {
-            //                DataRow dr = dsCompras1.oc_detalle.NewRow();
-            //                dr[0] = 0;
-            //                dr[1] = frm.ItemSeleccionado.ItemName;
-            //                dr[2] = frm.ItemSeleccionado.ItemCode; ;
-            //                dr[3] = 1;
-            //                dr[4] = 0;
-            //                dr[5] = 0;
-            //                //dr[6] = 0;
-            //                dsCompras1.oc_detalle.Rows.Add(dr);
-            //            }
-            //            break;
-            //        case TipoOperacion.Update:
-
-
-
-            //            break;
-            //        default:
-            //            break;
-            //    }
-
-            //}
         }
 
         private void ButtonDeleteRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+
+            switch (IdEstadoOrdenCompra)
+            {
+                case 1://Pendiente (Creada)
+                    break;
+
+                case 2://Autorizado
+                    CajaDialogo.Error("No se pueden realizar modificaciones en una Orden de Compra ya Autorizada!");
+                    break;
+                case 3://Rechazado
+                    CajaDialogo.Error("No se pueden realizar modificaciones en una Orden de Compra ya Rechazada!");
+                    break;
+                default:
+                    break;
+            }
+
             DialogResult r = CajaDialogo.Pregunta("Confirma que desea elminar este registro?");
             if (r != DialogResult.Yes)
             {
@@ -506,18 +582,41 @@ namespace LOSA.Compras
             var grdvDetalle = (GridView)grDetalle.FocusedView;
             var row = (dsCompras.oc_detalle_exoneradaRow)grdvDetalle.GetFocusedDataRow();
 
-            try
+            if (row.id_d_orden > 0)
             {
-                grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
-                dsCompras1.AcceptChanges();
-                CalcularTotal();
+                try
+                {
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_cm_delete_linea_detalle", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_detalle_oc", row.id_d_orden);
+                    cmd.ExecuteNonQuery();
+
+                    grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
+                    dsCompras1.AcceptChanges();
+                    CalcularTotal();
+
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
-            catch (Exception ec)
+            else
             {
-                CajaDialogo.Error(ec.Message);
+                try
+                {
+                    grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
+                    dsCompras1.AcceptChanges();
+                    CalcularTotal();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
             }
-            
-            
+
         }
 
         private void CalcularTotal()
@@ -555,13 +654,13 @@ namespace LOSA.Compras
 
                 txtSubtotal.EditValue = decimal.Round(SubTotal, 2, MidpointRounding.AwayFromZero);
 
-                Impuesto isv = new Impuesto();
-                if (isv.RecuperarRegistro(1))
-                {
-                    valor_impuesto = isv.Valor;
-                }
-                else
-                    valor_impuesto = Convert.ToDecimal(isv15);
+                //Impuesto isv = new Impuesto();
+                //if (isv.RecuperarRegistro(1))
+                //{
+                //    valor_impuesto = isv.Valor;
+                //}
+                //else
+                valor_impuesto = Convert.ToDecimal(isv15);
 
                 txtImpuesto.EditValue = decimal.Round(SubTotal * valor_impuesto, 2, MidpointRounding.AwayFromZero);
                 txtTotal.EditValue = decimal.Round(SubTotal + Convert.ToDecimal(txtImpuesto.EditValue), 2, MidpointRounding.AwayFromZero);
@@ -625,6 +724,7 @@ namespace LOSA.Compras
                 txtUsuarioCreador.Text = oc.UsuarioName;
                 txtDocNum.Text = oc.DocNum.ToString();
                 IdOrdenCompraActual = oc.Id;
+                txtID.Text = IdOrdenCompraActual.ToString();
                 txtEstado.Text = oc.EstadoName;
                 dtFechaRegistro.Value = oc.TaxDate;
                 dtFechaContabilizacion.EditValue = oc.DocDate;
@@ -636,12 +736,14 @@ namespace LOSA.Compras
                 txtSubtotal.EditValue = (oc.DocTotal - oc.ISV);
                 txtImpuesto.EditValue = oc.ISV;
                 txtTotal.EditValue = oc.DocTotal;
-                CargarDetalleOrdenCompra(oc.Id);
+                grdTipoOrden.EditValue = oc.U_TipoOrden;
+                glRutaAprobacionOC.EditValue = oc.idRutaAprobacion;
+                CargarDetalleOrdenCompra(IdOrdenCompraActual);
                 tipooperacion = TipoOperacion.Update;
 
                 switch (IdEstadoOrdenCompra)
                 {
-                    case 1://Nueva
+                    case 1://Pendiente(Creada)
                         cmdNuevo.Enabled = true;
                         cmdAddDetalle.Enabled = true;
                         txtComentarios.Enabled = true;
@@ -650,34 +752,28 @@ namespace LOSA.Compras
                         btnPrint.Enabled = false;
                         break;
 
-                    case 2://Abierta
+                    case 2://Autorizado
                         cmdNuevo.Enabled = true;
-                        cmdAddDetalle.Enabled = true;
-                        txtComentarios.Enabled = true;
-                        grDetalle.Enabled = true;
-                        dtFechaContabilizacion.Enabled = true;
-                        btnPrint.Enabled = true;
-                        break;
-
-                    case 3://Cerrada
-                        cmdNuevo.Enabled = false;
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
                         dtFechaContabilizacion.Enabled = false;
-                        cmdGuardar.Enabled = false;
-                        txtCodProv.Enabled = false;
                         btnPrint.Enabled = true;
+                        cmdGuardar.Enabled = false;
+                        TsExoOIsv.ReadOnly = true;
+                        btnShowPopu.Enabled = false;
                         break;
 
-                    case 4://Cancelada
-                        cmdNuevo.Enabled = false;
+                    case 3://Rechazada
+                        cmdNuevo.Enabled = true;
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
                         dtFechaContabilizacion.Enabled = false;
+                        btnPrint.Enabled = false;
                         cmdGuardar.Enabled = false;
-                        txtCodProv.Enabled = false;
+                        TsExoOIsv.ReadOnly = true;
+                        btnShowPopu.Enabled = false;
                         break;
 
                     default:
@@ -865,12 +961,56 @@ namespace LOSA.Compras
                     CajaDialogo.Error("Cantidad debe ser Mayor que (0)!");
                     return;
                 }
+
+                if (item.indicador_impuesto == null)
+                {
+                    CajaDialogo.Error("Debe seleccionar un Indicador de Impuesto!");
+                    return;
+                }
+            }
+
+            if (TsExoOIsv.IsOn) //Exonerada
+            {
+                if (string.IsNullOrEmpty(txtExoneracion.Text))
+                {
+                    CajaDialogo.Error("No existe una Exoneracion Vigente!");
+                    return;
+                }
+
+                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                {
+                    if (item.indicador_impuesto == "EXO")
+                    {
+                        if (item.capitulo == "")
+                        {
+                            CajaDialogo.Error("Debe Seleccionar el Capitulo!");
+                            return;
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                {
+                    if (item.capitulo.Length > 0)
+                    {
+                        CajaDialogo.Error("Orden de Compra con ISV no pueden tener Capitulos Seleccionados!");
+                        item.capitulo = null;
+                        return;
+                    }
+                    if (item.partida_arancelaria.Length > 0)
+                    {
+                        CajaDialogo.Error("Orden de Compra con ISV no pueden tener Partidas Arancelarias Seleccionados!");
+                        item.partida_arancelaria = null;
+                        return;
+                    }
+                }
             }
            
             switch (tipooperacion)
             { 
-                
-
                 case TipoOperacion.New:
                     bool Guardar = false;
                     SqlTransaction transaction = null;
@@ -914,7 +1054,7 @@ namespace LOSA.Compras
                         else
                             cmd.Parameters.AddWithValue("@DocNumSolicitud", IdSolicitud);
 
-                        cmd.Parameters.AddWithValue("@posted_in_sap", 1);
+                        cmd.Parameters.AddWithValue("@posted_in_sap", 0);
                         cmd.Parameters.AddWithValue("@ContactCode", ContactCode);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
                         cmd.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
@@ -939,14 +1079,15 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@Unite_Price", row.precio_por_unidad);
                             cmd.Parameters.AddWithValue("@Currency", txtMoneda.Text.Trim());
                             cmd.Parameters.AddWithValue("@DiscPrcnt", 0);
-                            if(TsExoOIsv.IsOn)
-                                cmd.Parameters.AddWithValue("@TaxCode", "EXO");
-                            else
-                                cmd.Parameters.AddWithValue("@TaxCode", "ISV");
+                            cmd.Parameters.AddWithValue("@TaxCode", row.indicador_impuesto);
+                            //if(TsExoOIsv.IsOn)
+                            //    cmd.Parameters.AddWithValue("@TaxCode", "EXO");
+                            //else
+                            //    cmd.Parameters.AddWithValue("@TaxCode", "ISV");
 
                             cmd.Parameters.AddWithValue("@WhsCode", row.bodega);
                             cmd.Parameters.AddWithValue("@isv", row.isv);
-
+                            cmd.Parameters.AddWithValue("@base_ref", row.referencia_base);//Referencia de Solicitud de Compra
                             cmd.ExecuteNonQuery();
                         }
 
@@ -976,7 +1117,6 @@ namespace LOSA.Compras
                     break;
                 case TipoOperacion.Update:
 
-
                     SqlTransaction transactionUpdate = null;
 
                     SqlConnection connUpdate = new SqlConnection(dp.ConnectionStringLOSA);
@@ -987,38 +1127,61 @@ namespace LOSA.Compras
                         connUpdate.Open();
                         transactionUpdate = connUpdate.BeginTransaction("Transaction Order");
                         SqlCommand cmdUpdate = connUpdate.CreateCommand();
-                        cmdUpdate.CommandText = "sp_compras_ordenes_update";
+                        cmdUpdate.CommandText = "sp_CM_update_ordencompra_h";
                         cmdUpdate.Connection = connUpdate;
                         cmdUpdate.Transaction = transactionUpdate;
                         cmdUpdate.CommandType = CommandType.StoredProcedure;
-                        cmdUpdate.Parameters.AddWithValue("@id_orden",IdOrdenCompraActual);
-                        cmdUpdate.Parameters.AddWithValue("@code_prov",txtCodProv.Text.Trim());
-                        cmdUpdate.Parameters.AddWithValue("@proveedor",txtProveedor.Text);
-                        cmdUpdate.Parameters.AddWithValue("@fecha_contabilizacion",dtFechaContabilizacion.EditValue);
-                        cmdUpdate.Parameters.AddWithValue("@direccion",direccion);
-                        cmdUpdate.Parameters.AddWithValue("@comentario",txtComentarios.Text);
-                        cmdUpdate.Parameters.AddWithValue("@impuesto",txtImpuesto.EditValue);
-                        cmdUpdate.Parameters.AddWithValue("@subtotal",txtSubtotal.EditValue);
-                        cmdUpdate.Parameters.AddWithValue("@total",txtTotal.EditValue);
-                        cmdUpdate.Parameters.AddWithValue("@id_user_modi",UsuarioLogueado.Id);
-                        cmdUpdate.Parameters.AddWithValue("@fecha_modi",dp.Now());
+                        cmdUpdate.Parameters.AddWithValue("@idOrdenCompraH", IdOrdenCompraActual);
+                        cmdUpdate.Parameters.AddWithValue("@CardCode", txtCodProv.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@CardName", txtProveedor.Text);
+                        cmdUpdate.Parameters.AddWithValue("@Address", direccion);
+                        if (string.IsNullOrEmpty(txtNumAtCard.Text))
+                            cmdUpdate.Parameters.AddWithValue("@NumAtCard", "N/D");
+                        else
+                            cmdUpdate.Parameters.AddWithValue("@NumAtCard", txtNumAtCard.Text);
+
+                        cmdUpdate.Parameters.AddWithValue("@DocDate", dtFechaRegistro.Value);
+                        cmdUpdate.Parameters.AddWithValue("@DocDueDate", dtFechaContabilizacion.DateTime.AddDays(15));
+                        cmdUpdate.Parameters.AddWithValue("@TaxDate", dtFechaContabilizacion.EditValue);
+                        cmdUpdate.Parameters.AddWithValue("@U_TipoOrden", grdTipoOrden.EditValue);
+                        cmdUpdate.Parameters.AddWithValue("@U_AquaExoneracion", txtExoneracion.Text);
+                        cmdUpdate.Parameters.AddWithValue("@U_FechaExoneracion", dtFechaRegistro.Value);
+                        cmdUpdate.Parameters.AddWithValue("@Comments", txtComentarios.Text);
+                        cmdUpdate.Parameters.AddWithValue("@ISV", txtImpuesto.EditValue);
+                        cmdUpdate.Parameters.AddWithValue("@DocTotal", txtTotal.EditValue);
+                        cmdUpdate.Parameters.AddWithValue("@CurSource", CurSource);//C=BP Currency, L=Local Currency, S=System Currency
+                        cmdUpdate.Parameters.AddWithValue("@DocCur", txtMoneda.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@DocRate", TasaCambio);
+                        if (IdSolicitud == 0)
+                            cmdUpdate.Parameters.AddWithValue("@DocNumSolicitud", DBNull.Value);
+                        else
+                            cmdUpdate.Parameters.AddWithValue("@DocNumSolicitud", IdSolicitud);
+                        cmdUpdate.Parameters.AddWithValue("@ContactCode", ContactCode);
+                        cmdUpdate.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
+                        cmdUpdate.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
+
                         cmdUpdate.ExecuteNonQuery();
 
                         foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada.Rows)
                         {
                             cmdUpdate.Parameters.Clear();
-                            cmdUpdate.CommandText = "sp_compras_ordenes_detalle_insert";
+                            cmdUpdate.CommandText = "sp_compras_ordenes_detalle_update_insert";
                             cmdUpdate.Connection = connUpdate;
                             cmdUpdate.Transaction = transactionUpdate;
                             cmdUpdate.CommandType = CommandType.StoredProcedure;
-                            cmdUpdate.Parameters.AddWithValue("@id_header_orden", IdOrdenCompraActual);
-                            //cmd.Parameters.AddWithValue("@id_pt", row.);
-                            //cmdUpdate.Parameters.AddWithValue("@itemcode", row.itemcode);
-                            //cmdUpdate.Parameters.AddWithValue("@descripcion", row.descripcion);
-                            //cmdUpdate.Parameters.AddWithValue("@cantidad", row.cantidad);
-                            //cmdUpdate.Parameters.AddWithValue("@precio", row.precio);
-                            //cmdUpdate.Parameters.AddWithValue("@total_linea", Convert.ToDecimal(row.cantidad * row.precio));
-                            //cmdUpdate.Parameters.AddWithValue("@fecha_creacion", dp.Now());
+                            cmdUpdate.Parameters.AddWithValue("@id_detalle", row.id_d_orden);
+                            cmdUpdate.Parameters.AddWithValue("@id_orden_h", IdOrdenCompraActual);
+                            cmdUpdate.Parameters.AddWithValue("@ItemCode", row.itemcode);
+                            cmdUpdate.Parameters.AddWithValue("@Description", row.descripcion_articulo);
+                            cmdUpdate.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
+                            cmdUpdate.Parameters.AddWithValue("@Partida_Arancelaria", row.partida_arancelaria);
+                            cmdUpdate.Parameters.AddWithValue("@Quantity", row.cantidad);
+                            cmdUpdate.Parameters.AddWithValue("@Unite_Price", row.precio_por_unidad);
+                            cmdUpdate.Parameters.AddWithValue("@Currency", txtMoneda.Text.Trim());
+                            cmdUpdate.Parameters.AddWithValue("@DiscPrcnt", 0);
+                            cmdUpdate.Parameters.AddWithValue("@TaxCode", row.indicador_impuesto);
+                            cmdUpdate.Parameters.AddWithValue("@WhsCode", row.bodega);
+                            cmdUpdate.Parameters.AddWithValue("@isv", row.isv);
                             cmdUpdate.ExecuteNonQuery();
                         }
 
@@ -1069,15 +1232,24 @@ namespace LOSA.Compras
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            IdOrdenCompraActual = 4;
             if (IdOrdenCompraActual > 0)
             {
+                if (TsExoOIsv.IsOn)
+                {
+                    rptOrdenCompraExo report = new rptOrdenCompraExo(IdOrdenCompraActual);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    reportPrint.ShowPreview();
+                }
+                else
+                {
+                    rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    reportPrint.ShowPreview();
+                }
+
                 
-             
-                rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool reportPrint = new ReportPrintTool(report);
-                reportPrint.ShowPreview();
             }
             else
             {
@@ -1228,12 +1400,29 @@ namespace LOSA.Compras
                 lblExoneracion.Visible = true;
                 ObtenerExoneracionVigente();
 
+                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                {
+                    item.isv = 0;
+                    item.indicador_impuesto = "EXO";
+                }
+                CalcularTotal();
+
             }
             else
             {
                 txtExoneracion.Text = "";
                 txtExoneracion.Visible = false;
                 lblExoneracion.Visible = false;
+                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                {
+                    item.capitulo = null;
+                    item.partida_arancelaria = null;
+                    item.isv = (item.total * 0.15M);
+                    item.indicador_impuesto = "ISV";
+
+                }
+
+                CalcularTotal();
             }
         }
 
@@ -1256,6 +1445,12 @@ namespace LOSA.Compras
                 }
                 dr.Close();
                 conn.Close();
+
+                if (string.IsNullOrEmpty(txtExoneracion.Text))
+                {
+                    CajaDialogo.Error("No existe una Exoneracion Vigente!\nContacte al Dpto. de IT");
+                    return;
+                }
             }
             catch (Exception ex)
             {
@@ -1358,13 +1553,19 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtNumAtCard = new System.Windows.Forms.TextBox();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaContabilizacion = new DevExpress.XtraEditors.DateEdit();
@@ -1522,6 +1723,7 @@ namespace LOSA.Compras
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.txtID);
             this.panelControl1.Controls.Add(this.txtNumAtCard);
             this.panelControl1.Controls.Add(this.labelControl16);
             this.panelControl1.Controls.Add(this.dtFechaContabilizacion);
@@ -1565,6 +1767,18 @@ namespace LOSA.Compras
             this.panelControl1.TabIndex = 51;
             this.panelControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl1_MouseDown);
             // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.Color.White;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtID.Location = new System.Drawing.Point(220, 58);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(49, 19);
+            this.txtID.TabIndex = 93;
+            // 
             // txtNumAtCard
             // 
             this.txtNumAtCard.BackColor = System.Drawing.Color.White;
@@ -1589,17 +1803,17 @@ namespace LOSA.Compras
             // dtFechaContabilizacion
             // 
             this.dtFechaContabilizacion.EditValue = null;
-            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 83);
+            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 82);
             this.dtFechaContabilizacion.MenuManager = this.barManager1;
             this.dtFechaContabilizacion.Name = "dtFechaContabilizacion";
-            this.dtFechaContabilizacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.dtFechaContabilizacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.dtFechaContabilizacion.Properties.Appearance.Options.UseFont = true;
             this.dtFechaContabilizacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaContabilizacion.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
             this.dtFechaContabilizacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaContabilizacion.Size = new System.Drawing.Size(189, 22);
+            this.dtFechaContabilizacion.Size = new System.Drawing.Size(189, 24);
             this.dtFechaContabilizacion.TabIndex = 90;
             // 
             // barManager1
@@ -1695,7 +1909,7 @@ namespace LOSA.Compras
             this.glRutaAprobacionOC.Location = new System.Drawing.Point(1164, 206);
             this.glRutaAprobacionOC.MenuManager = this.barManager1;
             this.glRutaAprobacionOC.Name = "glRutaAprobacionOC";
-            this.glRutaAprobacionOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glRutaAprobacionOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.glRutaAprobacionOC.Properties.Appearance.Options.UseFont = true;
             this.glRutaAprobacionOC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1704,7 +1918,7 @@ namespace LOSA.Compras
             this.glRutaAprobacionOC.Properties.NullText = "";
             this.glRutaAprobacionOC.Properties.PopupView = this.gridView3;
             this.glRutaAprobacionOC.Properties.ValueMember = "id";
-            this.glRutaAprobacionOC.Size = new System.Drawing.Size(189, 22);
+            this.glRutaAprobacionOC.Size = new System.Drawing.Size(189, 24);
             this.glRutaAprobacionOC.TabIndex = 89;
             // 
             // bsRutaAprobacion
@@ -1719,6 +1933,12 @@ namespace LOSA.Compras
             // 
             // gridView3
             // 
+            this.gridView3.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView3.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.gridView3.Appearance.Row.Options.UseFont = true;
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.coldescripcion1});
@@ -1864,7 +2084,7 @@ namespace LOSA.Compras
             // 
             // grdTipoOrden
             // 
-            this.grdTipoOrden.Location = new System.Drawing.Point(1164, 131);
+            this.grdTipoOrden.Location = new System.Drawing.Point(1164, 130);
             this.grdTipoOrden.MenuManager = this.barManager1;
             this.grdTipoOrden.Name = "grdTipoOrden";
             this.grdTipoOrden.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
@@ -1963,8 +2183,9 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(228, 24);
@@ -2053,9 +2274,9 @@ namespace LOSA.Compras
             this.txtDocNum.Enabled = false;
             this.txtDocNum.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtDocNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtDocNum.Location = new System.Drawing.Point(220, 57);
+            this.txtDocNum.Location = new System.Drawing.Point(275, 57);
             this.txtDocNum.Name = "txtDocNum";
-            this.txtDocNum.Size = new System.Drawing.Size(228, 19);
+            this.txtDocNum.Size = new System.Drawing.Size(173, 19);
             this.txtDocNum.TabIndex = 57;
             // 
             // labelControl7
@@ -2251,7 +2472,7 @@ namespace LOSA.Compras
             this.colcapitulo.Name = "colcapitulo";
             this.colcapitulo.Visible = true;
             this.colcapitulo.VisibleIndex = 0;
-            this.colcapitulo.Width = 102;
+            this.colcapitulo.Width = 133;
             // 
             // reposGrdCapitulo
             // 
@@ -2262,7 +2483,9 @@ namespace LOSA.Compras
             this.reposGrdCapitulo.DisplayMember = "Code";
             this.reposGrdCapitulo.Name = "reposGrdCapitulo";
             this.reposGrdCapitulo.NullText = "";
+            this.reposGrdCapitulo.PopupFormSize = new System.Drawing.Size(500, 300);
             this.reposGrdCapitulo.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.reposGrdCapitulo.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch;
             this.reposGrdCapitulo.ValueMember = "Code";
             this.reposGrdCapitulo.EditValueChanged += new System.EventHandler(this.reposGrdCapitulo_EditValueChanged);
             // 
@@ -2293,8 +2516,6 @@ namespace LOSA.Compras
             this.colCode1.Caption = "Capitulo";
             this.colCode1.FieldName = "Code";
             this.colCode1.Name = "colCode1";
-            this.colCode1.Visible = true;
-            this.colCode1.VisibleIndex = 0;
             // 
             // colU_AQUA_Desc
             // 
@@ -2306,6 +2527,8 @@ namespace LOSA.Compras
             this.colconcat_2.FieldName = "concat_";
             this.colconcat_2.MinWidth = 60;
             this.colconcat_2.Name = "colconcat_2";
+            this.colconcat_2.Visible = true;
+            this.colconcat_2.VisibleIndex = 0;
             // 
             // colpartida_arancelaria
             // 
@@ -2315,7 +2538,7 @@ namespace LOSA.Compras
             this.colpartida_arancelaria.Name = "colpartida_arancelaria";
             this.colpartida_arancelaria.Visible = true;
             this.colpartida_arancelaria.VisibleIndex = 1;
-            this.colpartida_arancelaria.Width = 102;
+            this.colpartida_arancelaria.Width = 133;
             // 
             // reposPartidaArancelaria
             // 
@@ -2326,7 +2549,9 @@ namespace LOSA.Compras
             this.reposPartidaArancelaria.DisplayMember = "Partida_arancelaria";
             this.reposPartidaArancelaria.Name = "reposPartidaArancelaria";
             this.reposPartidaArancelaria.NullText = "";
+            this.reposPartidaArancelaria.PopupFormSize = new System.Drawing.Size(500, 300);
             this.reposPartidaArancelaria.PopupView = this.gridView1;
+            this.reposPartidaArancelaria.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch;
             this.reposPartidaArancelaria.ValueMember = "Partida_arancelaria";
             // 
             // partidaarancelariaBindingSource
@@ -2346,18 +2571,20 @@ namespace LOSA.Compras
             this.colitemcode.Caption = "Numero de Articulo";
             this.colitemcode.FieldName = "itemcode";
             this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.ReadOnly = true;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 2;
-            this.colitemcode.Width = 102;
+            this.colitemcode.Width = 133;
             // 
             // coldescripcion_articulo
             // 
             this.coldescripcion_articulo.Caption = "Descripcion de Articulo";
             this.coldescripcion_articulo.FieldName = "descripcion_articulo";
             this.coldescripcion_articulo.Name = "coldescripcion_articulo";
+            this.coldescripcion_articulo.OptionsColumn.ReadOnly = true;
             this.coldescripcion_articulo.Visible = true;
             this.coldescripcion_articulo.VisibleIndex = 3;
-            this.coldescripcion_articulo.Width = 102;
+            this.coldescripcion_articulo.Width = 152;
             // 
             // colcantidad
             // 
@@ -2375,7 +2602,7 @@ namespace LOSA.Compras
             this.colprecio_por_unidad.Name = "colprecio_por_unidad";
             this.colprecio_por_unidad.Visible = true;
             this.colprecio_por_unidad.VisibleIndex = 5;
-            this.colprecio_por_unidad.Width = 102;
+            this.colprecio_por_unidad.Width = 114;
             // 
             // colindicador_impuesto
             // 
@@ -2385,7 +2612,7 @@ namespace LOSA.Compras
             this.colindicador_impuesto.Name = "colindicador_impuesto";
             this.colindicador_impuesto.Visible = true;
             this.colindicador_impuesto.VisibleIndex = 7;
-            this.colindicador_impuesto.Width = 102;
+            this.colindicador_impuesto.Width = 148;
             // 
             // reposGrdIndicadorIVA
             // 
@@ -2397,6 +2624,7 @@ namespace LOSA.Compras
             this.reposGrdIndicadorIVA.Name = "reposGrdIndicadorIVA";
             this.reposGrdIndicadorIVA.NullText = "";
             this.reposGrdIndicadorIVA.PopupView = this.repositoryItemGridLookUpEdit2View;
+            this.reposGrdIndicadorIVA.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch;
             this.reposGrdIndicadorIVA.ValueMember = "Code";
             this.reposGrdIndicadorIVA.EditValueChanged += new System.EventHandler(this.reposGrdIndicadorIVA_EditValueChanged);
             // 
@@ -2445,7 +2673,7 @@ namespace LOSA.Compras
             this.colbodega.Name = "colbodega";
             this.colbodega.Visible = true;
             this.colbodega.VisibleIndex = 8;
-            this.colbodega.Width = 102;
+            this.colbodega.Width = 108;
             // 
             // reposGrdBodega
             // 
@@ -2456,6 +2684,7 @@ namespace LOSA.Compras
             this.reposGrdBodega.DisplayMember = "WhsCode";
             this.reposGrdBodega.Name = "reposGrdBodega";
             this.reposGrdBodega.PopupView = this.gridView2;
+            this.reposGrdBodega.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch;
             this.reposGrdBodega.ValueMember = "WhsCode";
             // 
             // bodegasBindingSource
@@ -2497,23 +2726,26 @@ namespace LOSA.Compras
             this.coltotal.Caption = "Total (doc.)";
             this.coltotal.FieldName = "total";
             this.coltotal.Name = "coltotal";
+            this.coltotal.OptionsColumn.ReadOnly = true;
             this.coltotal.Visible = true;
             this.coltotal.VisibleIndex = 9;
-            this.coltotal.Width = 102;
+            this.coltotal.Width = 101;
             // 
             // colreferencia_base
             // 
             this.colreferencia_base.Caption = "Referencia Base";
             this.colreferencia_base.FieldName = "referencia_base";
             this.colreferencia_base.Name = "colreferencia_base";
+            this.colreferencia_base.OptionsColumn.ReadOnly = true;
             this.colreferencia_base.Visible = true;
             this.colreferencia_base.VisibleIndex = 10;
-            this.colreferencia_base.Width = 107;
+            this.colreferencia_base.Width = 146;
             // 
             // colisv
             // 
             this.colisv.FieldName = "isv";
             this.colisv.Name = "colisv";
+            this.colisv.OptionsColumn.ReadOnly = true;
             this.colisv.Visible = true;
             this.colisv.VisibleIndex = 6;
             // 
@@ -2524,14 +2756,14 @@ namespace LOSA.Compras
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 11;
-            this.gridColumn1.Width = 105;
+            this.gridColumn1.Width = 131;
             // 
             // ButtonDeleteRow
             // 
             this.ButtonDeleteRow.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
@@ -2747,47 +2979,7 @@ namespace LOSA.Compras
 
         private void reposGrdIndicadorIVA_EditValueChanged(object sender, EventArgs e)
         {
-            //var gridview = (GridView)reposGrdIndicadorIVA.View;
-            //var row = (dsCompras.ivaRow)gridview.GetFocusedDataRow();
-
-            //var gridviewDetalle = (GridView)grDetalle.FocusedView;
-            //var rowD = (dsCompras.oc_detalle_exoneradaRow)gridviewDetalle.GetFocusedDataRow();
-
-            //switch (row.Code)
-            //{
-            //    case "EXE":
-
-            //        rowD.isv = 0;
-            //        CalcularTotal();
-            //        break;
-
-            //    case "EXO":
-
-            //        rowD.isv = 0;
-            //        CalcularTotal();
-            //        break;
-
-            //    case "ISV"://0.15
-
-            //        rowD.isv = rowD.total / row.Rate;
-
-            //        CalcularTotal();
-
-            //        break;
-
-            //    case "ISVE"://0.18
-
-            //        rowD.isv = rowD.total / row.Rate;
-
-            //        CalcularTotal();
-
-                    
-            //        break;
-
-
-            //    default:
-            //        break;
-            //}
+          
 
         }
     }

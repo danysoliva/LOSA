@@ -117,5 +117,6 @@ namespace LOSA.Compras
         private System.Windows.Forms.TextBox txtNumAtCard;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraGrid.Columns.GridColumn colisv;
+        private System.Windows.Forms.TextBox txtID;
     }
 }
