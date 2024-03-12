@@ -27,6 +27,8 @@ namespace LOSA.Compras
         public decimal Unidades, PrecioUnitario, Total;
         public string CodeISV;
 
+        bool ExistenPartidas = false;
+
         DataOperations dp = new DataOperations();
         public frmAddNewItemOC()
         {
@@ -84,6 +86,12 @@ namespace LOSA.Compras
                 dsExoneracion1.partida_arancelaria.Clear();
                 adat.Fill(dsExoneracion1.partida_arancelaria);
                 conn.Close();
+
+                if (grdvPartidas.RowCount > 0)
+                    ExistenPartidas = true;
+                else
+                    ExistenPartidas = false;
+
             }
             catch (Exception ex)
             {
@@ -101,9 +109,7 @@ namespace LOSA.Compras
             else
             {
                 CalcularTotal();
-                txtSaldoDisponible.EditValue = 0;
-                txtSaldoPorConsumir.EditValue = 0;
-                txtNuevoSaldo.EditValue = 0;
+                CamposExentos();
             }
             
             
@@ -132,12 +138,13 @@ namespace LOSA.Compras
 
         private void CalcularSaldos()
         {
+            
             if (grdvPartidas.RowCount == 0) //No se toman en cuenta Unidades
             {
                 txtSaldoPorConsumir.EditValue = txtTotal.EditValue;
                 txtUdporConsumir.EditValue = 0;
 
-                txtNuevoSaldo.EditValue = Convert.ToDecimal(txtSaldoDisponible.EditValue) - Convert.ToDecimal(txtSaldoPorConsumir.EditValue);
+                 txtNuevoSaldo.EditValue = Convert.ToDecimal(txtSaldoDisponible.EditValue) - Convert.ToDecimal(txtSaldoPorConsumir.EditValue);
 
                 txtUdNueva.EditValue = 0;
             }
@@ -889,16 +896,32 @@ namespace LOSA.Compras
 
             Total = (Unidades * PrecioUnitario);
 
-            txtUd.EditValue = Unidades;
-            txtUnitPrice.EditValue = PrecioUnitario;
-            txtTotal.EditValue = Total;
+            txtUd.EditValue = string.Format("{0:###,##0.00}", Unidades);
+            txtUnitPrice.EditValue = string.Format("{0:###,##0.00}", PrecioUnitario);
+            txtTotal.EditValue = string.Format("{0:###,##0.00}", Total);
 
         }
 
         private void txtUnitPrice_EditValueChanged(object sender, EventArgs e)
         {
-            CalcularTotal();
-            CalcularSaldos();
+            if (TsExoOExe.IsOn)
+            {
+                CalcularTotal();
+                CalcularSaldos();
+            }
+            else
+            {
+                CalcularTotal();
+                CamposExentos();
+            }
+            
+            
+        }
+
+        private void CamposExentos()
+        {
+            txtSaldoDisponible.EditValue = txtSaldoPorConsumir.EditValue = txtNuevoSaldo.EditValue = 0;
+            txtUdDisponible.EditValue = txtUdporConsumir.EditValue = txtUdNueva.EditValue = 0;
         }
     }
 }

@@ -498,10 +498,10 @@ namespace LOSA.Compras
                         dr[4] = items.ItemCode;
                         dr[5] = items.DescripcionArticulo;
                         dr[6] = frm.Unidades; //Cantidad
-                        dr[7] = frm.PrecioUnitario; //Precio por Unidad
+                        dr[7] = string.Format("{0:###,##0.00}", frm.PrecioUnitario); //Precio por Unidad
                         dr[8] = frm.CodeISV;
                         dr[9] = items.Bodega;
-                        dr[10] = string.Format("{0:0.##.##}", frm.Total); //Total
+                        dr[10] = string.Format("{0:###,##0.00}", frm.Total); //Total
                         dr[11] = 0;
                         dr[12] = 0.00;
 

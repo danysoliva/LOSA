@@ -177,7 +177,7 @@ namespace LOSA.Compras
             this.grdPartidaAranc.Properties.PopupView = this.grdvPartidas;
             this.grdPartidaAranc.Properties.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch;
             this.grdPartidaAranc.Properties.ValueMember = "Partida_arancelaria";
-            this.grdPartidaAranc.Size = new System.Drawing.Size(345, 28);
+            this.grdPartidaAranc.Size = new System.Drawing.Size(365, 28);
             this.grdPartidaAranc.TabIndex = 3;
             this.grdPartidaAranc.EditValueChanged += new System.EventHandler(this.grdPartidaAranc_EditValueChanged);
             // 
@@ -408,7 +408,7 @@ namespace LOSA.Compras
             // 
             // separatorControl1
             // 
-            this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.separatorControl1.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.separatorControl1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
