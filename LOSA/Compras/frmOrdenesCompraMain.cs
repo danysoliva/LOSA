@@ -589,7 +589,7 @@ namespace LOSA.Compras
             var grdvDetalle = (GridView)grDetalle.FocusedView;
             var row = (dsCompras.oc_detalle_exoneradaRow)grdvDetalle.GetFocusedDataRow();
 
-            if (row.id_d_orden > 0)
+            if (row.id_d_orden > 0 || string.IsNullOrEmpty(row.id_d_orden.ToString()))
             {
                 try
                 {
@@ -1123,7 +1123,10 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@id_orden_h", id_header);
                             cmd.Parameters.AddWithValue("@ItemCode", row.itemcode);
                             cmd.Parameters.AddWithValue("@Description", row.descripcion_articulo);
-                            cmd.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
+                            if (string.IsNullOrEmpty(row.capitulo))
+                                cmd.Parameters.AddWithValue("@Capitulo_Codigo", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
                             if (string.IsNullOrEmpty(row.partida_arancelaria))
                                 cmd.Parameters.AddWithValue("@Partida_Arancelaria", DBNull.Value);
                             else
@@ -1146,9 +1149,6 @@ namespace LOSA.Compras
 
                         transaction.Commit();
                         Guardar = true;
-
-
-
                     }
                     catch (Exception ec)
                     {
