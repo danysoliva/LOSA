@@ -905,6 +905,7 @@ namespace LOSA.Compras
             this.xrTableCell3.StylePriority.UseBorders = false;
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.Text = "xrTableCell3";
+            this.xrTableCell3.TextFormatString = "{0:n0}";
             this.xrTableCell3.Weight = 0.5655493094075329D;
             // 
             // xrTableCell7
@@ -957,6 +958,7 @@ namespace LOSA.Compras
             this.xrTableCell11.StylePriority.UseBorders = false;
             this.xrTableCell11.StylePriority.UseFont = false;
             this.xrTableCell11.Text = "xrTableCell11";
+            this.xrTableCell11.TextFormatString = "{0:n2}";
             this.xrTableCell11.Weight = 0.95663160218035426D;
             // 
             // xrTableCell8
@@ -970,6 +972,7 @@ namespace LOSA.Compras
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.StylePriority.UseFont = false;
             this.xrTableCell8.Text = "xrTableCell8";
+            this.xrTableCell8.TextFormatString = "{0:n2}";
             this.xrTableCell8.Weight = 1.0145196027203232D;
             // 
             // dsCompras1
