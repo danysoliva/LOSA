@@ -1390,6 +1390,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCompras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmAddNewItemOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmAddNewItemOC.Designer.cs">
+      <DependentUpon>frmAddNewItemOC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\frmCopiarDeSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7159,6 +7165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xrpCertificadoCalidad.resx">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmAddNewItemOC.resx">
+      <DependentUpon>frmAddNewItemOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmCopiarDeSolicitud.resx">
       <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
