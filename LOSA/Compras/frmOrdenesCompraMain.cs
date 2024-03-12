@@ -19,7 +19,7 @@ using static LOSA.Accesos.AccesosUsuarios.AccesoUsuario;
 using DevExpress.CodeParser;
 using Microsoft.VisualBasic;
 using static LOSA.Clases.BinGranel;
-using SAPbobsCOM;
+//using SAPbobsCOM;
 using static DevExpress.DataProcessing.InMemoryDataProcessor.AddSurrogateOperationAlgorithm;
 
 namespace LOSA.Compras
@@ -142,7 +142,7 @@ namespace LOSA.Compras
         {
             try
             {
-                string query = @"sp_cm_exoneracion_all_capitulos_codigos";
+                string query = @"[sp_cm_orden_compra_capitulos_codigos]";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -499,10 +499,11 @@ namespace LOSA.Compras
                         dr[5] = items.DescripcionArticulo;
                         dr[6] = frm.Unidades; //Cantidad
                         dr[7] = frm.PrecioUnitario; //Precio por Unidad
-                                   //dr[8] = reposGrdIndicadorIVA.ValueMember = "ISV";
+                        dr[8] = frm.CodeISV;
                         dr[9] = items.Bodega;
-                        dr[10] = frm.Total; //Total
+                        dr[10] = string.Format("{0:0.##.##}", frm.Total); //Total
                         dr[11] = 0;
+                        dr[12] = 0.00;
 
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
@@ -540,11 +541,11 @@ namespace LOSA.Compras
                         dr[5] = items.DescripcionArticulo;
                         dr[6] = 1; //Cantidad
                         dr[7] = 0; //Precio por Unidad
-                                   //dr[8] = reposGrdIndicadorIVA.ValueMember = "ISV";
+                        dr[8] = "ISV";
                         dr[9] = items.Bodega;
                         dr[10] = 0; //Total
                         dr[11] = 0;
-
+                        dr[12] = 0.00;
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
 
@@ -732,7 +733,12 @@ namespace LOSA.Compras
                 IdEstadoOrdenCompra = oc.IdEstado;
                 txtCodProv.Text = oc.CardCode;
                 txtProveedor.Text = oc.CardName;
+
+                Proveedor prov = new Proveedor();
+                prov.RecuperarRegistroWithRTN(oc.CardCode);
+                txtContactoPerson.Text = prov.ContactName;
                 direccion = oc.Address;
+                txtDireccion.Text = oc.Address;
                 txtSubtotal.EditValue = (oc.DocTotal - oc.ISV);
                 txtImpuesto.EditValue = oc.ISV;
                 txtTotal.EditValue = oc.DocTotal;
@@ -912,6 +918,41 @@ namespace LOSA.Compras
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+                    break;
+                case TipoOperacion.Update:
+
+                    switch (IdEstadoOrdenCompra)
+                    {
+                        case 1://Pendiente (Creada)
+
+                            DialogResult r = CajaDialogo.Pregunta("Se va Actualizar esta Orden de Compra.\nEsta Seguro?");
+                            if (r != System.Windows.Forms.DialogResult.Yes)
+                                return;
+
+                            break;
+
+                        case 2://Autorizado
+                            CajaDialogo.Error("La Orden ya fue Aprobada, no se puede Editar!");
+                            
+                            break;
+
+                        case 3://Rechazado
+                            CajaDialogo.Error("La Orden fue Rechazada, no se puede Editar!");
+
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+
             if (string.IsNullOrEmpty(txtCodProv.Text))
             {
                 CajaDialogo.Error("Debe Agregar un Proveedor!");
@@ -1074,7 +1115,10 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@ItemCode", row.itemcode);
                             cmd.Parameters.AddWithValue("@Description", row.descripcion_articulo);
                             cmd.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
-                            cmd.Parameters.AddWithValue("@Partida_Arancelaria", row.partida_arancelaria);
+                            if (string.IsNullOrEmpty(row.partida_arancelaria))
+                                cmd.Parameters.AddWithValue("@Partida_Arancelaria", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@Partida_Arancelaria", row.partida_arancelaria);
                             cmd.Parameters.AddWithValue("@Quantity", row.cantidad);
                             cmd.Parameters.AddWithValue("@Unite_Price", row.precio_por_unidad);
                             cmd.Parameters.AddWithValue("@Currency", txtMoneda.Text.Trim());
@@ -1553,17 +1597,7 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNumAtCard = new System.Windows.Forms.TextBox();
@@ -2183,9 +2217,8 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(228, 24);
@@ -2274,9 +2307,9 @@ namespace LOSA.Compras
             this.txtDocNum.Enabled = false;
             this.txtDocNum.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtDocNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtDocNum.Location = new System.Drawing.Point(275, 57);
+            this.txtDocNum.Location = new System.Drawing.Point(220, 57);
             this.txtDocNum.Name = "txtDocNum";
-            this.txtDocNum.Size = new System.Drawing.Size(173, 19);
+            this.txtDocNum.Size = new System.Drawing.Size(228, 19);
             this.txtDocNum.TabIndex = 57;
             // 
             // labelControl7
@@ -2589,6 +2622,8 @@ namespace LOSA.Compras
             // colcantidad
             // 
             this.colcantidad.Caption = "Cantidad";
+            this.colcantidad.DisplayFormat.FormatString = "n2";
+            this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.Visible = true;
@@ -2598,6 +2633,8 @@ namespace LOSA.Compras
             // colprecio_por_unidad
             // 
             this.colprecio_por_unidad.Caption = "Precio por unidad";
+            this.colprecio_por_unidad.DisplayFormat.FormatString = "n2";
+            this.colprecio_por_unidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colprecio_por_unidad.FieldName = "precio_por_unidad";
             this.colprecio_por_unidad.Name = "colprecio_por_unidad";
             this.colprecio_por_unidad.Visible = true;
@@ -2743,6 +2780,8 @@ namespace LOSA.Compras
             // 
             // colisv
             // 
+            this.colisv.DisplayFormat.FormatString = "n2";
+            this.colisv.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colisv.FieldName = "isv";
             this.colisv.Name = "colisv";
             this.colisv.OptionsColumn.ReadOnly = true;
@@ -2761,9 +2800,8 @@ namespace LOSA.Compras
             // ButtonDeleteRow
             // 
             this.ButtonDeleteRow.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
@@ -2804,14 +2842,14 @@ namespace LOSA.Compras
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTotal.EditValue = "0.00";
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(1120, 63);
+            this.txtTotal.Location = new System.Drawing.Point(1187, 63);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
             this.txtTotal.Properties.Appearance.Options.UseTextOptions = true;
             this.txtTotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtTotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtTotal.Properties.MaskSettings.Set("mask", "c");
+            this.txtTotal.Properties.MaskSettings.Set("mask", "n");
             this.txtTotal.Properties.NullText = "0.00";
             this.txtTotal.Properties.NullValuePrompt = "0.00";
             this.txtTotal.Size = new System.Drawing.Size(108, 24);
@@ -2822,14 +2860,14 @@ namespace LOSA.Compras
             this.txtImpuesto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtImpuesto.EditValue = "0.00";
             this.txtImpuesto.Enabled = false;
-            this.txtImpuesto.Location = new System.Drawing.Point(1120, 33);
+            this.txtImpuesto.Location = new System.Drawing.Point(1187, 33);
             this.txtImpuesto.Name = "txtImpuesto";
             this.txtImpuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtImpuesto.Properties.Appearance.Options.UseFont = true;
             this.txtImpuesto.Properties.Appearance.Options.UseTextOptions = true;
             this.txtImpuesto.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtImpuesto.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtImpuesto.Properties.MaskSettings.Set("mask", "c");
+            this.txtImpuesto.Properties.MaskSettings.Set("mask", "n");
             this.txtImpuesto.Properties.NullText = "0.00";
             this.txtImpuesto.Size = new System.Drawing.Size(108, 24);
             this.txtImpuesto.TabIndex = 80;
@@ -2839,14 +2877,14 @@ namespace LOSA.Compras
             this.txtSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSubtotal.EditValue = "0.00";
             this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Location = new System.Drawing.Point(1120, 4);
+            this.txtSubtotal.Location = new System.Drawing.Point(1187, 4);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.Properties.Appearance.Options.UseFont = true;
             this.txtSubtotal.Properties.Appearance.Options.UseTextOptions = true;
             this.txtSubtotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtSubtotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtSubtotal.Properties.MaskSettings.Set("mask", "c");
+            this.txtSubtotal.Properties.MaskSettings.Set("mask", "n");
             this.txtSubtotal.Properties.NullText = "0.00";
             this.txtSubtotal.Size = new System.Drawing.Size(108, 24);
             this.txtSubtotal.TabIndex = 79;
@@ -2879,7 +2917,7 @@ namespace LOSA.Compras
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(1018, 10);
+            this.labelControl10.Location = new System.Drawing.Point(1085, 10);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(137, 18);
             this.labelControl10.TabIndex = 84;
@@ -2890,7 +2928,7 @@ namespace LOSA.Compras
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(1018, 68);
+            this.labelControl8.Location = new System.Drawing.Point(1085, 68);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(189, 18);
             this.labelControl8.TabIndex = 82;
@@ -2901,7 +2939,7 @@ namespace LOSA.Compras
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(1018, 40);
+            this.labelControl9.Location = new System.Drawing.Point(1085, 40);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(141, 18);
             this.labelControl9.TabIndex = 83;
@@ -2982,5 +3020,7 @@ namespace LOSA.Compras
           
 
         }
+
+       
     }
 }
