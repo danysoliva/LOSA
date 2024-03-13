@@ -150,10 +150,10 @@ namespace LOSA
                             UsuarioLogeado.Idnivel = idNivel;
                             break;
                         case 2://Basic No Autorization
-
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 3://Medium Autorization
-
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 4://Depth With Delta
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -181,10 +181,10 @@ namespace LOSA
                             UsuarioLogeado.Idnivel = idNivel;
                             break;
                         case 2://Basic No Autorization
-
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 3://Medium Autorization
-
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 4://Depth With Delta
                         case 5://Depth Without Delta
@@ -219,7 +219,7 @@ namespace LOSA
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i - 1].PageVisible = true;
                     tabOpciones.TabPages[11].PageVisible = true;
-
+                    tabOpciones.SelectedTabPageIndex = 12;//TabCompras
 
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
@@ -273,22 +273,26 @@ namespace LOSA
                         case 2://Basic No Autorization
                             tabOpciones.TabPages[8].PageVisible = true;
                             UsuarioLogeado.Idnivel = idNivel2;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 3://Medium Autorization
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 4://Depth With Delta
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
@@ -310,22 +314,27 @@ namespace LOSA
                             tabOpciones.TabPages[6].PageVisible = true;
                             tabOpciones.TabPages[2].PageVisible = false;
                             tabOpciones.TabPages[1].PageVisible = false;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 2://Basic No Autorization
                             tabOpciones.SelectedTabPageIndex = 6;//RRHH
                             tabOpciones.TabPages[6].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 3://Medium Autorization
                             tabOpciones.SelectedTabPageIndex = 6;//RRHH
                             tabOpciones.TabPages[6].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 4://Depth With Delta
                             tabOpciones.SelectedTabPageIndex = 6;//RRHH
                             tabOpciones.TabPages[6].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.SelectedTabPageIndex = 6;//RRHH
                             tabOpciones.TabPages[6].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 6;//RRHH
@@ -346,7 +355,7 @@ namespace LOSA
                             //tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
-                            
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             UsuarioLogeado.Idnivel = idNivel4;
                             break;
                         case 2://Basic No Autorization
@@ -356,12 +365,14 @@ namespace LOSA
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 3://Medium Autorization
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             //BasicView();
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
@@ -370,12 +381,14 @@ namespace LOSA
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         default:
                             tabOpciones.TabPages[1].PageVisible = true;
@@ -466,7 +479,6 @@ namespace LOSA
                     switch (idNivel13)
                     {
                         case 1://Basic View
-                            break;
                         case 2://Basic No Autorization
                             tabOpciones.TabPages[11].PageVisible = true;//Tickets
                             tabOpciones.TabPages[12].PageVisible = true;
