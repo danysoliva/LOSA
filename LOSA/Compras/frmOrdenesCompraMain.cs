@@ -355,7 +355,7 @@ namespace LOSA.Compras
 
         private void CargarDetalleOrdenCompra(int idSolicitudSeleccionado)
         {
-            
+            CargarPartidasArancelarias();
             try
             {
                 string query = @"[sp_get_compras_ordenes_detalle]";
@@ -1676,6 +1676,27 @@ namespace LOSA.Compras
             }
         }
 
+        private void CargarPartidasArancelarias()
+        {
+            try
+            {
+                string query = @"[sp_cm_exoneracion_partida_arancelaria_v2]";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@Code", pCode.Trim());
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsExoneracion1.partida_arancelaria.Clear();
+                adat.Fill(dsExoneracion1.partida_arancelaria);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void comboBoxEdit1_SelectedValueChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cbxMoneda.Text))
@@ -1738,12 +1759,12 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNumAtCard = new System.Windows.Forms.TextBox();
@@ -1836,9 +1857,6 @@ namespace LOSA.Compras
             this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colWhsCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colWhsName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colconcat_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreferencia_base = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colisv = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1855,6 +1873,9 @@ namespace LOSA.Compras
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.colWhsCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWhsName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colconcat_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties)).BeginInit();
@@ -2885,24 +2906,6 @@ namespace LOSA.Compras
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // colWhsCode
-            // 
-            this.colWhsCode.FieldName = "WhsCode";
-            this.colWhsCode.Name = "colWhsCode";
-            // 
-            // colWhsName
-            // 
-            this.colWhsName.FieldName = "WhsName";
-            this.colWhsName.Name = "colWhsName";
-            // 
-            // colconcat_1
-            // 
-            this.colconcat_1.Caption = "Seleccio de Bodega";
-            this.colconcat_1.FieldName = "concat_";
-            this.colconcat_1.Name = "colconcat_1";
-            this.colconcat_1.Visible = true;
-            this.colconcat_1.VisibleIndex = 0;
-            // 
             // coltotal
             // 
             this.coltotal.Caption = "Total (doc.)";
@@ -2948,9 +2951,9 @@ namespace LOSA.Compras
             // ButtonDeleteRow
             // 
             this.ButtonDeleteRow.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
@@ -3100,6 +3103,24 @@ namespace LOSA.Compras
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtnCancelOrden)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
+            // 
+            // colWhsCode
+            // 
+            this.colWhsCode.FieldName = "WhsCode";
+            this.colWhsCode.Name = "colWhsCode";
+            this.colWhsCode.OptionsColumn.ReadOnly = true;
+            this.colWhsCode.Visible = true;
+            this.colWhsCode.VisibleIndex = 0;
+            // 
+            // colWhsName
+            // 
+            this.colWhsName.FieldName = "WhsName";
+            this.colWhsName.Name = "colWhsName";
+            // 
+            // colconcat_1
+            // 
+            this.colconcat_1.FieldName = "concat_";
+            this.colconcat_1.Name = "colconcat_1";
             // 
             // frmOrdenesCompraMain
             // 
