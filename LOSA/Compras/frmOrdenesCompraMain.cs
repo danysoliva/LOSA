@@ -811,6 +811,7 @@ namespace LOSA.Compras
                         txtComentarios.Enabled = true;
                         grDetalle.Enabled = true;
                         dtFechaContabilizacion.Enabled = true;
+                        cmdGuardar.Enabled = true;
                         //btnPrint.Enabled = false;
                         break;
 
@@ -1111,7 +1112,91 @@ namespace LOSA.Compras
                 }
             }
 
-            ValidacionDeSaldos();
+            //ValidacionDeSaldos();
+            bool PermitirGuardar = false;
+            foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            {
+                string Capitulo = "";
+                string Partida = "";
+                decimal SaldoDisponible = 0;
+                decimal UnidadesDisponibles = 0;
+                
+
+                if (item.indicador_impuesto == "EXO")
+                {
+                    if (string.IsNullOrEmpty(item.partida_arancelaria))
+                    {
+                        try
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Monto", item.total);
+                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                PermitirGuardar = dr.GetBoolean(0);
+                                SaldoDisponible = dr.GetDecimal(1);
+                                Capitulo = dr.GetString(2);
+                            }
+                            dr.Close();
+                            conn.Close();
+
+                            if (PermitirGuardar == false)
+                            {
+                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
+                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                                return;
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Monto", item.total);
+                            cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
+                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+                            cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                PermitirGuardar = dr.GetBoolean(0);
+                                Capitulo = dr.GetString(1);
+                                Partida = dr.GetString(2);
+                                SaldoDisponible = dr.GetDecimal(3);
+                                UnidadesDisponibles = dr.GetDecimal(4);
+                            }
+                            dr.Close();
+                            conn.Close();
+
+                            if (PermitirGuardar == false)
+                            {
+                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
+                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                                frm.ShowDialog();
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
+                    }
+                }
+            }
+
 
             switch (tipooperacion)
             { 
@@ -1317,87 +1402,7 @@ namespace LOSA.Compras
         private void ValidacionDeSaldos()
         {
             
-            foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
-            {
-                string Capitulo = "";
-                string Partida = "";
-                decimal SaldoDisponible =0;
-                decimal UnidadesDisponibles = 0;
-                bool PermitirGuardar = false;
-
-                if (item.indicador_impuesto == "EXO")
-                {
-                    if (string.IsNullOrEmpty(item.partida_arancelaria))
-                    {
-                        try
-                        {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto",item.total);
-                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
-                            {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                SaldoDisponible = dr.GetDecimal(1);
-                                Capitulo = dr.GetString(2);
-                            }
-                            dr.Close();
-                            conn.Close();
-
-                            if (PermitirGuardar == false)
-                            {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: "+ Capitulo +"\n Saldo Disponible para Exoneracion: "+ SaldoDisponible +"\n";
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                return;
-                            }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            CajaDialogo.Error(ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto",item.total);
-                            cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
-                            cmd.Parameters.AddWithValue("@Capitulo",item.capitulo);
-                            cmd.Parameters.AddWithValue("@PartidaArancelaria",item.partida_arancelaria);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
-                            {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                Capitulo = dr.GetString(1);
-                                Partida = dr.GetString(2);
-                                SaldoDisponible = dr.GetDecimal(3);
-                                UnidadesDisponibles = dr.GetDecimal(4);
-                            }
-                            dr.Close();
-                            conn.Close();
-
-                            if (PermitirGuardar == false)
-                            {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: "+Partida+"\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: "+ UnidadesDisponibles;
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                return;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            CajaDialogo.Error(ex.Message);
-                        }
-                    }
-                }
-            }
+            
         }
 
         private void panelControl2_Paint(object sender, PaintEventArgs e)
