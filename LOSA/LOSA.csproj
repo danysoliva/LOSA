@@ -1312,6 +1312,8 @@
     <Compile Include="Clases\CertificadoPT_H.cs" />
     <Compile Include="Clases\CheckNewVersion.cs" />
     <Compile Include="Clases\CMOrdenCompraH.cs" />
+    <Compile Include="Clases\CMRuta_Aprobacion.cs" />
+    <Compile Include="Clases\CM_OrdenCompra_EstadosAprobacion.cs" />
     <Compile Include="Clases\ConversorNumALetras.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Despacho.cs" />
@@ -1379,6 +1381,11 @@
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
+    <Compile Include="Compras\dsAutorizacionesCompras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAutorizacionesCompras.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Compras\dsCompras.cs">
       <DependentUpon>dsCompras.xsd</DependentUpon>
     </Compile>
@@ -1395,6 +1402,12 @@
     </Compile>
     <Compile Include="Compras\frmAddNewItemOC.Designer.cs">
       <DependentUpon>frmAddNewItemOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmConfirmationAutorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmConfirmationAutorization.Designer.cs">
+      <DependentUpon>frmConfirmationAutorization.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frmCopiarDeSolicitud.cs">
       <SubType>Form</SubType>
@@ -4646,6 +4659,17 @@
     <None Include="Clases\dsColleccionesClases.xss">
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </None>
+    <None Include="Compras\dsAutorizacionesCompras.xsc">
+      <DependentUpon>dsAutorizacionesCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\dsAutorizacionesCompras.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAutorizacionesCompras.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Compras\dsAutorizacionesCompras.xss">
+      <DependentUpon>dsAutorizacionesCompras.xsd</DependentUpon>
+    </None>
     <None Include="Compras\dsCompras.xsc">
       <DependentUpon>dsCompras.xsd</DependentUpon>
     </None>
@@ -7169,6 +7193,9 @@
     <EmbeddedResource Include="Compras\frmAddNewItemOC.resx">
       <DependentUpon>frmAddNewItemOC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmConfirmationAutorization.resx">
+      <DependentUpon>frmConfirmationAutorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmCopiarDeSolicitud.resx">
       <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
     </EmbeddedResource>
@@ -9525,6 +9552,7 @@
     <None Include="Resources\bomba-de-gas_32X32.png" />
     <None Include="Resources\ani_wait.gif" />
     <None Include="Resources\bascula_x32.png" />
+    <None Include="Resources\approve32px.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
@@ -9560,6 +9588,7 @@
     <None Include="Resources\commentn_32x32.png" />
     <None Include="Resources\code_24.png" />
     <None Include="Resources\code2_24.png" />
+    <None Include="Resources\check32.png" />
     <Content Include="Resources\devoluciones.png" />
     <None Include="Resources\document_aproved_32px.png" />
     <Content Include="Resources\edit.png" />
@@ -9691,6 +9720,7 @@
     <None Include="Resources\Upload_32x32.png" />
     <None Include="Resources\up_24x24.png" />
     <None Include="Resources\txt_24.png" />
+    <None Include="Resources\tick.png" />
     <Content Include="Resources\user.png" />
     <None Include="Resources\weighing-machine_32X32.png" />
     <None Include="Resources\web_apply_32px.png" />
@@ -9705,7 +9735,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

@@ -205,6 +205,9 @@
   <data name="pp_old_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pp_old_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="orden de compra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orden de compra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="formula_external_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formula_external_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -640,6 +643,9 @@
   <data name="optionsRound_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\optionsRound_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="check32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -747,9 +753,6 @@
   </data>
   <data name="tanque" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tanque.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Extract_todays_changes_icon16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Extract-todays-changes-icon16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="report_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -859,6 +862,9 @@
   <data name="2264828" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2264828.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="approve32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\approve32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="devoluciones2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\devoluciones2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -955,6 +961,9 @@
   <data name="User32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="silo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\silo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Asociar_Arribos_fix_x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Asociar Arribos_fix_x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1045,8 +1054,8 @@
   <data name="it_services_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\it_services_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="silo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\silo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Extract_todays_changes_icon16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Extract-todays-changes-icon16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="modulo_bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modulo bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1075,7 +1084,7 @@
   <data name="Truck_pending_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Truck_pending_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="orden de compra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\orden de compra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

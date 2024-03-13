@@ -1,8 +1,11 @@
-﻿using LOSA.Clases;
+﻿using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,93 +21,149 @@ namespace LOSA.Compras
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
+            LoadPendientes(UsuarioLogeado.Id);
         }
 
-        private void InitializeComponent()
+        private void LoadPendientes(int pIdUsuario)
         {
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 71);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(796, 379);
-            this.xtraTabControl1.TabIndex = 0;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.gridControl1);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(794, 354);
-            this.xtraTabPage1.Text = "Pendientes";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(794, 354);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(798, 425);
-            this.xtraTabPage2.Text = "Historial";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(238, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Gestión de aprobación de Ordenes de Compra";
-            // 
-            // frmGestionAprobaciones
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.xtraTabControl1);
-            this.Name = "frmGestionAprobaciones";
-            this.Text = "Gestión de Aprobaciones";
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
 
+                SqlCommand cmd = new SqlCommand("[dbo].[sp_get_detalle_ordenes_compra_pendiente_aprobacion]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_usuario", pIdUsuario);
+                dsAutorizacionesCompras1.pendienes_aprobacion.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsAutorizacionesCompras1.pendienes_aprobacion);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        
+
+        private void cmdGestionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsAutorizacionesCompras.pendienes_aprobacionRow)gridView.GetFocusedDataRow();
+
+            if(row.Isid_estadoNull())
+            {
+                return;
+            }
+            else
+            {
+                if (row.id_estado > 1)
+                {
+                    CajaDialogo.Error("Esta orden de compra ya fue gestionada!");
+                    return;
+                }
+            }
+
+            CMOrdenCompraH pOrdenActual = new CMOrdenCompraH();
+            if(pOrdenActual.RecuperarRegistro(row.id))
+            {
+                frmConfirmationAutorization frm = new frmConfirmationAutorization(pOrdenActual);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    bool IsCommit = false;
+                    int idEstadoNew = 0;
+                    string EstadoNameNew = string.Empty;
+                    DataOperations dp = new DataOperations();
+                    using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
+                    {
+                        connection.Open();
+
+                        SqlCommand command = connection.CreateCommand();
+                        SqlTransaction transaction;
+
+                        // Start a local transaction.
+                        transaction = connection.BeginTransaction("SampleTransaction");
+
+                        // Must assign both transaction object and connection
+                        // to Command object for a pending local transaction
+                        command.Connection = connection;
+                        command.Transaction = transaction;
+
+                        try
+                        {
+
+                            //Transaccion de aprobacion
+                            command.CommandText = "dbo.sp_set_insert_aprobacion_orden_compra_h";
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.Clear();
+
+                            
+                            if (frm.IsApproved)
+                                idEstadoNew = 2;//Autorizado
+                            else
+                                idEstadoNew = 3;//Rechazado
+
+                            command.Parameters.AddWithValue("@id_estado", idEstadoNew);
+                            command.Parameters.AddWithValue("@id_user_aprobo",this.UsuarioLogeado.Id);
+                            command.Parameters.AddWithValue("@id_solicitud_aprobacion", row.id);
+                            command.Parameters.AddWithValue("@comentario", frm.txtCommentsAprobador.Text);
+                            command.ExecuteNonQuery();
+
+
+                            //transaccion en kardex de las lineas de orden de compra
+                            if (idEstadoNew == 2)
+                            {
+                                command.CommandText = "dbo.sp_set_insert_lineas_orden_compra_for_kardex";
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.Clear();
+                                command.Parameters.AddWithValue("@id_orden_compra_h", row.id_ordenH);
+                                command.Parameters.AddWithValue("@user_id", this.UsuarioLogeado.Id);
+                                command.ExecuteNonQuery();
+                            }                            
+
+                            transaction.Commit();
+                            IsCommit = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            // Attempt to roll back the transaction.
+                            try
+                            {
+                                transaction.Rollback();
+                                CajaDialogo.Error(ex.Message);
+                            }
+                            catch (Exception ex2)
+                            {
+                                CajaDialogo.Error(ex2.Message);
+                            }
+                        }
+                    }//Using Connection for Transaction
+
+                    //cambio de estado en el grid
+                    if(IsCommit)
+                    {
+                        row.id_estado = idEstadoNew;
+                        CM_OrdenCompra_EstadosAprobacion EstadoActual = new CM_OrdenCompra_EstadosAprobacion();
+                        if (EstadoActual.RecuperarRegistro(idEstadoNew))
+                        {
+                            row.EstadoNombre = EstadoActual.descripcion;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                CajaDialogo.Error("Ha ocurrido un error, no se pudo recuperar el objeto Orden de Compra H!");
+            }
+        }
+
+        private void cmdActualizar_Click(object sender, EventArgs e)
+        {
+            LoadPendientes(this.UsuarioLogeado.Id);
         }
     }
 }
