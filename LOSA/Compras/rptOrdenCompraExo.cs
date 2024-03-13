@@ -136,8 +136,6 @@ namespace LOSA.Compras
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.xrLine4 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine3 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
@@ -146,12 +144,12 @@ namespace LOSA.Compras
             this.lblComentario = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel35 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine11 = new DevExpress.XtraReports.UI.XRLine();
             this.lblTotal = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblAPagarLetras = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.lblEstado = new DevExpress.XtraReports.UI.XRLabel();
             this.lblVigencia = new DevExpress.XtraReports.UI.XRLabel();
             this.lblResolucion = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
@@ -202,7 +200,6 @@ namespace LOSA.Compras
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
             this.dsCompras1 = new LOSA.Compras.dsCompras();
-            this.lblEstado = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
@@ -226,8 +223,6 @@ namespace LOSA.Compras
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLine4,
-            this.xrLabel8,
             this.xrLine3,
             this.xrLine1,
             this.xrLabel3,
@@ -236,7 +231,6 @@ namespace LOSA.Compras
             this.lblComentario,
             this.xrLabel7,
             this.xrLabel35,
-            this.xrLine11,
             this.lblTotal,
             this.xrLabel4,
             this.lblAPagarLetras,
@@ -246,27 +240,9 @@ namespace LOSA.Compras
             this.ReportFooter.Name = "ReportFooter";
             this.ReportFooter.StylePriority.UseFont = false;
             // 
-            // xrLine4
-            // 
-            this.xrLine4.LocationFloat = new DevExpress.Utils.PointFloat(412.3365F, 189.0414F);
-            this.xrLine4.Name = "xrLine4";
-            this.xrLine4.SizeF = new System.Drawing.SizeF(246.8749F, 2.083328F);
-            // 
-            // xrLabel8
-            // 
-            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(412.3365F, 191.1248F);
-            this.xrLabel8.Name = "xrLabel8";
-            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(246.8749F, 23.00002F);
-            this.xrLabel8.StylePriority.UseFont = false;
-            this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.Text = "Firma Y Sello DGCFA";
-            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // xrLine3
             // 
-            this.xrLine3.LocationFloat = new DevExpress.Utils.PointFloat(37.75317F, 189.0414F);
+            this.xrLine3.LocationFloat = new DevExpress.Utils.PointFloat(223.9648F, 189.6925F);
             this.xrLine3.Name = "xrLine3";
             this.xrLine3.SizeF = new System.Drawing.SizeF(246.8749F, 2.083328F);
             // 
@@ -346,12 +322,6 @@ namespace LOSA.Compras
             this.xrLabel35.Text = "Total:";
             this.xrLabel35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrLine11
-            // 
-            this.xrLine11.LocationFloat = new DevExpress.Utils.PointFloat(602.0657F, 0F);
-            this.xrLine11.Name = "xrLine11";
-            this.xrLine11.SizeF = new System.Drawing.SizeF(97.09943F, 2F);
-            // 
             // lblTotal
             // 
             this.lblTotal.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
@@ -392,7 +362,7 @@ namespace LOSA.Compras
             // xrLabel6
             // 
             this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(37.74834F, 191.1283F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(223.9601F, 191.7793F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel6.SizeF = new System.Drawing.SizeF(246.8749F, 23.00003F);
@@ -439,6 +409,22 @@ namespace LOSA.Compras
             this.xrLabel23});
             this.ReportHeader.HeightF = 306F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.Angle = 50F;
+            this.lblEstado.Font = new DevExpress.Drawing.DXFont("Agency FB", 14F);
+            this.lblEstado.LocationFloat = new DevExpress.Utils.PointFloat(84.59F, 137.625F);
+            this.lblEstado.Multiline = true;
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblEstado.SizeF = new System.Drawing.SizeF(506.4489F, 134.7081F);
+            this.lblEstado.StylePriority.UseFont = false;
+            this.lblEstado.StylePriority.UseTextAlignment = false;
+            this.lblEstado.Text = "lblEstado";
+            this.lblEstado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblEstado.TextTrimming = DevExpress.Drawing.DXStringTrimming.None;
+            this.lblEstado.Visible = false;
             // 
             // lblVigencia
             // 
@@ -1000,22 +986,6 @@ namespace LOSA.Compras
             // 
             this.dsCompras1.DataSetName = "dsCompras";
             this.dsCompras1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.Angle = 50F;
-            this.lblEstado.Font = new DevExpress.Drawing.DXFont("Agency FB", 14F);
-            this.lblEstado.LocationFloat = new DevExpress.Utils.PointFloat(84.59F, 137.625F);
-            this.lblEstado.Multiline = true;
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblEstado.SizeF = new System.Drawing.SizeF(506.4489F, 134.7081F);
-            this.lblEstado.StylePriority.UseFont = false;
-            this.lblEstado.StylePriority.UseTextAlignment = false;
-            this.lblEstado.Text = "lblEstado";
-            this.lblEstado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lblEstado.TextTrimming = DevExpress.Drawing.DXStringTrimming.None;
-            this.lblEstado.Visible = false;
             // 
             // rptOrdenCompraExo
             // 

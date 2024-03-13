@@ -53,7 +53,7 @@ namespace LOSA.Compras
             CargarIVA();
             CargarBodegas();
             CargarRutasAprobacion();
-            //comboBoxEdit1.EditValue = "Moneda local";
+            cbxMoneda.Text = "Moneda local";
             UsuarioLogueado = pUserLog;
             tipooperacion = ptipo;
             switch (tipooperacion)
@@ -73,7 +73,7 @@ namespace LOSA.Compras
 
             ValidarAccesosSegunUsuario();
             btnPrint.Enabled = true;
-
+            btnShowPopu.Enabled = true;
         }
 
         private void CargarBodegas()
@@ -229,15 +229,16 @@ namespace LOSA.Compras
                     //TasaCambioActual();
                     GetTasaCambio();
                     txtTasaCambio.Visible = true;
+                    cbxMoneda.Text = "Moneda SN";
                 }
                 else
                 {
+                    cbxMoneda.Text = "Moneda SN";
                     txtTasaCambio.Visible = false;
                 }
 
                 cmdNuevo.Enabled = true;
                 btnShowPopu.Enabled = true;
-
             }
         }
 
@@ -318,6 +319,7 @@ namespace LOSA.Compras
                 cmdD.CommandType = CommandType.StoredProcedure;
                 cmdD.Parameters.AddWithValue("@DocNum", idSolicitudSeleccionado);
                 SqlDataReader dr = cmdD.ExecuteReader();
+                dsCompras1.oc_detalle_exonerada.Clear();
                 while (dr.Read())
                 {
                     DataRow row = dsCompras1.oc_detalle_exonerada.NewRow();
@@ -833,10 +835,9 @@ namespace LOSA.Compras
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
                         dtFechaContabilizacion.Enabled = false;
-                        btnPrint.Enabled = false;
                         cmdGuardar.Enabled = false;
                         TsExoOIsv.ReadOnly = true;
-                        //btnShowPopu.Enabled = false;
+                        btnShowPopu.Enabled = false;
                         break;
 
                     default:
@@ -1064,6 +1065,12 @@ namespace LOSA.Compras
                 if (item.indicador_impuesto == null)
                 {
                     CajaDialogo.Error("Debe seleccionar un Indicador de Impuesto!");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(item.descripcion_articulo) || string.IsNullOrWhiteSpace(item.descripcion_articulo))
+                {
+                    CajaDialogo.Error("No puede dejar vacio la Descripcion del Articulo");
                     return;
                 }
             }
@@ -1849,12 +1856,14 @@ namespace LOSA.Compras
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreferencia_base = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colisv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ButtonDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtComentarios = new DevExpress.XtraEditors.MemoEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
@@ -1866,8 +1875,6 @@ namespace LOSA.Compras
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties)).BeginInit();
@@ -1899,8 +1906,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtComentarios.Properties)).BeginInit();
@@ -1908,8 +1917,6 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubtotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -2210,6 +2217,7 @@ namespace LOSA.Compras
             // 
             // txtTasaCambio
             // 
+            this.txtTasaCambio.Enabled = false;
             this.txtTasaCambio.Location = new System.Drawing.Point(326, 202);
             this.txtTasaCambio.MenuManager = this.barManager1;
             this.txtTasaCambio.Name = "txtTasaCambio";
@@ -2231,6 +2239,7 @@ namespace LOSA.Compras
             // 
             // cbxMoneda
             // 
+            this.cbxMoneda.Enabled = false;
             this.cbxMoneda.Location = new System.Drawing.Point(48, 202);
             this.cbxMoneda.MenuManager = this.barManager1;
             this.cbxMoneda.Name = "cbxMoneda";
@@ -2361,7 +2370,6 @@ namespace LOSA.Compras
             // 
             // btnPrint
             // 
-            this.btnPrint.Enabled = false;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnPrint.Location = new System.Drawing.Point(275, 12);
@@ -2773,7 +2781,6 @@ namespace LOSA.Compras
             this.coldescripcion_articulo.Caption = "Descripcion de Articulo";
             this.coldescripcion_articulo.FieldName = "descripcion_articulo";
             this.coldescripcion_articulo.Name = "coldescripcion_articulo";
-            this.coldescripcion_articulo.OptionsColumn.ReadOnly = true;
             this.coldescripcion_articulo.Visible = true;
             this.coldescripcion_articulo.VisibleIndex = 3;
             this.coldescripcion_articulo.Width = 200;
@@ -2869,11 +2876,6 @@ namespace LOSA.Compras
             this.colbodega.VisibleIndex = 8;
             this.colbodega.Width = 110;
             // 
-            // bodegasBindingSource
-            // 
-            this.bodegasBindingSource.DataMember = "bodegas";
-            this.bodegasBindingSource.DataSource = this.dsCompras1;
-            // 
             // coltotal
             // 
             this.coltotal.Caption = "Total (doc.)";
@@ -2924,6 +2926,29 @@ namespace LOSA.Compras
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
+            // 
+            // reposGrdBodega
+            // 
+            this.reposGrdBodega.AutoHeight = false;
+            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
+            this.reposGrdBodega.DisplayMember = "bodega";
+            this.reposGrdBodega.Name = "reposGrdBodega";
+            this.reposGrdBodega.PopupView = this.gridView2;
+            this.reposGrdBodega.ValueMember = "bodega";
+            // 
+            // bodegasBindingSource
+            // 
+            this.bodegasBindingSource.DataMember = "bodegas";
+            this.bodegasBindingSource.DataSource = this.dsCompras1;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl2
             // 
@@ -3071,24 +3096,6 @@ namespace LOSA.Compras
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
-            // reposGrdBodega
-            // 
-            this.reposGrdBodega.AutoHeight = false;
-            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
-            this.reposGrdBodega.DisplayMember = "bodega";
-            this.reposGrdBodega.Name = "reposGrdBodega";
-            this.reposGrdBodega.PopupView = this.gridView2;
-            this.reposGrdBodega.ValueMember = "bodega";
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
             // frmOrdenesCompraMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3135,8 +3142,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -3145,8 +3154,6 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubtotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

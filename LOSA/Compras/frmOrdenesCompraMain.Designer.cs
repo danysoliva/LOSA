@@ -16,7 +16,6 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl grDetalle;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvDetalle;
-        private DevExpress.XtraGrid.Columns.GridColumn colbodega1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonDeleteRow;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;

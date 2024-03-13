@@ -49,6 +49,7 @@ namespace LOSA.Calidad.LoteConfConsumo
                     LoadData();
                     break;
                 case TipoBusqueda.ProductoTerminado:
+                    labelControl1.Text = "Seleccione el Producto Terminado";
                     break;
                 case TipoBusqueda.Empleados:
                     break;
@@ -57,15 +58,18 @@ namespace LOSA.Calidad.LoteConfConsumo
                 case TipoBusqueda.BodegasALOSY:
                     break;
                 case TipoBusqueda.MaterialEmpaque:
+                    labelControl1.Text = "Seleccione el Articulo";
                     LoadData();
                     break;
                 case TipoBusqueda.Reproceso:
                     LoadData();
                     break;
                 case TipoBusqueda.Proveedores:
+                    labelControl1.Text = "Seleccione el Proveedor";
                     LoadData();
                     break;
                 case TipoBusqueda.Items:
+                    labelControl1.Text = "Seleccione el Articulo";
                     LoadData();
                     break;
                
