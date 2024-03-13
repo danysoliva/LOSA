@@ -47,19 +47,7 @@ namespace LOSA.Compras
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //switch (Filtro)
-                //{
-                //    case FiltroOrdenesCompra.Todas:
-                //        cmd.Parameters.AddWithValue("@filtro", 1);
-                //        break;
-
-                //    case FiltroOrdenesCompra.Abiertas:
-                //        cmd.Parameters.AddWithValue("@filtro", 2);
-                //        break;
-
-                //    default:
-                //        break;
-                //}
+                
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsCompras1.orden_compra_exo.Clear();
                 adat.Fill(dsCompras1.orden_compra_exo);

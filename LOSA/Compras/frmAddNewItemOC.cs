@@ -232,13 +232,13 @@ namespace LOSA.Compras
                 }
                 else
                 {
-                    grdPartidaAranc.EditValue = 0;
+                    grdPartidaAranc.EditValue = " ";
                 }
             }
             else
             {
-                grdCapitulo.EditValue = 0;
-                grdCapitulo.EditValue = 0;
+                grdPartidaAranc.EditValue = " ";
+                grdCapitulo.EditValue = " ";
             }
            
             

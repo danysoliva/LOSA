@@ -41,7 +41,8 @@ namespace LOSA.Clases
         public string UserAprobo { get; set; }
         public bool Recuperado { get; set; }
         public int idRutaAprobacion { get; set; }
-
+        public string U_incoterm { get; set; }
+        
 
         public CMOrdenCompraH() { }
 
@@ -236,6 +237,10 @@ namespace LOSA.Clases
                         else
                             idRutaAprobacion = reader.GetInt32(reader.GetOrdinal("id_ruta_aprobacion"));
 
+                        if (reader.IsDBNull(reader.GetOrdinal("U_incoterm")))
+                            U_incoterm = string.Empty;
+                        else
+                            U_incoterm = reader.GetString(reader.GetOrdinal("U_incoterm"));
                         Recuperado = true;
                     }
 

@@ -50,6 +50,7 @@ namespace LOSA.Compras
             this.colsubido_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsubido = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposSelected = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -93,7 +94,8 @@ namespace LOSA.Compras
             this.colComments,
             this.colDocTotal,
             this.colsubido_sap,
-            this.colsubido});
+            this.colsubido,
+            this.gridColumn1});
             this.gridView1.GridControl = this.grdSolicitudes;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -114,7 +116,7 @@ namespace LOSA.Compras
             this.colCardCode.OptionsColumn.AllowEdit = false;
             this.colCardCode.Visible = true;
             this.colCardCode.VisibleIndex = 1;
-            this.colCardCode.Width = 89;
+            this.colCardCode.Width = 91;
             // 
             // colCardName
             // 
@@ -123,15 +125,13 @@ namespace LOSA.Compras
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 2;
-            this.colCardName.Width = 189;
+            this.colCardName.Width = 194;
             // 
             // colState
             // 
             this.colState.FieldName = "State";
             this.colState.Name = "colState";
             this.colState.OptionsColumn.AllowEdit = false;
-            this.colState.Visible = true;
-            this.colState.VisibleIndex = 3;
             this.colState.Width = 104;
             // 
             // colDocNum
@@ -141,7 +141,7 @@ namespace LOSA.Compras
             this.colDocNum.OptionsColumn.ReadOnly = true;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 80;
+            this.colDocNum.Width = 82;
             // 
             // colDocDate
             // 
@@ -150,7 +150,7 @@ namespace LOSA.Compras
             this.colDocDate.OptionsColumn.AllowEdit = false;
             this.colDocDate.Visible = true;
             this.colDocDate.VisibleIndex = 4;
-            this.colDocDate.Width = 104;
+            this.colDocDate.Width = 101;
             // 
             // colU_TipoOrden
             // 
@@ -160,7 +160,7 @@ namespace LOSA.Compras
             this.colU_TipoOrden.OptionsColumn.AllowEdit = false;
             this.colU_TipoOrden.Visible = true;
             this.colU_TipoOrden.VisibleIndex = 5;
-            this.colU_TipoOrden.Width = 129;
+            this.colU_TipoOrden.Width = 124;
             // 
             // colComments
             // 
@@ -170,7 +170,7 @@ namespace LOSA.Compras
             this.colComments.OptionsColumn.AllowEdit = false;
             this.colComments.Visible = true;
             this.colComments.VisibleIndex = 6;
-            this.colComments.Width = 95;
+            this.colComments.Width = 92;
             // 
             // colDocTotal
             // 
@@ -181,7 +181,7 @@ namespace LOSA.Compras
             this.colDocTotal.OptionsColumn.AllowEdit = false;
             this.colDocTotal.Visible = true;
             this.colDocTotal.VisibleIndex = 7;
-            this.colDocTotal.Width = 95;
+            this.colDocTotal.Width = 92;
             // 
             // colsubido_sap
             // 
@@ -191,7 +191,7 @@ namespace LOSA.Compras
             this.colsubido_sap.OptionsColumn.AllowEdit = false;
             this.colsubido_sap.Visible = true;
             this.colsubido_sap.VisibleIndex = 8;
-            this.colsubido_sap.Width = 111;
+            this.colsubido_sap.Width = 116;
             // 
             // colsubido
             // 
@@ -208,6 +208,14 @@ namespace LOSA.Compras
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposSelected.Name = "reposSelected";
             this.reposSelected.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Estado OC";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 104;
             // 
             // frmSearchOrdenC
             // 
@@ -242,5 +250,6 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Columns.GridColumn colDocTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colsubido_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colsubido;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

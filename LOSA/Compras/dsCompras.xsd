@@ -141,6 +141,7 @@
               <xs:element name="DocTotal" msprop:Generator_ColumnVarNameInTable="columnDocTotal" msprop:Generator_ColumnPropNameInRow="DocTotal" msprop:Generator_ColumnPropNameInTable="DocTotalColumn" msprop:Generator_UserColumnName="DocTotal" type="xs:decimal" minOccurs="0" />
               <xs:element name="subido_sap" msprop:Generator_ColumnVarNameInTable="columnsubido_sap" msprop:Generator_ColumnPropNameInRow="subido_sap" msprop:Generator_ColumnPropNameInTable="subido_sapColumn" msprop:Generator_UserColumnName="subido_sap" type="xs:string" minOccurs="0" />
               <xs:element name="subido" msprop:Generator_ColumnVarNameInTable="columnsubido" msprop:Generator_ColumnPropNameInRow="subido" msprop:Generator_ColumnPropNameInTable="subidoColumn" msprop:Generator_UserColumnName="subido" type="xs:boolean" minOccurs="0" />
+              <xs:element name="estado_name" msprop:Generator_ColumnVarNameInTable="columnestado_name" msprop:Generator_ColumnPropNameInRow="estado_name" msprop:Generator_ColumnPropNameInTable="estado_nameColumn" msprop:Generator_UserColumnName="estado_name" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -173,6 +174,10 @@
               <xs:element name="por_consumir" msprop:Generator_ColumnVarNameInTable="columnpor_consumir" msprop:Generator_ColumnPropNameInRow="por_consumir" msprop:Generator_ColumnPropNameInTable="por_consumirColumn" msprop:Generator_UserColumnName="por_consumir" type="xs:decimal" minOccurs="0" />
               <xs:element name="nuevo_saldo" msprop:Generator_ColumnVarNameInTable="columnnuevo_saldo" msprop:Generator_ColumnPropNameInRow="nuevo_saldo" msprop:Generator_ColumnPropNameInTable="nuevo_saldoColumn" msprop:Generator_UserColumnName="nuevo_saldo" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
           </xs:complexType>
         </xs:element>
       </xs:choice>
