@@ -173,7 +173,7 @@ namespace LOSA.Compras
             this.grdPartidaAranc.Properties.DataSource = this.partidaarancelariaBindingSource;
             this.grdPartidaAranc.Properties.DisplayMember = "Partida_arancelaria";
             this.grdPartidaAranc.Properties.NullText = "";
-            this.grdPartidaAranc.Properties.PopupFormSize = new System.Drawing.Size(500, 120);
+            this.grdPartidaAranc.Properties.PopupFormSize = new System.Drawing.Size(500, 350);
             this.grdPartidaAranc.Properties.PopupView = this.grdvPartidas;
             this.grdPartidaAranc.Properties.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch;
             this.grdPartidaAranc.Properties.ValueMember = "Partida_arancelaria";
@@ -408,7 +408,7 @@ namespace LOSA.Compras
             // 
             // separatorControl1
             // 
-            this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.separatorControl1.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.separatorControl1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));

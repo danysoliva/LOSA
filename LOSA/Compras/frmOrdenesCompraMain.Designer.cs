@@ -16,6 +16,7 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl grDetalle;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvDetalle;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonDeleteRow;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
@@ -99,9 +100,7 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colRate;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGrdBodega;
         private System.Windows.Forms.BindingSource bodegasBindingSource;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colCode1;
         private DevExpress.XtraGrid.Columns.GridColumn colU_AQUA_Desc;
         private DevExpress.XtraGrid.Columns.GridColumn colconcat_2;
@@ -116,8 +115,7 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraGrid.Columns.GridColumn colisv;
         private System.Windows.Forms.TextBox txtID;
-        private DevExpress.XtraGrid.Columns.GridColumn colWhsCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colWhsName;
-        private DevExpress.XtraGrid.Columns.GridColumn colconcat_1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGrdBodega;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
