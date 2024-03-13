@@ -5,7 +5,6 @@ namespace LOSA.Compras
     {
 
         #region Windows Form Designer generated code
-
         #endregion
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
@@ -48,5 +47,7 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.SimpleButton cmdClose;
         private DevExpress.XtraEditors.SimpleButton cmdGuardar;
+        private DevExpress.XtraEditors.ToggleSwitch TsExoOExe;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
     }
 }

@@ -5,6 +5,7 @@ namespace LOSA.Compras
     {
 
         #region Windows Form Designer generated code
+
         #endregion
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.ComponentModel.IContainer components;

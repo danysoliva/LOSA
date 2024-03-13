@@ -23,7 +23,26 @@ namespace LOSA.Compras
             oc.RecuperarRegistro(IdOrdenH);
             lblDocNum.Text = "Orden Compra (Local) NO#:" + oc.DocNum.ToString();
             lblCliente.Text = oc.CardName;
+            switch (oc.IdEstado)
+            {
+                case 1://Pendiente de Aprobacion
+                    lblEstado.Visible = true;
+                    lblEstado.Text = "OC Pendiente de Aprobacion\nBORRADOR";
+                   
+                    break;
 
+                case 2: //Autorizado
+                    lblEstado.Visible = false;
+                    //lblEstado.Text = "OC Pendiente de Aprobacion";
+                    break;
+
+                case 3: //Rechazado
+                    lblEstado.Visible = true;
+                    lblEstado.Text = "OC Rechazada\nBORRADOR";
+                    break;
+                default:
+                    break;
+            }
             Proveedor prov = new Proveedor();
             prov.RecuperarRegistroWithRTN(oc.CardCode);
             lblRTN.Text = prov.RTN;
@@ -183,6 +202,7 @@ namespace LOSA.Compras
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
             this.dsCompras1 = new LOSA.Compras.dsCompras();
+            this.lblEstado = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
@@ -222,7 +242,7 @@ namespace LOSA.Compras
             this.lblAPagarLetras,
             this.xrLabel6});
             this.ReportFooter.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.ReportFooter.HeightF = 222.9581F;
+            this.ReportFooter.HeightF = 382.6248F;
             this.ReportFooter.Name = "ReportFooter";
             this.ReportFooter.StylePriority.UseFont = false;
             // 
@@ -384,6 +404,7 @@ namespace LOSA.Compras
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lblEstado,
             this.lblVigencia,
             this.lblResolucion,
             this.xrLabel5,
@@ -979,6 +1000,22 @@ namespace LOSA.Compras
             // 
             this.dsCompras1.DataSetName = "dsCompras";
             this.dsCompras1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.Angle = 50F;
+            this.lblEstado.Font = new DevExpress.Drawing.DXFont("Agency FB", 14F);
+            this.lblEstado.LocationFloat = new DevExpress.Utils.PointFloat(84.59F, 137.625F);
+            this.lblEstado.Multiline = true;
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblEstado.SizeF = new System.Drawing.SizeF(506.4489F, 134.7081F);
+            this.lblEstado.StylePriority.UseFont = false;
+            this.lblEstado.StylePriority.UseTextAlignment = false;
+            this.lblEstado.Text = "lblEstado";
+            this.lblEstado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblEstado.TextTrimming = DevExpress.Drawing.DXStringTrimming.None;
+            this.lblEstado.Visible = false;
             // 
             // rptOrdenCompraExo
             // 
