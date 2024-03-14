@@ -118,5 +118,6 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxIntercom;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

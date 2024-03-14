@@ -2632,6 +2632,8 @@ namespace LOSA.Compras {
             
             private global::System.Data.DataColumn columnisv;
             
+            private global::System.Data.DataColumn columnnum_linea_solicitud_d;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public oc_detalle_exoneradaDataTable() {
@@ -2771,6 +2773,14 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn num_linea_solicitud_dColumn {
+                get {
+                    return this.columnnum_linea_solicitud_d;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2806,7 +2816,7 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public oc_detalle_exoneradaRow Addoc_detalle_exoneradaRow(int id_d_orden, int id_h, string capitulo, string partida_arancelaria, string itemcode, string descripcion_articulo, decimal cantidad, decimal precio_por_unidad, string indicador_impuesto, string bodega, decimal total, int referencia_base, decimal isv) {
+            public oc_detalle_exoneradaRow Addoc_detalle_exoneradaRow(int id_d_orden, int id_h, string capitulo, string partida_arancelaria, string itemcode, string descripcion_articulo, decimal cantidad, decimal precio_por_unidad, string indicador_impuesto, string bodega, decimal total, int referencia_base, decimal isv, string num_linea_solicitud_d) {
                 oc_detalle_exoneradaRow rowoc_detalle_exoneradaRow = ((oc_detalle_exoneradaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_d_orden,
@@ -2821,7 +2831,8 @@ namespace LOSA.Compras {
                         bodega,
                         total,
                         referencia_base,
-                        isv};
+                        isv,
+                        num_linea_solicitud_d};
                 rowoc_detalle_exoneradaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowoc_detalle_exoneradaRow);
                 return rowoc_detalle_exoneradaRow;
@@ -2857,6 +2868,7 @@ namespace LOSA.Compras {
                 this.columntotal = base.Columns["total"];
                 this.columnreferencia_base = base.Columns["referencia_base"];
                 this.columnisv = base.Columns["isv"];
+                this.columnnum_linea_solicitud_d = base.Columns["num_linea_solicitud_d"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2888,7 +2900,10 @@ namespace LOSA.Compras {
                 base.Columns.Add(this.columnreferencia_base);
                 this.columnisv = new global::System.Data.DataColumn("isv", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnisv);
+                this.columnnum_linea_solicitud_d = new global::System.Data.DataColumn("num_linea_solicitud_d", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnum_linea_solicitud_d);
                 this.columnisv.Caption = "ISV";
+                this.columnnum_linea_solicitud_d.DefaultValue = ((string)("0"));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6580,6 +6595,23 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string num_linea_solicitud_d {
+                get {
+                    try {
+                        return ((string)(this[this.tableoc_detalle_exonerada.num_linea_solicitud_dColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'num_linea_solicitud_d\' de la tabla \'oc_detalle_exonerada\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableoc_detalle_exonerada.num_linea_solicitud_dColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_d_ordenNull() {
                 return this.IsNull(this.tableoc_detalle_exonerada.id_d_ordenColumn);
             }
@@ -6732,6 +6764,18 @@ namespace LOSA.Compras {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisvNull() {
                 this[this.tableoc_detalle_exonerada.isvColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnum_linea_solicitud_dNull() {
+                return this.IsNull(this.tableoc_detalle_exonerada.num_linea_solicitud_dColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnum_linea_solicitud_dNull() {
+                this[this.tableoc_detalle_exonerada.num_linea_solicitud_dColumn] = global::System.Convert.DBNull;
             }
         }
         

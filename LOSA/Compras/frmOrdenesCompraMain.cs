@@ -339,7 +339,8 @@ namespace LOSA.Compras
                     row[9] = dr.GetString(4); //Almacen
                     row[10] = 0.00; //Total
                     row[11] = dr.GetInt32(5); //BaseRef - Id de solicitud de compra
-
+                    row[12] = 0.00; //ISV
+                    row[13] = dr.GetInt32(6);//LienNum - Linea base
                     dsCompras1.oc_detalle_exonerada.Rows.Add(row);
                 }
                 //SqlDataAdapter adat = new SqlDataAdapter(cmdD);
@@ -522,7 +523,8 @@ namespace LOSA.Compras
                         dr[9] = items.Bodega;
                         dr[10] = string.Format("{0:###,##0.00}", frm.Total); //Total
                         dr[11] = 0;
-                        dr[12] = 0.00;
+                        dr[12] = 0.00; //ISV
+                        dr[13] = 0; //Linea Base
 
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
@@ -568,6 +570,7 @@ namespace LOSA.Compras
                         dr[10] = 0; //Total
                         dr[11] = 0;
                         dr[12] = 0.00;
+                        dr[13] = 0; //Linea Base
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
 
@@ -1318,6 +1321,7 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
                             cmd.Parameters.AddWithValue("@isv", row.isv);
                             cmd.Parameters.AddWithValue("@base_ref", row.referencia_base);//Referencia de Solicitud de Compra
+                            cmd.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmd.ExecuteNonQuery();
                         }
 
@@ -1417,6 +1421,7 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
                             cmdUpdate.Parameters.AddWithValue("@isv", row.isv);
                             cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
+                            cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmdUpdate.ExecuteNonQuery();
                         }
 
@@ -1900,14 +1905,14 @@ namespace LOSA.Compras
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreferencia_base = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colisv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ButtonDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtComentarios = new DevExpress.XtraEditors.MemoEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
@@ -1919,6 +1924,7 @@ namespace LOSA.Compras
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
@@ -1951,10 +1957,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtComentarios.Properties)).BeginInit();
@@ -2735,7 +2741,8 @@ namespace LOSA.Compras
             this.coltotal,
             this.colreferencia_base,
             this.colisv,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn2});
             this.grdvDetalle.CustomizationFormBounds = new System.Drawing.Rectangle(774, 457, 260, 282);
             this.grdvDetalle.GridControl = this.grDetalle;
             this.grdvDetalle.Name = "grdvDetalle";
@@ -2966,6 +2973,29 @@ namespace LOSA.Compras
             this.colbodega.VisibleIndex = 8;
             this.colbodega.Width = 110;
             // 
+            // reposGrdBodega
+            // 
+            this.reposGrdBodega.AutoHeight = false;
+            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
+            this.reposGrdBodega.DisplayMember = "bodega";
+            this.reposGrdBodega.Name = "reposGrdBodega";
+            this.reposGrdBodega.PopupView = this.gridView2;
+            this.reposGrdBodega.ValueMember = "bodega";
+            // 
+            // bodegasBindingSource
+            // 
+            this.bodegasBindingSource.DataMember = "bodegas";
+            this.bodegasBindingSource.DataSource = this.dsCompras1;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
             // coltotal
             // 
             this.coltotal.Caption = "Total (doc.)";
@@ -3017,29 +3047,6 @@ namespace LOSA.Compras
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
-            // 
-            // reposGrdBodega
-            // 
-            this.reposGrdBodega.AutoHeight = false;
-            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
-            this.reposGrdBodega.DisplayMember = "bodega";
-            this.reposGrdBodega.Name = "reposGrdBodega";
-            this.reposGrdBodega.PopupView = this.gridView2;
-            this.reposGrdBodega.ValueMember = "bodega";
-            // 
-            // bodegasBindingSource
-            // 
-            this.bodegasBindingSource.DataMember = "bodegas";
-            this.bodegasBindingSource.DataSource = this.dsCompras1;
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl2
             // 
@@ -3187,6 +3194,13 @@ namespace LOSA.Compras
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Linea Base";
+            this.gridColumn2.FieldName = "num_linea_solicitud_d";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            // 
             // frmOrdenesCompraMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3234,10 +3248,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
