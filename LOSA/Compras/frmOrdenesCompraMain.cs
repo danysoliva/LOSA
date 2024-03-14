@@ -96,6 +96,7 @@ namespace LOSA.Compras
 
             //Bloqueo en Grid
             grdvDetalle.OptionsMenu.EnableColumnMenu = true;
+            grdvDetalle.OptionsBehavior.Editable = false;
             //grdvDetalle.Columns["eliminar"].Visible = false;
             //grdvDetalle.Columns["capitulo"].ColumnEdit.ReadOnly = true;
             //grdvDetalle.Columns["partida_arancelaria"].ColumnEdit.ReadOnly = true; 
@@ -437,7 +438,23 @@ namespace LOSA.Compras
                 adat.Fill(dsCompras1.oc_detalle_exonerada);
                 conn.Close();
 
-                CalcularTotal();
+                switch (tipooperacion)
+                {
+                    case TipoOperacion.New:
+                        CalcularTotal();
+                        break;
+                    case TipoOperacion.Update:
+                        CalcularTotal();
+                        break;
+                    case TipoOperacion.View:
+
+                        break;
+                    default:
+                        CalcularTotal();
+                        break;
+                }
+
+                
             }
             catch (Exception ex)
             {
@@ -1635,7 +1652,7 @@ namespace LOSA.Compras
                 case TipoOperacion.New:
                     break;
                 case TipoOperacion.Update:
-                    //CancelarOrdenCompra(IdOrdenCompraActual);
+                    CancelarOrdenCompra(IdOrdenCompraActual);
                     break;
                 case TipoOperacion.View:
 
@@ -1647,34 +1664,31 @@ namespace LOSA.Compras
 
         private void CancelarOrdenCompra(int pidOrdenCompraActual)
         {
-            OrdenesCompra oc = new OrdenesCompra();
-            oc.RecuperarRegistos(pidOrdenCompraActual);
+            CMOrdenCompraH oc = new CMOrdenCompraH();
+            oc.RecuperarRegistro(pidOrdenCompraActual);
 
             bool Proceder;
             string mensaje = "";
 
-            switch (oc.Id_Estado)
+            switch (oc.IdEstado)
             {
                 case 1: //Nueva 
                     Proceder = true;
                     break;
 
-                case 5://Pendiente Aprobacion
-                    Proceder = true;
-                    break;
-
-                case 2: //Abierta
-                    Proceder = true;
-                    break;
-
-                case 3: //Cerrada
+                case 2: //Autorizada
                     Proceder = false;
-                    mensaje = "La Orden de Compra esta Cerrada, esta Ligada a una Factura Proveedor, debe Cancelar la Factura primero!";
+                    mensaje = "No se puede Cancelar\nLa Orden Compra ya fue Autorizada!";
+                    break;
+
+                case 3: //Rechazada
+                    Proceder = false;
+                    mensaje = "No se puede Cancelar\nLa Orden de Compra fue Rechazada!";
                     break;
 
                 case 4: //Cancelada
                     Proceder = false;
-                    mensaje = "La Orden de Conpra se encuentra Cancelada!";
+                    mensaje = "La Orden de Compra se encuentra Cancelada!";
                     break;
 
                 default:
@@ -1684,38 +1698,38 @@ namespace LOSA.Compras
 
             popupMenu1.HidePopup();
 
-            if (Proceder)
-            {
-                try
-                {
-                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("sp_compras_cancelar_orden", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_OrdenCompra", pidOrdenCompraActual);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+            //if (Proceder)
+            //{
+            //    try
+            //    {
+            //        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //        conn.Open();
+            //        SqlCommand cmd = new SqlCommand("sp_compras_cancelar_orden", conn);
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        cmd.Parameters.AddWithValue("@id_OrdenCompra", pidOrdenCompraActual);
+            //        cmd.ExecuteNonQuery();
+            //        conn.Close();
 
-                    CajaDialogo.Information("Orden de Compra Cancelada!");
+            //        CajaDialogo.Information("Orden de Compra Cancelada!");
 
-                    cmdNuevo.Enabled = false;
-                    cmdAddDetalle.Enabled = false;
-                    txtComentarios.Enabled = false;
-                    grDetalle.Enabled = false;
-                    dtFechaContabilizacion.Enabled = false;
-                    txtComentarios.Text = "Cancelada";
+            //        cmdNuevo.Enabled = false;
+            //        cmdAddDetalle.Enabled = false;
+            //        txtComentarios.Enabled = false;
+            //        grDetalle.Enabled = false;
+            //        dtFechaContabilizacion.Enabled = false;
+            //        txtComentarios.Text = "Cancelada";
 
-                }
-                catch (Exception ex)
-                {
-                    CajaDialogo.Error(ex.Message);
-                }
-            }
-            else
-            {
-                CajaDialogo.Error(mensaje);
-                return;
-            }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        CajaDialogo.Error(ex.Message);
+            //    }
+            //}
+            //else
+            //{
+            //    CajaDialogo.Error(mensaje);
+            //    return;
+            //}
         }
 
         private void grdSucursales_EditValueChanged(object sender, EventArgs e)
@@ -2021,6 +2035,9 @@ namespace LOSA.Compras
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.colbodega1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWhsName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colconcat_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
@@ -3087,6 +3104,10 @@ namespace LOSA.Compras
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colbodega1,
+            this.colWhsName,
+            this.colconcat_1});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -3297,6 +3318,24 @@ namespace LOSA.Compras
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtnCancelOrden)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
+            // 
+            // colbodega1
+            // 
+            this.colbodega1.Caption = "Bodega";
+            this.colbodega1.FieldName = "bodega";
+            this.colbodega1.Name = "colbodega1";
+            this.colbodega1.Visible = true;
+            this.colbodega1.VisibleIndex = 0;
+            // 
+            // colWhsName
+            // 
+            this.colWhsName.FieldName = "WhsName";
+            this.colWhsName.Name = "colWhsName";
+            // 
+            // colconcat_1
+            // 
+            this.colconcat_1.FieldName = "concat_";
+            this.colconcat_1.Name = "colconcat_1";
             // 
             // frmOrdenesCompraMain
             // 

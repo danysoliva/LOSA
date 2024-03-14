@@ -119,5 +119,8 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxIntercom;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega1;
+        private DevExpress.XtraGrid.Columns.GridColumn colWhsName;
+        private DevExpress.XtraGrid.Columns.GridColumn colconcat_1;
     }
 }
