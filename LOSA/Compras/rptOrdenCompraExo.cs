@@ -74,7 +74,7 @@ namespace LOSA.Compras
                     break;
             }
 
-            lblTotal.Text = (SimboloMoneda + oc.DocTotal).ToString();
+            lblTotal.Text = (SimboloMoneda + string.Format("{0:#,###,##0.00}", oc.DocTotal)).ToString();
             CargarDetalleOrdenCompra();
 
 
