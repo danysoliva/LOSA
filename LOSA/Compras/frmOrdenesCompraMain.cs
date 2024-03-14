@@ -806,6 +806,7 @@ namespace LOSA.Compras
             txtProveedor.Clear();
             txtDocNum.Clear();
             btnPrint.Enabled = false;
+            ContactCode = 0;
             glRutaAprobacionOC.Text = string.Empty;
             grdTipoOrden.Text = string.Empty;
             txtContactoPerson.Text = string.Empty;
