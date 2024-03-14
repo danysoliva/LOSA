@@ -865,7 +865,7 @@ namespace LOSA.Compras
             // 
             this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail1});
-            this.DetailReport.DataMember = "orden_compra_exo";
+            this.DetailReport.DataMember = "oc_detalle_rpt";
             this.DetailReport.DataSource = this.dsCompras1;
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
