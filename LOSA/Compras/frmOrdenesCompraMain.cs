@@ -40,7 +40,73 @@ namespace LOSA.Compras
         public enum TipoOperacion
         {
             New = 1,
-            Update = 2
+            Update = 2,
+            View = 3
+        }
+
+        public frmOrdenesCompraMain(UserLogin pUserLog, TipoOperacion ptipo, int pIdOrdenCompraH)
+        {
+            InitializeComponent();
+            LoadTipoOrden();
+            TsExoOIsv.IsOn = true;
+            ObtenerExoneracionVigente();
+            CargarCapitulos();
+            CargarIVA();
+            CargarBodegas();
+            CargarRutasAprobacion();
+            cbxMoneda.Text = "Moneda local";
+            UsuarioLogueado = pUserLog;
+            tipooperacion = ptipo;
+            IdOrdenCompraActual = pIdOrdenCompraH;
+
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+                    break;
+                case TipoOperacion.Update:
+                    break;
+                case TipoOperacion.View:
+                    CargarInfoOrden(IdOrdenCompraActual);
+                    SoloVista(IdOrdenCompraActual);
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void SoloVista(int pIdOrdenCompraActual)
+        {
+            cmdBuscar.Enabled = false;
+            cmdAnterior.Enabled = false;
+            cmdSiguiente.Enabled = false;
+            btnPrint.Enabled = true;
+            cmdNuevo.Enabled = false;
+            cmdGuardar.Enabled = false;
+            txtNumAtCard.Enabled = false;
+            btnShowPopu.Enabled = false;
+            cmdAddDetalle.Enabled = false;
+            txtCodProv.Enabled = false;
+            dtFechaContabilizacion.Enabled = false;
+            grdTipoOrden.Enabled = false;
+            TsExoOIsv.ReadOnly = true;
+            glRutaAprobacionOC.Enabled = false;
+            comboBoxIntercom.Enabled = false;
+            comboBoxIntercom.Enabled = false;
+
+            //Bloqueo en Grid
+            grdvDetalle.OptionsMenu.EnableColumnMenu = true;
+            grdvDetalle.Columns["eliminar"].Visible = false;
+            grdvDetalle.Columns["capitulo"].ColumnEdit.ReadOnly = true;
+            grdvDetalle.Columns["partida_arancelaria"].ColumnEdit.ReadOnly = true; 
+            grdvDetalle.Columns["descripcion_articulo"].ColumnEdit.ReadOnly = true;
+            grdvDetalle.Columns["cantidad"].ColumnEdit.ReadOnly = true;
+            grdvDetalle.Columns["precio_por_unidad"].ColumnEdit.ReadOnly = true;
+            grdvDetalle.Columns["indicador_impuesto"].ColumnEdit.ReadOnly = true;
+            grdvDetalle.Columns["bodega"].ColumnEdit.ReadOnly = true;
+
+            txtComentarios.Enabled = false;
+
         }
 
         public frmOrdenesCompraMain(UserLogin pUserLog, TipoOperacion ptipo)
@@ -845,6 +911,18 @@ namespace LOSA.Compras
                         btnShowPopu.Enabled = false;
                         break;
 
+                    case 4:
+                        cmdNuevo.Enabled = true;
+                        cmdAddDetalle.Enabled = false;
+                        txtComentarios.Enabled = false;
+                        grDetalle.Enabled = false ;
+                        dtFechaContabilizacion.Enabled = false;
+                        cmdGuardar.Enabled = false;
+                        TsExoOIsv.ReadOnly = true;
+                        btnShowPopu.Enabled = false;
+                        break;
+
+
                     default:
                         break;
                 }
@@ -1008,6 +1086,11 @@ namespace LOSA.Compras
 
                             break;
 
+                        case 4: //Cancelada por el Usuario Creador
+                            CajaDialogo.Error("Orden Cancelada por el Usuario!");
+
+                            break;
+                           
                         default:
                             break;
                     }
@@ -1150,8 +1233,19 @@ namespace LOSA.Compras
                         return;
                     }
                 }
+
+                if (row.total <= 0)
+                {
+                    CajaDialogo.Error("No puede dejar el Total (doc.) en 0");
+                    return;
+                }
             }
 
+            if (Convert.ToDecimal(txtTotal.EditValue) == 0)
+            {
+                CajaDialogo.Error("El Total de la Orden es 0!\nNo puede guardar una Orden con Valor 0");
+                return;
+            }
 
             //ValidacionDeSaldos();
             bool PermitirGuardar = false;
@@ -1542,7 +1636,10 @@ namespace LOSA.Compras
                 case TipoOperacion.New:
                     break;
                 case TipoOperacion.Update:
-                    CancelarOrdenCompra(IdOrdenCompraActual);
+                    //CancelarOrdenCompra(IdOrdenCompraActual);
+                    break;
+                case TipoOperacion.View:
+
                     break;
                 default:
                     break;
@@ -1913,6 +2010,7 @@ namespace LOSA.Compras
             this.colisv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ButtonDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtComentarios = new DevExpress.XtraEditors.MemoEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
@@ -1924,7 +2022,6 @@ namespace LOSA.Compras
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
@@ -3033,6 +3130,7 @@ namespace LOSA.Compras
             // 
             this.gridColumn1.Caption = "Eliminar";
             this.gridColumn1.ColumnEdit = this.ButtonDeleteRow;
+            this.gridColumn1.FieldName = "eliminar";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 11;
@@ -3047,6 +3145,13 @@ namespace LOSA.Compras
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Linea Base";
+            this.gridColumn2.FieldName = "num_linea_solicitud_d";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
             // 
             // panelControl2
             // 
@@ -3193,13 +3298,6 @@ namespace LOSA.Compras
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtnCancelOrden)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Linea Base";
-            this.gridColumn2.FieldName = "num_linea_solicitud_d";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.ReadOnly = true;
             // 
             // frmOrdenesCompraMain
             // 
