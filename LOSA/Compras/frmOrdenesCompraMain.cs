@@ -1918,17 +1918,17 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -2134,13 +2134,13 @@ namespace LOSA.Compras
             this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Location = new System.Drawing.Point(4, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1564, 253);
+            this.panelControl1.Size = new System.Drawing.Size(1564, 239);
             this.panelControl1.TabIndex = 51;
             this.panelControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl1_MouseDown);
             // 
             // comboBoxIntercom
             // 
-            this.comboBoxIntercom.Location = new System.Drawing.Point(1164, 209);
+            this.comboBoxIntercom.Location = new System.Drawing.Point(1164, 191);
             this.comboBoxIntercom.MenuManager = this.barManager1;
             this.comboBoxIntercom.Name = "comboBoxIntercom";
             this.comboBoxIntercom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2261,7 +2261,7 @@ namespace LOSA.Compras
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(994, 215);
+            this.labelControl17.Location = new System.Drawing.Point(994, 197);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(209, 16);
             this.labelControl17.TabIndex = 94;
@@ -2286,7 +2286,7 @@ namespace LOSA.Compras
             this.txtNumAtCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumAtCard.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtNumAtCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNumAtCard.Location = new System.Drawing.Point(220, 170);
+            this.txtNumAtCard.Location = new System.Drawing.Point(220, 160);
             this.txtNumAtCard.Name = "txtNumAtCard";
             this.txtNumAtCard.Size = new System.Drawing.Size(336, 16);
             this.txtNumAtCard.TabIndex = 92;
@@ -2295,7 +2295,7 @@ namespace LOSA.Compras
             // 
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(48, 171);
+            this.labelControl16.Location = new System.Drawing.Point(48, 161);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(299, 16);
             this.labelControl16.TabIndex = 91;
@@ -2304,7 +2304,7 @@ namespace LOSA.Compras
             // dtFechaContabilizacion
             // 
             this.dtFechaContabilizacion.EditValue = null;
-            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 58);
+            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 54);
             this.dtFechaContabilizacion.MenuManager = this.barManager1;
             this.dtFechaContabilizacion.Name = "dtFechaContabilizacion";
             this.dtFechaContabilizacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2319,7 +2319,7 @@ namespace LOSA.Compras
             // 
             // glRutaAprobacionOC
             // 
-            this.glRutaAprobacionOC.Location = new System.Drawing.Point(1164, 182);
+            this.glRutaAprobacionOC.Location = new System.Drawing.Point(1164, 166);
             this.glRutaAprobacionOC.MenuManager = this.barManager1;
             this.glRutaAprobacionOC.Name = "glRutaAprobacionOC";
             this.glRutaAprobacionOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2376,7 +2376,7 @@ namespace LOSA.Compras
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(994, 188);
+            this.labelControl15.Location = new System.Drawing.Point(994, 172);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(262, 16);
             this.labelControl15.TabIndex = 88;
@@ -2389,7 +2389,7 @@ namespace LOSA.Compras
             this.txtDireccion.Enabled = false;
             this.txtDireccion.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtDireccion.Location = new System.Drawing.Point(220, 146);
+            this.txtDireccion.Location = new System.Drawing.Point(220, 140);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(336, 16);
             this.txtDireccion.TabIndex = 87;
@@ -2398,7 +2398,7 @@ namespace LOSA.Compras
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(48, 147);
+            this.labelControl14.Location = new System.Drawing.Point(48, 141);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(212, 16);
             this.labelControl14.TabIndex = 86;
@@ -2411,7 +2411,7 @@ namespace LOSA.Compras
             this.txtExoneracion.Enabled = false;
             this.txtExoneracion.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtExoneracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtExoneracion.Location = new System.Drawing.Point(1164, 160);
+            this.txtExoneracion.Location = new System.Drawing.Point(1164, 147);
             this.txtExoneracion.Name = "txtExoneracion";
             this.txtExoneracion.Size = new System.Drawing.Size(189, 16);
             this.txtExoneracion.TabIndex = 85;
@@ -2421,7 +2421,7 @@ namespace LOSA.Compras
             // 
             this.lblExoneracion.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblExoneracion.Appearance.Options.UseFont = true;
-            this.lblExoneracion.Location = new System.Drawing.Point(994, 160);
+            this.lblExoneracion.Location = new System.Drawing.Point(994, 147);
             this.lblExoneracion.Name = "lblExoneracion";
             this.lblExoneracion.Size = new System.Drawing.Size(204, 16);
             this.lblExoneracion.TabIndex = 84;
@@ -2430,7 +2430,7 @@ namespace LOSA.Compras
             // txtTasaCambio
             // 
             this.txtTasaCambio.Enabled = false;
-            this.txtTasaCambio.Location = new System.Drawing.Point(326, 193);
+            this.txtTasaCambio.Location = new System.Drawing.Point(326, 181);
             this.txtTasaCambio.MenuManager = this.barManager1;
             this.txtTasaCambio.Name = "txtTasaCambio";
             this.txtTasaCambio.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2441,7 +2441,7 @@ namespace LOSA.Compras
             // txtMoneda
             // 
             this.txtMoneda.Enabled = false;
-            this.txtMoneda.Location = new System.Drawing.Point(220, 193);
+            this.txtMoneda.Location = new System.Drawing.Point(220, 181);
             this.txtMoneda.MenuManager = this.barManager1;
             this.txtMoneda.Name = "txtMoneda";
             this.txtMoneda.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2452,7 +2452,7 @@ namespace LOSA.Compras
             // cbxMoneda
             // 
             this.cbxMoneda.Enabled = false;
-            this.cbxMoneda.Location = new System.Drawing.Point(48, 193);
+            this.cbxMoneda.Location = new System.Drawing.Point(48, 181);
             this.cbxMoneda.MenuManager = this.barManager1;
             this.cbxMoneda.Name = "cbxMoneda";
             this.cbxMoneda.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2476,7 +2476,7 @@ namespace LOSA.Compras
             // TsExoOIsv
             // 
             this.TsExoOIsv.EditValue = true;
-            this.TsExoOIsv.Location = new System.Drawing.Point(1164, 134);
+            this.TsExoOIsv.Location = new System.Drawing.Point(1164, 125);
             this.TsExoOIsv.MenuManager = this.barManager1;
             this.TsExoOIsv.Name = "TsExoOIsv";
             this.TsExoOIsv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2491,7 +2491,7 @@ namespace LOSA.Compras
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(994, 136);
+            this.labelControl13.Location = new System.Drawing.Point(994, 127);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(238, 16);
             this.labelControl13.TabIndex = 80;
@@ -2499,7 +2499,7 @@ namespace LOSA.Compras
             // 
             // grdTipoOrden
             // 
-            this.grdTipoOrden.Location = new System.Drawing.Point(1164, 106);
+            this.grdTipoOrden.Location = new System.Drawing.Point(1164, 99);
             this.grdTipoOrden.MenuManager = this.barManager1;
             this.grdTipoOrden.Name = "grdTipoOrden";
             this.grdTipoOrden.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2555,7 +2555,7 @@ namespace LOSA.Compras
             this.txtContactoPerson.Enabled = false;
             this.txtContactoPerson.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtContactoPerson.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtContactoPerson.Location = new System.Drawing.Point(220, 122);
+            this.txtContactoPerson.Location = new System.Drawing.Point(220, 119);
             this.txtContactoPerson.Name = "txtContactoPerson";
             this.txtContactoPerson.Size = new System.Drawing.Size(336, 16);
             this.txtContactoPerson.TabIndex = 78;
@@ -2564,7 +2564,7 @@ namespace LOSA.Compras
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(47, 123);
+            this.labelControl12.Location = new System.Drawing.Point(47, 120);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(225, 16);
             this.labelControl12.TabIndex = 77;
@@ -2574,7 +2574,7 @@ namespace LOSA.Compras
             // 
             this.lblSucursal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblSucursal.Appearance.Options.UseFont = true;
-            this.lblSucursal.Location = new System.Drawing.Point(994, 112);
+            this.lblSucursal.Location = new System.Drawing.Point(994, 105);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(234, 16);
             this.lblSucursal.TabIndex = 75;
@@ -2593,13 +2593,13 @@ namespace LOSA.Compras
             // 
             // txtCodProv
             // 
-            this.txtCodProv.Location = new System.Drawing.Point(220, 70);
+            this.txtCodProv.Location = new System.Drawing.Point(220, 69);
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(336, 22);
@@ -2610,7 +2610,7 @@ namespace LOSA.Compras
             // txtProveedor
             // 
             this.txtProveedor.Enabled = false;
-            this.txtProveedor.Location = new System.Drawing.Point(220, 95);
+            this.txtProveedor.Location = new System.Drawing.Point(220, 94);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtProveedor.Properties.Appearance.Options.UseFont = true;
@@ -2621,7 +2621,7 @@ namespace LOSA.Compras
             // 
             this.cmdAddDetalle.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.cmdAddDetalle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdAddDetalle.ImageOptions.SvgImage")));
-            this.cmdAddDetalle.Location = new System.Drawing.Point(10, 217);
+            this.cmdAddDetalle.Location = new System.Drawing.Point(10, 206);
             this.cmdAddDetalle.Name = "cmdAddDetalle";
             this.cmdAddDetalle.Size = new System.Drawing.Size(47, 33);
             this.cmdAddDetalle.TabIndex = 67;
@@ -2633,7 +2633,7 @@ namespace LOSA.Compras
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(994, 64);
+            this.labelControl4.Location = new System.Drawing.Point(994, 60);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(226, 16);
             this.labelControl4.TabIndex = 64;
@@ -2666,7 +2666,7 @@ namespace LOSA.Compras
             this.txtEstado.Enabled = false;
             this.txtEstado.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtEstado.Location = new System.Drawing.Point(1164, 85);
+            this.txtEstado.Location = new System.Drawing.Point(1164, 80);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(189, 16);
             this.txtEstado.TabIndex = 61;
@@ -2675,7 +2675,7 @@ namespace LOSA.Compras
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(994, 86);
+            this.labelControl2.Location = new System.Drawing.Point(994, 81);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(189, 16);
             this.labelControl2.TabIndex = 60;
@@ -2774,7 +2774,7 @@ namespace LOSA.Compras
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(48, 72);
+            this.labelControl5.Location = new System.Drawing.Point(48, 71);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(181, 16);
             this.labelControl5.TabIndex = 71;
@@ -2784,7 +2784,7 @@ namespace LOSA.Compras
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(48, 98);
+            this.labelControl6.Location = new System.Drawing.Point(48, 97);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(186, 16);
             this.labelControl6.TabIndex = 72;
@@ -2824,7 +2824,7 @@ namespace LOSA.Compras
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDetalle.DataMember = "oc_detalle_exonerada";
             this.grDetalle.DataSource = this.dsCompras1;
-            this.grDetalle.Location = new System.Drawing.Point(4, 256);
+            this.grDetalle.Location = new System.Drawing.Point(4, 245);
             this.grDetalle.MainView = this.grdvDetalle;
             this.grDetalle.Name = "grDetalle";
             this.grDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -2833,7 +2833,7 @@ namespace LOSA.Compras
             this.reposPartidaArancelaria,
             this.reposGrdIndicadorIVA,
             this.reposGrdBodega});
-            this.grDetalle.Size = new System.Drawing.Size(1564, 491);
+            this.grDetalle.Size = new System.Drawing.Size(1564, 494);
             this.grDetalle.TabIndex = 52;
             this.grDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvDetalle});
@@ -3182,9 +3182,9 @@ namespace LOSA.Compras
             // ButtonDeleteRow
             // 
             this.ButtonDeleteRow.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
