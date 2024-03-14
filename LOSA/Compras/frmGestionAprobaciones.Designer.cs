@@ -12,6 +12,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -39,6 +44,8 @@
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.cmdActualizar = new DevExpress.XtraEditors.SimpleButton();
+            this.reposCmdVistaOrden = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -46,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsAutorizacionesCompras1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGestionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCmdVistaOrden)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -80,7 +88,8 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cmdGestionar});
+            this.cmdGestionar,
+            this.reposCmdVistaOrden});
             this.gridControl1.Size = new System.Drawing.Size(958, 377);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -113,7 +122,8 @@
             this.colProveedor,
             this.colnum_fila,
             this.colgestion,
-            this.colseleccionar});
+            this.colseleccionar,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -292,13 +302,31 @@
             this.cmdActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdActualizar.Appearance.BackColor = System.Drawing.Color.White;
             this.cmdActualizar.Appearance.Options.UseBackColor = true;
-            this.cmdActualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdActualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdActualizar.ImageOptions.Image")));
             this.cmdActualizar.Location = new System.Drawing.Point(855, 2);
             this.cmdActualizar.Name = "cmdActualizar";
             this.cmdActualizar.Size = new System.Drawing.Size(106, 40);
             this.cmdActualizar.TabIndex = 2;
             this.cmdActualizar.Text = "Actualizar";
             this.cmdActualizar.Click += new System.EventHandler(this.cmdActualizar_Click);
+            // 
+            // reposCmdVistaOrden
+            // 
+            this.reposCmdVistaOrden.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.reposCmdVistaOrden.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposCmdVistaOrden.Name = "reposCmdVistaOrden";
+            this.reposCmdVistaOrden.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposCmdVistaOrden.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposCmdVistaOrden_ButtonClick);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Ver Detalle";
+            this.gridColumn1.ColumnEdit = this.reposCmdVistaOrden;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 11;
             // 
             // frmGestionAprobaciones
             // 
@@ -318,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsAutorizacionesCompras1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdGestionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCmdVistaOrden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,5 +380,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdGestionar;
         private DevExpress.XtraEditors.SimpleButton cmdActualizar;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposCmdVistaOrden;
     }
 }

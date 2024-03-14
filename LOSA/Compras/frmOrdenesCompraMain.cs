@@ -96,15 +96,14 @@ namespace LOSA.Compras
 
             //Bloqueo en Grid
             grdvDetalle.OptionsMenu.EnableColumnMenu = true;
-            grdvDetalle.Columns["eliminar"].Visible = false;
-            grdvDetalle.Columns["capitulo"].ColumnEdit.ReadOnly = true;
-            grdvDetalle.Columns["partida_arancelaria"].ColumnEdit.ReadOnly = true; 
-            grdvDetalle.Columns["descripcion_articulo"].ColumnEdit.ReadOnly = true;
-            grdvDetalle.Columns["cantidad"].ColumnEdit.ReadOnly = true;
-            grdvDetalle.Columns["precio_por_unidad"].ColumnEdit.ReadOnly = true;
-            grdvDetalle.Columns["indicador_impuesto"].ColumnEdit.ReadOnly = true;
-            grdvDetalle.Columns["bodega"].ColumnEdit.ReadOnly = true;
-
+            //grdvDetalle.Columns["eliminar"].Visible = false;
+            //grdvDetalle.Columns["capitulo"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["partida_arancelaria"].ColumnEdit.ReadOnly = true; 
+            //grdvDetalle.Columns["Descripcion de Articulo"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["cantidad"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["precio_por_unidad"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["indicador_impuesto"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["bodega"].ColumnEdit.ReadOnly = true;
             txtComentarios.Enabled = false;
 
         }
