@@ -373,7 +373,8 @@ namespace LOSA
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
-                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
+                            tabOpciones.TabPages[12].PageVisible = true;
+                            //tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             //BasicView();
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
@@ -381,15 +382,17 @@ namespace LOSA
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[12].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
-                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[12].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
-                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
                             break;
                         default:
                             tabOpciones.TabPages[1].PageVisible = true;
