@@ -2,9 +2,11 @@
 {
 }
 
-namespace LOSA.MigracionACS {
-    
-    
-    public partial class ACSDataSet2 {
+namespace LOSA.MigracionACS
+{
+
+
+    public partial class ACSDataSet2
+    {
     }
 }
