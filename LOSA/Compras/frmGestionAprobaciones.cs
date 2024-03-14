@@ -168,14 +168,7 @@ namespace LOSA.Compras
 
         private void reposCmdVistaOrden_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsAutorizacionesCompras.pendienes_aprobacionRow)gridView.GetFocusedDataRow();
-
-            if (row.id_ordenH > 0)
-            {
-                frmOrdenesCompraMain frm = new frmOrdenesCompraMain(UsuarioLogeado, frmOrdenesCompraMain.TipoOperacion.View, row.id_ordenH);
-                frm.ShowDialog();
-            }
+            
         }
     }
 }

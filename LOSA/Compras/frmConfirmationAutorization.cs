@@ -1,4 +1,5 @@
-﻿using LOSA.Clases;
+﻿using ACS.Classes;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace LOSA.Compras
     {
         CMOrdenCompraH OrdenActual;
         public bool IsApproved;
+        DataOperations dp = new DataOperations();
         public frmConfirmationAutorization(CMOrdenCompraH pOrdenActual)
         {
             InitializeComponent();
@@ -68,6 +70,17 @@ namespace LOSA.Compras
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNumDoc.Text.Trim()))
+            {
+                frmOrdenesCompraMain frm = new frmOrdenesCompraMain(frmOrdenesCompraMain.TipoOperacion.View, Convert.ToInt32(txtNumDoc.Text.Trim()));
+                frm.ShowDialog();   
+            }
+            
+
         }
     }
 }

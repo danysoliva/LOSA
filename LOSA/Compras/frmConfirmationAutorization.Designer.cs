@@ -58,6 +58,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtCardName = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnVerDetalle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -177,10 +178,10 @@
             this.txtNumDoc.BackColor = System.Drawing.Color.LightGray;
             this.txtNumDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumDoc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtNumDoc.Location = new System.Drawing.Point(192, 133);
+            this.txtNumDoc.Location = new System.Drawing.Point(219, 133);
             this.txtNumDoc.Name = "txtNumDoc";
             this.txtNumDoc.ReadOnly = true;
-            this.txtNumDoc.Size = new System.Drawing.Size(211, 25);
+            this.txtNumDoc.Size = new System.Drawing.Size(184, 25);
             this.txtNumDoc.TabIndex = 19;
             // 
             // txtEstado
@@ -376,12 +377,25 @@
             this.label14.TabIndex = 36;
             this.label14.Text = "Nombre Proveedor                          ";
             // 
+            // btnVerDetalle
+            // 
+            this.btnVerDetalle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerDetalle.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDetalle.Image")));
+            this.btnVerDetalle.Location = new System.Drawing.Point(192, 133);
+            this.btnVerDetalle.Name = "btnVerDetalle";
+            this.btnVerDetalle.Size = new System.Drawing.Size(25, 25);
+            this.btnVerDetalle.TabIndex = 38;
+            this.btnVerDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
+            // 
             // frmConfirmationAutorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(788, 444);
+            this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.txtCardName);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtCardCode);
@@ -449,5 +463,6 @@
         private System.Windows.Forms.TextBox txtCardName;
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtCommentsAprobador;
+        private System.Windows.Forms.Button btnVerDetalle;
     }
 }

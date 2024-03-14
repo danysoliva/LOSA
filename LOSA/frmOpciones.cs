@@ -5162,11 +5162,6 @@ namespace LOSA
             }
         }
 
-        private void navSubiOCSAP_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-
-        }
-
         private void nbarAprobacionOrdenesCompra_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             try
