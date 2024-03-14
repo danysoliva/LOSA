@@ -40,7 +40,72 @@ namespace LOSA.Compras
         public enum TipoOperacion
         {
             New = 1,
-            Update = 2
+            Update = 2,
+            View = 3
+        }
+
+        public frmOrdenesCompraMain(UserLogin pUserLog, TipoOperacion ptipo, int pIdOrdenCompraH)
+        {
+            InitializeComponent();
+            LoadTipoOrden();
+            TsExoOIsv.IsOn = true;
+            ObtenerExoneracionVigente();
+            CargarCapitulos();
+            CargarIVA();
+            CargarBodegas();
+            CargarRutasAprobacion();
+            cbxMoneda.Text = "Moneda local";
+            UsuarioLogueado = pUserLog;
+            tipooperacion = ptipo;
+            IdOrdenCompraActual = pIdOrdenCompraH;
+
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+                    break;
+                case TipoOperacion.Update:
+                    break;
+                case TipoOperacion.View:
+                    CargarInfoOrden(IdOrdenCompraActual);
+                    SoloVista(IdOrdenCompraActual);
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void SoloVista(int pIdOrdenCompraActual)
+        {
+            cmdBuscar.Enabled = false;
+            cmdAnterior.Enabled = false;
+            cmdSiguiente.Enabled = false;
+            btnPrint.Enabled = true;
+            cmdNuevo.Enabled = false;
+            cmdGuardar.Enabled = false;
+            txtNumAtCard.Enabled = false;
+            btnShowPopu.Enabled = false;
+            cmdAddDetalle.Enabled = false;
+            txtCodProv.Enabled = false;
+            dtFechaContabilizacion.Enabled = false;
+            grdTipoOrden.Enabled = false;
+            TsExoOIsv.ReadOnly = true;
+            glRutaAprobacionOC.Enabled = false;
+            comboBoxIntercom.Enabled = false;
+            comboBoxIntercom.Enabled = false;
+
+            //Bloqueo en Grid
+            grdvDetalle.OptionsMenu.EnableColumnMenu = true;
+            //grdvDetalle.Columns["eliminar"].Visible = false;
+            //grdvDetalle.Columns["capitulo"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["partida_arancelaria"].ColumnEdit.ReadOnly = true; 
+            //grdvDetalle.Columns["Descripcion de Articulo"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["cantidad"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["precio_por_unidad"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["indicador_impuesto"].ColumnEdit.ReadOnly = true;
+            //grdvDetalle.Columns["bodega"].ColumnEdit.ReadOnly = true;
+            txtComentarios.Enabled = false;
+
         }
 
         public frmOrdenesCompraMain(UserLogin pUserLog, TipoOperacion ptipo)
@@ -233,7 +298,7 @@ namespace LOSA.Compras
                 }
                 else
                 {
-                    cbxMoneda.Text = "Moneda SN";
+                    cbxMoneda.Text = "Moneda local";
                     txtTasaCambio.Visible = false;
                 }
 
@@ -339,7 +404,8 @@ namespace LOSA.Compras
                     row[9] = dr.GetString(4); //Almacen
                     row[10] = 0.00; //Total
                     row[11] = dr.GetInt32(5); //BaseRef - Id de solicitud de compra
-
+                    row[12] = 0.00; //ISV
+                    row[13] = dr.GetInt32(6);//LienNum - Linea base
                     dsCompras1.oc_detalle_exonerada.Rows.Add(row);
                 }
                 //SqlDataAdapter adat = new SqlDataAdapter(cmdD);
@@ -522,7 +588,8 @@ namespace LOSA.Compras
                         dr[9] = items.Bodega;
                         dr[10] = string.Format("{0:###,##0.00}", frm.Total); //Total
                         dr[11] = 0;
-                        dr[12] = 0.00;
+                        dr[12] = 0.00; //ISV
+                        dr[13] = 0; //Linea Base
 
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
@@ -546,6 +613,7 @@ namespace LOSA.Compras
                             Agregar = false;
                         }
 
+
                     }
 
                     if (Agregar)
@@ -567,6 +635,7 @@ namespace LOSA.Compras
                         dr[10] = 0; //Total
                         dr[11] = 0;
                         dr[12] = 0.00;
+                        dr[13] = 0; //Linea Base
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
 
@@ -728,6 +797,7 @@ namespace LOSA.Compras
             txtImpuesto.EditValue = 0;
             txtTotal.EditValue = 0;
             txtDireccion.Text = string.Empty;
+            comboBoxIntercom.Text = string.Empty;
             //GetSigID();
 
         }
@@ -775,7 +845,7 @@ namespace LOSA.Compras
                 txtTotal.EditValue = oc.DocTotal;
                 grdTipoOrden.EditValue = oc.U_TipoOrden;
                 glRutaAprobacionOC.EditValue = oc.idRutaAprobacion;
-
+                comboBoxIntercom.Text = oc.U_incoterm;
                 //C=BP Currency, L=Local Currency, S=System Currency
                 switch (oc.CurSource)
                 {
@@ -839,6 +909,18 @@ namespace LOSA.Compras
                         TsExoOIsv.ReadOnly = true;
                         btnShowPopu.Enabled = false;
                         break;
+
+                    case 4:
+                        cmdNuevo.Enabled = true;
+                        cmdAddDetalle.Enabled = false;
+                        txtComentarios.Enabled = false;
+                        grDetalle.Enabled = false ;
+                        dtFechaContabilizacion.Enabled = false;
+                        cmdGuardar.Enabled = false;
+                        TsExoOIsv.ReadOnly = true;
+                        btnShowPopu.Enabled = false;
+                        break;
+
 
                     default:
                         break;
@@ -1003,6 +1085,11 @@ namespace LOSA.Compras
 
                             break;
 
+                        case 4: //Cancelada por el Usuario Creador
+                            CajaDialogo.Error("Orden Cancelada por el Usuario!");
+
+                            break;
+                           
                         default:
                             break;
                     }
@@ -1119,6 +1206,46 @@ namespace LOSA.Compras
                 }
             }
 
+            if (Convert.ToInt32(grdTipoOrden.EditValue) == 1) //Orden de Compra de Materia Prima
+            {
+                if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+                {
+                    CajaDialogo.Error("La Orden es de Materia Prima.\nNo puede dejar vacio el campo Incoterm!");
+                    comboBoxIntercom.Focus();
+                    return;
+                }
+            }
+
+            foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada)
+            {
+                if (string.IsNullOrEmpty(row.bodega) || string.IsNullOrWhiteSpace(row.bodega))
+                {
+                    CajaDialogo.Error("Debe Seleccionar el Almacen para los Articulos!");
+                    return;
+                }
+
+                if (row.itemcode.StartsWith("MP"))
+                {
+                    if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+                    {
+                        CajaDialogo.Error("Debe seleccionar el INCOTERM!\nYa que es una Orden con una Materia Prima.");
+                        return;
+                    }
+                }
+
+                if (row.total <= 0)
+                {
+                    CajaDialogo.Error("No puede dejar el Total (doc.) en 0");
+                    return;
+                }
+            }
+
+            if (Convert.ToDecimal(txtTotal.EditValue) == 0)
+            {
+                CajaDialogo.Error("El Total de la Orden es 0!\nNo puede guardar una Orden con Valor 0");
+                return;
+            }
+
             //ValidacionDeSaldos();
             bool PermitirGuardar = false;
             foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
@@ -1131,7 +1258,7 @@ namespace LOSA.Compras
 
                 if (item.indicador_impuesto == "EXO")
                 {
-                    if (string.IsNullOrEmpty(item.partida_arancelaria))
+                    if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
                     {
                         try
                         {
@@ -1254,8 +1381,10 @@ namespace LOSA.Compras
                         cmd.Parameters.AddWithValue("@ContactCode", ContactCode);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
                         cmd.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
-
-                        
+                        if(string.IsNullOrEmpty(comboBoxIntercom.Text))
+                            cmd.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
 
                         int id_header = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -1285,6 +1414,7 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
                             cmd.Parameters.AddWithValue("@isv", row.isv);
                             cmd.Parameters.AddWithValue("@base_ref", row.referencia_base);//Referencia de Solicitud de Compra
+                            cmd.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmd.ExecuteNonQuery();
                         }
 
@@ -1350,6 +1480,10 @@ namespace LOSA.Compras
                         cmdUpdate.Parameters.AddWithValue("@ContactCode", ContactCode);
                         cmdUpdate.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
                         cmdUpdate.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
+                        if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+                            cmdUpdate.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
+                        else
+                            cmdUpdate.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
 
                         cmdUpdate.ExecuteNonQuery();
 
@@ -1380,6 +1514,7 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
                             cmdUpdate.Parameters.AddWithValue("@isv", row.isv);
                             cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
+                            cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmdUpdate.ExecuteNonQuery();
                         }
 
@@ -1500,7 +1635,10 @@ namespace LOSA.Compras
                 case TipoOperacion.New:
                     break;
                 case TipoOperacion.Update:
-                    CancelarOrdenCompra(IdOrdenCompraActual);
+                    //CancelarOrdenCompra(IdOrdenCompraActual);
+                    break;
+                case TipoOperacion.View:
+
                     break;
                 default:
                     break;
@@ -1766,12 +1904,14 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtNumAtCard = new System.Windows.Forms.TextBox();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.dtFechaContabilizacion = new DevExpress.XtraEditors.DateEdit();
+            this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -1781,6 +1921,11 @@ namespace LOSA.Compras
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barbtnCancelOrden = new DevExpress.XtraBars.BarButtonItem();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtNumAtCard = new System.Windows.Forms.TextBox();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaContabilizacion = new DevExpress.XtraEditors.DateEdit();
             this.glRutaAprobacionOC = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsRutaAprobacion = new System.Windows.Forms.BindingSource(this.components);
             this.dsCompras1 = new LOSA.Compras.dsCompras();
@@ -1856,14 +2001,15 @@ namespace LOSA.Compras
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreferencia_base = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colisv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ButtonDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtComentarios = new DevExpress.XtraEditors.MemoEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
@@ -1877,9 +2023,10 @@ namespace LOSA.Compras
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glRutaAprobacionOC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRutaAprobacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
@@ -1906,10 +2053,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtComentarios.Properties)).BeginInit();
@@ -1923,6 +2070,8 @@ namespace LOSA.Compras
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.comboBoxIntercom);
+            this.panelControl1.Controls.Add(this.labelControl17);
             this.panelControl1.Controls.Add(this.txtID);
             this.panelControl1.Controls.Add(this.txtNumAtCard);
             this.panelControl1.Controls.Add(this.labelControl16);
@@ -1967,55 +2116,36 @@ namespace LOSA.Compras
             this.panelControl1.TabIndex = 51;
             this.panelControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl1_MouseDown);
             // 
-            // txtID
+            // comboBoxIntercom
             // 
-            this.txtID.BackColor = System.Drawing.Color.White;
-            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtID.Enabled = false;
-            this.txtID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtID.Location = new System.Drawing.Point(220, 58);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(49, 19);
-            this.txtID.TabIndex = 93;
-            this.txtID.Visible = false;
-            // 
-            // txtNumAtCard
-            // 
-            this.txtNumAtCard.BackColor = System.Drawing.Color.White;
-            this.txtNumAtCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumAtCard.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtNumAtCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNumAtCard.Location = new System.Drawing.Point(220, 179);
-            this.txtNumAtCard.Name = "txtNumAtCard";
-            this.txtNumAtCard.Size = new System.Drawing.Size(336, 19);
-            this.txtNumAtCard.TabIndex = 92;
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(48, 180);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(351, 18);
-            this.labelControl16.TabIndex = 91;
-            this.labelControl16.Text = "No. Ref. del Acreedor___________________";
-            // 
-            // dtFechaContabilizacion
-            // 
-            this.dtFechaContabilizacion.EditValue = null;
-            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 82);
-            this.dtFechaContabilizacion.MenuManager = this.barManager1;
-            this.dtFechaContabilizacion.Name = "dtFechaContabilizacion";
-            this.dtFechaContabilizacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.dtFechaContabilizacion.Properties.Appearance.Options.UseFont = true;
-            this.dtFechaContabilizacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.comboBoxIntercom.Location = new System.Drawing.Point(1164, 233);
+            this.comboBoxIntercom.MenuManager = this.barManager1;
+            this.comboBoxIntercom.Name = "comboBoxIntercom";
+            this.comboBoxIntercom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.AppearanceItemSelected.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaContabilizacion.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaContabilizacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaContabilizacion.Size = new System.Drawing.Size(189, 24);
-            this.dtFechaContabilizacion.TabIndex = 90;
+            this.comboBoxIntercom.Properties.Items.AddRange(new object[] {
+            "FOB",
+            "EXW",
+            "CIF",
+            "CFR",
+            "FCA",
+            "CPT",
+            "CIP",
+            "DPU",
+            "DAP",
+            "DDP",
+            "FAS",
+            "DAT"});
+            this.comboBoxIntercom.Size = new System.Drawing.Size(189, 24);
+            this.comboBoxIntercom.TabIndex = 95;
             // 
             // barManager1
             // 
@@ -2104,6 +2234,66 @@ namespace LOSA.Compras
             this.barbtnCancelOrden.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barbtnCancelOrden.ImageOptions.LargeImage")));
             this.barbtnCancelOrden.Name = "barbtnCancelOrden";
             this.barbtnCancelOrden.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnCancelOrden_ItemClick);
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(994, 236);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(264, 18);
+            this.labelControl17.TabIndex = 94;
+            this.labelControl17.Text = "INCOTERM__________________";
+            // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.Color.White;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtID.Location = new System.Drawing.Point(220, 58);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(49, 19);
+            this.txtID.TabIndex = 93;
+            this.txtID.Visible = false;
+            // 
+            // txtNumAtCard
+            // 
+            this.txtNumAtCard.BackColor = System.Drawing.Color.White;
+            this.txtNumAtCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumAtCard.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtNumAtCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNumAtCard.Location = new System.Drawing.Point(220, 179);
+            this.txtNumAtCard.Name = "txtNumAtCard";
+            this.txtNumAtCard.Size = new System.Drawing.Size(336, 19);
+            this.txtNumAtCard.TabIndex = 92;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Location = new System.Drawing.Point(48, 180);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(351, 18);
+            this.labelControl16.TabIndex = 91;
+            this.labelControl16.Text = "No. Ref. del Acreedor___________________";
+            // 
+            // dtFechaContabilizacion
+            // 
+            this.dtFechaContabilizacion.EditValue = null;
+            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 82);
+            this.dtFechaContabilizacion.MenuManager = this.barManager1;
+            this.dtFechaContabilizacion.Name = "dtFechaContabilizacion";
+            this.dtFechaContabilizacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dtFechaContabilizacion.Properties.Appearance.Options.UseFont = true;
+            this.dtFechaContabilizacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaContabilizacion.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaContabilizacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaContabilizacion.Size = new System.Drawing.Size(189, 24);
+            this.dtFechaContabilizacion.TabIndex = 90;
             // 
             // glRutaAprobacionOC
             // 
@@ -2385,8 +2575,9 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(336, 24);
@@ -2646,7 +2837,8 @@ namespace LOSA.Compras
             this.coltotal,
             this.colreferencia_base,
             this.colisv,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn2});
             this.grdvDetalle.CustomizationFormBounds = new System.Drawing.Rectangle(774, 457, 260, 282);
             this.grdvDetalle.GridControl = this.grDetalle;
             this.grdvDetalle.Name = "grdvDetalle";
@@ -2870,11 +3062,35 @@ namespace LOSA.Compras
             // colbodega
             // 
             this.colbodega.Caption = "Almacen";
+            this.colbodega.ColumnEdit = this.reposGrdBodega;
             this.colbodega.FieldName = "bodega";
             this.colbodega.Name = "colbodega";
             this.colbodega.Visible = true;
             this.colbodega.VisibleIndex = 8;
             this.colbodega.Width = 110;
+            // 
+            // reposGrdBodega
+            // 
+            this.reposGrdBodega.AutoHeight = false;
+            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
+            this.reposGrdBodega.DisplayMember = "bodega";
+            this.reposGrdBodega.Name = "reposGrdBodega";
+            this.reposGrdBodega.PopupView = this.gridView2;
+            this.reposGrdBodega.ValueMember = "bodega";
+            // 
+            // bodegasBindingSource
+            // 
+            this.bodegasBindingSource.DataMember = "bodegas";
+            this.bodegasBindingSource.DataSource = this.dsCompras1;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // coltotal
             // 
@@ -2913,6 +3129,7 @@ namespace LOSA.Compras
             // 
             this.gridColumn1.Caption = "Eliminar";
             this.gridColumn1.ColumnEdit = this.ButtonDeleteRow;
+            this.gridColumn1.FieldName = "eliminar";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 11;
@@ -2923,32 +3140,17 @@ namespace LOSA.Compras
             this.ButtonDeleteRow.AutoHeight = false;
             this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            this.ButtonDeleteRow.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDeleteRow.ContextImageOptions.Image")));
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
             // 
-            // reposGrdBodega
+            // gridColumn2
             // 
-            this.reposGrdBodega.AutoHeight = false;
-            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
-            this.reposGrdBodega.DisplayMember = "bodega";
-            this.reposGrdBodega.Name = "reposGrdBodega";
-            this.reposGrdBodega.PopupView = this.gridView2;
-            this.reposGrdBodega.ValueMember = "bodega";
-            // 
-            // bodegasBindingSource
-            // 
-            this.bodegasBindingSource.DataMember = "bodegas";
-            this.bodegasBindingSource.DataSource = this.dsCompras1;
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridColumn2.Caption = "Linea Base";
+            this.gridColumn2.FieldName = "num_linea_solicitud_d";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
             // 
             // panelControl2
             // 
@@ -3113,9 +3315,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glRutaAprobacionOC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRutaAprobacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).EndInit();
@@ -3142,10 +3345,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();

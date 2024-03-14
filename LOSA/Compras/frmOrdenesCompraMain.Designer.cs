@@ -9,14 +9,6 @@ namespace LOSA.Compras
         #endregion
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.ComponentModel.IContainer components;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.SimpleButton btnShowPopu;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private System.Windows.Forms.TextBox txtUsuarioCreador;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl grDetalle;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdvDetalle;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonDeleteRow;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
         private DevExpress.XtraEditors.ButtonEdit txtCodProv;
@@ -37,6 +29,14 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.SimpleButton cmdAnterior;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private System.Windows.Forms.TextBox txtUsuarioCreador;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.GridControl grDetalle;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdvDetalle;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonDeleteRow;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.SimpleButton btnShowPopu;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
         private dsCompras dsCompras1;
         private DevExpress.XtraEditors.TextEdit txtTotal;
         private DevExpress.XtraEditors.TextEdit txtImpuesto;
@@ -116,5 +116,8 @@ namespace LOSA.Compras
         private System.Windows.Forms.TextBox txtID;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGrdBodega;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxIntercom;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
