@@ -170,5 +170,11 @@ namespace LOSA.Compras
         {
             
         }
+
+        private void cmdCerrar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

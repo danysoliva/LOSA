@@ -237,6 +237,7 @@ namespace LOSA
                         case 3://Medium Autorization
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel;
+                            tabOpciones.TabPages[12].PageVisible = true;
                             break;
                         case 4://Depth With Delta
                             //tabOpciones.TabPages[0].PageVisible = true;
@@ -246,10 +247,10 @@ namespace LOSA
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[5].PageVisible = true;
                             tabOpciones.TabPages[10].PageVisible = true;
-                           
+                            tabOpciones.TabPages[12].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
-
+                            tabOpciones.TabPages[12].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -395,6 +396,7 @@ namespace LOSA
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            tabOpciones.TabPages[12].PageVisible = true;
                             break;
                     }
                     break;
