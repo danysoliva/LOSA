@@ -5210,5 +5210,10 @@ namespace LOSA
 
             }
         }
+
+        private void navListaOC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+        }
     }
 }
