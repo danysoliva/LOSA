@@ -122,5 +122,10 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Columns.GridColumn colbodega1;
         private DevExpress.XtraGrid.Columns.GridColumn colWhsName;
         private DevExpress.XtraGrid.Columns.GridColumn colconcat_1;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage tabDetalleOrden;
+        private DevExpress.XtraTab.XtraTabPage tabArchivosAdjuntos;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
     }
 }

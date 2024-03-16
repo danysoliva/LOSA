@@ -485,6 +485,7 @@
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -6568,7 +6569,8 @@
             this.navBarItem115,
             this.navBarItem116,
             this.navBarItem117,
-            this.nbarAprobacionOrdenesCompra});
+            this.nbarAprobacionOrdenesCompra,
+            this.navListaOC});
             this.navBarControl5.Location = new System.Drawing.Point(0, 0);
             this.navBarControl5.Name = "navBarControl5";
             this.navBarControl5.OptionsNavPane.ExpandedWidth = 274;
@@ -6587,7 +6589,8 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navOrdenCompra),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbarAprobacionOrdenesCompra)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbarAprobacionOrdenesCompra),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navListaOC)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navOrdenCompra
@@ -7002,6 +7005,19 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
+            // 
+            // navListaOC
+            // 
+            this.navListaOC.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.Appearance.Options.UseFont = true;
+            this.navListaOC.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.AppearanceHotTracked.Options.UseFont = true;
+            this.navListaOC.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.AppearancePressed.Options.UseFont = true;
+            this.navListaOC.Caption = "Lista Ordenes de Compra";
+            this.navListaOC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navListaOC.ImageOptions.SvgImage")));
+            this.navListaOC.Name = "navListaOC";
+            this.navListaOC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navListaOC_LinkClicked);
             // 
             // frmOpciones
             // 
@@ -7513,5 +7529,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem116;
         private DevExpress.XtraNavBar.NavBarItem navBarItem117;
         private DevExpress.XtraNavBar.NavBarItem nbarAprobacionOrdenesCompra;
+        private DevExpress.XtraNavBar.NavBarItem navListaOC;
     }
 }
