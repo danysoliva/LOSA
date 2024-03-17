@@ -113,8 +113,19 @@ namespace LOSA.Compras
                             command.ExecuteNonQuery();
 
 
-                            //transaccion en kardex de las lineas de orden de compra
-                            if (idEstadoNew == 2)
+                            ////transaccion en kardex de las lineas de orden de compra
+                            //if (idEstadoNew == 2)
+                            //{
+                            //    command.CommandText = "dbo.sp_set_insert_lineas_orden_compra_for_kardex";
+                            //    command.CommandType = CommandType.StoredProcedure;
+                            //    command.Parameters.Clear();
+                            //    command.Parameters.AddWithValue("@id_orden_compra_h", row.id_ordenH);
+                            //    command.Parameters.AddWithValue("@user_id", this.UsuarioLogeado.Id);
+                            //    command.ExecuteNonQuery();
+                            //}                            
+
+                            //TRANSACCION SI LA ORDEN ES RECHAZADA, SE HARA UN ENTRADA AL KARDEX!
+                            if (idEstadoNew == 3)
                             {
                                 command.CommandText = "dbo.sp_set_insert_lineas_orden_compra_for_kardex";
                                 command.CommandType = CommandType.StoredProcedure;
@@ -122,7 +133,7 @@ namespace LOSA.Compras
                                 command.Parameters.AddWithValue("@id_orden_compra_h", row.id_ordenH);
                                 command.Parameters.AddWithValue("@user_id", this.UsuarioLogeado.Id);
                                 command.ExecuteNonQuery();
-                            }                            
+                            }
 
                             transaction.Commit();
                             IsCommit = true;
