@@ -30,6 +30,7 @@ namespace LOSA.Clases
         public int Idnivel { get => idnivel; set => idnivel = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public string HostNameConnected { get; set; }
+        public bool NotificacionesActivas { get; set; }
 
         //Migracion ACS
 
@@ -92,7 +93,8 @@ namespace LOSA.Clases
                                        nombre, 
 	                                   id_grupo_losa,
                                        ADUser,
-                                        super_user
+                                       super_user,
+                                       [notificaciones_activas]
                                 FROM [ACS].dbo.conf_usuarios 
                                 where [ADUser] ='" + pUser + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -105,6 +107,7 @@ namespace LOSA.Clases
                     idGrupo = dr.GetInt32(2);
                     ADuser = dr.GetString(3);
                     IsSuperUser = dr.GetBoolean(4);
+                    NotificacionesActivas = dr.GetBoolean(5);
                     recuperado = true;
                 }
                 dr.Close();
@@ -130,9 +133,10 @@ namespace LOSA.Clases
                                        nombre, 
 	                                   id_grupo_losa,
                                        tipo,
-                                        super_user
+                                       super_user,
+                                       [notificaciones_activas]
                                 FROM [ACS].dbo.conf_usuarios 
-                                where id ="+ pId;
+                                where id =" + pId;
                 SqlCommand cmd = new SqlCommand(sql, con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -143,7 +147,7 @@ namespace LOSA.Clases
                     idGrupo = dr.GetInt32(2);
                     Tipo = dr.GetString(3);
                     IsSuperUser = dr.GetBoolean(4);
-
+                    NotificacionesActivas = dr.GetBoolean(5);
                     recuperado = true;
                 }
                 dr.Close();
@@ -218,6 +222,7 @@ namespace LOSA.Clases
                                       ,[nombre]
                                       ,[ADUser]
                                       ,[super_user]
+                                      ,[notificaciones_activas]
                                   FROM [dbo].[conf_usuarios]
                                   where id = " + pUserID;
                 SqlCommand cmd = new SqlCommand(sql, Conn);
@@ -228,6 +233,7 @@ namespace LOSA.Clases
                     Nombre = dr.GetString(1);
                     AD_User = dr.GetString(2);
                     IsSuperUser = dr.GetBoolean(3);
+                    NotificacionesActivas = dr.GetBoolean(4);
                 }
                 vRecuperado = true;
                 Conn.Close();
