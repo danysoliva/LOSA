@@ -26,18 +26,77 @@ namespace LOSA.Compras
 
         private void LoadPendientes(int pIdUsuario)
         {
+            //try
+            //{
+            //    DataOperations dp = new DataOperations();
+            //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //    con.Open();
+
+            //    SqlCommand cmd = new SqlCommand("[dbo].[sp_get_detalle_ordenes_compra_pendiente_aprobacion]", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@id_usuario", pIdUsuario);
+            //    dsAutorizacionesCompras1.pendienes_aprobacion.Clear();
+            //    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //    adat.Fill(dsAutorizacionesCompras1.pendienes_aprobacion);
+
+            //    con.Close();
+            //}
+            //catch (Exception ec)
+            //{
+            //    CajaDialogo.Error(ec.Message);
+            //}
+
             try
             {
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[dbo].[sp_get_detalle_ordenes_compra_pendiente_aprobacion]", con);
+                SqlCommand cmd = new SqlCommand("[dbo].[sp_get_prioridades_usuario_aprobador]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_usuario", pIdUsuario);
-                dsAutorizacionesCompras1.pendienes_aprobacion.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsAutorizacionesCompras1.pendienes_aprobacion);
+                SqlDataReader dr = cmd.ExecuteReader();
+                int cantPrioridades = 0;
+                if (dr.Read())
+                {
+                    cantPrioridades = dr.GetInt32(0);
+                }
+                dr.Close();
+
+                switch (cantPrioridades)
+                {
+                    case 1:
+
+                        cmd = new SqlCommand("[dbo].[sp_get_detalle_ordenes_compra_pendiente_aprobacion]", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_usuario", pIdUsuario);
+                        dsAutorizacionesCompras1.pendienes_aprobacion.Clear();
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        adat.Fill(dsAutorizacionesCompras1.pendienes_aprobacion);
+
+                        break;
+                    case 2:
+                        //Prioridad 1
+                        cmd = new SqlCommand("[dbo].[sp_get_detalle_ordenes_compra_pendiente_aprobacion_prioridad_1]", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_usuario", pIdUsuario);
+                        dsAutorizacionesCompras1.pendienes_aprobacion.Clear();
+                        SqlDataAdapter adat1 = new SqlDataAdapter(cmd);
+                        adat1.Fill(dsAutorizacionesCompras1.pendienes_aprobacion);
+
+                        //Prioridad 2
+                        cmd = new SqlCommand("[dbo].[sp_get_detalle_ordenes_compra_pendiente_aprobacion_prioridad_2]", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_usuario", pIdUsuario);
+                        dsAutorizacionesCompras1.pendienes_aprobacion_prd2.Clear();
+                        SqlDataAdapter adat2 = new SqlDataAdapter(cmd);
+                        adat2.Fill(dsAutorizacionesCompras1.pendienes_aprobacion_prd2);
+                        break;
+                    default:
+
+                        break;
+                }
+                
 
                 con.Close();
             }
