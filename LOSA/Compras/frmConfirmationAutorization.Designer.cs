@@ -394,7 +394,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(788, 444);
+            this.ClientSize = new System.Drawing.Size(788, 438);
             this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.txtCardName);
             this.Controls.Add(this.label14);

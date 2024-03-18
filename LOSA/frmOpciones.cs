@@ -1179,19 +1179,16 @@ namespace LOSA
                 newVersion = notifications.ValidarVersionBuild(notifications.Major, notifications.Minor, notifications.Build, notifications.Revision, UsuarioLogeado.Id);
                 notificacionesSinLeer = notifications.ValidarNotificacionesSinLeer(UsuarioLogeado.Id);
 
-                if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Montacarga)
+                if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo != GrupoUser.GrupoUsuario.Montacarga)
                 {
-
-                }
-                else
-                {
-                    if (notificacionesSinLeer)
+                    if (UsuarioLogeado.NotificacionesActivas)
                     {
-                        frm.Show();
+                        if (notificacionesSinLeer)
+                        {
+                            frm.Show();
+                        }
                     }
                 }
-
-                
             }
             catch (Exception ex)
             {

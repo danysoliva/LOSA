@@ -137,7 +137,6 @@ namespace LOSA
                         {
                             IPAddress = ip.ToString();
                         }
-
                     }
 
                     try
