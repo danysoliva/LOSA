@@ -286,7 +286,6 @@ namespace LOSA.Compras
                 grdPartidaAranc.Enabled = false;
                 grdCapitulo.Text = "";
                 grdPartidaAranc.Text = "";
-
             }
         }
 

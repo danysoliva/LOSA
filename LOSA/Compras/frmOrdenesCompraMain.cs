@@ -573,15 +573,15 @@ namespace LOSA.Compras
                 {
                     bool Agregar = true;
 
-                    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
-                    {
-                        if (item.itemcode == frm.ItemCode)
-                        {
-                            item.cantidad = item.cantidad + 1;
-                            Agregar = false;
-                        }
+                    //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                    //{
+                    //    if (item.itemcode == frm.ItemCode)
+                    //    {
+                    //        item.cantidad = item.cantidad + 1;
+                    //        Agregar = false;
+                    //    }
 
-                    }
+                    //}
 
                     if (frm.Partida.Length > 0)
                     {
@@ -612,8 +612,6 @@ namespace LOSA.Compras
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
 
-                    
-
                 }
             }
             else
@@ -623,16 +621,16 @@ namespace LOSA.Compras
                 {
                     bool Agregar = true;
 
-                    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
-                    {
-                        if (item.itemcode == frm.ItemSeleccionado.ItemCode)
-                        {
-                            item.cantidad = item.cantidad + 1;
-                            Agregar = false;
-                        }
+                    //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                    //{
+                    //    if (item.itemcode == frm.ItemSeleccionado.ItemCode)
+                    //    {
+                    //        item.cantidad = item.cantidad + 1;
+                    //        Agregar = false;
+                    //    }
 
 
-                    }
+                    //}
 
                     if (Agregar)
                     {
@@ -1315,43 +1313,86 @@ namespace LOSA.Compras
                 }
             }
 
-            //Consolidados de Saldos por Capitulo y Rubro
-            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //if (TsExoOIsv.IsOn)
             //{
-            //    foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria)
+            //    dsCompras1.SaldosMemoria.Clear();
+            //    bool PrimeraIteracion = true;
+            //    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             //    {
-            //        if (item.capitulo == rowMemoria.capitulo)
+            //        foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria)
             //        {
-            //            if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
-            //            {
-            //                DataRow drow = dsCompras1.SaldosMemoria.NewRow();
-            //                drow[0] = item.capitulo;
-            //                drow[1] = item.partida_arancelaria;
-            //                drow[2] = item.itemcode;
-            //                drow[3] = item.cantidad;
-            //                drow[4] = item.precio_por_unidad;
-            //                drow[5] = item.indicador_impuesto;
-            //                drow[6] = item.total;
+            //            PrimeraIteracion = false;
 
-            //                dsCompras1.SaldosMemoria.Rows.Add(drow);
-            //                dsCompras1.SaldosMemoria.AcceptChanges();
+            //            if (rowMemoria.existe)
+            //            {
+            //                rowMemoria.total += item.total;
             //            }
+            //            else
+            //            {
+            //                if (item.capitulo == rowMemoria.capitulo)
+            //                {
+            //                    if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //                    {
+            //                        DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //                        drow[0] = item.capitulo;
+            //                        drow[1] = item.partida_arancelaria;
+            //                        drow[2] = item.itemcode;
+            //                        drow[3] = item.cantidad;
+            //                        drow[4] = item.precio_por_unidad;
+            //                        drow[5] = item.indicador_impuesto;
+            //                        drow[6] = item.total;
+
+            //                        dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //                        dsCompras1.SaldosMemoria.AcceptChanges();
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //                    drow[0] = item.capitulo;
+            //                    drow[1] = item.partida_arancelaria;
+            //                    drow[2] = item.itemcode;
+            //                    drow[3] = item.cantidad;
+            //                    drow[4] = item.precio_por_unidad;
+            //                    drow[5] = item.indicador_impuesto;
+            //                    drow[6] = item.total;
+
+            //                    dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //                    dsCompras1.SaldosMemoria.AcceptChanges();
+            //                }
+            //            }
+
+                        
+            //        }
+
+            //        if (PrimeraIteracion)
+            //        {
+            //            DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //            drow[0] = item.capitulo;
+            //            drow[1] = item.partida_arancelaria;
+            //            drow[2] = item.itemcode;
+            //            drow[3] = item.cantidad;
+            //            drow[4] = item.precio_por_unidad;
+            //            drow[5] = item.indicador_impuesto;
+            //            drow[6] = item.total;
+
+            //            dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //            dsCompras1.SaldosMemoria.AcceptChanges();
             //        }
             //    }
-
             //}
 
+            //Consolidados de Saldos por Capitulo y Rubro
+           
             bool PermitirGuardar = false;
 
             //#region VALIDACION FINAL : EN PROCESO
-
-
 
             //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             //{
             //    //Cada vez que pase por aqui, guardaremos en memoria el Detalle
             //    //Para validar el Saldo Disponible en Kardex - Saldo de la Linea - Saldo de la Linea en Memoria que compartan Capitulo o Capitulo y Partida!
-                
+
 
             //    string Capitulo = "";
             //    string Partida = "";
@@ -1414,7 +1455,7 @@ namespace LOSA.Compras
             //                CajaDialogo.Error(ex.Message);
             //            }
             //        }
-            //        else 
+            //        else
             //        {
             //            //Validemos el Capitulo y la Partida
 
@@ -1425,89 +1466,89 @@ namespace LOSA.Compras
             //#endregion
 
             #region VALIDACION DE SALDO: SOLO FUNCIONA LINEA POR LINEA
-            
-            foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
-            {
-                string Capitulo = "";
-                string Partida = "";
-                decimal SaldoDisponible = 0;
-                decimal UnidadesDisponibles = 0;
-                
 
-                if (item.indicador_impuesto == "EXO")
-                {
-                    if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
-                    {
-                        try
-                        {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto", item.total);
-                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
-                            {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                SaldoDisponible = dr.GetDecimal(1);
-                                Capitulo = dr.GetString(2);
-                            }
-                            dr.Close();
-                            conn.Close();
+            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //{
+            //    string Capitulo = "";
+            //    string Partida = "";
+            //    decimal SaldoDisponible = 0;
+            //    decimal UnidadesDisponibles = 0;
 
-                            if (PermitirGuardar == false)
-                            {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                return;
-                            }
 
-                        }
-                        catch (Exception ex)
-                        {
-                            CajaDialogo.Error(ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto", item.total);
-                            cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
-                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-                            cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
-                            {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                Capitulo = dr.GetString(1);
-                                Partida = dr.GetString(2);
-                                SaldoDisponible = dr.GetDecimal(3);
-                                UnidadesDisponibles = dr.GetDecimal(4);
-                            }
-                            dr.Close();
-                            conn.Close();
+            //    if (item.indicador_impuesto == "EXO")
+            //    {
+            //        if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
+            //        {
+            //            try
+            //            {
+            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //                conn.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@Monto", item.total);
+            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+            //                SqlDataReader dr = cmd.ExecuteReader();
+            //                if (dr.Read())
+            //                {
+            //                    PermitirGuardar = dr.GetBoolean(0);
+            //                    SaldoDisponible = dr.GetDecimal(1);
+            //                    Capitulo = dr.GetString(2);
+            //                }
+            //                dr.Close();
+            //                conn.Close();
 
-                            if (PermitirGuardar == false)
-                            {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                frm.ShowDialog();
-                                return;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            CajaDialogo.Error(ex.Message);
-                        }
-                    }
-                }
-            }
+            //                if (PermitirGuardar == false)
+            //                {
+            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
+            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                    return;
+            //                }
+
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                CajaDialogo.Error(ex.Message);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            try
+            //            {
+            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //                conn.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@Monto", item.total);
+            //                cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
+            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+            //                cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
+            //                SqlDataReader dr = cmd.ExecuteReader();
+            //                if (dr.Read())
+            //                {
+            //                    PermitirGuardar = dr.GetBoolean(0);
+            //                    Capitulo = dr.GetString(1);
+            //                    Partida = dr.GetString(2);
+            //                    SaldoDisponible = dr.GetDecimal(3);
+            //                    UnidadesDisponibles = dr.GetDecimal(4);
+            //                }
+            //                dr.Close();
+            //                conn.Close();
+
+            //                if (PermitirGuardar == false)
+            //                {
+            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
+            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                    frm.ShowDialog();
+            //                    return;
+            //                }
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                CajaDialogo.Error(ex.Message);
+            //            }
+            //        }
+            //    }
+            //}
 
             #endregion
 

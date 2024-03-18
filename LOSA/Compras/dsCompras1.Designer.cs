@@ -3914,6 +3914,8 @@ namespace LOSA.Compras {
             
             private global::System.Data.DataColumn columnestado_name;
             
+            private global::System.Data.DataColumn columncreadopor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public orden_compra_exoDataTable() {
@@ -4045,6 +4047,14 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn creadoporColumn {
+                get {
+                    return this.columncreadopor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4080,7 +4090,7 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public orden_compra_exoRow Addorden_compra_exoRow(int id_h, string CardCode, string CardName, string State, int DocNum, System.DateTime DocDate, string U_TipoOrden, string Comments, decimal DocTotal, string subido_sap, bool subido, string estado_name) {
+            public orden_compra_exoRow Addorden_compra_exoRow(int id_h, string CardCode, string CardName, string State, int DocNum, System.DateTime DocDate, string U_TipoOrden, string Comments, decimal DocTotal, string subido_sap, bool subido, string estado_name, string creadopor) {
                 orden_compra_exoRow roworden_compra_exoRow = ((orden_compra_exoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_h,
@@ -4094,7 +4104,8 @@ namespace LOSA.Compras {
                         DocTotal,
                         subido_sap,
                         subido,
-                        estado_name};
+                        estado_name,
+                        creadopor};
                 roworden_compra_exoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(roworden_compra_exoRow);
                 return roworden_compra_exoRow;
@@ -4129,6 +4140,7 @@ namespace LOSA.Compras {
                 this.columnsubido_sap = base.Columns["subido_sap"];
                 this.columnsubido = base.Columns["subido"];
                 this.columnestado_name = base.Columns["estado_name"];
+                this.columncreadopor = base.Columns["creadopor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4158,6 +4170,8 @@ namespace LOSA.Compras {
                 base.Columns.Add(this.columnsubido);
                 this.columnestado_name = new global::System.Data.DataColumn("estado_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestado_name);
+                this.columncreadopor = new global::System.Data.DataColumn("creadopor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreadopor);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5187,6 +5201,8 @@ namespace LOSA.Compras {
             
             private global::System.Data.DataColumn columntotal;
             
+            private global::System.Data.DataColumn columnexiste;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SaldosMemoriaDataTable() {
@@ -5278,6 +5294,14 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existeColumn {
+                get {
+                    return this.columnexiste;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5313,7 +5337,7 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SaldosMemoriaRow AddSaldosMemoriaRow(string capitulo, string partida_arancelaria, string itemcode, decimal cantidad, decimal precio_por_unidad, string indicador_impuesto, decimal total) {
+            public SaldosMemoriaRow AddSaldosMemoriaRow(string capitulo, string partida_arancelaria, string itemcode, decimal cantidad, decimal precio_por_unidad, string indicador_impuesto, decimal total, bool existe) {
                 SaldosMemoriaRow rowSaldosMemoriaRow = ((SaldosMemoriaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         capitulo,
@@ -5322,7 +5346,8 @@ namespace LOSA.Compras {
                         cantidad,
                         precio_por_unidad,
                         indicador_impuesto,
-                        total};
+                        total,
+                        existe};
                 rowSaldosMemoriaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSaldosMemoriaRow);
                 return rowSaldosMemoriaRow;
@@ -5352,6 +5377,7 @@ namespace LOSA.Compras {
                 this.columnprecio_por_unidad = base.Columns["precio_por_unidad"];
                 this.columnindicador_impuesto = base.Columns["indicador_impuesto"];
                 this.columntotal = base.Columns["total"];
+                this.columnexiste = base.Columns["existe"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5371,6 +5397,9 @@ namespace LOSA.Compras {
                 base.Columns.Add(this.columnindicador_impuesto);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
+                this.columnexiste = new global::System.Data.DataColumn("existe", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexiste);
+                this.columnexiste.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7441,6 +7470,22 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string creadopor {
+                get {
+                    try {
+                        return ((string)(this[this.tableorden_compra_exo.creadoporColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creadopor\' de la tabla \'orden_compra_exo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableorden_compra_exo.creadoporColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_hNull() {
                 return this.IsNull(this.tableorden_compra_exo.id_hColumn);
             }
@@ -7581,6 +7626,18 @@ namespace LOSA.Compras {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setestado_nameNull() {
                 this[this.tableorden_compra_exo.estado_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscreadoporNull() {
+                return this.IsNull(this.tableorden_compra_exo.creadoporColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcreadoporNull() {
+                this[this.tableorden_compra_exo.creadoporColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8125,6 +8182,22 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool existe {
+                get {
+                    try {
+                        return ((bool)(this[this.tableSaldosMemoria.existeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existe\' de la tabla \'SaldosMemoria\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSaldosMemoria.existeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscapituloNull() {
                 return this.IsNull(this.tableSaldosMemoria.capituloColumn);
             }
@@ -8205,6 +8278,18 @@ namespace LOSA.Compras {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SettotalNull() {
                 this[this.tableSaldosMemoria.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsexisteNull() {
+                return this.IsNull(this.tableSaldosMemoria.existeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetexisteNull() {
+                this[this.tableSaldosMemoria.existeColumn] = global::System.Convert.DBNull;
             }
         }
         
