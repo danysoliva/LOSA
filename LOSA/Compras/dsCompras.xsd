@@ -177,8 +177,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+        <xs:element name="SaldosMemoria" msprop:Generator_TableClassName="SaldosMemoriaDataTable" msprop:Generator_TableVarName="tableSaldosMemoria" msprop:Generator_RowChangedName="SaldosMemoriaRowChanged" msprop:Generator_TablePropName="SaldosMemoria" msprop:Generator_RowDeletingName="SaldosMemoriaRowDeleting" msprop:Generator_RowChangingName="SaldosMemoriaRowChanging" msprop:Generator_RowEvHandlerName="SaldosMemoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="SaldosMemoriaRowDeleted" msprop:Generator_RowClassName="SaldosMemoriaRow" msprop:Generator_UserTableName="SaldosMemoria" msprop:Generator_RowEvArgName="SaldosMemoriaRowChangeEvent">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="capitulo" msprop:Generator_ColumnVarNameInTable="columncapitulo" msprop:Generator_ColumnPropNameInRow="capitulo" msprop:Generator_ColumnPropNameInTable="capituloColumn" msprop:Generator_UserColumnName="capitulo" type="xs:string" minOccurs="0" />
+              <xs:element name="partida_arancelaria" msprop:Generator_ColumnVarNameInTable="columnpartida_arancelaria" msprop:Generator_ColumnPropNameInRow="partida_arancelaria" msprop:Generator_ColumnPropNameInTable="partida_arancelariaColumn" msprop:Generator_UserColumnName="partida_arancelaria" type="xs:string" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="precio_por_unidad" msprop:Generator_ColumnVarNameInTable="columnprecio_por_unidad" msprop:Generator_ColumnPropNameInRow="precio_por_unidad" msprop:Generator_ColumnPropNameInTable="precio_por_unidadColumn" msprop:Generator_UserColumnName="precio_por_unidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="indicador_impuesto" msprop:Generator_ColumnVarNameInTable="columnindicador_impuesto" msprop:Generator_ColumnPropNameInRow="indicador_impuesto" msprop:Generator_ColumnPropNameInTable="indicador_impuestoColumn" msprop:Generator_UserColumnName="indicador_impuesto" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

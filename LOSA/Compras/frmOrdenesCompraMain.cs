@@ -1161,19 +1161,6 @@ namespace LOSA.Compras
                 CajaDialogo.Error("Debe Agregar un Proveedor!");
                 return;
             }
-
-            if (string.IsNullOrEmpty(txtComentarios.Text))
-            {
-                CajaDialogo.Error("Debe agregar un comentario!");
-                return;
-            }
-
-            if (grdvDetalle.RowCount == 0)
-            {
-                CajaDialogo.Error("Debe seleccionar 1 Producto!");
-                return;
-            }
-
             if (string.IsNullOrEmpty(glRutaAprobacionOC.Text))
             {
                 CajaDialogo.Error("Debe seleccionar el departamento que aprobará la orden de compra!");
@@ -1186,6 +1173,7 @@ namespace LOSA.Compras
                 return;
             }
 
+ 
             if (string.IsNullOrEmpty(cbxMoneda.Text))
             {
                 CajaDialogo.Error("Debe seleccionar la moneda para la orden de compra!");
@@ -1197,6 +1185,35 @@ namespace LOSA.Compras
                 CajaDialogo.Error("Debe seleccionar la fecha de contabilizacion de la orden de compra!");
                 return;
             }
+
+            if (Convert.ToInt32(grdTipoOrden.EditValue) == 1) //Orden de Compra de Materia Prima
+            {
+                if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+                {
+                    CajaDialogo.Error("La Orden es de Materia Prima.\nNo puede dejar vacio el campo Incoterm!");
+                    comboBoxIntercom.Focus();
+                    return;
+                }
+            }
+
+            if (string.IsNullOrEmpty(txtComentarios.Text))
+            {
+                CajaDialogo.Error("Debe agregar un comentario!");
+                return;
+            }
+
+            if (Convert.ToDecimal(txtTotal.EditValue) == 0)
+            {
+                CajaDialogo.Error("El Valor Total de la Orden no puede ser  (0)!");
+                return;
+            }
+
+            if (grdvDetalle.RowCount == 0)
+            {
+                CajaDialogo.Error("Debe seleccionar 1 Producto!");
+                return;
+            }
+
 
             foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
             {
@@ -1217,6 +1234,34 @@ namespace LOSA.Compras
                     CajaDialogo.Error("No puede dejar vacio la Descripcion del Articulo");
                     return;
                 }
+
+                if (item.precio_por_unidad <= 0)
+                {
+                    CajaDialogo.Error("El Precio Unitario no puede ser 0 o menor");
+                    return;
+                }
+
+                if (item.itemcode.StartsWith("MP"))
+                {
+                    if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+                    {
+                        CajaDialogo.Error("Debe seleccionar el INCOTERM!\nYa que es una Orden con una Materia Prima.");
+                        return;
+                    }
+                }
+
+                if (string.IsNullOrEmpty(item.bodega) || string.IsNullOrWhiteSpace(item.bodega))
+                {
+                    CajaDialogo.Error("Debe Seleccionar el Almacen para los Articulos!");
+                    return;
+                }
+
+                if (item.total <= 0)
+                {
+                    CajaDialogo.Error("No puede dejar el Total (doc.) en 0");
+                    return;
+                }
+
             }
 
             if (TsExoOIsv.IsOn) //Exonerada
@@ -1236,11 +1281,18 @@ namespace LOSA.Compras
                             CajaDialogo.Error("Debe Seleccionar el Capitulo!");
                             return;
                         }
+
+                    }
+
+                    if (item.indicador_impuesto == "EXE")
+                    {
+                        CajaDialogo.Error("Una Linea del Detalle tiene un Registro Exento!\nLa Orden que se esta creando es Exonerada!");
+                        return;
                     }
                 }
 
             }
-            else//Impuesto
+            else//Impuesto o Exenta
             {
                 foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
                 {
@@ -1248,13 +1300,13 @@ namespace LOSA.Compras
                     {
                         if (item.capitulo.Length > 0)
                         {
-                            CajaDialogo.Error("Orden de Compra con ISV no pueden tener Capitulos Seleccionados!");
+                            CajaDialogo.Error("La Orden de Compra no es Exonerada!\nNo pueden tener Capitulos Arancelarias Seleccionados!");
                             item.capitulo = " ";
                             return;
                         }
                         if (item.partida_arancelaria.Length > 0)
                         {
-                            CajaDialogo.Error("Orden de Compra con ISV no pueden tener Partidas Arancelarias Seleccionados!");
+                            CajaDialogo.Error("La Orden de Compra no es Exonerada!\nNo pueden tener Partidas Arancelarias Seleccionados!");
                             item.partida_arancelaria = " ";
                             return;
                         }
@@ -1263,48 +1315,117 @@ namespace LOSA.Compras
                 }
             }
 
-            if (Convert.ToInt32(grdTipoOrden.EditValue) == 1) //Orden de Compra de Materia Prima
-            {
-                if (string.IsNullOrEmpty(comboBoxIntercom.Text))
-                {
-                    CajaDialogo.Error("La Orden es de Materia Prima.\nNo puede dejar vacio el campo Incoterm!");
-                    comboBoxIntercom.Focus();
-                    return;
-                }
-            }
+            //Consolidados de Saldos por Capitulo y Rubro
+            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //{
+            //    foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria)
+            //    {
+            //        if (item.capitulo == rowMemoria.capitulo)
+            //        {
+            //            if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //            {
+            //                DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //                drow[0] = item.capitulo;
+            //                drow[1] = item.partida_arancelaria;
+            //                drow[2] = item.itemcode;
+            //                drow[3] = item.cantidad;
+            //                drow[4] = item.precio_por_unidad;
+            //                drow[5] = item.indicador_impuesto;
+            //                drow[6] = item.total;
 
-            foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada)
-            {
-                if (string.IsNullOrEmpty(row.bodega) || string.IsNullOrWhiteSpace(row.bodega))
-                {
-                    CajaDialogo.Error("Debe Seleccionar el Almacen para los Articulos!");
-                    return;
-                }
+            //                dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //                dsCompras1.SaldosMemoria.AcceptChanges();
+            //            }
+            //        }
+            //    }
 
-                if (row.itemcode.StartsWith("MP"))
-                {
-                    if (string.IsNullOrEmpty(comboBoxIntercom.Text))
-                    {
-                        CajaDialogo.Error("Debe seleccionar el INCOTERM!\nYa que es una Orden con una Materia Prima.");
-                        return;
-                    }
-                }
+            //}
 
-                if (row.total <= 0)
-                {
-                    CajaDialogo.Error("No puede dejar el Total (doc.) en 0");
-                    return;
-                }
-            }
-
-            if (Convert.ToDecimal(txtTotal.EditValue) == 0)
-            {
-                CajaDialogo.Error("El Total de la Orden es 0!\nNo puede guardar una Orden con Valor 0");
-                return;
-            }
-
-            //ValidacionDeSaldos();
             bool PermitirGuardar = false;
+
+            //#region VALIDACION FINAL : EN PROCESO
+
+
+
+            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //{
+            //    //Cada vez que pase por aqui, guardaremos en memoria el Detalle
+            //    //Para validar el Saldo Disponible en Kardex - Saldo de la Linea - Saldo de la Linea en Memoria que compartan Capitulo o Capitulo y Partida!
+                
+
+            //    string Capitulo = "";
+            //    string Partida = "";
+            //    decimal SaldoDisponible = 0;
+            //    decimal UnidadesDisponibles = 0;
+            //    decimal NuevoSaldo = 0;
+
+            //    if (item.indicador_impuesto == "EXO")
+            //    {
+            //        if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
+            //        {
+            //            //Validemos el Capitulo
+            //            try
+            //            {
+            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //                conn.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@Monto", item.total);
+            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+            //                SqlDataReader dr = cmd.ExecuteReader();
+            //                if (dr.Read())
+            //                {
+            //                    PermitirGuardar = dr.GetBoolean(0);
+            //                    SaldoDisponible = dr.GetDecimal(1);
+            //                    Capitulo = dr.GetString(2);
+            //                }
+            //                dr.Close();
+            //                conn.Close();
+
+            //                if (PermitirGuardar == false)
+            //                {
+            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
+            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                    return;
+            //                }
+            //                else //Si hay Saldo, Vamos a Validar si en Memoria hay algun Coincidencia
+            //                {
+            //                    foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria.Rows)
+            //                    {
+            //                        if (rowMemoria.capitulo == item.capitulo)
+            //                        {
+            //                            if (rowMemoria.partida_arancelaria == item.partida_arancelaria)
+            //                            {
+            //                                NuevoSaldo = SaldoDisponible - rowMemoria.total;
+            //                                if (NuevoSaldo <= 0)
+            //                                {
+            //                                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
+            //                                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                                    return;
+            //                                }
+            //                            }
+            //                        }
+            //                    }
+            //                }
+
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                CajaDialogo.Error(ex.Message);
+            //            }
+            //        }
+            //        else 
+            //        {
+            //            //Validemos el Capitulo y la Partida
+
+            //        }
+            //    }
+            //}
+
+            //#endregion
+
+            #region VALIDACION DE SALDO: SOLO FUNCIONA LINEA POR LINEA
+            
             foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             {
                 string Capitulo = "";
@@ -1388,9 +1509,11 @@ namespace LOSA.Compras
                 }
             }
 
+            #endregion
+
 
             switch (tipooperacion)
-            { 
+            {
                 case TipoOperacion.New:
                     bool Guardar = false;
                     SqlTransaction transaction = null;
@@ -1410,8 +1533,8 @@ namespace LOSA.Compras
                         cmd.Parameters.AddWithValue("@CardCode", txtCodProv.Text.Trim());
                         cmd.Parameters.AddWithValue("@CardName", txtProveedor.Text);
                         cmd.Parameters.AddWithValue("@Address", direccion);
-                        
-                        if(string.IsNullOrWhiteSpace( txtNumAtCard.Text))
+
+                        if (string.IsNullOrWhiteSpace(txtNumAtCard.Text))
                             cmd.Parameters.AddWithValue("@NumAtCard", "N/D");
                         else
                             cmd.Parameters.AddWithValue("@NumAtCard", txtNumAtCard.Text);
@@ -1438,7 +1561,7 @@ namespace LOSA.Compras
                         cmd.Parameters.AddWithValue("@ContactCode", ContactCode);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
                         cmd.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
-                        if(string.IsNullOrEmpty(comboBoxIntercom.Text))
+                        if (string.IsNullOrEmpty(comboBoxIntercom.Text))
                             cmd.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
                         else
                             cmd.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
@@ -1472,6 +1595,7 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@isv", row.isv);
                             cmd.Parameters.AddWithValue("@base_ref", row.referencia_base);//Referencia de Solicitud de Compra
                             cmd.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
+                            cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
                             cmd.ExecuteNonQuery();
                         }
 
@@ -1491,7 +1615,7 @@ namespace LOSA.Compras
                         LimpiarControles();
                     }
 
-                  
+
                     break;
                 case TipoOperacion.Update:
 
@@ -1572,6 +1696,7 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@isv", row.isv);
                             cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
                             cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
+                            cmdUpdate.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
                             cmdUpdate.ExecuteNonQuery();
                         }
 
@@ -1598,11 +1723,6 @@ namespace LOSA.Compras
             }
         }
 
-        private void ValidacionDeSaldos()
-        {
-            
-            
-        }
 
         private void panelControl2_Paint(object sender, PaintEventArgs e)
         {
@@ -1959,17 +2079,17 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -2014,7 +2134,6 @@ namespace LOSA.Compras
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtCodProv = new DevExpress.XtraEditors.ButtonEdit();
             this.txtProveedor = new DevExpress.XtraEditors.TextEdit();
-            this.cmdAddDetalle = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaRegistro = new System.Windows.Forms.DateTimePicker();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -2030,6 +2149,7 @@ namespace LOSA.Compras
             this.cmdAnterior = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdAddDetalle = new DevExpress.XtraEditors.SimpleButton();
             this.txtUsuarioCreador = new System.Windows.Forms.TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sucursalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -2648,9 +2768,9 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(336, 22);
@@ -2667,18 +2787,6 @@ namespace LOSA.Compras
             this.txtProveedor.Properties.Appearance.Options.UseFont = true;
             this.txtProveedor.Size = new System.Drawing.Size(336, 22);
             this.txtProveedor.TabIndex = 70;
-            // 
-            // cmdAddDetalle
-            // 
-            this.cmdAddDetalle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAddDetalle.ImageOptions.Image")));
-            this.cmdAddDetalle.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdAddDetalle.Location = new System.Drawing.Point(27, 0);
-            this.cmdAddDetalle.Name = "cmdAddDetalle";
-            this.cmdAddDetalle.Size = new System.Drawing.Size(33, 28);
-            this.cmdAddDetalle.TabIndex = 67;
-            this.cmdAddDetalle.Tag = "Agregar Item o Servicio";
-            this.cmdAddDetalle.ToolTip = "Guardar";
-            this.cmdAddDetalle.Click += new System.EventHandler(this.cmdAddDetalle_Click);
             // 
             // labelControl4
             // 
@@ -2840,6 +2948,18 @@ namespace LOSA.Compras
             this.labelControl6.Size = new System.Drawing.Size(186, 16);
             this.labelControl6.TabIndex = 72;
             this.labelControl6.Text = "Nombre_________________";
+            // 
+            // cmdAddDetalle
+            // 
+            this.cmdAddDetalle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAddDetalle.ImageOptions.Image")));
+            this.cmdAddDetalle.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.cmdAddDetalle.Location = new System.Drawing.Point(27, 0);
+            this.cmdAddDetalle.Name = "cmdAddDetalle";
+            this.cmdAddDetalle.Size = new System.Drawing.Size(33, 28);
+            this.cmdAddDetalle.TabIndex = 67;
+            this.cmdAddDetalle.Tag = "Agregar Item o Servicio";
+            this.cmdAddDetalle.ToolTip = "Guardar";
+            this.cmdAddDetalle.Click += new System.EventHandler(this.cmdAddDetalle_Click);
             // 
             // txtUsuarioCreador
             // 
@@ -3207,7 +3327,7 @@ namespace LOSA.Compras
             this.colreferencia_base.OptionsColumn.ReadOnly = true;
             this.colreferencia_base.Visible = true;
             this.colreferencia_base.VisibleIndex = 10;
-            this.colreferencia_base.Width = 108;
+            this.colreferencia_base.Width = 94;
             // 
             // colisv
             // 
@@ -3228,14 +3348,14 @@ namespace LOSA.Compras
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 11;
-            this.gridColumn1.Width = 72;
+            this.gridColumn1.Width = 86;
             // 
             // ButtonDeleteRow
             // 
             this.ButtonDeleteRow.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
@@ -3395,6 +3515,9 @@ namespace LOSA.Compras
             // 
             // xtraTabControl1
             // 
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left;
             this.xtraTabControl1.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Horizontal;
             this.xtraTabControl1.Location = new System.Drawing.Point(4, 209);
@@ -3418,6 +3541,7 @@ namespace LOSA.Compras
             // 
             this.tabArchivosAdjuntos.Controls.Add(this.gridControl1);
             this.tabArchivosAdjuntos.Name = "tabArchivosAdjuntos";
+            this.tabArchivosAdjuntos.PageVisible = false;
             this.tabArchivosAdjuntos.Size = new System.Drawing.Size(1510, 536);
             this.tabArchivosAdjuntos.Text = "Achivos";
             // 
