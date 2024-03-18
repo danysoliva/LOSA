@@ -518,7 +518,7 @@ namespace LOSA.Compras
                             case "EXE"://EXENTO
 
                                 rowiva.isv = 0;
-                                txtImpuesto.EditValue = 0.00;
+                                //txtImpuesto.EditValue = 0.00;
                                 CalcularTotal();
 
                                 break;
@@ -573,15 +573,15 @@ namespace LOSA.Compras
                 {
                     bool Agregar = true;
 
-                    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
-                    {
-                        if (item.itemcode == frm.ItemCode)
-                        {
-                            item.cantidad = item.cantidad + 1;
-                            Agregar = false;
-                        }
+                    //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                    //{
+                    //    if (item.itemcode == frm.ItemCode)
+                    //    {
+                    //        item.cantidad = item.cantidad + 1;
+                    //        Agregar = false;
+                    //    }
 
-                    }
+                    //}
 
                     if (frm.Partida.Length > 0)
                     {
@@ -612,8 +612,6 @@ namespace LOSA.Compras
                         dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
                     }
 
-                    
-
                 }
             }
             else
@@ -623,16 +621,16 @@ namespace LOSA.Compras
                 {
                     bool Agregar = true;
 
-                    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
-                    {
-                        if (item.itemcode == frm.ItemSeleccionado.ItemCode)
-                        {
-                            item.cantidad = item.cantidad + 1;
-                            Agregar = false;
-                        }
+                    //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                    //{
+                    //    if (item.itemcode == frm.ItemSeleccionado.ItemCode)
+                    //    {
+                    //        item.cantidad = item.cantidad + 1;
+                    //        Agregar = false;
+                    //    }
 
 
-                    }
+                    //}
 
                     if (Agregar)
                     {
@@ -1186,15 +1184,15 @@ namespace LOSA.Compras
                 return;
             }
 
-            if (Convert.ToInt32(grdTipoOrden.EditValue) == 1) //Orden de Compra de Materia Prima
-            {
-                if (string.IsNullOrEmpty(comboBoxIntercom.Text))
-                {
-                    CajaDialogo.Error("La Orden es de Materia Prima.\nNo puede dejar vacio el campo Incoterm!");
-                    comboBoxIntercom.Focus();
-                    return;
-                }
-            }
+            //if (Convert.ToInt32(grdTipoOrden.EditValue) == 1) //Orden de Compra de Materia Prima
+            //{
+            //    if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+            //    {
+            //        CajaDialogo.Error("La Orden es de Materia Prima.\nNo puede dejar vacio el campo Incoterm!");
+            //        comboBoxIntercom.Focus();
+            //        return;
+            //    }
+            //}
 
             if (string.IsNullOrEmpty(txtComentarios.Text))
             {
@@ -1315,43 +1313,86 @@ namespace LOSA.Compras
                 }
             }
 
-            //Consolidados de Saldos por Capitulo y Rubro
-            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //if (TsExoOIsv.IsOn)
             //{
-            //    foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria)
+            //    dsCompras1.SaldosMemoria.Clear();
+            //    bool PrimeraIteracion = true;
+            //    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             //    {
-            //        if (item.capitulo == rowMemoria.capitulo)
+            //        foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria)
             //        {
-            //            if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
-            //            {
-            //                DataRow drow = dsCompras1.SaldosMemoria.NewRow();
-            //                drow[0] = item.capitulo;
-            //                drow[1] = item.partida_arancelaria;
-            //                drow[2] = item.itemcode;
-            //                drow[3] = item.cantidad;
-            //                drow[4] = item.precio_por_unidad;
-            //                drow[5] = item.indicador_impuesto;
-            //                drow[6] = item.total;
+            //            PrimeraIteracion = false;
 
-            //                dsCompras1.SaldosMemoria.Rows.Add(drow);
-            //                dsCompras1.SaldosMemoria.AcceptChanges();
+            //            if (rowMemoria.existe)
+            //            {
+            //                rowMemoria.total += item.total;
             //            }
+            //            else
+            //            {
+            //                if (item.capitulo == rowMemoria.capitulo)
+            //                {
+            //                    if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //                    {
+            //                        DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //                        drow[0] = item.capitulo;
+            //                        drow[1] = item.partida_arancelaria;
+            //                        drow[2] = item.itemcode;
+            //                        drow[3] = item.cantidad;
+            //                        drow[4] = item.precio_por_unidad;
+            //                        drow[5] = item.indicador_impuesto;
+            //                        drow[6] = item.total;
+
+            //                        dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //                        dsCompras1.SaldosMemoria.AcceptChanges();
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //                    drow[0] = item.capitulo;
+            //                    drow[1] = item.partida_arancelaria;
+            //                    drow[2] = item.itemcode;
+            //                    drow[3] = item.cantidad;
+            //                    drow[4] = item.precio_por_unidad;
+            //                    drow[5] = item.indicador_impuesto;
+            //                    drow[6] = item.total;
+
+            //                    dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //                    dsCompras1.SaldosMemoria.AcceptChanges();
+            //                }
+            //            }
+
+                        
+            //        }
+
+            //        if (PrimeraIteracion)
+            //        {
+            //            DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //            drow[0] = item.capitulo;
+            //            drow[1] = item.partida_arancelaria;
+            //            drow[2] = item.itemcode;
+            //            drow[3] = item.cantidad;
+            //            drow[4] = item.precio_por_unidad;
+            //            drow[5] = item.indicador_impuesto;
+            //            drow[6] = item.total;
+
+            //            dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //            dsCompras1.SaldosMemoria.AcceptChanges();
             //        }
             //    }
-
             //}
 
+            //Consolidados de Saldos por Capitulo y Rubro
+           
             bool PermitirGuardar = false;
 
             //#region VALIDACION FINAL : EN PROCESO
-
-
 
             //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             //{
             //    //Cada vez que pase por aqui, guardaremos en memoria el Detalle
             //    //Para validar el Saldo Disponible en Kardex - Saldo de la Linea - Saldo de la Linea en Memoria que compartan Capitulo o Capitulo y Partida!
-                
+
 
             //    string Capitulo = "";
             //    string Partida = "";
@@ -1414,7 +1455,7 @@ namespace LOSA.Compras
             //                CajaDialogo.Error(ex.Message);
             //            }
             //        }
-            //        else 
+            //        else
             //        {
             //            //Validemos el Capitulo y la Partida
 
@@ -1425,89 +1466,89 @@ namespace LOSA.Compras
             //#endregion
 
             #region VALIDACION DE SALDO: SOLO FUNCIONA LINEA POR LINEA
-            
-            foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
-            {
-                string Capitulo = "";
-                string Partida = "";
-                decimal SaldoDisponible = 0;
-                decimal UnidadesDisponibles = 0;
-                
 
-                if (item.indicador_impuesto == "EXO")
-                {
-                    if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
-                    {
-                        try
-                        {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto", item.total);
-                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
-                            {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                SaldoDisponible = dr.GetDecimal(1);
-                                Capitulo = dr.GetString(2);
-                            }
-                            dr.Close();
-                            conn.Close();
+            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //{
+            //    string Capitulo = "";
+            //    string Partida = "";
+            //    decimal SaldoDisponible = 0;
+            //    decimal UnidadesDisponibles = 0;
 
-                            if (PermitirGuardar == false)
-                            {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                return;
-                            }
 
-                        }
-                        catch (Exception ex)
-                        {
-                            CajaDialogo.Error(ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto", item.total);
-                            cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
-                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-                            cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
-                            {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                Capitulo = dr.GetString(1);
-                                Partida = dr.GetString(2);
-                                SaldoDisponible = dr.GetDecimal(3);
-                                UnidadesDisponibles = dr.GetDecimal(4);
-                            }
-                            dr.Close();
-                            conn.Close();
+            //    if (item.indicador_impuesto == "EXO")
+            //    {
+            //        if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
+            //        {
+            //            try
+            //            {
+            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //                conn.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@Monto", item.total);
+            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+            //                SqlDataReader dr = cmd.ExecuteReader();
+            //                if (dr.Read())
+            //                {
+            //                    PermitirGuardar = dr.GetBoolean(0);
+            //                    SaldoDisponible = dr.GetDecimal(1);
+            //                    Capitulo = dr.GetString(2);
+            //                }
+            //                dr.Close();
+            //                conn.Close();
 
-                            if (PermitirGuardar == false)
-                            {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                frm.ShowDialog();
-                                return;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            CajaDialogo.Error(ex.Message);
-                        }
-                    }
-                }
-            }
+            //                if (PermitirGuardar == false)
+            //                {
+            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
+            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                    return;
+            //                }
+
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                CajaDialogo.Error(ex.Message);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            try
+            //            {
+            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //                conn.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@Monto", item.total);
+            //                cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
+            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+            //                cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
+            //                SqlDataReader dr = cmd.ExecuteReader();
+            //                if (dr.Read())
+            //                {
+            //                    PermitirGuardar = dr.GetBoolean(0);
+            //                    Capitulo = dr.GetString(1);
+            //                    Partida = dr.GetString(2);
+            //                    SaldoDisponible = dr.GetDecimal(3);
+            //                    UnidadesDisponibles = dr.GetDecimal(4);
+            //                }
+            //                dr.Close();
+            //                conn.Close();
+
+            //                if (PermitirGuardar == false)
+            //                {
+            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
+            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                    frm.ShowDialog();
+            //                    return;
+            //                }
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                CajaDialogo.Error(ex.Message);
+            //            }
+            //        }
+            //    }
+            //}
 
             #endregion
 
@@ -2311,7 +2352,7 @@ namespace LOSA.Compras
             // 
             // comboBoxIntercom
             // 
-            this.comboBoxIntercom.Location = new System.Drawing.Point(1164, 183);
+            this.comboBoxIntercom.Location = new System.Drawing.Point(1081, 183);
             this.comboBoxIntercom.MenuManager = this.barManager1;
             this.comboBoxIntercom.Name = "comboBoxIntercom";
             this.comboBoxIntercom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2432,7 +2473,7 @@ namespace LOSA.Compras
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(994, 189);
+            this.labelControl17.Location = new System.Drawing.Point(911, 189);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(209, 16);
             this.labelControl17.TabIndex = 94;
@@ -2475,7 +2516,7 @@ namespace LOSA.Compras
             // dtFechaContabilizacion
             // 
             this.dtFechaContabilizacion.EditValue = null;
-            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 52);
+            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1081, 52);
             this.dtFechaContabilizacion.MenuManager = this.barManager1;
             this.dtFechaContabilizacion.Name = "dtFechaContabilizacion";
             this.dtFechaContabilizacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2490,7 +2531,7 @@ namespace LOSA.Compras
             // 
             // glRutaAprobacionOC
             // 
-            this.glRutaAprobacionOC.Location = new System.Drawing.Point(1164, 159);
+            this.glRutaAprobacionOC.Location = new System.Drawing.Point(1081, 159);
             this.glRutaAprobacionOC.MenuManager = this.barManager1;
             this.glRutaAprobacionOC.Name = "glRutaAprobacionOC";
             this.glRutaAprobacionOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2547,7 +2588,7 @@ namespace LOSA.Compras
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(994, 165);
+            this.labelControl15.Location = new System.Drawing.Point(911, 165);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(262, 16);
             this.labelControl15.TabIndex = 88;
@@ -2582,7 +2623,7 @@ namespace LOSA.Compras
             this.txtExoneracion.Enabled = false;
             this.txtExoneracion.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtExoneracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtExoneracion.Location = new System.Drawing.Point(1164, 141);
+            this.txtExoneracion.Location = new System.Drawing.Point(1081, 141);
             this.txtExoneracion.Name = "txtExoneracion";
             this.txtExoneracion.Size = new System.Drawing.Size(189, 16);
             this.txtExoneracion.TabIndex = 85;
@@ -2592,7 +2633,7 @@ namespace LOSA.Compras
             // 
             this.lblExoneracion.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblExoneracion.Appearance.Options.UseFont = true;
-            this.lblExoneracion.Location = new System.Drawing.Point(994, 141);
+            this.lblExoneracion.Location = new System.Drawing.Point(911, 141);
             this.lblExoneracion.Name = "lblExoneracion";
             this.lblExoneracion.Size = new System.Drawing.Size(204, 16);
             this.lblExoneracion.TabIndex = 84;
@@ -2647,7 +2688,7 @@ namespace LOSA.Compras
             // TsExoOIsv
             // 
             this.TsExoOIsv.EditValue = true;
-            this.TsExoOIsv.Location = new System.Drawing.Point(1164, 119);
+            this.TsExoOIsv.Location = new System.Drawing.Point(1081, 119);
             this.TsExoOIsv.MenuManager = this.barManager1;
             this.TsExoOIsv.Name = "TsExoOIsv";
             this.TsExoOIsv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2662,7 +2703,7 @@ namespace LOSA.Compras
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(994, 121);
+            this.labelControl13.Location = new System.Drawing.Point(911, 121);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(238, 16);
             this.labelControl13.TabIndex = 80;
@@ -2670,7 +2711,7 @@ namespace LOSA.Compras
             // 
             // grdTipoOrden
             // 
-            this.grdTipoOrden.Location = new System.Drawing.Point(1164, 95);
+            this.grdTipoOrden.Location = new System.Drawing.Point(1081, 95);
             this.grdTipoOrden.MenuManager = this.barManager1;
             this.grdTipoOrden.Name = "grdTipoOrden";
             this.grdTipoOrden.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -2745,7 +2786,7 @@ namespace LOSA.Compras
             // 
             this.lblSucursal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblSucursal.Appearance.Options.UseFont = true;
-            this.lblSucursal.Location = new System.Drawing.Point(994, 101);
+            this.lblSucursal.Location = new System.Drawing.Point(911, 101);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(234, 16);
             this.lblSucursal.TabIndex = 75;
@@ -2792,7 +2833,7 @@ namespace LOSA.Compras
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(994, 58);
+            this.labelControl4.Location = new System.Drawing.Point(911, 58);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(226, 16);
             this.labelControl4.TabIndex = 64;
@@ -2803,7 +2844,7 @@ namespace LOSA.Compras
             this.dtFechaRegistro.Enabled = false;
             this.dtFechaRegistro.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.dtFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaRegistro.Location = new System.Drawing.Point(1164, 28);
+            this.dtFechaRegistro.Location = new System.Drawing.Point(1081, 28);
             this.dtFechaRegistro.Name = "dtFechaRegistro";
             this.dtFechaRegistro.Size = new System.Drawing.Size(189, 23);
             this.dtFechaRegistro.TabIndex = 63;
@@ -2812,7 +2853,7 @@ namespace LOSA.Compras
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(994, 36);
+            this.labelControl3.Location = new System.Drawing.Point(911, 36);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(185, 16);
             this.labelControl3.TabIndex = 62;
@@ -2825,7 +2866,7 @@ namespace LOSA.Compras
             this.txtEstado.Enabled = false;
             this.txtEstado.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtEstado.Location = new System.Drawing.Point(1164, 77);
+            this.txtEstado.Location = new System.Drawing.Point(1081, 77);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(189, 16);
             this.txtEstado.TabIndex = 61;
@@ -2834,7 +2875,7 @@ namespace LOSA.Compras
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(994, 78);
+            this.labelControl2.Location = new System.Drawing.Point(911, 78);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(189, 16);
             this.labelControl2.TabIndex = 60;
@@ -3456,7 +3497,7 @@ namespace LOSA.Compras
             this.btnShowPopu.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnShowPopu.Appearance.Options.UseFont = true;
             this.btnShowPopu.Enabled = false;
-            this.btnShowPopu.Location = new System.Drawing.Point(1249, 105);
+            this.btnShowPopu.Location = new System.Drawing.Point(1126, 105);
             this.btnShowPopu.Name = "btnShowPopu";
             this.btnShowPopu.Size = new System.Drawing.Size(248, 29);
             this.btnShowPopu.TabIndex = 78;

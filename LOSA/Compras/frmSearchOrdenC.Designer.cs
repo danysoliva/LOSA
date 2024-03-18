@@ -51,6 +51,7 @@ namespace LOSA.Compras
             this.colsubido = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposSelected = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -67,7 +68,7 @@ namespace LOSA.Compras
             this.grdSolicitudes.Name = "grdSolicitudes";
             this.grdSolicitudes.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.reposSelected});
-            this.grdSolicitudes.Size = new System.Drawing.Size(1021, 421);
+            this.grdSolicitudes.Size = new System.Drawing.Size(1409, 421);
             this.grdSolicitudes.TabIndex = 2;
             this.grdSolicitudes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -95,7 +96,8 @@ namespace LOSA.Compras
             this.colDocTotal,
             this.colsubido_sap,
             this.colsubido,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn2});
             this.gridView1.GridControl = this.grdSolicitudes;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -116,7 +118,7 @@ namespace LOSA.Compras
             this.colCardCode.OptionsColumn.AllowEdit = false;
             this.colCardCode.Visible = true;
             this.colCardCode.VisibleIndex = 1;
-            this.colCardCode.Width = 91;
+            this.colCardCode.Width = 119;
             // 
             // colCardName
             // 
@@ -125,7 +127,7 @@ namespace LOSA.Compras
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 2;
-            this.colCardName.Width = 194;
+            this.colCardName.Width = 254;
             // 
             // colState
             // 
@@ -141,7 +143,7 @@ namespace LOSA.Compras
             this.colDocNum.OptionsColumn.ReadOnly = true;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 82;
+            this.colDocNum.Width = 83;
             // 
             // colDocDate
             // 
@@ -150,7 +152,7 @@ namespace LOSA.Compras
             this.colDocDate.OptionsColumn.AllowEdit = false;
             this.colDocDate.Visible = true;
             this.colDocDate.VisibleIndex = 4;
-            this.colDocDate.Width = 101;
+            this.colDocDate.Width = 132;
             // 
             // colU_TipoOrden
             // 
@@ -159,8 +161,8 @@ namespace LOSA.Compras
             this.colU_TipoOrden.Name = "colU_TipoOrden";
             this.colU_TipoOrden.OptionsColumn.AllowEdit = false;
             this.colU_TipoOrden.Visible = true;
-            this.colU_TipoOrden.VisibleIndex = 5;
-            this.colU_TipoOrden.Width = 124;
+            this.colU_TipoOrden.VisibleIndex = 6;
+            this.colU_TipoOrden.Width = 128;
             // 
             // colComments
             // 
@@ -169,8 +171,8 @@ namespace LOSA.Compras
             this.colComments.Name = "colComments";
             this.colComments.OptionsColumn.AllowEdit = false;
             this.colComments.Visible = true;
-            this.colComments.VisibleIndex = 6;
-            this.colComments.Width = 92;
+            this.colComments.VisibleIndex = 7;
+            this.colComments.Width = 189;
             // 
             // colDocTotal
             // 
@@ -180,8 +182,8 @@ namespace LOSA.Compras
             this.colDocTotal.Name = "colDocTotal";
             this.colDocTotal.OptionsColumn.AllowEdit = false;
             this.colDocTotal.Visible = true;
-            this.colDocTotal.VisibleIndex = 7;
-            this.colDocTotal.Width = 92;
+            this.colDocTotal.VisibleIndex = 9;
+            this.colDocTotal.Width = 124;
             // 
             // colsubido_sap
             // 
@@ -191,7 +193,7 @@ namespace LOSA.Compras
             this.colsubido_sap.OptionsColumn.AllowEdit = false;
             this.colsubido_sap.Visible = true;
             this.colsubido_sap.VisibleIndex = 8;
-            this.colsubido_sap.Width = 116;
+            this.colsubido_sap.Width = 88;
             // 
             // colsubido
             // 
@@ -207,7 +209,7 @@ namespace LOSA.Compras
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 104;
+            this.gridColumn1.Width = 136;
             // 
             // reposSelected
             // 
@@ -218,11 +220,20 @@ namespace LOSA.Compras
             this.reposSelected.Name = "reposSelected";
             this.reposSelected.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Creada por:";
+            this.gridColumn2.FieldName = "creadopor";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
+            this.gridColumn2.Width = 131;
+            // 
             // frmSearchOrdenC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 421);
+            this.ClientSize = new System.Drawing.Size(1409, 421);
             this.Controls.Add(this.grdSolicitudes);
             this.Name = "frmSearchOrdenC";
             this.Text = "Doble Click para Seleccionar Orden de Compra";
@@ -252,5 +263,6 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Columns.GridColumn colsubido_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colsubido;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
