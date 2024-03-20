@@ -79,7 +79,6 @@ namespace AMS.Compras.ControlInv
             this.btnedit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colreimprimir = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_reimprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDevolucion = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -135,6 +134,7 @@ namespace AMS.Compras.ControlInv
             // 
             resources.ApplyResources(this.btnnuevo, "btnnuevo");
             this.btnnuevo.Id = 5;
+            this.btnnuevo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnnuevo.ImageOptions.SvgImage")));
             this.btnnuevo.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnnuevo.ItemAppearance.Normal.Font")));
             this.btnnuevo.ItemAppearance.Normal.Options.UseFont = true;
             this.btnnuevo.Name = "btnnuevo";
@@ -303,8 +303,7 @@ namespace AMS.Compras.ControlInv
             this.colcomentario,
             this.colbarcode,
             this.colEditar,
-            this.colreimprimir,
-            this.gridColumn1});
+            this.colreimprimir});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -423,15 +422,6 @@ namespace AMS.Compras.ControlInv
             this.btn_reimprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_reimprimir.Click += new System.EventHandler(this.btn_reimprimir_Click);
             // 
-            // gridColumn1
-            // 
-            resources.ApplyResources(this.gridColumn1, "gridColumn1");
-            this.gridColumn1.ColumnEdit = this.btnDevolucion;
-            this.gridColumn1.MaxWidth = 120;
-            this.gridColumn1.MinWidth = 120;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsFilter.AllowFilter = false;
-            // 
             // btnDevolucion
             // 
             resources.ApplyResources(this.btnDevolucion, "btnDevolucion");
@@ -496,7 +486,6 @@ namespace AMS.Compras.ControlInv
         private DevExpress.XtraGrid.Columns.GridColumn colreimprimir;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_reimprimir;
         private DevExpress.XtraBars.BarButtonItem btnnuevo;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDevolucion;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;

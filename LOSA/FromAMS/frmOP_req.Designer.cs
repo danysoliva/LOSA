@@ -31,14 +31,13 @@ namespace AMS.Compras.ControlInv
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOP_req));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar2 = new DevExpress.XtraBars.Bar();
             this.btncerrar = new DevExpress.XtraBars.BarButtonItem();
             this.btnguardar = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -53,7 +52,7 @@ namespace AMS.Compras.ControlInv
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_usuarios = new DevExpress.XtraEditors.GridLookUpEdit();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsControlInv_AMS1 = new dsControlInv_AMS();
+            this.dsControlInv_AMS1 = new LOSA.FromAMS.dsControlInv_AMS();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluser = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,6 +76,8 @@ namespace AMS.Compras.ControlInv
             this.btnAgregarItem = new DevExpress.XtraEditors.SimpleButton();
             this.tggcontratista = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdGuardarPoder = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdCerrarPoder = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsolicitud.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsolicitud.Properties.CalendarTimeProperties)).BeginInit();
@@ -98,7 +99,6 @@ namespace AMS.Compras.ControlInv
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
@@ -108,22 +108,8 @@ namespace AMS.Compras.ControlInv
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btncerrar,
             this.btnguardar});
-            this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 2;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btncerrar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnguardar)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
             // 
             // btncerrar
             // 
@@ -166,31 +152,31 @@ namespace AMS.Compras.ControlInv
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1325, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1325, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 669);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 672);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1325, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1325, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 627);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 672);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1325, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1325, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 627);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 672);
             // 
             // labelControl1
             // 
@@ -277,7 +263,7 @@ namespace AMS.Compras.ControlInv
             this.usuarioBindingSource.DataMember = "usuario";
             this.usuarioBindingSource.DataSource = this.dsControlInv_AMS1;
             // 
-            // dsControlInv
+            // dsControlInv_AMS1
             // 
             this.dsControlInv_AMS1.DataSetName = "dsControlInv_AMS";
             this.dsControlInv_AMS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -393,7 +379,7 @@ namespace AMS.Compras.ControlInv
             this.tggenable.Properties.Appearance.Options.UseFont = true;
             this.tggenable.Properties.OffText = "No";
             this.tggenable.Properties.OnText = "Si";
-            this.tggenable.Size = new System.Drawing.Size(241, 32);
+            this.tggenable.Size = new System.Drawing.Size(241, 26);
             this.tggenable.TabIndex = 15;
             this.tggenable.Visible = false;
             // 
@@ -526,9 +512,9 @@ namespace AMS.Compras.ControlInv
             // btn_eliminar
             // 
             this.btn_eliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btn_eliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
@@ -552,8 +538,8 @@ namespace AMS.Compras.ControlInv
             // 
             this.btnAgregarItem.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarItem.Appearance.Options.UseFont = true;
-            //this.btnAgregarItem.ImageOptions.Image = global::AMS.Properties.Resources._new;
-            this.btnAgregarItem.Location = new System.Drawing.Point(19, 224);
+            this.btnAgregarItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAgregarItem.ImageOptions.SvgImage")));
+            this.btnAgregarItem.Location = new System.Drawing.Point(2, 224);
             this.btnAgregarItem.Name = "btnAgregarItem";
             this.btnAgregarItem.Size = new System.Drawing.Size(187, 40);
             this.btnAgregarItem.TabIndex = 22;
@@ -562,7 +548,6 @@ namespace AMS.Compras.ControlInv
             // 
             // tggcontratista
             // 
-            this.tggcontratista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tggcontratista.Location = new System.Drawing.Point(144, 136);
             this.tggcontratista.MenuManager = this.barManager1;
             this.tggcontratista.Name = "tggcontratista";
@@ -570,7 +555,7 @@ namespace AMS.Compras.ControlInv
             this.tggcontratista.Properties.Appearance.Options.UseFont = true;
             this.tggcontratista.Properties.OffText = "No";
             this.tggcontratista.Properties.OnText = "Si";
-            this.tggcontratista.Size = new System.Drawing.Size(241, 32);
+            this.tggcontratista.Size = new System.Drawing.Size(241, 26);
             this.tggcontratista.TabIndex = 27;
             this.tggcontratista.Toggled += new System.EventHandler(this.tggcontratista_Toggled);
             // 
@@ -584,11 +569,37 @@ namespace AMS.Compras.ControlInv
             this.labelControl6.TabIndex = 28;
             this.labelControl6.Text = "Contratista:";
             // 
+            // cmdGuardarPoder
+            // 
+            this.cmdGuardarPoder.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGuardarPoder.Appearance.Options.UseFont = true;
+            this.cmdGuardarPoder.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage1")));
+            this.cmdGuardarPoder.Location = new System.Drawing.Point(2, 12);
+            this.cmdGuardarPoder.Name = "cmdGuardarPoder";
+            this.cmdGuardarPoder.Size = new System.Drawing.Size(187, 40);
+            this.cmdGuardarPoder.TabIndex = 33;
+            this.cmdGuardarPoder.Text = "Guardar";
+            this.cmdGuardarPoder.Click += new System.EventHandler(this.cmdGuardarPoder_Click);
+            // 
+            // cmdCerrarPoder
+            // 
+            this.cmdCerrarPoder.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCerrarPoder.Appearance.Options.UseFont = true;
+            this.cmdCerrarPoder.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.cmdCerrarPoder.Location = new System.Drawing.Point(1138, 12);
+            this.cmdCerrarPoder.Name = "cmdCerrarPoder";
+            this.cmdCerrarPoder.Size = new System.Drawing.Size(187, 40);
+            this.cmdCerrarPoder.TabIndex = 34;
+            this.cmdCerrarPoder.Text = "Cerrar";
+            this.cmdCerrarPoder.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frmOP_req
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1325, 692);
+            this.Controls.Add(this.cmdCerrarPoder);
+            this.Controls.Add(this.cmdGuardarPoder);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.tggcontratista);
             this.Controls.Add(this.btnAgregarItem);
@@ -638,7 +649,6 @@ namespace AMS.Compras.ControlInv
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem btncerrar;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -677,5 +687,7 @@ namespace AMS.Compras.ControlInv
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.ToggleSwitch tggcontratista;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
+        private DevExpress.XtraEditors.SimpleButton cmdGuardarPoder;
+        private DevExpress.XtraEditors.SimpleButton cmdCerrarPoder;
     }
 }
