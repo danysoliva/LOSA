@@ -30,6 +30,8 @@ namespace AMS.Compras.ControlInv
             UsuarioLogeado = Puser;
             load_codigo();
             load_data();
+            grd_usuarios.EditValue = Puser.Id;
+            txtsolicitanteManual.Text = Puser.Nombre;
             dtsolicitud.EditValue = DateTime.Now;
         }
         public void load_codigo()
