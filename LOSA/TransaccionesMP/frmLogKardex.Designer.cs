@@ -49,9 +49,9 @@ namespace LOSA.TransaccionesMP
             this.colud_entrada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colud_salida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.colid_tipo_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltipo_consumo_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grdLogkardex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -59,13 +59,15 @@ namespace LOSA.TransaccionesMP
             // 
             // grdLogkardex
             // 
+            this.grdLogkardex.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grdLogkardex.DataMember = "LogKardex_MP";
             this.grdLogkardex.DataSource = this.dsTarima1;
-            this.grdLogkardex.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grdLogkardex.Location = new System.Drawing.Point(0, 78);
             this.grdLogkardex.MainView = this.gridView1;
             this.grdLogkardex.Name = "grdLogkardex";
-            this.grdLogkardex.Size = new System.Drawing.Size(1308, 528);
+            this.grdLogkardex.Size = new System.Drawing.Size(1451, 695);
             this.grdLogkardex.TabIndex = 0;
             this.grdLogkardex.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -247,17 +249,6 @@ namespace LOSA.TransaccionesMP
             this.colusuario.VisibleIndex = 10;
             this.colusuario.Width = 128;
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(464, 35);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(375, 19);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Registro de Entrada/Salida por Lote y Bodega";
-            // 
             // colid_tipo_consumo
             // 
             this.colid_tipo_consumo.FieldName = "id_tipo_consumo";
@@ -268,11 +259,22 @@ namespace LOSA.TransaccionesMP
             this.coltipo_consumo_name.FieldName = "tipo_consumo_name";
             this.coltipo_consumo_name.Name = "coltipo_consumo_name";
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(535, 35);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(375, 19);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Registro de Entrada/Salida por Lote y Bodega";
+            // 
             // frmLogKardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 606);
+            this.ClientSize = new System.Drawing.Size(1451, 773);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grdLogkardex);
             this.Name = "frmLogKardex";

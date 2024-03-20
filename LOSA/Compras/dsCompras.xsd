@@ -144,6 +144,7 @@
               <xs:element name="subido" msprop:Generator_ColumnVarNameInTable="columnsubido" msprop:Generator_ColumnPropNameInRow="subido" msprop:Generator_ColumnPropNameInTable="subidoColumn" msprop:Generator_UserColumnName="subido" type="xs:boolean" minOccurs="0" />
               <xs:element name="estado_name" msprop:Generator_ColumnVarNameInTable="columnestado_name" msprop:Generator_ColumnPropNameInRow="estado_name" msprop:Generator_ColumnPropNameInTable="estado_nameColumn" msprop:Generator_UserColumnName="estado_name" type="xs:string" minOccurs="0" />
               <xs:element name="creadopor" msprop:Generator_ColumnVarNameInTable="columncreadopor" msprop:Generator_ColumnPropNameInRow="creadopor" msprop:Generator_ColumnPropNameInTable="creadoporColumn" msprop:Generator_UserColumnName="creadopor" type="xs:string" minOccurs="0" />
+              <xs:element name="moneda" msprop:Generator_ColumnVarNameInTable="columnmoneda" msprop:Generator_ColumnPropNameInRow="moneda" msprop:Generator_ColumnPropNameInTable="monedaColumn" msprop:Generator_UserColumnName="moneda" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -183,10 +184,7 @@
             <xs:sequence>
               <xs:element name="capitulo" msprop:Generator_ColumnVarNameInTable="columncapitulo" msprop:Generator_ColumnPropNameInRow="capitulo" msprop:Generator_ColumnPropNameInTable="capituloColumn" msprop:Generator_UserColumnName="capitulo" type="xs:string" minOccurs="0" />
               <xs:element name="partida_arancelaria" msprop:Generator_ColumnVarNameInTable="columnpartida_arancelaria" msprop:Generator_ColumnPropNameInRow="partida_arancelaria" msprop:Generator_ColumnPropNameInTable="partida_arancelariaColumn" msprop:Generator_UserColumnName="partida_arancelaria" type="xs:string" minOccurs="0" />
-              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
-              <xs:element name="precio_por_unidad" msprop:Generator_ColumnVarNameInTable="columnprecio_por_unidad" msprop:Generator_ColumnPropNameInRow="precio_por_unidad" msprop:Generator_ColumnPropNameInTable="precio_por_unidadColumn" msprop:Generator_UserColumnName="precio_por_unidad" type="xs:decimal" minOccurs="0" />
-              <xs:element name="indicador_impuesto" msprop:Generator_ColumnVarNameInTable="columnindicador_impuesto" msprop:Generator_ColumnPropNameInRow="indicador_impuesto" msprop:Generator_ColumnPropNameInTable="indicador_impuestoColumn" msprop:Generator_UserColumnName="indicador_impuesto" type="xs:string" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
               <xs:element name="existe" msprop:Generator_ColumnVarNameInTable="columnexiste" msprop:Generator_ColumnPropNameInRow="existe" msprop:Generator_ColumnPropNameInTable="existeColumn" msprop:Generator_UserColumnName="existe" type="xs:boolean" default="false" minOccurs="0" />
             </xs:sequence>
