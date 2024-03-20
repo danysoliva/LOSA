@@ -519,5 +519,183 @@ namespace AMS.Compras.ControlInv
         {
 
         }
+
+        private void cmdGuardarPoder_Click(object sender, EventArgs e)
+        {
+            foreach (dsControlInv_AMS.req_detalleRow row in dsControlInv_AMS1.req_detalle.Rows)
+            {
+                if (row.existencia == 0)
+                {
+                    CajaDialogo.Error("Para hacer una requisa con este articulo: " + row.itemname + " la cantidad requerida debe ser menor a la existencia.");
+                    return;
+                }
+            }
+            if (txtcodigo.Text == "")
+            {
+                CajaDialogo.Error("Mmm... Esto nunca tiene que pasar xd");
+                return;
+            }
+            if (!chManual.Checked)
+            {
+                if (grd_usuarios.EditValue == null || Convert.ToInt32(grd_usuarios.EditValue) == 0)
+                {
+                    CajaDialogo.Error("No se ha seleccionado ningun solicitante. Por favor indicarlo!");
+                    grd_usuarios.ShowPopup();
+                    return;
+                }
+            }
+            else
+            {
+                if (txtsolicitanteManual.Text == "")
+                {
+                    CajaDialogo.Error("No se ha destrito ningun solicitante. Por favor indicarlo!");
+                    txtsolicitanteManual.Focus();
+                    return;
+                }
+            }
+            if (tggenable.IsOn)
+            {
+                int countItems;
+                countItems = grdv_data.RowCount;
+                if (countItems == 0)
+                {
+                    CajaDialogo.Error("Debe de ingresar al menos un articulo para realizar esta operacion");
+                    frmpickItems frm = new frmpickItems(1);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        DataRow dr = dsControlInv_AMS1.req_detalle.NewRow();
+                        dr[0] = 0;
+                        dr[1] = frm.ItemCode;
+                        dr[2] = frm.ItemName;
+                        dr[3] = 1;
+                        dr[4] = 0;
+                        dr[5] = true;
+                        dsControlInv_AMS1.req_detalle.Rows.Add(dr);
+                        dsControlInv_AMS1.req_detalle.AcceptChanges();
+                    }
+                    return;
+                }
+            }
+
+            if (txtcomentario.Text == "")
+            {
+                CajaDialogo.Error("El comentario de la requisa no puede quedar vacio.");
+                txtcomentario.Focus();
+                return;
+            }
+            if (typeop == 1) // SUpongamos que es Insertar
+            {
+                string query = @"sp_insert_req_h";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringAMS);
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@solicitante", chManual.Checked ? txtsolicitanteManual.Text : grd_usuarios.Text);
+                    cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.UserId);
+                    cmd.Parameters.AddWithValue("@id_solicitante_user", tggcontratista.IsOn ? (object)DBNull.Value : chManual.Checked ? (object)DBNull.Value : grd_usuarios.EditValue);
+                    cmd.Parameters.AddWithValue("@date", dtsolicitud.EditValue);
+                    cmd.Parameters.AddWithValue("@info", (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@barcode", txtcodigo.Text);
+                    cmd.Parameters.AddWithValue("@comentario", txtcomentario.Text);
+                    cmd.Parameters.AddWithValue("@id_contratista", tggcontratista.IsOn ? chManual.Checked ? (object)DBNull.Value : grd_usuarios.EditValue : (object)DBNull.Value);
+                    long ResultScalar = 0;
+                    ResultScalar = Convert.ToInt64(cmd.ExecuteScalar());
+                    if (ResultScalar != 0)
+                    {
+                        foreach (dsControlInv_AMS.req_detalleRow row in dsControlInv_AMS1.req_detalle.Rows)
+                        {
+                            query = @"sp_req_insert_details";
+                            cmd = new SqlCommand(query, cn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_h", ResultScalar);
+                            cmd.Parameters.AddWithValue("@ItemCode", row.itemcode);
+                            cmd.Parameters.AddWithValue("@Descripcion", row.itemname);
+                            cmd.Parameters.AddWithValue("@Cantidad", row.cantidad);
+                            cmd.ExecuteNonQuery();
+
+                        }
+                    }
+
+                    CajaDialogo.Information("Transaccion Exitosa!");
+                    rpt_requisas report = new rpt_requisas(ResultScalar);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(report);
+                    printReport.ShowPreview();
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            else  // Y el ese es update.
+            {
+                string query = @"sp_update_req_h";
+                try
+                {
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringAMS);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@solicitante", chManual.Checked ? txtsolicitanteManual.Text : grd_usuarios.Text);
+                    cmd.Parameters.AddWithValue("@id_solicitante", tggcontratista.IsOn ? (object)DBNull.Value : chManual.Checked ? (object)DBNull.Value : grd_usuarios.EditValue);
+                    cmd.Parameters.AddWithValue("@date_solitud", dtsolicitud.EditValue);
+                    cmd.Parameters.AddWithValue("@comentario", txtcomentario.Text);
+                    cmd.Parameters.AddWithValue("@enable", tggenable.IsOn ? true : false);
+                    cmd.Parameters.AddWithValue("@id_contratista", tggcontratista.IsOn ? chManual.Checked ? (object)DBNull.Value : grd_usuarios.EditValue : (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@id", Varid);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+
+                    cn.Open();
+                    query = @"sp_update_req_d";
+                    cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_h", Varid);
+                    cmd.ExecuteNonQuery();
+                    foreach (dsControlInv_AMS.req_detalleRow row in dsControlInv_AMS1.req_detalle.Rows)
+                    {
+
+                        if (row.activo)
+                        {
+                            query = @"sp_req_insert_details";
+                            cmd = new SqlCommand(query, cn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_h", Varid);
+                            cmd.Parameters.AddWithValue("@ItemCode", row.itemcode);
+                            cmd.Parameters.AddWithValue("@Descripcion", row.itemname);
+                            cmd.Parameters.AddWithValue("@Cantidad", row.cantidad);
+                            cmd.ExecuteNonQuery();
+                        }
+
+
+
+                    }
+
+                    CajaDialogo.Information("Transaccion Exitosa!");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }
