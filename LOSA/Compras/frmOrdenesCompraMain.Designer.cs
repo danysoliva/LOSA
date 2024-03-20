@@ -127,5 +127,6 @@ namespace LOSA.Compras
         private DevExpress.XtraTab.XtraTabPage tabArchivosAdjuntos;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

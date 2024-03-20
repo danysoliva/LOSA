@@ -254,7 +254,7 @@ namespace LOSA.Compras
             this.txtUd.Properties.Appearance.Options.UseFont = true;
             this.txtUd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtUd.Properties.MaskSettings.Set("mask", "d");
+            this.txtUd.Properties.MaskSettings.Set("mask", "n");
             this.txtUd.Size = new System.Drawing.Size(147, 28);
             this.txtUd.TabIndex = 4;
             this.txtUd.EditValueChanged += new System.EventHandler(this.txtUd_EditValueChanged);

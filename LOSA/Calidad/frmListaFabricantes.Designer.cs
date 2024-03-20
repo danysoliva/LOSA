@@ -336,6 +336,7 @@ namespace LOSA.Calidad
             // tsElegible
             // 
             this.tsElegible.EditValue = true;
+            this.tsElegible.Enabled = false;
             this.tsElegible.Location = new System.Drawing.Point(364, 245);
             this.tsElegible.Name = "tsElegible";
             this.tsElegible.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,6 +360,7 @@ namespace LOSA.Calidad
             // 
             // tsAprobadoASC
             // 
+            this.tsAprobadoASC.Enabled = false;
             this.tsAprobadoASC.Location = new System.Drawing.Point(364, 191);
             this.tsAprobadoASC.Name = "tsAprobadoASC";
             this.tsAprobadoASC.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);

@@ -462,6 +462,17 @@ namespace LOSA.Compras
             }
         }
 
+        private void ReCalculoImpuesto()
+        {
+            decimal impuesto = 0;
+            foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            {
+                impuesto += item.isv;
+            }
+
+            txtImpuesto.EditValue = string.Format("{0:##,###,##0.##}", impuesto);
+        }
+
         private void grdvDetalle_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             var gridView = (GridView)grDetalle.FocusedView;
@@ -519,8 +530,9 @@ namespace LOSA.Compras
 
                                 rowiva.isv = 0;
                                 //txtImpuesto.EditValue = 0.00;
+                                ReCalculoImpuesto();
                                 CalcularTotal();
-
+                                
                                 break;
 
                             case "EXO":
@@ -536,6 +548,7 @@ namespace LOSA.Compras
                                 string.Format("{0:0,0.00}", rowiva.isv);
                                 rowiva.capitulo = " ";
                                 rowiva.partida_arancelaria = " ";
+                                ReCalculoImpuesto();
                                 CalcularTotal();
 
                                 break;
@@ -546,6 +559,7 @@ namespace LOSA.Compras
                                 string.Format("{0:0,0.00}", rowiva.isv);
                                 rowiva.capitulo = " ";
                                 rowiva.partida_arancelaria = " ";
+                                ReCalculoImpuesto();
                                 CalcularTotal();
 
                                 break;
@@ -695,9 +709,10 @@ namespace LOSA.Compras
                 {
                     SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("sp_cm_delete_linea_detalle", conn);
+                    SqlCommand cmd = new SqlCommand("sp_cm_delete_linea_detalleV2", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_detalle_oc", row.id_d_orden);
+                    cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
                     cmd.ExecuteNonQuery();
 
                     grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
@@ -709,6 +724,7 @@ namespace LOSA.Compras
                 {
                     CajaDialogo.Error(ex.Message);
                 }
+             
             }
             else
             {
@@ -792,13 +808,10 @@ namespace LOSA.Compras
                         break;
                 }
 
-                txtImpuesto.EditValue = string.Format("{0:##,###,##0.##}", SubTotal * valor_impuesto);// decimal.Round(SubTotal * valor_impuesto, 2, MidpointRounding.AwayFromZero);
+                //txtImpuesto.EditValue = string.Format("{0:##,###,##0.##}", SubTotal * valor_impuesto);// decimal.Round(SubTotal * valor_impuesto, 2, MidpointRounding.AwayFromZero);
                 txtTotal.EditValue = string.Format("{0:##,###,##0.##}", SubTotal + Convert.ToDecimal(txtImpuesto.EditValue)); //decimal.Round(SubTotal + Convert.ToDecimal(txtImpuesto.EditValue), 2, MidpointRounding.AwayFromZero);
             }
 
-
-            
-            
         }
 
         private void cmdNuevo_Click(object sender, EventArgs e)
@@ -1159,6 +1172,7 @@ namespace LOSA.Compras
                 CajaDialogo.Error("Debe Agregar un Proveedor!");
                 return;
             }
+
             if (string.IsNullOrEmpty(glRutaAprobacionOC.Text))
             {
                 CajaDialogo.Error("Debe seleccionar el departamento que aprobará la orden de compra!");
@@ -1170,7 +1184,6 @@ namespace LOSA.Compras
                 CajaDialogo.Error("Debe seleccionar el tipo de orden de compra!");
                 return;
             }
-
  
             if (string.IsNullOrEmpty(cbxMoneda.Text))
             {
@@ -1183,16 +1196,6 @@ namespace LOSA.Compras
                 CajaDialogo.Error("Debe seleccionar la fecha de contabilizacion de la orden de compra!");
                 return;
             }
-
-            //if (Convert.ToInt32(grdTipoOrden.EditValue) == 1) //Orden de Compra de Materia Prima
-            //{
-            //    if (string.IsNullOrEmpty(comboBoxIntercom.Text))
-            //    {
-            //        CajaDialogo.Error("La Orden es de Materia Prima.\nNo puede dejar vacio el campo Incoterm!");
-            //        comboBoxIntercom.Focus();
-            //        return;
-            //    }
-            //}
 
             if (string.IsNullOrEmpty(txtComentarios.Text))
             {
@@ -1211,7 +1214,6 @@ namespace LOSA.Compras
                 CajaDialogo.Error("Debe seleccionar 1 Producto!");
                 return;
             }
-
 
             foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
             {
@@ -1313,56 +1315,40 @@ namespace LOSA.Compras
                 }
             }
 
+            //Consolidados de Saldos por Capitulo y Rubro
             //if (TsExoOIsv.IsOn)
             //{
             //    dsCompras1.SaldosMemoria.Clear();
             //    bool PrimeraIteracion = true;
             //    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             //    {
-            //        foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria)
+            //        foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria.Rows)
             //        {
             //            PrimeraIteracion = false;
 
-            //            if (rowMemoria.existe)
+            //            if (item.capitulo == rowMemoria.capitulo)
             //            {
-            //                rowMemoria.total += item.total;
+            //                if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //                {
+            //                    rowMemoria.total = rowMemoria.total + item.total;
+            //                    rowMemoria.cantidad = rowMemoria.cantidad + item.cantidad;
+            //                }
             //            }
             //            else
             //            {
-            //                if (item.capitulo == rowMemoria.capitulo)
-            //                {
-            //                    if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
-            //                    {
-            //                        DataRow drow = dsCompras1.SaldosMemoria.NewRow();
-            //                        drow[0] = item.capitulo;
-            //                        drow[1] = item.partida_arancelaria;
-            //                        drow[2] = item.itemcode;
-            //                        drow[3] = item.cantidad;
-            //                        drow[4] = item.precio_por_unidad;
-            //                        drow[5] = item.indicador_impuesto;
-            //                        drow[6] = item.total;
-
-            //                        dsCompras1.SaldosMemoria.Rows.Add(drow);
-            //                        dsCompras1.SaldosMemoria.AcceptChanges();
-            //                    }
-            //                }
-            //                else
+            //                if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
             //                {
             //                    DataRow drow = dsCompras1.SaldosMemoria.NewRow();
             //                    drow[0] = item.capitulo;
             //                    drow[1] = item.partida_arancelaria;
-            //                    drow[2] = item.itemcode;
-            //                    drow[3] = item.cantidad;
-            //                    drow[4] = item.precio_por_unidad;
-            //                    drow[5] = item.indicador_impuesto;
-            //                    drow[6] = item.total;
+            //                    drow[2] = item.cantidad;
+            //                    drow[3] = item.total;
 
             //                    dsCompras1.SaldosMemoria.Rows.Add(drow);
             //                    dsCompras1.SaldosMemoria.AcceptChanges();
             //                }
             //            }
 
-                        
             //        }
 
             //        if (PrimeraIteracion)
@@ -1370,11 +1356,8 @@ namespace LOSA.Compras
             //            DataRow drow = dsCompras1.SaldosMemoria.NewRow();
             //            drow[0] = item.capitulo;
             //            drow[1] = item.partida_arancelaria;
-            //            drow[2] = item.itemcode;
-            //            drow[3] = item.cantidad;
-            //            drow[4] = item.precio_por_unidad;
-            //            drow[5] = item.indicador_impuesto;
-            //            drow[6] = item.total;
+            //            drow[2] = item.cantidad;
+            //            drow[3] = item.total;
 
             //            dsCompras1.SaldosMemoria.Rows.Add(drow);
             //            dsCompras1.SaldosMemoria.AcceptChanges();
@@ -1382,11 +1365,11 @@ namespace LOSA.Compras
             //    }
             //}
 
-            //Consolidados de Saldos por Capitulo y Rubro
-           
+            
+
             bool PermitirGuardar = false;
 
-            //#region VALIDACION FINAL : EN PROCESO
+            #region VALIDACION FINAL : EN PROCESO
 
             //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             //{
@@ -1463,92 +1446,92 @@ namespace LOSA.Compras
             //    }
             //}
 
-            //#endregion
+            #endregion
 
             #region VALIDACION DE SALDO: SOLO FUNCIONA LINEA POR LINEA
 
-            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
-            //{
-            //    string Capitulo = "";
-            //    string Partida = "";
-            //    decimal SaldoDisponible = 0;
-            //    decimal UnidadesDisponibles = 0;
+            foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            {
+                string Capitulo = "";
+                string Partida = "";
+                decimal SaldoDisponible = 0;
+                decimal UnidadesDisponibles = 0;
 
 
-            //    if (item.indicador_impuesto == "EXO")
-            //    {
-            //        if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
-            //        {
-            //            try
-            //            {
-            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-            //                conn.Open();
-            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
-            //                cmd.CommandType = CommandType.StoredProcedure;
-            //                cmd.Parameters.AddWithValue("@Monto", item.total);
-            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-            //                SqlDataReader dr = cmd.ExecuteReader();
-            //                if (dr.Read())
-            //                {
-            //                    PermitirGuardar = dr.GetBoolean(0);
-            //                    SaldoDisponible = dr.GetDecimal(1);
-            //                    Capitulo = dr.GetString(2);
-            //                }
-            //                dr.Close();
-            //                conn.Close();
+                if (item.indicador_impuesto == "EXO")
+                {
+                    if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
+                    {
+                        try
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Monto", item.total);
+                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                PermitirGuardar = dr.GetBoolean(0);
+                                SaldoDisponible = dr.GetDecimal(1);
+                                Capitulo = dr.GetString(2);
+                            }
+                            dr.Close();
+                            conn.Close();
 
-            //                if (PermitirGuardar == false)
-            //                {
-            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
-            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-            //                    return;
-            //                }
+                            if (PermitirGuardar == false)
+                            {
+                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
+                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                                return;
+                            }
 
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                CajaDialogo.Error(ex.Message);
-            //            }
-            //        }
-            //        else
-            //        {
-            //            try
-            //            {
-            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-            //                conn.Open();
-            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
-            //                cmd.CommandType = CommandType.StoredProcedure;
-            //                cmd.Parameters.AddWithValue("@Monto", item.total);
-            //                cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
-            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-            //                cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
-            //                SqlDataReader dr = cmd.ExecuteReader();
-            //                if (dr.Read())
-            //                {
-            //                    PermitirGuardar = dr.GetBoolean(0);
-            //                    Capitulo = dr.GetString(1);
-            //                    Partida = dr.GetString(2);
-            //                    SaldoDisponible = dr.GetDecimal(3);
-            //                    UnidadesDisponibles = dr.GetDecimal(4);
-            //                }
-            //                dr.Close();
-            //                conn.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Monto", item.total);
+                            cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
+                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+                            cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                PermitirGuardar = dr.GetBoolean(0);
+                                Capitulo = dr.GetString(1);
+                                Partida = dr.GetString(2);
+                                SaldoDisponible = dr.GetDecimal(3);
+                                UnidadesDisponibles = dr.GetDecimal(4);
+                            }
+                            dr.Close();
+                            conn.Close();
 
-            //                if (PermitirGuardar == false)
-            //                {
-            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
-            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-            //                    frm.ShowDialog();
-            //                    return;
-            //                }
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                CajaDialogo.Error(ex.Message);
-            //            }
-            //        }
-            //    }
-            //}
+                            if (PermitirGuardar == false)
+                            {
+                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
+                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                                frm.ShowDialog();
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
+                    }
+                }
+            }
 
             #endregion
 
@@ -2234,6 +2217,7 @@ namespace LOSA.Compras
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ButtonDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtComentarios = new DevExpress.XtraEditors.MemoEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
@@ -3009,7 +2993,7 @@ namespace LOSA.Compras
             this.txtUsuarioCreador.Enabled = false;
             this.txtUsuarioCreador.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtUsuarioCreador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtUsuarioCreador.Location = new System.Drawing.Point(154, 8);
+            this.txtUsuarioCreador.Location = new System.Drawing.Point(136, 8);
             this.txtUsuarioCreador.Name = "txtUsuarioCreador";
             this.txtUsuarioCreador.Size = new System.Drawing.Size(228, 16);
             this.txtUsuarioCreador.TabIndex = 59;
@@ -3072,7 +3056,8 @@ namespace LOSA.Compras
             this.colreferencia_base,
             this.colisv,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3});
             this.grdvDetalle.CustomizationFormBounds = new System.Drawing.Rectangle(774, 457, 260, 282);
             this.grdvDetalle.GridControl = this.grDetalle;
             this.grdvDetalle.Name = "grdvDetalle";
@@ -3408,10 +3393,16 @@ namespace LOSA.Compras
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.ReadOnly = true;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "gridColumn3";
+            this.gridColumn3.Name = "gridColumn3";
+            // 
             // panelControl2
             // 
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.txtUsuarioCreador);
             this.panelControl2.Controls.Add(this.txtComentarios);
             this.panelControl2.Controls.Add(this.txtTotal);
             this.panelControl2.Controls.Add(this.txtImpuesto);
@@ -3421,7 +3412,6 @@ namespace LOSA.Compras
             this.panelControl2.Controls.Add(this.labelControl10);
             this.panelControl2.Controls.Add(this.labelControl8);
             this.panelControl2.Controls.Add(this.labelControl9);
-            this.panelControl2.Controls.Add(this.txtUsuarioCreador);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Location = new System.Drawing.Point(4, 745);
             this.panelControl2.Name = "panelControl2";
@@ -3432,7 +3422,7 @@ namespace LOSA.Compras
             // 
             // txtComentarios
             // 
-            this.txtComentarios.Location = new System.Drawing.Point(154, 51);
+            this.txtComentarios.Location = new System.Drawing.Point(136, 51);
             this.txtComentarios.Name = "txtComentarios";
             this.txtComentarios.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtComentarios.Properties.Appearance.Options.UseFont = true;
