@@ -1744,6 +1744,12 @@
     <Compile Include="FromAMS\frmrequisa_devolucion.Designer.cs">
       <DependentUpon>frmrequisa_devolucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FromAMS\frmShowControlUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmShowControlUser.Designer.cs">
+      <DependentUpon>frmShowControlUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FromAMS\frmUserAuth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7409,6 +7415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FromAMS\frmrequisa_devolucion.resx">
       <DependentUpon>frmrequisa_devolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmShowControlUser.resx">
+      <DependentUpon>frmShowControlUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FromAMS\frmUserAuth.resx">
       <DependentUpon>frmUserAuth.cs</DependentUpon>

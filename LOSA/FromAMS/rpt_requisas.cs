@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Data.SqlClient;
-using AMS.Clases;
+using ACS.Classes;
 
 namespace AMS.Compras.ControlInv
 {
@@ -45,18 +45,18 @@ namespace AMS.Compras.ControlInv
                 cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_h", id);
-                dsControlInv1.red_rpt_d.Clear();
+                dsControlInv_AMS1.red_rpt_d.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsControlInv1.red_rpt_d);
+                da.Fill(dsControlInv_AMS1.red_rpt_d);
                 cn.Close();
                 cn.Open();
                 query = @"sp_rpt_req_details_nacionales";
                 cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_h", id);
-                dsControlInv1.red_rpt_d_nacionales.Clear();
+                dsControlInv_AMS1.red_rpt_d_nacionales.Clear();
                  da = new SqlDataAdapter(cmd);
-                da.Fill(dsControlInv1.red_rpt_d_nacionales);
+                da.Fill(dsControlInv_AMS1.red_rpt_d_nacionales);
                 cn.Close();
 
             }

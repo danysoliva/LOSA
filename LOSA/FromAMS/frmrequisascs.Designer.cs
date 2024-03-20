@@ -47,11 +47,6 @@ namespace AMS.Compras.ControlInv
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnnuevo = new DevExpress.XtraBars.BarButtonItem();
@@ -68,7 +63,7 @@ namespace AMS.Compras.ControlInv
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsControlInv_AMS1 = new dsControlInv_AMS();
+            this.dsControlInv_AMS1 = new LOSA.FromAMS.dsControlInv_AMS();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcerrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnfin = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -140,7 +135,6 @@ namespace AMS.Compras.ControlInv
             // 
             resources.ApplyResources(this.btnnuevo, "btnnuevo");
             this.btnnuevo.Id = 5;
-            //this.btnnuevo.ImageOptions.Image = global::Resources._new;
             this.btnnuevo.ItemAppearance.Normal.Font = ((System.Drawing.Font)(resources.GetObject("btnnuevo.ItemAppearance.Normal.Font")));
             this.btnnuevo.ItemAppearance.Normal.Options.UseFont = true;
             this.btnnuevo.Name = "btnnuevo";
@@ -183,7 +177,6 @@ namespace AMS.Compras.ControlInv
             this.barButtonItem4.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             resources.ApplyResources(this.barButtonItem4, "barButtonItem4");
             this.barButtonItem4.Id = 7;
-            //this.barButtonItem4.ImageOptions.Image = global::AMS.Properties.Resources.cancel;
             this.barButtonItem4.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
             this.barButtonItem4.ItemAppearance.Hovered.Font = ((System.Drawing.Font)(resources.GetObject("barButtonItem4.ItemAppearance.Hovered.Font")));
             this.barButtonItem4.ItemAppearance.Hovered.Options.UseFont = true;
@@ -193,6 +186,7 @@ namespace AMS.Compras.ControlInv
             this.barButtonItem4.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // bar3
@@ -253,7 +247,6 @@ namespace AMS.Compras.ControlInv
             // 
             resources.ApplyResources(this.barButtonItem3, "barButtonItem3");
             this.barButtonItem3.Id = 6;
-            //this.barButtonItem3.ImageOptions.Image = global::AMS.Properties.Resources.cancel;
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
             this.barButtonItem3.Name = "barButtonItem3";
@@ -274,7 +267,7 @@ namespace AMS.Compras.ControlInv
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // dsControlInv
+            // dsControlInv_AMS1
             // 
             this.dsControlInv_AMS1.DataSetName = "dsControlInv";
             this.dsControlInv_AMS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -442,9 +435,8 @@ namespace AMS.Compras.ControlInv
             // btnDevolucion
             // 
             resources.ApplyResources(this.btnDevolucion, "btnDevolucion");
-            //editorButtonImageOptions4.Image = global::AMS.Properties.Resources.devolver;
             this.btnDevolucion.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btnDevolucion.Buttons"))), resources.GetString("btnDevolucion.Buttons1"), ((int)(resources.GetObject("btnDevolucion.Buttons2"))), ((bool)(resources.GetObject("btnDevolucion.Buttons3"))), ((bool)(resources.GetObject("btnDevolucion.Buttons4"))), ((bool)(resources.GetObject("btnDevolucion.Buttons5"))), editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, resources.GetString("btnDevolucion.Buttons6"), ((object)(resources.GetObject("btnDevolucion.Buttons7"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("btnDevolucion.Buttons8"))), ((DevExpress.Utils.ToolTipAnchor)(resources.GetObject("btnDevolucion.Buttons9"))))});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btnDevolucion.Buttons"))))});
             this.btnDevolucion.Name = "btnDevolucion";
             this.btnDevolucion.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDevolucion.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDevolucion_ButtonClick);

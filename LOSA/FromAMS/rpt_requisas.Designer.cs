@@ -1,4 +1,6 @@
-﻿namespace AMS.Compras.ControlInv
+﻿using LOSA.FromAMS;
+
+namespace AMS.Compras.ControlInv
 {
     partial class rpt_requisas
     {
@@ -76,7 +78,7 @@
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.dsControlInv1 = new AMS.Compras.ControlInv.dsControlInv();
+            this.dsControlInv_AMS1 = new dsControlInv_AMS();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -93,7 +95,7 @@
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsControlInv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsControlInv_AMS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -342,7 +344,7 @@
             this.Detail2,
             this.ReportHeader2});
             this.DetailReport1.DataMember = "red_rpt_d_nacionales";
-            this.DetailReport1.DataSource = this.dsControlInv1;
+            this.DetailReport1.DataSource = this.dsControlInv_AMS1;
             this.DetailReport1.Level = 1;
             this.DetailReport1.Name = "DetailReport1";
             // 
@@ -378,7 +380,7 @@
             this.ReportHeader1,
             this.ReportFooter});
             this.DetailReport.DataMember = "red_rpt_d";
-            this.DetailReport.DataSource = this.dsControlInv1;
+            this.DetailReport.DataSource = this.dsControlInv_AMS1;
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
             // 
@@ -600,8 +602,8 @@
             // 
             // dsControlInv1
             // 
-            this.dsControlInv1.DataSetName = "dsControlInv";
-            this.dsControlInv1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsControlInv_AMS1.DataSetName = "dsControlInv";
+            this.dsControlInv_AMS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // xrTable4
             // 
@@ -798,13 +800,13 @@
             this.PageFooter,
             this.DetailReport1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.dsControlInv1});
+            this.dsControlInv_AMS1});
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Margins = new DevExpress.Drawing.DXMargins(99, 100, 32, 100);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsControlInv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsControlInv_AMS1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -853,7 +855,7 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell8;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
-        private dsControlInv dsControlInv1;
+        private dsControlInv_AMS dsControlInv_AMS1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;

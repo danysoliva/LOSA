@@ -8,12 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using AMS.Clases;
 using System.Data.SqlClient;
 using LOSA.Utileria;
 using LOSA.Clases;
 using Huellas;
 using System.Threading;
+using ACS.Classes;
 
 namespace AMS.Compras.ControlInv
 {
