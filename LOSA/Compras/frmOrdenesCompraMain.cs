@@ -3249,7 +3249,7 @@ namespace LOSA.Compras
             // colcantidad
             // 
             this.colcantidad.Caption = "Cantidad";
-            this.colcantidad.DisplayFormat.FormatString = "n2";
+            this.colcantidad.DisplayFormat.FormatString = "n4";
             this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
@@ -3260,7 +3260,7 @@ namespace LOSA.Compras
             // colprecio_por_unidad
             // 
             this.colprecio_por_unidad.Caption = "Precio por Ud.";
-            this.colprecio_por_unidad.DisplayFormat.FormatString = "n2";
+            this.colprecio_por_unidad.DisplayFormat.FormatString = "n4";
             this.colprecio_por_unidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colprecio_por_unidad.FieldName = "precio_por_unidad";
             this.colprecio_por_unidad.Name = "colprecio_por_unidad";
@@ -3386,7 +3386,7 @@ namespace LOSA.Compras
             // coltotal
             // 
             this.coltotal.Caption = "Total (doc.)";
-            this.coltotal.DisplayFormat.FormatString = "n2";
+            this.coltotal.DisplayFormat.FormatString = "n4";
             this.coltotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotal.FieldName = "total";
             this.coltotal.Name = "coltotal";
