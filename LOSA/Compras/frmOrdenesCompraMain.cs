@@ -1314,6 +1314,7 @@ namespace LOSA.Compras
                     
                 }
             }
+
             //Consolidados de Saldos por Capitulo y Rubro
             //if (TsExoOIsv.IsOn)
             //{
