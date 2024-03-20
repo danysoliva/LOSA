@@ -1315,6 +1315,56 @@ namespace LOSA.Compras
                 }
             }
 
+            //DataTable dtMemoria = new DataTable();
+            //if (TsExoOIsv.IsOn)
+            //{
+                
+            //    bool PrimeraIteracion = true;
+            //    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //    {
+            //        foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria.Rows)
+            //        {
+            //            PrimeraIteracion = false;
+
+            //            if (item.capitulo == rowMemoria.capitulo)
+            //            {
+            //                if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //                {
+            //                    rowMemoria.total = rowMemoria.total + item.total;
+            //                    rowMemoria.cantidad = rowMemoria.cantidad + item.cantidad;
+            //                }
+            //            }
+            //            else
+            //            {
+            //                if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //                {
+            //                    DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //                    drow[0] = item.capitulo;
+            //                    drow[1] = item.partida_arancelaria;
+            //                    drow[2] = item.cantidad;
+            //                    drow[3] = item.total;
+
+            //                    dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //                    dsCompras1.SaldosMemoria.AcceptChanges();
+            //                }
+            //            }
+
+            //        }
+
+            //        if (PrimeraIteracion)
+            //        {
+            //            DataRow drow = dtMemoria.NewRow();
+            //            drow[0] = item.capitulo;
+            //            drow[1] = item.partida_arancelaria;
+            //            drow[2] = item.cantidad;
+            //            drow[3] = item.total;
+
+            //            dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //            dsCompras1.SaldosMemoria.AcceptChanges();
+            //        }
+            //    }
+            //}
+
             //Consolidados de Saldos por Capitulo y Rubro
             //if (TsExoOIsv.IsOn)
             //{
@@ -1365,7 +1415,7 @@ namespace LOSA.Compras
             //    }
             //}
 
-            
+
 
             bool PermitirGuardar = false;
 
@@ -3199,7 +3249,7 @@ namespace LOSA.Compras
             // colcantidad
             // 
             this.colcantidad.Caption = "Cantidad";
-            this.colcantidad.DisplayFormat.FormatString = "n2";
+            this.colcantidad.DisplayFormat.FormatString = "n4";
             this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
@@ -3210,7 +3260,7 @@ namespace LOSA.Compras
             // colprecio_por_unidad
             // 
             this.colprecio_por_unidad.Caption = "Precio por Ud.";
-            this.colprecio_por_unidad.DisplayFormat.FormatString = "n2";
+            this.colprecio_por_unidad.DisplayFormat.FormatString = "n4";
             this.colprecio_por_unidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colprecio_por_unidad.FieldName = "precio_por_unidad";
             this.colprecio_por_unidad.Name = "colprecio_por_unidad";
@@ -3336,7 +3386,7 @@ namespace LOSA.Compras
             // coltotal
             // 
             this.coltotal.Caption = "Total (doc.)";
-            this.coltotal.DisplayFormat.FormatString = "n2";
+            this.coltotal.DisplayFormat.FormatString = "n4";
             this.coltotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotal.FieldName = "total";
             this.coltotal.Name = "coltotal";
