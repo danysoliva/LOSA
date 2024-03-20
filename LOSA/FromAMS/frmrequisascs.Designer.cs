@@ -32,21 +32,21 @@ namespace AMS.Compras.ControlInv
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmrequisascs));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnnuevo = new DevExpress.XtraBars.BarButtonItem();
@@ -65,7 +65,6 @@ namespace AMS.Compras.ControlInv
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsControlInv_AMS1 = new LOSA.FromAMS.dsControlInv_AMS();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colcerrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnfin = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsolicitante = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -293,7 +292,6 @@ namespace AMS.Compras.ControlInv
             this.grdv_data.Appearance.TopNewRow.Font = ((System.Drawing.Font)(resources.GetObject("grdv_data.Appearance.TopNewRow.Font")));
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colcerrar,
             this.colid,
             this.colsolicitante,
             this.colid_create_user,
@@ -309,21 +307,12 @@ namespace AMS.Compras.ControlInv
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
-            // colcerrar
-            // 
-            resources.ApplyResources(this.colcerrar, "colcerrar");
-            this.colcerrar.ColumnEdit = this.btnfin;
-            this.colcerrar.MaxWidth = 120;
-            this.colcerrar.MinWidth = 120;
-            this.colcerrar.Name = "colcerrar";
-            this.colcerrar.OptionsFilter.AllowFilter = false;
-            // 
             // btnfin
             // 
             resources.ApplyResources(this.btnfin, "btnfin");
-            resources.ApplyResources(editorButtonImageOptions1, "editorButtonImageOptions1");
+            resources.ApplyResources(editorButtonImageOptions6, "editorButtonImageOptions6");
             this.btnfin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btnfin.Buttons"))), resources.GetString("btnfin.Buttons1"), ((int)(resources.GetObject("btnfin.Buttons2"))), ((bool)(resources.GetObject("btnfin.Buttons3"))), ((bool)(resources.GetObject("btnfin.Buttons4"))), ((bool)(resources.GetObject("btnfin.Buttons5"))), editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, resources.GetString("btnfin.Buttons6"), ((object)(resources.GetObject("btnfin.Buttons7"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("btnfin.Buttons8"))), ((DevExpress.Utils.ToolTipAnchor)(resources.GetObject("btnfin.Buttons9"))))});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btnfin.Buttons"))), resources.GetString("btnfin.Buttons1"), ((int)(resources.GetObject("btnfin.Buttons2"))), ((bool)(resources.GetObject("btnfin.Buttons3"))), ((bool)(resources.GetObject("btnfin.Buttons4"))), ((bool)(resources.GetObject("btnfin.Buttons5"))), editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, resources.GetString("btnfin.Buttons6"), ((object)(resources.GetObject("btnfin.Buttons7"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("btnfin.Buttons8"))), ((DevExpress.Utils.ToolTipAnchor)(resources.GetObject("btnfin.Buttons9"))))});
             this.btnfin.Name = "btnfin";
             this.btnfin.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnfin.Click += new System.EventHandler(this.btnfin_Click);
@@ -396,9 +385,9 @@ namespace AMS.Compras.ControlInv
             // btnedit
             // 
             resources.ApplyResources(this.btnedit, "btnedit");
-            resources.ApplyResources(editorButtonImageOptions2, "editorButtonImageOptions2");
+            resources.ApplyResources(editorButtonImageOptions4, "editorButtonImageOptions4");
             this.btnedit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btnedit.Buttons"))), resources.GetString("btnedit.Buttons1"), ((int)(resources.GetObject("btnedit.Buttons2"))), ((bool)(resources.GetObject("btnedit.Buttons3"))), ((bool)(resources.GetObject("btnedit.Buttons4"))), ((bool)(resources.GetObject("btnedit.Buttons5"))), editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, resources.GetString("btnedit.Buttons6"), ((object)(resources.GetObject("btnedit.Buttons7"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("btnedit.Buttons8"))), ((DevExpress.Utils.ToolTipAnchor)(resources.GetObject("btnedit.Buttons9"))))});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btnedit.Buttons"))), resources.GetString("btnedit.Buttons1"), ((int)(resources.GetObject("btnedit.Buttons2"))), ((bool)(resources.GetObject("btnedit.Buttons3"))), ((bool)(resources.GetObject("btnedit.Buttons4"))), ((bool)(resources.GetObject("btnedit.Buttons5"))), editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, resources.GetString("btnedit.Buttons6"), ((object)(resources.GetObject("btnedit.Buttons7"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("btnedit.Buttons8"))), ((DevExpress.Utils.ToolTipAnchor)(resources.GetObject("btnedit.Buttons9"))))});
             this.btnedit.Name = "btnedit";
             this.btnedit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
@@ -415,9 +404,9 @@ namespace AMS.Compras.ControlInv
             // btn_reimprimir
             // 
             resources.ApplyResources(this.btn_reimprimir, "btn_reimprimir");
-            resources.ApplyResources(editorButtonImageOptions3, "editorButtonImageOptions3");
+            resources.ApplyResources(editorButtonImageOptions5, "editorButtonImageOptions5");
             this.btn_reimprimir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btn_reimprimir.Buttons"))), resources.GetString("btn_reimprimir.Buttons1"), ((int)(resources.GetObject("btn_reimprimir.Buttons2"))), ((bool)(resources.GetObject("btn_reimprimir.Buttons3"))), ((bool)(resources.GetObject("btn_reimprimir.Buttons4"))), ((bool)(resources.GetObject("btn_reimprimir.Buttons5"))), editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, resources.GetString("btn_reimprimir.Buttons6"), ((object)(resources.GetObject("btn_reimprimir.Buttons7"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("btn_reimprimir.Buttons8"))), ((DevExpress.Utils.ToolTipAnchor)(resources.GetObject("btn_reimprimir.Buttons9"))))});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("btn_reimprimir.Buttons"))), resources.GetString("btn_reimprimir.Buttons1"), ((int)(resources.GetObject("btn_reimprimir.Buttons2"))), ((bool)(resources.GetObject("btn_reimprimir.Buttons3"))), ((bool)(resources.GetObject("btn_reimprimir.Buttons4"))), ((bool)(resources.GetObject("btn_reimprimir.Buttons5"))), editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, resources.GetString("btn_reimprimir.Buttons6"), ((object)(resources.GetObject("btn_reimprimir.Buttons7"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("btn_reimprimir.Buttons8"))), ((DevExpress.Utils.ToolTipAnchor)(resources.GetObject("btn_reimprimir.Buttons9"))))});
             this.btn_reimprimir.Name = "btn_reimprimir";
             this.btn_reimprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_reimprimir.Click += new System.EventHandler(this.btn_reimprimir_Click);
@@ -471,7 +460,6 @@ namespace AMS.Compras.ControlInv
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private dsControlInv_AMS dsControlInv_AMS1;
-        private DevExpress.XtraGrid.Columns.GridColumn colcerrar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnfin;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colsolicitante;
