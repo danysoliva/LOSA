@@ -101,6 +101,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRPTAlimentacionMacrosCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.btnCertidicadPTMain = new DevExpress.XtraEditors.SimpleButton();
             this.btnSolicitudDespachoCalidad = new DevExpress.XtraEditors.SimpleButton();
@@ -453,6 +454,7 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navOrdenCompra = new DevExpress.XtraNavBar.NavBarItem();
             this.nbarAprobacionOrdenesCompra = new DevExpress.XtraNavBar.NavBarItem();
+            this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
@@ -485,7 +487,9 @@
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
+            this.tabBodegaRepuestos = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton74 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton75 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -523,6 +527,7 @@
             this.TabCompras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
+            this.tabBodegaRepuestos.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -720,7 +725,8 @@
             this.tabEntregaMP,
             this.tabPT,
             this.tabMasterData,
-            this.tabReportes});
+            this.tabReportes,
+            this.tabBodegaRepuestos});
             this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
             // 
             // TabMP_Sacos
@@ -1586,6 +1592,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton24);
             this.TabCalidad.Controls.Add(this.btnRPTAlimentacionMacrosCalidad);
             this.TabCalidad.Controls.Add(this.btnCertidicadPTMain);
             this.TabCalidad.Controls.Add(this.btnSolicitudDespachoCalidad);
@@ -1618,6 +1625,19 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(835, 480);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // simpleButton24
+            // 
+            this.simpleButton24.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton24.Appearance.Options.UseFont = true;
+            this.simpleButton24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
+            this.simpleButton24.Location = new System.Drawing.Point(624, 413);
+            this.simpleButton24.Name = "simpleButton24";
+            this.simpleButton24.Size = new System.Drawing.Size(199, 59);
+            this.simpleButton24.TabIndex = 58;
+            this.simpleButton24.Text = "Requisiciones \r\nRepuestos";
+            this.simpleButton24.Click += new System.EventHandler(this.simpleButton24_Click_1);
             // 
             // btnRPTAlimentacionMacrosCalidad
             // 
@@ -4716,6 +4736,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.simpleButton75);
             this.txtProduccion.Controls.Add(this.cmdReporteSilosPRD);
             this.txtProduccion.Controls.Add(this.btn_print_mp_remanente);
             this.txtProduccion.Controls.Add(this.btnPrioridadLotePT);
@@ -6619,6 +6640,19 @@
             this.nbarAprobacionOrdenesCompra.Name = "nbarAprobacionOrdenesCompra";
             this.nbarAprobacionOrdenesCompra.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbarAprobacionOrdenesCompra_LinkClicked);
             // 
+            // navListaOC
+            // 
+            this.navListaOC.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.Appearance.Options.UseFont = true;
+            this.navListaOC.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.AppearanceHotTracked.Options.UseFont = true;
+            this.navListaOC.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.AppearancePressed.Options.UseFont = true;
+            this.navListaOC.Caption = "Lista Ordenes de Compra";
+            this.navListaOC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navListaOC.ImageOptions.SvgImage")));
+            this.navListaOC.Name = "navListaOC";
+            this.navListaOC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navListaOC_LinkClicked);
+            // 
             // navBarItem9
             // 
             this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
@@ -7006,18 +7040,38 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // navListaOC
+            // tabBodegaRepuestos
             // 
-            this.navListaOC.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navListaOC.Appearance.Options.UseFont = true;
-            this.navListaOC.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navListaOC.AppearanceHotTracked.Options.UseFont = true;
-            this.navListaOC.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navListaOC.AppearancePressed.Options.UseFont = true;
-            this.navListaOC.Caption = "Lista Ordenes de Compra";
-            this.navListaOC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navListaOC.ImageOptions.SvgImage")));
-            this.navListaOC.Name = "navListaOC";
-            this.navListaOC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navListaOC_LinkClicked);
+            this.tabBodegaRepuestos.Controls.Add(this.simpleButton74);
+            this.tabBodegaRepuestos.Name = "tabBodegaRepuestos";
+            this.tabBodegaRepuestos.Size = new System.Drawing.Size(833, 451);
+            this.tabBodegaRepuestos.Text = "Bodega Repuestos";
+            // 
+            // simpleButton74
+            // 
+            this.simpleButton74.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton74.Appearance.Options.UseFont = true;
+            this.simpleButton74.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton74.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
+            this.simpleButton74.Location = new System.Drawing.Point(5, 13);
+            this.simpleButton74.Name = "simpleButton74";
+            this.simpleButton74.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton74.TabIndex = 59;
+            this.simpleButton74.Text = "Requisiciones \r\nRepuestos";
+            this.simpleButton74.Click += new System.EventHandler(this.simpleButton74_Click);
+            // 
+            // simpleButton75
+            // 
+            this.simpleButton75.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton75.Appearance.Options.UseFont = true;
+            this.simpleButton75.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton75.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton75.ImageOptions.Image")));
+            this.simpleButton75.Location = new System.Drawing.Point(468, 324);
+            this.simpleButton75.Name = "simpleButton75";
+            this.simpleButton75.Size = new System.Drawing.Size(199, 69);
+            this.simpleButton75.TabIndex = 60;
+            this.simpleButton75.Text = "Requisiciones \r\nRepuestos";
+            this.simpleButton75.Click += new System.EventHandler(this.simpleButton75_Click);
             // 
             // frmOpciones
             // 
@@ -7069,6 +7123,7 @@
             this.TabCompras.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
+            this.tabBodegaRepuestos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -7530,5 +7585,9 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem117;
         private DevExpress.XtraNavBar.NavBarItem nbarAprobacionOrdenesCompra;
         private DevExpress.XtraNavBar.NavBarItem navListaOC;
+        private DevExpress.XtraEditors.SimpleButton simpleButton24;
+        private DevExpress.XtraTab.XtraTabPage tabBodegaRepuestos;
+        private DevExpress.XtraEditors.SimpleButton simpleButton74;
+        private DevExpress.XtraEditors.SimpleButton simpleButton75;
     }
 }

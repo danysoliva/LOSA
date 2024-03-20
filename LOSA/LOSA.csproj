@@ -1366,6 +1366,7 @@
     <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\ReporteProceso.cs" />
+    <Compile Include="Clases\RequisaArticulos.cs" />
     <Compile Include="Clases\Requisicion.cs" />
     <Compile Include="Clases\RequisicionesValidaciones.cs" />
     <Compile Include="Clases\SalidaPlanExterno.cs" />
@@ -1720,6 +1721,59 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="FromAMS\dsControlInv_AMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmOP_req.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmOP_req.Designer.cs">
+      <DependentUpon>frmOP_req.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmpickItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmpickItems.Designer.cs">
+      <DependentUpon>frmpickItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmrequisascs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmrequisascs.Designer.cs">
+      <DependentUpon>frmrequisascs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmrequisa_devolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmrequisa_devolucion.Designer.cs">
+      <DependentUpon>frmrequisa_devolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmShowControlUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmShowControlUser.Designer.cs">
+      <DependentUpon>frmShowControlUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmUserAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmUserAuth.Designer.cs">
+      <DependentUpon>frmUserAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frm_buscar_req.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frm_buscar_req.Designer.cs">
+      <DependentUpon>frm_buscar_req.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\rpt_requisas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FromAMS\rpt_requisas.Designer.cs">
+      <DependentUpon>rpt_requisas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Liquidos\dsLiquidos_.cs">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </Compile>
@@ -4724,6 +4778,17 @@
     <None Include="Finanzas\dsExoneracion.xss">
       <DependentUpon>dsExoneracion.xsd</DependentUpon>
     </None>
+    <None Include="FromAMS\dsControlInv_AMS.xsc">
+      <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>
+    </None>
+    <None Include="FromAMS\dsControlInv_AMS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsControlInv_AMS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FromAMS\dsControlInv_AMS.xss">
+      <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>
+    </None>
     <None Include="KEY_COMPRAS.pfx" />
     <None Include="Liquidos\dsLiquidos_.xsc">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
@@ -7347,6 +7412,30 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmOP_req.resx">
+      <DependentUpon>frmOP_req.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmpickItems.resx">
+      <DependentUpon>frmpickItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmrequisascs.resx">
+      <DependentUpon>frmrequisascs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmrequisa_devolucion.resx">
+      <DependentUpon>frmrequisa_devolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmShowControlUser.resx">
+      <DependentUpon>frmShowControlUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmUserAuth.resx">
+      <DependentUpon>frmUserAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frm_buscar_req.resx">
+      <DependentUpon>frm_buscar_req.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\rpt_requisas.resx">
+      <DependentUpon>rpt_requisas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\frmIngresoCamion.resx">
       <DependentUpon>frmIngresoCamion.cs</DependentUpon>

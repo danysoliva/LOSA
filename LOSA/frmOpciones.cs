@@ -84,6 +84,9 @@ using LOSA.Calidad.CertificadoCalidad;
 using LOSA.Calidad.GestionLotesMP;
 using LOSA.MigracionACS.Produccion.Silos;
 using LOSA.Compras;
+using AMS.Compras.ControlInv;
+using System.ComponentModel;
+using LOSA.FromAMS;
 
 namespace LOSA
 {
@@ -5211,6 +5214,165 @@ namespace LOSA
         private void navListaOC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
+        }
+
+        private void simpleButton24_Click_1(object sender, EventArgs e)
+        {
+            if (UsuarioLogeado != null)
+            {
+                try
+                {
+                    bool accesoprevio = false;
+                    int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
+                    switch (idNivel)
+                    {
+                        case 1://Basic View
+                        case 2://Basic No Autorization
+                        case 3://Medium Autorization
+                            break;
+                        case 4://Depth With Delta
+                        case 5://Depth Without Delta
+                            accesoprevio = true;
+                            frmShowControlUser frm = new frmShowControlUser(this.UsuarioLogeado);
+                            frm.MdiParent = this.MdiParent;
+                            frm.Show();
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (!accesoprevio)
+                    {
+                        if (UsuarioLogeado.ValidarNivelPermisos(98))
+                        {
+                            frmShowControlUser frm = new frmShowControlUser(this.UsuarioLogeado);
+                            frm.MdiParent = this.MdiParent;
+                            frm.Show();
+                        }
+                        else
+                        {
+                            CajaDialogo.Error("No tiene privilegios para esta función! Permiso requerido #98");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+
+                }
+                
+            }
+            else
+            {
+                CajaDialogo.Information("No tiene los permisos para entrar a esta etapa.");
+                return;
+            }
+        }
+
+        private void simpleButton74_Click(object sender, EventArgs e)
+        {
+            if (UsuarioLogeado != null)
+            {
+                try
+                {
+                    bool accesoprevio = false;
+                    int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
+                    switch (idNivel)
+                    {
+                        case 1://Basic View
+                        case 2://Basic No Autorization
+                        case 3://Medium Autorization
+                            break;
+                        case 4://Depth With Delta
+                        case 5://Depth Without Delta
+                            accesoprevio = true;
+                            frmShowControlUser frm = new frmShowControlUser(this.UsuarioLogeado);
+                            frm.MdiParent = this.MdiParent;
+                            frm.Show();
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (!accesoprevio)
+                    {
+                        if (UsuarioLogeado.ValidarNivelPermisos(98))
+                        {
+                            frmShowControlUser frm = new frmShowControlUser(this.UsuarioLogeado);
+                            frm.MdiParent = this.MdiParent;
+                            frm.Show();
+                        }
+                        else
+                        {
+                            CajaDialogo.Error("No tiene privilegios para esta función! Permiso requerido #98");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+
+                }
+
+            }
+            else
+            {
+                CajaDialogo.Information("No tiene los permisos para entrar a esta etapa.");
+                return;
+            }
+        }
+
+        private void simpleButton75_Click(object sender, EventArgs e)
+        {
+            if (UsuarioLogeado != null)
+            {
+                try
+                {
+                    bool accesoprevio = false;
+                    int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
+                    switch (idNivel)
+                    {
+                        case 1://Basic View
+                        case 2://Basic No Autorization
+                        case 3://Medium Autorization
+                            break;
+                        case 4://Depth With Delta
+                        case 5://Depth Without Delta
+                            accesoprevio = true;
+                            frmShowControlUser frm = new frmShowControlUser(this.UsuarioLogeado);
+                            frm.MdiParent = this.MdiParent;
+                            frm.Show();
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (!accesoprevio)
+                    {
+                        if (UsuarioLogeado.ValidarNivelPermisos(98))
+                        {
+                            frmShowControlUser frm = new frmShowControlUser(this.UsuarioLogeado);
+                            frm.MdiParent = this.MdiParent;
+                            frm.Show();
+                        }
+                        else
+                        {
+                            CajaDialogo.Error("No tiene privilegios para esta función! Permiso requerido #98");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+
+                }
+
+            }
+            else
+            {
+                CajaDialogo.Information("No tiene los permisos para entrar a esta etapa.");
+                return;
+            }
         }
     }
 }
