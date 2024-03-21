@@ -5218,7 +5218,9 @@ namespace LOSA
 
         private void navListaOC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            frmListaOrdenesCompra frm = new frmListaOrdenesCompra();
+            frm.MdiParent = this.MdiParent;
+            frm.ShowDialog();
         }
 
         private void simpleButton24_Click_1(object sender, EventArgs e)
@@ -5378,6 +5380,12 @@ namespace LOSA
                 CajaDialogo.Information("No tiene los permisos para entrar a esta etapa.");
                 return;
             }
+        }
+
+        private void navBarKardexSaldo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmKardexSaldosDisponible frm = new frmKardexSaldosDisponible();
+            frm.Show();
         }
     }
 }

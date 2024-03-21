@@ -63,11 +63,11 @@ namespace LOSA.Compras
             string SimboloMoneda = "L.";
             switch (oc.DocCur)
             {
-                case "LPS       ":
+                case "LPS":
                     SimboloMoneda = "L.";
                     break;
 
-                case "USD       ":
+                case "USD":
                     SimboloMoneda = "$";
                     break;
 
@@ -77,7 +77,6 @@ namespace LOSA.Compras
 
             lblTotal.Text = (SimboloMoneda + oc.DocTotal).ToString();
             lblIsv15.Text = (SimboloMoneda + oc.ISV).ToString();
-            //lblisv18.Text = 
             lblSub.Text = (SimboloMoneda + (oc.DocTotal - oc.ISV)).ToString();
             CargarDetalleOrdenCompra();
 

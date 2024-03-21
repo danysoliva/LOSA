@@ -4,6 +4,10 @@
 
     public partial class dsCompras
     {
+        partial class kardexDataTable
+        {
+        }
+
         partial class saldos_DataTable
         {
         }
