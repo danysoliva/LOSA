@@ -457,6 +457,7 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navOrdenCompra = new DevExpress.XtraNavBar.NavBarItem();
             this.nbarAprobacionOrdenesCompra = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarKardexSaldo = new DevExpress.XtraNavBar.NavBarItem();
             this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
@@ -490,7 +491,6 @@
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarKardexSaldo = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -6675,6 +6675,19 @@
             this.nbarAprobacionOrdenesCompra.Name = "nbarAprobacionOrdenesCompra";
             this.nbarAprobacionOrdenesCompra.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbarAprobacionOrdenesCompra_LinkClicked);
             // 
+            // navBarKardexSaldo
+            // 
+            this.navBarKardexSaldo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.Appearance.Options.UseFont = true;
+            this.navBarKardexSaldo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarKardexSaldo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.AppearancePressed.Options.UseFont = true;
+            this.navBarKardexSaldo.Caption = "Saldo Disponible";
+            this.navBarKardexSaldo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarKardexSaldo.ImageOptions.SvgImage")));
+            this.navBarKardexSaldo.Name = "navBarKardexSaldo";
+            this.navBarKardexSaldo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarKardexSaldo_LinkClicked);
+            // 
             // navListaOC
             // 
             this.navListaOC.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
@@ -7074,19 +7087,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // navBarKardexSaldo
-            // 
-            this.navBarKardexSaldo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.Appearance.Options.UseFont = true;
-            this.navBarKardexSaldo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarKardexSaldo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.AppearancePressed.Options.UseFont = true;
-            this.navBarKardexSaldo.Caption = "Saldo Disponible";
-            this.navBarKardexSaldo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarKardexSaldo.ImageOptions.SvgImage")));
-            this.navBarKardexSaldo.Name = "navBarKardexSaldo";
-            this.navBarKardexSaldo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarKardexSaldo_LinkClicked);
             // 
             // frmOpciones
             // 
