@@ -5220,7 +5220,7 @@ namespace LOSA
         {
             frmListaOrdenesCompra frm = new frmListaOrdenesCompra();
             frm.MdiParent = this.MdiParent;
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void simpleButton24_Click_1(object sender, EventArgs e)

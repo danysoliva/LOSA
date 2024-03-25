@@ -622,7 +622,10 @@ namespace LOSA.Compras
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseBorders = false;
             this.xrTableCell11.StylePriority.UseFont = false;
+            this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "xrTableCell11";
+            this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.xrTableCell11.TextFormatString = "{0:N2}";
             this.xrTableCell11.Weight = 1.4771125764575794D;
             // 
             // xrTableCell8
@@ -635,7 +638,10 @@ namespace LOSA.Compras
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.StylePriority.UseFont = false;
+            this.xrTableCell8.StylePriority.UseTextAlignment = false;
             this.xrTableCell8.Text = "xrTableCell8";
+            this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.xrTableCell8.TextFormatString = "{0:N2}";
             this.xrTableCell8.Weight = 1.3685987229187975D;
             // 
             // ReportFooter
