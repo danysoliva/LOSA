@@ -118,10 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="dsControlInv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>142, 17</value>
+    <value>175, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btncerrar.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -149,6 +146,27 @@
         bYY7Io5fuSgeuHT/AbjGXvsm6BWGsHgOTJvc3Jz7VcS7Xi8G+ybeTMWN1JlYRXASB1AdfrelNpM9q9kr
         Hiu9juFU134Xyiayn+lhyg3wR07gUKTrlG2uEy+WeexZxE0cnTgex8eMRo5O1/XhjlgTPLjPmiDD2dVe
         7tZ3e7s5/VbL79t30MmQkF/PTpnyTcnQob20dHd0x/+EUv8CMecQSEpjtt8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="dsControlInv_AMS1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAHnRFWHRUaXRsZQBTZWxlY3RU
+        b29sO0N1cnNvcjtNb3VzZTu4YNDLAAACfUlEQVQ4T22SSUyTQRiGpwQICIgY40mj8WLixXjgAvGgpmKC
+        ICJQlopFsEBFZCkgFpBWGxMWgYpgLbgDWoyQqMQ1AbVRoiLKEkRIATcoiluix9fvK+qBzCRPZv5v3nlm
+        JvMLAP+h5lXf1GGm3odQFBibhN5oE/py4ghzRuQzZVbOzq9ZIPBtPH8TmflVlTwmFHkUdlN6WuQSOSVW
+        opGzUoGfxdaJ610O7MupqKJvt2R8alb8I/twvcguruesVOBffaods3M/ce3GI6QeMLNkEUESlxibdIms
+        IovYX2jhrFxwvLYVri8/4PzwGfbOHmh0pmqq+xEKFmTqa9xwkwkCTJUX8Gn2O16PvMPYlAsX2+9DrS07
+        QXMs8dDmVgmGm0yw2GBuxseZb+gbmsSTl2N4PjiBc1fuIGGvgbf1JzxSsys4KxcUlVvxfnoOj1+M4p5j
+        yM2zASeaW24jLrmwljIBhAeHZYLArIIa0F1x1zGI7t4ROsVbjE7M4I1zGrZLXYhOyq+jnFsiEyzR6MwU
+        nkHvq3E8cAygraMbuzOOQp1uIoxI0pqwS13Id/CSCYI4yLvVWe0oNlrRPzyJFN2x3ytWrd1A88t4E4L/
+        D+kJghLTylHbeBUhm1W2mOSi8Z6ng6husGPbzgwTzfvEaQwido+Bs/NrFgiWqFJKEbIlvoHGy5URacbK
+        k214SJKoRL2TaksJRbT6EGelAt/tcQf5zQMJz5Wr161RpZT86hueQJ7BgpBNsfFU945KKOCsVMDP4/23
+        VxD+YTvS7Wdbu9B0+RaUkdoWqvlGqPKokwtEJNk3KjVuqHmuD94aGh6T8zUsStcfHBqppJpXeEwuz9Ea
+        iD9wcuYrJ4J4cAAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

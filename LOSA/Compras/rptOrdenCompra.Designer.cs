@@ -19,7 +19,6 @@ namespace LOSA.Compras
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.lblEstado = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -55,6 +54,7 @@ namespace LOSA.Compras
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.lblEstado = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
@@ -139,26 +139,12 @@ namespace LOSA.Compras
             this.ReportHeader.HeightF = 274.2917F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // lblEstado
-            // 
-            this.lblEstado.Angle = 50F;
-            this.lblEstado.Font = new DevExpress.Drawing.DXFont("Agency FB", 14F);
-            this.lblEstado.LocationFloat = new DevExpress.Utils.PointFloat(197.0913F, 9.999974F);
-            this.lblEstado.Multiline = true;
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblEstado.SizeF = new System.Drawing.SizeF(364.7836F, 132.3518F);
-            this.lblEstado.StylePriority.UseFont = false;
-            this.lblEstado.StylePriority.UseTextAlignment = false;
-            this.lblEstado.Text = "lblEstado";
-            this.lblEstado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // xrTable1
             // 
             this.xrTable1.BackColor = System.Drawing.Color.Gray;
             this.xrTable1.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable1.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 257.2917F);
@@ -547,6 +533,20 @@ namespace LOSA.Compras
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(132.3101F, 132.3101F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
+            // lblEstado
+            // 
+            this.lblEstado.Angle = 50F;
+            this.lblEstado.Font = new DevExpress.Drawing.DXFont("Agency FB", 14F);
+            this.lblEstado.LocationFloat = new DevExpress.Utils.PointFloat(197.0913F, 9.999974F);
+            this.lblEstado.Multiline = true;
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblEstado.SizeF = new System.Drawing.SizeF(364.7836F, 132.3518F);
+            this.lblEstado.StylePriority.UseFont = false;
+            this.lblEstado.StylePriority.UseTextAlignment = false;
+            this.lblEstado.Text = "lblEstado";
+            this.lblEstado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // DetailReport
             // 
             this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -587,7 +587,7 @@ namespace LOSA.Compras
             // 
             // xrTableCell3
             // 
-            this.xrTableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.xrTableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[oc_detalle_rpt].[cantidad]")});
@@ -675,6 +675,7 @@ namespace LOSA.Compras
             this.lblDescuento.Summary = xrSummary1;
             this.lblDescuento.Text = "0.00";
             this.lblDescuento.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblDescuento.TextFormatString = "{0:0.00}";
             // 
             // xrLabel13
             // 
@@ -701,6 +702,7 @@ namespace LOSA.Compras
             this.lblGastosAdicionales.Summary = xrSummary2;
             this.lblGastosAdicionales.Text = "0.00";
             this.lblGastosAdicionales.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblGastosAdicionales.TextFormatString = "{0:0.00}";
             // 
             // xrLabel11
             // 
@@ -776,7 +778,7 @@ namespace LOSA.Compras
             this.lblSub.Summary = xrSummary4;
             this.lblSub.Text = "0.00";
             this.lblSub.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblSub.TextFormatString = "{0:L.0.00}";
+            this.lblSub.TextFormatString = "{0:0.00}";
             // 
             // lblTotal
             // 
@@ -791,6 +793,7 @@ namespace LOSA.Compras
             this.lblTotal.Summary = xrSummary5;
             this.lblTotal.Text = "0.00";
             this.lblTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblTotal.TextFormatString = "{0:0.00}";
             // 
             // xrLabel32
             // 
@@ -835,6 +838,7 @@ namespace LOSA.Compras
             this.lblIsv15.Summary = xrSummary6;
             this.lblIsv15.Text = "0.00";
             this.lblIsv15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblIsv15.TextFormatString = "{0:0.00}";
             // 
             // xrLabel35
             // 

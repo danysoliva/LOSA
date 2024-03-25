@@ -515,7 +515,7 @@
             this.cmdRefresh.Appearance.Options.UseBackColor = true;
             this.cmdRefresh.Appearance.Options.UseFont = true;
             this.cmdRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRefreshDisponibles.ImageOptions.Image")));
+            this.cmdRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRefresh.ImageOptions.Image")));
             this.cmdRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.cmdRefresh.Location = new System.Drawing.Point(331, 35);
             this.cmdRefresh.Name = "cmdRefresh";

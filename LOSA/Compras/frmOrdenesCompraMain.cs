@@ -281,9 +281,10 @@ namespace LOSA.Compras
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtCodProv.Text = frm.ItemSeleccionado.ItemCode;
-                txtProveedor.Text = frm.ItemSeleccionado.ItemName;
+               
                 Proveedor prov = new Proveedor();
                 prov.RecuperarRegistroWithRTN(frm.ItemSeleccionado.ItemCode);
+                txtProveedor.Text = prov.Nombre;
                 direccion = prov.Direccion;
                 txtDireccion.Text = direccion;
                 txtContactoPerson.Text = prov.ContactName;
@@ -1315,6 +1316,58 @@ namespace LOSA.Compras
                 }
             }
 
+            
+            //Consolidados de Saldos por Capitulo y Rubro
+            //if (TsExoOIsv.IsOn)
+            //{
+            //    dsCompras1.SaldosMemoria.Clear();
+            //    bool PrimeraIteracion = true;
+            //    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //    {
+            //        foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria.Rows)
+            //        {
+            //            PrimeraIteracion = false;
+
+            //            if (item.capitulo == rowMemoria.capitulo)
+            //            {
+            //                if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //                {
+            //                    rowMemoria.total = rowMemoria.total + item.total;
+            //                    rowMemoria.cantidad = rowMemoria.cantidad + item.cantidad;
+            //                }
+            //            }
+            //            else
+            //            {
+            //                if (item.partida_arancelaria == rowMemoria.partida_arancelaria)
+            //                {
+            //                    DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //                    drow[0] = item.capitulo;
+            //                    drow[1] = item.partida_arancelaria;
+            //                    drow[2] = item.cantidad;
+            //                    drow[3] = item.total;
+
+            //                    dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //                    dsCompras1.SaldosMemoria.AcceptChanges();
+            //                }
+            //            }
+
+            //        }
+
+            //        if (PrimeraIteracion)
+            //        {
+            //            DataRow drow = dsCompras1.SaldosMemoria.NewRow();
+            //            drow[0] = item.capitulo;
+            //            drow[1] = item.partida_arancelaria;
+            //            drow[2] = item.cantidad;
+            //            drow[3] = item.total;
+
+            //            dsCompras1.SaldosMemoria.Rows.Add(drow);
+            //            dsCompras1.SaldosMemoria.AcceptChanges();
+            //        }
+            //    }
+            //}
+
+
 
             bool PermitirGuardar = false;
 
@@ -2052,17 +2105,17 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -2742,9 +2795,9 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(336, 22);
@@ -3148,7 +3201,7 @@ namespace LOSA.Compras
             // colcantidad
             // 
             this.colcantidad.Caption = "Cantidad";
-            this.colcantidad.DisplayFormat.FormatString = "n4";
+            this.colcantidad.DisplayFormat.FormatString = "n6";
             this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
@@ -3159,7 +3212,7 @@ namespace LOSA.Compras
             // colprecio_por_unidad
             // 
             this.colprecio_por_unidad.Caption = "Precio por Ud.";
-            this.colprecio_por_unidad.DisplayFormat.FormatString = "n4";
+            this.colprecio_por_unidad.DisplayFormat.FormatString = "n6";
             this.colprecio_por_unidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colprecio_por_unidad.FieldName = "precio_por_unidad";
             this.colprecio_por_unidad.Name = "colprecio_por_unidad";
@@ -3311,6 +3364,8 @@ namespace LOSA.Compras
             this.colisv.FieldName = "isv";
             this.colisv.Name = "colisv";
             this.colisv.OptionsColumn.ReadOnly = true;
+            this.colisv.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "isv", "SUMA={0:##,###,##0.##}")});
             this.colisv.Visible = true;
             this.colisv.VisibleIndex = 6;
             this.colisv.Width = 78;
@@ -3328,9 +3383,9 @@ namespace LOSA.Compras
             // ButtonDeleteRow
             // 
             this.ButtonDeleteRow.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.ButtonDeleteRow.Name = "ButtonDeleteRow";
             this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);

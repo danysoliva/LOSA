@@ -32,11 +32,11 @@ namespace AMS.Compras.ControlInv
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmpickItems));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btncerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -46,7 +46,7 @@ namespace AMS.Compras.ControlInv
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsControlInv_AMS1 = new dsControlInv_AMS();
+            this.dsControlInv_AMS1 = new LOSA.FromAMS.dsControlInv_AMS();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,49 +119,49 @@ namespace AMS.Compras.ControlInv
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1142, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1142, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 772);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 775);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1142, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1142, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 730);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 735);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1142, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1142, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 730);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 735);
             // 
             // grd_data
             // 
             this.grd_data.DataMember = "items";
             this.grd_data.DataSource = this.dsControlInv_AMS1;
             this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_data.Location = new System.Drawing.Point(0, 42);
+            this.grd_data.Location = new System.Drawing.Point(0, 40);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.MenuManager = this.barManager1;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.grd_data.Size = new System.Drawing.Size(1142, 730);
+            this.grd_data.Size = new System.Drawing.Size(1142, 735);
             this.grd_data.TabIndex = 4;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // dsControlInv
+            // dsControlInv_AMS1
             // 
             this.dsControlInv_AMS1.DataSetName = "dsControlInv_AMS";
             this.dsControlInv_AMS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -235,9 +235,9 @@ namespace AMS.Compras.ControlInv
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            //editorButtonImageOptions2.Image = global::AMS.Properties.Resources.click;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);

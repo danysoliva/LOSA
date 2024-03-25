@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>656</ApplicationRevision>
+    <ApplicationRevision>658</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -94,10 +94,10 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>KEY_COMPRAS.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Key.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1651CA4A48EE3F2AD3466482F240E5BFE1AD213E</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -1317,6 +1317,7 @@
     <Compile Include="Clases\CMRuta_Aprobacion.cs" />
     <Compile Include="Clases\CM_OrdenCompra_EstadosAprobacion.cs" />
     <Compile Include="Clases\ConversorNumALetras.cs" />
+    <Compile Include="Clases\CuentaContableODOO.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Despacho.cs" />
     <Compile Include="Clases\Destinos_empaques.cs" />
@@ -1354,6 +1355,7 @@
     <Compile Include="Clases\MaterialEmpaque.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
+    <Compile Include="Clases\MoveLineODOO.cs" />
     <Compile Include="Clases\NotificacionesGenerales.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\OrdenesCombustible.cs" />
@@ -1423,6 +1425,12 @@
     </Compile>
     <Compile Include="Compras\frmGestionAprobaciones.Designer.cs">
       <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmKardexSaldosDisponible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmKardexSaldosDisponible.Designer.cs">
+      <DependentUpon>frmKardexSaldosDisponible.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frmListaOrdenesCompra.cs">
       <SubType>Form</SubType>
@@ -3838,11 +3846,29 @@
     <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.Designer.cs">
       <DependentUpon>frmVacacionesHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\SAP\dsDataSetSAP.Designer.cs" />
+    <Compile Include="MigracionACS\SAP\dsDataSetSAP1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDataSetSAP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAP\frmDetallePartida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAP\frmDetallePartida.designer.cs">
+      <DependentUpon>frmDetallePartida.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\SAP\frmLoginSAP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\SAP\frmLoginSAP.designer.cs">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAP\frmPartidasRRHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAP\frmPartidasRRHH.designer.cs">
+      <DependentUpon>frmPartidasRRHH.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\SAR\dS_SAR.cs">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
@@ -4789,6 +4815,7 @@
     <None Include="FromAMS\dsControlInv_AMS.xss">
       <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>
     </None>
+    <None Include="Key.pfx" />
     <None Include="KEY_COMPRAS.pfx" />
     <None Include="Liquidos\dsLiquidos_.xsc">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
@@ -5357,6 +5384,17 @@
     </None>
     <None Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.xss">
       <DependentUpon>dsReportesVacaciones.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\SAP\dsDataSetSAP.xsc">
+      <DependentUpon>dsDataSetSAP.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\SAP\dsDataSetSAP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDataSetSAP1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\SAP\dsDataSetSAP.xss">
+      <DependentUpon>dsDataSetSAP.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\SAR\dS_SAR.xsc">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
@@ -7276,6 +7314,9 @@
     <EmbeddedResource Include="Compras\frmGestionAprobaciones.resx">
       <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmKardexSaldosDisponible.resx">
+      <DependentUpon>frmKardexSaldosDisponible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmListaOrdenesCompra.resx">
       <DependentUpon>frmListaOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -8310,8 +8351,14 @@
     <EmbeddedResource Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.resx">
       <DependentUpon>frmVacacionesHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAP\frmDetallePartida.resx">
+      <DependentUpon>frmDetallePartida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAP\frmPartidasRRHH.resx">
+      <DependentUpon>frmPartidasRRHH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAR\frmPickArticulo.resx">
       <DependentUpon>frmPickArticulo.cs</DependentUpon>
@@ -9836,7 +9883,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
