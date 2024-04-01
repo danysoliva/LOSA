@@ -457,6 +457,7 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navOrdenCompra = new DevExpress.XtraNavBar.NavBarItem();
             this.nbarAprobacionOrdenesCompra = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarKardexSaldo = new DevExpress.XtraNavBar.NavBarItem();
             this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
@@ -490,7 +491,7 @@
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarKardexSaldo = new DevExpress.XtraNavBar.NavBarItem();
+            this.simpleButton76 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -5641,6 +5642,7 @@
             // 
             // TabContabilidad
             // 
+            this.TabContabilidad.Controls.Add(this.simpleButton76);
             this.TabContabilidad.Controls.Add(this.btnSolicitudDespachoConta);
             this.TabContabilidad.Controls.Add(this.btn_ExoneracionAQ);
             this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
@@ -6675,6 +6677,19 @@
             this.nbarAprobacionOrdenesCompra.Name = "nbarAprobacionOrdenesCompra";
             this.nbarAprobacionOrdenesCompra.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbarAprobacionOrdenesCompra_LinkClicked);
             // 
+            // navBarKardexSaldo
+            // 
+            this.navBarKardexSaldo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.Appearance.Options.UseFont = true;
+            this.navBarKardexSaldo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarKardexSaldo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.AppearancePressed.Options.UseFont = true;
+            this.navBarKardexSaldo.Caption = "Saldo Disponible";
+            this.navBarKardexSaldo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarKardexSaldo.ImageOptions.SvgImage")));
+            this.navBarKardexSaldo.Name = "navBarKardexSaldo";
+            this.navBarKardexSaldo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarKardexSaldo_LinkClicked);
+            // 
             // navListaOC
             // 
             this.navListaOC.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
@@ -7075,18 +7090,20 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // navBarKardexSaldo
+            // simpleButton76
             // 
-            this.navBarKardexSaldo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.Appearance.Options.UseFont = true;
-            this.navBarKardexSaldo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarKardexSaldo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.AppearancePressed.Options.UseFont = true;
-            this.navBarKardexSaldo.Caption = "Saldo Disponible";
-            this.navBarKardexSaldo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarKardexSaldo.ImageOptions.SvgImage")));
-            this.navBarKardexSaldo.Name = "navBarKardexSaldo";
-            this.navBarKardexSaldo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarKardexSaldo_LinkClicked);
+            this.simpleButton76.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.simpleButton76.Appearance.Options.UseFont = true;
+            this.simpleButton76.Appearance.Options.UseTextOptions = true;
+            this.simpleButton76.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton76.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton76.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton76.ImageOptions.Image")));
+            this.simpleButton76.Location = new System.Drawing.Point(643, 198);
+            this.simpleButton76.Name = "simpleButton76";
+            this.simpleButton76.Size = new System.Drawing.Size(182, 56);
+            this.simpleButton76.TabIndex = 56;
+            this.simpleButton76.Text = "Partidas RRHH";
+            this.simpleButton76.Click += new System.EventHandler(this.simpleButton76_Click);
             // 
             // frmOpciones
             // 
@@ -7605,5 +7622,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton74;
         private DevExpress.XtraEditors.SimpleButton simpleButton75;
         private DevExpress.XtraNavBar.NavBarItem navBarKardexSaldo;
+        private DevExpress.XtraEditors.SimpleButton simpleButton76;
     }
 }

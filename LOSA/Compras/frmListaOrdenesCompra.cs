@@ -104,7 +104,9 @@ namespace LOSA.Compras
 
         private void repostPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridView = (GridView)gridControl1.FocusedView;
+            //var gridView = (GridView)gridControl1.FocusedView;
+            var gridView = (GridView)grdAutorizadas.FocusedView;
+            
             var row = (dsCompras.ordenes_autorizadasRow)gridView.GetFocusedDataRow();
 
             if (string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas

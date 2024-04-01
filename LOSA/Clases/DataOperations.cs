@@ -562,6 +562,33 @@ namespace ACS.Classes
             }
         }
 
+        public SAPbobsCOM.Company CompanyMake(string puser, string ppass)
+        {
+            //SAPbobsCOM.Company oCmp;
+            //oCmp = new SAPbobsCOM.Company();
+            //oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            //oCmp.LicenseServer = "10.50.11.31";
+            //oCmp.Server = "10.50.11.31";
+            //oCmp.CompanyDB = "aqua_planillas";
+            //oCmp.UserName = "manager";
+            //oCmp.Password = "Aquaf33d22";
+            SAPbobsCOM.Company oCmp;
+            oCmp = new SAPbobsCOM.Company();
+            oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            oCmp.LicenseServer = Globals.ServerlicenseSDK;
+            oCmp.Server = Globals.ServerSDK;
+            oCmp.CompanyDB = Globals.ActiveDBSDK;
+            oCmp.UserName = puser;
+            oCmp.Password = ppass;
+
+            int result = oCmp.Connect();
+            if (result != 0)
+                //CajaDialogo.Information("Conexion exitosa a " + oCmp.CompanyName);
+                //else
+                CajaDialogo.Error("No se pudo realizar la coneccion al server de SAP. Error en el objeto company. Error: " + oCmp.GetLastErrorDescription());
+
+            return oCmp;
+        }
 
         public DataTable ACS_Exec_SP_Get_Data(string Procedure_Name, SqlCommand command)
         {

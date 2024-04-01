@@ -8,6 +8,7 @@ using LOSA.ACS;
 using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.Compras;
+using DevExpress.CodeParser;
 
 namespace LOSA.Compras
 {
@@ -75,7 +76,7 @@ namespace LOSA.Compras
                     break;
             }
 
-            lblTotal.Text = (SimboloMoneda + oc.DocTotal).ToString();
+            lblTotal.Text = (SimboloMoneda + string.Format("{0:###,##0.00}", oc.DocTotal)); //oc.DocTotal).ToString();
             lblIsv15.Text = (SimboloMoneda + oc.ISV).ToString();
             lblSub.Text = (SimboloMoneda + (oc.DocTotal - oc.ISV)).ToString();
             CargarDetalleOrdenCompra();
