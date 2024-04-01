@@ -87,6 +87,7 @@ using LOSA.Compras;
 using AMS.Compras.ControlInv;
 using System.ComponentModel;
 using LOSA.FromAMS;
+using LOSA.MigracionACS.SAP;
 
 namespace LOSA
 {
@@ -5386,6 +5387,13 @@ namespace LOSA
         {
             frmKardexSaldosDisponible frm = new frmKardexSaldosDisponible();
             frm.Show();
+        }
+
+        private void simpleButton76_Click(object sender, EventArgs e)
+        {
+            frmPartidasRRHH fmr = new frmPartidasRRHH(this.UsuarioLogeado);
+            fmr.MdiParent = this.MdiParent;
+            fmr.Show();
         }
     }
 }
