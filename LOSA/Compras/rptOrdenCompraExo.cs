@@ -56,6 +56,7 @@ namespace LOSA.Compras
             lblMoneda.Text = oc.DocCur;
             lblReferencia.Text = oc.NumAtCard;
             lblComentario.Text = oc.Comments;
+            lblAprobadoPor.Text = oc.UserAprobo;
 
             GetExoneracionVigente();
 

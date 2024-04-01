@@ -5219,8 +5219,8 @@ namespace LOSA
         private void navListaOC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmListaOrdenesCompra frm = new frmListaOrdenesCompra();
-            frm.MdiParent = this.MdiParent;
-            frm.ShowDialog();
+            //frm.MdiParent = this;
+            frm.Show();
         }
 
         private void simpleButton24_Click_1(object sender, EventArgs e)
