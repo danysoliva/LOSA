@@ -1493,8 +1493,8 @@ namespace LOSA.Compras
                             row["capitulo"] = item.capitulo;
                             row["partida"] = item.partida_arancelaria;
                             row["tipo"] = 1;//1=SoloCapitulo, 2=Capitulo & Partida
-                            row["monto"] = item.total;
-                            row["unidades"] = item.cantidad;
+                            row["monto_consumo"] = item.total;
+                            row["unidades_consumo"] = item.cantidad;
                             row["monto_disponible"] = SaldoDisponible;
                             row["unidades_disponible"] = 0;
                             MyTable.Rows.Add(row);
@@ -1546,8 +1546,8 @@ namespace LOSA.Compras
                             row["capitulo"] = item.capitulo;
                             row["partida"] = item.partida_arancelaria;
                             row["tipo"] = 2;//1=SoloCapitulo, 2=Capitulo & Partida
-                            row["monto"] = item.total;
-                            row["unidades"] = item.cantidad;
+                            row["monto_consumo"] = item.total;
+                            row["unidades_consumo"] = item.cantidad;
                             row["monto_disponible"] = valor_disponibleForCapitulo[0];
                             row["unidades_disponible"] = valor_disponibleForCapitulo[1];
                             MyTable.Rows.Add(row);
