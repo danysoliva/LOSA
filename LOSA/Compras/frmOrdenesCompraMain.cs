@@ -1334,6 +1334,108 @@ namespace LOSA.Compras
 
             #region VALIDACION DE SALDO: SOLO FUNCIONA LINEA POR LINEA
 
+            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+            //{
+            //    string Capitulo = "";
+            //    string Partida = "";
+            //    decimal SaldoDisponible = 0;
+            //    decimal UnidadesDisponibles = 0;
+
+
+            //    if (item.indicador_impuesto == "EXO")
+            //    {
+            //        if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
+            //        {
+            //            try
+            //            {
+            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //                conn.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@Monto", item.total);
+            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+            //                SqlDataReader dr = cmd.ExecuteReader();
+            //                if (dr.Read())
+            //                {
+            //                    PermitirGuardar = dr.GetBoolean(0);
+            //                    SaldoDisponible = dr.GetDecimal(1);
+            //                    Capitulo = dr.GetString(2);
+            //                }
+            //                dr.Close();
+            //                conn.Close();
+
+            //                if (PermitirGuardar == false)
+            //                {
+            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
+            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                    return;
+            //                }
+
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                CajaDialogo.Error(ex.Message);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            try
+            //            {
+            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            //                conn.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@Monto", item.total);
+            //                cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
+            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
+            //                cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
+            //                SqlDataReader dr = cmd.ExecuteReader();
+            //                if (dr.Read())
+            //                {
+            //                    PermitirGuardar = dr.GetBoolean(0);
+            //                    Capitulo = dr.GetString(1);
+            //                    Partida = dr.GetString(2);
+            //                    SaldoDisponible = dr.GetDecimal(3);
+            //                    UnidadesDisponibles = dr.GetDecimal(4);
+            //                }
+            //                dr.Close();
+            //                conn.Close();
+
+            //                if (PermitirGuardar == false)
+            //                {
+            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
+            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+            //                    frm.ShowDialog();
+            //                    return;
+            //                }
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                CajaDialogo.Error(ex.Message);
+            //            }
+            //        }
+            //    }
+            //}
+
+            #endregion
+
+            DataTable MyTable = new DataTable(); 
+            DataTable MyTableByName = new DataTable("MyTableName"); 
+            MyTable.Columns.Add("capitulo", typeof(string));
+            MyTable.Columns.Add("partida", typeof(string));
+            MyTable.Columns.Add("tipo", typeof(int));//1=SoloCapitulo, 2=Capitulo & Partida
+            MyTable.Columns.Add("monto_disponible", typeof(decimal));
+            MyTable.Columns.Add("unidades_disponible", typeof(decimal));
+
+            MyTable.Columns.Add("monto_consumo", typeof(decimal));
+            MyTable.Columns.Add("unidades_consumo", typeof(decimal));
+
+            //DataRow row = MyTable.NewRow();
+            //row["Id"] = 1;
+            //row["Name"] = "John";
+            //MyTable.Rows.Add(row);
+
+            #region validacion new
             foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
             {
                 string Capitulo = "";
@@ -1341,83 +1443,167 @@ namespace LOSA.Compras
                 decimal SaldoDisponible = 0;
                 decimal UnidadesDisponibles = 0;
 
-
                 if (item.indicador_impuesto == "EXO")
                 {
                     if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
-                    {
-                        try
+                    {//Capitulo y partida
+
+                        //Acumularemos los saldos agrupado por capitulo
+                        
+                        if(MyTable.Rows.Count > 0)
                         {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto", item.total);
-                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
+                            //Validaremos si existe, para sumar el saldo o insertar un nuevo row
+                            bool EncontroRow = false;
+                            foreach(DataRow rowTMP in MyTable.Rows)
                             {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                SaldoDisponible = dr.GetDecimal(1);
-                                Capitulo = dr.GetString(2);
-                            }
-                            dr.Close();
-                            conn.Close();
+                                if (rowTMP["capitulo"].ToString() == item.capitulo && dp.ValidateNumberInt32(rowTMP["tipo"]) == 1)//1=SoloCapitulo, 2=Capitulo & Partida
+                                {
+                                    //Acumularemos el saldo consumido
+                                    decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
+                                    decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
 
-                            if (PermitirGuardar == false)
+                                    rowTMP["monto_consumo"] = MontoActual_ + item.total;
+                                    rowTMP["unidades_consumo"] = CantidadActual_ + item.cantidad;
+                                    //rowT["monto_disponible"] = SaldoDisponible;
+                                    //rowT["unidades_disponible"] = 0;
+                                    
+                                    EncontroRow = true;
+                                    break;
+                                }
+                            }
+                            if(!EncontroRow)//Insertamos un nuevo registro
                             {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                return;
+                                decimal valor_disponibleForCapitulo = GetSaldoCapitulo(item.total, item.capitulo);
+                                DataRow row = MyTable.NewRow();
+                                row["capitulo"] = item.capitulo;
+                                row["partida"] = item.partida_arancelaria;
+                                row["tipo"] = 1;//1=SoloCapitulo, 2=Capitulo & Partida
+                                row["monto_consumo"] = item.total;
+                                row["unidades_consumo"] = item.cantidad;
+                                row["monto_disponible"] = SaldoDisponible;
+                                row["unidades_disponible"] = 0;
+                                MyTable.Rows.Add(row);
                             }
-
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            CajaDialogo.Error(ex.Message);
+                            //Es el primer row para agregar
+                            decimal valor_disponibleForCapitulo = GetSaldoCapitulo(item.total, item.capitulo);
+                            DataRow row = MyTable.NewRow();
+                            row["capitulo"] = item.capitulo;
+                            row["partida"] = item.partida_arancelaria;
+                            row["tipo"] = 1;//1=SoloCapitulo, 2=Capitulo & Partida
+                            row["monto"] = item.total;
+                            row["unidades"] = item.cantidad;
+                            row["monto_disponible"] = SaldoDisponible;
+                            row["unidades_disponible"] = 0;
+                            MyTable.Rows.Add(row);
                         }
                     }
                     else
                     {
-                        try
+                        //Acumularemos los saldos agrupado por capitulo y partida
+                        if (MyTable.Rows.Count > 0)
                         {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@Monto", item.total);
-                            cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
-                            cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-                            cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
+                            //Validaremos si existe, para sumar el saldo o insertar un nuevo row
+                            bool EncontroRow = false;
+                            foreach (DataRow rowTMP in MyTable.Rows)
                             {
-                                PermitirGuardar = dr.GetBoolean(0);
-                                Capitulo = dr.GetString(1);
-                                Partida = dr.GetString(2);
-                                SaldoDisponible = dr.GetDecimal(3);
-                                UnidadesDisponibles = dr.GetDecimal(4);
-                            }
-                            dr.Close();
-                            conn.Close();
+                                if (rowTMP["capitulo"].ToString() == item.capitulo 
+                                    && dp.ValidateNumberInt32(rowTMP["tipo"]) == 2)//1=SoloCapitulo, 2=Capitulo & Partida
+                                {
+                                    //Acumularemos el saldo consumido
+                                    decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
+                                    decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
 
-                            if (PermitirGuardar == false)
+                                    rowTMP["monto_consumo"] = MontoActual_ + item.total;
+                                    rowTMP["unidades_consumo"] = CantidadActual_ + item.cantidad;
+
+                                    EncontroRow = true;
+                                    break;
+                                }
+                            }
+                            if (!EncontroRow)//Insertamos un nuevo registro
                             {
-                                string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
-                                frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                                frm.ShowDialog();
-                                return;
+                                decimal[] valor_disponibleForCapitulo = GetSaldoCapituloPartida(item.total, item.cantidad, item.capitulo, item.partida_arancelaria);
+
+                                DataRow row = MyTable.NewRow();
+                                row["capitulo"] = item.capitulo;
+                                row["partida"] = item.partida_arancelaria;
+                                row["tipo"] = 2;//1=SoloCapitulo, 2=Capitulo & Partida
+                                row["monto_consumo"] = item.total;
+                                row["unidades_consumo"] = item.cantidad;
+                                row["monto_disponible"] = valor_disponibleForCapitulo[0];
+                                row["unidades_disponible"] = valor_disponibleForCapitulo[1];
+                                MyTable.Rows.Add(row);
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            CajaDialogo.Error(ex.Message);
+                            //Es el primer row para agregar
+                            decimal[] valor_disponibleForCapitulo = GetSaldoCapituloPartida(item.total, item.cantidad, item.capitulo, item.partida_arancelaria);
+                            DataRow row = MyTable.NewRow();
+                            row["capitulo"] = item.capitulo;
+                            row["partida"] = item.partida_arancelaria;
+                            row["tipo"] = 2;//1=SoloCapitulo, 2=Capitulo & Partida
+                            row["monto"] = item.total;
+                            row["unidades"] = item.cantidad;
+                            row["monto_disponible"] = valor_disponibleForCapitulo[0];
+                            row["unidades_disponible"] = valor_disponibleForCapitulo[1];
+                            MyTable.Rows.Add(row);
                         }
                     }
                 }
             }
-
             #endregion
+
+
+
+            //VALIDACION de saldos total
+            bool LineaExcedeSaldo = false;
+            foreach (DataRow rowTMP in MyTable.Rows)
+            {
+                if (dp.ValidateNumberInt32(rowTMP["tipo"]) == 1)//1=SoloCapitulo, 2=Capitulo & Partida
+                {
+                    decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
+                    //decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
+                    decimal MontoDisponible_ = dp.ValidateNumberDecimal(rowTMP["monto_disponible"]);
+                    //decimal CantidadDisponible_ = dp.ValidateNumberDecimal(rowTMP["unidades_disponible"]);
+                    if ((MontoActual_ > MontoDisponible_))
+                    {
+                        LineaExcedeSaldo = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
+                    decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
+                    decimal MontoDisponible_ = dp.ValidateNumberDecimal(rowTMP["monto_disponible"]);
+                    decimal CantidadDisponible_ = dp.ValidateNumberDecimal(rowTMP["unidades_disponible"]);
+                    
+                    if (MontoActual_ > MontoDisponible_ || CantidadActual_ > CantidadDisponible_)
+                    {
+                        LineaExcedeSaldo = true;
+                        break;
+                    }
+                }
+            }
+
+            if (LineaExcedeSaldo)
+            {
+                CajaDialogo.Error("Hay una linea en la orden de compra que excede el valor de saldo disponible para exonerar!");
+                return;
+            }
+
+
+
+
+
+
+
+
+
 
 
             //switch (tipooperacion)
@@ -1629,6 +1815,70 @@ namespace LOSA.Compras
             //        CajaDialogo.Error("No se pudo definir una Operacion de Tipo(INSERT-UPDATE)");
             //        break;
             //}
+
+        }
+
+        decimal[] GetSaldoCapituloPartida(decimal pTotal, decimal pCantidad, string pCapitulo, string pPartida)
+        {
+            decimal[] SaldoDisponible = { 0, 0};
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Monto", pTotal);
+                cmd.Parameters.AddWithValue("@Unidades", pCantidad);
+                cmd.Parameters.AddWithValue("@Capitulo", pCapitulo);
+                cmd.Parameters.AddWithValue("@PartidaArancelaria", pPartida);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    //PermitirGuardar = dr.GetBoolean(0);
+                    //Capitulo = dr.GetString(1);
+                    //Partida = dr.GetString(2);
+                    SaldoDisponible[0] = dr.GetDecimal(3);
+                    //UnidadesDisponibles = dr.GetDecimal(4);
+                    SaldoDisponible[1] = dr.GetDecimal(4);
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            return SaldoDisponible;
+        }
+
+
+        decimal GetSaldoCapitulo(decimal pMontoConsumido, string pCapitulo)
+        {
+            decimal SaldoDisponible=0;
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Monto", pMontoConsumido);//Valor a consumir
+                cmd.Parameters.AddWithValue("@Capitulo", pCapitulo);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    //PermitirGuardar = dr.GetBoolean(0);
+                    SaldoDisponible = dr.GetDecimal(1);
+                    //Capitulo = dr.GetString(2);
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            return SaldoDisponible;
         }
 
         private void ConsolidacionSaldos(string capitulo, string partida_arancelaria, decimal cantidad, decimal total)
