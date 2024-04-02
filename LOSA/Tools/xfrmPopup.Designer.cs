@@ -323,7 +323,7 @@ namespace LOSA.Tools
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -332,7 +332,7 @@ namespace LOSA.Tools
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(145, 42);
             this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Borrar Todas";
+            this.simpleButton1.Text = "Borrar Todas\r\ny cerrar\r\n";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // xfrmPopup

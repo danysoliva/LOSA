@@ -213,6 +213,8 @@ namespace LOSA.Tools
                         CajaDialogo.Error(ex.Message);
                     }
                 }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }
