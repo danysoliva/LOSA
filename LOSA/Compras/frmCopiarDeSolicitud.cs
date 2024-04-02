@@ -21,16 +21,37 @@ namespace LOSA.Compras
         DataOperations dp = new DataOperations();
         public int IdSolicitudSeleccionado = 0;
 
-        public frmCopiarDeSolicitud()
+        public enum TipoDocumento
+        { 
+            SolicitudCompra = 1,
+            OrdenCompra = 2
+        }
+
+        TipoDocumento tipoDoc;
+
+        public frmCopiarDeSolicitud(frmCopiarDeSolicitud.TipoDocumento tipo)
         {
             InitializeComponent();
+            tipoDoc = tipo;
 
             dp = new DataOperations();
             dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-30);
 
             dtFechaHastaDisponibles.DateTime = dp.Now().AddDays(1);
 
-            CargarSolicitudes();
+            switch (tipoDoc)
+            {
+                case TipoDocumento.SolicitudCompra:
+                    CargarSolicitudes();
+                    break;
+                case TipoDocumento.OrdenCompra:
+                    break;
+                default:
+                    break;
+            }
+            
+
+
 
         }
 

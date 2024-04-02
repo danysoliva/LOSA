@@ -351,7 +351,7 @@ namespace LOSA.Compras
             {
                 case TipoOperacion.New:
 
-                    frmCopiarDeSolicitud frm = new frmCopiarDeSolicitud();
+                    frmCopiarDeSolicitud frm = new frmCopiarDeSolicitud(frmCopiarDeSolicitud.TipoDocumento.SolicitudCompra);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         IdSolicitud = frm.IdSolicitudSeleccionado;

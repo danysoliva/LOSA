@@ -319,7 +319,7 @@ namespace LOSA.AlmacenesExterno
                 cmd.Parameters.Add("@id_bodega", SqlDbType.Int).Value = 0;
                 cmd.Parameters.Add("@peso", SqlDbType.Decimal).Value = totalPeso;
                 cmd.Parameters.Add("@cardcode", SqlDbType.VarChar).Value = oc_h.CodProv;
-                cmd.Parameters.Add("@fecha_ingreso", SqlDbType.DateTime).Value = DateTime.Now;
+                cmd.Parameters.Add("@fecha_ingreso", SqlDbType.DateTime).Value = dp.Now();
                 cmd.Parameters.Add("@id_user_creador", SqlDbType.Int).Value = UsuarioLogueado.Id;
                 //cmd.Parameters.Add("@id_user_creador", SqlDbType.Int).Value = 1104;
                 cmd.Parameters.Add("@enable", SqlDbType.Bit).Value = 1;
@@ -391,7 +391,7 @@ namespace LOSA.AlmacenesExterno
                             cmd3.Parameters.AddWithValue("@fecha_produccion", item2.fecha_produccion);
                             cmd3.Parameters.AddWithValue("@id_presentacion",item.id_presentacion);
                             cmd3.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
-                            cmd3.Parameters.AddWithValue("@id_mp",item.bodega);
+                            cmd3.Parameters.AddWithValue("@id_mp",item.id_mp);
                             cmd3.Parameters.AddWithValue("@bodega",item.bodega);
                             cmd3.ExecuteNonQuery();
                         }
