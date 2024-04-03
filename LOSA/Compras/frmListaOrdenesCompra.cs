@@ -109,7 +109,7 @@ namespace LOSA.Compras
             
             var row = (dsCompras.ordenes_autorizadasRow)gridView.GetFocusedDataRow();
 
-            if (string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas
+            if (!string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || !string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas
             {
                 rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;

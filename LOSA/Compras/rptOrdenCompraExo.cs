@@ -336,6 +336,7 @@ namespace LOSA.Compras
             this.lblTotal.Summary = xrSummary1;
             this.lblTotal.Text = "0.00";
             this.lblTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblTotal.TextFormatString = "{0:N}";
             // 
             // xrLabel4
             // 
@@ -485,7 +486,7 @@ namespace LOSA.Compras
             this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 10.00001F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(132.3101F, 132.3101F);
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(132.3452F, 132.3452F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
             // xrLabel1
@@ -913,7 +914,7 @@ namespace LOSA.Compras
             this.xrTableCell3.StylePriority.UseBorders = false;
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.Text = "xrTableCell3";
-            this.xrTableCell3.TextFormatString = "{0:n0}";
+            this.xrTableCell3.TextFormatString = "{0:n}";
             this.xrTableCell3.Weight = 0.5655493094075329D;
             // 
             // xrTableCell7
@@ -968,7 +969,7 @@ namespace LOSA.Compras
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "xrTableCell11";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.xrTableCell11.TextFormatString = "{0:n2}";
+            this.xrTableCell11.TextFormatString = "{0:n}";
             this.xrTableCell11.Weight = 0.95663160218035426D;
             // 
             // xrTableCell8
@@ -984,7 +985,7 @@ namespace LOSA.Compras
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
             this.xrTableCell8.Text = "xrTableCell8";
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.xrTableCell8.TextFormatString = "{0:n2}";
+            this.xrTableCell8.TextFormatString = "{0:n}";
             this.xrTableCell8.Weight = 1.0145196027203232D;
             // 
             // dsCompras1

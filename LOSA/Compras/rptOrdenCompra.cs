@@ -76,9 +76,10 @@ namespace LOSA.Compras
                     break;
             }
 
-            lblTotal.Text = (SimboloMoneda + string.Format("{0:###,##0.00}", oc.DocTotal)); //oc.DocTotal).ToString();
-            lblIsv15.Text = (SimboloMoneda + oc.ISV).ToString();
-            lblSub.Text = (SimboloMoneda + (oc.DocTotal - oc.ISV)).ToString();
+            //lblTotal.Text = (SimboloMoneda + string.Format("{0:###,##0.00}", oc.DocTotal));
+            lblTotal.Text = (SimboloMoneda + string.Format("{0:#,###,##0.00}", oc.DocTotal));
+            lblIsv15.Text = (SimboloMoneda + string.Format("{0:#,###,##0.00}", oc.ISV)).ToString();
+            lblSub.Text = (SimboloMoneda + string.Format("{0:#,###,##0.00}", (oc.DocTotal - oc.ISV))).ToString();
             CargarDetalleOrdenCompra();
 
             

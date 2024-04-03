@@ -1332,93 +1332,7 @@ namespace LOSA.Compras
 
             bool PermitirGuardar = false;
 
-            #region VALIDACION DE SALDO: SOLO FUNCIONA LINEA POR LINEA
-
-            //foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
-            //{
-            //    string Capitulo = "";
-            //    string Partida = "";
-            //    decimal SaldoDisponible = 0;
-            //    decimal UnidadesDisponibles = 0;
-
-
-            //    if (item.indicador_impuesto == "EXO")
-            //    {
-            //        if (string.IsNullOrEmpty(item.partida_arancelaria) || string.IsNullOrWhiteSpace(item.partida_arancelaria))
-            //        {
-            //            try
-            //            {
-            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-            //                conn.Open();
-            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo", conn);
-            //                cmd.CommandType = CommandType.StoredProcedure;
-            //                cmd.Parameters.AddWithValue("@Monto", item.total);
-            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-            //                SqlDataReader dr = cmd.ExecuteReader();
-            //                if (dr.Read())
-            //                {
-            //                    PermitirGuardar = dr.GetBoolean(0);
-            //                    SaldoDisponible = dr.GetDecimal(1);
-            //                    Capitulo = dr.GetString(2);
-            //                }
-            //                dr.Close();
-            //                conn.Close();
-
-            //                if (PermitirGuardar == false)
-            //                {
-            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n";
-            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-            //                    return;
-            //                }
-
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                CajaDialogo.Error(ex.Message);
-            //            }
-            //        }
-            //        else
-            //        {
-            //            try
-            //            {
-            //                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-            //                conn.Open();
-            //                SqlCommand cmd = new SqlCommand("sp_CM_validacion_saldos_por_capitulo_y_partida", conn);
-            //                cmd.CommandType = CommandType.StoredProcedure;
-            //                cmd.Parameters.AddWithValue("@Monto", item.total);
-            //                cmd.Parameters.AddWithValue("@Unidades", item.cantidad);
-            //                cmd.Parameters.AddWithValue("@Capitulo", item.capitulo);
-            //                cmd.Parameters.AddWithValue("@PartidaArancelaria", item.partida_arancelaria);
-            //                SqlDataReader dr = cmd.ExecuteReader();
-            //                if (dr.Read())
-            //                {
-            //                    PermitirGuardar = dr.GetBoolean(0);
-            //                    Capitulo = dr.GetString(1);
-            //                    Partida = dr.GetString(2);
-            //                    SaldoDisponible = dr.GetDecimal(3);
-            //                    UnidadesDisponibles = dr.GetDecimal(4);
-            //                }
-            //                dr.Close();
-            //                conn.Close();
-
-            //                if (PermitirGuardar == false)
-            //                {
-            //                    string mensaje = "No hay suficiente Saldo Disponible en el Capitulo: " + Capitulo + " con la Partida Arancelaria #: " + Partida + "\n Saldo Disponible para Exoneracion: " + SaldoDisponible + "\n Unidades Disponibles para Exoneracion: " + UnidadesDisponibles;
-            //                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-            //                    frm.ShowDialog();
-            //                    return;
-            //                }
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                CajaDialogo.Error(ex.Message);
-            //            }
-            //        }
-            //    }
-            //}
-
-            #endregion
-
+    
             DataTable MyTable = new DataTable(); 
             DataTable MyTableByName = new DataTable("MyTableName"); 
             MyTable.Columns.Add("capitulo", typeof(string));
@@ -1557,10 +1471,11 @@ namespace LOSA.Compras
             }
             #endregion
 
-
-
             //VALIDACION de saldos total
             bool LineaExcedeSaldo = false;
+            string ValiCapitulo = string.Empty;
+            string ValiPartida = string.Empty;
+            int Tipo = 0;
             foreach (DataRow rowTMP in MyTable.Rows)
             {
                 if (dp.ValidateNumberInt32(rowTMP["tipo"]) == 1)//1=SoloCapitulo, 2=Capitulo & Partida
@@ -1571,6 +1486,8 @@ namespace LOSA.Compras
                     //decimal CantidadDisponible_ = dp.ValidateNumberDecimal(rowTMP["unidades_disponible"]);
                     if ((MontoActual_ > MontoDisponible_))
                     {
+                        ValiCapitulo = rowTMP["capitulo"].ToString();
+                        Tipo = 1; //SoloCapitulo
                         LineaExcedeSaldo = true;
                         break;
                     }
@@ -1584,6 +1501,9 @@ namespace LOSA.Compras
                     
                     if (MontoActual_ > MontoDisponible_ || CantidadActual_ > CantidadDisponible_)
                     {
+                        ValiCapitulo = rowTMP[0].ToString();
+                        ValiPartida = rowTMP[1].ToString();
+                        Tipo = 2; //Capitulo & Partida
                         LineaExcedeSaldo = true;
                         break;
                     }
@@ -1592,229 +1512,228 @@ namespace LOSA.Compras
 
             if (LineaExcedeSaldo)
             {
-                CajaDialogo.Error("Hay una linea en la orden de compra que excede el valor de saldo disponible para exonerar!");
-                return;
+                if (Tipo == 1) ////SoloCapitulo
+                {
+                    CajaDialogo.Error("Hay una linea en la orden de compra que excede el valor de saldo disponible para exonerar!\nCapitlo: "+ValiCapitulo);
+                    return;
+                }
+                else
+                {
+                    CajaDialogo.Error("Hay una linea en la orden de compra que excede el valor de saldo disponible para exonerar!\nCapitulo: "+ ValiCapitulo +" Partida Arancelaria: " + ValiPartida);
+                    return;
+                }
+                
             }
 
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+                    bool Guardar = false;
+                    SqlTransaction transaction = null;
+
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+
+                    try
+                    {
+                        conn.Open();
+                        transaction = conn.BeginTransaction("Transaction Order");
+
+                        SqlCommand cmd = conn.CreateCommand();
+                        cmd.CommandText = "[sp_CM_insert_ordencompra_h_v2]";
+                        cmd.Connection = conn;
+                        cmd.Transaction = transaction;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CardCode", txtCodProv.Text.Trim());
+                        cmd.Parameters.AddWithValue("@CardName", txtProveedor.Text);
+                        cmd.Parameters.AddWithValue("@Address", direccion);
+
+                        if (string.IsNullOrWhiteSpace(txtNumAtCard.Text))
+                            cmd.Parameters.AddWithValue("@NumAtCard", "N/D");
+                        else
+                            cmd.Parameters.AddWithValue("@NumAtCard", txtNumAtCard.Text);
+
+                        cmd.Parameters.AddWithValue("@DocDate", dtFechaRegistro.Value);
+                        cmd.Parameters.AddWithValue("@DocDueDate", dtFechaContabilizacion.DateTime.AddDays(15));
+                        cmd.Parameters.AddWithValue("@TaxDate", dtFechaContabilizacion.EditValue);
+                        cmd.Parameters.AddWithValue("@U_TipoOrden", grdTipoOrden.EditValue);
+                        cmd.Parameters.AddWithValue("@U_AquaExoneracion", txtExoneracion.Text);
+                        cmd.Parameters.AddWithValue("@U_FechaExoneracion", dtFechaRegistro.Value);
+                        cmd.Parameters.AddWithValue("@Comments", txtComentarios.Text);
+                        cmd.Parameters.AddWithValue("@ISV", Convert.ToDecimal(txtImpuesto.EditValue));
+                        cmd.Parameters.AddWithValue("@DocTotal", Convert.ToDecimal(txtTotal.EditValue));
+                        cmd.Parameters.AddWithValue("@CurSource", CurSource);//C=BP Currency, L=Local Currency, S=System Currency
+                        cmd.Parameters.AddWithValue("@DocCur", txtMoneda.Text.Trim());
+                        cmd.Parameters.AddWithValue("@DocRate", TasaCambio);
+
+                        if (IdSolicitud == 0)
+                            cmd.Parameters.AddWithValue("@DocNumSolicitud", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@DocNumSolicitud", IdSolicitud);
+
+                        cmd.Parameters.AddWithValue("@posted_in_sap", 0);
+                        cmd.Parameters.AddWithValue("@ContactCode", ContactCode);
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
+                        cmd.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
+                        if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+                            cmd.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
+
+                        int id_header = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada.Rows)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.CommandText = "sp_insert_detalle_orden_compra_SAP";
+                            cmd.Connection = conn;
+                            cmd.Transaction = transaction;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_orden_h", id_header);
+                            cmd.Parameters.AddWithValue("@ItemCode", row.itemcode);
+                            cmd.Parameters.AddWithValue("@Description", row.descripcion_articulo);
+                            if (string.IsNullOrWhiteSpace(row.capitulo))
+                                cmd.Parameters.AddWithValue("@Capitulo_Codigo", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
+                            if (string.IsNullOrWhiteSpace(row.partida_arancelaria))
+                                cmd.Parameters.AddWithValue("@Partida_Arancelaria", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@Partida_Arancelaria", row.partida_arancelaria);
+                            cmd.Parameters.AddWithValue("@Quantity", row.cantidad);
+                            cmd.Parameters.AddWithValue("@Unite_Price", row.precio_por_unidad);
+                            cmd.Parameters.AddWithValue("@Currency", txtMoneda.Text.Trim());
+                            cmd.Parameters.AddWithValue("@DiscPrcnt", 0);
+                            cmd.Parameters.AddWithValue("@TaxCode", row.indicador_impuesto);
+                            cmd.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
+                            cmd.Parameters.AddWithValue("@isv", row.isv);
+                            cmd.Parameters.AddWithValue("@base_ref", row.referencia_base);//Referencia de Solicitud de Compra
+                            cmd.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
+                            cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                        Guardar = true;
+                    }
+                    catch (Exception ec)
+                    {
+                        transaction.Rollback();
+                        CajaDialogo.Error(ec.Message);
+                        Guardar = false;
+                    }
+
+                    if (Guardar)
+                    {
+                        CajaDialogo.Information("Orden de Compra Creada!");
+                        LimpiarControles();
+                    }
 
 
+                    break;
+                case TipoOperacion.Update:
 
+                    SqlTransaction transactionUpdate = null;
 
+                    SqlConnection connUpdate = new SqlConnection(dp.ConnectionStringLOSA);
+                    bool GuardarUpdate = false;
 
+                    try
+                    {
+                        connUpdate.Open();
+                        transactionUpdate = connUpdate.BeginTransaction("Transaction Order");
+                        SqlCommand cmdUpdate = connUpdate.CreateCommand();
+                        cmdUpdate.CommandText = "sp_CM_update_ordencompra_h";
+                        cmdUpdate.Connection = connUpdate;
+                        cmdUpdate.Transaction = transactionUpdate;
+                        cmdUpdate.CommandType = CommandType.StoredProcedure;
+                        cmdUpdate.Parameters.AddWithValue("@idOrdenCompraH", IdOrdenCompraActual);
+                        cmdUpdate.Parameters.AddWithValue("@CardCode", txtCodProv.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@CardName", txtProveedor.Text);
+                        cmdUpdate.Parameters.AddWithValue("@Address", direccion);
+                        if (string.IsNullOrEmpty(txtNumAtCard.Text))
+                            cmdUpdate.Parameters.AddWithValue("@NumAtCard", "N/D");
+                        else
+                            cmdUpdate.Parameters.AddWithValue("@NumAtCard", txtNumAtCard.Text);
 
+                        cmdUpdate.Parameters.AddWithValue("@DocDate", dtFechaRegistro.Value);
+                        cmdUpdate.Parameters.AddWithValue("@DocDueDate", dtFechaContabilizacion.DateTime.AddDays(15));
+                        cmdUpdate.Parameters.AddWithValue("@TaxDate", dtFechaContabilizacion.EditValue);
+                        cmdUpdate.Parameters.AddWithValue("@U_TipoOrden", grdTipoOrden.EditValue);
+                        cmdUpdate.Parameters.AddWithValue("@U_AquaExoneracion", txtExoneracion.Text);
+                        cmdUpdate.Parameters.AddWithValue("@U_FechaExoneracion", dtFechaRegistro.Value);
+                        cmdUpdate.Parameters.AddWithValue("@Comments", txtComentarios.Text);
+                        cmdUpdate.Parameters.AddWithValue("@ISV", Convert.ToDecimal(txtImpuesto.EditValue));
+                        cmdUpdate.Parameters.AddWithValue("@DocTotal", Convert.ToDecimal(txtTotal.EditValue));
+                        cmdUpdate.Parameters.AddWithValue("@CurSource", CurSource);//C=BP Currency, L=Local Currency, S=System Currency
+                        cmdUpdate.Parameters.AddWithValue("@DocCur", txtMoneda.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@DocRate", TasaCambio);
+                        if (IdSolicitud == 0)
+                            cmdUpdate.Parameters.AddWithValue("@DocNumSolicitud", DBNull.Value);
+                        else
+                            cmdUpdate.Parameters.AddWithValue("@DocNumSolicitud", IdSolicitud);
+                        cmdUpdate.Parameters.AddWithValue("@ContactCode", ContactCode);
+                        cmdUpdate.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
+                        cmdUpdate.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
+                        if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+                            cmdUpdate.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
+                        else
+                            cmdUpdate.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
 
+                        cmdUpdate.ExecuteNonQuery();
 
+                        foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada.Rows)
+                        {
+                            cmdUpdate.Parameters.Clear();
+                            cmdUpdate.CommandText = "sp_compras_ordenes_detalle_update_insert";
+                            cmdUpdate.Connection = connUpdate;
+                            cmdUpdate.Transaction = transactionUpdate;
+                            cmdUpdate.CommandType = CommandType.StoredProcedure;
+                            cmdUpdate.Parameters.AddWithValue("@id_detalle", row.id_d_orden);
+                            cmdUpdate.Parameters.AddWithValue("@id_orden_h", IdOrdenCompraActual);
+                            cmdUpdate.Parameters.AddWithValue("@ItemCode", row.itemcode);
+                            cmdUpdate.Parameters.AddWithValue("@Description", row.descripcion_articulo);
+                            if (string.IsNullOrWhiteSpace(row.capitulo))
+                                cmdUpdate.Parameters.AddWithValue("@Capitulo_Codigo", DBNull.Value);
+                            else
+                                cmdUpdate.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
+                            if (string.IsNullOrWhiteSpace(row.partida_arancelaria))
+                                cmdUpdate.Parameters.AddWithValue("@Partida_Arancelaria", DBNull.Value);
+                            else
+                                cmdUpdate.Parameters.AddWithValue("@Partida_Arancelaria", row.partida_arancelaria);
+                            cmdUpdate.Parameters.AddWithValue("@Quantity", row.cantidad);
+                            cmdUpdate.Parameters.AddWithValue("@Unite_Price", row.precio_por_unidad);
+                            cmdUpdate.Parameters.AddWithValue("@Currency", txtMoneda.Text.Trim());
+                            cmdUpdate.Parameters.AddWithValue("@DiscPrcnt", 0);
+                            cmdUpdate.Parameters.AddWithValue("@TaxCode", row.indicador_impuesto);
+                            cmdUpdate.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
+                            cmdUpdate.Parameters.AddWithValue("@isv", row.isv);
+                            cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
+                            cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
+                            cmdUpdate.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                            cmdUpdate.ExecuteNonQuery();
+                        }
 
+                        transactionUpdate.Commit();
+                        GuardarUpdate = true;
 
-            //switch (tipooperacion)
-            //{
-            //    case TipoOperacion.New:
-            //        bool Guardar = false;
-            //        SqlTransaction transaction = null;
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                        GuardarUpdate = false;
+                    }
 
-            //        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    if (GuardarUpdate)
+                    {
+                        CajaDialogo.Information("Orden de Compra Modificada!");
+                        LimpiarControles();
+                    }
 
-            //        try
-            //        {
-            //            conn.Open();
-            //            transaction = conn.BeginTransaction("Transaction Order");
-
-            //            SqlCommand cmd = conn.CreateCommand();
-            //            cmd.CommandText = "[sp_CM_insert_ordencompra_h_v2]";
-            //            cmd.Connection = conn;
-            //            cmd.Transaction = transaction;
-            //            cmd.CommandType = CommandType.StoredProcedure;
-            //            cmd.Parameters.AddWithValue("@CardCode", txtCodProv.Text.Trim());
-            //            cmd.Parameters.AddWithValue("@CardName", txtProveedor.Text);
-            //            cmd.Parameters.AddWithValue("@Address", direccion);
-
-            //            if (string.IsNullOrWhiteSpace(txtNumAtCard.Text))
-            //                cmd.Parameters.AddWithValue("@NumAtCard", "N/D");
-            //            else
-            //                cmd.Parameters.AddWithValue("@NumAtCard", txtNumAtCard.Text);
-
-            //            cmd.Parameters.AddWithValue("@DocDate", dtFechaRegistro.Value);
-            //            cmd.Parameters.AddWithValue("@DocDueDate", dtFechaContabilizacion.DateTime.AddDays(15));
-            //            cmd.Parameters.AddWithValue("@TaxDate", dtFechaContabilizacion.EditValue);
-            //            cmd.Parameters.AddWithValue("@U_TipoOrden", grdTipoOrden.EditValue);
-            //            cmd.Parameters.AddWithValue("@U_AquaExoneracion", txtExoneracion.Text);
-            //            cmd.Parameters.AddWithValue("@U_FechaExoneracion", dtFechaRegistro.Value);
-            //            cmd.Parameters.AddWithValue("@Comments", txtComentarios.Text);
-            //            cmd.Parameters.AddWithValue("@ISV", Convert.ToDecimal(txtImpuesto.EditValue));
-            //            cmd.Parameters.AddWithValue("@DocTotal", Convert.ToDecimal(txtTotal.EditValue));
-            //            cmd.Parameters.AddWithValue("@CurSource", CurSource);//C=BP Currency, L=Local Currency, S=System Currency
-            //            cmd.Parameters.AddWithValue("@DocCur", txtMoneda.Text.Trim());
-            //            cmd.Parameters.AddWithValue("@DocRate", TasaCambio);
-
-            //            if (IdSolicitud == 0)
-            //                cmd.Parameters.AddWithValue("@DocNumSolicitud", DBNull.Value);
-            //            else
-            //                cmd.Parameters.AddWithValue("@DocNumSolicitud", IdSolicitud);
-
-            //            cmd.Parameters.AddWithValue("@posted_in_sap", 0);
-            //            cmd.Parameters.AddWithValue("@ContactCode", ContactCode);
-            //            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
-            //            cmd.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
-            //            if (string.IsNullOrEmpty(comboBoxIntercom.Text))
-            //                cmd.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
-            //            else
-            //                cmd.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
-
-            //            int id_header = Convert.ToInt32(cmd.ExecuteScalar());
-
-            //            foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada.Rows)
-            //            {
-            //                cmd.Parameters.Clear();
-            //                cmd.CommandText = "sp_insert_detalle_orden_compra_SAP";
-            //                cmd.Connection = conn;
-            //                cmd.Transaction = transaction;
-            //                cmd.CommandType = CommandType.StoredProcedure;
-            //                cmd.Parameters.AddWithValue("@id_orden_h", id_header);
-            //                cmd.Parameters.AddWithValue("@ItemCode", row.itemcode);
-            //                cmd.Parameters.AddWithValue("@Description", row.descripcion_articulo);
-            //                if (string.IsNullOrWhiteSpace(row.capitulo))
-            //                    cmd.Parameters.AddWithValue("@Capitulo_Codigo", DBNull.Value);
-            //                else
-            //                    cmd.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
-            //                if (string.IsNullOrWhiteSpace(row.partida_arancelaria))
-            //                    cmd.Parameters.AddWithValue("@Partida_Arancelaria", DBNull.Value);
-            //                else
-            //                    cmd.Parameters.AddWithValue("@Partida_Arancelaria", row.partida_arancelaria);
-            //                cmd.Parameters.AddWithValue("@Quantity", row.cantidad);
-            //                cmd.Parameters.AddWithValue("@Unite_Price", row.precio_por_unidad);
-            //                cmd.Parameters.AddWithValue("@Currency", txtMoneda.Text.Trim());
-            //                cmd.Parameters.AddWithValue("@DiscPrcnt", 0);
-            //                cmd.Parameters.AddWithValue("@TaxCode", row.indicador_impuesto);
-            //                cmd.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
-            //                cmd.Parameters.AddWithValue("@isv", row.isv);
-            //                cmd.Parameters.AddWithValue("@base_ref", row.referencia_base);//Referencia de Solicitud de Compra
-            //                cmd.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
-            //                cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
-            //                cmd.ExecuteNonQuery();
-            //            }
-
-            //            transaction.Commit();
-            //            Guardar = true;
-            //        }
-            //        catch (Exception ec)
-            //        {
-            //            transaction.Rollback();
-            //            CajaDialogo.Error(ec.Message);
-            //            Guardar = false;
-            //        }
-
-            //        if (Guardar)
-            //        {
-            //            CajaDialogo.Information("Orden de Compra Creada!");
-            //            LimpiarControles();
-            //        }
-
-
-            //        break;
-            //    case TipoOperacion.Update:
-
-            //        SqlTransaction transactionUpdate = null;
-
-            //        SqlConnection connUpdate = new SqlConnection(dp.ConnectionStringLOSA);
-            //        bool GuardarUpdate = false;
-
-            //        try
-            //        {
-            //            connUpdate.Open();
-            //            transactionUpdate = connUpdate.BeginTransaction("Transaction Order");
-            //            SqlCommand cmdUpdate = connUpdate.CreateCommand();
-            //            cmdUpdate.CommandText = "sp_CM_update_ordencompra_h";
-            //            cmdUpdate.Connection = connUpdate;
-            //            cmdUpdate.Transaction = transactionUpdate;
-            //            cmdUpdate.CommandType = CommandType.StoredProcedure;
-            //            cmdUpdate.Parameters.AddWithValue("@idOrdenCompraH", IdOrdenCompraActual);
-            //            cmdUpdate.Parameters.AddWithValue("@CardCode", txtCodProv.Text.Trim());
-            //            cmdUpdate.Parameters.AddWithValue("@CardName", txtProveedor.Text);
-            //            cmdUpdate.Parameters.AddWithValue("@Address", direccion);
-            //            if (string.IsNullOrEmpty(txtNumAtCard.Text))
-            //                cmdUpdate.Parameters.AddWithValue("@NumAtCard", "N/D");
-            //            else
-            //                cmdUpdate.Parameters.AddWithValue("@NumAtCard", txtNumAtCard.Text);
-
-            //            cmdUpdate.Parameters.AddWithValue("@DocDate", dtFechaRegistro.Value);
-            //            cmdUpdate.Parameters.AddWithValue("@DocDueDate", dtFechaContabilizacion.DateTime.AddDays(15));
-            //            cmdUpdate.Parameters.AddWithValue("@TaxDate", dtFechaContabilizacion.EditValue);
-            //            cmdUpdate.Parameters.AddWithValue("@U_TipoOrden", grdTipoOrden.EditValue);
-            //            cmdUpdate.Parameters.AddWithValue("@U_AquaExoneracion", txtExoneracion.Text);
-            //            cmdUpdate.Parameters.AddWithValue("@U_FechaExoneracion", dtFechaRegistro.Value);
-            //            cmdUpdate.Parameters.AddWithValue("@Comments", txtComentarios.Text);
-            //            cmdUpdate.Parameters.AddWithValue("@ISV", Convert.ToDecimal(txtImpuesto.EditValue));
-            //            cmdUpdate.Parameters.AddWithValue("@DocTotal", Convert.ToDecimal(txtTotal.EditValue));
-            //            cmdUpdate.Parameters.AddWithValue("@CurSource", CurSource);//C=BP Currency, L=Local Currency, S=System Currency
-            //            cmdUpdate.Parameters.AddWithValue("@DocCur", txtMoneda.Text.Trim());
-            //            cmdUpdate.Parameters.AddWithValue("@DocRate", TasaCambio);
-            //            if (IdSolicitud == 0)
-            //                cmdUpdate.Parameters.AddWithValue("@DocNumSolicitud", DBNull.Value);
-            //            else
-            //                cmdUpdate.Parameters.AddWithValue("@DocNumSolicitud", IdSolicitud);
-            //            cmdUpdate.Parameters.AddWithValue("@ContactCode", ContactCode);
-            //            cmdUpdate.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
-            //            cmdUpdate.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
-            //            if (string.IsNullOrEmpty(comboBoxIntercom.Text))
-            //                cmdUpdate.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
-            //            else
-            //                cmdUpdate.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
-
-            //            cmdUpdate.ExecuteNonQuery();
-
-            //            foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada.Rows)
-            //            {
-            //                cmdUpdate.Parameters.Clear();
-            //                cmdUpdate.CommandText = "sp_compras_ordenes_detalle_update_insert";
-            //                cmdUpdate.Connection = connUpdate;
-            //                cmdUpdate.Transaction = transactionUpdate;
-            //                cmdUpdate.CommandType = CommandType.StoredProcedure;
-            //                cmdUpdate.Parameters.AddWithValue("@id_detalle", row.id_d_orden);
-            //                cmdUpdate.Parameters.AddWithValue("@id_orden_h", IdOrdenCompraActual);
-            //                cmdUpdate.Parameters.AddWithValue("@ItemCode", row.itemcode);
-            //                cmdUpdate.Parameters.AddWithValue("@Description", row.descripcion_articulo);
-            //                if (string.IsNullOrWhiteSpace(row.capitulo))
-            //                    cmdUpdate.Parameters.AddWithValue("@Capitulo_Codigo", DBNull.Value);
-            //                else
-            //                    cmdUpdate.Parameters.AddWithValue("@Capitulo_Codigo", row.capitulo);
-            //                if (string.IsNullOrWhiteSpace(row.partida_arancelaria))
-            //                    cmdUpdate.Parameters.AddWithValue("@Partida_Arancelaria", DBNull.Value);
-            //                else
-            //                    cmdUpdate.Parameters.AddWithValue("@Partida_Arancelaria", row.partida_arancelaria);
-            //                cmdUpdate.Parameters.AddWithValue("@Quantity", row.cantidad);
-            //                cmdUpdate.Parameters.AddWithValue("@Unite_Price", row.precio_por_unidad);
-            //                cmdUpdate.Parameters.AddWithValue("@Currency", txtMoneda.Text.Trim());
-            //                cmdUpdate.Parameters.AddWithValue("@DiscPrcnt", 0);
-            //                cmdUpdate.Parameters.AddWithValue("@TaxCode", row.indicador_impuesto);
-            //                cmdUpdate.Parameters.AddWithValue("@WhsCode", row.bodega.Trim());
-            //                cmdUpdate.Parameters.AddWithValue("@isv", row.isv);
-            //                cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
-            //                cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
-            //                cmdUpdate.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
-            //                cmdUpdate.ExecuteNonQuery();
-            //            }
-
-            //            transactionUpdate.Commit();
-            //            GuardarUpdate = true;
-
-            //        }
-            //        catch (Exception ec)
-            //        {
-            //            CajaDialogo.Error(ec.Message);
-            //            GuardarUpdate = false;
-            //        }
-
-            //        if (GuardarUpdate)
-            //        {
-            //            CajaDialogo.Information("Orden de Compra Modificada!");
-            //            LimpiarControles();
-            //        }
-
-            //        break;
-            //    default:
-            //        CajaDialogo.Error("No se pudo definir una Operacion de Tipo(INSERT-UPDATE)");
-            //        break;
-            //}
+                    break;
+                default:
+                    CajaDialogo.Error("No se pudo definir una Operacion de Tipo(INSERT-UPDATE)\nContacte al Dpto. IT");
+                    break;
+            }
 
         }
 
@@ -2011,6 +1930,7 @@ namespace LOSA.Compras
 
         private void barbtnCancelOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
             DialogResult r = CajaDialogo.Pregunta("¿Confirma que desea Cancelar esta Orden de Compra?");
             if (r != DialogResult.Yes)
                 return;
@@ -2045,8 +1965,12 @@ namespace LOSA.Compras
                     break;
 
                 case 2: //Autorizada
-                    Proceder = false;
-                    mensaje = "No se puede Cancelar\nLa Orden Compra ya fue Autorizada!";
+                    Proceder = true;
+                            if (ValidarEstadoOrdenSAP(oc.DocNum))
+                            {
+                                CajaDialogo.Error("Antes de Cerrar la Orden en ALOSY\nDebe Cancelar la Orden en SAP.");
+                                return;
+                            }       
                     break;
 
                 case 3: //Rechazada
@@ -2066,38 +1990,62 @@ namespace LOSA.Compras
 
             popupMenu1.HidePopup();
 
-            //if (Proceder)
-            //{
-            //    try
-            //    {
-            //        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-            //        conn.Open();
-            //        SqlCommand cmd = new SqlCommand("sp_compras_cancelar_orden", conn);
-            //        cmd.CommandType = CommandType.StoredProcedure;
-            //        cmd.Parameters.AddWithValue("@id_OrdenCompra", pidOrdenCompraActual);
-            //        cmd.ExecuteNonQuery();
-            //        conn.Close();
+            if (Proceder)
+            {
+                try
+                {
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_CM_cancelar_orden_compra", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_OrdenCompra", pidOrdenCompraActual);
+                    cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
 
-            //        CajaDialogo.Information("Orden de Compra Cancelada!");
+                    CajaDialogo.Information("Orden de Compra Cancelada!");
 
-            //        cmdNuevo.Enabled = false;
-            //        cmdAddDetalle.Enabled = false;
-            //        txtComentarios.Enabled = false;
-            //        grDetalle.Enabled = false;
-            //        dtFechaContabilizacion.Enabled = false;
-            //        txtComentarios.Text = "Cancelada";
+                    cmdNuevo.Enabled = false;
+                    cmdAddDetalle.Enabled = false;
+                    txtComentarios.Enabled = false;
+                    grDetalle.Enabled = false;
+                    dtFechaContabilizacion.Enabled = false;
+                    txtComentarios.Text = "Cancelado";
+                    txtEstado.Text = "Cancelado";
+                    IdEstadoOrdenCompra = 4; //Cancelado
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            else
+            {
+                CajaDialogo.Error(mensaje);
+                return;
+            }
+        }
 
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        CajaDialogo.Error(ex.Message);
-            //    }
-            //}
-            //else
-            //{
-            //    CajaDialogo.Error(mensaje);
-            //    return;
-            //}
+        private bool ValidarEstadoOrdenSAP(int pDocNum)
+        {
+            bool OCAbierta = false;
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_CM_get_status_OC", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DocNum", pDocNum);
+                OCAbierta = Convert.ToBoolean(cmd.ExecuteScalar());
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            return OCAbierta;
         }
 
         private void grdSucursales_EditValueChanged(object sender, EventArgs e)

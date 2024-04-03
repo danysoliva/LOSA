@@ -530,7 +530,7 @@ namespace LOSA.Compras
             this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(132.3101F, 132.3101F);
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(132.3452F, 132.3452F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
             // lblEstado
@@ -597,6 +597,7 @@ namespace LOSA.Compras
             this.xrTableCell3.StylePriority.UseBorders = false;
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.Text = "xrTableCell3";
+            this.xrTableCell3.TextFormatString = "{0:N}";
             this.xrTableCell3.Weight = 0.9237797041974618D;
             // 
             // xrTableCell7
@@ -681,7 +682,7 @@ namespace LOSA.Compras
             this.lblDescuento.Summary = xrSummary1;
             this.lblDescuento.Text = "0.00";
             this.lblDescuento.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblDescuento.TextFormatString = "{0:0.00}";
+            this.lblDescuento.TextFormatString = "{0:N}";
             // 
             // xrLabel13
             // 
@@ -708,7 +709,7 @@ namespace LOSA.Compras
             this.lblGastosAdicionales.Summary = xrSummary2;
             this.lblGastosAdicionales.Text = "0.00";
             this.lblGastosAdicionales.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblGastosAdicionales.TextFormatString = "{0:0.00}";
+            this.lblGastosAdicionales.TextFormatString = "{0:N}";
             // 
             // xrLabel11
             // 
@@ -735,6 +736,7 @@ namespace LOSA.Compras
             this.lblisv18.Summary = xrSummary3;
             this.lblisv18.Text = "0.00";
             this.lblisv18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblisv18.TextFormatString = "{0:N}";
             // 
             // xrLabel8
             // 
@@ -784,7 +786,7 @@ namespace LOSA.Compras
             this.lblSub.Summary = xrSummary4;
             this.lblSub.Text = "0.00";
             this.lblSub.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblSub.TextFormatString = "{0:0.00}";
+            this.lblSub.TextFormatString = "{0:N}";
             // 
             // lblTotal
             // 
@@ -799,7 +801,7 @@ namespace LOSA.Compras
             this.lblTotal.Summary = xrSummary5;
             this.lblTotal.Text = "0.00";
             this.lblTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblTotal.TextFormatString = "{0:0.00}";
+            this.lblTotal.TextFormatString = "{0:N}";
             // 
             // xrLabel32
             // 
@@ -844,7 +846,7 @@ namespace LOSA.Compras
             this.lblIsv15.Summary = xrSummary6;
             this.lblIsv15.Text = "0.00";
             this.lblIsv15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblIsv15.TextFormatString = "{0:0.00}";
+            this.lblIsv15.TextFormatString = "{0:N}";
             // 
             // xrLabel35
             // 
