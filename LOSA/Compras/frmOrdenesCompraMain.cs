@@ -1960,7 +1960,7 @@ namespace LOSA.Compras
 
             switch (oc.IdEstado)
             {
-                case 1: //Nueva 
+                case 1: //Pendiente (Creada)
                     Proceder = true;
                     break;
 
