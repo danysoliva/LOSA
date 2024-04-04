@@ -133,6 +133,12 @@ namespace LOSA.Compras
                     break;
                 case TipoOperacion.Update:
                     break;
+
+                case TipoOperacion.View:
+                    CargarInfoOrden(IdOrdenCompraActual);
+                    SoloVista(IdOrdenCompraActual);
+
+                    break;
                 default:
                     break;
             }
@@ -890,7 +896,7 @@ namespace LOSA.Compras
                 IdEstadoOrdenCompra = oc.IdEstado;
                 txtCodProv.Text = oc.CardCode;
                 txtProveedor.Text = oc.CardName;
-
+                txtNumAtCard.Text = oc.NumAtCard;
                 Proveedor prov = new Proveedor();
                 prov.RecuperarRegistroWithRTN(oc.CardCode);
                 txtContactoPerson.Text = prov.ContactName;
@@ -1006,11 +1012,33 @@ namespace LOSA.Compras
 
         private void cmdClose_Click(object sender, EventArgs e)
         {
-            DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea salir sin Guardar?");
-            if (r != System.Windows.Forms.DialogResult.Yes)
-                return;
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+                    DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea salir sin Guardar?");
+                    if (r != System.Windows.Forms.DialogResult.Yes)
+                        return;
 
-            this.Close();
+                    this.Close();
+
+                    break;
+                case TipoOperacion.Update:
+                    DialogResult rU = CajaDialogo.Pregunta("Esta seguro que desea salir sin Guardar?");
+                    if (rU != System.Windows.Forms.DialogResult.Yes)
+                        return;
+
+                    this.Close();
+
+                    break;
+                case TipoOperacion.View:
+
+                    this.Close();
+
+                    break;
+                default:
+                    break;
+            }
+            
         }
 
         private void cmdAnterior_Click(object sender, EventArgs e)
@@ -2089,7 +2117,7 @@ namespace LOSA.Compras
                     item.indicador_impuesto = "ISV";
 
                 }
-
+                ReCalculoImpuesto();
                 CalcularTotal();
             }
         }
@@ -3579,6 +3607,7 @@ namespace LOSA.Compras
             this.txtTotal.Properties.MaskSettings.Set("mask", "n");
             this.txtTotal.Properties.NullText = "0.00";
             this.txtTotal.Properties.NullValuePrompt = "0.00";
+            this.txtTotal.Properties.UseMaskAsDisplayFormat = true;
             this.txtTotal.Size = new System.Drawing.Size(108, 22);
             this.txtTotal.TabIndex = 81;
             // 
@@ -3596,6 +3625,7 @@ namespace LOSA.Compras
             this.txtImpuesto.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtImpuesto.Properties.MaskSettings.Set("mask", "n");
             this.txtImpuesto.Properties.NullText = "0.00";
+            this.txtImpuesto.Properties.UseMaskAsDisplayFormat = true;
             this.txtImpuesto.Size = new System.Drawing.Size(108, 22);
             this.txtImpuesto.TabIndex = 80;
             // 
@@ -3613,6 +3643,7 @@ namespace LOSA.Compras
             this.txtSubtotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtSubtotal.Properties.MaskSettings.Set("mask", "n");
             this.txtSubtotal.Properties.NullText = "0.00";
+            this.txtSubtotal.Properties.UseMaskAsDisplayFormat = true;
             this.txtSubtotal.Size = new System.Drawing.Size(108, 22);
             this.txtSubtotal.TabIndex = 79;
             // 

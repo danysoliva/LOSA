@@ -35,6 +35,11 @@ namespace LOSA.Compras
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabAutorizaciones = new DevExpress.XtraTab.XtraTabPage();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
@@ -65,6 +70,7 @@ namespace LOSA.Compras
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposPrinVistaPrevia = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.TabPendientes = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -83,6 +89,7 @@ namespace LOSA.Compras
             this.TabHistorica = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.TabAutorizaciones.SuspendLayout();
@@ -94,6 +101,7 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repostPrint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposPrinVistaPrevia)).BeginInit();
             this.TabPendientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
@@ -131,7 +139,7 @@ namespace LOSA.Compras
             this.TabAutorizaciones.Controls.Add(this.grdAutorizadas);
             this.TabAutorizaciones.Name = "TabAutorizaciones";
             this.TabAutorizaciones.Size = new System.Drawing.Size(1372, 789);
-            this.TabAutorizaciones.Text = "OC Autorizadas";
+            this.TabAutorizaciones.Text = "OC Autorizadas Sin Imprimir";
             // 
             // checkBoxSelectAll
             // 
@@ -245,7 +253,8 @@ namespace LOSA.Compras
             this.grdAutorizadas.MainView = this.gridView1;
             this.grdAutorizadas.Name = "grdAutorizadas";
             this.grdAutorizadas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repostPrint});
+            this.repostPrint,
+            this.reposPrinVistaPrevia});
             this.grdAutorizadas.Size = new System.Drawing.Size(1366, 731);
             this.grdAutorizadas.TabIndex = 0;
             this.grdAutorizadas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -275,7 +284,9 @@ namespace LOSA.Compras
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn7});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(-758, 613, 259, 272);
             this.gridView1.GridControl = this.grdAutorizadas;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -400,7 +411,7 @@ namespace LOSA.Compras
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Imprimir";
+            this.gridColumn3.Caption = "Imprimir Directo";
             this.gridColumn3.ColumnEdit = this.repostPrint;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -444,6 +455,16 @@ namespace LOSA.Compras
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 11;
             this.gridColumn6.Width = 71;
+            // 
+            // reposPrinVistaPrevia
+            // 
+            this.reposPrinVistaPrevia.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.reposPrinVistaPrevia.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposPrinVistaPrevia.Name = "reposPrinVistaPrevia";
+            this.reposPrinVistaPrevia.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposPrinVistaPrevia.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposPrinVistaPrevia_ButtonClick);
             // 
             // TabPendientes
             // 
@@ -601,6 +622,14 @@ namespace LOSA.Compras
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Imprimir Vista Previa";
+            this.gridColumn7.ColumnEdit = this.reposPrinVistaPrevia;
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 13;
+            // 
             // frmListaOrdenesCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,6 +649,7 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repostPrint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposPrinVistaPrevia)).EndInit();
             this.TabPendientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
@@ -680,5 +710,7 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.SimpleButton btnPrintSeleccionados;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposPrinVistaPrevia;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }

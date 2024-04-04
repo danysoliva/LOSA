@@ -114,14 +114,16 @@ namespace LOSA.Compras
                 rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool reportPrint = new ReportPrintTool(report);
-                reportPrint.ShowPreview();
+                //ActualizarConteoPrint(row.id_h);
+                reportPrint.Print();
             }
             else
             {
                 rptOrdenCompra report = new rptOrdenCompra(row.id_h);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool reportPrint = new ReportPrintTool(report);
-                reportPrint.ShowPreview();
+                //ActualizarConteoPrint(row.id_h);
+                reportPrint.Print();
             }
              
         }
@@ -136,6 +138,51 @@ namespace LOSA.Compras
 
 
 
+        }
+
+        private void reposPrinVistaPrevia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)grdAutorizadas.FocusedView;
+
+            var row = (dsCompras.ordenes_autorizadasRow)gridView.GetFocusedDataRow();
+
+            if (!string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || !string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas
+            {
+                rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool reportPrint = new ReportPrintTool(report);
+                //ActualizarConteoPrint(row.id_h);
+                reportPrint.ShowPreview();
+            }
+            else
+            {
+                rptOrdenCompra report = new rptOrdenCompra(row.id_h);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool reportPrint = new ReportPrintTool(report);
+                //ActualizarConteoPrint(row.id_h);
+                reportPrint.ShowPreview();
+            }
+        }
+
+        private void ActualizarConteoPrint(int pIdOC)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_CM_update_count_print_oc", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdOC", pIdOC);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                LoadOrdenAutorizadas();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                return;
+            }
         }
     }
 }
