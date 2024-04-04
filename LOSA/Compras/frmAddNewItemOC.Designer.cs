@@ -237,6 +237,7 @@ namespace LOSA.Compras
             this.txtUnitPrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtUnitPrice.Properties.MaskSettings.Set("mask", "n");
+            this.txtUnitPrice.Properties.UseMaskAsDisplayFormat = true;
             this.txtUnitPrice.Size = new System.Drawing.Size(147, 28);
             this.txtUnitPrice.TabIndex = 5;
             this.txtUnitPrice.EditValueChanged += new System.EventHandler(this.txtUnitPrice_EditValueChanged);
@@ -304,6 +305,7 @@ namespace LOSA.Compras
             this.txtTotal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtTotal.Properties.MaskSettings.Set("mask", "n");
+            this.txtTotal.Properties.UseMaskAsDisplayFormat = true;
             this.txtTotal.Size = new System.Drawing.Size(147, 28);
             this.txtTotal.TabIndex = 106;
             // 
@@ -367,7 +369,8 @@ namespace LOSA.Compras
             this.txtNuevoSaldo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNuevoSaldo.Properties.MaskSettings.Set("mask", "n");
-            this.txtNuevoSaldo.Size = new System.Drawing.Size(147, 28);
+            this.txtNuevoSaldo.Properties.UseMaskAsDisplayFormat = true;
+            this.txtNuevoSaldo.Size = new System.Drawing.Size(194, 28);
             this.txtNuevoSaldo.TabIndex = 113;
             // 
             // txtSaldoDisponible
@@ -384,8 +387,9 @@ namespace LOSA.Compras
             this.txtSaldoDisponible.Properties.Appearance.Options.UseFont = true;
             this.txtSaldoDisponible.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSaldoDisponible.Properties.MaskSettings.Set("mask", "f");
-            this.txtSaldoDisponible.Size = new System.Drawing.Size(147, 28);
+            this.txtSaldoDisponible.Properties.MaskSettings.Set("mask", "n");
+            this.txtSaldoDisponible.Properties.UseMaskAsDisplayFormat = true;
+            this.txtSaldoDisponible.Size = new System.Drawing.Size(194, 28);
             this.txtSaldoDisponible.TabIndex = 112;
             // 
             // txtSaldoPorConsumir
@@ -403,7 +407,8 @@ namespace LOSA.Compras
             this.txtSaldoPorConsumir.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtSaldoPorConsumir.Properties.MaskSettings.Set("mask", "n");
-            this.txtSaldoPorConsumir.Size = new System.Drawing.Size(147, 28);
+            this.txtSaldoPorConsumir.Properties.UseMaskAsDisplayFormat = true;
+            this.txtSaldoPorConsumir.Size = new System.Drawing.Size(194, 28);
             this.txtSaldoPorConsumir.TabIndex = 111;
             // 
             // separatorControl1
@@ -436,14 +441,15 @@ namespace LOSA.Compras
             0,
             0});
             this.txtUdNueva.Enabled = false;
-            this.txtUdNueva.Location = new System.Drawing.Point(483, 577);
+            this.txtUdNueva.Location = new System.Drawing.Point(531, 577);
             this.txtUdNueva.Name = "txtUdNueva";
             this.txtUdNueva.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtUdNueva.Properties.Appearance.Options.UseFont = true;
             this.txtUdNueva.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtUdNueva.Properties.MaskSettings.Set("mask", "d");
-            this.txtUdNueva.Size = new System.Drawing.Size(116, 28);
+            this.txtUdNueva.Properties.MaskSettings.Set("mask", "n");
+            this.txtUdNueva.Properties.UseMaskAsDisplayFormat = true;
+            this.txtUdNueva.Size = new System.Drawing.Size(134, 28);
             this.txtUdNueva.TabIndex = 121;
             // 
             // txtUdDisponible
@@ -454,14 +460,15 @@ namespace LOSA.Compras
             0,
             0});
             this.txtUdDisponible.Enabled = false;
-            this.txtUdDisponible.Location = new System.Drawing.Point(483, 491);
+            this.txtUdDisponible.Location = new System.Drawing.Point(531, 491);
             this.txtUdDisponible.Name = "txtUdDisponible";
             this.txtUdDisponible.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtUdDisponible.Properties.Appearance.Options.UseFont = true;
             this.txtUdDisponible.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtUdDisponible.Properties.MaskSettings.Set("mask", "d");
-            this.txtUdDisponible.Size = new System.Drawing.Size(116, 28);
+            this.txtUdDisponible.Properties.MaskSettings.Set("mask", "n");
+            this.txtUdDisponible.Properties.UseMaskAsDisplayFormat = true;
+            this.txtUdDisponible.Size = new System.Drawing.Size(134, 28);
             this.txtUdDisponible.TabIndex = 120;
             // 
             // txtUdporConsumir
@@ -472,21 +479,22 @@ namespace LOSA.Compras
             0,
             0});
             this.txtUdporConsumir.Enabled = false;
-            this.txtUdporConsumir.Location = new System.Drawing.Point(483, 534);
+            this.txtUdporConsumir.Location = new System.Drawing.Point(531, 534);
             this.txtUdporConsumir.Name = "txtUdporConsumir";
             this.txtUdporConsumir.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtUdporConsumir.Properties.Appearance.Options.UseFont = true;
             this.txtUdporConsumir.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtUdporConsumir.Properties.MaskSettings.Set("mask", "d");
-            this.txtUdporConsumir.Size = new System.Drawing.Size(116, 28);
+            this.txtUdporConsumir.Properties.MaskSettings.Set("mask", "n");
+            this.txtUdporConsumir.Properties.UseMaskAsDisplayFormat = true;
+            this.txtUdporConsumir.Size = new System.Drawing.Size(134, 28);
             this.txtUdporConsumir.TabIndex = 119;
             // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(351, 582);
+            this.labelControl10.Location = new System.Drawing.Point(399, 582);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(94, 18);
             this.labelControl10.TabIndex = 118;
@@ -496,7 +504,7 @@ namespace LOSA.Compras
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(351, 539);
+            this.labelControl11.Location = new System.Drawing.Point(399, 539);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(100, 18);
             this.labelControl11.TabIndex = 117;
@@ -506,7 +514,7 @@ namespace LOSA.Compras
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(351, 496);
+            this.labelControl12.Location = new System.Drawing.Point(399, 496);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(116, 18);
             this.labelControl12.TabIndex = 116;
