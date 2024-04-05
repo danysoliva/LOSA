@@ -85,6 +85,7 @@ namespace LOSA.Compras
             cmdGuardar.Enabled = false;
             txtNumAtCard.Enabled = false;
             btnShowPopu.Enabled = false;
+            btnCopiarDe.Enabled = true;
             cmdAddDetalle.Enabled = false;
             txtCodProv.Enabled = false;
             dtFechaContabilizacion.Enabled = false;
@@ -146,7 +147,8 @@ namespace LOSA.Compras
 
             ValidarAccesosSegunUsuario();
             btnPrint.Enabled = true;
-            btnShowPopu.Enabled = true;
+            //btnShowPopu.Enabled = true;
+            btnCopiarDe.Enabled = true;
         }
 
         private void CargarBodegas()
@@ -312,7 +314,8 @@ namespace LOSA.Compras
                 }
 
                 cmdNuevo.Enabled = true;
-                btnShowPopu.Enabled = true;
+                //btnShowPopu.Enabled = true;
+                btnCopiarDe.Enabled = true;
             }
         }
 
@@ -967,7 +970,8 @@ namespace LOSA.Compras
                         btnPrint.Enabled = true;
                         cmdGuardar.Enabled = false;
                         TsExoOIsv.ReadOnly = true;
-                        btnShowPopu.Enabled = false;
+                        //btnShowPopu.Enabled = false;
+                        btnCopiarDe.Enabled = false;
                         grdTipoOrden.Enabled = false;
                         glRutaAprobacionOC.Enabled = false;
                         comboBoxIntercom.Enabled = false;
@@ -983,7 +987,8 @@ namespace LOSA.Compras
                         dtFechaContabilizacion.Enabled = false;
                         cmdGuardar.Enabled = false;
                         TsExoOIsv.ReadOnly = true;
-                        btnShowPopu.Enabled = false;
+                        //btnShowPopu.Enabled = false;
+                        btnCopiarDe.Enabled = false;
                         break;
 
                     case 4:
@@ -994,7 +999,8 @@ namespace LOSA.Compras
                         dtFechaContabilizacion.Enabled = false;
                         cmdGuardar.Enabled = false;
                         TsExoOIsv.ReadOnly = true;
-                        btnShowPopu.Enabled = false;
+                        //btnShowPopu.Enabled = false;
+                        btnCopiarDe.Enabled = false;
                         break;
 
 
@@ -2266,7 +2272,6 @@ namespace LOSA.Compras
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -2276,6 +2281,7 @@ namespace LOSA.Compras
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -2396,6 +2402,12 @@ namespace LOSA.Compras
             this.tabArchivosAdjuntos = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bar4 = new DevExpress.XtraBars.Bar();
+            this.bar5 = new DevExpress.XtraBars.Bar();
+            this.btnCopiarSolicitud = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOrdenCompra = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCopiarDe = new DevExpress.XtraEditors.DropDownButton();
+            this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
@@ -2445,6 +2457,7 @@ namespace LOSA.Compras
             this.tabArchivosAdjuntos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -2532,16 +2545,20 @@ namespace LOSA.Compras
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar1,
             this.bar2,
-            this.bar3});
+            this.bar3,
+            this.bar4,
+            this.bar5});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barbtnCancelOrden});
+            this.barbtnCancelOrden,
+            this.btnCopiarSolicitud,
+            this.btnOrdenCompra});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 1;
+            this.barManager1.MaxItemId = 3;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -2580,7 +2597,7 @@ namespace LOSA.Compras
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1571, 41);
+            this.barDockControlTop.Size = new System.Drawing.Size(1571, 83);
             // 
             // barDockControlBottom
             // 
@@ -2594,17 +2611,17 @@ namespace LOSA.Compras
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 41);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 83);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 844);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 802);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1571, 41);
+            this.barDockControlRight.Location = new System.Drawing.Point(1571, 83);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 844);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 802);
             // 
             // barbtnCancelOrden
             // 
@@ -3566,6 +3583,7 @@ namespace LOSA.Compras
             // 
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.btnCopiarDe);
             this.panelControl2.Controls.Add(this.txtUsuarioCreador);
             this.panelControl2.Controls.Add(this.txtComentarios);
             this.panelControl2.Controls.Add(this.txtTotal);
@@ -3654,7 +3672,7 @@ namespace LOSA.Compras
             this.btnShowPopu.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnShowPopu.Appearance.Options.UseFont = true;
             this.btnShowPopu.Enabled = false;
-            this.btnShowPopu.Location = new System.Drawing.Point(1126, 105);
+            this.btnShowPopu.Location = new System.Drawing.Point(825, 105);
             this.btnShowPopu.Name = "btnShowPopu";
             this.btnShowPopu.Size = new System.Drawing.Size(248, 29);
             this.btnShowPopu.TabIndex = 78;
@@ -3759,6 +3777,63 @@ namespace LOSA.Compras
             this.gridView4.GridControl = this.gridControl1;
             this.gridView4.Name = "gridView4";
             // 
+            // bar4
+            // 
+            this.bar4.BarName = "Custom 5";
+            this.bar4.DockCol = 0;
+            this.bar4.DockRow = 2;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar4.Text = "Custom 5";
+            // 
+            // bar5
+            // 
+            this.bar5.BarName = "Custom 6";
+            this.bar5.DockCol = 0;
+            this.bar5.DockRow = 3;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar5.Text = "Custom 6";
+            // 
+            // btnCopiarSolicitud
+            // 
+            this.btnCopiarSolicitud.Caption = "Solicitud de Compra";
+            this.btnCopiarSolicitud.Id = 1;
+            this.btnCopiarSolicitud.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCopiarSolicitud.ImageOptions.Image")));
+            this.btnCopiarSolicitud.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCopiarSolicitud.ImageOptions.LargeImage")));
+            this.btnCopiarSolicitud.Name = "btnCopiarSolicitud";
+            this.btnCopiarSolicitud.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCopiarSolicitud_ItemClick);
+            // 
+            // btnOrdenCompra
+            // 
+            this.btnOrdenCompra.Caption = "Orden de Compra";
+            this.btnOrdenCompra.Id = 2;
+            this.btnOrdenCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOrdenCompra.ImageOptions.Image")));
+            this.btnOrdenCompra.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenCompra.ImageOptions.LargeImage")));
+            this.btnOrdenCompra.Name = "btnOrdenCompra";
+            this.btnOrdenCompra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOrdenCompra_ItemClick);
+            // 
+            // btnCopiarDe
+            // 
+            this.btnCopiarDe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCopiarDe.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCopiarDe.Appearance.Options.UseFont = true;
+            this.btnCopiarDe.Enabled = false;
+            this.btnCopiarDe.Location = new System.Drawing.Point(1152, 105);
+            this.btnCopiarDe.MenuManager = this.barManager1;
+            this.btnCopiarDe.Name = "btnCopiarDe";
+            this.barManager1.SetPopupContextMenu(this.btnCopiarDe, this.popupMenu1);
+            this.btnCopiarDe.Size = new System.Drawing.Size(184, 29);
+            this.btnCopiarDe.TabIndex = 86;
+            this.btnCopiarDe.Text = "Copiar De";
+            this.btnCopiarDe.Click += new System.EventHandler(this.btnCopiarDe_Click);
+            // 
+            // popupMenu2
+            // 
+            this.popupMenu2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnOrdenCompra),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnCopiarSolicitud)});
+            this.popupMenu2.Manager = this.barManager1;
+            this.popupMenu2.Name = "popupMenu2";
+            // 
             // frmOrdenesCompraMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3825,9 +3900,63 @@ namespace LOSA.Compras
             this.tabArchivosAdjuntos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void btnCopiarDe_Click(object sender, EventArgs e)
+        {
+            popupMenu2.ShowPopup(Cursor.Position);
+        }
+
+        private void btnCopiarSolicitud_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+
+                    frmCopiarDeSolicitud frm = new frmCopiarDeSolicitud(frmCopiarDeSolicitud.TipoDocumento.SolicitudCompra);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        IdSolicitud = frm.IdSolicitudSeleccionado;
+                        CargarOrdenCompraFromSolicitud(IdSolicitud);
+
+                    }
+
+                    cmdNuevo.Enabled = true;
+
+                    break;
+                case TipoOperacion.Update:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnOrdenCompra_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+
+                    frmCopiarDeSolicitud frm = new frmCopiarDeSolicitud(frmCopiarDeSolicitud.TipoDocumento.OrdenCompra);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        IdSolicitud = frm.IdSolicitudSeleccionado;
+                        CargarOrdenCompraFromSolicitud(IdSolicitud);
+
+                    }
+
+                    cmdNuevo.Enabled = true;
+
+                    break;
+                case TipoOperacion.Update:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

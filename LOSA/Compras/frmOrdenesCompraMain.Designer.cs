@@ -128,5 +128,11 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraBars.Bar bar4;
+        private DevExpress.XtraBars.Bar bar5;
+        private DevExpress.XtraBars.BarButtonItem btnCopiarSolicitud;
+        private DevExpress.XtraBars.BarButtonItem btnOrdenCompra;
+        private DevExpress.XtraEditors.DropDownButton btnCopiarDe;
+        private DevExpress.XtraBars.PopupMenu popupMenu2;
     }
 }
