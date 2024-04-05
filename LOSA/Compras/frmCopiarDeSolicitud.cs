@@ -20,6 +20,7 @@ namespace LOSA.Compras
     {
         DataOperations dp = new DataOperations();
         public int IdSolicitudSeleccionado = 0;
+        public int IdOrdenCompra = 0;
 
         public enum TipoDocumento
         { 
@@ -42,17 +43,42 @@ namespace LOSA.Compras
             switch (tipoDoc)
             {
                 case TipoDocumento.SolicitudCompra:
+                    navigationFrame1.SelectedPageIndex = 0;
+                    lblTipoDocumento.Text = "Seleccione la Solicitud de Compra";
                     CargarSolicitudes();
+
                     break;
                 case TipoDocumento.OrdenCompra:
+                    navigationFrame1.SelectedPageIndex = 1;
+                    lblTipoDocumento.Text = "Seleccione la Orden de Compra";
+                    CargarOrdenesCompra();
+
                     break;
                 default:
                     break;
             }
-            
 
+        }
 
-
+        private void CargarOrdenesCompra()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("[sp_get_ordenes_compra_fechas]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Desde", dtFechaDesdeDisponibles.DateTime);
+                cmd.Parameters.AddWithValue("@hasta", dtFechaHastaDisponibles.DateTime);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCompras1.orden_compra_exo.Clear();
+                adat.Fill(dsCompras1.orden_compra_exo);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void CargarSolicitudes()
@@ -78,12 +104,26 @@ namespace LOSA.Compras
 
         private void cmdRefreshDisponibles_Click(object sender, EventArgs e)
         {
-            CargarSolicitudes();
+            switch (tipoDoc)
+            {
+                case TipoDocumento.SolicitudCompra:
+
+                    CargarSolicitudes();
+
+                    break;
+                case TipoDocumento.OrdenCompra:
+                    
+                    CargarOrdenesCompra();
+
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            var gridview = (GridView)gridControl1.FocusedView;
+            var gridview = (GridView)grdSolicitudesCompra.FocusedView;
             var row = (dsCompras.solicitudes_compraRow)gridview.GetFocusedDataRow();
 
             if (row.DocNum != 0)
@@ -93,6 +133,19 @@ namespace LOSA.Compras
                 this.Close();
             }
 
+        }
+
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            var gridview = (GridView)grdOrdenesCompra.FocusedView;
+            var row = (dsCompras.orden_compra_exoRow)gridview.GetFocusedDataRow();
+
+            if (row.id_h != 0)
+            {
+                IdOrdenCompra = row.id_h;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }
