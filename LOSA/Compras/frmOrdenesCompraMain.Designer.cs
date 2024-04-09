@@ -1046,6 +1046,7 @@ namespace LOSA.Compras
             this.grdvDetalle.OptionsView.ShowFooter = true;
             this.grdvDetalle.OptionsView.ShowGroupPanel = false;
             this.grdvDetalle.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdvDetalle_CellValueChanged);
+            this.grdvDetalle.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdvDetalle_CellValueChanging);
             // 
             // colid_d_orden
             // 

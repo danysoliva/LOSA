@@ -510,53 +510,53 @@ namespace LOSA.Compras
                         }
                         break;
 
-                    case "indicador_impuesto": //EXO EXE ISV
+                    //case "indicador_impuesto": //EXO EXE ISV
 
-                        var gridviewiva = (GridView)grDetalle.FocusedView;
-                        var rowiva = (dsCompras.oc_detalle_exoneradaRow)gridviewiva.GetFocusedDataRow();
+                    //    var gridviewiva = (GridView)grDetalle.FocusedView;
+                    //    var rowiva = (dsCompras.oc_detalle_exoneradaRow)gridviewiva.GetFocusedDataRow();
+                    //    string valor_ = row.indicador_impuesto;
+                    //    switch (rowiva.indicador_impuesto)
+                    //    {
+                    //        case "EXE"://EXENTO
 
-                        switch (rowiva.indicador_impuesto)
-                        {
-                            case "EXE"://EXENTO
-
-                                rowiva.isv = 0;
-                                //txtImpuesto.EditValue = 0.00;
-                                ReCalculoImpuesto();
-                                CalcularTotal();
+                    //            rowiva.isv = 0;
+                    //            //txtImpuesto.EditValue = 0.00;
+                    //            ReCalculoImpuesto();
+                    //            CalcularTotal();
                                 
-                                break;
+                    //            break;
 
-                            case "EXO":
+                    //        case "EXO":
 
-                                rowiva.isv = 0;
-                                CalcularTotal();
+                    //            rowiva.isv = 0;
+                    //            CalcularTotal();
 
-                                break;
+                    //            break;
 
-                            case "ISV"://0.15
+                    //        case "ISV"://0.15
 
-                                rowiva.isv = rowiva.total * 0.15M;
-                                string.Format("{0:0,0.00}", rowiva.isv);
-                                rowiva.capitulo = " ";
-                                rowiva.partida_arancelaria = " ";
-                                ReCalculoImpuesto();
-                                CalcularTotal();
+                    //            rowiva.isv = rowiva.total * 0.15M;
+                    //            string.Format("{0:0,0.00}", rowiva.isv);
+                    //            rowiva.capitulo = " ";
+                    //            rowiva.partida_arancelaria = " ";
+                    //            ReCalculoImpuesto();
+                    //            CalcularTotal();
 
-                                break;
+                    //            break;
 
-                            case "ISVE"://0.18
+                    //        case "ISVE"://0.18
 
-                                rowiva.isv = rowiva.total * 0.18M;
-                                string.Format("{0:0,0.00}", rowiva.isv);
-                                rowiva.capitulo = " ";
-                                rowiva.partida_arancelaria = " ";
-                                ReCalculoImpuesto();
-                                CalcularTotal();
+                    //            rowiva.isv = rowiva.total * 0.18M;
+                    //            string.Format("{0:0,0.00}", rowiva.isv);
+                    //            rowiva.capitulo = " ";
+                    //            rowiva.partida_arancelaria = " ";
+                    //            ReCalculoImpuesto();
+                    //            CalcularTotal();
 
-                                break;
-                        }
+                    //            break;
+                    //    }
 
-                        break;
+                    //    break;
 
                 }
 
@@ -2408,6 +2408,111 @@ namespace LOSA.Compras
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void grdvDetalle_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)grDetalle.FocusedView;
+            var row = (dsCompras.oc_detalle_exoneradaRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                switch (e.Column.FieldName)
+                {
+                    //case "cantidad":
+
+                    //    row.total = row.cantidad * row.precio_por_unidad;
+                    //    if (TsExoOIsv.IsOn)//Exonerada
+                    //        row.isv = 0;
+                    //    else
+                    //        row.isv = (row.cantidad * row.precio_por_unidad) * Convert.ToDecimal(0.15);
+
+                    //    //row.total += row.isv;
+                    //    CalcularTotal();
+                    //    break;
+                    //case "precio_por_unidad":
+
+                    //    row.total = row.cantidad * row.precio_por_unidad;
+                    //    if (TsExoOIsv.IsOn)//Exonerada
+                    //        row.isv = 0;
+                    //    else
+                    //        row.isv = (row.cantidad * row.precio_por_unidad) * Convert.ToDecimal(0.15);
+
+                    //    //row.total += row.isv;
+                    //    CalcularTotal();
+                    //    break;
+                    //case "capitulo":
+                    //    var gridview = (GridView)grDetalle.FocusedView;
+                    //    //var row = (dsExoneracion.capitulosRow)gridview.GetFocusedDataRow();
+                    //    var rowz = (dsCompras.oc_detalle_exoneradaRow)gridview.GetFocusedDataRow();
+
+                    //    if (!rowz.IscapituloNull())
+                    //    {
+                    //        CargarPartidasArancelarias(rowz.capitulo);
+                    //    }
+                    //    else
+                    //    {
+                    //        //string a = row.capitulo;
+                    //    }
+                    //    break;
+
+                    case "indicador_impuesto": //EXO EXE ISV
+
+                        var gridviewiva = (GridView)grDetalle.FocusedView;
+                        var rowiva = (dsCompras.oc_detalle_exoneradaRow)gridviewiva.GetFocusedDataRow();
+                        string valor_ = row.indicador_impuesto;
+                        valor_ = e.Value.ToString();
+                        switch (valor_)
+                        {
+                            case "EXE"://EXENTO
+
+                                rowiva.isv = 0;
+                                row.isv = 0;
+                                dsCompras1.AcceptChanges();
+                                //txtImpuesto.EditValue = 0.00;
+                                //ReCalculoImpuesto();
+                                CalcularTotal();
+
+                                break;
+
+                            case "EXO":
+
+                                rowiva.isv = 0;
+                                CalcularTotal();
+
+                                break;
+
+                            case "ISV"://0.15
+
+                                rowiva.isv = rowiva.total * 0.15M;
+                                string.Format("{0:0,0.00}", rowiva.isv);
+                                rowiva.capitulo = " ";
+                                rowiva.partida_arancelaria = " ";
+                                ReCalculoImpuesto();
+                                CalcularTotal();
+
+                                break;
+
+                            case "ISVE"://0.18
+
+                                rowiva.isv = rowiva.total * 0.18M;
+                                string.Format("{0:0,0.00}", rowiva.isv);
+                                rowiva.capitulo = " ";
+                                rowiva.partida_arancelaria = " ";
+                                ReCalculoImpuesto();
+                                CalcularTotal();
+
+                                break;
+                        }
+                        break;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
