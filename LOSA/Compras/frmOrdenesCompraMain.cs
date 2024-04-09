@@ -838,7 +838,7 @@ namespace LOSA.Compras
             btnPrint.Enabled = false;
             ContactCode = 0;
             glRutaAprobacionOC.Text = string.Empty;
-            grdTipoOrden.Text = string.Empty;
+            grdTipoOrden.EditValue = 0;
             txtContactoPerson.Text = string.Empty;
             txtNumAtCard.Text = string.Empty;
             txtSubtotal.EditValue = 0;
