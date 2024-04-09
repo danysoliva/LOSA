@@ -30,7 +30,7 @@ namespace LOSA.Compras
         UserLogin UsuarioLogueado;
         DataOperations dp = new DataOperations();
         TipoOperacion tipooperacion;
-        int IdOrdenCompraActual;
+        int IdOrdenCompraActual, IdExoneracionVigente = 0;
         int IdEstadoOrdenCompra;
         int IdSolicitud = 0;
         string direccion;
@@ -438,7 +438,7 @@ namespace LOSA.Compras
                         CalcularTotal();
                         break;
                     case TipoOperacion.View:
-
+                        //CalcularTotal();
                         break;
                     default:
                         CalcularTotal();
@@ -781,23 +781,27 @@ namespace LOSA.Compras
                     case "EXE":
 
                         valor_impuesto = 0;
+                        ReCalculoImpuesto();
                         break;
 
                     case "EXO":
                         valor_impuesto = 0;
+                        ReCalculoImpuesto();
                         break;
 
                     case "ISV":
                         valor_impuesto = 0.15M;
-
+                        ReCalculoImpuesto();
                         break;
 
                     case "ISVE":
                         valor_impuesto = 0.18M;
+                        ReCalculoImpuesto();
                         break;
                     default:
                         break;
                 }
+                
 
                 //txtImpuesto.EditValue = string.Format("{0:##,###,##0.##}", SubTotal * valor_impuesto);// decimal.Round(SubTotal * valor_impuesto, 2, MidpointRounding.AwayFromZero);
                 txtTotal.EditValue = string.Format("{0:##,###,##0.##}", SubTotal + Convert.ToDecimal(txtImpuesto.EditValue)); //decimal.Round(SubTotal + Convert.ToDecimal(txtImpuesto.EditValue), 2, MidpointRounding.AwayFromZero);
@@ -857,6 +861,7 @@ namespace LOSA.Compras
             frmSearchOrdenC frm = new frmSearchOrdenC(frmSearchOrdenC.FiltroOrdenesCompra.Todas, UsuarioLogueado);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                tipooperacion = TipoOperacion.Update;
                 //CargarSolicitud(frm.IdSolicitudSeleccionado);
                 CargarInfoOrden(frm.IdOrdenesSeleccionado);
             }
@@ -927,7 +932,20 @@ namespace LOSA.Compras
                 }
 
                 CargarDetalleOrdenCompra(IdOrdenCompraActual);
-                tipooperacion = TipoOperacion.Update;
+
+                //switch (tipooperacion)
+                //{
+                //    case TipoOperacion.New:
+                //        break;
+                //    case TipoOperacion.Update:
+                //        break;
+                //    case TipoOperacion.View:
+                //        break;
+                //    default:
+                //        tipooperacion = TipoOperacion.Update;
+                //        break;
+                //}
+                
 
                 switch (IdEstadoOrdenCompra)
                 {
@@ -1556,7 +1574,7 @@ namespace LOSA.Compras
                         transaction = conn.BeginTransaction("Transaction Order");
 
                         SqlCommand cmd = conn.CreateCommand();
-                        cmd.CommandText = "[sp_CM_insert_ordencompra_h_v2]";
+                        cmd.CommandText = "[sp_CM_insert_ordencompra_h_v3]";
                         cmd.Connection = conn;
                         cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -1960,6 +1978,7 @@ namespace LOSA.Compras
                     CancelarOrdenCompra(IdOrdenCompraActual);
                     break;
                 case TipoOperacion.View:
+                    CancelarOrdenCompra(IdOrdenCompraActual);
 
                     break;
                 default:
@@ -1992,7 +2011,7 @@ namespace LOSA.Compras
 
                 case 3: //Rechazada
                     Proceder = false;
-                    mensaje = "No se puede Cancelar\nLa Orden de Compra fue Rechazada!";
+                    mensaje = "No se puede Cancelar\nLa Orden de Compra fue Rechazada por el Aprobador!";
                     break;
 
                 case 4: //Cancelada
@@ -2000,6 +2019,10 @@ namespace LOSA.Compras
                     mensaje = "La Orden de Compra se encuentra Cancelada!";
                     break;
 
+                case 5: //Creada (Se debe Enviar a Aprobacion)
+                    Proceder = true;
+
+                    break;
                 default:
                     Proceder = false;
                     break;
@@ -2027,7 +2050,7 @@ namespace LOSA.Compras
                     txtComentarios.Enabled = false;
                     grDetalle.Enabled = false;
                     dtFechaContabilizacion.Enabled = false;
-                    txtComentarios.Text = "Cancelado";
+                    //txtComentarios.Text = "Cancelado";
                     txtEstado.Text = "Cancelado";
                     IdEstadoOrdenCompra = 4; //Cancelado
                 }
@@ -2070,57 +2093,93 @@ namespace LOSA.Compras
            
         }
 
-        private void TsTipoOrden_Toggled(object sender, EventArgs e)
-        {
-
-        }
-
         private void TsExoOIsv_Toggled(object sender, EventArgs e)
         {
-            if (TsExoOIsv.IsOn) //Exonerado
+            switch (tipooperacion)
             {
-                txtExoneracion.Visible = true;
-                lblExoneracion.Visible = true;
-                ObtenerExoneracionVigente();
+                case TipoOperacion.New:
+                    break;
+                case TipoOperacion.Update:
+                    if (TsExoOIsv.IsOn) //Exonerado
+                    {
+                        txtExoneracion.Visible = true;
+                        lblExoneracion.Visible = true;
+                        ObtenerExoneracionVigente();
 
-                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
-                {
-                    item.isv = 0;
-                    item.indicador_impuesto = "EXO";
-                }
-                CalcularTotal();
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.isv = 0;
+                            item.indicador_impuesto = "EXO";
+                        }
+                        CalcularTotal();
 
+                    }
+                    else //Impuesto
+                    {
+                        txtExoneracion.Text = "";
+                        txtExoneracion.Visible = false;
+                        lblExoneracion.Visible = false;
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.capitulo = " ";
+                            item.partida_arancelaria = " ";
+                            item.isv = (item.total * 0.15M);
+                            item.indicador_impuesto = "ISV";
+
+                        }
+                        ReCalculoImpuesto();
+                        CalcularTotal();
+                    }
+                    break;
+                case TipoOperacion.View:
+                    break;
+                default:
+                    if (TsExoOIsv.IsOn) //Exonerado
+                    {
+                        txtExoneracion.Visible = true;
+                        lblExoneracion.Visible = true;
+                        ObtenerExoneracionVigente();
+
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.isv = 0;
+                            item.indicador_impuesto = "EXO";
+                        }
+                        CalcularTotal();
+
+                    }
+                    else //Impuesto
+                    {
+                        txtExoneracion.Text = "";
+                        txtExoneracion.Visible = false;
+                        lblExoneracion.Visible = false;
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.capitulo = " ";
+                            item.partida_arancelaria = " ";
+                            item.isv = (item.total * 0.15M);
+                            item.indicador_impuesto = "ISV";
+
+                        }
+                        ReCalculoImpuesto();
+                        CalcularTotal();
+                    }
+                    break;
             }
-            else //Impuesto
-            {
-                txtExoneracion.Text = "";
-                txtExoneracion.Visible = false;
-                lblExoneracion.Visible = false;
-                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
-                {
-                    item.capitulo = " ";
-                    item.partida_arancelaria = " ";
-                    item.isv = (item.total * 0.15M);
-                    item.indicador_impuesto = "ISV";
 
-                }
-                ReCalculoImpuesto();
-                CalcularTotal();
-            }
+            
         }
 
         private void ObtenerExoneracionVigente()
         {
             try
             {
-                string query = @"SELECT top 1 [resolucion_exonerada]
-                                  FROM [LOSA].[dbo].[CM_exoneracion_h]
-                                  where enable = 1 and cerrado = 0
-                                  order by 1 desc";
+                string query = @"sp_get_exoneracion_vigente";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tipo", 1);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -2290,6 +2349,62 @@ namespace LOSA.Compras
 
                     break;
                 case TipoOperacion.Update:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void grdTipoOrden_EditValueChanged(object sender, EventArgs e)
+        {
+            switch (tipooperacion)
+            {
+                case TipoOperacion.New:
+                    if (Convert.ToInt32(grdTipoOrden.EditValue) > 0)
+                    {
+                        switch (Convert.ToInt32(grdTipoOrden.EditValue))
+                        {
+                            case 1: //Materia Prima
+                                glRutaAprobacionOC.EditValue = 1;//Materia Prima
+                                break;
+
+                            case 2://Gastos Produccion
+                                glRutaAprobacionOC.EditValue = 2;//Gastos Produccion
+                                break;
+
+                            case 3://Gastos Mantenimiento
+                                glRutaAprobacionOC.EditValue = 3;//Gastos Mantenimiento
+                                break;
+
+                            case 4://Gastos Calidad
+
+                                glRutaAprobacionOC.EditValue = 4;//Gastos Calidad
+
+                                break;
+                            case 5://Gastos Logistica
+
+                                glRutaAprobacionOC.EditValue = 5;
+
+                                break;
+
+                            case 7:
+                                glRutaAprobacionOC.EditValue = 0;
+                                break;
+
+                            case 8:
+
+                                glRutaAprobacionOC.EditValue = 7;
+
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                case TipoOperacion.Update:
+                    break;
+                case TipoOperacion.View:
                     break;
                 default:
                     break;

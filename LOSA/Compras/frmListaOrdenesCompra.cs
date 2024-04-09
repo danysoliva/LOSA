@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +19,11 @@ namespace LOSA.Compras
     public partial class frmListaOrdenesCompra : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public frmListaOrdenesCompra()
+        UserLogin UsuarioLogueado;
+        public frmListaOrdenesCompra(UserLogin pUserLog)
         {
             InitializeComponent();
+            UsuarioLogueado = pUserLog;
             dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-15);
             dtFechaHastaDisponibles.DateTime = dp.Now().AddDays(1);
 
@@ -137,16 +140,18 @@ namespace LOSA.Compras
                 rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool reportPrint = new ReportPrintTool(report);
-                ActualizarConteoPrint(row.id_h);
                 reportPrint.Print();
+                ActualizarConteoPrint(row.id_h);
+                
             }
             else
             {
                 rptOrdenCompra report = new rptOrdenCompra(row.id_h);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool reportPrint = new ReportPrintTool(report);
-                ActualizarConteoPrint(row.id_h);
                 reportPrint.Print();
+                ActualizarConteoPrint(row.id_h);
+                
             }
         }
 
@@ -275,6 +280,78 @@ namespace LOSA.Compras
         private void btnRefreshPendientes_Click(object sender, EventArgs e)
         {
             LodOrdenesPendientes();
+        }
+
+        private void reposEnviarAprobacion1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grdPendientesAutorizacion.FocusedView;
+            var row = (dsCompras.ordenes_pendiente_autorizacionRow)gridview.GetFocusedDataRow();
+
+            bool Proceder = false;
+
+            if (row.id_h > 0)
+            {
+                CMOrdenCompraH oc = new CMOrdenCompraH();
+                oc.RecuperarRegistro(row.id_h);
+
+                switch (row.id_estado)
+                {
+                    case 1://Pendiente de Aprobacion
+                        Proceder = false;
+                        CajaDialogo.Information("La Orden ya se encuentra en espera de aprobacion!");
+
+                        break;
+
+                    case 2: //Autorizado
+                        Proceder = false;
+                        CajaDialogo.Information("La Orden ya fue Autorizada!");
+
+                        break;
+                    case 3: //Rechazado
+                        Proceder = false;
+                        CajaDialogo.Information("La Orden se encuentra Rechazada!");
+
+                        break;
+
+                    case 4: //Cancelado
+                        Proceder = false;
+                        CajaDialogo.Information("La Orden fue Cancelada!");
+
+                        break;
+
+                    case 5: //Creada (Se debe Enviar a Aprobacion)
+                        Proceder = true;
+                        break;
+
+                    default:
+                        break;
+                }
+
+                if (Proceder)
+                {
+                    try
+                    {
+                        string query = @"sp_CM_enviar_aprobacion_orden_compra";
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Id_h", row.id_h);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+                    CajaDialogo.Information("Orden de Compra enviada a aprobacion!");
+                    LodOrdenesPendientes();
+
+                }
+            }
+
         }
     }
 }

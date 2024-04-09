@@ -127,7 +127,7 @@ namespace LOSA.Compras
             }
 
             CMOrdenCompraH pOrdenActual = new CMOrdenCompraH();
-            if(pOrdenActual.RecuperarRegistro(row.id))
+            if(pOrdenActual.RecuperarRegistro(row.id_ordenH))
             {
                 frmConfirmationAutorization frm = new frmConfirmationAutorization(pOrdenActual);
                 if (frm.ShowDialog() == DialogResult.OK)

@@ -5219,7 +5219,7 @@ namespace LOSA
 
         private void navListaOC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmListaOrdenesCompra frm = new frmListaOrdenesCompra();
+            frmListaOrdenesCompra frm = new frmListaOrdenesCompra(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
