@@ -22,6 +22,7 @@ using static LOSA.Clases.BinGranel;
 //using SAPbobsCOM;
 using static DevExpress.DataProcessing.InMemoryDataProcessor.AddSurrogateOperationAlgorithm;
 using LOSA.Utileria;
+using DevExpress.Utils;
 
 namespace LOSA.Compras
 {
@@ -852,6 +853,7 @@ namespace LOSA.Compras
             glRutaAprobacionOC.Enabled = true;
             comboBoxIntercom.Enabled = true;
             TsExoOIsv.ReadOnly = false;
+            btnEditar.Enabled = false;
             //GetSigID();
 
         }
@@ -974,6 +976,7 @@ namespace LOSA.Compras
                         glRutaAprobacionOC.Enabled = false;
                         comboBoxIntercom.Enabled = false;
                         txtNumAtCard.Enabled = false;
+                        btnEditar.Enabled = true;
                         
                         break;
 
@@ -1169,13 +1172,10 @@ namespace LOSA.Compras
             {
                 case TipoOperacion.New:
 
-
                     foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
                     {
                         ConsolidacionSaldos(item.capitulo, item.partida_arancelaria, item.cantidad, item.total);
                     }
-
-
 
                     break;
                 case TipoOperacion.Update:
@@ -1334,6 +1334,11 @@ namespace LOSA.Compras
                     if (item.indicador_impuesto == "EXE")
                     {
                         CajaDialogo.Error("Una Linea del Detalle tiene un Registro Exento!\nLa Orden que se esta creando es Exonerada!");
+                        return;
+                    }
+                    if (item.indicador_impuesto == "ISV")
+                    {
+                        CajaDialogo.Error("Una Linea del Detalle tiene un Registro con Impuesto!\nLa Orden que se esta creando es Exonerada!");
                         return;
                     }
                 }
@@ -1677,7 +1682,7 @@ namespace LOSA.Compras
                         connUpdate.Open();
                         transactionUpdate = connUpdate.BeginTransaction("Transaction Order");
                         SqlCommand cmdUpdate = connUpdate.CreateCommand();
-                        cmdUpdate.CommandText = "sp_CM_update_ordencompra_h";
+                        cmdUpdate.CommandText = "[sp_CM_update_ordencompra_hV2]";
                         cmdUpdate.Connection = connUpdate;
                         cmdUpdate.Transaction = transactionUpdate;
                         cmdUpdate.CommandType = CommandType.StoredProcedure;
@@ -1745,6 +1750,7 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
                             cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmdUpdate.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                            cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
                             cmdUpdate.ExecuteNonQuery();
                         }
 
@@ -2377,14 +2383,15 @@ namespace LOSA.Compras
                                 break;
 
                             case 4://Gastos Calidad
-
                                 glRutaAprobacionOC.EditValue = 4;//Gastos Calidad
-
                                 break;
+
                             case 5://Gastos Logistica
-
                                 glRutaAprobacionOC.EditValue = 5;
+                                break;
 
+                            case 6:
+                                glRutaAprobacionOC.EditValue = 6;
                                 break;
 
                             case 7:
@@ -2392,9 +2399,7 @@ namespace LOSA.Compras
                                 break;
 
                             case 8:
-
                                 glRutaAprobacionOC.EditValue = 7;
-
                                 break;
 
                             default:
@@ -2507,13 +2512,55 @@ namespace LOSA.Compras
                         }
                         break;
                 }
-
-
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            CMOrdenCompraH oc = new CMOrdenCompraH();
+            oc.RecuperarRegistro(IdOrdenCompraActual);
+
+            bool Proceder = false;
+
+            switch (oc.IdEstado)
+            {
+                case 1: //Pendiente (Creada)
+                    Proceder = true;
+                    break;
+
+                case 2: //Autorizada
+                    Proceder = true;
+                    //if (ValidarEstadoOrdenSAP(oc.DocNum))
+                    //{
+                    //    CajaDialogo.Error("Antes de Editar esta Orden Autorizada.\nDebe Cancelar la Orden en SAP.");
+                    //    return;
+                    //}
+                    //else
+                    //    Proceder = true;
+                    break;
+                default:
+                    Proceder = false;
+                    break;
+            }
+
+            cmdNuevo.Enabled = true;
+            cmdAddDetalle.Enabled = true;
+            txtComentarios.Enabled = true;
+            grDetalle.Enabled = true;
+            dtFechaContabilizacion.Enabled = false;
+            btnPrint.Enabled = false;
+            cmdGuardar.Enabled = true;
+            TsExoOIsv.ReadOnly = false;
+            //btnShowPopu.Enabled = false;
+            btnCopiarDe.Enabled = false;
+            grdTipoOrden.Enabled = false;
+            glRutaAprobacionOC.Enabled = false;
+            comboBoxIntercom.Enabled = true;
+            txtNumAtCard.Enabled = true;
         }
 
         private void CargarOrdenCompraFromOrdenCompra(int idOrdenCompraSoloDetalle)

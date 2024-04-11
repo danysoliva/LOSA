@@ -13,12 +13,12 @@ namespace LOSA.Compras
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -144,6 +144,7 @@ namespace LOSA.Compras
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btnEditar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
@@ -200,6 +201,7 @@ namespace LOSA.Compras
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.btnEditar);
             this.panelControl1.Controls.Add(this.comboBoxIntercom);
             this.panelControl1.Controls.Add(this.labelControl17);
             this.panelControl1.Controls.Add(this.txtID);
@@ -1042,7 +1044,6 @@ namespace LOSA.Compras
             this.grdvDetalle.CustomizationFormBounds = new System.Drawing.Rectangle(774, 457, 260, 282);
             this.grdvDetalle.GridControl = this.grDetalle;
             this.grdvDetalle.Name = "grdvDetalle";
-            this.grdvDetalle.OptionsView.ShowAutoFilterRow = true;
             this.grdvDetalle.OptionsView.ShowFooter = true;
             this.grdvDetalle.OptionsView.ShowGroupPanel = false;
             this.grdvDetalle.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdvDetalle_CellValueChanged);
@@ -1567,6 +1568,18 @@ namespace LOSA.Compras
             this.popupMenu2.Manager = this.barManager1;
             this.popupMenu2.Name = "popupMenu2";
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Enabled = false;
+            this.btnEditar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnEditar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnEditar.Location = new System.Drawing.Point(328, 12);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(47, 33);
+            this.btnEditar.TabIndex = 96;
+            this.btnEditar.ToolTip = "Guardar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // frmOrdenesCompraMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1765,5 +1778,6 @@ namespace LOSA.Compras
         private DevExpress.XtraBars.BarButtonItem btnOrdenCompra;
         private DevExpress.XtraEditors.DropDownButton btnCopiarDe;
         private DevExpress.XtraBars.PopupMenu popupMenu2;
+        private DevExpress.XtraEditors.SimpleButton btnEditar;
     }
 }

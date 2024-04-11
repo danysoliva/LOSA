@@ -40,6 +40,16 @@ namespace LOSA.Compras
                     lblEstado.Visible = true;
                     lblEstado.Text = "OC Rechazada\nBORRADOR";
                     break;
+
+                case 4: //Cancelada
+                    lblEstado.Visible = true;
+                    lblEstado.Text = "OC Cancelada por Usuario\nBORRADOR";
+                    break;
+
+                case 5: //Rechazado
+                    lblEstado.Visible = true;
+                    lblEstado.Text = "OC Creada Sin Aprobacion\nBORRADOR";
+                    break;
                 default:
                     break;
             }
@@ -61,13 +71,13 @@ namespace LOSA.Compras
             GetExoneracionVigente();
 
             string SimboloMoneda = "L.";
-            switch (oc.DocCur)
+            switch (oc.DocCur.Trim())
             {
-                case "LPS       ":
+                case "LPS":
                     SimboloMoneda = "L.";
                     break;
 
-                case "USD       ":
+                case "USD":
                     SimboloMoneda = "$";
                     break;
 

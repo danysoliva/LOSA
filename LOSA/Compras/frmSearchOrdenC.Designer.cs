@@ -78,6 +78,9 @@ namespace LOSA.Compras
             // 
             // grdSolicitudes
             // 
+            this.grdSolicitudes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grdSolicitudes.DataMember = "orden_compra_exo";
             this.grdSolicitudes.DataSource = this.dsCompras1;
             this.grdSolicitudes.Location = new System.Drawing.Point(0, 48);
@@ -219,7 +222,7 @@ namespace LOSA.Compras
             // 
             this.colsubido.FieldName = "subido";
             this.colsubido.Name = "colsubido";
-            this.colsubido.OptionsColumn.AllowEdit = false;
+            this.colsubido.OptionsColumn.ReadOnly = true;
             this.colsubido.Width = 110;
             // 
             // gridColumn1
@@ -236,6 +239,7 @@ namespace LOSA.Compras
             this.gridColumn2.Caption = "Creada por:";
             this.gridColumn2.FieldName = "creadopor";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 5;
             this.gridColumn2.Width = 117;
@@ -292,6 +296,7 @@ namespace LOSA.Compras
             this.cmdRefreshDisponibles.Size = new System.Drawing.Size(91, 41);
             this.cmdRefreshDisponibles.TabIndex = 108;
             this.cmdRefreshDisponibles.Text = "Refresh";
+            this.cmdRefreshDisponibles.Click += new System.EventHandler(this.cmdRefreshDisponibles_Click);
             // 
             // dtFechaHastaDisponibles
             // 

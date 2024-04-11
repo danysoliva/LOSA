@@ -62,7 +62,7 @@ namespace LOSA.Compras
             }
 
             string SimboloMoneda = "L.";
-            switch (oc.DocCur)
+            switch (oc.DocCur.TrimEnd())
             {
                 case "LPS":
                     SimboloMoneda = "L.";

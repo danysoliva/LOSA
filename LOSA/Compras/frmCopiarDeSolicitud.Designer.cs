@@ -45,7 +45,6 @@ namespace LOSA.Compras
             this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lblTipoDocumento = new DevExpress.XtraEditors.LabelControl();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.grdOrdenesCompra = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -63,6 +62,7 @@ namespace LOSA.Compras
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties)).BeginInit();
@@ -72,17 +72,17 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
-            this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdOrdenesCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.navigationPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(10, 40);
+            this.labelControl1.Location = new System.Drawing.Point(19, 37);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(40, 16);
             this.labelControl1.TabIndex = 0;
@@ -115,7 +115,7 @@ namespace LOSA.Compras
             // dtFechaHastaDisponibles
             // 
             this.dtFechaHastaDisponibles.EditValue = null;
-            this.dtFechaHastaDisponibles.Location = new System.Drawing.Point(216, 32);
+            this.dtFechaHastaDisponibles.Location = new System.Drawing.Point(216, 34);
             this.dtFechaHastaDisponibles.Name = "dtFechaHastaDisponibles";
             this.dtFechaHastaDisponibles.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.dtFechaHastaDisponibles.Properties.Appearance.Options.UseFont = true;
@@ -247,14 +247,9 @@ namespace LOSA.Compras
             this.navigationFrame1.TabIndex = 105;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
-            // navigationPage1
-            // 
-            this.navigationPage1.Controls.Add(this.grdSolicitudesCompra);
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(1163, 552);
-            // 
             // navigationPage2
             // 
+            this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Controls.Add(this.grdOrdenesCompra);
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(1163, 552);
@@ -427,6 +422,13 @@ namespace LOSA.Compras
             this.gridColumn4.VisibleIndex = 9;
             this.gridColumn4.Width = 67;
             // 
+            // navigationPage1
+            // 
+            this.navigationPage1.Caption = "navigationPage1";
+            this.navigationPage1.Controls.Add(this.grdSolicitudesCompra);
+            this.navigationPage1.Name = "navigationPage1";
+            this.navigationPage1.Size = new System.Drawing.Size(1163, 552);
+            // 
             // frmCopiarDeSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,10 +452,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
-            this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdOrdenesCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.navigationPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
