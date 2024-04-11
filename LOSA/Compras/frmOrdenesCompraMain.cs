@@ -838,7 +838,7 @@ namespace LOSA.Compras
             txtDocNum.Clear();
             btnPrint.Enabled = false;
             ContactCode = 0;
-            glRutaAprobacionOC.Text = string.Empty;
+            glRutaAprobacionOC.EditValue = 0;
             grdTipoOrden.EditValue = 0;
             txtContactoPerson.Text = string.Empty;
             txtNumAtCard.Text = string.Empty;
@@ -847,7 +847,7 @@ namespace LOSA.Compras
             txtTotal.EditValue = 0;
             txtDireccion.Text = string.Empty;
             comboBoxIntercom.Text = string.Empty;
-
+            
             txtNumAtCard.Enabled = true;
             grdTipoOrden.Enabled = true;
             glRutaAprobacionOC.Enabled = true;
@@ -1718,6 +1718,7 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
                         else
                             cmdUpdate.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
 
                         cmdUpdate.ExecuteNonQuery();
 
@@ -1750,7 +1751,7 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
                             cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmdUpdate.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
-                            cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
+                            //cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
                             cmdUpdate.ExecuteNonQuery();
                         }
 
@@ -1919,6 +1920,7 @@ namespace LOSA.Compras
                     rptOrdenCompraExo report = new rptOrdenCompraExo(IdOrdenCompraActual);
                     report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                     ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(IdOrdenCompraActual);
                     reportPrint.ShowPreview();
                 }
                 else
@@ -1926,12 +1928,32 @@ namespace LOSA.Compras
                     rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual);
                     report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                     ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(IdOrdenCompraActual);
                     reportPrint.ShowPreview();
                 }
             }
             else
             {
                 CajaDialogo.Error("Debe seleccionar una Orden de Compra!");
+                return;
+            }
+        }
+
+        private void ActualizarConteoPrint(int pIdOC)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_CM_update_count_print_oc", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdOC", pIdOC);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
                 return;
             }
         }
@@ -2104,6 +2126,36 @@ namespace LOSA.Compras
             switch (tipooperacion)
             {
                 case TipoOperacion.New:
+                    if (TsExoOIsv.IsOn) //Exonerado
+                    {
+                        txtExoneracion.Visible = true;
+                        lblExoneracion.Visible = true;
+                        ObtenerExoneracionVigente();
+
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.isv = 0;
+                            item.indicador_impuesto = "EXO";
+                        }
+                        CalcularTotal();
+
+                    }
+                    else //Impuesto
+                    {
+                        txtExoneracion.Text = "";
+                        txtExoneracion.Visible = false;
+                        lblExoneracion.Visible = false;
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.capitulo = " ";
+                            item.partida_arancelaria = " ";
+                            item.isv = (item.total * 0.15M);
+                            item.indicador_impuesto = "ISV";
+
+                        }
+                        ReCalculoImpuesto();
+                        CalcularTotal();
+                    }
                     break;
                 case TipoOperacion.Update:
                     if (TsExoOIsv.IsOn) //Exonerado
@@ -2534,13 +2586,13 @@ namespace LOSA.Compras
 
                 case 2: //Autorizada
                     Proceder = true;
-                    //if (ValidarEstadoOrdenSAP(oc.DocNum))
-                    //{
-                    //    CajaDialogo.Error("Antes de Editar esta Orden Autorizada.\nDebe Cancelar la Orden en SAP.");
-                    //    return;
-                    //}
-                    //else
-                    //    Proceder = true;
+                    if (ValidarEstadoOrdenSAP(oc.DocNum))
+                    {
+                        CajaDialogo.Error("Antes de Editar esta Orden Autorizada.\nDebe Cancelar la Orden en SAP.");
+                        return;
+                    }
+                    else
+                        Proceder = true;
                     break;
                 default:
                     Proceder = false;
@@ -2555,7 +2607,6 @@ namespace LOSA.Compras
             btnPrint.Enabled = false;
             cmdGuardar.Enabled = true;
             TsExoOIsv.ReadOnly = false;
-            //btnShowPopu.Enabled = false;
             btnCopiarDe.Enabled = false;
             grdTipoOrden.Enabled = false;
             glRutaAprobacionOC.Enabled = false;
