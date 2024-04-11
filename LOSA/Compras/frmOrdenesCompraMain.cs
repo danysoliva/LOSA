@@ -38,6 +38,7 @@ namespace LOSA.Compras
         int ContactCode;
         char CurSource;
         decimal TasaCambio;
+        bool EdicionEspecialActiva = false;
         public enum TipoOperacion
         {
             New = 1,
@@ -854,6 +855,8 @@ namespace LOSA.Compras
             comboBoxIntercom.Enabled = true;
             TsExoOIsv.ReadOnly = false;
             btnEditar.Enabled = false;
+            btnCopiarDe.Enabled = true;
+            EdicionEspecialActiva = false;
             //GetSigID();
 
         }
@@ -866,6 +869,7 @@ namespace LOSA.Compras
                 tipooperacion = TipoOperacion.Update;
                 //CargarSolicitud(frm.IdSolicitudSeleccionado);
                 CargarInfoOrden(frm.IdOrdenesSeleccionado);
+                EdicionEspecialActiva = false;
             }
 
             cmdNuevo.Enabled = true;
@@ -1052,6 +1056,7 @@ namespace LOSA.Compras
         private void cmdAnterior_Click(object sender, EventArgs e)
         {
             tipooperacion = TipoOperacion.Update;
+            EdicionEspecialActiva = false;
             if (IdOrdenCompraActual == 0)//vamos a mostrar el ultimo
             {
                 try
@@ -1109,6 +1114,7 @@ namespace LOSA.Compras
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
             tipooperacion = TipoOperacion.Update;
+            EdicionEspecialActiva = false;
             if (IdOrdenCompraActual == 0)//vamos a mostrar el primero
             {
                 try
@@ -1180,34 +1186,40 @@ namespace LOSA.Compras
                     break;
                 case TipoOperacion.Update:
 
-                    switch (IdEstadoOrdenCompra)
+                    if (!EdicionEspecialActiva)
                     {
-                        case 1://Pendiente (Creada)
+                        switch (IdEstadoOrdenCompra)
+                        {
+                            case 1://Pendiente (Creada)
 
-                            DialogResult r = CajaDialogo.Pregunta("Se va Actualizar esta Orden de Compra.\nEsta Seguro?");
-                            if (r != System.Windows.Forms.DialogResult.Yes)
+                                DialogResult r = CajaDialogo.Pregunta("Se va Actualizar esta Orden de Compra.\nEsta Seguro?");
+                                if (r != System.Windows.Forms.DialogResult.Yes)
+                                    return;
+
+                                break;
+
+                            case 2://Autorizado
+                                CajaDialogo.Error("La Orden ya fue Aprobada, no se puede Editar!");
                                 return;
 
-                            break;
+                                break;
 
-                        case 2://Autorizado
-                            CajaDialogo.Error("La Orden ya fue Aprobada, no se puede Editar!");
-                            
-                            break;
+                            case 3://Rechazado
+                                CajaDialogo.Error("La Orden fue Rechazada, no se puede Editar!");
 
-                        case 3://Rechazado
-                            CajaDialogo.Error("La Orden fue Rechazada, no se puede Editar!");
+                                break;
 
-                            break;
+                            case 4: //Cancelada por el Usuario Creador
+                                CajaDialogo.Error("Orden Cancelada por el Usuario!");
 
-                        case 4: //Cancelada por el Usuario Creador
-                            CajaDialogo.Error("Orden Cancelada por el Usuario!");
+                                break;
 
-                            break;
-                           
-                        default:
-                            break;
+                            default:
+                                break;
+                        }
                     }
+
+                    
 
                     break;
                 default:
@@ -1362,6 +1374,12 @@ namespace LOSA.Compras
                             item.partida_arancelaria = " ";
                             return;
                         }
+                    }
+
+                    if (item.indicador_impuesto == "EXO")
+                    {
+                        CajaDialogo.Error("La Orden de Compra no es Exonerada!\nNo puede haber un detalle con Indicador de Impuesto: EXO");
+                        return;
                     }
                 }
             }
@@ -2585,7 +2603,7 @@ namespace LOSA.Compras
                     break;
 
                 case 2: //Autorizada
-                    Proceder = true;
+                    //Proceder = true;
                     if (ValidarEstadoOrdenSAP(oc.DocNum))
                     {
                         CajaDialogo.Error("Antes de Editar esta Orden Autorizada.\nDebe Cancelar la Orden en SAP.");
@@ -2612,6 +2630,8 @@ namespace LOSA.Compras
             glRutaAprobacionOC.Enabled = false;
             comboBoxIntercom.Enabled = true;
             txtNumAtCard.Enabled = true;
+            EdicionEspecialActiva = true;
+            btnCopiarDe.Enabled = false;
         }
 
         private void CargarOrdenCompraFromOrdenCompra(int idOrdenCompraSoloDetalle)
