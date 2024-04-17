@@ -57,7 +57,11 @@ namespace LOSA.TransaccionesMP
 
         private void verLotesProximosAvencer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            var gridview = (GridView)grDetalleLote.FocusedView;
+            var row = (dsTransaccionesMP.requisiciones_dRow)gridview.GetFocusedDataRow();
 
+            frmProximosA_vencer frm = new frmProximosA_vencer(row.id_materia_prima);
+            frm.ShowDialog();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
