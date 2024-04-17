@@ -186,6 +186,7 @@ namespace LOSA.Compras
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
+            this.colDocNum.Width = 94;
             // 
             // colfecha_contabilizacion
             // 
@@ -195,6 +196,7 @@ namespace LOSA.Compras
             this.colfecha_contabilizacion.OptionsColumn.AllowEdit = false;
             this.colfecha_contabilizacion.Visible = true;
             this.colfecha_contabilizacion.VisibleIndex = 1;
+            this.colfecha_contabilizacion.Width = 139;
             // 
             // colsolicitantes
             // 
@@ -204,6 +206,7 @@ namespace LOSA.Compras
             this.colsolicitantes.OptionsColumn.AllowEdit = false;
             this.colsolicitantes.Visible = true;
             this.colsolicitantes.VisibleIndex = 2;
+            this.colsolicitantes.Width = 146;
             // 
             // colcomentarios
             // 
@@ -213,6 +216,7 @@ namespace LOSA.Compras
             this.colcomentarios.OptionsColumn.AllowEdit = false;
             this.colcomentarios.Visible = true;
             this.colcomentarios.VisibleIndex = 3;
+            this.colcomentarios.Width = 622;
             // 
             // colfecha_vencimiento
             // 
@@ -222,6 +226,7 @@ namespace LOSA.Compras
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
             this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.Width = 137;
             // 
             // lblTipoDocumento
             // 

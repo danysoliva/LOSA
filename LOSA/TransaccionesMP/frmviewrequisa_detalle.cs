@@ -55,6 +55,11 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+        private void verLotesProximosAvencer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+        }
+
         private void cmdHome_Click(object sender, EventArgs e)
         {
              this.DialogResult = DialogResult.OK;
