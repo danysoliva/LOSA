@@ -261,7 +261,9 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                         {
                             copyMails = ticketInfo.copiaCorreos;
                             //copyMails.Add("ruben.garcia@aquafeedhn.com");
-                            copyMails.Add("ever.erazo@aquafeedhn.com");
+                            //copyMails.Add("ever.erazo@aquafeedhn.com");
+                            copyMails.Add(ticketInfo.UsuarioAsignadoMail);
+                            copyMails.Add(usuarioLogueado.AD_User + "aquafeedhn.com");
                         }
                         emailTcketParams.CorreosCC = copyMails;
 
