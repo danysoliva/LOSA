@@ -856,5 +856,106 @@ namespace LOSA.RecepcionMP
         {
             LoadTarimas();
         }
+
+        private void repostMarcarComoEntregado_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+
+            //TimeSpan diasaprox = dp.Now() - row.fecha_ingreso;
+
+            //int Dias = Convert.ToInt32(diasaprox.Days);
+
+            //if (Dias > 150)//Si es mayor que 150, la tarima ya se puede dar por consumida!
+            //{
+            //    CajaDialogo.Error("No puede editar tarimas que tengan mas de dos dias de ingreso.");
+            //    return;
+            //}
+
+            if (MessageBox.Show("Esta opcion es para dar de baja Tarimas que no Existen Fisicamente!", "Desea Continuar?", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            bool Error = false;
+            string mensaje = " ";
+            switch (row.id_estado_tarima)
+            {
+                case 1://Recepcionado
+                    Error = true;
+                    mensaje = "Esta Tarima solo esta Recepcionada!";
+                    break;
+                case 2://En Bodega
+                    Error = false;
+                    //mensaje = "Calidad tiene En Observación ésta tarima.!";
+                    break;
+                case 3://Retenido
+                    Error = true;
+                    break;
+                case 4://Comprometido
+                    Error = true;
+                    mensaje = "Algunas tarima ya esta comprometida!";
+                    break;
+                case 5://En Produccion
+                    Error = true;
+                    mensaje = "Esta tarima ya fue entregada a Produccion";
+                    break;
+                case 6://Consumido
+                    Error = true;
+                    mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
+                    break;
+                //case 7://
+                //    error = true;
+                //    mensaje = "Calidad tiene Retenida ésta tarima.!";
+                //    break;
+                case 8://Parcialmente Entregado
+                    Error = false;
+                    //mensaje = "Calidad ha Rechazado ésta tarima.!";
+                    break;
+                case 9://Rechazado
+                    Error = true;
+                    mensaje = "Esta tarima fue Rechazada!";
+                    break;
+                case 10://Ajuste de Inventario
+                    Error = true;
+                    mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                    break;
+                case 11: //Retenido Log
+                    Error = true;
+                    mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                    break;
+            }
+
+            if (Error)
+            {
+                CajaDialogo.Error(mensaje);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    string query = "sp_update_tarimas_enviadas_produccion_logistica";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idTarima", row.id);
+                    cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@idEstado", 5);//En Produccion
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    CajaDialogo.Information("Se he eliminado correctamente la tarima.");
+
+                    LoadTarimas();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+
+
+        }
     }
 }

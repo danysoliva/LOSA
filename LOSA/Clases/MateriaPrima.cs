@@ -29,6 +29,10 @@ namespace LOSA.Clases
         bool _Recuperado;
         int _idRM;
         bool _permitir;
+        bool validacionLotes;
+        int _uniteId;
+        int _tipoOrigen;
+        string _tipoMp;
 
         public int IdMP_ACS { get => _IdMP_ACS; set => _IdMP_ACS = value; }
         public string CodeMP_SAP { get => _CodeMP_SAP; set => _CodeMP_SAP = value; }
@@ -39,6 +43,10 @@ namespace LOSA.Clases
         public bool Enable { get => _enable; set => _enable = value; }
         public int IdRM { get => _idRM; set => _idRM = value; }
         public bool Permitir { get => _permitir; set => _permitir = value; }
+        public bool ValidacionLotes { get => validacionLotes; set => validacionLotes = value; }
+        public int UniteId { get => _uniteId; set => _uniteId = value; }
+        public int TipoOrigen { get => _tipoOrigen; set => _tipoOrigen = value; }
+        public string TipoMp { get => _tipoMp; set => _tipoMp = value; }
 
         private void LoadMasterDataList()
         {
@@ -228,6 +236,10 @@ namespace LOSA.Clases
                     NameComercial = Name = dr.GetString(2);
                     //name sap = dr.GetString(3);
                     CodeMP_SAP = dr.GetString(4);
+                    ValidacionLotes = dr.GetBoolean(5);
+                    TipoOrigen = dr.GetInt32(6);
+                    UniteId = dr.GetInt32(7);
+                    TipoMp = dr.GetString(8);
                 }
                 dr.Close();
                 Recuperado = true;

@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>668</ApplicationRevision>
+    <ApplicationRevision>670</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -6821,6 +6821,12 @@
     <Compile Include="Trazabilidad\frmDetallePorBatchRutasTRZ.Designer.cs">
       <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaEdit.Designer.cs">
+      <DependentUpon>frmMateriaPrimaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -9256,6 +9262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmDetallePorBatchRutasTRZ.resx">
       <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaEdit.resx">
+      <DependentUpon>frmMateriaPrimaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
       <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>

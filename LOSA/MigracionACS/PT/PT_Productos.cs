@@ -499,7 +499,7 @@ namespace LOSA.MigracionACS.PT
                             //Falta Articulos por Unidad de Ventas
                             ItemsCre.SalesItemsPerUnit = 1000; //Cantidad Por Paquete
                             ItemsCre.SalesUnitWeight = Convert.ToDouble(PT.peso_saco);
-                            ItemsCre.SalesUnitWeight1 = Convert.ToDouble(PT.peso_saco);
+                            //ItemsCre.SalesUnitWeight1 = Convert.ToDouble(PT.peso_saco);
 
                             //Datos de Inventario
                             ItemsCre.GLMethod = SAPbobsCOM.BoGLMethods.glm_WH; //Fijas Cuentas de Mayor, por Almacen

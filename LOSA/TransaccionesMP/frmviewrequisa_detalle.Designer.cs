@@ -233,7 +233,7 @@ namespace LOSA.TransaccionesMP
             this.colmp.OptionsColumn.AllowShowHide = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 1;
-            this.colmp.Width = 161;
+            this.colmp.Width = 163;
             // 
             // colsolicitada
             // 
@@ -244,7 +244,7 @@ namespace LOSA.TransaccionesMP
             this.colsolicitada.OptionsColumn.AllowShowHide = false;
             this.colsolicitada.Visible = true;
             this.colsolicitada.VisibleIndex = 2;
-            this.colsolicitada.Width = 104;
+            this.colsolicitada.Width = 88;
             // 
             // colprogramada
             // 
@@ -259,7 +259,7 @@ namespace LOSA.TransaccionesMP
             this.colentregada.OptionsColumn.AllowEdit = false;
             this.colentregada.Visible = true;
             this.colentregada.VisibleIndex = 3;
-            this.colentregada.Width = 104;
+            this.colentregada.Width = 100;
             // 
             // colpendiente
             // 
@@ -268,8 +268,8 @@ namespace LOSA.TransaccionesMP
             this.colpendiente.Name = "colpendiente";
             this.colpendiente.OptionsColumn.AllowEdit = false;
             this.colpendiente.Visible = true;
-            this.colpendiente.VisibleIndex = 5;
-            this.colpendiente.Width = 99;
+            this.colpendiente.VisibleIndex = 4;
+            this.colpendiente.Width = 94;
             // 
             // colenable
             // 
@@ -298,7 +298,7 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap.OptionsColumn.AllowShowHide = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 77;
+            this.colcode_sap.Width = 78;
             // 
             // gridColumn1
             // 
@@ -395,8 +395,6 @@ namespace LOSA.TransaccionesMP
             this.gridColumn2.FieldName = "en_proceso";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
             this.gridColumn2.Width = 98;
             // 
             // gridColumn3
@@ -405,7 +403,8 @@ namespace LOSA.TransaccionesMP
             this.gridColumn3.ColumnEdit = this.verLotesProximosAvencer;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 6;
+            this.gridColumn3.VisibleIndex = 5;
+            this.gridColumn3.Width = 107;
             // 
             // frmviewrequisa_detalle
             // 

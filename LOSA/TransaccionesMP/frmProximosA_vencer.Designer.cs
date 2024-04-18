@@ -34,14 +34,14 @@ namespace LOSA.TransaccionesMP
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsLotesProxVencer1 = new LOSA.TransaccionesMP.DataSet.dsLotesProxVencer();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.lotesmpproxvenceridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colestado_calidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colud_existente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.lotesmpproxvenceridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLotesProxVencer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -95,6 +95,66 @@ namespace LOSA.TransaccionesMP
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 0;
+            this.colnumero_transaccion.Width = 76;
+            // 
+            // colfecha_vence
+            // 
+            this.colfecha_vence.Caption = "Fecha Vencimiento";
+            this.colfecha_vence.FieldName = "fecha_vence";
+            this.colfecha_vence.Name = "colfecha_vence";
+            this.colfecha_vence.OptionsColumn.AllowEdit = false;
+            this.colfecha_vence.Visible = true;
+            this.colfecha_vence.VisibleIndex = 3;
+            this.colfecha_vence.Width = 135;
+            // 
+            // collote_materia_prima
+            // 
+            this.collote_materia_prima.Caption = "Lote MP";
+            this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.Name = "collote_materia_prima";
+            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 1;
+            this.collote_materia_prima.Width = 105;
+            // 
+            // colestado_calidad
+            // 
+            this.colestado_calidad.Caption = "Estado Calidad";
+            this.colestado_calidad.FieldName = "estado_calidad";
+            this.colestado_calidad.Name = "colestado_calidad";
+            this.colestado_calidad.OptionsColumn.AllowEdit = false;
+            this.colestado_calidad.Visible = true;
+            this.colestado_calidad.VisibleIndex = 5;
+            this.colestado_calidad.Width = 115;
+            // 
+            // coldias
+            // 
+            this.coldias.FieldName = "dias";
+            this.coldias.Name = "coldias";
+            this.coldias.OptionsColumn.AllowEdit = false;
+            this.coldias.Visible = true;
+            this.coldias.VisibleIndex = 4;
+            this.coldias.Width = 111;
+            // 
+            // colud_existente
+            // 
+            this.colud_existente.Caption = "Existencia";
+            this.colud_existente.DisplayFormat.FormatString = "{0:0.##} Ud";
+            this.colud_existente.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colud_existente.FieldName = "ud_existente";
+            this.colud_existente.Name = "colud_existente";
+            this.colud_existente.OptionsColumn.AllowEdit = false;
+            this.colud_existente.Visible = true;
+            this.colud_existente.VisibleIndex = 2;
+            this.colud_existente.Width = 95;
+            // 
             // cmdHome
             // 
             this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -115,60 +175,6 @@ namespace LOSA.TransaccionesMP
             // 
             this.lotesmpproxvenceridBindingSource.DataMember = "lotes_mp_prox_vencer_id";
             this.lotesmpproxvenceridBindingSource.DataSource = this.dsLotesProxVencer1;
-            // 
-            // colnumero_transaccion
-            // 
-            this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 0;
-            this.colnumero_transaccion.Width = 76;
-            // 
-            // colfecha_vence
-            // 
-            this.colfecha_vence.Caption = "Fecha Vencimiento";
-            this.colfecha_vence.FieldName = "fecha_vence";
-            this.colfecha_vence.Name = "colfecha_vence";
-            this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 3;
-            this.colfecha_vence.Width = 135;
-            // 
-            // collote_materia_prima
-            // 
-            this.collote_materia_prima.Caption = "Lote MP";
-            this.collote_materia_prima.FieldName = "lote_materia_prima";
-            this.collote_materia_prima.Name = "collote_materia_prima";
-            this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
-            this.collote_materia_prima.Width = 105;
-            // 
-            // colestado_calidad
-            // 
-            this.colestado_calidad.Caption = "Estado Calidad";
-            this.colestado_calidad.FieldName = "estado_calidad";
-            this.colestado_calidad.Name = "colestado_calidad";
-            this.colestado_calidad.Visible = true;
-            this.colestado_calidad.VisibleIndex = 5;
-            this.colestado_calidad.Width = 115;
-            // 
-            // coldias
-            // 
-            this.coldias.FieldName = "dias";
-            this.coldias.Name = "coldias";
-            this.coldias.Visible = true;
-            this.coldias.VisibleIndex = 4;
-            this.coldias.Width = 111;
-            // 
-            // colud_existente
-            // 
-            this.colud_existente.Caption = "Existencia";
-            this.colud_existente.DisplayFormat.FormatString = "{0:0.##} Ud";
-            this.colud_existente.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colud_existente.FieldName = "ud_existente";
-            this.colud_existente.Name = "colud_existente";
-            this.colud_existente.Visible = true;
-            this.colud_existente.VisibleIndex = 2;
-            this.colud_existente.Width = 95;
             // 
             // frmProximosA_vencer
             // 
