@@ -1481,18 +1481,26 @@ namespace LOSA.Compras
                             bool EncontroRow = false;
                             foreach (DataRow rowTMP in MyTable.Rows)
                             {
-                                if (rowTMP["capitulo"].ToString() == item.capitulo 
+                                if (rowTMP["capitulo"].ToString() == item.capitulo
                                     && dp.ValidateNumberInt32(rowTMP["tipo"]) == 2)//1=SoloCapitulo, 2=Capitulo & Partida
                                 {
-                                    //Acumularemos el saldo consumido
-                                    decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
-                                    decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
+                                    if (!string.IsNullOrEmpty(item.partida_arancelaria) || !string.IsNullOrWhiteSpace(item.partida_arancelaria))
+                                    {
+                                        if (rowTMP["partida"].ToString() == item.partida_arancelaria
+                                            && dp.ValidateNumberInt32(rowTMP["tipo"]) == 2)//1=SoloCapitulo, 2=Capitulo & Partida
+                                        {
+                                            //Acumularemos el saldo consumido
+                                            decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
+                                            decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
 
-                                    rowTMP["monto_consumo"] = MontoActual_ + item.total;
-                                    rowTMP["unidades_consumo"] = CantidadActual_ + item.cantidad;
+                                            rowTMP["monto_consumo"] = MontoActual_ + item.total;
+                                            rowTMP["unidades_consumo"] = CantidadActual_ + item.cantidad;
 
-                                    EncontroRow = true;
-                                    break;
+                                            EncontroRow = true;
+                                            break;
+                                        }
+                                    }
+                                    
                                 }
                             }
                             if (!EncontroRow)//Insertamos un nuevo registro

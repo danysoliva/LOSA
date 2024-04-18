@@ -982,7 +982,6 @@ namespace LOSA.TransaccionesMP.EntregaMP
                                     txtTarima.Text = "";
                                     xtraTabControl1.SelectedTabPageIndex = 2;
 
-
                                     return;
                                 }
 

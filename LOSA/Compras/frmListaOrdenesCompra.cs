@@ -400,5 +400,10 @@ namespace LOSA.Compras
                 reportPrint.Print();
             }
         }
+
+        private void refreshHistorico_Click(object sender, EventArgs e)
+        {
+            LoadOrdenHistorico();
+        }
     }
 }

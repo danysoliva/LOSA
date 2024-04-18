@@ -31,6 +31,7 @@ namespace LOSA.Despachos
                 case GrupoUser.GrupoUsuario.Logistica:
                     btnAddSolicitud.Visible = true;
                     grd_data.OptionsMenu.EnableColumnMenu = false;
+                    grd_data.OptionsFilter.AllowFilterEditor = false;
                     //Habilita o deshabilita que el user pueda manipular el menu haciendo clic derecho sobre el header de una columna, para elegir columnas, ordenar, etc
                     grd_data.Columns["Gestionar"].Visible = false;
                     //Permite mostrar o ocultar una columna, se utiliza colocando el string de FieldName que se define desde el datasets
@@ -46,6 +47,7 @@ namespace LOSA.Despachos
                             grd_data.OptionsMenu.EnableColumnMenu = false;
                             //Habilita o deshabilita que el user pueda manipular el menu haciendo clic derecho sobre el header de una columna, para elegir columnas, ordenar, etc
                             grd_data.Columns["Gestionar"].Visible = false;
+                            grd_data.OptionsFilter.AllowFilterEditor = false;
                             //Permite mostrar o ocultar una columna, se utiliza colocando el string de FieldName que se define desde el datasets
                             break;
                         case 2://Basic No Autorization
@@ -56,6 +58,7 @@ namespace LOSA.Despachos
                             grd_data.OptionsMenu.EnableColumnMenu = false;
                             //Habilita o deshabilita que el user pueda manipular el menu haciendo clic derecho sobre el header de una columna, para elegir columnas, ordenar, etc
                             grd_data.Columns["Gestionar"].Visible = true;
+                            grd_data.OptionsFilter.AllowFilterEditor = false;
                             //Permite mostrar o ocultar una columna, se utiliza colocando el string de FieldName que se define desde el datasets
                             break;
                         default:
@@ -74,6 +77,7 @@ namespace LOSA.Despachos
                             grd_data.OptionsMenu.EnableColumnMenu = false;
                             //Habilita o deshabilita que el user pueda manipular el menu haciendo clic derecho sobre el header de una columna, para elegir columnas, ordenar, etc
                             grd_data.Columns["Gestionar"].Visible = false;
+                            grd_data.OptionsFilter.AllowFilterEditor = false;
                             //Permite mostrar o ocultar una columna, se utiliza colocando el string de FieldName que se define desde el datasets
                             break;
                         case 2://Basic No Autorization
@@ -84,6 +88,7 @@ namespace LOSA.Despachos
                             grd_data.OptionsMenu.EnableColumnMenu = false;
                             //Habilita o deshabilita que el user pueda manipular el menu haciendo clic derecho sobre el header de una columna, para elegir columnas, ordenar, etc
                             grd_data.Columns["Gestionar"].Visible = true;
+                            grd_data.OptionsFilter.AllowFilterEditor = false;
                             //Permite mostrar o ocultar una columna, se utiliza colocando el string de FieldName que se define desde el datasets
                             break;
                         default:

@@ -1153,6 +1153,7 @@ namespace LOSA.Compras
             this.refreshHistorico.Size = new System.Drawing.Size(106, 39);
             this.refreshHistorico.TabIndex = 108;
             this.refreshHistorico.Text = "Refresh";
+            this.refreshHistorico.Click += new System.EventHandler(this.refreshHistorico_Click);
             // 
             // dtHastaHist
             // 
