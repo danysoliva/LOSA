@@ -270,11 +270,26 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OrigenMP" msprop:Generator_TableClassName="OrigenMPDataTable" msprop:Generator_TableVarName="tableOrigenMP" msprop:Generator_RowChangedName="OrigenMPRowChanged" msprop:Generator_TablePropName="OrigenMP" msprop:Generator_RowDeletingName="OrigenMPRowDeleting" msprop:Generator_RowChangingName="OrigenMPRowChanging" msprop:Generator_RowEvHandlerName="OrigenMPRowChangeEventHandler" msprop:Generator_RowDeletedName="OrigenMPRowDeleted" msprop:Generator_RowClassName="OrigenMPRow" msprop:Generator_UserTableName="OrigenMP" msprop:Generator_RowEvArgName="OrigenMPRowChangeEvent">
+        <xs:element name="OrigenMP" msprop:Generator_TableClassName="OrigenMPDataTable" msprop:Generator_TableVarName="tableOrigenMP" msprop:Generator_TablePropName="OrigenMP" msprop:Generator_RowDeletingName="OrigenMPRowDeleting" msprop:Generator_RowChangingName="OrigenMPRowChanging" msprop:Generator_RowEvHandlerName="OrigenMPRowChangeEventHandler" msprop:Generator_RowDeletedName="OrigenMPRowDeleted" msprop:Generator_UserTableName="OrigenMP" msprop:Generator_RowChangedName="OrigenMPRowChanged" msprop:Generator_RowEvArgName="OrigenMPRowChangeEvent" msprop:Generator_RowClassName="OrigenMPRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mp_disponible" msprop:Generator_TableClassName="mp_disponibleDataTable" msprop:Generator_TableVarName="tablemp_disponible" msprop:Generator_TablePropName="mp_disponible" msprop:Generator_RowDeletingName="mp_disponibleRowDeleting" msprop:Generator_RowChangingName="mp_disponibleRowChanging" msprop:Generator_RowEvHandlerName="mp_disponibleRowChangeEventHandler" msprop:Generator_RowDeletedName="mp_disponibleRowDeleted" msprop:Generator_UserTableName="mp_disponible" msprop:Generator_RowChangedName="mp_disponibleRowChanged" msprop:Generator_RowEvArgName="mp_disponibleRowChangeEvent" msprop:Generator_RowClassName="mp_disponibleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn2" msprop:Generator_ColumnVarNameInTable="columnDataColumn2" msprop:Generator_ColumnPropNameInRow="DataColumn2" msprop:Generator_ColumnPropNameInTable="DataColumn2Column" msprop:Generator_UserColumnName="DataColumn2" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn3" msprop:Generator_ColumnVarNameInTable="columnDataColumn3" msprop:Generator_ColumnPropNameInRow="DataColumn3" msprop:Generator_ColumnPropNameInTable="DataColumn3Column" msprop:Generator_UserColumnName="DataColumn3" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn4" msprop:Generator_ColumnVarNameInTable="columnDataColumn4" msprop:Generator_ColumnPropNameInRow="DataColumn4" msprop:Generator_ColumnPropNameInTable="DataColumn4Column" msprop:Generator_UserColumnName="DataColumn4" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn5" msprop:Generator_ColumnVarNameInTable="columnDataColumn5" msprop:Generator_ColumnPropNameInRow="DataColumn5" msprop:Generator_ColumnPropNameInTable="DataColumn5Column" msprop:Generator_UserColumnName="DataColumn5" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn6" msprop:Generator_ColumnVarNameInTable="columnDataColumn6" msprop:Generator_ColumnPropNameInRow="DataColumn6" msprop:Generator_ColumnPropNameInTable="DataColumn6Column" msprop:Generator_UserColumnName="DataColumn6" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn7" msprop:Generator_ColumnVarNameInTable="columnDataColumn7" msprop:Generator_ColumnPropNameInRow="DataColumn7" msprop:Generator_ColumnPropNameInTable="DataColumn7Column" msprop:Generator_UserColumnName="DataColumn7" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn8" msprop:Generator_ColumnVarNameInTable="columnDataColumn8" msprop:Generator_ColumnPropNameInRow="DataColumn8" msprop:Generator_ColumnPropNameInTable="DataColumn8Column" msprop:Generator_UserColumnName="DataColumn8" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn9" msprop:Generator_ColumnVarNameInTable="columnDataColumn9" msprop:Generator_ColumnPropNameInRow="DataColumn9" msprop:Generator_ColumnPropNameInTable="DataColumn9Column" msprop:Generator_UserColumnName="DataColumn9" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -283,7 +298,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Detalle_x0020_de_x0020_Lotes" msdata:parent="Ruta4_H_trz_lote_pt" msdata:child="Ruta4_D_trz_lote" msdata:parentkey="id_mp" msdata:childkey="id_mp" msprop:Generator_UserChildTable="Ruta4_D_trz_lote" msprop:Generator_ChildPropName="GetRuta4_D_trz_loteRows" msprop:Generator_UserRelationName="Detalle de Lotes" msprop:Generator_ParentPropName="Ruta4_H_trz_lote_ptRow" msprop:Generator_RelationVarName="relationDetalle_de_Lotes" msprop:Generator_UserParentTable="Ruta4_H_trz_lote_pt" />
+      <msdata:Relationship name="Detalle_x0020_de_x0020_Lotes" msdata:parent="Ruta4_H_trz_lote_pt" msdata:child="Ruta4_D_trz_lote" msdata:parentkey="id_mp" msdata:childkey="id_mp" msprop:Generator_UserChildTable="Ruta4_D_trz_lote" msprop:Generator_ChildPropName="GetRuta4_D_trz_loteRows" msprop:Generator_UserRelationName="Detalle de Lotes" msprop:Generator_RelationVarName="relationDetalle_de_Lotes" msprop:Generator_UserParentTable="Ruta4_H_trz_lote_pt" msprop:Generator_ParentPropName="Ruta4_H_trz_lote_ptRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

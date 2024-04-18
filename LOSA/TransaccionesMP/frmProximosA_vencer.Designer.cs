@@ -97,12 +97,13 @@ namespace LOSA.TransaccionesMP
             // 
             // colnumero_transaccion
             // 
+            this.colnumero_transaccion.Caption = "Num Ingreso";
             this.colnumero_transaccion.FieldName = "numero_transaccion";
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
             this.colnumero_transaccion.VisibleIndex = 0;
-            this.colnumero_transaccion.Width = 76;
+            this.colnumero_transaccion.Width = 85;
             // 
             // colfecha_vence
             // 
@@ -112,7 +113,7 @@ namespace LOSA.TransaccionesMP
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
             this.colfecha_vence.VisibleIndex = 3;
-            this.colfecha_vence.Width = 135;
+            this.colfecha_vence.Width = 132;
             // 
             // collote_materia_prima
             // 
@@ -122,7 +123,7 @@ namespace LOSA.TransaccionesMP
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 1;
-            this.collote_materia_prima.Width = 105;
+            this.collote_materia_prima.Width = 103;
             // 
             // colestado_calidad
             // 
@@ -141,7 +142,7 @@ namespace LOSA.TransaccionesMP
             this.coldias.OptionsColumn.AllowEdit = false;
             this.coldias.Visible = true;
             this.coldias.VisibleIndex = 4;
-            this.coldias.Width = 111;
+            this.coldias.Width = 109;
             // 
             // colud_existente
             // 
@@ -153,7 +154,7 @@ namespace LOSA.TransaccionesMP
             this.colud_existente.OptionsColumn.AllowEdit = false;
             this.colud_existente.Visible = true;
             this.colud_existente.VisibleIndex = 2;
-            this.colud_existente.Width = 95;
+            this.colud_existente.Width = 93;
             // 
             // cmdHome
             // 

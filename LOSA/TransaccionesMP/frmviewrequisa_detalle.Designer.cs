@@ -29,22 +29,22 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmviewrequisa_detalle));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.txtLote = new DevExpress.XtraEditors.LabelControl();
@@ -76,12 +76,32 @@ namespace LOSA.TransaccionesMP
             this.colconsumo_without_inv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.TabRequisa = new DevExpress.XtraTab.XtraTabPage();
+            this.TabMPDisponible = new DevExpress.XtraTab.XtraTabPage();
+            this.dsLotesProxVencer1 = new LOSA.TransaccionesMP.DataSet.dsLotesProxVencer();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colestado_calidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colud_existente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmp1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnconsumir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.verLotesProximosAvencer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
+            this.TabControl1.SuspendLayout();
+            this.TabRequisa.SuspendLayout();
+            this.TabMPDisponible.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLotesProxVencer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -139,19 +159,17 @@ namespace LOSA.TransaccionesMP
             // 
             // grDetalleLote
             // 
-            this.grDetalleLote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grDetalleLote.DataMember = "requisiciones_d";
             this.grDetalleLote.DataSource = this.dsTransaccionesMP1;
-            this.grDetalleLote.Location = new System.Drawing.Point(1, 86);
+            this.grDetalleLote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grDetalleLote.Location = new System.Drawing.Point(0, 0);
             this.grDetalleLote.MainView = this.gvTarimas;
             this.grDetalleLote.Name = "grDetalleLote";
             this.grDetalleLote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEdit,
             this.btnconsumir,
             this.verLotesProximosAvencer});
-            this.grDetalleLote.Size = new System.Drawing.Size(655, 725);
+            this.grDetalleLote.Size = new System.Drawing.Size(650, 695);
             this.grDetalleLote.TabIndex = 53;
             this.grDetalleLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -170,14 +188,14 @@ namespace LOSA.TransaccionesMP
             this.gvTarimas.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gvTarimas.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gvTarimas.Appearance.FocusedRow.Options.UseFont = true;
-            this.gvTarimas.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarimas.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarimas.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvTarimas.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTarimas.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gvTarimas.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gvTarimas.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
             this.gvTarimas.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gvTarimas.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvTarimas.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarimas.Appearance.Row.Options.UseFont = true;
             this.gvTarimas.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gvTarimas.Appearance.SelectedRow.Options.UseFont = true;
@@ -233,7 +251,7 @@ namespace LOSA.TransaccionesMP
             this.colmp.OptionsColumn.AllowShowHide = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 1;
-            this.colmp.Width = 163;
+            this.colmp.Width = 173;
             // 
             // colsolicitada
             // 
@@ -244,7 +262,7 @@ namespace LOSA.TransaccionesMP
             this.colsolicitada.OptionsColumn.AllowShowHide = false;
             this.colsolicitada.Visible = true;
             this.colsolicitada.VisibleIndex = 2;
-            this.colsolicitada.Width = 88;
+            this.colsolicitada.Width = 85;
             // 
             // colprogramada
             // 
@@ -259,7 +277,7 @@ namespace LOSA.TransaccionesMP
             this.colentregada.OptionsColumn.AllowEdit = false;
             this.colentregada.Visible = true;
             this.colentregada.VisibleIndex = 3;
-            this.colentregada.Width = 100;
+            this.colentregada.Width = 97;
             // 
             // colpendiente
             // 
@@ -269,7 +287,7 @@ namespace LOSA.TransaccionesMP
             this.colpendiente.OptionsColumn.AllowEdit = false;
             this.colpendiente.Visible = true;
             this.colpendiente.VisibleIndex = 4;
-            this.colpendiente.Width = 94;
+            this.colpendiente.Width = 80;
             // 
             // colenable
             // 
@@ -298,7 +316,7 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap.OptionsColumn.AllowShowHide = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 78;
+            this.colcode_sap.Width = 66;
             // 
             // gridColumn1
             // 
@@ -310,9 +328,9 @@ namespace LOSA.TransaccionesMP
             // btnEdit
             // 
             this.btnEdit.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -333,9 +351,9 @@ namespace LOSA.TransaccionesMP
             // btnconsumir
             // 
             this.btnconsumir.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.btnconsumir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnconsumir.Name = "btnconsumir";
             this.btnconsumir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -364,9 +382,9 @@ namespace LOSA.TransaccionesMP
             // verLotesProximosAvencer
             // 
             this.verLotesProximosAvencer.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.production;
+            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.production;
             this.verLotesProximosAvencer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.verLotesProximosAvencer.Name = "verLotesProximosAvencer";
             this.verLotesProximosAvencer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.verLotesProximosAvencer.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.verLotesProximosAvencer_ButtonClick);
@@ -404,14 +422,148 @@ namespace LOSA.TransaccionesMP
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 5;
-            this.gridColumn3.Width = 107;
+            this.gridColumn3.Width = 124;
+            // 
+            // TabControl1
+            // 
+            this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TabControl1.Location = new System.Drawing.Point(1, 86);
+            this.TabControl1.Name = "TabControl1";
+            this.TabControl1.SelectedTabPage = this.TabRequisa;
+            this.TabControl1.Size = new System.Drawing.Size(652, 723);
+            this.TabControl1.TabIndex = 54;
+            this.TabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.TabRequisa,
+            this.TabMPDisponible});
+            // 
+            // TabRequisa
+            // 
+            this.TabRequisa.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabRequisa.Appearance.Header.Options.UseFont = true;
+            this.TabRequisa.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabRequisa.Appearance.HeaderActive.Options.UseFont = true;
+            this.TabRequisa.Controls.Add(this.grDetalleLote);
+            this.TabRequisa.Name = "TabRequisa";
+            this.TabRequisa.Size = new System.Drawing.Size(650, 695);
+            this.TabRequisa.Text = "Requisa";
+            // 
+            // TabMPDisponible
+            // 
+            this.TabMPDisponible.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabMPDisponible.Appearance.Header.Options.UseFont = true;
+            this.TabMPDisponible.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabMPDisponible.Appearance.HeaderActive.Options.UseFont = true;
+            this.TabMPDisponible.Controls.Add(this.gridControl1);
+            this.TabMPDisponible.Name = "TabMPDisponible";
+            this.TabMPDisponible.Size = new System.Drawing.Size(650, 695);
+            this.TabMPDisponible.Text = "MP Disponible";
+            // 
+            // dsLotesProxVencer1
+            // 
+            this.dsLotesProxVencer1.DataSetName = "dsLotesProxVencer";
+            this.dsLotesProxVencer1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataMember = "lotes_mp_prox_vencer_requisa";
+            this.gridControl1.DataSource = this.dsLotesProxVencer1;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(650, 695);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colnumero_transaccion,
+            this.colfecha_vence,
+            this.coldias,
+            this.collote_materia_prima,
+            this.colestado_calidad,
+            this.colud_existente,
+            this.colmp1});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.Caption = "Ingreso";
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 0;
+            this.colnumero_transaccion.Width = 62;
+            // 
+            // colfecha_vence
+            // 
+            this.colfecha_vence.Caption = "Fecha Vence";
+            this.colfecha_vence.FieldName = "fecha_vence";
+            this.colfecha_vence.Name = "colfecha_vence";
+            this.colfecha_vence.OptionsColumn.AllowEdit = false;
+            this.colfecha_vence.Visible = true;
+            this.colfecha_vence.VisibleIndex = 2;
+            this.colfecha_vence.Width = 83;
+            // 
+            // coldias
+            // 
+            this.coldias.Caption = "Dias";
+            this.coldias.FieldName = "dias";
+            this.coldias.Name = "coldias";
+            this.coldias.OptionsColumn.AllowEdit = false;
+            this.coldias.Visible = true;
+            this.coldias.VisibleIndex = 3;
+            this.coldias.Width = 104;
+            // 
+            // collote_materia_prima
+            // 
+            this.collote_materia_prima.Caption = "Lote";
+            this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.Name = "collote_materia_prima";
+            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 4;
+            this.collote_materia_prima.Width = 133;
+            // 
+            // colestado_calidad
+            // 
+            this.colestado_calidad.FieldName = "estado_calidad";
+            this.colestado_calidad.Name = "colestado_calidad";
+            this.colestado_calidad.OptionsColumn.AllowEdit = false;
+            // 
+            // colud_existente
+            // 
+            this.colud_existente.Caption = "Existente";
+            this.colud_existente.FieldName = "ud_existente";
+            this.colud_existente.Name = "colud_existente";
+            this.colud_existente.OptionsColumn.AllowEdit = false;
+            this.colud_existente.Visible = true;
+            this.colud_existente.VisibleIndex = 5;
+            this.colud_existente.Width = 82;
+            // 
+            // colmp1
+            // 
+            this.colmp1.Caption = "Materia Prima";
+            this.colmp1.FieldName = "mp";
+            this.colmp1.Name = "colmp1";
+            this.colmp1.OptionsColumn.AllowEdit = false;
+            this.colmp1.Visible = true;
+            this.colmp1.VisibleIndex = 1;
+            this.colmp1.Width = 161;
             // 
             // frmviewrequisa_detalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 814);
-            this.Controls.Add(this.grDetalleLote);
+            this.Controls.Add(this.TabControl1);
             this.Controls.Add(this.txtLote);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cmdHome);
@@ -423,6 +575,13 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnconsumir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.verLotesProximosAvencer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).EndInit();
+            this.TabControl1.ResumeLayout(false);
+            this.TabRequisa.ResumeLayout(false);
+            this.TabMPDisponible.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dsLotesProxVencer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,5 +620,18 @@ namespace LOSA.TransaccionesMP
         private dsTransaccionesMP dsTransaccionesMP1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraTab.XtraTabControl TabControl1;
+        private DevExpress.XtraTab.XtraTabPage TabRequisa;
+        private DevExpress.XtraTab.XtraTabPage TabMPDisponible;
+        private DataSet.dsLotesProxVencer dsLotesProxVencer1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vence;
+        private DevExpress.XtraGrid.Columns.GridColumn coldias;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn colestado_calidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colud_existente;
+        private DevExpress.XtraGrid.Columns.GridColumn colmp1;
     }
 }

@@ -882,8 +882,9 @@ namespace LOSA.RecepcionMP
             switch (row.id_estado_tarima)
             {
                 case 1://Recepcionado
-                    Error = true;
-                    mensaje = "Esta Tarima solo esta Recepcionada!";
+                    //Error = true;
+                    //mensaje = "Esta Tarima solo esta Recepcionada!";
+                    Error = false;
                     break;
                 case 2://En Bodega
                     Error = false;

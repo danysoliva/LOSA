@@ -30,6 +30,8 @@ namespace LOSA.TransaccionesMP.DataSet {
         
         private lotes_mp_prox_vencer_idDataTable tablelotes_mp_prox_vencer_id;
         
+        private lotes_mp_prox_vencer_requisaDataTable tablelotes_mp_prox_vencer_requisa;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66,6 +68,9 @@ namespace LOSA.TransaccionesMP.DataSet {
                 }
                 if ((ds.Tables["lotes_mp_prox_vencer_id"] != null)) {
                     base.Tables.Add(new lotes_mp_prox_vencer_idDataTable(ds.Tables["lotes_mp_prox_vencer_id"]));
+                }
+                if ((ds.Tables["lotes_mp_prox_vencer_requisa"] != null)) {
+                    base.Tables.Add(new lotes_mp_prox_vencer_requisaDataTable(ds.Tables["lotes_mp_prox_vencer_requisa"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -112,6 +117,16 @@ namespace LOSA.TransaccionesMP.DataSet {
         public lotes_mp_prox_vencer_idDataTable lotes_mp_prox_vencer_id {
             get {
                 return this.tablelotes_mp_prox_vencer_id;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public lotes_mp_prox_vencer_requisaDataTable lotes_mp_prox_vencer_requisa {
+            get {
+                return this.tablelotes_mp_prox_vencer_requisa;
             }
         }
         
@@ -191,6 +206,9 @@ namespace LOSA.TransaccionesMP.DataSet {
                 if ((ds.Tables["lotes_mp_prox_vencer_id"] != null)) {
                     base.Tables.Add(new lotes_mp_prox_vencer_idDataTable(ds.Tables["lotes_mp_prox_vencer_id"]));
                 }
+                if ((ds.Tables["lotes_mp_prox_vencer_requisa"] != null)) {
+                    base.Tables.Add(new lotes_mp_prox_vencer_requisaDataTable(ds.Tables["lotes_mp_prox_vencer_requisa"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -242,6 +260,12 @@ namespace LOSA.TransaccionesMP.DataSet {
                     this.tablelotes_mp_prox_vencer_id.InitVars();
                 }
             }
+            this.tablelotes_mp_prox_vencer_requisa = ((lotes_mp_prox_vencer_requisaDataTable)(base.Tables["lotes_mp_prox_vencer_requisa"]));
+            if ((initTable == true)) {
+                if ((this.tablelotes_mp_prox_vencer_requisa != null)) {
+                    this.tablelotes_mp_prox_vencer_requisa.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +282,8 @@ namespace LOSA.TransaccionesMP.DataSet {
             base.Tables.Add(this.tabletarimas_mp);
             this.tablelotes_mp_prox_vencer_id = new lotes_mp_prox_vencer_idDataTable();
             base.Tables.Add(this.tablelotes_mp_prox_vencer_id);
+            this.tablelotes_mp_prox_vencer_requisa = new lotes_mp_prox_vencer_requisaDataTable();
+            base.Tables.Add(this.tablelotes_mp_prox_vencer_requisa);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +301,12 @@ namespace LOSA.TransaccionesMP.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializelotes_mp_prox_vencer_id() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializelotes_mp_prox_vencer_requisa() {
             return false;
         }
         
@@ -341,6 +373,9 @@ namespace LOSA.TransaccionesMP.DataSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void lotes_mp_prox_vencer_idRowChangeEventHandler(object sender, lotes_mp_prox_vencer_idRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void lotes_mp_prox_vencer_requisaRowChangeEventHandler(object sender, lotes_mp_prox_vencer_requisaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1029,6 +1064,8 @@ namespace LOSA.TransaccionesMP.DataSet {
             
             private global::System.Data.DataColumn columnud_existente;
             
+            private global::System.Data.DataColumn columnmp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lotes_mp_prox_vencer_idDataTable() {
@@ -1112,6 +1149,14 @@ namespace LOSA.TransaccionesMP.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn mpColumn {
+                get {
+                    return this.columnmp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1147,7 +1192,7 @@ namespace LOSA.TransaccionesMP.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lotes_mp_prox_vencer_idRow Addlotes_mp_prox_vencer_idRow(int numero_transaccion, System.DateTime fecha_vence, string lote_materia_prima, string estado_calidad, int dias, int ud_existente) {
+            public lotes_mp_prox_vencer_idRow Addlotes_mp_prox_vencer_idRow(int numero_transaccion, System.DateTime fecha_vence, string lote_materia_prima, string estado_calidad, int dias, int ud_existente, string mp) {
                 lotes_mp_prox_vencer_idRow rowlotes_mp_prox_vencer_idRow = ((lotes_mp_prox_vencer_idRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         numero_transaccion,
@@ -1155,7 +1200,8 @@ namespace LOSA.TransaccionesMP.DataSet {
                         lote_materia_prima,
                         estado_calidad,
                         dias,
-                        ud_existente};
+                        ud_existente,
+                        mp};
                 rowlotes_mp_prox_vencer_idRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlotes_mp_prox_vencer_idRow);
                 return rowlotes_mp_prox_vencer_idRow;
@@ -1184,6 +1230,7 @@ namespace LOSA.TransaccionesMP.DataSet {
                 this.columnestado_calidad = base.Columns["estado_calidad"];
                 this.columndias = base.Columns["dias"];
                 this.columnud_existente = base.Columns["ud_existente"];
+                this.columnmp = base.Columns["mp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1201,6 +1248,8 @@ namespace LOSA.TransaccionesMP.DataSet {
                 base.Columns.Add(this.columndias);
                 this.columnud_existente = new global::System.Data.DataColumn("ud_existente", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnud_existente);
+                this.columnmp = new global::System.Data.DataColumn("mp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmp);
                 this.columnnumero_transaccion.Caption = "Linea";
                 this.columnfecha_vence.Caption = "Fecha Vence";
                 this.columnlote_materia_prima.Caption = "id_mp";
@@ -1292,6 +1341,337 @@ namespace LOSA.TransaccionesMP.DataSet {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "lotes_mp_prox_vencer_idDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class lotes_mp_prox_vencer_requisaDataTable : global::System.Data.TypedTableBase<lotes_mp_prox_vencer_requisaRow> {
+            
+            private global::System.Data.DataColumn columnnumero_transaccion;
+            
+            private global::System.Data.DataColumn columnfecha_vence;
+            
+            private global::System.Data.DataColumn columndias;
+            
+            private global::System.Data.DataColumn columnlote_materia_prima;
+            
+            private global::System.Data.DataColumn columnestado_calidad;
+            
+            private global::System.Data.DataColumn columnud_existente;
+            
+            private global::System.Data.DataColumn columnmp;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lotes_mp_prox_vencer_requisaDataTable() {
+                this.TableName = "lotes_mp_prox_vencer_requisa";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal lotes_mp_prox_vencer_requisaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected lotes_mp_prox_vencer_requisaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_transaccionColumn {
+                get {
+                    return this.columnnumero_transaccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_venceColumn {
+                get {
+                    return this.columnfecha_vence;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn diasColumn {
+                get {
+                    return this.columndias;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_materia_primaColumn {
+                get {
+                    return this.columnlote_materia_prima;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn estado_calidadColumn {
+                get {
+                    return this.columnestado_calidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ud_existenteColumn {
+                get {
+                    return this.columnud_existente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn mpColumn {
+                get {
+                    return this.columnmp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lotes_mp_prox_vencer_requisaRow this[int index] {
+                get {
+                    return ((lotes_mp_prox_vencer_requisaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lotes_mp_prox_vencer_requisaRowChangeEventHandler lotes_mp_prox_vencer_requisaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lotes_mp_prox_vencer_requisaRowChangeEventHandler lotes_mp_prox_vencer_requisaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lotes_mp_prox_vencer_requisaRowChangeEventHandler lotes_mp_prox_vencer_requisaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lotes_mp_prox_vencer_requisaRowChangeEventHandler lotes_mp_prox_vencer_requisaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addlotes_mp_prox_vencer_requisaRow(lotes_mp_prox_vencer_requisaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lotes_mp_prox_vencer_requisaRow Addlotes_mp_prox_vencer_requisaRow(int numero_transaccion, System.DateTime fecha_vence, int dias, string lote_materia_prima, string estado_calidad, int ud_existente, string mp) {
+                lotes_mp_prox_vencer_requisaRow rowlotes_mp_prox_vencer_requisaRow = ((lotes_mp_prox_vencer_requisaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        numero_transaccion,
+                        fecha_vence,
+                        dias,
+                        lote_materia_prima,
+                        estado_calidad,
+                        ud_existente,
+                        mp};
+                rowlotes_mp_prox_vencer_requisaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlotes_mp_prox_vencer_requisaRow);
+                return rowlotes_mp_prox_vencer_requisaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                lotes_mp_prox_vencer_requisaDataTable cln = ((lotes_mp_prox_vencer_requisaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new lotes_mp_prox_vencer_requisaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
+                this.columnfecha_vence = base.Columns["fecha_vence"];
+                this.columndias = base.Columns["dias"];
+                this.columnlote_materia_prima = base.Columns["lote_materia_prima"];
+                this.columnestado_calidad = base.Columns["estado_calidad"];
+                this.columnud_existente = base.Columns["ud_existente"];
+                this.columnmp = base.Columns["mp"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_transaccion);
+                this.columnfecha_vence = new global::System.Data.DataColumn("fecha_vence", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_vence);
+                this.columndias = new global::System.Data.DataColumn("dias", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndias);
+                this.columnlote_materia_prima = new global::System.Data.DataColumn("lote_materia_prima", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_materia_prima);
+                this.columnestado_calidad = new global::System.Data.DataColumn("estado_calidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestado_calidad);
+                this.columnud_existente = new global::System.Data.DataColumn("ud_existente", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnud_existente);
+                this.columnmp = new global::System.Data.DataColumn("mp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmp);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lotes_mp_prox_vencer_requisaRow Newlotes_mp_prox_vencer_requisaRow() {
+                return ((lotes_mp_prox_vencer_requisaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new lotes_mp_prox_vencer_requisaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(lotes_mp_prox_vencer_requisaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.lotes_mp_prox_vencer_requisaRowChanged != null)) {
+                    this.lotes_mp_prox_vencer_requisaRowChanged(this, new lotes_mp_prox_vencer_requisaRowChangeEvent(((lotes_mp_prox_vencer_requisaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.lotes_mp_prox_vencer_requisaRowChanging != null)) {
+                    this.lotes_mp_prox_vencer_requisaRowChanging(this, new lotes_mp_prox_vencer_requisaRowChangeEvent(((lotes_mp_prox_vencer_requisaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.lotes_mp_prox_vencer_requisaRowDeleted != null)) {
+                    this.lotes_mp_prox_vencer_requisaRowDeleted(this, new lotes_mp_prox_vencer_requisaRowChangeEvent(((lotes_mp_prox_vencer_requisaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.lotes_mp_prox_vencer_requisaRowDeleting != null)) {
+                    this.lotes_mp_prox_vencer_requisaRowDeleting(this, new lotes_mp_prox_vencer_requisaRowChangeEvent(((lotes_mp_prox_vencer_requisaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removelotes_mp_prox_vencer_requisaRow(lotes_mp_prox_vencer_requisaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsLotesProxVencer ds = new dsLotesProxVencer();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "lotes_mp_prox_vencer_requisaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1873,6 +2253,22 @@ namespace LOSA.TransaccionesMP.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string mp {
+                get {
+                    try {
+                        return ((string)(this[this.tablelotes_mp_prox_vencer_id.mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mp\' de la tabla \'lotes_mp_prox_vencer_id\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_id.mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isnumero_transaccionNull() {
                 return this.IsNull(this.tablelotes_mp_prox_vencer_id.numero_transaccionColumn);
             }
@@ -1941,6 +2337,236 @@ namespace LOSA.TransaccionesMP.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setud_existenteNull() {
                 this[this.tablelotes_mp_prox_vencer_id.ud_existenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmpNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_id.mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmpNull() {
+                this[this.tablelotes_mp_prox_vencer_id.mpColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class lotes_mp_prox_vencer_requisaRow : global::System.Data.DataRow {
+            
+            private lotes_mp_prox_vencer_requisaDataTable tablelotes_mp_prox_vencer_requisa;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal lotes_mp_prox_vencer_requisaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablelotes_mp_prox_vencer_requisa = ((lotes_mp_prox_vencer_requisaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int numero_transaccion {
+                get {
+                    try {
+                        return ((int)(this[this.tablelotes_mp_prox_vencer_requisa.numero_transaccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_transaccion\' de la tabla \'lotes_mp_prox_vencer_req" +
+                                "uisa\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_requisa.numero_transaccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_vence {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablelotes_mp_prox_vencer_requisa.fecha_venceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vence\' de la tabla \'lotes_mp_prox_vencer_requisa\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_requisa.fecha_venceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int dias {
+                get {
+                    try {
+                        return ((int)(this[this.tablelotes_mp_prox_vencer_requisa.diasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'dias\' de la tabla \'lotes_mp_prox_vencer_requisa\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_requisa.diasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote_materia_prima {
+                get {
+                    try {
+                        return ((string)(this[this.tablelotes_mp_prox_vencer_requisa.lote_materia_primaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_materia_prima\' de la tabla \'lotes_mp_prox_vencer_req" +
+                                "uisa\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_requisa.lote_materia_primaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string estado_calidad {
+                get {
+                    try {
+                        return ((string)(this[this.tablelotes_mp_prox_vencer_requisa.estado_calidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estado_calidad\' de la tabla \'lotes_mp_prox_vencer_requisa" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_requisa.estado_calidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ud_existente {
+                get {
+                    try {
+                        return ((int)(this[this.tablelotes_mp_prox_vencer_requisa.ud_existenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ud_existente\' de la tabla \'lotes_mp_prox_vencer_requisa\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_requisa.ud_existenteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string mp {
+                get {
+                    try {
+                        return ((string)(this[this.tablelotes_mp_prox_vencer_requisa.mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mp\' de la tabla \'lotes_mp_prox_vencer_requisa\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_mp_prox_vencer_requisa.mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_transaccionNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_requisa.numero_transaccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_transaccionNull() {
+                this[this.tablelotes_mp_prox_vencer_requisa.numero_transaccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_venceNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_requisa.fecha_venceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_venceNull() {
+                this[this.tablelotes_mp_prox_vencer_requisa.fecha_venceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdiasNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_requisa.diasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdiasNull() {
+                this[this.tablelotes_mp_prox_vencer_requisa.diasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_materia_primaNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_requisa.lote_materia_primaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_materia_primaNull() {
+                this[this.tablelotes_mp_prox_vencer_requisa.lote_materia_primaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isestado_calidadNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_requisa.estado_calidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setestado_calidadNull() {
+                this[this.tablelotes_mp_prox_vencer_requisa.estado_calidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isud_existenteNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_requisa.ud_existenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setud_existenteNull() {
+                this[this.tablelotes_mp_prox_vencer_requisa.ud_existenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmpNull() {
+                return this.IsNull(this.tablelotes_mp_prox_vencer_requisa.mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmpNull() {
+                this[this.tablelotes_mp_prox_vencer_requisa.mpColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2032,6 +2658,40 @@ namespace LOSA.TransaccionesMP.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lotes_mp_prox_vencer_idRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class lotes_mp_prox_vencer_requisaRowChangeEvent : global::System.EventArgs {
+            
+            private lotes_mp_prox_vencer_requisaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lotes_mp_prox_vencer_requisaRowChangeEvent(lotes_mp_prox_vencer_requisaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lotes_mp_prox_vencer_requisaRow Row {
                 get {
                     return this.eventRow;
                 }
