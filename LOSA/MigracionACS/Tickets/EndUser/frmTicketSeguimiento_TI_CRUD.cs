@@ -249,6 +249,8 @@ namespace LOSA.MigracionACS.Tickets.EndUser
 
                 if (procesoCompleto == true)
                 {
+                    string usuarioSeguimientoMail;
+                    usuarioSeguimientoMail = usuarioLogueado.ADuser1 + "@aquafeedhn.com";
                     transaction.Commit();
                     if (ticketInfo.RecuperaRegistro(id_ticket))
                     {
@@ -261,7 +263,9 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                         {
                             copyMails = ticketInfo.copiaCorreos;
                             //copyMails.Add("ruben.garcia@aquafeedhn.com");
-                            copyMails.Add("ever.erazo@aquafeedhn.com");
+                            //copyMails.Add("ever.erazo@aquafeedhn.com");
+                            copyMails.Add(ticketInfo.UsuarioAsignadoMail);
+                            copyMails.Add(usuarioSeguimientoMail);
                         }
                         emailTcketParams.CorreosCC = copyMails;
 

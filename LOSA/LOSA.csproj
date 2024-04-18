@@ -94,7 +94,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>KEY_COMPRAS.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>ALOSY2024.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
@@ -4626,6 +4626,7 @@
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
     </None>
+    <None Include="ALOSY2024.pfx" />
     <None Include="Autorizaciones\dsAutorizaciones.xsc">
       <DependentUpon>dsAutorizaciones.xsd</DependentUpon>
     </None>
