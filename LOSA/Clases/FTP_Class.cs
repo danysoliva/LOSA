@@ -25,7 +25,6 @@ namespace LOSA.Clases
                 DataOperations dp = new DataOperations();
 
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(dp.FTP_Tickets_LOSA + pFileName);
-                //request.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
                 string pass = "Tempo1234";
                 string user_op = "operador";
                 if (pUsuarioLogeado != null)
@@ -38,9 +37,7 @@ namespace LOSA.Clases
                 }
 
                 request.Credentials = new NetworkCredential(user_op, pass, "AQUAFEEDHN.COM");
-                //request.Credentials = new NetworkCredential(user_op, pass);
                 request.Method = WebRequestMethods.Ftp.UploadFile;
-                //request.EnableSsl = false;
 
                 using (Stream fileStream = File.OpenRead(pathFile))
                 using (Stream ftpStream = request.GetRequestStream())
@@ -50,6 +47,44 @@ namespace LOSA.Clases
                 }
             }
             catch(Exception ec)
+            {
+                throw new Exception(ec.Message);
+            }
+
+            return Guardado;
+        }
+
+
+        public bool GuardarArchivoCompras(UserLogin pUsuarioLogeado, string pFileName, string pathFile)
+        {
+            bool Guardado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(dp.FTP_Tickets_LOSA_Compras + pFileName);
+                string pass = "Tempo1234";
+                string user_op = "operador";
+                if (pUsuarioLogeado != null)
+                {
+                    if (!string.IsNullOrEmpty(pUsuarioLogeado.Pass))
+                    {
+                        user_op = pUsuarioLogeado.ADuser1;
+                        pass = pUsuarioLogeado.Pass;
+                    }
+                }
+
+                request.Credentials = new NetworkCredential(user_op, pass, "AQUAFEEDHN.COM");
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+
+                using (Stream fileStream = File.OpenRead(pathFile))
+                using (Stream ftpStream = request.GetRequestStream())
+                {
+                    fileStream.CopyTo(ftpStream);
+                    Guardado = true;
+                }
+            }
+            catch (Exception ec)
             {
                 throw new Exception(ec.Message);
             }

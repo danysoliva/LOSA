@@ -107,6 +107,7 @@ namespace ACS.Classes
                                                        Password=" + Globals.AMS_DB_Pass + ";";
 
         internal string FTP_Tickets_LOSA = @"ftp://10.50.11.32/Tickets/";
+        internal string FTP_Tickets_LOSA_Compras = @"ftp://10.50.11.32/Ordenes_Compras/";
         internal string FTP_Tickets_ACS = @"ftp://10.50.11.32/Tickets/";
         internal string User_FTP_Server = "roger.euceda";
         internal string Password_UserFTPServer = "Aqua2021?";
