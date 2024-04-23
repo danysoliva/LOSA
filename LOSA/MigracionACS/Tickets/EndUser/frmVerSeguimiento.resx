@@ -124,7 +124,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="editorButtonImageOptions2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAA10RVh0VGl0
         bGUAQXR0YWNoO3wCt50AAAjlSURBVFhHxZZpUJNJGsc7QEAcrnAGUK5wHwkJgXCFcJ8JhCMQCBAOATnl
@@ -168,7 +168,19 @@
         Fv0v+WjwU/LR4KcDo38ATm2tT1tVgIEAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="dsTickets.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="btnExaminar.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAANdEVYdFRpdGxlAEF0dGFjaDt8AredAAAB6UlEQVRY
+        R8WTLU4DcRTEUZDUo7E4LlCH4BKIJpyAO1SXIyAQtUg8CleH4RokEMTyhrwh03/mva0C8csyHzv7VY6m
+        afpXrKms12uyDDbBLvjMIzT8n447fw5rKjl+HbwGkwE+cnv+HNZUYhhPyIvfB1fBIo/QvImlO38Oayox
+        jNfMi58M2Un6yDeaHYo1lRjGt8YFroocbwL5zuVzWFOJYfzgcIFFkeNzIP90+RzWVHIc2Bwc0qmwplKN
+        q646h2BNZRwfdddh3mFNpRqn7jrMO6ypVOPUXYd5hzWVapy66zDvsKZSjVN3HeYd1lSqcequw7zDmko1
+        Tt11mHdYU6nGqbsO8w5rKtU4dddh3mFNpRqn7jrMO6ypVOPUXYd5hzWVapy66zDvsKZSjVN3HeYd1lTM
+        +Hvqs9RnqeHvnYO/57CmwjEZf0p9F+DiOELD3zuHGx3WVGLoLQcvUq+Cj/QI9CrzC/rc6LCmEkPbHLxN
+        zZvAE+O14wjN/m2A/lZ3KqypxNBNDj4H565DkGcP/RvXGbGmEkOnwWOOPgT2JuBnjh76p643Yk0lhsBl
+        8BLwTeA141sf5xGaT44e+nZvxJoKhhKM8k1UIP+5OHB7I9ZUOJbgc+A3gR8m/ju+8ggNH/lv3+2NWPPv
+        mI6+AV418RwFZz2NAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

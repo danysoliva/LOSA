@@ -18,6 +18,19 @@ namespace LOSA.TransaccionesMP
         public frmProximosA_vencer(int pIdMP)
         {
             InitializeComponent();
+
+            LoadLotes(pIdMP);
+        }
+
+        public frmProximosA_vencer(int pIdMP, string pLoteActual)
+        {
+            InitializeComponent();
+
+            lblTitulo.Visible = false;
+            lblMensaje.Visible = true;
+
+            lblMensaje.Text = "Se intento escanear un Lote que no es el Proxima a Vencer!\nLote: "+pLoteActual;
+
             LoadLotes(pIdMP);
         }
 
@@ -29,12 +42,12 @@ namespace LOSA.TransaccionesMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_lista_lotes_mp_proximos_a_vencer_primeros_en_consumir", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_lotes_proximos_vencer_mp]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", pId_mp);
-                dsLotesProxVencer1.lotes_mp_prox_vencer.Clear();
+                dsLotesProxVencer1.lotes_mp_prox_vencer_id.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsLotesProxVencer1.lotes_mp_prox_vencer);
+                adat.Fill(dsLotesProxVencer1.lotes_mp_prox_vencer_id);
 
                 con.Close();
             }

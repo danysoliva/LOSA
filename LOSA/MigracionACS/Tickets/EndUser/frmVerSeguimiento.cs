@@ -15,6 +15,7 @@ using LOSA.Clases;
 using ACS.Tickets.EndUser;
 using ACS.Classes;
 using LOSA.MigracionACS.Tickets.Models;
+using LOSA.MigracionACS.Tickets.Admin;
 
 namespace LOSA.MigracionACS.Tickets.EndUser
 {
@@ -137,6 +138,13 @@ namespace LOSA.MigracionACS.Tickets.EndUser
         private void seguimientoBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExaminar_Click(object sender, EventArgs e)
+        {
+           
+            xfrmVerAdjuntosAdmin frm = new xfrmVerAdjuntosAdmin(UsuarioLogeado, id_ticket);
+            frm.ShowDialog();
         }
     }
 }

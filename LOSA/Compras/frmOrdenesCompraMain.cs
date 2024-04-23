@@ -22,6 +22,12 @@ using static LOSA.Clases.BinGranel;
 //using SAPbobsCOM;
 using static DevExpress.DataProcessing.InMemoryDataProcessor.AddSurrogateOperationAlgorithm;
 using LOSA.Utileria;
+using DevExpress.Utils;
+using System.IO;
+using DevExpress.Office.Utils;
+using DevExpress.XtraGrid;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.Utils.CommonDialogs;
 
 namespace LOSA.Compras
 {
@@ -37,6 +43,8 @@ namespace LOSA.Compras
         int ContactCode;
         char CurSource;
         decimal TasaCambio;
+        bool EdicionEspecialActiva = false;
+        
         public enum TipoOperacion
         {
             New = 1,
@@ -54,6 +62,7 @@ namespace LOSA.Compras
             CargarIVA();
             CargarBodegas();
             CargarRutasAprobacion();
+            //CargarArchivos();
             cbxMoneda.Text = "Moneda local";
             //UsuarioLogueado = pUserLog;
             tipooperacion = ptipo;
@@ -413,17 +422,18 @@ namespace LOSA.Compras
             }
         }
 
-        private void CargarDetalleOrdenCompra(int idSolicitudSeleccionado)
+        private void CargarDetalleOrdenCompra(int idSolicitudSeleccionado, int TipoUso)
         {
             CargarPartidasArancelarias();
             try
             {
-                string query = @"[sp_get_compras_ordenes_detalle]";
+                string query = @"[sp_get_compras_ordenes_detalleV2]";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_header_orden", idSolicitudSeleccionado);
+                cmd.Parameters.AddWithValue("@TipoUso", TipoUso);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsCompras1.oc_detalle_exonerada.Clear();
                 adat.Fill(dsCompras1.oc_detalle_exonerada);
@@ -452,6 +462,7 @@ namespace LOSA.Compras
                 CajaDialogo.Error(ex.Message);
             }
         }
+
 
         private void ReCalculoImpuesto()
         {
@@ -837,7 +848,7 @@ namespace LOSA.Compras
             txtDocNum.Clear();
             btnPrint.Enabled = false;
             ContactCode = 0;
-            glRutaAprobacionOC.Text = string.Empty;
+            glRutaAprobacionOC.EditValue = 0;
             grdTipoOrden.EditValue = 0;
             txtContactoPerson.Text = string.Empty;
             txtNumAtCard.Text = string.Empty;
@@ -846,12 +857,15 @@ namespace LOSA.Compras
             txtTotal.EditValue = 0;
             txtDireccion.Text = string.Empty;
             comboBoxIntercom.Text = string.Empty;
-
+            
             txtNumAtCard.Enabled = true;
             grdTipoOrden.Enabled = true;
             glRutaAprobacionOC.Enabled = true;
             comboBoxIntercom.Enabled = true;
             TsExoOIsv.ReadOnly = false;
+            btnEditar.Enabled = false;
+            btnCopiarDe.Enabled = true;
+            EdicionEspecialActiva = false;
             //GetSigID();
 
         }
@@ -864,6 +878,7 @@ namespace LOSA.Compras
                 tipooperacion = TipoOperacion.Update;
                 //CargarSolicitud(frm.IdSolicitudSeleccionado);
                 CargarInfoOrden(frm.IdOrdenesSeleccionado);
+                EdicionEspecialActiva = false;
             }
 
             cmdNuevo.Enabled = true;
@@ -931,7 +946,7 @@ namespace LOSA.Compras
                         break;
                 }
 
-                CargarDetalleOrdenCompra(IdOrdenCompraActual);
+                CargarDetalleOrdenCompra(IdOrdenCompraActual,1);
 
                 //switch (tipooperacion)
                 //{
@@ -954,6 +969,8 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = true;
                         txtComentarios.Enabled = true;
                         grDetalle.Enabled = true;
+                        gcFiles.Enabled = true;
+                        cmdGuardarArchivos.Enabled = true;
                         dtFechaContabilizacion.Enabled = true;
                         cmdGuardar.Enabled = true;
                         //btnPrint.Enabled = false;
@@ -964,6 +981,9 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
+                        gcFiles.Enabled = false;
+                        cmdGuardarArchivos.Enabled = false;
+
                         dtFechaContabilizacion.Enabled = false;
                         btnPrint.Enabled = true;
                         cmdGuardar.Enabled = false;
@@ -974,6 +994,7 @@ namespace LOSA.Compras
                         glRutaAprobacionOC.Enabled = false;
                         comboBoxIntercom.Enabled = false;
                         txtNumAtCard.Enabled = false;
+                        btnEditar.Enabled = true;
                         
                         break;
 
@@ -982,6 +1003,9 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
+                        gcFiles.Enabled = false;
+                        cmdGuardarArchivos.Enabled = false;
+
                         dtFechaContabilizacion.Enabled = false;
                         cmdGuardar.Enabled = false;
                         TsExoOIsv.ReadOnly = true;
@@ -994,6 +1018,9 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false ;
+                        gcFiles.Enabled = false;
+                        cmdGuardarArchivos.Enabled=false;
+
                         dtFechaContabilizacion.Enabled = false;
                         cmdGuardar.Enabled = false;
                         TsExoOIsv.ReadOnly = true;
@@ -1049,6 +1076,7 @@ namespace LOSA.Compras
         private void cmdAnterior_Click(object sender, EventArgs e)
         {
             tipooperacion = TipoOperacion.Update;
+            EdicionEspecialActiva = false;
             if (IdOrdenCompraActual == 0)//vamos a mostrar el ultimo
             {
                 try
@@ -1062,6 +1090,7 @@ namespace LOSA.Compras
                     cmd.Parameters.AddWithValue("@case", 3);//Ordenes de Compra
                     IdOrdenCompraActual = Convert.ToInt32(cmd.ExecuteScalar());
                     CargarInfoOrden(IdOrdenCompraActual);
+                    CargarArchivos();
                     con.Close();
                 }
                 catch (Exception ec)
@@ -1106,6 +1135,7 @@ namespace LOSA.Compras
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
             tipooperacion = TipoOperacion.Update;
+            EdicionEspecialActiva = false;
             if (IdOrdenCompraActual == 0)//vamos a mostrar el primero
             {
                 try
@@ -1119,6 +1149,7 @@ namespace LOSA.Compras
                     cmd.Parameters.AddWithValue("@case", 4);
                     IdOrdenCompraActual = Convert.ToInt32(cmd.ExecuteScalar());
                     CargarInfoOrden(IdOrdenCompraActual);
+                    CargarArchivos();
                     con.Close();
                 }
                 catch (Exception ec)
@@ -1169,45 +1200,48 @@ namespace LOSA.Compras
             {
                 case TipoOperacion.New:
 
-
                     foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
                     {
                         ConsolidacionSaldos(item.capitulo, item.partida_arancelaria, item.cantidad, item.total);
                     }
 
-
-
                     break;
                 case TipoOperacion.Update:
 
-                    switch (IdEstadoOrdenCompra)
+                    if (!EdicionEspecialActiva)
                     {
-                        case 1://Pendiente (Creada)
+                        switch (IdEstadoOrdenCompra)
+                        {
+                            case 1://Pendiente (Creada)
 
-                            DialogResult r = CajaDialogo.Pregunta("Se va Actualizar esta Orden de Compra.\nEsta Seguro?");
-                            if (r != System.Windows.Forms.DialogResult.Yes)
+                                DialogResult r = CajaDialogo.Pregunta("Se va Actualizar esta Orden de Compra.\nEsta Seguro?");
+                                if (r != System.Windows.Forms.DialogResult.Yes)
+                                    return;
+
+                                break;
+
+                            case 2://Autorizado
+                                CajaDialogo.Error("La Orden ya fue Aprobada, no se puede Editar!");
                                 return;
 
-                            break;
+                                break;
 
-                        case 2://Autorizado
-                            CajaDialogo.Error("La Orden ya fue Aprobada, no se puede Editar!");
-                            
-                            break;
+                            case 3://Rechazado
+                                CajaDialogo.Error("La Orden fue Rechazada, no se puede Editar!");
 
-                        case 3://Rechazado
-                            CajaDialogo.Error("La Orden fue Rechazada, no se puede Editar!");
+                                break;
 
-                            break;
+                            case 4: //Cancelada por el Usuario Creador
+                                CajaDialogo.Error("Orden Cancelada por el Usuario!");
 
-                        case 4: //Cancelada por el Usuario Creador
-                            CajaDialogo.Error("Orden Cancelada por el Usuario!");
+                                break;
 
-                            break;
-                           
-                        default:
-                            break;
+                            default:
+                                break;
+                        }
                     }
+
+                    
 
                     break;
                 default:
@@ -1336,6 +1370,11 @@ namespace LOSA.Compras
                         CajaDialogo.Error("Una Linea del Detalle tiene un Registro Exento!\nLa Orden que se esta creando es Exonerada!");
                         return;
                     }
+                    if (item.indicador_impuesto == "ISV")
+                    {
+                        CajaDialogo.Error("Una Linea del Detalle tiene un Registro con Impuesto!\nLa Orden que se esta creando es Exonerada!");
+                        return;
+                    }
                 }
 
             }
@@ -1357,6 +1396,12 @@ namespace LOSA.Compras
                             item.partida_arancelaria = " ";
                             return;
                         }
+                    }
+
+                    if (item.indicador_impuesto == "EXO")
+                    {
+                        CajaDialogo.Error("La Orden de Compra no es Exonerada!\nNo puede haber un detalle con Indicador de Impuesto: EXO");
+                        return;
                     }
                 }
             }
@@ -1458,18 +1503,26 @@ namespace LOSA.Compras
                             bool EncontroRow = false;
                             foreach (DataRow rowTMP in MyTable.Rows)
                             {
-                                if (rowTMP["capitulo"].ToString() == item.capitulo 
+                                if (rowTMP["capitulo"].ToString() == item.capitulo
                                     && dp.ValidateNumberInt32(rowTMP["tipo"]) == 2)//1=SoloCapitulo, 2=Capitulo & Partida
                                 {
-                                    //Acumularemos el saldo consumido
-                                    decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
-                                    decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
+                                    if (!string.IsNullOrEmpty(item.partida_arancelaria) || !string.IsNullOrWhiteSpace(item.partida_arancelaria))
+                                    {
+                                        if (rowTMP["partida"].ToString() == item.partida_arancelaria
+                                            && dp.ValidateNumberInt32(rowTMP["tipo"]) == 2)//1=SoloCapitulo, 2=Capitulo & Partida
+                                        {
+                                            //Acumularemos el saldo consumido
+                                            decimal MontoActual_ = dp.ValidateNumberDecimal(rowTMP["monto_consumo"]);
+                                            decimal CantidadActual_ = dp.ValidateNumberDecimal(rowTMP["unidades_consumo"]);
 
-                                    rowTMP["monto_consumo"] = MontoActual_ + item.total;
-                                    rowTMP["unidades_consumo"] = CantidadActual_ + item.cantidad;
+                                            rowTMP["monto_consumo"] = MontoActual_ + item.total;
+                                            rowTMP["unidades_consumo"] = CantidadActual_ + item.cantidad;
 
-                                    EncontroRow = true;
-                                    break;
+                                            EncontroRow = true;
+                                            break;
+                                        }
+                                    }
+                                    
                                 }
                             }
                             if (!EncontroRow)//Insertamos un nuevo registro
@@ -1647,6 +1700,29 @@ namespace LOSA.Compras
                             cmd.ExecuteNonQuery();
                         }
 
+                        //Seccion para agregar los archivos
+                        foreach (var row in dsCompras1.ordenes_compras_archivos)
+                        {
+                            string ext = Path.GetExtension(row.file_name);
+                            string file_name = DateTime.Now.ToString("ddMMyyyyhhmmss") + ext;
+                            //Luego de subir el archivo al FTP, que se guarde el registro
+                            if (Upload(row.path, file_name,row.id))
+                            {
+                                cmd.Parameters.Clear();
+                                cmd.CommandText = "usp_UploadFileFromOrdenesCompras";
+                                cmd.Connection = conn;
+                                cmd.Transaction = transaction;
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id_orden_compra_h", id_header);
+                                cmd.Parameters.AddWithValue("@path", dp.FTP_Tickets_LOSA_Compras+ file_name);
+                                cmd.Parameters.AddWithValue("@file_name", row.file_name);
+                                cmd.Parameters.AddWithValue("@id_user", UsuarioLogueado.Id);
+                                cmd.Parameters.AddWithValue("@id", row.id);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                        }
+
                         transaction.Commit();
                         Guardar = true;
                     }
@@ -1677,7 +1753,7 @@ namespace LOSA.Compras
                         connUpdate.Open();
                         transactionUpdate = connUpdate.BeginTransaction("Transaction Order");
                         SqlCommand cmdUpdate = connUpdate.CreateCommand();
-                        cmdUpdate.CommandText = "sp_CM_update_ordencompra_h";
+                        cmdUpdate.CommandText = "[sp_CM_update_ordencompra_hV2]";
                         cmdUpdate.Connection = connUpdate;
                         cmdUpdate.Transaction = transactionUpdate;
                         cmdUpdate.CommandType = CommandType.StoredProcedure;
@@ -1713,6 +1789,7 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
                         else
                             cmdUpdate.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
 
                         cmdUpdate.ExecuteNonQuery();
 
@@ -1745,7 +1822,32 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
                             cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmdUpdate.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                            //cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
                             cmdUpdate.ExecuteNonQuery();
+                        }
+
+                        string file_name;
+                        //Seccion para agregar los archivos
+                        foreach (var row in dsCompras1.ordenes_compras_archivos)
+                        {
+                            string ext = Path.GetExtension(row.file_name);
+                            file_name = DateTime.Now.ToString("ddMMyyyyhhmmss")+ext;
+                            //Luego de subir el archivo al FTP, que se guarde el registro
+                            if (Upload(row.path, file_name,row.id))
+                            {
+                                cmdUpdate.Parameters.Clear();
+                                cmdUpdate.CommandText = "usp_UploadFileFromOrdenesCompras";
+                                cmdUpdate.Connection = connUpdate;
+                                cmdUpdate.Transaction = transactionUpdate;
+                                cmdUpdate.CommandType = CommandType.StoredProcedure;
+                                cmdUpdate.Parameters.AddWithValue("@id_orden_compra_h", IdOrdenCompraActual);
+                                cmdUpdate.Parameters.AddWithValue("@path", dp.FTP_Tickets_LOSA_Compras + file_name);
+                                cmdUpdate.Parameters.AddWithValue("@file_name", row.file_name);
+                                cmdUpdate.Parameters.AddWithValue("@id_user", UsuarioLogueado.Id);
+                                cmdUpdate.Parameters.AddWithValue("@id", row.id);
+                                cmdUpdate.ExecuteNonQuery();
+                            }
+
                         }
 
                         transactionUpdate.Commit();
@@ -1838,38 +1940,7 @@ namespace LOSA.Compras
         private void ConsolidacionSaldos(string capitulo, string partida_arancelaria, decimal cantidad, decimal total)
         {
 
-            bool PrimeraIteracion = true;
-
-            //foreach (dsCompras.SaldosMemoriaRow rowMemoria in dsCompras1.SaldosMemoria.Rows)
-            //{
-            //    PrimeraIteracion = false;
-
-            //    if (rowMemoria.capitulo == capitulo)
-            //    {
-            //        if (rowMemoria.partida_arancelaria == partida_arancelaria)
-            //        {
-            //            rowMemoria.cantidad = rowMemoria.cantidad + cantidad;
-            //            rowMemoria.total = rowMemoria.total + total;
-            //        }
-            //        else
-            //        {
-            //            rowMemoria.cantidad = rowMemoria.cantidad + cantidad;
-            //            rowMemoria.total = rowMemoria.total + total;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        DataRow drow = dsCompras1.SaldosMemoria.NewRow();
-            //        drow[0] = capitulo;
-            //        drow[1] = partida_arancelaria;
-            //        drow[2] = cantidad;
-            //        drow[3] = total;
-
-            //        dsCompras1.SaldosMemoria.Rows.Add(drow);
-            //        dsCompras1.SaldosMemoria.AcceptChanges();
-            //    }
-            //}
-            
+            bool PrimeraIteracion = true;            
 
             if (PrimeraIteracion == true)
             {
@@ -1913,6 +1984,7 @@ namespace LOSA.Compras
                     rptOrdenCompraExo report = new rptOrdenCompraExo(IdOrdenCompraActual);
                     report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                     ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(IdOrdenCompraActual);
                     reportPrint.ShowPreview();
                 }
                 else
@@ -1920,12 +1992,32 @@ namespace LOSA.Compras
                     rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual);
                     report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                     ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(IdOrdenCompraActual);
                     reportPrint.ShowPreview();
                 }
             }
             else
             {
                 CajaDialogo.Error("Debe seleccionar una Orden de Compra!");
+                return;
+            }
+        }
+
+        private void ActualizarConteoPrint(int pIdOC)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_CM_update_count_print_oc", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdOC", pIdOC);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
                 return;
             }
         }
@@ -2098,6 +2190,36 @@ namespace LOSA.Compras
             switch (tipooperacion)
             {
                 case TipoOperacion.New:
+                    if (TsExoOIsv.IsOn) //Exonerado
+                    {
+                        txtExoneracion.Visible = true;
+                        lblExoneracion.Visible = true;
+                        ObtenerExoneracionVigente();
+
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.isv = 0;
+                            item.indicador_impuesto = "EXO";
+                        }
+                        CalcularTotal();
+
+                    }
+                    else //Impuesto
+                    {
+                        txtExoneracion.Text = "";
+                        txtExoneracion.Visible = false;
+                        lblExoneracion.Visible = false;
+                        foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                        {
+                            item.capitulo = " ";
+                            item.partida_arancelaria = " ";
+                            item.isv = (item.total * 0.15M);
+                            item.indicador_impuesto = "ISV";
+
+                        }
+                        ReCalculoImpuesto();
+                        CalcularTotal();
+                    }
                     break;
                 case TipoOperacion.Update:
                     if (TsExoOIsv.IsOn) //Exonerado
@@ -2377,14 +2499,15 @@ namespace LOSA.Compras
                                 break;
 
                             case 4://Gastos Calidad
-
                                 glRutaAprobacionOC.EditValue = 4;//Gastos Calidad
-
                                 break;
+
                             case 5://Gastos Logistica
-
                                 glRutaAprobacionOC.EditValue = 5;
+                                break;
 
+                            case 6:
+                                glRutaAprobacionOC.EditValue = 6;
                                 break;
 
                             case 7:
@@ -2392,9 +2515,7 @@ namespace LOSA.Compras
                                 break;
 
                             case 8:
-
                                 glRutaAprobacionOC.EditValue = 7;
-
                                 break;
 
                             default:
@@ -2507,12 +2628,138 @@ namespace LOSA.Compras
                         }
                         break;
                 }
-
-
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            CMOrdenCompraH oc = new CMOrdenCompraH();
+            oc.RecuperarRegistro(IdOrdenCompraActual);
+
+            bool Proceder = false;
+
+            switch (oc.IdEstado)
+            {
+                case 1: //Pendiente (Creada)
+                    Proceder = true;
+                    break;
+
+                case 2: //Autorizada
+                    //Proceder = true;
+                    if (ValidarEstadoOrdenSAP(oc.DocNum))
+                    {
+                        CajaDialogo.Error("Antes de Editar esta Orden Autorizada.\nDebe Cancelar la Orden en SAP.");
+                        return;
+                    }
+                    else
+                        Proceder = true;
+                    break;
+                default:
+                    Proceder = false;
+                    break;
+            }
+
+            cmdNuevo.Enabled = true;
+            cmdAddDetalle.Enabled = true;
+            txtComentarios.Enabled = true;
+            grDetalle.Enabled = true;
+            dtFechaContabilizacion.Enabled = false;
+            btnPrint.Enabled = false;
+            cmdGuardar.Enabled = true;
+            TsExoOIsv.ReadOnly = false;
+            btnCopiarDe.Enabled = false;
+            grdTipoOrden.Enabled = false;
+            glRutaAprobacionOC.Enabled = false;
+            comboBoxIntercom.Enabled = true;
+            txtNumAtCard.Enabled = true;
+            EdicionEspecialActiva = true;
+            btnCopiarDe.Enabled = false;
+        }
+
+        int contador = 0;
+        private void cmdGuardarArchivos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            xtraOpenFileDialog1.InitialDirectory = "c:\\";
+            xtraOpenFileDialog1.Filter = "Files|*.jpg;*.jpeg;*.png;*.pdf";
+
+            if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+            contador = 0;
+            
+
+                foreach (var item in xtraOpenFileDialog1.SafeFileNames)
+                {
+                    // Create a new DataRow
+                    DataRow newRow = dsCompras1.ordenes_compras_archivos.NewRow();
+
+                    // Populate the DataRow with values
+                    newRow["fecha_registro"] = DateTime.Now;
+                    newRow["file_name"] = item;
+                    newRow["user"] = UsuarioLogueado.NombreUser;
+                    newRow["path"] = xtraOpenFileDialog1.FileNames[contador];
+
+                        if (IdOrdenCompraActual!=0)
+                        {
+                            newRow["id_orden_compra_h"] = IdOrdenCompraActual;
+
+                        }                      
+
+                    // Add the DataRow to the DataTable
+                    dsCompras1.ordenes_compras_archivos.Rows.Add(newRow);
+                    contador++;
+
+                }
+            }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Show(ex.Message);
+            }
+        }
+
+        private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                FTP_Class fTP = new FTP_Class();
+                try
+                {
+                    var row = (dsCompras.ordenes_compras_archivosRow)gvFiles.GetFocusedDataRow();
+
+                    fTP.RemoveFile(row.path);
+
+                    DataOperations dp = new DataOperations();
+                    SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
+
+                    cnx.Open();
+
+                    SqlCommand cmd = new SqlCommand("dbo.CM_delete_archivos_adjuntos", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
+                    cmd.ExecuteNonQuery();
+
+
+                    gvFiles.DeleteRow(gvFiles.FocusedRowHandle);
+
+
+                }
+                catch (Exception ec)
+                {
+
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Show(ex.Message);
             }
         }
 
@@ -2525,10 +2772,90 @@ namespace LOSA.Compras
                 //mmm si falta algo lo vemos luego, asi arrancaremos.
                 txtComentarios.Text = oc.Comments;
 
-                CargarDetalleOrdenCompra(idOrdenCompraSoloDetalle);
+                CargarDetalleOrdenCompra(idOrdenCompraSoloDetalle,2);//2: Detalle OC para crear Otra OC
             }
 
             
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private bool Upload(string pathFile, string fileName,int id_compra_detalle)
+        {
+
+            try
+            {
+
+                if (string.IsNullOrEmpty(fileName) || string.IsNullOrEmpty(fileName))
+                {
+                    CajaDialogo.Error("No se cargó el archivo");
+                    return false;
+                }
+                else
+                {
+                    FTP_Class ftp1 = new FTP_Class();
+                    return ftp1.GuardarArchivoCompras(UsuarioLogueado, fileName, pathFile, id_compra_detalle);
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+                return false;
+            }
+        }
+
+        private void btnDownload_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                FTP_Class ftp_claass = new FTP_Class();
+                var row = (dsCompras.ordenes_compras_archivosRow)gvFiles.GetFocusedDataRow();
+
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    if (row.id != 0)
+                    {
+
+                        if (ftp_claass.DownloadFileFromCompras(row.path, Path.Combine(folderBrowserDialog1.SelectedPath, row.file_name), UsuarioLogueado))
+                        {
+                            CajaDialogo.Information("Archivo descargado en la ruta: "+ folderBrowserDialog1.SelectedPath);
+
+                        }  
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void CargarArchivos()
+        {
+            try
+            {
+                string query = @"[dbo].[usp_GetArchivosFromOrdenesCompras]";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id_compra_h", SqlDbType.Int).Value = IdOrdenCompraActual;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCompras1.ordenes_compras_archivos.Clear();
+                adat.Fill(dsCompras1.ordenes_compras_archivos);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
     }
 }

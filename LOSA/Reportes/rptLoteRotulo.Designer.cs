@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptLoteRotulo));
+            DevExpress.XtraReports.UI.XRWatermark xrWatermark1 = new DevExpress.XtraReports.UI.XRWatermark();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
@@ -279,7 +280,7 @@
             // 
             // txtrack
             // 
-            this.txtrack.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 21.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.txtrack.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 22F, DevExpress.Drawing.DXFontStyle.Bold);
             this.txtrack.LocationFloat = new DevExpress.Utils.PointFloat(528.8596F, 589.7965F);
             this.txtrack.Multiline = true;
             this.txtrack.Name = "txtrack";
@@ -288,7 +289,6 @@
             this.txtrack.StylePriority.UseFont = false;
             this.txtrack.StylePriority.UseTextAlignment = false;
             this.txtrack.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.txtrack.Visible = false;
             // 
             // xrLabel19
             // 
@@ -303,7 +303,6 @@
             this.xrLabel19.StylePriority.UseTextAlignment = false;
             this.xrLabel19.Text = "Ubicacion";
             this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrLabel19.Visible = false;
             // 
             // txtfvencimiento
             // 
@@ -639,10 +638,12 @@
             this.Detail,
             this.ReportHeader});
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
-            this.Margins = new DevExpress.Drawing.DXMargins(91F, 57F, 29F, 55F);
+            this.Margins = new DevExpress.Drawing.DXMargins(91F, 55F, 29F, 55F);
             this.ScriptReferencesString = "DevExpress.XtraPrinting.v18.1.dll\r\nDevExpress.Utils.v18.1.dll";
             this.ScriptsSource = resources.GetString("$this.ScriptsSource");
-            this.Version = "22.2";
+            this.Version = "23.2";
+            xrWatermark1.Id = "Watermark1";
+            this.Watermarks.Add(xrWatermark1);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

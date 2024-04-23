@@ -35,6 +35,11 @@ namespace LOSA.Trazabilidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsMantoTrazabilidad1 = new LOSA.Trazabilidad.dsMantoTrazabilidad();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,13 +55,19 @@ namespace LOSA.Trazabilidad
             this.colFechaCreación = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreadopor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTipoAlimentación = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposEditMp = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.cmdExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LinkLotesMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposEditMp)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -70,7 +81,8 @@ namespace LOSA.Trazabilidad
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.LinkLotesMP});
+            this.LinkLotesMP,
+            this.reposEditMp});
             this.gridControl1.Size = new System.Drawing.Size(997, 531);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -98,7 +110,11 @@ namespace LOSA.Trazabilidad
             this.colCodigoSAP,
             this.colFechaCreación,
             this.colCreadopor,
-            this.colTipoAlimentación});
+            this.colTipoAlimentación,
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -117,7 +133,7 @@ namespace LOSA.Trazabilidad
             this.colcodigo.OptionsColumn.AllowEdit = false;
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
-            this.colcodigo.Width = 86;
+            this.colcodigo.Width = 68;
             // 
             // colmaterial
             // 
@@ -127,7 +143,7 @@ namespace LOSA.Trazabilidad
             this.colmaterial.Name = "colmaterial";
             this.colmaterial.Visible = true;
             this.colmaterial.VisibleIndex = 2;
-            this.colmaterial.Width = 150;
+            this.colmaterial.Width = 144;
             // 
             // LinkLotesMP
             // 
@@ -145,7 +161,7 @@ namespace LOSA.Trazabilidad
             this.colNombreComercial.OptionsColumn.AllowEdit = false;
             this.colNombreComercial.Visible = true;
             this.colNombreComercial.VisibleIndex = 3;
-            this.colNombreComercial.Width = 146;
+            this.colNombreComercial.Width = 140;
             // 
             // colTipo
             // 
@@ -154,15 +170,13 @@ namespace LOSA.Trazabilidad
             this.colTipo.OptionsColumn.AllowEdit = false;
             this.colTipo.Visible = true;
             this.colTipo.VisibleIndex = 4;
-            this.colTipo.Width = 84;
+            this.colTipo.Width = 79;
             // 
             // colTipoF
             // 
             this.colTipoF.FieldName = "Tipo F";
             this.colTipoF.Name = "colTipoF";
             this.colTipoF.OptionsColumn.AllowEdit = false;
-            this.colTipoF.Visible = true;
-            this.colTipoF.VisibleIndex = 5;
             this.colTipoF.Width = 84;
             // 
             // colTipoR
@@ -170,8 +184,6 @@ namespace LOSA.Trazabilidad
             this.colTipoR.FieldName = "Tipo R";
             this.colTipoR.Name = "colTipoR";
             this.colTipoR.OptionsColumn.AllowEdit = false;
-            this.colTipoR.Visible = true;
-            this.colTipoR.VisibleIndex = 6;
             this.colTipoR.Width = 84;
             // 
             // colCodigoSAP
@@ -181,15 +193,13 @@ namespace LOSA.Trazabilidad
             this.colCodigoSAP.OptionsColumn.AllowEdit = false;
             this.colCodigoSAP.Visible = true;
             this.colCodigoSAP.VisibleIndex = 1;
-            this.colCodigoSAP.Width = 71;
+            this.colCodigoSAP.Width = 80;
             // 
             // colFechaCreación
             // 
             this.colFechaCreación.FieldName = "Fecha Creación";
             this.colFechaCreación.Name = "colFechaCreación";
             this.colFechaCreación.OptionsColumn.AllowEdit = false;
-            this.colFechaCreación.Visible = true;
-            this.colFechaCreación.VisibleIndex = 7;
             this.colFechaCreación.Width = 102;
             // 
             // colCreadopor
@@ -198,8 +208,8 @@ namespace LOSA.Trazabilidad
             this.colCreadopor.Name = "colCreadopor";
             this.colCreadopor.OptionsColumn.AllowEdit = false;
             this.colCreadopor.Visible = true;
-            this.colCreadopor.VisibleIndex = 8;
-            this.colCreadopor.Width = 74;
+            this.colCreadopor.VisibleIndex = 5;
+            this.colCreadopor.Width = 71;
             // 
             // colTipoAlimentación
             // 
@@ -207,8 +217,27 @@ namespace LOSA.Trazabilidad
             this.colTipoAlimentación.Name = "colTipoAlimentación";
             this.colTipoAlimentación.OptionsColumn.AllowEdit = false;
             this.colTipoAlimentación.Visible = true;
-            this.colTipoAlimentación.VisibleIndex = 9;
-            this.colTipoAlimentación.Width = 98;
+            this.colTipoAlimentación.VisibleIndex = 6;
+            this.colTipoAlimentación.Width = 93;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Editar MP";
+            this.gridColumn1.ColumnEdit = this.reposEditMp;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 10;
+            this.gridColumn1.Width = 81;
+            // 
+            // reposEditMp
+            // 
+            this.reposEditMp.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.reposEditMp.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposEditMp.Name = "reposEditMp";
+            this.reposEditMp.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposEditMp.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposEditMp_ButtonClick);
             // 
             // labelControl1
             // 
@@ -252,6 +281,36 @@ namespace LOSA.Trazabilidad
             this.cmdExcel.Text = "Exportar";
             this.cmdExcel.Click += new System.EventHandler(this.cmdExcel_Click);
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Gestion Lote a Vencer";
+            this.gridColumn2.FieldName = "Gestion_lote_vencimiento";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 7;
+            this.gridColumn2.Width = 72;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Origen MP";
+            this.gridColumn3.FieldName = "TipoOrigen";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 8;
+            this.gridColumn3.Width = 72;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Unite ID";
+            this.gridColumn4.FieldName = "UniteID";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 9;
+            this.gridColumn4.Width = 72;
+            // 
             // frmMateriaPrimaHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,13 +320,14 @@ namespace LOSA.Trazabilidad
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmMateriaPrimaHome.IconOptions.Icon")));
             this.Name = "frmMateriaPrimaHome";
             this.Text = "Materia Prima Home";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LinkLotesMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposEditMp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +353,10 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.SimpleButton cmdExcel;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit LinkLotesMP;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposEditMp;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

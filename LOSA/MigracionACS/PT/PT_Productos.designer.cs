@@ -605,7 +605,6 @@
             this.ColSAP.Caption = "Subir a SAP";
             this.ColSAP.ColumnEdit = this.btnSAP;
             this.ColSAP.Name = "ColSAP";
-            this.ColSAP.OptionsColumn.AllowEdit = false;
             this.ColSAP.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.ColSAP.Visible = true;
             this.ColSAP.VisibleIndex = 14;
@@ -648,6 +647,7 @@
             this.colSubidoSAP.Caption = "SubidoSAP";
             this.colSubidoSAP.FieldName = "SubidoSAP";
             this.colSubidoSAP.Name = "colSubidoSAP";
+            this.colSubidoSAP.OptionsColumn.AllowEdit = false;
             this.colSubidoSAP.Visible = true;
             this.colSubidoSAP.VisibleIndex = 12;
             this.colSubidoSAP.Width = 98;

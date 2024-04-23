@@ -33,6 +33,8 @@ namespace LOSA.Compras
             InitializeComponent();
             Filtro = pfiltro;
             UsuarioLogueado = pUserLogin;
+            dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-30);
+            dtFechaHastaDisponibles.DateTime = dp.Now().AddDays(1);
 
             LoadData();
 
@@ -42,12 +44,13 @@ namespace LOSA.Compras
         {
             try
             {
-                string query = @"sp_get_ordenes_compra";
+                string query = @"[sp_get_ordenes_compra_fechas]";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                
+                cmd.Parameters.AddWithValue("@Desde", dtFechaDesdeDisponibles.DateTime);
+                cmd.Parameters.AddWithValue("@hasta", dtFechaHastaDisponibles.DateTime);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsCompras1.orden_compra_exo.Clear();
                 adat.Fill(dsCompras1.orden_compra_exo);
@@ -139,6 +142,11 @@ namespace LOSA.Compras
 
                 }
             }
+        }
+
+        private void cmdRefreshDisponibles_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
