@@ -2631,29 +2631,29 @@ namespace LOSA.Trazabilidad
         }
 
         void LoadInventarioLotesRuta1()
+        {
+            //sp_get_kardex_by_lot_trz
+            try
             {
-                //sp_get_kardex_by_lot_trz
-                try
-                {
-                    DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    con.Open();
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
 
-                    SqlCommand cmd = new SqlCommand("[sp_get_kardex_by_lot_trz]", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@lote", txtLoteMPRuta1.Text);
-                    //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
-                    dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
-                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                    adat.Fill(dsReportesTRZ.Inventario_mp_lote_ruta1);
+                SqlCommand cmd = new SqlCommand("[sp_get_kardex_by_lot_trzV2]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtLoteMPRuta1.Text);
+                cmd.Parameters.AddWithValue("@idMP", id_materiaPrima_Ruta1);
+                dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.Inventario_mp_lote_ruta1);
 
-                    con.Close();
-                }
-                catch (Exception ec)
-                {
-                    CajaDialogo.Error(ec.Message);
-                }
+                con.Close();
             }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
             void LoadRegistroIngresosLotesRuta1()
             {
                 //sp_get_kardex_by_lot_trz
@@ -2663,10 +2663,10 @@ namespace LOSA.Trazabilidad
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("[sp_get_ingresos_lotes_mp_ruta_trz1]", con);
+                    SqlCommand cmd = new SqlCommand("[sp_get_ingresos_lotes_mp_ruta_trz1V2]", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@lotemp", txtLoteMPRuta1.Text);
-                    //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                    cmd.Parameters.AddWithValue("@idMP", id_materiaPrima_Ruta1);
                     dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmd);
                     adat.Fill(dsReportesTRZ.ingresos_mp_lote_ruta1);
@@ -3082,6 +3082,9 @@ namespace LOSA.Trazabilidad
             //RESUMEN
             dsMantenimientoC.resumen_ruta_1.Clear();
             decimal entradas = 0;
+            decimal teorico = 0;
+            decimal varicacion = 0;
+            decimal existenica_externo = 0;
             //decimal consumosCamaron = 0;
             //decimal consumosTilapia = 0;
             decimal consumo = 0;
@@ -3105,7 +3108,16 @@ namespace LOSA.Trazabilidad
             //INVENTARIO ACTUAL
             foreach (dsReportesTRZ.Inventario_mp_lote_ruta1Row item in dsReportesTRZ.Inventario_mp_lote_ruta1.Rows)
             {
-                existencia += item.existencia;
+                if (item.whs_equivalente == "BG001" || item.whs_equivalente == "BG002" || item.whs_equivalente == "BG004" || item.whs_equivalente == "BG008"
+                    || item.whs_equivalente == "BG018") //BODEGAS INTERNAS
+                {
+                    existencia += item.existencia;
+                }
+                else
+                {
+                    existenica_externo += item.existencia;
+                }
+                
             }
 
             //consumo = consumosCamaron + consumosTilapia;
@@ -3116,7 +3128,22 @@ namespace LOSA.Trazabilidad
                 dr[0] = entradas;
                 dr[1] = consumo;
                 dr[2] = existencia;
-                dr[3] = entradas - consumo;
+                    teorico = (entradas - consumo);
+                dr[3] = teorico;
+                    if (teorico == 0 && existencia == 0)
+                    {
+                        varicacion = 0;
+                    }
+                    else
+                    {
+                        if (teorico == 0)
+                            varicacion = ((teorico / existencia) - 1) * 100;
+                        else
+                            varicacion = ((existencia / teorico) - 1) * 100;
+                    }
+                dr[4] = varicacion;
+                dr[5] = existenica_externo;
+
 
                 dsMantenimientoC.resumen_ruta_1.Rows.Add(dr);
                 dsMantenimientoC.resumen_ruta_1.AcceptChanges();

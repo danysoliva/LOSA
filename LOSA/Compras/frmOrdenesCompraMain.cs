@@ -415,17 +415,18 @@ namespace LOSA.Compras
             }
         }
 
-        private void CargarDetalleOrdenCompra(int idSolicitudSeleccionado)
+        private void CargarDetalleOrdenCompra(int idSolicitudSeleccionado, int TipoUso)
         {
             CargarPartidasArancelarias();
             try
             {
-                string query = @"[sp_get_compras_ordenes_detalle]";
+                string query = @"[sp_get_compras_ordenes_detalleV2]";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_header_orden", idSolicitudSeleccionado);
+                cmd.Parameters.AddWithValue("@TipoUso", TipoUso);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsCompras1.oc_detalle_exonerada.Clear();
                 adat.Fill(dsCompras1.oc_detalle_exonerada);
@@ -454,6 +455,7 @@ namespace LOSA.Compras
                 CajaDialogo.Error(ex.Message);
             }
         }
+
 
         private void ReCalculoImpuesto()
         {
@@ -937,7 +939,7 @@ namespace LOSA.Compras
                         break;
                 }
 
-                CargarDetalleOrdenCompra(IdOrdenCompraActual);
+                CargarDetalleOrdenCompra(IdOrdenCompraActual,1);
 
                 //switch (tipooperacion)
                 //{
@@ -2651,7 +2653,7 @@ namespace LOSA.Compras
                 //mmm si falta algo lo vemos luego, asi arrancaremos.
                 txtComentarios.Text = oc.Comments;
 
-                CargarDetalleOrdenCompra(idOrdenCompraSoloDetalle);
+                CargarDetalleOrdenCompra(idOrdenCompraSoloDetalle,2);//2: Detalle OC para crear Otra OC
             }
 
             

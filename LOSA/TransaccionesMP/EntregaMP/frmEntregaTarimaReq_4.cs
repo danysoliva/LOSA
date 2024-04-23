@@ -1066,43 +1066,44 @@ namespace LOSA.TransaccionesMP.EntregaMP
                                     return;
 
                                 }
-                                //else //Si no, vamos a ver si la MP esta configurada para Consumir el Proximo a Vencer!
-                                //{
-                                //    MateriaPrima mp = new MateriaPrima();
-                                //    mp.RecuperarRegistroFromID_MP(tarimaEncontrada.Id_materiaprima);
-                                //    if (mp.ValidacionLotes)
-                                //    {
-                                //        try
-                                //        {
-                                //            bool Permitir = true;
+                                else //Si no, vamos a ver si la MP esta configurada para Consumir el Proximo a Vencer!
+                                {
+                                    MateriaPrima mp = new MateriaPrima();
+                                    mp.RecuperarRegistroFromID_MP(tarimaEncontrada.Id_materiaprima);
+                                    if (mp.ValidacionLotes)
+                                    {
+                                        try
+                                        {
+                                            bool Permitir = true;
 
-                                //            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                                //            conn.Open();
-                                //            SqlCommand cmd = new SqlCommand("",);
-                                //            cmd.CommandType = CommandType.StoredProcedure;
-                                //            cmd.Parameters.AddWithValue("",tarimaEncontrada.LoteMP);
-                                //            cmd.Parameters.AddWithValue("",tarimaEncontrada.Id_materiaprima);
+                                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                            conn.Open();
+                                            SqlCommand cmd = new SqlCommand("[sp_ValidacionLoteProximoAVencer]", conn);
+                                            cmd.CommandType = CommandType.StoredProcedure;
+                                            cmd.Parameters.AddWithValue("@loteMP", tarimaEncontrada.LoteMP);
+                                            cmd.Parameters.AddWithValue("@idMateriaPrima", tarimaEncontrada.Id_materiaprima);
 
-                                //            Permitir = Convert.ToBoolean(cmd.ExecuteScalar());
-                                //            conn.Close();
+                                            Permitir = Convert.ToBoolean(cmd.ExecuteScalar());
+                                            conn.Close();
 
-                                //            if (Permitir == false)
-                                //            {
-                                //                frmProximosA_vencer frm = new frmProximosA_vencer(tarimaEncontrada.Id_materiaprima);
-                                //                frm.ShowDialog();
+                                            if (Permitir == false)
+                                            {
+                                                frmProximosA_vencer frm = new frmProximosA_vencer(tarimaEncontrada.Id_materiaprima, tarimaEncontrada.LoteMP);
+                                                frm.ShowDialog();
 
-                                //                txtTarima.Text = "";
-                                //                txtTarima.Focus();
-                                //            }
+                                                txtTarima.Text = "";
+                                                txtTarima.Focus();
+                                                return;
+                                            }
 
-                                //        }
-                                //        catch (Exception ex)
-                                //        {
-                                //            CajaDialogo.Error(ex.Message);
-                                //        }
-                                //    }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            CajaDialogo.Error(ex.Message);
+                                        }
+                                    }
 
-                                //}
+                                }
 
                                 frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaTarimaKg
                                                                                     , ExistenciaTarimaUnidades

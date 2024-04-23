@@ -30,7 +30,7 @@ namespace LOSA.TransaccionesMP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblTitulo = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsLotesProxVencer1 = new LOSA.TransaccionesMP.DataSet.dsLotesProxVencer();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -42,21 +42,22 @@ namespace LOSA.TransaccionesMP
             this.colud_existente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.lotesmpproxvenceridBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblMensaje = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLotesProxVencer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lotesmpproxvenceridBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelControl1
+            // lblTitulo
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(136, 28);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(322, 21);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Orden de Lotes a Entregar (Proximos a vencer)";
+            this.lblTitulo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Appearance.Options.UseFont = true;
+            this.lblTitulo.Location = new System.Drawing.Point(136, 28);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(322, 21);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Orden de Lotes a Entregar (Proximos a vencer)";
             // 
             // gridControl1
             // 
@@ -177,14 +178,30 @@ namespace LOSA.TransaccionesMP
             this.lotesmpproxvenceridBindingSource.DataMember = "lotes_mp_prox_vencer_id";
             this.lotesmpproxvenceridBindingSource.DataSource = this.dsLotesProxVencer1;
             // 
+            // lblMensaje
+            // 
+            this.lblMensaje.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lblMensaje.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblMensaje.Appearance.Options.UseBackColor = true;
+            this.lblMensaje.Appearance.Options.UseFont = true;
+            this.lblMensaje.Appearance.Options.UseForeColor = true;
+            this.lblMensaje.Location = new System.Drawing.Point(7, -6);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(391, 25);
+            this.lblMensaje.TabIndex = 9;
+            this.lblMensaje.Text = "Orden de Lotes a Entregar (Proximos a vencer)";
+            this.lblMensaje.Visible = false;
+            // 
             // frmProximosA_vencer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 387);
+            this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lblTitulo);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmProximosA_vencer";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -198,7 +215,7 @@ namespace LOSA.TransaccionesMP
 
         #endregion
 
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblTitulo;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DataSet.dsLotesProxVencer dsLotesProxVencer1;
@@ -210,5 +227,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colestado_calidad;
         private DevExpress.XtraGrid.Columns.GridColumn coldias;
         private DevExpress.XtraGrid.Columns.GridColumn colud_existente;
+        private DevExpress.XtraEditors.LabelControl lblMensaje;
     }
 }

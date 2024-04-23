@@ -942,7 +942,7 @@ namespace LOSA.RecepcionMP
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idTarima", row.id);
-                    cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@idUsuario", UsuarioLogeado.Id);
                     cmd.Parameters.AddWithValue("@idEstado", 5);//En Produccion
                     cmd.ExecuteNonQuery();
                     cn.Close();

@@ -101,7 +101,7 @@ namespace LOSA.TransaccionesMP
             {
                 if (UsuarioLogeado.ValidarNivelPermisos(86))
                 {
-                    LoadPermisos(86);//Cargamos los permisos del jefe
+                    LoadPermisos(86);//Cargamos los permisos del jefe85
                 }
             }
 
