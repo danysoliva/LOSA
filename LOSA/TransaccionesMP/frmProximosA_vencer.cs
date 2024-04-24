@@ -18,6 +18,19 @@ namespace LOSA.TransaccionesMP
         public frmProximosA_vencer(int pIdMP)
         {
             InitializeComponent();
+
+            LoadLotes(pIdMP);
+        }
+
+        public frmProximosA_vencer(int pIdMP, string pLoteActual)
+        {
+            InitializeComponent();
+
+            lblTitulo.Visible = false;
+            lblMensaje.Visible = true;
+
+            lblMensaje.Text = "Se intento escanear un Lote que no es el Proxima a Vencer!\nLote: "+pLoteActual;
+
             LoadLotes(pIdMP);
         }
 

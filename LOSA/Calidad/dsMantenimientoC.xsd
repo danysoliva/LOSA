@@ -303,6 +303,8 @@
               <xs:element name="consumo" msprop:Generator_ColumnVarNameInTable="columnconsumo" msprop:Generator_ColumnPropNameInRow="consumo" msprop:Generator_ColumnPropNameInTable="consumoColumn" msprop:Generator_UserColumnName="consumo" type="xs:decimal" minOccurs="0" />
               <xs:element name="existencia" msprop:Generator_ColumnVarNameInTable="columnexistencia" msprop:Generator_ColumnPropNameInRow="existencia" msprop:Generator_ColumnPropNameInTable="existenciaColumn" msprop:Generator_UserColumnName="existencia" type="xs:decimal" minOccurs="0" />
               <xs:element name="diferencia" msprop:Generator_ColumnVarNameInTable="columndiferencia" msprop:Generator_ColumnPropNameInRow="diferencia" msprop:Generator_ColumnPropNameInTable="diferenciaColumn" msprop:Generator_UserColumnName="diferencia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="varicacion" msprop:Generator_ColumnVarNameInTable="columnvaricacion" msprop:Generator_ColumnPropNameInRow="varicacion" msprop:Generator_ColumnPropNameInTable="varicacionColumn" msprop:Generator_UserColumnName="varicacion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="existenica_externo" msprop:Generator_ColumnVarNameInTable="columnexistenica_externo" msprop:Generator_ColumnPropNameInRow="existenica_externo" msprop:Generator_ColumnPropNameInTable="existenica_externoColumn" msprop:Generator_UserColumnName="existenica_externo" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

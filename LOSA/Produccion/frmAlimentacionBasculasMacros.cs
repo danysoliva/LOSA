@@ -25,9 +25,11 @@ namespace LOSA.Produccion
             InitializeComponent();
 
             DataOperations dp = new DataOperations();
+
             dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-1);
 
             dtFechaHastaDisponibles.DateTime = dp.Now().AddDays(1);
+
             loadata();
         }
 
