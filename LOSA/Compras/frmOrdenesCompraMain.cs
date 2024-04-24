@@ -876,6 +876,7 @@ namespace LOSA.Compras
                 tipooperacion = TipoOperacion.Update;
                 //CargarSolicitud(frm.IdSolicitudSeleccionado);
                 CargarInfoOrden(frm.IdOrdenesSeleccionado);
+                CargarArchivos();
                 EdicionEspecialActiva = false;
             }
 
@@ -986,7 +987,6 @@ namespace LOSA.Compras
                         btnPrint.Enabled = true;
                         cmdGuardar.Enabled = false;
                         TsExoOIsv.ReadOnly = true;
-                        //btnShowPopu.Enabled = false;
                         btnCopiarDe.Enabled = false;
                         grdTipoOrden.Enabled = false;
                         glRutaAprobacionOC.Enabled = false;
@@ -1120,6 +1120,7 @@ namespace LOSA.Compras
                         IdOrdenCompraActual = Convert.ToInt32(cmd.ExecuteScalar());
                     }
                     CargarInfoOrden(IdOrdenCompraActual);
+                    CargarArchivos();
                     con.Close();
                 }
                 catch (Exception ec)
@@ -1180,6 +1181,7 @@ namespace LOSA.Compras
                     }
 
                     CargarInfoOrden(IdOrdenCompraActual);
+                    CargarArchivos();
                     con.Close();
                 }
                 catch (Exception ec)
@@ -2684,15 +2686,15 @@ namespace LOSA.Compras
             try
             {
 
-            xtraOpenFileDialog1.InitialDirectory = "c:\\";
-            xtraOpenFileDialog1.Filter = "Files|*.jpg;*.jpeg;*.png;*.pdf";
+            openFileDialog1.InitialDirectory = "c:\\";
+                openFileDialog1.Filter = "Files|*.jpg;*.jpeg;*.png;*.pdf";
 
-            if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
             contador = 0;
             
 
-                foreach (var item in xtraOpenFileDialog1.SafeFileNames)
+                foreach (var item in openFileDialog1.SafeFileNames)
                 {
                     // Create a new DataRow
                     DataRow newRow = dsCompras1.ordenes_compras_archivos.NewRow();
@@ -2701,7 +2703,7 @@ namespace LOSA.Compras
                     newRow["fecha_registro"] = DateTime.Now;
                     newRow["file_name"] = item;
                     newRow["user"] = UsuarioLogueado.NombreUser;
-                    newRow["path"] = xtraOpenFileDialog1.FileNames[contador];
+                    newRow["path"] = openFileDialog1.FileNames[contador];
 
                         if (IdOrdenCompraActual!=0)
                         {
@@ -2827,6 +2829,32 @@ namespace LOSA.Compras
 
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmOrdenesCompraMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpen_ButtonPressed(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                FTP_Class ftp = new FTP_Class();
+                 var row = (dsCompras.ordenes_compras_archivosRow) gvFiles.GetFocusedDataRow();
+
+                ftp.OpenFile(row.path, row.file_name);
+
             }
             catch (Exception ex)
             {
