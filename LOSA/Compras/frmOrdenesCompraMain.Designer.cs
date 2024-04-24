@@ -174,7 +174,6 @@ namespace LOSA.Compras
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnOpen = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -1754,10 +1753,6 @@ namespace LOSA.Compras
             this.popupMenu2.Manager = this.barManager1;
             this.popupMenu2.Name = "popupMenu2";
             // 
-            // xtraFolderBrowserDialog1
-            // 
-            this.xtraFolderBrowserDialog1.SelectedPath = "xtraFolderBrowserDialog1";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -1977,7 +1972,6 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDelete;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDownload;
-        private DevExpress.XtraEditors.XtraFolderBrowserDialog xtraFolderBrowserDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnOpen;

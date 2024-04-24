@@ -83,11 +83,11 @@ namespace LOSA.Trazabilidad
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsMantoTrazabilidad.view_mpRow)gridView.GetFocusedDataRow();
 
-            frmMateriaPrimaEdit frm = new frmMateriaPrimaEdit(row.id);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                cargarMateriaPrima();
-            }
+            //frmMateriaPrimaEdit frm = new frmMateriaPrimaEdit(row.id);
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    cargarMateriaPrima();
+            //}
             
 
         }
