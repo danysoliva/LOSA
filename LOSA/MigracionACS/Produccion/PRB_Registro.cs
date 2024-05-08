@@ -40,9 +40,11 @@ namespace LOSA.MigracionACS.Produccion
             Jefe = false;
             UsuarioLogeado = pUser;
             this.codigoUss = codigoUss;
+            dp = new DataOperations();
             
+
             InitializeComponent();
-            ValidatePermisos();
+            
         }
 
 
@@ -95,9 +97,9 @@ namespace LOSA.MigracionACS.Produccion
                 LoadMotivosParos();
                 LoadTipoReproceso();
 
-                barStaticItem5.Caption = DateTime.Now.ToString("dddd MMMMM yyyy HH:mm:ss");
-                timer1.Interval = 1000;
-                timer1.Start();
+                //barStaticItem5.Caption = DateTime.Now.ToString("dddd MMMMM yyyy HH:mm:ss");
+                //timer1.Interval = 1000;
+                //timer1.Start();
 
 
                 if (gruopp == 1)
@@ -139,13 +141,13 @@ namespace LOSA.MigracionACS.Produccion
                 if (UsuarioLogeado.ValidarNivelPermisos(61))
                 {
                     //cmdEditar2.Visible = true;
-                    dtFechaDesde.Visibility = dtFechaHasta.Visibility = cmdCargarDatosJefe.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    dtFechaDesde.Visible = dtFechaHasta.Visible = cmdCargarDatosJefe2.Visible = true;
                     Jefe = true;
                 }
                 else
                 {
                     //CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #60");
-                    dtFechaDesde.Visibility = dtFechaHasta.Visibility = cmdCargarDatosJefe.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    dtFechaDesde.Visible = dtFechaHasta.Visible = cmdCargarDatosJefe2.Visible = true;
                     //cmdEditar2.Visible = false;
                     Jefe = false;
                 }
@@ -253,7 +255,7 @@ namespace LOSA.MigracionACS.Produccion
 
         private void PRB_Registro_Load(object sender, EventArgs e)
         {
-            barStaticItem3.Caption = UsuarioLog;
+            
         }
 
         public decimal LoadHorasMaquina(int pIdRegistro, int pIdMaquina)
@@ -868,13 +870,6 @@ namespace LOSA.MigracionACS.Produccion
             }
         }
 
-        private void btnreimpresion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            PBR_Reimpresion re = new PBR_Reimpresion();
-                re.Show();
-                
-        }
-
         private void btnNuevoDescrip_EditValueChanged_1(object sender, EventArgs e)
         {
 
@@ -1147,11 +1142,6 @@ namespace LOSA.MigracionACS.Produccion
             printReport.ShowPreview();
         }
 
-        private void cmdCargarDatosJefe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            load_advanceJefe();
-        }
-
         public void load_advanceJefe()
         {
             try
@@ -1162,8 +1152,8 @@ namespace LOSA.MigracionACS.Produccion
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fechai", dtFechaDesde.EditValue);
-                cmd.Parameters.AddWithValue("@fechaf", dtFechaHasta.EditValue);
+                cmd.Parameters.AddWithValue("@fechai", dtFechaDesde.DateTime);
+                cmd.Parameters.AddWithValue("@fechaf", dtFechaHasta.DateTime);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 pRBdata1.PRB_Registro.Clear();
                 da.Fill(pRBdata1.PRB_Registro);
@@ -1219,6 +1209,30 @@ namespace LOSA.MigracionACS.Produccion
                 Varid = create.IDReturn();
                 load_H();
             }
+        }
+
+        private void cmdCargarDatosJefe2_Click(object sender, EventArgs e)
+        {
+            load_advanceJefe();
+        }
+
+        private void btnreimpresion2_Click(object sender, EventArgs e)
+        {
+            PBR_Reimpresion re = new PBR_Reimpresion();
+            re.Show();
+        }
+
+        private void PRB_Registro_Load_1(object sender, EventArgs e)
+        {
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+            else
+                txtVentana.Visible = false;
+
+            barStaticItem.Text = UsuarioLog;
+            dtFechaDesde.DateTime = dp.Now().AddDays(-180);
+            dtFechaHasta.DateTime = dp.Now().AddDays(1);
+            ValidatePermisos();
         }
     }
 }

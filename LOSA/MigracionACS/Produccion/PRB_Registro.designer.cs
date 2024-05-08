@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRB_Registro));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -55,6 +54,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRB_Registro));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -77,22 +77,12 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btnNew = new DevExpress.XtraBars.BarButtonItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.btnreimpresion = new DevExpress.XtraBars.BarButtonItem();
-            this.dtFechaDesde = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.dtFechaHasta = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.cmdCargarDatosJefe = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.PnEdit = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtVentana = new System.Windows.Forms.TextBox();
@@ -186,6 +176,15 @@
             this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.pnCreado = new System.Windows.Forms.Panel();
+            this.cmdCargarDatosJefe2 = new DevExpress.XtraEditors.SimpleButton();
+            this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnreimpresion2 = new DevExpress.XtraEditors.SimpleButton();
+            this.barStaticItem = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.grdcreate = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -213,7 +212,6 @@
             this.colfecha_fin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingSourceTipoCausa = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceReprocesoGrafico = new System.Windows.Forms.BindingSource(this.components);
-            this.btnNew2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -251,6 +249,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btneliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEdit)).BeginInit();
             this.pnCreado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdcreate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
@@ -271,17 +273,6 @@
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btnNew,
-            this.barStaticItem1,
-            this.barStaticItem2,
-            this.barStaticItem3,
-            this.barStaticItem4,
-            this.barStaticItem5,
-            this.btnreimpresion,
-            this.dtFechaDesde,
-            this.dtFechaHasta,
-            this.cmdCargarDatosJefe});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 14;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -295,111 +286,9 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.FloatLocation = new System.Drawing.Point(109, 132);
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnNew),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnreimpresion),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.dtFechaDesde, "", false, true, true, 121),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.dtFechaHasta, "", false, true, true, 130),
-            new DevExpress.XtraBars.LinkPersistInfo(this.cmdCargarDatosJefe)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Menú principal";
-            // 
-            // btnNew
-            // 
-            this.btnNew.Caption = "Nuevo Registro";
-            this.btnNew.Enabled = false;
-            this.btnNew.Id = 0;
-            this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
-            this.btnNew.Name = "btnNew";
-            this.btnNew.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "|";
-            this.barStaticItem1.Id = 2;
-            this.barStaticItem1.Name = "barStaticItem1";
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.Caption = "Usuario:      ";
-            this.barStaticItem2.Id = 3;
-            this.barStaticItem2.Name = "barStaticItem2";
-            // 
-            // barStaticItem3
-            // 
-            this.barStaticItem3.Caption = "Nombre de usuario";
-            this.barStaticItem3.Id = 4;
-            this.barStaticItem3.Name = "barStaticItem3";
-            // 
-            // barStaticItem4
-            // 
-            this.barStaticItem4.Caption = "|";
-            this.barStaticItem4.Id = 6;
-            this.barStaticItem4.Name = "barStaticItem4";
-            // 
-            // btnreimpresion
-            // 
-            this.btnreimpresion.Caption = "Reimpresion de Registro de produccion";
-            this.btnreimpresion.Id = 10;
-            this.btnreimpresion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnreimpresion.ImageOptions.Image")));
-            this.btnreimpresion.Name = "btnreimpresion";
-            this.btnreimpresion.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnreimpresion.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btnreimpresion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnreimpresion_ItemClick);
-            // 
-            // dtFechaDesde
-            // 
-            this.dtFechaDesde.Caption = "Fecha Desde";
-            this.dtFechaDesde.Edit = this.repositoryItemDateEdit1;
-            this.dtFechaDesde.EditValue = new System.DateTime(2024, 5, 8, 11, 5, 6, 598);
-            this.dtFechaDesde.Id = 11;
-            this.dtFechaDesde.Name = "dtFechaDesde";
-            this.dtFechaDesde.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.dtFechaDesde.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // repositoryItemDateEdit1
-            // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
-            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            // 
-            // dtFechaHasta
-            // 
-            this.dtFechaHasta.Caption = "Fecha Fin";
-            this.dtFechaHasta.Edit = this.repositoryItemDateEdit2;
-            this.dtFechaHasta.Id = 12;
-            this.dtFechaHasta.Name = "dtFechaHasta";
-            this.dtFechaHasta.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.dtFechaHasta.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // repositoryItemDateEdit2
-            // 
-            this.repositoryItemDateEdit2.AutoHeight = false;
-            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
-            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
-            // 
-            // cmdCargarDatosJefe
-            // 
-            this.cmdCargarDatosJefe.Caption = "Cargar";
-            this.cmdCargarDatosJefe.Id = 13;
-            this.cmdCargarDatosJefe.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdCargarDatosJefe.ImageOptions.SvgImage")));
-            this.cmdCargarDatosJefe.Name = "cmdCargarDatosJefe";
-            this.cmdCargarDatosJefe.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.cmdCargarDatosJefe.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.cmdCargarDatosJefe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmdCargarDatosJefe_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -407,7 +296,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1139, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1139, 20);
             // 
             // barDockControlBottom
             // 
@@ -421,23 +310,37 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 806);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 826);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1139, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1139, 20);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 806);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 826);
             // 
-            // barStaticItem5
+            // repositoryItemDateEdit1
             // 
-            this.barStaticItem5.Caption = "....";
-            this.barStaticItem5.Id = 7;
-            this.barStaticItem5.Name = "barStaticItem5";
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // repositoryItemDateEdit2
+            // 
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             // 
             // PnEdit
             // 
@@ -449,7 +352,7 @@
             this.PnEdit.Controls.Add(this.grdedit);
             this.PnEdit.Location = new System.Drawing.Point(0, 269);
             this.PnEdit.Name = "PnEdit";
-            this.PnEdit.Size = new System.Drawing.Size(1140, 534);
+            this.PnEdit.Size = new System.Drawing.Size(1140, 574);
             this.PnEdit.TabIndex = 4;
             // 
             // panelControl1
@@ -470,7 +373,7 @@
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1078, 526);
+            this.panelControl1.Size = new System.Drawing.Size(1078, 566);
             this.panelControl1.TabIndex = 2;
             // 
             // txtVentana
@@ -626,7 +529,7 @@
             this.gridControl3.MainView = this.gridView6;
             this.gridControl3.MenuManager = this.barManager1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(526, 100);
+            this.gridControl3.Size = new System.Drawing.Size(526, 140);
             this.gridControl3.TabIndex = 63;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -1037,7 +940,7 @@
             this.pbBtnEdit.Dock = System.Windows.Forms.DockStyle.Right;
             this.pbBtnEdit.Location = new System.Drawing.Point(1087, 2);
             this.pbBtnEdit.Name = "pbBtnEdit";
-            this.pbBtnEdit.Size = new System.Drawing.Size(51, 530);
+            this.pbBtnEdit.Size = new System.Drawing.Size(51, 570);
             this.pbBtnEdit.TabIndex = 1;
             // 
             // cmdEditar2
@@ -1382,13 +1285,113 @@
             this.pnCreado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnCreado.Controls.Add(this.btnNew2);
+            this.pnCreado.Controls.Add(this.cmdCargarDatosJefe2);
+            this.pnCreado.Controls.Add(this.dtFechaHasta);
+            this.pnCreado.Controls.Add(this.labelControl2);
+            this.pnCreado.Controls.Add(this.btnreimpresion2);
+            this.pnCreado.Controls.Add(this.barStaticItem);
+            this.pnCreado.Controls.Add(this.labelControl1);
+            this.pnCreado.Controls.Add(this.dtFechaDesde);
+            this.pnCreado.Controls.Add(this.labelControl8);
+            this.pnCreado.Controls.Add(this.btnNew);
             this.pnCreado.Controls.Add(this.grdcreate);
             this.pnCreado.Controls.Add(this.PnEdit);
-            this.pnCreado.Location = new System.Drawing.Point(0, 40);
+            this.pnCreado.Location = new System.Drawing.Point(0, 0);
             this.pnCreado.Name = "pnCreado";
-            this.pnCreado.Size = new System.Drawing.Size(1140, 809);
+            this.pnCreado.Size = new System.Drawing.Size(1140, 849);
             this.pnCreado.TabIndex = 5;
+            // 
+            // cmdCargarDatosJefe2
+            // 
+            this.cmdCargarDatosJefe2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCargarDatosJefe2.ImageOptions.Image")));
+            this.cmdCargarDatosJefe2.Location = new System.Drawing.Point(919, 4);
+            this.cmdCargarDatosJefe2.Name = "cmdCargarDatosJefe2";
+            this.cmdCargarDatosJefe2.Size = new System.Drawing.Size(99, 37);
+            this.cmdCargarDatosJefe2.TabIndex = 105;
+            this.cmdCargarDatosJefe2.Text = "Cargar";
+            this.cmdCargarDatosJefe2.Click += new System.EventHandler(this.cmdCargarDatosJefe2_Click);
+            // 
+            // dtFechaHasta
+            // 
+            this.dtFechaHasta.EditValue = null;
+            this.dtFechaHasta.Location = new System.Drawing.Point(807, 14);
+            this.dtFechaHasta.Name = "dtFechaHasta";
+            this.dtFechaHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHasta.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHasta.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaHasta.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dtFechaHasta.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaHasta.Size = new System.Drawing.Size(105, 20);
+            this.dtFechaHasta.TabIndex = 104;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(735, 17);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(66, 13);
+            this.labelControl2.TabIndex = 103;
+            this.labelControl2.Text = "Fecha Desde:";
+            // 
+            // btnreimpresion2
+            // 
+            this.btnreimpresion2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnreimpresion2.ImageOptions.Image")));
+            this.btnreimpresion2.Location = new System.Drawing.Point(314, 4);
+            this.btnreimpresion2.Name = "btnreimpresion2";
+            this.btnreimpresion2.Size = new System.Drawing.Size(230, 37);
+            this.btnreimpresion2.TabIndex = 102;
+            this.btnreimpresion2.Text = "Reimpresion de Registro de produccion";
+            this.btnreimpresion2.Click += new System.EventHandler(this.btnreimpresion2_Click);
+            // 
+            // barStaticItem
+            // 
+            this.barStaticItem.Location = new System.Drawing.Point(213, 18);
+            this.barStaticItem.Name = "barStaticItem";
+            this.barStaticItem.Size = new System.Drawing.Size(83, 13);
+            this.barStaticItem.TabIndex = 101;
+            this.barStaticItem.Text = "Nombre Usuario |";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(157, 18);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(50, 13);
+            this.labelControl1.TabIndex = 99;
+            this.labelControl1.Text = "|  Usuario:";
+            // 
+            // dtFechaDesde
+            // 
+            this.dtFechaDesde.EditValue = null;
+            this.dtFechaDesde.Location = new System.Drawing.Point(624, 14);
+            this.dtFechaDesde.Name = "dtFechaDesde";
+            this.dtFechaDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesde.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaDesde.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dtFechaDesde.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaDesde.Size = new System.Drawing.Size(105, 20);
+            this.dtFechaDesde.TabIndex = 97;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(550, 17);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(66, 13);
+            this.labelControl8.TabIndex = 98;
+            this.labelControl8.Text = "Fecha Desde:";
+            // 
+            // btnNew
+            // 
+            this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
+            this.btnNew.Location = new System.Drawing.Point(12, 4);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(125, 37);
+            this.btnNew.TabIndex = 5;
+            this.btnNew.Text = "Nuevo Rregistro";
+            this.btnNew.Click += new System.EventHandler(this.btnNew2_Click);
             // 
             // grdcreate
             // 
@@ -1396,7 +1399,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdcreate.DataMember = "PRB_Registro";
             this.grdcreate.DataSource = this.pRBdata1;
-            this.grdcreate.Location = new System.Drawing.Point(0, 39);
+            this.grdcreate.Location = new System.Drawing.Point(0, 46);
             this.grdcreate.MainView = this.gridView1;
             this.grdcreate.Name = "grdcreate";
             this.grdcreate.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1404,7 +1407,7 @@
             this.btnreport,
             this.btnSearch,
             this.btnclose});
-            this.grdcreate.Size = new System.Drawing.Size(1140, 227);
+            this.grdcreate.Size = new System.Drawing.Size(1140, 220);
             this.grdcreate.TabIndex = 0;
             this.grdcreate.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1660,10 +1663,6 @@
             this.pRBRegistroBindingSource.DataMember = "PRB_Registro";
             this.pRBRegistroBindingSource.DataSource = this.pRBdata1;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // colfecha_fin
             // 
             this.colfecha_fin.FieldName = "fecha_fin";
@@ -1681,18 +1680,6 @@
             this.bindingSourceReprocesoGrafico.DataMember = "reproceso";
             this.bindingSourceReprocesoGrafico.DataSource = this.pRBdata1;
             // 
-            // btnNew2
-            // 
-            this.btnNew2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew2.Appearance.Options.UseFont = true;
-            this.btnNew2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btnNew2.Location = new System.Drawing.Point(12, 3);
-            this.btnNew2.Name = "btnNew2";
-            this.btnNew2.Size = new System.Drawing.Size(139, 37);
-            this.btnNew2.TabIndex = 5;
-            this.btnNew2.Text = "Nuevo Rregistro";
-            this.btnNew2.Click += new System.EventHandler(this.btnNew2_Click);
-            // 
             // PRB_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1707,7 +1694,7 @@
             this.Name = "PRB_Registro";
             this.Text = "Registro de Trabajo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.PRB_Registro_Load);
+            this.Load += new System.EventHandler(this.PRB_Registro_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
@@ -1746,6 +1733,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btneliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEdit)).EndInit();
             this.pnCreado.ResumeLayout(false);
+            this.pnCreado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdcreate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
@@ -1764,12 +1756,6 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem btnNew;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem4;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem5;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -1830,7 +1816,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSearch;
         private DevExpress.XtraGrid.Columns.GridColumn coleliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnclose;
-        private DevExpress.XtraBars.BarButtonItem btnreimpresion;
         private DevExpress.XtraGrid.Columns.GridColumn colEditar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEdit;
         private DevExpress.XtraGrid.Columns.GridColumn colid_linea;
@@ -1892,14 +1877,19 @@
         private System.Windows.Forms.BindingSource bindingSourceReprocesoGrafico;
         private DevExpress.XtraEditors.SimpleButton cmdNew;
         private DevExpress.XtraEditors.SimpleButton btnImprimirRpt;
-        private DevExpress.XtraBars.BarEditItem dtFechaDesde;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        private DevExpress.XtraBars.BarEditItem dtFechaHasta;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
-        private DevExpress.XtraBars.BarButtonItem cmdCargarDatosJefe;
         private DevExpress.XtraEditors.SimpleButton cmdEditar2;
         private DevExpress.XtraGrid.Columns.GridColumn coldado;
         private System.Windows.Forms.TextBox txtVentana;
-        private DevExpress.XtraEditors.SimpleButton btnNew2;
+        private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraEditors.SimpleButton cmdCargarDatosJefe2;
+        private DevExpress.XtraEditors.DateEdit dtFechaHasta;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton btnreimpresion2;
+        private DevExpress.XtraEditors.LabelControl barStaticItem;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.DateEdit dtFechaDesde;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }
