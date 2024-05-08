@@ -63,7 +63,7 @@ namespace LOSA.Calidad.CertificadoCalidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@id_h", lote);
+                cmd.Parameters.AddWithValue("@id_h", lote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsCertificado1.rptCertificadoDetalle.Clear();
                 da.Fill(dsCertificado1.rptCertificadoDetalle);

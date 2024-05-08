@@ -1671,7 +1671,7 @@
             this.btnRPTAlimentacionMacrosCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRPTAlimentacionMacrosCalidad.ImageOptions.Image")));
             this.btnRPTAlimentacionMacrosCalidad.Location = new System.Drawing.Point(627, 218);
             this.btnRPTAlimentacionMacrosCalidad.Name = "btnRPTAlimentacionMacrosCalidad";
-            this.btnRPTAlimentacionMacrosCalidad.Size = new System.Drawing.Size(199, 59);
+            this.btnRPTAlimentacionMacrosCalidad.Size = new System.Drawing.Size(196, 59);
             this.btnRPTAlimentacionMacrosCalidad.TabIndex = 57;
             this.btnRPTAlimentacionMacrosCalidad.Text = "Reporte Alimentacion Bascula";
             this.btnRPTAlimentacionMacrosCalidad.Click += new System.EventHandler(this.btnRPTAlimentacionMacrosCalidad_Click);
@@ -1686,7 +1686,7 @@
             this.btnCertidicadPTMain.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCertidicadPTMain.ImageOptions.Image")));
             this.btnCertidicadPTMain.Location = new System.Drawing.Point(627, 88);
             this.btnCertidicadPTMain.Name = "btnCertidicadPTMain";
-            this.btnCertidicadPTMain.Size = new System.Drawing.Size(199, 59);
+            this.btnCertidicadPTMain.Size = new System.Drawing.Size(196, 59);
             this.btnCertidicadPTMain.TabIndex = 56;
             this.btnCertidicadPTMain.Text = "Certificado de Producto Terminado";
             this.btnCertidicadPTMain.Click += new System.EventHandler(this.btnCertidicadPTMain_Click);
@@ -1701,7 +1701,7 @@
             this.btnSolicitudDespachoCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
             this.btnSolicitudDespachoCalidad.Location = new System.Drawing.Point(627, 23);
             this.btnSolicitudDespachoCalidad.Name = "btnSolicitudDespachoCalidad";
-            this.btnSolicitudDespachoCalidad.Size = new System.Drawing.Size(199, 59);
+            this.btnSolicitudDespachoCalidad.Size = new System.Drawing.Size(196, 59);
             this.btnSolicitudDespachoCalidad.TabIndex = 55;
             this.btnSolicitudDespachoCalidad.Text = "Solicitudes Despacho Lote PT";
             this.btnSolicitudDespachoCalidad.Click += new System.EventHandler(this.btnSolicitudDespachoCalidad_Click);
@@ -1925,7 +1925,7 @@
             this.btnLotesCerrados.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLotesCerrados.ImageOptions.Image")));
             this.btnLotesCerrados.Location = new System.Drawing.Point(627, 153);
             this.btnLotesCerrados.Name = "btnLotesCerrados";
-            this.btnLotesCerrados.Size = new System.Drawing.Size(199, 59);
+            this.btnLotesCerrados.Size = new System.Drawing.Size(196, 59);
             this.btnLotesCerrados.TabIndex = 21;
             this.btnLotesCerrados.Text = "Lotes Finalizados";
             this.btnLotesCerrados.Click += new System.EventHandler(this.btnLotesCerrados_Click);
