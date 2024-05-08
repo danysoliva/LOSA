@@ -83,7 +83,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnImprimir,
             this.repositoryItemButtonEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(876, 344);
+            this.gridControl1.Size = new System.Drawing.Size(1018, 492);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -112,6 +112,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.gridColumn3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -279,7 +280,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.Image = global::LOSA.Properties.Resources.home_automation_24X24;
-            this.simpleButton2.Location = new System.Drawing.Point(733, 22);
+            this.simpleButton2.Location = new System.Drawing.Point(875, 22);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(108, 38);
             this.simpleButton2.TabIndex = 2;
@@ -311,7 +312,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 419);
+            this.ClientSize = new System.Drawing.Size(1014, 567);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);

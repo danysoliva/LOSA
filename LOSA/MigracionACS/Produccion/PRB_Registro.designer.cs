@@ -95,6 +95,7 @@
             this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
             this.PnEdit = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.pRBdata1 = new LOSA.MigracionACS.DataSetx.PRBdata();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -212,6 +213,7 @@
             this.colfecha_fin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingSourceTipoCausa = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceReprocesoGrafico = new System.Windows.Forms.BindingSource(this.components);
+            this.btnNew2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -315,7 +317,6 @@
             this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
             this.btnNew.Name = "btnNew";
             this.btnNew.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNew_ItemClick);
             // 
             // barStaticItem1
             // 
@@ -355,6 +356,7 @@
             // 
             this.dtFechaDesde.Caption = "Fecha Desde";
             this.dtFechaDesde.Edit = this.repositoryItemDateEdit1;
+            this.dtFechaDesde.EditValue = new System.DateTime(2024, 5, 8, 11, 5, 6, 598);
             this.dtFechaDesde.Id = 11;
             this.dtFechaDesde.Name = "dtFechaDesde";
             this.dtFechaDesde.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -455,6 +457,7 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.txtVentana);
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Controls.Add(this.btnImprimirRpt);
             this.panelControl1.Controls.Add(this.gridControl3);
@@ -469,6 +472,16 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1078, 526);
             this.panelControl1.TabIndex = 2;
+            // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(12, 438);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 118;
+            this.txtVentana.Text = "PRB_Registro";
+            this.txtVentana.Visible = false;
             // 
             // gridControl1
             // 
@@ -1369,6 +1382,7 @@
             this.pnCreado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCreado.Controls.Add(this.btnNew2);
             this.pnCreado.Controls.Add(this.grdcreate);
             this.pnCreado.Controls.Add(this.PnEdit);
             this.pnCreado.Location = new System.Drawing.Point(0, 40);
@@ -1382,16 +1396,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdcreate.DataMember = "PRB_Registro";
             this.grdcreate.DataSource = this.pRBdata1;
-            this.grdcreate.Location = new System.Drawing.Point(0, 0);
+            this.grdcreate.Location = new System.Drawing.Point(0, 39);
             this.grdcreate.MainView = this.gridView1;
-            this.grdcreate.MenuManager = this.barManager1;
             this.grdcreate.Name = "grdcreate";
             this.grdcreate.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btncerrar,
             this.btnreport,
             this.btnSearch,
             this.btnclose});
-            this.grdcreate.Size = new System.Drawing.Size(1140, 266);
+            this.grdcreate.Size = new System.Drawing.Size(1140, 227);
             this.grdcreate.TabIndex = 0;
             this.grdcreate.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1668,6 +1681,18 @@
             this.bindingSourceReprocesoGrafico.DataMember = "reproceso";
             this.bindingSourceReprocesoGrafico.DataSource = this.pRBdata1;
             // 
+            // btnNew2
+            // 
+            this.btnNew2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew2.Appearance.Options.UseFont = true;
+            this.btnNew2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnNew2.Location = new System.Drawing.Point(12, 3);
+            this.btnNew2.Name = "btnNew2";
+            this.btnNew2.Size = new System.Drawing.Size(139, 37);
+            this.btnNew2.TabIndex = 5;
+            this.btnNew2.Text = "Nuevo Rregistro";
+            this.btnNew2.Click += new System.EventHandler(this.btnNew2_Click);
+            // 
             // PRB_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1678,7 +1703,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PRB_Registro.IconOptions.Icon")));
             this.Name = "PRB_Registro";
             this.Text = "Registro de Trabajo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1692,6 +1717,7 @@
             this.PnEdit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRBdata1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
@@ -1873,5 +1899,7 @@
         private DevExpress.XtraBars.BarButtonItem cmdCargarDatosJefe;
         private DevExpress.XtraEditors.SimpleButton cmdEditar2;
         private DevExpress.XtraGrid.Columns.GridColumn coldado;
+        private System.Windows.Forms.TextBox txtVentana;
+        private DevExpress.XtraEditors.SimpleButton btnNew2;
     }
 }

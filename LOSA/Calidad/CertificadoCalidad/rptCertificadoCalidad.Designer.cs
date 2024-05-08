@@ -78,10 +78,10 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.xrRichText2 = new DevExpress.XtraReports.UI.XRRichText();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrUsuarioC = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPictureBox4 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox2 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrUsuarioC = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -93,10 +93,12 @@ namespace LOSA.Calidad.CertificadoCalidad
             // 
             // TopMargin
             // 
+            this.TopMargin.HeightF = 23.95833F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
             // 
+            this.BottomMargin.HeightF = 12.87511F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
@@ -512,8 +514,19 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.xrLine1,
             this.xrLabel6,
             this.xrLabel5});
-            this.ReportFooter.HeightF = 221.1666F;
+            this.ReportFooter.HeightF = 281.5833F;
             this.ReportFooter.Name = "ReportFooter";
+            // 
+            // xrUsuarioC
+            // 
+            this.xrUsuarioC.LocationFloat = new DevExpress.Utils.PointFloat(238.5417F, 82.04168F);
+            this.xrUsuarioC.Multiline = true;
+            this.xrUsuarioC.Name = "xrUsuarioC";
+            this.xrUsuarioC.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrUsuarioC.SizeF = new System.Drawing.SizeF(169.1668F, 23F);
+            this.xrUsuarioC.StylePriority.UseTextAlignment = false;
+            this.xrUsuarioC.Text = "UsuarioC";
+            this.xrUsuarioC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrPictureBox4
             // 
@@ -539,17 +552,6 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.xrPictureBox2.SizeF = new System.Drawing.SizeF(69.79166F, 38.91662F);
             this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
-            // xrUsuarioC
-            // 
-            this.xrUsuarioC.LocationFloat = new DevExpress.Utils.PointFloat(238.5417F, 82.04168F);
-            this.xrUsuarioC.Multiline = true;
-            this.xrUsuarioC.Name = "xrUsuarioC";
-            this.xrUsuarioC.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrUsuarioC.SizeF = new System.Drawing.SizeF(169.1668F, 23F);
-            this.xrUsuarioC.StylePriority.UseTextAlignment = false;
-            this.xrUsuarioC.Text = "UsuarioC";
-            this.xrUsuarioC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
             // rptCertificadoCalidad
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -563,6 +565,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.DataMember = "rptCertificadoDetalle";
             this.DataSource = this.dsCertificado1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(100F, 100F, 23.95833F, 12.87511F);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.xrControlStyle1,
             this.xrControlStyle2});

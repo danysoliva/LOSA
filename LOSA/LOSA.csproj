@@ -94,7 +94,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Key.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>KEY_COMPRAS.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
@@ -1733,6 +1733,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmAprobacionesSalidaMercancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmAprobacionesSalidaMercancia.Designer.cs">
+      <DependentUpon>frmAprobacionesSalidaMercancia.cs</DependentUpon>
     </Compile>
     <Compile Include="FromAMS\frmOP_req.cs">
       <SubType>Form</SubType>
@@ -6822,6 +6828,12 @@
     <Compile Include="Trazabilidad\frmDetallePorBatchRutasTRZ.Designer.cs">
       <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaEdit.Designer.cs">
+      <DependentUpon>frmMateriaPrimaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7454,6 +7466,9 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmAprobacionesSalidaMercancia.resx">
+      <DependentUpon>frmAprobacionesSalidaMercancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FromAMS\frmOP_req.resx">
       <DependentUpon>frmOP_req.cs</DependentUpon>
@@ -9257,6 +9272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmDetallePorBatchRutasTRZ.resx">
       <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaEdit.resx">
+      <DependentUpon>frmMateriaPrimaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
       <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>

@@ -15,6 +15,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
 using LOSA.MigracionACS.Produccion.Eficiencia;
+using System.Globalization;
 
 namespace LOSA.MigracionACS.Produccion
 {
@@ -39,6 +40,7 @@ namespace LOSA.MigracionACS.Produccion
             Jefe = false;
             UsuarioLogeado = pUser;
             this.codigoUss = codigoUss;
+            
             InitializeComponent();
             ValidatePermisos();
         }
@@ -104,18 +106,20 @@ namespace LOSA.MigracionACS.Produccion
                     //btnNuevoDescrip.Enabled = true;
                     //btncausas.Enabled = true;
                     load_H();
-                    load_advance();
+                    load_advanceJefe();
+                    //load_advance();
                     this.Text = "Registro de Trabajo - (Produccion)";
                 }
                 if (gruopp == 2)
                 {
-
-                    load_advance();
+                    load_advanceJefe();
+                    //load_advance();
                     this.Text = "Registro de Trabajo - (Logistica)";
                 }
                 if (gruopp == 3)
                 {
-                    load_advance();
+                    load_advanceJefe();
+                    //load_advance();
 
                     this.Text = "Registro de Trabajo - (Calidad)";
                 }
@@ -124,7 +128,8 @@ namespace LOSA.MigracionACS.Produccion
                     btnNew.Enabled = true;
                     //btnNuevoDescrip.Enabled = true;
                     //btncausas.Enabled = true;
-                    load_advance();
+                    load_advanceJefe();
+                    //load_advance();
                     this.Text = "Registro de Trabajo - (Desarrollo)";
                 }
 
@@ -249,16 +254,6 @@ namespace LOSA.MigracionACS.Produccion
         private void PRB_Registro_Load(object sender, EventArgs e)
         {
             barStaticItem3.Caption = UsuarioLog;
-        }
-
-        private void btnNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            PRB_Create create = new PRB_Create(codigoUss);
-            if (create.ShowDialog() == DialogResult.Yes)
-            {
-               Varid = create.IDReturn();
-                load_H();
-            }
         }
 
         public decimal LoadHorasMaquina(int pIdRegistro, int pIdMaquina)
@@ -1213,6 +1208,16 @@ namespace LOSA.MigracionACS.Produccion
             if (pRB_New_Details.ShowDialog() == DialogResult.Yes)
             {
                 load_details();
+            }
+        }
+
+        private void btnNew2_Click(object sender, EventArgs e)
+        {
+            PRB_Create create = new PRB_Create(codigoUss);
+            if (create.ShowDialog() == DialogResult.Yes)
+            {
+                Varid = create.IDReturn();
+                load_H();
             }
         }
     }
