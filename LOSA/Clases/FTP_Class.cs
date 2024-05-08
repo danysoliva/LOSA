@@ -12,6 +12,7 @@ namespace LOSA.Clases
 {
     public class FTP_Class
     {
+        public string MensajeError { get; set; }
         public FTP_Class()
         {
 
@@ -252,6 +253,69 @@ namespace LOSA.Clases
                     ftpStream.CopyTo(fileStream);
                     
                 }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                return false;
+            }
+        }
+
+        public bool OpenFile(string remote_file_path,string file_name)
+        {
+            try
+            {
+
+
+                DataOperations dp = new DataOperations();
+                string pass = "Tempo1234";
+                string user_op = "operador";
+
+                string carpeta_adjuntos = @"C:\ordenes_compras_adjuntos";
+
+                // Verificar si la carpeta no existe
+                if (!Directory.Exists(carpeta_adjuntos))
+                {
+                    // Crear la carpeta
+                    Directory.CreateDirectory(carpeta_adjuntos);
+                }
+
+
+                // Local file path to save the downloaded file
+                string localFilePath = Path.Combine(carpeta_adjuntos, file_name);
+
+                // Create FTP request
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(remote_file_path);
+                request.Method = WebRequestMethods.Ftp.DownloadFile;
+                request.Credentials = new NetworkCredential(user_op, pass);
+
+                // Get FTP response
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+                // Open file stream to write the downloaded file
+                using (Stream responseStream = response.GetResponseStream())
+                using (FileStream fileStream = File.Create(localFilePath))
+                {
+                    // Read response stream and write to file stream
+                    byte[] buffer = new byte[1024];
+                    int bytesRead;
+                    while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        fileStream.Write(buffer, 0, bytesRead);
+                    }
+                }
+
+                // Close FTP response
+                response.Close();
+
+                // Verificar si el archivo existe
+                if (System.IO.File.Exists(localFilePath))
+                {
+                    // Abrir el archivo con la aplicación predeterminada asociada a su extensión
+                    Process.Start(localFilePath);
+                }
+
                 return true;
             }
             catch (Exception ex)
