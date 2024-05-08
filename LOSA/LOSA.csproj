@@ -94,10 +94,10 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Key.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>KEY_COMPRAS.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>58D92D2056CFE14B56A707F83EF92F159340168A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -6822,6 +6822,12 @@
     <Compile Include="Trazabilidad\frmDetallePorBatchRutasTRZ.Designer.cs">
       <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaEdit.Designer.cs">
+      <DependentUpon>frmMateriaPrimaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -9257,6 +9263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmDetallePorBatchRutasTRZ.resx">
       <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaEdit.resx">
+      <DependentUpon>frmMateriaPrimaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
       <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>
