@@ -559,7 +559,7 @@
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMontacarga;
             this.tabOpciones.Size = new System.Drawing.Size(837, 540);
-            this.tabOpciones.TabIndex = 8;
+            this.tabOpciones.TabIndex = 9;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMontacarga,
             this.TabLogistica,

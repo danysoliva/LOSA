@@ -1729,6 +1729,11 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="FromAMS\dsAprobacionDocumentos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAprobacionDocumentos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FromAMS\dsControlInv_AMS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4810,6 +4815,17 @@
     </None>
     <None Include="Finanzas\dsExoneracion.xss">
       <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </None>
+    <None Include="FromAMS\dsAprobacionDocumentos.xsc">
+      <DependentUpon>dsAprobacionDocumentos.xsd</DependentUpon>
+    </None>
+    <None Include="FromAMS\dsAprobacionDocumentos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAprobacionDocumentos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FromAMS\dsAprobacionDocumentos.xss">
+      <DependentUpon>dsAprobacionDocumentos.xsd</DependentUpon>
     </None>
     <None Include="FromAMS\dsControlInv_AMS.xsc">
       <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>

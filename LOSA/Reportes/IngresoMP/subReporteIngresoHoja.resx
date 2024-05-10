@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
   <data name="sqlDataSource2.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTIiPjxWaWV3IE5hbWU9InNwX3JwdF9wcmludF9kZXRhbGxlX2xvdGUiPjxGaWVsZCBOYW1lPSJsb3RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImZwcm9kdWNjaW9uIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iZnZlbmNpbWllbnRvIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0ibXVlc3RyYXMiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJjYW50bG90ZSIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
