@@ -70,7 +70,7 @@ namespace LOSA.MigracionACS.RRHH.Vacaciones
 
         private void cmdCargarDatos_Click(object sender, EventArgs e)
         {
-
+            LoadDetalle();
         }
     }
 }
