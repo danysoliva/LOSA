@@ -41,6 +41,8 @@
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.txtBodegaOrigen = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
             this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -100,6 +102,7 @@
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.txtsap = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.id_ingreso = new DevExpress.XtraReports.Parameters.Parameter();
             this.id_materia_prima = new DevExpress.XtraReports.Parameters.Parameter();
             this.is_granel = new DevExpress.XtraReports.Parameters.Parameter();
@@ -263,9 +266,6 @@
             this.xrLabel154 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel156 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel155 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
-            this.txtBodegaOrigen = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -431,6 +431,31 @@
             this.txtsap});
             this.ReportHeader.HeightF = 268.9583F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // txtBodegaOrigen
+            // 
+            this.txtBodegaOrigen.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.txtBodegaOrigen.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.txtBodegaOrigen.LocationFloat = new DevExpress.Utils.PointFloat(760.0916F, 150F);
+            this.txtBodegaOrigen.Multiline = true;
+            this.txtBodegaOrigen.Name = "txtBodegaOrigen";
+            this.txtBodegaOrigen.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtBodegaOrigen.SizeF = new System.Drawing.SizeF(167.7083F, 14.29466F);
+            this.txtBodegaOrigen.StylePriority.UseBorders = false;
+            this.txtBodegaOrigen.StylePriority.UseFont = false;
+            // 
+            // xrLabel8
+            // 
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 164.2947F);
+            this.xrLabel8.Multiline = true;
+            this.xrLabel8.Name = "xrLabel8";
+            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(116.67F, 14.29466F);
+            this.xrLabel8.StylePriority.UseFont = false;
+            this.xrLabel8.Text = "Bodega:";
             // 
             // xrPanel1
             // 
@@ -1235,6 +1260,16 @@
             this.xrLabel26});
             this.GroupFooter1.HeightF = 468.4779F;
             this.GroupFooter1.Name = "GroupFooter1";
+            // 
+            // xrSubreport1
+            // 
+            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 343.5817F);
+            this.xrSubreport1.Name = "xrSubreport1";
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_ingreso", this.id_ingreso));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_materia_prima", this.id_materia_prima));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("is_granel", this.is_granel));
+            this.xrSubreport1.ReportSource = new LOSA.Reportes.subReporteIngresoHoja();
+            this.xrSubreport1.SizeF = new System.Drawing.SizeF(862.6894F, 100F);
             // 
             // id_ingreso
             // 
@@ -3577,41 +3612,6 @@
             this.xrLabel155.StylePriority.UseFont = false;
             this.xrLabel155.Visible = false;
             // 
-            // xrLabel8
-            // 
-            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
-            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 164.2947F);
-            this.xrLabel8.Multiline = true;
-            this.xrLabel8.Name = "xrLabel8";
-            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(116.67F, 14.29466F);
-            this.xrLabel8.StylePriority.UseFont = false;
-            this.xrLabel8.Text = "Bodega:";
-            // 
-            // txtBodegaOrigen
-            // 
-            this.txtBodegaOrigen.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.txtBodegaOrigen.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
-            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.txtBodegaOrigen.LocationFloat = new DevExpress.Utils.PointFloat(760.0916F, 150F);
-            this.txtBodegaOrigen.Multiline = true;
-            this.txtBodegaOrigen.Name = "txtBodegaOrigen";
-            this.txtBodegaOrigen.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtBodegaOrigen.SizeF = new System.Drawing.SizeF(167.7083F, 14.29466F);
-            this.txtBodegaOrigen.StylePriority.UseBorders = false;
-            this.txtBodegaOrigen.StylePriority.UseFont = false;
-            // 
-            // xrSubreport1
-            // 
-            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 343.5817F);
-            this.xrSubreport1.Name = "xrSubreport1";
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_ingreso", this.id_ingreso));
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_materia_prima", this.id_materia_prima));
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("is_granel", this.is_granel));
-            this.xrSubreport1.ReportSource = new LOSA.Reportes.subReporteIngresoHoja();
-            this.xrSubreport1.SizeF = new System.Drawing.SizeF(862.6894F, 100F);
-            // 
             // rptIngresoHoja
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -3634,7 +3634,7 @@
             this.id_ingreso,
             this.id_materia_prima,
             this.is_granel});
-            this.Version = "23.1";
+            this.Version = "23.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();

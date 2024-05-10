@@ -269,40 +269,50 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Contabilidad:
                     int idNivel2 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.SelectedTabPageIndex = 8;//Contabilidad
                     switch (idNivel2)
                     {
                         case 1://Basic View
                             tabOpciones.TabPages[8].PageVisible = true;
                             UsuarioLogeado.Idnivel = idNivel2;
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 2://Basic No Autorization
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[9].PageVisible = true;
                             UsuarioLogeado.Idnivel = idNivel2;
-                            tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            //tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            
                             break;
                         case 3://Medium Autorization
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
                             break;
                         case 4://Depth With Delta
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
-                            tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true; 
+                            tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                     }
                     break;

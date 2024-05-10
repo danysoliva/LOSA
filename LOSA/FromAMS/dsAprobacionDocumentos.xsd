@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="dsAutorizacionesCompras" targetNamespace="http://tempuri.org/dsAutorizacionesCompras.xsd" xmlns:mstns="http://tempuri.org/dsAutorizacionesCompras.xsd" xmlns="http://tempuri.org/dsAutorizacionesCompras.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="dsAprobacionDocumentos" targetNamespace="http://tempuri.org/dsAprobacionDocumentos.xsd" xmlns:mstns="http://tempuri.org/dsAprobacionDocumentos.xsd" xmlns="http://tempuri.org/dsAprobacionDocumentos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -9,10 +9,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsAutorizacionesCompras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAutorizacionesCompras" msprop:Generator_UserDSName="dsAutorizacionesCompras">
+  <xs:element name="dsAprobacionDocumentos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAprobacionDocumentos" msprop:Generator_UserDSName="dsAprobacionDocumentos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ordenes_pendientes" msprop:Generator_UserTableName="ordenes_pendientes" msprop:Generator_RowEvArgName="ordenes_pendientesRowChangeEvent" msprop:Generator_TableVarName="tableordenes_pendientes" msprop:Generator_TablePropName="ordenes_pendientes" msprop:Generator_RowDeletingName="ordenes_pendientesRowDeleting" msprop:Generator_RowChangingName="ordenes_pendientesRowChanging" msprop:Generator_RowDeletedName="ordenes_pendientesRowDeleted" msprop:Generator_RowEvHandlerName="ordenes_pendientesRowChangeEventHandler" msprop:Generator_TableClassName="ordenes_pendientesDataTable" msprop:Generator_RowChangedName="ordenes_pendientesRowChanged" msprop:Generator_RowClassName="ordenes_pendientesRow">
+        <xs:element name="ordenes_pendientes" msprop:Generator_TableClassName="ordenes_pendientesDataTable" msprop:Generator_TableVarName="tableordenes_pendientes" msprop:Generator_TablePropName="ordenes_pendientes" msprop:Generator_RowDeletingName="ordenes_pendientesRowDeleting" msprop:Generator_RowChangingName="ordenes_pendientesRowChanging" msprop:Generator_RowEvHandlerName="ordenes_pendientesRowChangeEventHandler" msprop:Generator_RowDeletedName="ordenes_pendientesRowDeleted" msprop:Generator_UserTableName="ordenes_pendientes" msprop:Generator_RowChangedName="ordenes_pendientesRowChanged" msprop:Generator_RowEvArgName="ordenes_pendientesRowChangeEvent" msprop:Generator_RowClassName="ordenes_pendientesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:long" minOccurs="0" />
@@ -33,7 +33,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="pendienes_aprobacion" msprop:Generator_UserTableName="pendienes_aprobacion" msprop:Generator_RowEvArgName="pendienes_aprobacionRowChangeEvent" msprop:Generator_TableVarName="tablependienes_aprobacion" msprop:Generator_TablePropName="pendienes_aprobacion" msprop:Generator_RowDeletingName="pendienes_aprobacionRowDeleting" msprop:Generator_RowChangingName="pendienes_aprobacionRowChanging" msprop:Generator_RowEvHandlerName="pendienes_aprobacionRowChangeEventHandler" msprop:Generator_RowDeletedName="pendienes_aprobacionRowDeleted" msprop:Generator_TableClassName="pendienes_aprobacionDataTable" msprop:Generator_RowChangedName="pendienes_aprobacionRowChanged" msprop:Generator_RowClassName="pendienes_aprobacionRow">
+        <xs:element name="pendienes_aprobacion" msprop:Generator_TableClassName="pendienes_aprobacionDataTable" msprop:Generator_TableVarName="tablependienes_aprobacion" msprop:Generator_TablePropName="pendienes_aprobacion" msprop:Generator_RowDeletingName="pendienes_aprobacionRowDeleting" msprop:Generator_RowChangingName="pendienes_aprobacionRowChanging" msprop:Generator_RowEvHandlerName="pendienes_aprobacionRowChangeEventHandler" msprop:Generator_RowDeletedName="pendienes_aprobacionRowDeleted" msprop:Generator_UserTableName="pendienes_aprobacion" msprop:Generator_RowChangedName="pendienes_aprobacionRowChanged" msprop:Generator_RowEvArgName="pendienes_aprobacionRowChangeEvent" msprop:Generator_RowClassName="pendienes_aprobacionRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
@@ -57,7 +57,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="pendienes_aprobacion_prd2" msprop:Generator_TableClassName="pendienes_aprobacion_prd2DataTable" msprop:Generator_RowEvArgName="pendienes_aprobacion_prd2RowChangeEvent" msprop:Generator_TableVarName="tablependienes_aprobacion_prd2" msprop:Generator_TablePropName="pendienes_aprobacion_prd2" msprop:Generator_RowDeletingName="pendienes_aprobacion_prd2RowDeleting" msprop:Generator_RowChangingName="pendienes_aprobacion_prd2RowChanging" msprop:Generator_RowDeletedName="pendienes_aprobacion_prd2RowDeleted" msprop:Generator_RowEvHandlerName="pendienes_aprobacion_prd2RowChangeEventHandler" msprop:Generator_UserTableName="pendienes_aprobacion_prd2" msprop:Generator_RowChangedName="pendienes_aprobacion_prd2RowChanged" msprop:Generator_RowClassName="pendienes_aprobacion_prd2Row">
+        <xs:element name="pendienes_aprobacion_prd2" msprop:Generator_TableClassName="pendienes_aprobacion_prd2DataTable" msprop:Generator_TableVarName="tablependienes_aprobacion_prd2" msprop:Generator_TablePropName="pendienes_aprobacion_prd2" msprop:Generator_RowDeletingName="pendienes_aprobacion_prd2RowDeleting" msprop:Generator_RowChangingName="pendienes_aprobacion_prd2RowChanging" msprop:Generator_RowEvHandlerName="pendienes_aprobacion_prd2RowChangeEventHandler" msprop:Generator_RowDeletedName="pendienes_aprobacion_prd2RowDeleted" msprop:Generator_UserTableName="pendienes_aprobacion_prd2" msprop:Generator_RowChangedName="pendienes_aprobacion_prd2RowChanged" msprop:Generator_RowEvArgName="pendienes_aprobacion_prd2RowChangeEvent" msprop:Generator_RowClassName="pendienes_aprobacion_prd2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
