@@ -460,7 +460,7 @@ namespace LOSA.Clases
             {
                 message.Body = ParseTicketHTMLFormatBody(emailTicketParmas.Nombre
                                                         , emailTicketParmas.Body
-                                                        , emailTicketParmas.TicketID.ToString().PadLeft(9, '0')
+                                                        , emailTicketParmas.TicketID.ToString()
                                                         , emailTicketParmas.Estado
                                                         , emailTicketParmas.UsuarioAsignado
                                                         , emailTicketParmas.PrioridadTicket
@@ -513,7 +513,7 @@ namespace LOSA.Clases
             {
                 message.Body = ParseTicketHTMLFormatBodyStatus(emailTicketParmas.Nombre
                                                                 , emailTicketParmas.Body
-                                                                , emailTicketParmas.TicketID.ToString().PadLeft(9, '0')
+                                                                , emailTicketParmas.TicketID.ToString()
                                                                 , emailTicketParmas.Estado
                                                                 , emailTicketParmas.UsuarioAsignado
                                                                 , emailTicketParmas.PrioridadTicket
@@ -566,7 +566,7 @@ namespace LOSA.Clases
             {
                 message.Body = ParseTicketHTMLFormatBodyPriority(emailTicketParmas.Nombre
                                                                 , emailTicketParmas.Body
-                                                                , emailTicketParmas.TicketID.ToString().PadLeft(9, '0')
+                                                                , emailTicketParmas.TicketID.ToString()
                                                                 , emailTicketParmas.Estado
                                                                 , emailTicketParmas.UsuarioAsignado
                                                                 , emailTicketParmas.PrioridadTicket
@@ -618,7 +618,7 @@ namespace LOSA.Clases
             {
                 message.Body = ParseTicketHTMLFormatBodyUserAssgined(emailTicketParmas.Nombre
                                                                     , emailTicketParmas.Body
-                                                                    , emailTicketParmas.TicketID.ToString().PadLeft(9, '0')
+                                                                    , emailTicketParmas.TicketID.ToString()
                                                                     , emailTicketParmas.Estado, emailTicketParmas.UsuarioAsignado
                                                                     , emailTicketParmas.PrioridadTicket
                                                                      , emailTicketParmas.Body
@@ -708,7 +708,7 @@ namespace LOSA.Clases
             }
 
             return @"<p>Hola " + emailParams.NombreUsuarioSolicita + @",</p>
-            <p> La solicitud [#" + emailParams.TicketID.ToString().PadLeft(7, '0') + @"] se ha creado, estaremos dando seguimiento y atención a su solicitud.</p>
+            <p> La solicitud [#" + emailParams.TicketID.ToString() + @"] se ha creado, estaremos dando seguimiento y atención a su solicitud.</p>
             <ul>
                 <li> <b>Acceso para el usuario:</b> " + emailParams.NombreUsuarioAcceso + @"</li>
                 <li> <b>Departamento:</b> " + emailParams.Departamento + @"</li>
@@ -745,9 +745,10 @@ namespace LOSA.Clases
             {
                 message.Body = ParseTicketHTMLFormatBodyFollowUp(emailTicketParams.Nombre
                                                                 , emailTicketParams.Body
-                                                                , emailTicketParams.TicketID.ToString().PadLeft(9, '0')
+                                                                , emailTicketParams.TicketID.ToString()
                                                                 , emailTicketParams.Estado
                                                                 , emailTicketParams.UsuarioAsignado
+                                                                , emailTicketParams.UsuarioSeguimiento
                                                                 , emailTicketParams.PrioridadTicket
                                                                 , emailTicketParams.Subject
                                                                 , emailTicketParams.RequerInicial);
@@ -774,7 +775,7 @@ namespace LOSA.Clases
             }
         }
 
-        public string ParseTicketHTMLFormatBodyFollowUp(string Nombre, string body, string ticket, string estado, string usuario_asignado, string prioridad, string titulo, string reque_descripcion)
+        public string ParseTicketHTMLFormatBodyFollowUp(string Nombre, string body, string ticket, string estado, string usuario_asignado,string usuario_seguimiento, string prioridad, string titulo, string reque_descripcion)
         {
             return @"<head>
                     <style>
@@ -795,7 +796,7 @@ namespace LOSA.Clases
     
                 <p>Hola " + Nombre + @",</p>
             <p> Se le ha dado seguimiento al ticket [#" + ticket + @"].</p>
-            <p> <b>Seguimiento:</b> " + body + @" </p>
+            <p> <b>Seguimiento por " + usuario_seguimiento + ": </b>" + body + @" </p>
             <p> Vaya a la sección de <b>tickets</b> en la App de ALOSY para revisar el estado de su ticket. </p>
             <p><b>Descripcion Requerimiento:</b> " + reque_descripcion + @"</p>
             <ul>

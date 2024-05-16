@@ -131,6 +131,7 @@ namespace LOSA.Clases
                 con.Open();
                 string sql = @"SELECT id, 
                                        nombre, 
+                                        ADUser,
 	                                   id_grupo_losa,
                                        tipo,
                                        super_user,
@@ -144,10 +145,11 @@ namespace LOSA.Clases
                 {
                     Id = dr.GetInt32(0);
                     nombreUser = dr.GetString(1);
-                    idGrupo = dr.GetInt32(2);
-                    Tipo = dr.GetString(3);
-                    IsSuperUser = dr.GetBoolean(4);
-                    NotificacionesActivas = dr.GetBoolean(5);
+                    ADuser = dr.GetString(2);
+                    idGrupo = dr.GetInt32(3);
+                    Tipo = dr.GetString(4);
+                    IsSuperUser = dr.GetBoolean(5);
+                    NotificacionesActivas = dr.GetBoolean(6);
                     recuperado = true;
                 }
                 dr.Close();

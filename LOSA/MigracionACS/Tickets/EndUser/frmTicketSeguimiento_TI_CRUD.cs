@@ -275,6 +275,7 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                         emailTcketParams.Subject = ticketInfo.Titulo;
                         emailTcketParams.Nombre = ticketInfo.UsuarioCreador;
                         emailTcketParams.UsuarioAsignado = ticketInfo.UsuarioAsignado;
+                        emailTcketParams.UsuarioSeguimiento = usuarioLogueado.NombreUser;
                         emailTcketParams.Estado = ticketInfo.Estado;
                         emailTcketParams.PrioridadTicket = ticketInfo.Prioridad;
                         emailTcketParams.TituloTicket = ticketInfo.Titulo;
