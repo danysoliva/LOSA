@@ -55,6 +55,28 @@ namespace LOSA.Produccion
             }
         }
 
+        private void loadatamicro()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("[sp_get_registros_basculas_pesaje_micros]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@desde", dtFechaDesdeDisponibles2.DateTime);
+                cmd.Parameters.AddWithValue("@hasta", dtFechaHastaDisponibles2.DateTime);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProductos1.alimentacion_micros.Clear();
+                adat.Fill(dsProductos1.alimentacion_micros);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.Close();

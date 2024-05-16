@@ -30,34 +30,53 @@ namespace LOSA.FromAMS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAprobacionesSalidaMercancia));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdActualizar = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dsAprobacionDocumentos1 = new LOSA.FromAMS.dsAprobacionDocumentos();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_h = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_requisa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsolicitante = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltipo_requiso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltipo_descripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_solicitante = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colruta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_solicitud = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcomentario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colestado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdGestionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.reposCmdVistaOrden = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,50 +90,22 @@ namespace LOSA.FromAMS
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_ordenH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_solicitante = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNombreSolicitante = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_ruta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRutaAprobacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_estado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEstadoNombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDocCur = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMontoOrdenCompra = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colComments = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnum_fila = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgestion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdGestionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.reposCmdVistaOrden = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dsAprobacionDocumentos1 = new LOSA.FromAMS.dsAprobacionDocumentos();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsAprobacionDocumentos1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGestionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCmdVistaOrden)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGestionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposCmdVistaOrden)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsAprobacionDocumentos1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdCerrar
@@ -125,11 +116,12 @@ namespace LOSA.FromAMS
             this.cmdCerrar.Appearance.Options.UseBackColor = true;
             this.cmdCerrar.Appearance.Options.UseForeColor = true;
             this.cmdCerrar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCerrar.ImageOptions.Image")));
-            this.cmdCerrar.Location = new System.Drawing.Point(860, 24);
+            this.cmdCerrar.Location = new System.Drawing.Point(1271, 24);
             this.cmdCerrar.Name = "cmdCerrar";
             this.cmdCerrar.Size = new System.Drawing.Size(106, 40);
             this.cmdCerrar.TabIndex = 7;
             this.cmdCerrar.Text = "Cerrar";
+            this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
             // 
             // cmdActualizar
             // 
@@ -137,11 +129,12 @@ namespace LOSA.FromAMS
             this.cmdActualizar.Appearance.BackColor = System.Drawing.Color.White;
             this.cmdActualizar.Appearance.Options.UseBackColor = true;
             this.cmdActualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdActualizar.ImageOptions.Image")));
-            this.cmdActualizar.Location = new System.Drawing.Point(748, 24);
+            this.cmdActualizar.Location = new System.Drawing.Point(1159, 24);
             this.cmdActualizar.Name = "cmdActualizar";
             this.cmdActualizar.Size = new System.Drawing.Size(106, 40);
             this.cmdActualizar.TabIndex = 6;
             this.cmdActualizar.Text = "Actualizar";
+            this.cmdActualizar.Click += new System.EventHandler(this.cmdActualizar_Click);
             // 
             // label1
             // 
@@ -161,7 +154,7 @@ namespace LOSA.FromAMS
             this.xtraTabControl1.Location = new System.Drawing.Point(1, 58);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(980, 543);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1391, 643);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -171,28 +164,216 @@ namespace LOSA.FromAMS
             // 
             this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
-            this.xtraTabPage1.Controls.Add(this.label3);
-            this.xtraTabPage1.Controls.Add(this.gridControl2);
-            this.xtraTabPage1.Controls.Add(this.label2);
             this.xtraTabPage1.Controls.Add(this.gridControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(978, 516);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1389, 616);
             this.xtraTabPage1.Text = "Pendientes";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.DataMember = "SolicitudDocumentos ";
+            this.gridControl1.DataSource = this.dsAprobacionDocumentos1;
+            this.gridControl1.Location = new System.Drawing.Point(0, 28);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdGestionar,
+            this.reposCmdVistaOrden});
+            this.gridControl1.Size = new System.Drawing.Size(1386, 588);
+            this.gridControl1.TabIndex = 1;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // dsAprobacionDocumentos1
+            // 
+            this.dsAprobacionDocumentos1.DataSetName = "dsAprobacionDocumentos";
+            this.dsAprobacionDocumentos1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_h,
+            this.colid_requisa,
+            this.colsolicitante,
+            this.coltipo_requiso,
+            this.coltipo_descripcion,
+            this.colid_solicitante,
+            this.colruta,
+            this.colfecha_solicitud,
+            this.colcomentario,
+            this.colbarcode,
+            this.colturno,
+            this.colid_estado,
+            this.colestado,
+            this.gridColumn1});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_h
+            // 
+            this.colid_h.FieldName = "id_h";
+            this.colid_h.Name = "colid_h";
+            this.colid_h.OptionsColumn.ReadOnly = true;
+            // 
+            // colid_requisa
+            // 
+            this.colid_requisa.FieldName = "id_requisa";
+            this.colid_requisa.Name = "colid_requisa";
+            this.colid_requisa.OptionsColumn.ReadOnly = true;
+            // 
+            // colsolicitante
+            // 
+            this.colsolicitante.Caption = "Solicitante";
+            this.colsolicitante.FieldName = "solicitante";
+            this.colsolicitante.Name = "colsolicitante";
+            this.colsolicitante.OptionsColumn.ReadOnly = true;
+            this.colsolicitante.Visible = true;
+            this.colsolicitante.VisibleIndex = 2;
+            this.colsolicitante.Width = 164;
+            // 
+            // coltipo_requiso
+            // 
+            this.coltipo_requiso.FieldName = "tipo_requiso";
+            this.coltipo_requiso.Name = "coltipo_requiso";
+            this.coltipo_requiso.OptionsColumn.ReadOnly = true;
+            // 
+            // coltipo_descripcion
+            // 
+            this.coltipo_descripcion.Caption = "Tipo Salida";
+            this.coltipo_descripcion.FieldName = "tipo_descripcion";
+            this.coltipo_descripcion.Name = "coltipo_descripcion";
+            this.coltipo_descripcion.OptionsColumn.ReadOnly = true;
+            this.coltipo_descripcion.Visible = true;
+            this.coltipo_descripcion.VisibleIndex = 1;
+            this.coltipo_descripcion.Width = 164;
+            // 
+            // colid_solicitante
+            // 
+            this.colid_solicitante.FieldName = "id_solicitante";
+            this.colid_solicitante.Name = "colid_solicitante";
+            this.colid_solicitante.OptionsColumn.ReadOnly = true;
+            // 
+            // colruta
+            // 
+            this.colruta.Caption = "Ruta";
+            this.colruta.FieldName = "ruta";
+            this.colruta.Name = "colruta";
+            this.colruta.OptionsColumn.ReadOnly = true;
+            this.colruta.Visible = true;
+            this.colruta.VisibleIndex = 3;
+            this.colruta.Width = 164;
+            // 
+            // colfecha_solicitud
+            // 
+            this.colfecha_solicitud.Caption = "Fecha Solicitud";
+            this.colfecha_solicitud.FieldName = "fecha_solicitud";
+            this.colfecha_solicitud.Name = "colfecha_solicitud";
+            this.colfecha_solicitud.OptionsColumn.ReadOnly = true;
+            this.colfecha_solicitud.Visible = true;
+            this.colfecha_solicitud.VisibleIndex = 4;
+            this.colfecha_solicitud.Width = 164;
+            // 
+            // colcomentario
+            // 
+            this.colcomentario.Caption = "Comentario";
+            this.colcomentario.FieldName = "comentario";
+            this.colcomentario.Name = "colcomentario";
+            this.colcomentario.OptionsColumn.ReadOnly = true;
+            this.colcomentario.Visible = true;
+            this.colcomentario.VisibleIndex = 5;
+            this.colcomentario.Width = 289;
+            // 
+            // colbarcode
+            // 
+            this.colbarcode.Caption = "Barcode";
+            this.colbarcode.FieldName = "barcode";
+            this.colbarcode.Name = "colbarcode";
+            this.colbarcode.OptionsColumn.ReadOnly = true;
+            this.colbarcode.Visible = true;
+            this.colbarcode.VisibleIndex = 0;
+            this.colbarcode.Width = 147;
+            // 
+            // colturno
+            // 
+            this.colturno.FieldName = "turno";
+            this.colturno.Name = "colturno";
+            this.colturno.OptionsColumn.ReadOnly = true;
+            // 
+            // colid_estado
+            // 
+            this.colid_estado.FieldName = "id_estado";
+            this.colid_estado.Name = "colid_estado";
+            this.colid_estado.OptionsColumn.ReadOnly = true;
+            // 
+            // colestado
+            // 
+            this.colestado.Caption = "Estado Solicitud ";
+            this.colestado.FieldName = "estado";
+            this.colestado.Name = "colestado";
+            this.colestado.OptionsColumn.ReadOnly = true;
+            this.colestado.Visible = true;
+            this.colestado.VisibleIndex = 6;
+            this.colestado.Width = 174;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Gestionar";
+            this.gridColumn1.ColumnEdit = this.cmdGestionar;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.Width = 95;
+            // 
+            // cmdGestionar
+            // 
+            this.cmdGestionar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.cmdGestionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdGestionar.Name = "cmdGestionar";
+            this.cmdGestionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdGestionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdGestionar_ButtonClick);
+            // 
+            // reposCmdVistaOrden
+            // 
+            this.reposCmdVistaOrden.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.reposCmdVistaOrden.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposCmdVistaOrden.Name = "reposCmdVistaOrden";
+            this.reposCmdVistaOrden.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage2.Controls.Add(this.gridControl2);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(1389, 616);
+            this.xtraTabPage2.Text = "Historial";
             // 
             // gridControl2
             // 
             this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl2.DataMember = "pendienes_aprobacion_prd2";
-            this.gridControl2.Location = new System.Drawing.Point(-1, 387);
+            this.gridControl2.DataMember = "SolicitudDocumentos all";
+            this.gridControl2.DataSource = this.dsAprobacionDocumentos1;
+            this.gridControl2.Location = new System.Drawing.Point(1, 14);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gridControl2.Size = new System.Drawing.Size(978, 126);
-            this.gridControl2.TabIndex = 3;
+            this.gridControl2.Size = new System.Drawing.Size(1386, 588);
+            this.gridControl2.TabIndex = 2;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -201,7 +382,6 @@ namespace LOSA.FromAMS
             this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView2.Appearance.Row.Options.UseFont = true;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -214,417 +394,147 @@ namespace LOSA.FromAMS
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18});
+            this.gridColumn14});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "id";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.FieldName = "id_ordenH";
+            this.gridColumn2.FieldName = "id_h";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.ReadOnly = true;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.FieldName = "id_solicitante";
+            this.gridColumn3.FieldName = "id_requisa";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.ReadOnly = true;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.FieldName = "NombreSolicitante";
+            this.gridColumn4.Caption = "Solicitante";
+            this.gridColumn4.FieldName = "solicitante";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 72;
+            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.Width = 164;
             // 
             // gridColumn5
             // 
-            this.gridColumn5.FieldName = "id_ruta";
+            this.gridColumn5.FieldName = "tipo_requiso";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.ReadOnly = true;
             // 
             // gridColumn6
             // 
-            this.gridColumn6.FieldName = "RutaAprobacion";
+            this.gridColumn6.Caption = "Tipo Salida";
+            this.gridColumn6.FieldName = "tipo_descripcion";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 78;
+            this.gridColumn6.VisibleIndex = 1;
+            this.gridColumn6.Width = 164;
             // 
             // gridColumn7
             // 
-            this.gridColumn7.FieldName = "fecha";
+            this.gridColumn7.FieldName = "id_solicitante";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.ReadOnly = true;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 53;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.FieldName = "id_estado";
+            this.gridColumn8.Caption = "Ruta";
+            this.gridColumn8.FieldName = "ruta";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.ReadOnly = true;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 3;
+            this.gridColumn8.Width = 164;
             // 
             // gridColumn9
             // 
-            this.gridColumn9.FieldName = "EstadoNombre";
+            this.gridColumn9.Caption = "Fecha Solicitud";
+            this.gridColumn9.FieldName = "fecha_solicitud";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 88;
+            this.gridColumn9.VisibleIndex = 4;
+            this.gridColumn9.Width = 164;
             // 
             // gridColumn10
             // 
-            this.gridColumn10.FieldName = "enable";
+            this.gridColumn10.Caption = "Comentario";
+            this.gridColumn10.FieldName = "comentario";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.ReadOnly = true;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 5;
+            this.gridColumn10.Width = 289;
             // 
             // gridColumn11
             // 
-            this.gridColumn11.FieldName = "DocCur";
+            this.gridColumn11.Caption = "Barcode";
+            this.gridColumn11.FieldName = "barcode";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.ReadOnly = true;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 7;
-            this.gridColumn11.Width = 35;
+            this.gridColumn11.VisibleIndex = 0;
+            this.gridColumn11.Width = 147;
             // 
             // gridColumn12
             // 
-            this.gridColumn12.DisplayFormat.FormatString = "n2";
-            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn12.FieldName = "MontoOrdenCompra";
+            this.gridColumn12.FieldName = "turno";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.ReadOnly = true;
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 8;
-            this.gridColumn12.Width = 78;
             // 
             // gridColumn13
             // 
-            this.gridColumn13.FieldName = "Comments";
+            this.gridColumn13.FieldName = "id_estado";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.ReadOnly = true;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 9;
-            this.gridColumn13.Width = 138;
             // 
             // gridColumn14
             // 
-            this.gridColumn14.FieldName = "Codigo";
+            this.gridColumn14.Caption = "Estado Solicitud ";
+            this.gridColumn14.FieldName = "estado";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.ReadOnly = true;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
-            this.gridColumn14.Width = 46;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.FieldName = "Proveedor";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.ReadOnly = true;
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 2;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.FieldName = "num_fila";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.OptionsColumn.ReadOnly = true;
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 0;
-            this.gridColumn16.Width = 32;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.gridColumn17.FieldName = "gestion";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 10;
-            this.gridColumn17.Width = 74;
+            this.gridColumn14.VisibleIndex = 6;
+            this.gridColumn14.Width = 174;
             // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.FieldName = "seleccionar";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Width = 36;
             // 
             // repositoryItemButtonEdit2
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
-            // label2
+            // gridColumn15
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-3, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Prioridad 1";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.DataMember = "pendienes_aprobacion";
-            this.gridControl1.Location = new System.Drawing.Point(0, 28);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cmdGestionar,
-            this.reposCmdVistaOrden});
-            this.gridControl1.Size = new System.Drawing.Size(978, 333);
-            this.gridControl1.TabIndex = 1;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid,
-            this.colid_ordenH,
-            this.colid_solicitante,
-            this.colNombreSolicitante,
-            this.colid_ruta,
-            this.colRutaAprobacion,
-            this.colfecha,
-            this.colid_estado,
-            this.colEstadoNombre,
-            this.colenable,
-            this.colDocCur,
-            this.colMontoOrdenCompra,
-            this.colComments,
-            this.colCodigo,
-            this.colProveedor,
-            this.colnum_fila,
-            this.colgestion,
-            this.colseleccionar});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            this.colid.OptionsColumn.ReadOnly = true;
-            // 
-            // colid_ordenH
-            // 
-            this.colid_ordenH.FieldName = "id_ordenH";
-            this.colid_ordenH.Name = "colid_ordenH";
-            this.colid_ordenH.OptionsColumn.ReadOnly = true;
-            // 
-            // colid_solicitante
-            // 
-            this.colid_solicitante.FieldName = "id_solicitante";
-            this.colid_solicitante.Name = "colid_solicitante";
-            this.colid_solicitante.OptionsColumn.ReadOnly = true;
-            // 
-            // colNombreSolicitante
-            // 
-            this.colNombreSolicitante.FieldName = "NombreSolicitante";
-            this.colNombreSolicitante.Name = "colNombreSolicitante";
-            this.colNombreSolicitante.OptionsColumn.ReadOnly = true;
-            this.colNombreSolicitante.Visible = true;
-            this.colNombreSolicitante.VisibleIndex = 3;
-            this.colNombreSolicitante.Width = 72;
-            // 
-            // colid_ruta
-            // 
-            this.colid_ruta.FieldName = "id_ruta";
-            this.colid_ruta.Name = "colid_ruta";
-            this.colid_ruta.OptionsColumn.ReadOnly = true;
-            // 
-            // colRutaAprobacion
-            // 
-            this.colRutaAprobacion.FieldName = "RutaAprobacion";
-            this.colRutaAprobacion.Name = "colRutaAprobacion";
-            this.colRutaAprobacion.OptionsColumn.ReadOnly = true;
-            this.colRutaAprobacion.Visible = true;
-            this.colRutaAprobacion.VisibleIndex = 4;
-            this.colRutaAprobacion.Width = 78;
-            // 
-            // colfecha
-            // 
-            this.colfecha.FieldName = "fecha";
-            this.colfecha.Name = "colfecha";
-            this.colfecha.OptionsColumn.ReadOnly = true;
-            this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 5;
-            this.colfecha.Width = 53;
-            // 
-            // colid_estado
-            // 
-            this.colid_estado.FieldName = "id_estado";
-            this.colid_estado.Name = "colid_estado";
-            this.colid_estado.OptionsColumn.ReadOnly = true;
-            // 
-            // colEstadoNombre
-            // 
-            this.colEstadoNombre.FieldName = "EstadoNombre";
-            this.colEstadoNombre.Name = "colEstadoNombre";
-            this.colEstadoNombre.OptionsColumn.ReadOnly = true;
-            this.colEstadoNombre.Visible = true;
-            this.colEstadoNombre.VisibleIndex = 6;
-            this.colEstadoNombre.Width = 88;
-            // 
-            // colenable
-            // 
-            this.colenable.FieldName = "enable";
-            this.colenable.Name = "colenable";
-            this.colenable.OptionsColumn.ReadOnly = true;
-            // 
-            // colDocCur
-            // 
-            this.colDocCur.FieldName = "DocCur";
-            this.colDocCur.Name = "colDocCur";
-            this.colDocCur.OptionsColumn.ReadOnly = true;
-            this.colDocCur.Visible = true;
-            this.colDocCur.VisibleIndex = 7;
-            this.colDocCur.Width = 35;
-            // 
-            // colMontoOrdenCompra
-            // 
-            this.colMontoOrdenCompra.DisplayFormat.FormatString = "n2";
-            this.colMontoOrdenCompra.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colMontoOrdenCompra.FieldName = "MontoOrdenCompra";
-            this.colMontoOrdenCompra.Name = "colMontoOrdenCompra";
-            this.colMontoOrdenCompra.OptionsColumn.ReadOnly = true;
-            this.colMontoOrdenCompra.Visible = true;
-            this.colMontoOrdenCompra.VisibleIndex = 8;
-            this.colMontoOrdenCompra.Width = 78;
-            // 
-            // colComments
-            // 
-            this.colComments.FieldName = "Comments";
-            this.colComments.Name = "colComments";
-            this.colComments.OptionsColumn.ReadOnly = true;
-            this.colComments.Visible = true;
-            this.colComments.VisibleIndex = 9;
-            this.colComments.Width = 138;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.FieldName = "Codigo";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.OptionsColumn.ReadOnly = true;
-            this.colCodigo.Visible = true;
-            this.colCodigo.VisibleIndex = 1;
-            this.colCodigo.Width = 46;
-            // 
-            // colProveedor
-            // 
-            this.colProveedor.FieldName = "Proveedor";
-            this.colProveedor.Name = "colProveedor";
-            this.colProveedor.OptionsColumn.ReadOnly = true;
-            this.colProveedor.Visible = true;
-            this.colProveedor.VisibleIndex = 2;
-            // 
-            // colnum_fila
-            // 
-            this.colnum_fila.FieldName = "num_fila";
-            this.colnum_fila.Name = "colnum_fila";
-            this.colnum_fila.OptionsColumn.ReadOnly = true;
-            this.colnum_fila.Visible = true;
-            this.colnum_fila.VisibleIndex = 0;
-            this.colnum_fila.Width = 32;
-            // 
-            // colgestion
-            // 
-            this.colgestion.ColumnEdit = this.cmdGestionar;
-            this.colgestion.FieldName = "gestion";
-            this.colgestion.Name = "colgestion";
-            this.colgestion.Visible = true;
-            this.colgestion.VisibleIndex = 10;
-            this.colgestion.Width = 74;
-            // 
-            // cmdGestionar
-            // 
-            this.cmdGestionar.AutoHeight = false;
-            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
-            this.cmdGestionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdGestionar.Name = "cmdGestionar";
-            this.cmdGestionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // colseleccionar
-            // 
-            this.colseleccionar.FieldName = "seleccionar";
-            this.colseleccionar.Name = "colseleccionar";
-            this.colseleccionar.Width = 36;
-            // 
-            // reposCmdVistaOrden
-            // 
-            this.reposCmdVistaOrden.AutoHeight = false;
-            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
-            this.reposCmdVistaOrden.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.reposCmdVistaOrden.Name = "reposCmdVistaOrden";
-            this.reposCmdVistaOrden.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(978, 516);
-            this.xtraTabPage2.Text = "Historial";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(-3, 364);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Prioridad 2";
-            // 
-            // dsAprobacionDocumentos1
-            // 
-            this.dsAprobacionDocumentos1.DataSetName = "dsAprobacionDocumentos";
-            this.dsAprobacionDocumentos1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.gridColumn15.Caption = "Gestionar";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Width = 95;
             // 
             // frmAprobacionesSalidaMercancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 604);
+            this.ClientSize = new System.Drawing.Size(1389, 704);
             this.Controls.Add(this.cmdCerrar);
             this.Controls.Add(this.cmdActualizar);
             this.Controls.Add(this.label1);
@@ -634,16 +544,16 @@ namespace LOSA.FromAMS
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsAprobacionDocumentos1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdGestionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCmdVistaOrden)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdGestionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposCmdVistaOrden)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsAprobacionDocumentos1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,9 +566,28 @@ namespace LOSA.FromAMS
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdGestionar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposCmdVistaOrden;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private dsAprobacionDocumentos dsAprobacionDocumentos1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_h;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_requisa;
+        private DevExpress.XtraGrid.Columns.GridColumn colsolicitante;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo_requiso;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo_descripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_solicitante;
+        private DevExpress.XtraGrid.Columns.GridColumn colruta;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_solicitud;
+        private DevExpress.XtraGrid.Columns.GridColumn colcomentario;
+        private DevExpress.XtraGrid.Columns.GridColumn colbarcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colturno;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_estado;
+        private DevExpress.XtraGrid.Columns.GridColumn colestado;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -672,37 +601,8 @@ namespace LOSA.FromAMS
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colid;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_ordenH;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_solicitante;
-        private DevExpress.XtraGrid.Columns.GridColumn colNombreSolicitante;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_ruta;
-        private DevExpress.XtraGrid.Columns.GridColumn colRutaAprobacion;
-        private DevExpress.XtraGrid.Columns.GridColumn colfecha;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_estado;
-        private DevExpress.XtraGrid.Columns.GridColumn colEstadoNombre;
-        private DevExpress.XtraGrid.Columns.GridColumn colenable;
-        private DevExpress.XtraGrid.Columns.GridColumn colDocCur;
-        private DevExpress.XtraGrid.Columns.GridColumn colMontoOrdenCompra;
-        private DevExpress.XtraGrid.Columns.GridColumn colComments;
-        private DevExpress.XtraGrid.Columns.GridColumn colCodigo;
-        private DevExpress.XtraGrid.Columns.GridColumn colProveedor;
-        private DevExpress.XtraGrid.Columns.GridColumn colnum_fila;
-        private DevExpress.XtraGrid.Columns.GridColumn colgestion;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdGestionar;
-        private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposCmdVistaOrden;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private System.Windows.Forms.Label label3;
-        private dsAprobacionDocumentos dsAprobacionDocumentos1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
     }
 }

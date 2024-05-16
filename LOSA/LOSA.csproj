@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>668</ApplicationRevision>
+    <ApplicationRevision>674</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1305,6 +1305,7 @@
     <Compile Include="Clases\AlimentacionBasculas.cs" />
     <Compile Include="Clases\AlimentacionTolvaMicrosPesaje.cs" />
     <Compile Include="Clases\APMS_OrderProduction.cs" />
+    <Compile Include="Clases\Aprobaciones.cs" />
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\BannerTV_Tab.cs" />
     <Compile Include="Clases\BinGranel.cs" />
@@ -1739,6 +1740,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FromAMS\frmAprobacionesConfirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmAprobacionesConfirmacion.Designer.cs">
+      <DependentUpon>frmAprobacionesConfirmacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FromAMS\frmAprobacionesSalidaMercancia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1780,6 +1787,12 @@
     </Compile>
     <Compile Include="FromAMS\frmUserAuth.Designer.cs">
       <DependentUpon>frmUserAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromAMS\frmVerDetalleSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromAMS\frmVerDetalleSolicitud.Designer.cs">
+      <DependentUpon>frmVerDetalleSolicitud.cs</DependentUpon>
     </Compile>
     <Compile Include="FromAMS\frm_buscar_req.cs">
       <SubType>Form</SubType>
@@ -7483,6 +7496,9 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmAprobacionesConfirmacion.resx">
+      <DependentUpon>frmAprobacionesConfirmacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FromAMS\frmAprobacionesSalidaMercancia.resx">
       <DependentUpon>frmAprobacionesSalidaMercancia.cs</DependentUpon>
     </EmbeddedResource>
@@ -7503,6 +7519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FromAMS\frmUserAuth.resx">
       <DependentUpon>frmUserAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromAMS\frmVerDetalleSolicitud.resx">
+      <DependentUpon>frmVerDetalleSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FromAMS\frm_buscar_req.resx">
       <DependentUpon>frm_buscar_req.cs</DependentUpon>

@@ -35,6 +35,11 @@ namespace LOSA.Produccion
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsProductos1 = new LOSA.MigracionACS.DataSetx.DSProductos();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -44,6 +49,7 @@ namespace LOSA.Produccion
             this.colbascula = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposBtnRuta1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colLotePT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso_inicial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso_final = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,30 +68,66 @@ namespace LOSA.Produccion
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesdeDisponibles = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.reposBtnRuta1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.TabMacros = new DevExpress.XtraTab.XtraTabPage();
+            this.TabMicros = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtFechaHastaDisponibles2 = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdGuardar2 = new DevExpress.XtraEditors.SimpleButton();
+            this.dtFechaDesdeDisponibles2 = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposBtnRuta1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposBtnRuta1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.TabMacros.SuspendLayout();
+            this.TabMicros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles2.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles2.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "alimentacion_macros";
             this.gridControl1.DataSource = this.dsProductos1;
-            this.gridControl1.Location = new System.Drawing.Point(3, 74);
+            this.gridControl1.Location = new System.Drawing.Point(3, 53);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.reposBtnRuta1});
-            this.gridControl1.Size = new System.Drawing.Size(1496, 468);
+            this.gridControl1.Size = new System.Drawing.Size(1490, 460);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -193,6 +235,15 @@ namespace LOSA.Produccion
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 6;
             this.collote_materia_prima.Width = 127;
+            // 
+            // reposBtnRuta1
+            // 
+            this.reposBtnRuta1.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.reposBtnRuta1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposBtnRuta1.Name = "reposBtnRuta1";
+            this.reposBtnRuta1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposBtnRuta1_ButtonClick);
             // 
             // colLotePT
             // 
@@ -339,7 +390,7 @@ namespace LOSA.Produccion
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.cmdGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdGuardar.ImageOptions.SvgImage")));
-            this.cmdGuardar.Location = new System.Drawing.Point(284, 25);
+            this.cmdGuardar.Location = new System.Drawing.Point(314, 7);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(126, 40);
             this.cmdGuardar.TabIndex = 36;
@@ -355,7 +406,7 @@ namespace LOSA.Produccion
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(1363, 25);
+            this.cmdHome.Location = new System.Drawing.Point(1361, 7);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(126, 40);
             this.cmdHome.TabIndex = 37;
@@ -371,7 +422,7 @@ namespace LOSA.Produccion
             this.btnExcelExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnExcelExport.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnExcelExport.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExcelExport.ImageOptions.SvgImage")));
-            this.btnExcelExport.Location = new System.Drawing.Point(436, 25);
+            this.btnExcelExport.Location = new System.Drawing.Point(478, 7);
             this.btnExcelExport.Name = "btnExcelExport";
             this.btnExcelExport.Size = new System.Drawing.Size(126, 40);
             this.btnExcelExport.TabIndex = 38;
@@ -381,7 +432,7 @@ namespace LOSA.Produccion
             // dtFechaHastaDisponibles
             // 
             this.dtFechaHastaDisponibles.EditValue = null;
-            this.dtFechaHastaDisponibles.Location = new System.Drawing.Point(121, 44);
+            this.dtFechaHastaDisponibles.Location = new System.Drawing.Point(120, 28);
             this.dtFechaHastaDisponibles.Name = "dtFechaHastaDisponibles";
             this.dtFechaHastaDisponibles.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaHastaDisponibles.Properties.Appearance.Options.UseFont = true;
@@ -398,7 +449,7 @@ namespace LOSA.Produccion
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(15, 47);
+            this.labelControl9.Location = new System.Drawing.Point(10, 31);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(88, 18);
             this.labelControl9.TabIndex = 102;
@@ -407,7 +458,7 @@ namespace LOSA.Produccion
             // dtFechaDesdeDisponibles
             // 
             this.dtFechaDesdeDisponibles.EditValue = null;
-            this.dtFechaDesdeDisponibles.Location = new System.Drawing.Point(121, 12);
+            this.dtFechaDesdeDisponibles.Location = new System.Drawing.Point(120, 2);
             this.dtFechaDesdeDisponibles.Name = "dtFechaDesdeDisponibles";
             this.dtFechaDesdeDisponibles.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaDesdeDisponibles.Properties.Appearance.Options.UseFont = true;
@@ -425,46 +476,430 @@ namespace LOSA.Produccion
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(15, 15);
+            this.labelControl8.Location = new System.Drawing.Point(10, 5);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(92, 18);
             this.labelControl8.TabIndex = 100;
             this.labelControl8.Text = "Fecha Desde:";
             // 
-            // reposBtnRuta1
+            // xtraTabControl1
             // 
-            this.reposBtnRuta1.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.reposBtnRuta1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.reposBtnRuta1.Name = "reposBtnRuta1";
-            this.reposBtnRuta1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposBtnRuta1_ButtonClick);
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.xtraTabControl1.Location = new System.Drawing.Point(1, -1);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.TabMacros;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1498, 544);
+            this.xtraTabControl1.TabIndex = 103;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.TabMacros,
+            this.TabMicros});
+            // 
+            // TabMacros
+            // 
+            this.TabMacros.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabMacros.Appearance.Header.Options.UseFont = true;
+            this.TabMacros.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabMacros.Appearance.HeaderActive.Options.UseFont = true;
+            this.TabMacros.Controls.Add(this.gridControl1);
+            this.TabMacros.Controls.Add(this.cmdHome);
+            this.TabMacros.Controls.Add(this.dtFechaHastaDisponibles);
+            this.TabMacros.Controls.Add(this.btnExcelExport);
+            this.TabMacros.Controls.Add(this.labelControl9);
+            this.TabMacros.Controls.Add(this.cmdGuardar);
+            this.TabMacros.Controls.Add(this.dtFechaDesdeDisponibles);
+            this.TabMacros.Controls.Add(this.labelControl8);
+            this.TabMacros.Name = "TabMacros";
+            this.TabMacros.Size = new System.Drawing.Size(1496, 516);
+            this.TabMacros.Text = "Pesajes Bascula Macro Ingredientes";
+            // 
+            // TabMicros
+            // 
+            this.TabMicros.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabMicros.Appearance.Header.Options.UseFont = true;
+            this.TabMicros.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabMicros.Appearance.HeaderActive.Options.UseFont = true;
+            this.TabMicros.Controls.Add(this.gridControl2);
+            this.TabMicros.Controls.Add(this.dtFechaHastaDisponibles2);
+            this.TabMicros.Controls.Add(this.simpleButton1);
+            this.TabMicros.Controls.Add(this.labelControl1);
+            this.TabMicros.Controls.Add(this.cmdGuardar2);
+            this.TabMicros.Controls.Add(this.dtFechaDesdeDisponibles2);
+            this.TabMicros.Controls.Add(this.labelControl2);
+            this.TabMicros.Name = "TabMicros";
+            this.TabMicros.Size = new System.Drawing.Size(1496, 516);
+            this.TabMicros.Text = "Pesajes Bascula Micro Ingredientes ";
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataMember = null;
+            this.gridControl2.DataSource = this.dsProductos1;
+            this.gridControl2.Location = new System.Drawing.Point(3, 54);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1});
+            this.gridControl2.Size = new System.Drawing.Size(1490, 460);
+            this.gridControl2.TabIndex = 103;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowFooter = true;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Turno";
+            this.gridColumn4.FieldName = "Turno";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsColumn.ReadOnly = true;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 71;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "F. Inicio Pesaje";
+            this.gridColumn5.DisplayFormat.FormatString = "g";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn5.FieldName = "fecha_inicio";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 125;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "F. Final Pesaje";
+            this.gridColumn6.DisplayFormat.FormatString = "g";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn6.FieldName = "fecha_final";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.Width = 114;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Bascula";
+            this.gridColumn7.FieldName = "bascula";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.OptionsColumn.ReadOnly = true;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.Width = 54;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Materia Prima";
+            this.gridColumn8.FieldName = "nombre_comercial";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.ReadOnly = true;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 5;
+            this.gridColumn8.Width = 97;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Lote Materia Prima";
+            this.gridColumn9.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.gridColumn9.FieldName = "lote_materia_prima";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.ReadOnly = true;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 6;
+            this.gridColumn9.Width = 127;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Lote PT";
+            this.gridColumn10.FieldName = "LotePT";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.OptionsColumn.ReadOnly = true;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 7;
+            this.gridColumn10.Width = 71;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Pesaje Inicial";
+            this.gridColumn11.DisplayFormat.FormatString = "{0:##,###,##0.##} Kg";
+            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn11.FieldName = "peso_inicial";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
+            this.gridColumn11.OptionsColumn.ReadOnly = true;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 8;
+            this.gridColumn11.Width = 80;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Pesaje Final";
+            this.gridColumn12.DisplayFormat.FormatString = "{0:##,###,##0.##} Kg";
+            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn12.FieldName = "peso_final";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowEdit = false;
+            this.gridColumn12.OptionsColumn.ReadOnly = true;
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 9;
+            this.gridColumn12.Width = 84;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Peso Neto Bascula";
+            this.gridColumn13.DisplayFormat.FormatString = "{0:##,###,##0.##} Kg";
+            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn13.FieldName = "peso_producto_bascula";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
+            this.gridColumn13.OptionsColumn.ReadOnly = true;
+            this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_producto_bascula", "{0:##,###,##0.##} Kg")});
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 10;
+            this.gridColumn13.Width = 130;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Peso Neto Teorico";
+            this.gridColumn14.DisplayFormat.FormatString = "{0:##,###,##0.##} Kg";
+            this.gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn14.FieldName = "peso_teorico";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowEdit = false;
+            this.gridColumn14.OptionsColumn.ReadOnly = true;
+            this.gridColumn14.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_teorico", "{0:##,###,##0.##} Kg")});
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 11;
+            this.gridColumn14.Width = 130;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Diferencia";
+            this.gridColumn15.DisplayFormat.FormatString = "{0:##,###,##0.##} Kg";
+            this.gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn15.FieldName = "diferencia";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.OptionsColumn.ReadOnly = true;
+            this.gridColumn15.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "diferencia", "{0:##,###,##0.##} Kg")});
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 12;
+            this.gridColumn15.Width = 72;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Cant. Sacos";
+            this.gridColumn16.DisplayFormat.FormatString = "n1";
+            this.gridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn16.FieldName = "cantsacos";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
+            this.gridColumn16.OptionsColumn.ReadOnly = true;
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 13;
+            this.gridColumn16.Width = 108;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Presentacion Saco";
+            this.gridColumn17.FieldName = "presentacion";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.AllowEdit = false;
+            this.gridColumn17.OptionsColumn.ReadOnly = true;
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 14;
+            this.gridColumn17.Width = 89;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Peso Saco Promedio";
+            this.gridColumn18.DisplayFormat.FormatString = "n2";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn18.FieldName = "peso_saco_promedio";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsColumn.AllowEdit = false;
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 15;
+            this.gridColumn18.Width = 119;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Codigo MP";
+            this.gridColumn19.FieldName = "itemcode";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.OptionsColumn.AllowEdit = false;
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 4;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "% Desviacion";
+            this.gridColumn20.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn20.FieldName = "diffporcentaje";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.OptionsColumn.AllowEdit = false;
+            // 
+            // dtFechaHastaDisponibles2
+            // 
+            this.dtFechaHastaDisponibles2.EditValue = null;
+            this.dtFechaHastaDisponibles2.Location = new System.Drawing.Point(120, 29);
+            this.dtFechaHastaDisponibles2.Name = "dtFechaHastaDisponibles2";
+            this.dtFechaHastaDisponibles2.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaHastaDisponibles2.Properties.Appearance.Options.UseFont = true;
+            this.dtFechaHastaDisponibles2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHastaDisponibles2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHastaDisponibles2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaHastaDisponibles2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaHastaDisponibles2.Size = new System.Drawing.Size(142, 24);
+            this.dtFechaHastaDisponibles2.TabIndex = 108;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(478, 8);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(126, 40);
+            this.simpleButton1.TabIndex = 105;
+            this.simpleButton1.Text = "Exportar";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(10, 32);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(88, 18);
+            this.labelControl1.TabIndex = 109;
+            this.labelControl1.Text = "Fecha Hasta:";
+            // 
+            // cmdGuardar2
+            // 
+            this.cmdGuardar2.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmdGuardar2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGuardar2.Appearance.Options.UseBackColor = true;
+            this.cmdGuardar2.Appearance.Options.UseFont = true;
+            this.cmdGuardar2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGuardar2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdGuardar2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.cmdGuardar2.Location = new System.Drawing.Point(314, 8);
+            this.cmdGuardar2.Name = "cmdGuardar2";
+            this.cmdGuardar2.Size = new System.Drawing.Size(126, 40);
+            this.cmdGuardar2.TabIndex = 104;
+            this.cmdGuardar2.Text = "Actualizar";
+            // 
+            // dtFechaDesdeDisponibles2
+            // 
+            this.dtFechaDesdeDisponibles2.EditValue = null;
+            this.dtFechaDesdeDisponibles2.Location = new System.Drawing.Point(120, 3);
+            this.dtFechaDesdeDisponibles2.Name = "dtFechaDesdeDisponibles2";
+            this.dtFechaDesdeDisponibles2.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaDesdeDisponibles2.Properties.Appearance.Options.UseFont = true;
+            this.dtFechaDesdeDisponibles2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesdeDisponibles2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesdeDisponibles2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaDesdeDisponibles2.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dtFechaDesdeDisponibles2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaDesdeDisponibles2.Size = new System.Drawing.Size(142, 24);
+            this.dtFechaDesdeDisponibles2.TabIndex = 106;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(10, 6);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(92, 18);
+            this.labelControl2.TabIndex = 107;
+            this.labelControl2.Text = "Fecha Desde:";
             // 
             // frmAlimentacionBasculasMacros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1501, 545);
-            this.Controls.Add(this.dtFechaHastaDisponibles);
-            this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.dtFechaDesdeDisponibles);
-            this.Controls.Add(this.labelControl8);
-            this.Controls.Add(this.btnExcelExport);
-            this.Controls.Add(this.cmdHome);
-            this.Controls.Add(this.cmdGuardar);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.xtraTabControl1);
             this.Name = "frmAlimentacionBasculasMacros";
             this.Text = "frmAlimentacionBasculasMacros";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposBtnRuta1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposBtnRuta1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.TabMacros.ResumeLayout(false);
+            this.TabMacros.PerformLayout();
+            this.TabMicros.ResumeLayout(false);
+            this.TabMicros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles2.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -498,5 +933,34 @@ namespace LOSA.Produccion
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposBtnRuta1;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage TabMacros;
+        private DevExpress.XtraTab.XtraTabPage TabMicros;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraEditors.DateEdit dtFechaHastaDisponibles2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton cmdGuardar2;
+        private DevExpress.XtraEditors.DateEdit dtFechaDesdeDisponibles2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }
