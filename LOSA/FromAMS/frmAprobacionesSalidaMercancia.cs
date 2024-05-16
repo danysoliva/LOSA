@@ -94,7 +94,7 @@ namespace LOSA.FromAMS
                         cmd.Parameters.AddWithValue("@comentario", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue("@comentario", frm.Comentario);
-                    cmd.Parameters.AddWithValue("@id_requisa", row.id_requisa);
+                    //cmd.Parameters.AddWithValue("@id_requisa", row.id_requisa);
                     cmd.ExecuteNonQuery();
 
                     row.id_estado = idEstadoNew;

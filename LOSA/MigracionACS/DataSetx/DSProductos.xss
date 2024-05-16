@@ -31,7 +31,7 @@
     <Shape ID="DesignTable:clase" ZOrder="6" X="4169" Y="169" Height="67" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="63" />
     <Shape ID="DesignTable:Acumulado_FCT" ZOrder="5" X="4337" Y="169" Height="162" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="86" />
     <Shape ID="DesignTable:alimentacion_macros" ZOrder="2" X="770" Y="331" Height="353" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="349" />
-    <Shape ID="DesignTable:alimentacion_micros" ZOrder="1" X="1005" Y="333" Height="181" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
+    <Shape ID="DesignTable:alimentacion_micros" ZOrder="1" X="1005" Y="333" Height="219" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

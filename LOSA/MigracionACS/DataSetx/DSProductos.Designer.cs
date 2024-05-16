@@ -11028,7 +11028,7 @@ namespace LOSA.MigracionACS.DataSetx {
             
             private global::System.Data.DataColumn columnpeso;
             
-            private global::System.Data.DataColumn columnid_mp;
+            private global::System.Data.DataColumn columnid_rm;
             
             private global::System.Data.DataColumn columnnombre_comercial;
             
@@ -11039,6 +11039,10 @@ namespace LOSA.MigracionACS.DataSetx {
             private global::System.Data.DataColumn columnid_orden;
             
             private global::System.Data.DataColumn columnlote_pt;
+            
+            private global::System.Data.DataColumn columnset_point;
+            
+            private global::System.Data.DataColumn columnitemcode;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -11091,9 +11095,9 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_mpColumn {
+            public global::System.Data.DataColumn id_rmColumn {
                 get {
-                    return this.columnid_mp;
+                    return this.columnid_rm;
                 }
             }
             
@@ -11139,6 +11143,22 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn set_pointColumn {
+                get {
+                    return this.columnset_point;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -11174,17 +11194,19 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public alimentacion_microsRow Addalimentacion_microsRow(int id, decimal peso, int id_mp, string nombre_comercial, string lote_mp, System.DateTime fecha_registro, int id_orden, int lote_pt) {
+            public alimentacion_microsRow Addalimentacion_microsRow(int id, decimal peso, int id_rm, string nombre_comercial, string lote_mp, System.DateTime fecha_registro, int id_orden, int lote_pt, decimal set_point, string itemcode) {
                 alimentacion_microsRow rowalimentacion_microsRow = ((alimentacion_microsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         peso,
-                        id_mp,
+                        id_rm,
                         nombre_comercial,
                         lote_mp,
                         fecha_registro,
                         id_orden,
-                        lote_pt};
+                        lote_pt,
+                        set_point,
+                        itemcode};
                 rowalimentacion_microsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowalimentacion_microsRow);
                 return rowalimentacion_microsRow;
@@ -11209,12 +11231,14 @@ namespace LOSA.MigracionACS.DataSetx {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnpeso = base.Columns["peso"];
-                this.columnid_mp = base.Columns["id_mp"];
+                this.columnid_rm = base.Columns["id_rm"];
                 this.columnnombre_comercial = base.Columns["nombre_comercial"];
                 this.columnlote_mp = base.Columns["lote_mp"];
                 this.columnfecha_registro = base.Columns["fecha_registro"];
                 this.columnid_orden = base.Columns["id_orden"];
                 this.columnlote_pt = base.Columns["lote_pt"];
+                this.columnset_point = base.Columns["set_point"];
+                this.columnitemcode = base.Columns["itemcode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11224,8 +11248,8 @@ namespace LOSA.MigracionACS.DataSetx {
                 base.Columns.Add(this.columnid);
                 this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpeso);
-                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_mp);
+                this.columnid_rm = new global::System.Data.DataColumn("id_rm", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_rm);
                 this.columnnombre_comercial = new global::System.Data.DataColumn("nombre_comercial", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_comercial);
                 this.columnlote_mp = new global::System.Data.DataColumn("lote_mp", typeof(string), null, global::System.Data.MappingType.Element);
@@ -11236,6 +11260,10 @@ namespace LOSA.MigracionACS.DataSetx {
                 base.Columns.Add(this.columnid_orden);
                 this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlote_pt);
+                this.columnset_point = new global::System.Data.DataColumn("set_point", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnset_point);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19365,17 +19393,17 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_mp {
+            public int id_rm {
                 get {
                     try {
-                        return ((int)(this[this.tablealimentacion_micros.id_mpColumn]));
+                        return ((int)(this[this.tablealimentacion_micros.id_rmColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'alimentacion_micros\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_rm\' de la tabla \'alimentacion_micros\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablealimentacion_micros.id_mpColumn] = value;
+                    this[this.tablealimentacion_micros.id_rmColumn] = value;
                 }
             }
             
@@ -19463,6 +19491,38 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal set_point {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablealimentacion_micros.set_pointColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'set_point\' de la tabla \'alimentacion_micros\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablealimentacion_micros.set_pointColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tablealimentacion_micros.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'alimentacion_micros\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablealimentacion_micros.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablealimentacion_micros.idColumn);
             }
@@ -19487,14 +19547,14 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isid_mpNull() {
-                return this.IsNull(this.tablealimentacion_micros.id_mpColumn);
+            public bool Isid_rmNull() {
+                return this.IsNull(this.tablealimentacion_micros.id_rmColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setid_mpNull() {
-                this[this.tablealimentacion_micros.id_mpColumn] = global::System.Convert.DBNull;
+            public void Setid_rmNull() {
+                this[this.tablealimentacion_micros.id_rmColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19555,6 +19615,30 @@ namespace LOSA.MigracionACS.DataSetx {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setlote_ptNull() {
                 this[this.tablealimentacion_micros.lote_ptColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isset_pointNull() {
+                return this.IsNull(this.tablealimentacion_micros.set_pointColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setset_pointNull() {
+                this[this.tablealimentacion_micros.set_pointColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tablealimentacion_micros.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tablealimentacion_micros.itemcodeColumn] = global::System.Convert.DBNull;
             }
         }
         

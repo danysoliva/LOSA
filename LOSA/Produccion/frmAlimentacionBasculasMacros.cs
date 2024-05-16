@@ -27,10 +27,11 @@ namespace LOSA.Produccion
             DataOperations dp = new DataOperations();
 
             dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-1);
-
+            dtFechaDesdeDisponibles2.DateTime = dp.Now().AddDays(-1);
             dtFechaHastaDisponibles.DateTime = dp.Now().AddDays(1);
-
+            dtFechaHastaDisponibles2.DateTime = dp.Now().AddDays(1);
             loadata();
+            loadatamicro();
         }
 
         private void loadata()
@@ -60,7 +61,7 @@ namespace LOSA.Produccion
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("[sp_get_registros_basculas_pesaje_micros]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -134,6 +135,29 @@ namespace LOSA.Produccion
                 frm.WindowState = FormWindowState.Maximized;
                 frm.ShowDialog();
             }
+        }
+
+        private void cmdGuardar2_Click(object sender, EventArgs e)
+        {
+            loadatamicro();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                gridControl1.ExportToXlsx(dialog.FileName);
+            }
+
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
