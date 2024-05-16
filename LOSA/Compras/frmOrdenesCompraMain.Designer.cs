@@ -310,6 +310,7 @@ namespace LOSA.Compras
             this.comboBoxIntercom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxIntercom.Properties.Items.AddRange(new object[] {
+            "Ninguno",
             "FOB",
             "EXW",
             "CIF",
@@ -322,6 +323,7 @@ namespace LOSA.Compras
             "DDP",
             "FAS",
             "DAT"});
+            this.comboBoxIntercom.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxIntercom.Size = new System.Drawing.Size(189, 22);
             this.comboBoxIntercom.TabIndex = 95;
             // 
