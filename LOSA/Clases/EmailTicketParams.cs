@@ -17,6 +17,7 @@ namespace LOSA.Clases
         public int TicketID { get; set; }
         public string Nombre { get; set; }
         public string UsuarioAsignado { get; set; }
+        public string UsuarioSeguimiento { get; set; }
         public string Estado { get; set; }
         public string PrioridadTicket { get; set; }
         public string TituloTicket { get; set; }
