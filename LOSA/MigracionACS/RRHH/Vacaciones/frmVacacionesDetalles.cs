@@ -67,5 +67,10 @@ namespace LOSA.MigracionACS.RRHH.Vacaciones
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void cmdCargarDatos_Click(object sender, EventArgs e)
+        {
+            LoadDetalle();
+        }
     }
 }

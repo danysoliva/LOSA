@@ -393,6 +393,7 @@ namespace LOSA
             UserLogin Log1 = new UserLogin();
             if (Log1.RecuperarRegistro(1035))
             //if (Log1.RecuperarRegistro(1027))
+            //if(Log1.RecuperarRegistro(1014))
             {
                 //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                 //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;

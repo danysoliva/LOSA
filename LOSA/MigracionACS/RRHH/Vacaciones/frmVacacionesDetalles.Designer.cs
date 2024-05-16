@@ -85,6 +85,7 @@
             this.cmdCargarDatos.Size = new System.Drawing.Size(110, 36);
             this.cmdCargarDatos.TabIndex = 23;
             this.cmdCargarDatos.Text = "Cargar ";
+            this.cmdCargarDatos.Click += new System.EventHandler(this.cmdCargarDatos_Click);
             // 
             // cmdExportar
             // 

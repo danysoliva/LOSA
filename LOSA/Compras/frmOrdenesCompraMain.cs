@@ -1664,7 +1664,8 @@ namespace LOSA.Compras
                         cmd.Parameters.AddWithValue("@ContactCode", ContactCode);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
                         cmd.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
-                        if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+
+                        if (string.IsNullOrEmpty(comboBoxIntercom.Text) || comboBoxIntercom.Text == "Ninguno")
                             cmd.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
                         else
                             cmd.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
@@ -1787,7 +1788,8 @@ namespace LOSA.Compras
                         cmdUpdate.Parameters.AddWithValue("@ContactCode", ContactCode);
                         cmdUpdate.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
                         cmdUpdate.Parameters.AddWithValue("@id_ruta", glRutaAprobacionOC.EditValue);
-                        if (string.IsNullOrEmpty(comboBoxIntercom.Text))
+
+                        if (string.IsNullOrEmpty(comboBoxIntercom.Text) || comboBoxIntercom.Text == "Ninguno")
                             cmdUpdate.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
                         else
                             cmdUpdate.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
