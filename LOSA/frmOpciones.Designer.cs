@@ -492,6 +492,7 @@
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.navAprobacionDocumentos = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -4834,7 +4835,7 @@
             this.btnPrioridadLotePT.Name = "btnPrioridadLotePT";
             this.btnPrioridadLotePT.Size = new System.Drawing.Size(199, 71);
             this.btnPrioridadLotePT.TabIndex = 52;
-            this.btnPrioridadLotePT.Text = "Reporte Alimentacion Bascula";
+            this.btnPrioridadLotePT.Text = "Reporte Alimentacion Basculas";
             this.btnPrioridadLotePT.Click += new System.EventHandler(this.btnPrioridadLotePT_Click);
             // 
             // btnReqMEmpaque
@@ -6643,7 +6644,8 @@
             this.navBarItem117,
             this.nbarAprobacionOrdenesCompra,
             this.navListaOC,
-            this.navBarKardexSaldo});
+            this.navBarKardexSaldo,
+            this.navAprobacionDocumentos});
             this.navBarControl5.Location = new System.Drawing.Point(0, 0);
             this.navBarControl5.Name = "navBarControl5";
             this.navBarControl5.OptionsNavPane.ExpandedWidth = 274;
@@ -6663,7 +6665,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navOrdenCompra),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbarAprobacionOrdenesCompra),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarKardexSaldo),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navListaOC)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navListaOC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navAprobacionDocumentos)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navOrdenCompra
@@ -7104,6 +7107,21 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
+            // 
+            // navAprobacionDocumentos
+            // 
+            this.navAprobacionDocumentos.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.Appearance.Options.UseFont = true;
+            this.navAprobacionDocumentos.Appearance.Options.UseTextOptions = true;
+            this.navAprobacionDocumentos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.navAprobacionDocumentos.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.AppearanceHotTracked.Options.UseFont = true;
+            this.navAprobacionDocumentos.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.AppearancePressed.Options.UseFont = true;
+            this.navAprobacionDocumentos.Caption = "Aprobacion Salidas de Mercancia";
+            this.navAprobacionDocumentos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navAprobacionDocumentos.ImageOptions.SvgImage")));
+            this.navAprobacionDocumentos.Name = "navAprobacionDocumentos";
+            this.navAprobacionDocumentos.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navAprobacionDocumentos_LinkClicked);
             // 
             // frmOpciones
             // 
@@ -7623,5 +7641,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton75;
         private DevExpress.XtraNavBar.NavBarItem navBarKardexSaldo;
         private DevExpress.XtraEditors.SimpleButton simpleButton76;
+        private DevExpress.XtraNavBar.NavBarItem navAprobacionDocumentos;
     }
 }

@@ -187,7 +187,7 @@ namespace LOSA.TransaccionesMP
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v7", conn);
+                SqlCommand cmd = new SqlCommand("[sp_ajuste_kardex_por_lote_traslado]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
                 cmd.Parameters.AddWithValue("@cant_salida", 0);
@@ -207,6 +207,7 @@ namespace LOSA.TransaccionesMP
                 else
                     cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                 cmd.Parameters.AddWithValue("@tipo_operacion", 0); //En el SP 0: Traslado.
+                cmd.Parameters.AddWithValue("@Operacion", 16);
                 cmd.ExecuteNonQuery();
                 conn.Close();
 

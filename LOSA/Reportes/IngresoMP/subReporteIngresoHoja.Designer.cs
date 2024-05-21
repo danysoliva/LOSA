@@ -35,6 +35,7 @@ namespace LOSA.Reportes
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(subReporteIngresoHoja));
+            DevExpress.XtraReports.UI.XRWatermark xrWatermark1 = new DevExpress.XtraReports.UI.XRWatermark();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
@@ -303,6 +304,8 @@ namespace LOSA.Reportes
             this.is_granel,
             this.id_materia_prima});
             this.Version = "23.2";
+            xrWatermark1.Id = "Watermark1";
+            this.Watermarks.Add(xrWatermark1);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

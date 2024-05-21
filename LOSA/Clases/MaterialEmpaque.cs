@@ -21,7 +21,8 @@ namespace LOSA.Clases
         public string turno { get; set; }
         public string requ_creador { get; set; }
         public bool Recuperado { get; set; }
-
+        public int id_estado { get; set; }
+        public string estado { get; set; }
         #endregion
 
         public MaterialEmpaque()
@@ -51,6 +52,8 @@ namespace LOSA.Clases
                     codigo_barra = dr.GetString(5);
                     turno = dr.GetString(6);
                     requ_creador = dr.GetString(7);
+                    id_estado = dr.GetInt32(8);
+                    estado = dr.GetString(9);
                     Recuperado = true;
                 }
                 dr.Close();
