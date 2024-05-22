@@ -82,6 +82,9 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.xrPictureBox4 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox2 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tcGMO = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -229,8 +232,9 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.xrTableRow3,
             this.xrTableRow4,
             this.xrTableRow5,
-            this.xrTableRow6});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(568.75F, 150F);
+            this.xrTableRow6,
+            this.xrTableRow8});
+            this.xrTable1.SizeF = new System.Drawing.SizeF(568.75F, 175F);
             // 
             // xrTableRow1
             // 
@@ -552,6 +556,29 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.xrPictureBox2.SizeF = new System.Drawing.SizeF(69.79166F, 38.91662F);
             this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
+            // xrTableRow8
+            // 
+            this.xrTableRow8.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell6,
+            this.tcGMO});
+            this.xrTableRow8.Name = "xrTableRow8";
+            this.xrTableRow8.Weight = 1D;
+            // 
+            // xrTableCell6
+            // 
+            this.xrTableCell6.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell6.Multiline = true;
+            this.xrTableCell6.Name = "xrTableCell6";
+            this.xrTableCell6.StylePriority.UseFont = false;
+            this.xrTableCell6.Text = "Estatus de GMO:";
+            this.xrTableCell6.Weight = 0.6080586259443681D;
+            // 
+            // tcGMO
+            // 
+            this.tcGMO.Multiline = true;
+            this.tcGMO.Name = "tcGMO";
+            this.tcGMO.Weight = 1.3919413740556319D;
+            // 
             // rptCertificadoCalidad
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -634,5 +661,8 @@ namespace LOSA.Calidad.CertificadoCalidad
         private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox4;
         private DevExpress.XtraReports.UI.XRLabel xrUsuarioC;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow8;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell6;
+        private DevExpress.XtraReports.UI.XRTableCell tcGMO;
     }
 }

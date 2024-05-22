@@ -16,7 +16,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         public subReportCalculoMeses()
         {
             InitializeComponent();
-
+            anio = Convert.ToInt32(p_anios.Value);
             //LoadVacaciones();
         }
 

@@ -131,8 +131,6 @@ namespace LOSA.MigracionACS.Formulas
 
                                                 break;
                                             case 3://Medium Autorization
-
-                                                break;
                                             case 4://Depth With Delta
                                             case 5://Depth Without Delta
                                                 //app_acs_fml_approver_prd
@@ -157,12 +155,8 @@ namespace LOSA.MigracionACS.Formulas
 
                                                 break;
                                             case 3://Medium Autorization
-
-
                                                 break;
                                             case 4://Depth With Delta
-
-                                                break;
                                             case 5://Depth Without Delta
                                                 //app_acs_fml_approver_fin
                                                 approver_type = "FIN";

@@ -294,19 +294,26 @@ namespace LOSA
                         case 4://Depth With Delta
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
+                            tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true; 
                             tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
-                            
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;//TabForecasting
+
                             break;
                         case 5://Depth Without Delta
-                            tabOpciones.SelectedTabPageIndex = 2;//Calidad
-                            tabOpciones.TabPages[1].PageVisible = true;
+                            
+                            //tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;//TabForecasting
                             tabOpciones.TabPages[8].PageVisible = true;
                             tabOpciones.TabPages[9].PageVisible = true;
-                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[10].PageVisible = true;//formulacion
+                            tabOpciones.TabPages[11].PageVisible = true;//Bascula
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
                             
+                            tabOpciones.SelectedTabPageIndex = 12;//Contabilidad
+
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
@@ -5415,7 +5422,9 @@ namespace LOSA
                 switch (idNivel)
                 {
                     case 1://Basic View
+                        break;
                     case 2://Basic No Autorization
+                        break;
                     case 3://Medium Autorization
                         break;
                     case 4://Depth With Delta
@@ -5431,7 +5440,7 @@ namespace LOSA
 
                 if (!accesoprevio)
                 {
-                    if (UsuarioLogeado.ValidarNivelPermisos(97))
+                    if (UsuarioLogeado.ValidarNivelPermisos(99))
                     {
                         frmAprobacionesSalidaMercancia frm = new frmAprobacionesSalidaMercancia(this.UsuarioLogeado);
                         frm.MdiParent = this.MdiParent;

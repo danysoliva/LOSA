@@ -63,7 +63,7 @@ namespace LOSA.Calidad.CertificadoCalidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@LotNumber",lote);
+                cmd.Parameters.AddWithValue("@LotNumber",lote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsCertificado.Certificado_Preview.Clear();
                 da.Fill(dsCertificado.Certificado_Preview);
@@ -90,7 +90,7 @@ namespace LOSA.Calidad.CertificadoCalidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@LotNumber", lote);
+                cmd.Parameters.AddWithValue("@LotNumber", lote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsCertificado.Certificado_PT_D.Clear();
                 da.Fill(dsCertificado.Certificado_PT_D);
@@ -132,15 +132,16 @@ namespace LOSA.Calidad.CertificadoCalidad
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Transaction = transaction;
 
-                    cmd.Parameters.Add("@fecha_analisis", dtCertificado.Rows[0][0].ToString());
-                    cmd.Parameters.Add("@alimento", dtCertificado.Rows[0][1].ToString());
-                    cmd.Parameters.Add("@FFIF", dtCertificado.Rows[0][2].ToString());
-                    cmd.Parameters.Add("@lote_pt", dtCertificado.Rows[0][4].ToString());
-                    cmd.Parameters.Add("@fecha_produccion", dtCertificado.Rows[0][5].ToString());
-                    cmd.Parameters.Add("@fecha_vencimiento", dtCertificado.Rows[0][6].ToString());
-                    cmd.Parameters.Add("@id_pt", lote_pt.id_pt);
-                    cmd.Parameters.Add("@itemcode", lote_pt.CodigoProducto);
-                    cmd.Parameters.Add("@usuario_creador", usuarioLog.UserId);
+                    cmd.Parameters.AddWithValue("@fecha_analisis", dtCertificado.Rows[0][0].ToString());
+                    cmd.Parameters.AddWithValue("@alimento", dtCertificado.Rows[0][1].ToString());
+                    cmd.Parameters.AddWithValue("@FFIF", dtCertificado.Rows[0][2].ToString());
+                    cmd.Parameters.AddWithValue("@lote_pt", dtCertificado.Rows[0][4].ToString());
+                    cmd.Parameters.AddWithValue("@fecha_produccion", dtCertificado.Rows[0][5].ToString());
+                    cmd.Parameters.AddWithValue("@fecha_vencimiento", dtCertificado.Rows[0][6].ToString());
+                    cmd.Parameters.AddWithValue("@id_pt", lote_pt.id_pt);
+                    cmd.Parameters.AddWithValue("@itemcode", lote_pt.CodigoProducto);
+                    cmd.Parameters.AddWithValue("@usuario_creador", usuarioLog.UserId);
+                    cmd.Parameters.AddWithValue("@estatus_gmo", dtCertificado.Rows[0][7].ToString());
 
                     id_inserted = (int)cmd.ExecuteScalar();
                 }
@@ -153,13 +154,13 @@ namespace LOSA.Calidad.CertificadoCalidad
                     cmd2.CommandType = CommandType.StoredProcedure;
                     cmd2.Transaction = transaction;
 
-                    cmd2.Parameters.Add("@id_h", id_inserted);
-                    cmd2.Parameters.Add("@id_parametro", item.id_parametro);
-                    cmd2.Parameters.Add("@parametro", item.parametro);
-                    cmd2.Parameters.Add("@min_plan", item.min_plan);
-                    cmd2.Parameters.Add("@max_plan", item.max_plan);
-                    cmd2.Parameters.Add("@resultado", item.resultaod);
-                    cmd2.Parameters.Add("@especificaciones", item.especificaciones);
+                    cmd2.Parameters.AddWithValue("@id_h", id_inserted);
+                    cmd2.Parameters.AddWithValue("@id_parametro", item.id_parametro);
+                    cmd2.Parameters.AddWithValue("@parametro", item.parametro);
+                    cmd2.Parameters.AddWithValue("@min_plan", item.min_plan);
+                    cmd2.Parameters.AddWithValue("@max_plan", item.max_plan);
+                    cmd2.Parameters.AddWithValue("@resultado", item.resultaod);
+                    cmd2.Parameters.AddWithValue("@especificaciones", item.especificaciones);
 
                     cmd2.ExecuteNonQuery();
                 }
@@ -272,6 +273,17 @@ namespace LOSA.Calidad.CertificadoCalidad
 
                 default:
                     break;
+            }
+        }
+
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsCertificado.Certificado_PreviewRow)gridView.GetFocusedDataRow();
+
+            if (row.Dato != "Estatus de GMO:")
+            {
+                e.Cancel = true;
             }
         }
     }
