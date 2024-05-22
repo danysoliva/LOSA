@@ -29,7 +29,7 @@ namespace LOSA
 {
     public partial class frmMain : Form
     {
-        int IdUser;
+        public int IdUser;
         public frmMain()
         {
             InitializeComponent();
@@ -48,13 +48,13 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            if (Log1.RecuperarRegistro(1067))
+            if (Log1.RecuperarRegistro(1035))
             {
                 Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
             }
             else
             {
-                Log1.Id = 1067;
+                Log1.Id = 1035;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Produccion;
             }
             
@@ -221,11 +221,28 @@ namespace LOSA
         {
             lblVersion.Text = AssemblyVersion;
             string HostName = Dns.GetHostName();
-            if (HostName == "7L12TV3" /*Danys Oliva*/ || HostName == "9SSCBV2" /*Ever Erazo*/|| HostName == "9PG91W2" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/|| HostName == "EUCEDA-PC" || HostName == "6G1SST3")
+            
+            if (HostName == "7L12TV3" /*Danys Oliva*/ || HostName == "9SSCBV2" /*Ever Erazo*/|| HostName == "6G1SST3" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/|| HostName == "EUCEDA-PC" || HostName == "6G1SST3")
             {
                 SaltarLogin.Visible = simpleButton2 .Visible = SaltarLoginPRD.Visible= true;
                 cmdIngresarAdmin.Visible = cmdButtonSaltarLogin.Visible = true;
                 //this.Size = new Size(335, 497);//Grande
+                if (HostName == "7L12TV3" )
+                {
+                    IdUser = 1035;
+                }
+                else if (HostName == "9SSCBV2")
+                {
+                    IdUser = 1137;
+                }
+                else if (HostName == "6G1SST3")
+                {
+                    IdUser = 1058;
+                }
+                else
+                {
+                    IdUser = 1104;
+                }
 
             }
             else
@@ -391,7 +408,7 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            if (Log1.RecuperarRegistro(1035))
+            if (Log1.RecuperarRegistro(IdUser))
             //if (Log1.RecuperarRegistro(1027))
             //if(Log1.RecuperarRegistro(1014))
             {
