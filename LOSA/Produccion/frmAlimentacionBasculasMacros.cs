@@ -150,7 +150,7 @@ namespace LOSA.Produccion
 
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                gridControl1.ExportToXlsx(dialog.FileName);
+                gridControl2.ExportToXlsx(dialog.FileName);
             }
 
         }
@@ -158,6 +158,19 @@ namespace LOSA.Produccion
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)gridControl2.FocusedView;
+            var row = (DSProductos.alimentacion_microsRow)gridview.GetFocusedDataRow();
+
+            if (!string.IsNullOrEmpty(row.lote_mp))
+            {
+                frmRutasTrazabilidad frm = new frmRutasTrazabilidad(row.lote_mp);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.ShowDialog();
+            }
         }
     }
 }

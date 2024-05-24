@@ -29,6 +29,7 @@ namespace LOSA.Calidad.CertificadoCalidad
                     tcFFIF.Text = certificado.FFIF;
                     tcLote.Text = certificado.Lote_PT.ToString();
                     xrUsuarioC.Text = certificado.Nombre_usuario;
+                    tcGMO.Text = certificado.Estatus_gmo;
                 }
             }
             else
@@ -42,7 +43,7 @@ namespace LOSA.Calidad.CertificadoCalidad
                     tcFFIF.Text = certificado.FFIF;
                     tcLote.Text = certificado.Lote_PT.ToString();
                     xrUsuarioC.Text = certificado.Nombre_usuario;
-
+                    tcGMO.Text = certificado.Estatus_gmo;
                 }
             }
 

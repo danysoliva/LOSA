@@ -451,7 +451,7 @@
             this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl1.Manager = this.barManager1;
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(509, 30);
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(488, 30);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // barDockControlTop
@@ -995,7 +995,7 @@
             this.page_comments.Name = "page_comments";
             this.page_comments.PageText = "";
             this.page_comments.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Image;
-            this.page_comments.Size = new System.Drawing.Size(509, 160);
+            this.page_comments.Size = new System.Drawing.Size(488, 142);
             // 
             // grd_comments
             // 
@@ -1004,7 +1004,7 @@
             this.grd_comments.MainView = this.grdv_comments;
             this.grd_comments.MenuManager = this.barManager1;
             this.grd_comments.Name = "grd_comments";
-            this.grd_comments.Size = new System.Drawing.Size(509, 130);
+            this.grd_comments.Size = new System.Drawing.Size(488, 112);
             this.grd_comments.TabIndex = 1;
             this.grd_comments.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_comments});

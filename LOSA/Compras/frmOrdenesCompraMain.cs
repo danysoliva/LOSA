@@ -1264,19 +1264,19 @@ namespace LOSA.Compras
 
             if (string.IsNullOrEmpty(grdTipoOrden.Text))
             {
-                CajaDialogo.Error("Debe seleccionar el tipo de orden de compra!");
+                CajaDialogo.Error("Debe seleccionar el tipo de orden de Compra!");
                 return;
             }
  
             if (string.IsNullOrEmpty(cbxMoneda.Text))
             {
-                CajaDialogo.Error("Debe seleccionar la moneda para la orden de compra!");
+                CajaDialogo.Error("Debe seleccionar la moneda para la orden de Compra!");
                 return;
             }
 
             if (string.IsNullOrEmpty(dtFechaContabilizacion.Text))
             {
-                CajaDialogo.Error("Debe seleccionar la fecha de contabilizacion de la orden de compra!");
+                CajaDialogo.Error("Debe seleccionar la fecha de contabilizacion de la Orden de Compra!");
                 return;
             }
 

@@ -23,6 +23,7 @@ namespace LOSA.Clases
         public DateTime FechaVencimiento { get; set; }
 
         public string Nombre_usuario { get; set; }
+        public string Estatus_gmo { get; set; }
         //public decimal  MinPlan { get; set; }
         //public decimal  MaxPlan { get; set; }
         //public decimal  Resultado { get; set; }
@@ -40,7 +41,7 @@ namespace LOSA.Clases
                 SqlCommand cmd = new SqlCommand("uspGetCertificadoPT_H_ByID", cnx);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@id_h",id_h);
+                cmd.Parameters.AddWithValue("@id_h",id_h);
 
                 cnx.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -58,6 +59,7 @@ namespace LOSA.Clases
                     FechaVencimiento = Convert.ToDateTime( dr["fecha_vencimiento"].ToString());
                     ItemCode = dr["itemcode"].ToString();
                     Nombre_usuario = dr["usuario"].ToString();
+                    Estatus_gmo = dr["estatus_gmo"].ToString();
                     Recuperado = true;
                 }
 
@@ -82,7 +84,7 @@ namespace LOSA.Clases
                 SqlCommand cmd = new SqlCommand("uspGetCertificadoPT_H_ByLote", cnx);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@lote", lote);
+                cmd.Parameters.AddWithValue("@lote", lote);
 
                 cnx.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -100,7 +102,7 @@ namespace LOSA.Clases
                     FechaVencimiento = Convert.ToDateTime(dr["fecha_vencimiento"].ToString());
                     ItemCode = dr["itemcode"].ToString();
                     Nombre_usuario = dr["usuario"].ToString();
-
+                    Estatus_gmo = dr["estatus_gmo"].ToString();
                     Recuperado = true;
                 }
 

@@ -95,6 +95,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             // 
             // colDato
             // 
@@ -114,7 +115,6 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.colResultado.Name = "colResultado";
             this.colResultado.OptionsColumn.AllowMove = false;
             this.colResultado.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.colResultado.OptionsColumn.ReadOnly = true;
             this.colResultado.OptionsFilter.AllowFilter = false;
             this.colResultado.Visible = true;
             this.colResultado.VisibleIndex = 1;

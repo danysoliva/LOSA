@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,9 +24,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>674</ApplicationRevision>
+    <ApplicationRevision>676</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -97,7 +97,7 @@
     <AssemblyOriginatorKeyFile>KEY_COMPRAS.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>58D92D2056CFE14B56A707F83EF92F159340168A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -4852,7 +4852,6 @@
       <DependentUpon>dsControlInv_AMS.xsd</DependentUpon>
     </None>
     <None Include="Key.pfx" />
-    <None Include="KEY_COMPRAS.pfx" />
     <None Include="Key_Compras1.pfx" />
     <None Include="Liquidos\dsLiquidos_.xsc">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
