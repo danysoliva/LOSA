@@ -69,7 +69,8 @@ namespace LOSA.Nir
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frm_cargar_lecturas frm = new frm_cargar_lecturas(UsuarioLogeado);
+            //frm_cargar_lecturas frm = new frm_cargar_lecturas(UsuarioLogeado);
+            frm_cargar_lecturasV2 frm = new frm_cargar_lecturasV2(UsuarioLogeado);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_Data();

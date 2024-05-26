@@ -30,11 +30,11 @@ namespace LOSA.Nir
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_cargar_lecturas));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.btnDescargarPlantilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnupdate = new DevExpress.XtraEditors.SimpleButton();
@@ -61,6 +61,7 @@ namespace LOSA.Nir
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtcomentario = new DevExpress.XtraEditors.MemoEdit();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNIR_PRD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -311,9 +312,9 @@ namespace LOSA.Nir
             // btnEliminarLectura
             // 
             this.btnEliminarLectura.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnEliminarLectura.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminarLectura.Name = "btnEliminarLectura";
             this.btnEliminarLectura.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminarLectura.Click += new System.EventHandler(this.btnEliminarLectura_Click);
@@ -354,11 +355,22 @@ namespace LOSA.Nir
             this.txtcomentario.Size = new System.Drawing.Size(709, 116);
             this.txtcomentario.TabIndex = 14;
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(913, 105);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 119;
+            this.txtVentana.Text = "frm_cargar_lecturas";
+            this.txtVentana.Visible = false;
+            // 
             // frm_cargar_lecturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 741);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.txtcomentario);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.labelControl1);
@@ -406,5 +418,6 @@ namespace LOSA.Nir
         private DevExpress.XtraGrid.Columns.GridColumn col;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEliminarLectura;
         private dsNIR_PRD dsNIR_PRD1;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }
