@@ -30,16 +30,11 @@ namespace LOSA.Nir
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_cargar_lecturasV2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtVentana = new System.Windows.Forms.TextBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnupdate = new DevExpress.XtraEditors.SimpleButton();
@@ -48,9 +43,6 @@ namespace LOSA.Nir
             this.txtcomentario = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dsNIR_PRD1 = new LOSA.Nir.dsNIR_PRD();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grdNirNew = new DevExpress.XtraGrid.GridControl();
             this.btnEliminarLectura = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,6 +61,8 @@ namespace LOSA.Nir
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
+            this.grdNirNew = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAnalysisTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,12 +78,11 @@ namespace LOSA.Nir
             this.col2_Additionalinformation = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNIR_PRD1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdNirNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarLectura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNirNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtVentana
@@ -147,7 +140,7 @@ namespace LOSA.Nir
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(979, 23);
+            this.cmdHome.Location = new System.Drawing.Point(1338, 23);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(142, 41);
             this.cmdHome.TabIndex = 120;
@@ -163,7 +156,7 @@ namespace LOSA.Nir
             this.txtcomentario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcomentario.Properties.Appearance.Options.UseFont = true;
             this.txtcomentario.Properties.MaxLength = 350;
-            this.txtcomentario.Size = new System.Drawing.Size(709, 116);
+            this.txtcomentario.Size = new System.Drawing.Size(1068, 116);
             this.txtcomentario.TabIndex = 127;
             // 
             // labelControl1
@@ -183,83 +176,12 @@ namespace LOSA.Nir
             this.dsNIR_PRD1.DataSetName = "dsNIR_PRD";
             this.dsNIR_PRD1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.FilterPanel.Options.UseFont = true;
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridView1.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.GroupFooter.Options.UseFont = true;
-            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.GroupRow.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.Preview.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colAnalysisTime,
-            this.colProductName,
-            this.colProductCode,
-            this.colSampleNumber,
-            this.colPROTEIN,
-            this.colFAT,
-            this.colFAT_HYDROLYSIS,
-            this.colFAT_NMR,
-            this.colMOISTURE,
-            this.colASH,
-            this.colFIBER,
-            this.colPROTEIN_KOH,
-            this.col2_Additionalinformation});
-            this.gridView1.GridControl = this.grdNirNew;
-            this.gridView1.LevelIndent = 0;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsEditForm.PopupEditFormWidth = 400;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.PreviewIndent = 0;
-            // 
-            // grdNirNew
-            // 
-            this.grdNirNew.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdNirNew.DataMember = "lectura_nir_new";
-            this.grdNirNew.DataSource = this.dsNIR_PRD1;
-            this.grdNirNew.Location = new System.Drawing.Point(0, 162);
-            this.grdNirNew.MainView = this.gridView1;
-            this.grdNirNew.Name = "grdNirNew";
-            this.grdNirNew.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1});
-            this.grdNirNew.Size = new System.Drawing.Size(1120, 144);
-            this.grdNirNew.TabIndex = 128;
-            this.grdNirNew.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.grdNirNew.Visible = false;
-            // 
             // btnEliminarLectura
             // 
             this.btnEliminarLectura.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnEliminarLectura.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminarLectura.Name = "btnEliminarLectura";
             this.btnEliminarLectura.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -425,10 +347,41 @@ namespace LOSA.Nir
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEliminarLectura});
-            this.grd_data.Size = new System.Drawing.Size(1120, 417);
+            this.grd_data.Size = new System.Drawing.Size(1479, 417);
             this.grd_data.TabIndex = 125;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // grdNirNew
+            // 
+            this.grdNirNew.DataMember = "lectura_nir_new";
+            this.grdNirNew.DataSource = this.dsNIR_PRD1;
+            this.grdNirNew.Location = new System.Drawing.Point(0, 288);
+            this.grdNirNew.MainView = this.gridView1;
+            this.grdNirNew.Name = "grdNirNew";
+            this.grdNirNew.Size = new System.Drawing.Size(1479, 200);
+            this.grdNirNew.TabIndex = 128;
+            this.grdNirNew.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colAnalysisTime,
+            this.colProductName,
+            this.colProductCode,
+            this.colSampleNumber,
+            this.colPROTEIN,
+            this.colFAT,
+            this.colFAT_HYDROLYSIS,
+            this.colFAT_NMR,
+            this.colMOISTURE,
+            this.colASH,
+            this.colFIBER,
+            this.colPROTEIN_KOH,
+            this.col2_Additionalinformation});
+            this.gridView1.GridControl = this.grdNirNew;
+            this.gridView1.Name = "gridView1";
             // 
             // colAnalysisTime
             // 
@@ -525,7 +478,7 @@ namespace LOSA.Nir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 741);
+            this.ClientSize = new System.Drawing.Size(1480, 741);
             this.Controls.Add(this.txtcomentario);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtVentana);
@@ -539,12 +492,11 @@ namespace LOSA.Nir
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNIR_PRD1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdNirNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarLectura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNirNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,9 +512,6 @@ namespace LOSA.Nir
         private DevExpress.XtraEditors.MemoEdit txtcomentario;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private dsNIR_PRD dsNIR_PRD1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.GridControl grdNirNew;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEliminarLectura;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private DevExpress.XtraGrid.GridControl grd_data;
@@ -581,6 +530,8 @@ namespace LOSA.Nir
         private DevExpress.XtraGrid.Columns.GridColumn colNombredeProducto;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn colenable;
+        private DevExpress.XtraGrid.GridControl grdNirNew;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colAnalysisTime;
         private DevExpress.XtraGrid.Columns.GridColumn colProductName;
         private DevExpress.XtraGrid.Columns.GridColumn colProductCode;
