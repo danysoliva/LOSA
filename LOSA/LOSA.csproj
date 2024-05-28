@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>676</ApplicationRevision>
+    <ApplicationRevision>677</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -4329,6 +4329,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsNir.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Nir\dsNIR_PRD.cs">
+      <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Nir\dsNIR_PRD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4363,6 +4366,12 @@
     </Compile>
     <Compile Include="Nir\frm_cargar_lecturas.Designer.cs">
       <DependentUpon>frm_cargar_lecturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frm_cargar_lecturasV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frm_cargar_lecturasV2.Designer.cs">
+      <DependentUpon>frm_cargar_lecturasV2.cs</DependentUpon>
     </Compile>
     <Compile Include="PlanMPreque\frmLote.cs">
       <SubType>Form</SubType>
@@ -8617,6 +8626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nir\frm_cargar_lecturas.resx">
       <DependentUpon>frm_cargar_lecturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frm_cargar_lecturasV2.resx">
+      <DependentUpon>frm_cargar_lecturasV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>

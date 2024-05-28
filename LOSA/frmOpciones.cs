@@ -242,12 +242,10 @@ namespace LOSA
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel;
                             tabOpciones.TabPages[12].PageVisible = true;
+                            TabFormulacion.PageVisible = true;
                             break;
                         case 4://Depth With Delta
-                            //tabOpciones.TabPages[0].PageVisible = true;
-                            //tabOpciones.TabPages[1].PageVisible = true;
-                            //tabOpciones.TabPages[2].PageVisible = true;
-                            //tabOpciones.TabPages[3].PageVisible = true;
+
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[5].PageVisible = true;
                             tabOpciones.TabPages[10].PageVisible = true;
@@ -466,16 +464,12 @@ namespace LOSA
 
                             break;
                         case 3://Medium Autorization
-
-                            break;
                         case 4://Depth With Delta
-
-                            break;
                         case 5://Depth Without Delta
 
                             break;
                         default:
-                            tabOpciones.SelectedTabPageIndex = 9;//RRHH
+                            tabOpciones.SelectedTabPageIndex = 9;//Tickets
                             tabOpciones.TabPages[9].PageVisible = true;
                             break;
                     }

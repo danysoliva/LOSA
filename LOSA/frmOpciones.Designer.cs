@@ -460,6 +460,7 @@
             this.nbarAprobacionOrdenesCompra = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarKardexSaldo = new DevExpress.XtraNavBar.NavBarItem();
             this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
+            this.navAprobacionDocumentos = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
@@ -492,7 +493,6 @@
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navAprobacionDocumentos = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1838,6 +1838,7 @@
             this.btnClientesLote.Size = new System.Drawing.Size(199, 59);
             this.btnClientesLote.TabIndex = 33;
             this.btnClientesLote.Text = "Trazabilidad Clientes-Lote";
+            this.btnClientesLote.Visible = false;
             this.btnClientesLote.Click += new System.EventHandler(this.btnClientesLote_Click);
             // 
             // simpleButton32
@@ -6721,6 +6722,21 @@
             this.navListaOC.Name = "navListaOC";
             this.navListaOC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navListaOC_LinkClicked);
             // 
+            // navAprobacionDocumentos
+            // 
+            this.navAprobacionDocumentos.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.Appearance.Options.UseFont = true;
+            this.navAprobacionDocumentos.Appearance.Options.UseTextOptions = true;
+            this.navAprobacionDocumentos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.navAprobacionDocumentos.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.AppearanceHotTracked.Options.UseFont = true;
+            this.navAprobacionDocumentos.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.AppearancePressed.Options.UseFont = true;
+            this.navAprobacionDocumentos.Caption = "Aprobacion Salidas de Mercancia";
+            this.navAprobacionDocumentos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navAprobacionDocumentos.ImageOptions.SvgImage")));
+            this.navAprobacionDocumentos.Name = "navAprobacionDocumentos";
+            this.navAprobacionDocumentos.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navAprobacionDocumentos_LinkClicked);
+            // 
             // navBarItem9
             // 
             this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
@@ -7107,21 +7123,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // navAprobacionDocumentos
-            // 
-            this.navAprobacionDocumentos.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navAprobacionDocumentos.Appearance.Options.UseFont = true;
-            this.navAprobacionDocumentos.Appearance.Options.UseTextOptions = true;
-            this.navAprobacionDocumentos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.navAprobacionDocumentos.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navAprobacionDocumentos.AppearanceHotTracked.Options.UseFont = true;
-            this.navAprobacionDocumentos.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navAprobacionDocumentos.AppearancePressed.Options.UseFont = true;
-            this.navAprobacionDocumentos.Caption = "Aprobacion Salidas de Mercancia";
-            this.navAprobacionDocumentos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navAprobacionDocumentos.ImageOptions.SvgImage")));
-            this.navAprobacionDocumentos.Name = "navAprobacionDocumentos";
-            this.navAprobacionDocumentos.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navAprobacionDocumentos_LinkClicked);
             // 
             // frmOpciones
             // 

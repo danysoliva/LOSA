@@ -76,6 +76,7 @@
             this.colOperador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDUA_DTNA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnmain)).BeginInit();
             this.pnmain.SuspendLayout();
@@ -349,7 +350,8 @@
             this.colFechaFin,
             this.colOperador,
             this.colDiferencia,
-            this.colDUA_DTNA});
+            this.colDUA_DTNA,
+            this.gridColumn1});
             this.grdv_bascula.DetailHeight = 284;
             this.grdv_bascula.GridControl = this.grd_bascula;
             this.grdv_bascula.GroupCount = 1;
@@ -576,6 +578,15 @@
             this.colDUA_DTNA.Visible = true;
             this.colDUA_DTNA.VisibleIndex = 10;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Entarimado";
+            this.gridColumn1.FieldName = "entarimado";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 11;
+            // 
             // TT_reporte_bascula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,5 +667,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNombreBarco;
         private DevExpress.XtraGrid.Columns.GridColumn colorigen;
         private DevExpress.XtraGrid.Columns.GridColumn colDUA_DTNA;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

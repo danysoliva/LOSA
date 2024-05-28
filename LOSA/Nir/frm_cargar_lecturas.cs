@@ -29,6 +29,11 @@ namespace LOSA.Nir
             InitializeComponent();
             UsuarioLogeado = Puser;
             tipo = 0;
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+            else
+                txtVentana.Visible = false;
         }
 
         public frm_cargar_lecturas(UserLogin Puser, int id)
