@@ -357,25 +357,34 @@ namespace LOSA.Compras
         private void reposHistoricoVistaPrevia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)grdOCHistorico.FocusedView;
-
             var row = (dsCompras.ordenes_compras_historicoRow)gridView.GetFocusedDataRow();
 
-            if (!string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || !string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas
+            if (row.DocNum != "0")
             {
-                rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool reportPrint = new ReportPrintTool(report);
-                ActualizarConteoPrint(row.id_h);
-                reportPrint.ShowPreview();
+                if (!string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || !string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas
+                {
+                    rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(row.id_h);
+                    reportPrint.ShowPreview();
+                }
+                else
+                {
+                    rptOrdenCompra report = new rptOrdenCompra(row.id_h);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(row.id_h);
+                    reportPrint.ShowPreview();
+                }
             }
-            else
+            else //==0
             {
-                rptOrdenCompra report = new rptOrdenCompra(row.id_h);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool reportPrint = new ReportPrintTool(report);
-                ActualizarConteoPrint(row.id_h);
-                reportPrint.ShowPreview();
+                CajaDialogo.Error("La Orden de Compra no se a Generado en SAP!");
+                return;
             }
+
+            
         }
 
         private void reposHistoDirecta_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -383,22 +392,31 @@ namespace LOSA.Compras
             var gridView = (GridView)grdOCHistorico.FocusedView;
             var row = (dsCompras.ordenes_compras_historicoRow)gridView.GetFocusedDataRow();
 
-            if (!string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || !string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas
+            if (row.DocNum != "0")
             {
-                rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool reportPrint = new ReportPrintTool(report);
-                ActualizarConteoPrint(row.id_h);
-                reportPrint.Print();
+                if (!string.IsNullOrWhiteSpace(row.U_AquaExoneracion) || !string.IsNullOrEmpty(row.U_AquaExoneracion)) //Solo exoneradas
+                {
+                    rptOrdenCompraExo report = new rptOrdenCompraExo(row.id_h);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(row.id_h);
+                    reportPrint.Print();
+                }
+                else
+                {
+                    rptOrdenCompra report = new rptOrdenCompra(row.id_h);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool reportPrint = new ReportPrintTool(report);
+                    ActualizarConteoPrint(row.id_h);
+                    reportPrint.Print();
+                }
             }
-            else
+            else //==0
             {
-                rptOrdenCompra report = new rptOrdenCompra(row.id_h);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool reportPrint = new ReportPrintTool(report);
-                ActualizarConteoPrint(row.id_h);
-                reportPrint.Print();
+                CajaDialogo.Error("La Orden de Compra no se a Generado en SAP!");
+                return;
             }
+
         }
 
         private void refreshHistorico_Click(object sender, EventArgs e)
