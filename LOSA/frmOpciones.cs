@@ -5027,9 +5027,46 @@ namespace LOSA
 
         private void nbRRHH13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmVacacionesHome frm = new frmVacacionesHome();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            //frmVacacionesHome frm = new frmVacacionesHome();
+            //frm.MdiParent = this.MdiParent;
+            //frm.Show();
+
+
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmVacacionesHome frm = new frmVacacionesHome(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(100))
+                {
+                    frmVacacionesHome frm = new frmVacacionesHome(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #100");
+                }
+            }
         }
 
         private void cmdReporteSilosPRD_Click(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,17 @@ namespace LOSA.MigracionACS.RRHH.Vacaciones
 {
     public partial class frmVacacionesHome : DevExpress.XtraEditors.XtraForm
     {
+        UserLogin UsuarioLogeado;
         public frmVacacionesHome()
         {
             InitializeComponent();
+            LoadDatos();
+        }
+
+        public frmVacacionesHome(UserLogin pUsuario)
+        {
+            InitializeComponent();
+            UsuarioLogeado = pUsuario;
             LoadDatos();
         }
 
