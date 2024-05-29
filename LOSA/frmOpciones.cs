@@ -111,11 +111,14 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Montacarga:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = false;//Tab de reportes
                     break;
                 case GrupoUser.GrupoUsuario.Logistica:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = false;//Tab de reportes
+
                     int idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
                     {
@@ -127,14 +130,17 @@ namespace LOSA
                             break;
                         case 3://Medium Autorization
                             tabOpciones.TabPages[9].PageVisible = true;
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 4://Depth With Delta
                             tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -147,6 +153,7 @@ namespace LOSA
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = false;//Tab de reportes
                     switch (idNivel)
                     {
                         case 1://Basic View
@@ -155,17 +162,21 @@ namespace LOSA
                             break;
                         case 2://Basic No Autorization
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 3://Medium Autorization
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 4://Depth With Delta
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                             tabOpciones.TabPages[i].PageVisible = true;
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                             tabOpciones.TabPages[i].PageVisible = true;
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -177,6 +188,7 @@ namespace LOSA
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
                     {
@@ -215,6 +227,7 @@ namespace LOSA
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     TabOpcionesProduccion.SelectedTabPageIndex = 2;
+                    tabOpciones.TabPages[13].PageVisible = false;//Tab de reportes
                     //tabOpciones.TabPages[11].PageVisible = true;
                     break;
                 case GrupoUser.GrupoUsuario.ProduccionV2:
@@ -224,6 +237,7 @@ namespace LOSA
                     tabOpciones.TabPages[i - 1].PageVisible = true;
                     tabOpciones.TabPages[11].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = 12;//TabCompras
+                    tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
 
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
@@ -242,10 +256,10 @@ namespace LOSA
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel;
                             tabOpciones.TabPages[12].PageVisible = true;
-                            TabFormulacion.PageVisible = true;
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 4://Depth With Delta
-
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[5].PageVisible = true;
                             tabOpciones.TabPages[10].PageVisible = true;
@@ -253,6 +267,7 @@ namespace LOSA
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.TabPages[12].PageVisible = true;
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -268,6 +283,7 @@ namespace LOSA
                     int idNivel2 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     tabOpciones.TabPages[11].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = 8;//Contabilidad
+                    tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                     switch (idNivel2)
                     {
                         case 1://Basic View
@@ -298,7 +314,7 @@ namespace LOSA
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;//TabForecasting
-
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 5://Depth Without Delta
                             
@@ -309,7 +325,7 @@ namespace LOSA
                             tabOpciones.TabPages[10].PageVisible = true;//formulacion
                             tabOpciones.TabPages[11].PageVisible = true;//Bascula
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
-                            
+                            tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             tabOpciones.SelectedTabPageIndex = 12;//Contabilidad
 
                             break;
@@ -325,6 +341,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.RRHH:
                     int idNivel3 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                     switch (idNivel3)
                     {
                         case 1://Basic View
@@ -366,6 +383,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Forecasting:
                     int idNivel4 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                     switch (idNivel4)
                     {
                         case 1://Basic View
@@ -426,6 +444,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Bascula:
                     int idNivel10 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = false;//Tab de reportes
                     switch (idNivel10)
                     {
                         case 1://Basic View
@@ -454,6 +473,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Formulacion:
                     int idNivel11 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     tabOpciones.TabPages[11].PageVisible = true;
+                    tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                     switch (idNivel11)
                     {
                         case 1://Basic View
@@ -476,6 +496,7 @@ namespace LOSA
                     break;
 
                 case GrupoUser.GrupoUsuario.Tickets:
+                    tabOpciones.TabPages[13].PageVisible = false;//Tab de reportes
                     int idNivel12 = pUser.idNivelAcceso(pUser.Id, 7);//ALOSY
                     switch (idNivel12)
                     {
@@ -496,6 +517,8 @@ namespace LOSA
 
                 case GrupoUser.GrupoUsuario.Compras:
                     int idNivel13 = pUser.idNivelAcceso(pUser.Id, 7);
+                    TabReportes_.PageVisible = false;
+                    tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                     switch (idNivel13)
                     {
                         case 1://Basic View
@@ -510,7 +533,7 @@ namespace LOSA
                             tabOpciones.TabPages[12].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
-
+                            TabReportes_.PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 11;//Tickets

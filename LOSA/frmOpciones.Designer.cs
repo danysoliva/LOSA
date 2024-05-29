@@ -493,6 +493,7 @@
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.TabReportes_ = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -574,7 +575,8 @@
             this.TabBascula,
             this.TabFormulacion,
             this.TabTickets,
-            this.TabCompras});
+            this.TabCompras,
+            this.TabReportes_});
             // 
             // TabMontacarga
             // 
@@ -7125,6 +7127,13 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // TabReportes_
+            // 
+            this.TabReportes_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabReportes_.ImageOptions.Image")));
+            this.TabReportes_.Name = "TabReportes_";
+            this.TabReportes_.Size = new System.Drawing.Size(835, 480);
+            this.TabReportes_.Text = "Reportes";
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -7644,5 +7653,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarKardexSaldo;
         private DevExpress.XtraEditors.SimpleButton simpleButton76;
         private DevExpress.XtraNavBar.NavBarItem navAprobacionDocumentos;
+        private DevExpress.XtraTab.XtraTabPage TabReportes_;
     }
 }
