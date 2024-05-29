@@ -46,6 +46,7 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl_Lines = new DevExpress.XtraTab.XtraTabControl();
@@ -174,7 +175,6 @@
             this.txtOrderIdBalanceMasa = new DevExpress.XtraEditors.TextEdit();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -385,6 +385,16 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(970, 455);
             this.xtraTabPage1.Text = "Por Orden de Fabricación";
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(630, 1);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 117;
+            this.txtVentana.Text = "IntakeBatchViewerFull";
+            this.txtVentana.Visible = false;
+            // 
             // simpleButton3
             // 
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
@@ -413,7 +423,7 @@
             this.xtraTabControl_Lines.Location = new System.Drawing.Point(1, 104);
             this.xtraTabControl_Lines.Name = "xtraTabControl_Lines";
             this.xtraTabControl_Lines.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl_Lines.Size = new System.Drawing.Size(924, 348);
+            this.xtraTabControl_Lines.Size = new System.Drawing.Size(966, 348);
             this.xtraTabControl_Lines.TabIndex = 82;
             this.xtraTabControl_Lines.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -424,7 +434,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.gridControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(922, 323);
+            this.xtraTabPage3.Size = new System.Drawing.Size(964, 323);
             this.xtraTabPage3.Text = "Resumen por Batch";
             // 
             // gridControl1
@@ -436,7 +446,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(922, 323);
+            this.gridControl1.Size = new System.Drawing.Size(964, 323);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -616,7 +626,7 @@
             // 
             this.xtraTabPage4.Controls.Add(this.gridControl2);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(922, 323);
+            this.xtraTabPage4.Size = new System.Drawing.Size(964, 323);
             this.xtraTabPage4.Text = "Resumen por MP";
             // 
             // gridControl2
@@ -628,7 +638,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(922, 323);
+            this.gridControl2.Size = new System.Drawing.Size(964, 323);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -804,7 +814,7 @@
             // 
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(922, 323);
+            this.xtraTabPage5.Size = new System.Drawing.Size(964, 323);
             this.xtraTabPage5.Text = "Balance de Masa";
             // 
             // simpleButton1
@@ -1051,7 +1061,7 @@
             // 
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(745, 30);
+            this.simpleButton4.Location = new System.Drawing.Point(795, 30);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(83, 41);
             this.simpleButton4.TabIndex = 106;
@@ -1063,7 +1073,7 @@
             // 
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton5.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
-            this.simpleButton5.Location = new System.Drawing.Point(834, 30);
+            this.simpleButton5.Location = new System.Drawing.Point(884, 30);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(83, 41);
             this.simpleButton5.TabIndex = 105;
@@ -1081,7 +1091,7 @@
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.MenuManager = this.barManager1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(924, 375);
+            this.gridControl3.Size = new System.Drawing.Size(967, 375);
             this.gridControl3.TabIndex = 104;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1757,16 +1767,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtVentana
-            // 
-            this.txtVentana.Location = new System.Drawing.Point(630, 1);
-            this.txtVentana.Name = "txtVentana";
-            this.txtVentana.ReadOnly = true;
-            this.txtVentana.Size = new System.Drawing.Size(196, 21);
-            this.txtVentana.TabIndex = 117;
-            this.txtVentana.Text = "IntakeBatchViewerFull";
-            this.txtVentana.Visible = false;
             // 
             // IntakeBatchViewerFull
             // 
