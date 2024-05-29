@@ -94,7 +94,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Key_Compras1.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>KEY_COMPRAS.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>

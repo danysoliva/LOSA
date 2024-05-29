@@ -5180,6 +5180,7 @@
             this.nbRRHH9.Caption = "Saldo Vacaciones";
             this.nbRRHH9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("nbRRHH9.ImageOptions.SvgImage")));
             this.nbRRHH9.Name = "nbRRHH9";
+            this.nbRRHH9.Visible = false;
             this.nbRRHH9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbRRHH9_LinkClicked);
             // 
             // nbRRHH10
