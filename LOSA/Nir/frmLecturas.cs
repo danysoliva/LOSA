@@ -69,8 +69,8 @@ namespace LOSA.Nir
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frm_cargar_lecturas frm = new frm_cargar_lecturas(UsuarioLogeado);
-            //frm_cargar_lecturasV2 frm = new frm_cargar_lecturasV2(UsuarioLogeado);
+            //frm_cargar_lecturas frm = new frm_cargar_lecturas(UsuarioLogeado);
+            frm_cargar_lecturasV2 frm = new frm_cargar_lecturasV2(UsuarioLogeado);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_Data();
@@ -83,7 +83,8 @@ namespace LOSA.Nir
             {
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsNir.header_nirRow)gridView.GetFocusedDataRow();
-                frm_cargar_lecturas frm = new frm_cargar_lecturas(UsuarioLogeado, row.id);
+                //frm_cargar_lecturas frm = new frm_cargar_lecturas(UsuarioLogeado, row.id);
+                frm_cargar_lecturasV2 frm = new frm_cargar_lecturasV2(UsuarioLogeado, row.id);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     load_Data();
@@ -91,7 +92,7 @@ namespace LOSA.Nir
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 

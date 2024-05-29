@@ -178,7 +178,7 @@ namespace LOSA.MigracionACS.Formulas
                                 {
                                     //app_acs_fml_approver_prd
                                     approver_type = "PRD";
-                                    //count++;
+                                    count++;
                                 }
 
                                 //foreach (DataRow row in UserGroups.Rows)
