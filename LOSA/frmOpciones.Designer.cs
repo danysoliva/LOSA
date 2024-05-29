@@ -492,11 +492,11 @@
             this.navBarItem116 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
             this.TabReportes_ = new DevExpress.XtraTab.XtraTabPage();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.navBarControl7 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbButtonReporteUnificadoConsumo = new DevExpress.XtraNavBar.NavBarItem();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -535,8 +535,8 @@
             this.TabCompras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).BeginInit();
             this.TabReportes_.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -7120,6 +7120,44 @@
             this.TabReportes_.Size = new System.Drawing.Size(835, 480);
             this.TabReportes_.Text = "Reportes";
             // 
+            // navBarControl7
+            // 
+            this.navBarControl7.ActiveGroup = this.navBarGroup3;
+            this.navBarControl7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.navBarControl7.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGroup3});
+            this.navBarControl7.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.nbButtonReporteUnificadoConsumo});
+            this.navBarControl7.Location = new System.Drawing.Point(0, 0);
+            this.navBarControl7.Name = "navBarControl7";
+            this.navBarControl7.OptionsNavPane.ExpandedWidth = 334;
+            this.navBarControl7.Size = new System.Drawing.Size(334, 480);
+            this.navBarControl7.TabIndex = 56;
+            this.navBarControl7.Text = "navBarControl7";
+            // 
+            // navBarGroup3
+            // 
+            this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup3.Appearance.Options.UseFont = true;
+            this.navBarGroup3.Caption = "Consumo MP";
+            this.navBarGroup3.Expanded = true;
+            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbButtonReporteUnificadoConsumo)});
+            this.navBarGroup3.Name = "navBarGroup3";
+            // 
+            // nbButtonReporteUnificadoConsumo
+            // 
+            this.nbButtonReporteUnificadoConsumo.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbButtonReporteUnificadoConsumo.Appearance.Options.UseFont = true;
+            this.nbButtonReporteUnificadoConsumo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbButtonReporteUnificadoConsumo.AppearanceHotTracked.Options.UseFont = true;
+            this.nbButtonReporteUnificadoConsumo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbButtonReporteUnificadoConsumo.AppearancePressed.Options.UseFont = true;
+            this.nbButtonReporteUnificadoConsumo.Caption = "Unificado consumo MP Consola";
+            this.nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem1.ImageOptions.SvgImage")));
+            this.nbButtonReporteUnificadoConsumo.Name = "nbButtonReporteUnificadoConsumo";
+            this.nbButtonReporteUnificadoConsumo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbButtonReporteUnificadoConsumo_LinkClicked);
+            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -7139,43 +7177,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // navBarControl7
-            // 
-            this.navBarControl7.ActiveGroup = this.navBarGroup3;
-            this.navBarControl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl7.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup3});
-            this.navBarControl7.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.navBarItem1});
-            this.navBarControl7.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl7.Name = "navBarControl7";
-            this.navBarControl7.OptionsNavPane.ExpandedWidth = 334;
-            this.navBarControl7.Size = new System.Drawing.Size(334, 480);
-            this.navBarControl7.TabIndex = 56;
-            this.navBarControl7.Text = "navBarControl7";
-            // 
-            // navBarGroup3
-            // 
-            this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup3.Appearance.Options.UseFont = true;
-            this.navBarGroup3.Caption = "General";
-            this.navBarGroup3.Expanded = true;
-            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
-            this.navBarGroup3.Name = "navBarGroup3";
-            // 
-            // navBarItem1
-            // 
-            this.navBarItem1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem1.Appearance.Options.UseFont = true;
-            this.navBarItem1.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem1.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem1.AppearancePressed.Options.UseFont = true;
-            this.navBarItem1.Caption = "Mantenimiento Empleado";
-            this.navBarItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem1.ImageOptions.SvgImage")));
-            this.navBarItem1.Name = "navBarItem1";
             // 
             // frmOpciones
             // 
@@ -7228,8 +7229,8 @@
             this.TabCompras.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).EndInit();
             this.TabReportes_.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -7701,6 +7702,6 @@
         private DevExpress.XtraTab.XtraTabPage TabReportes_;
         private DevExpress.XtraNavBar.NavBarControl navBarControl7;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem nbButtonReporteUnificadoConsumo;
     }
 }

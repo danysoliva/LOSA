@@ -88,6 +88,7 @@ using AMS.Compras.ControlInv;
 using System.ComponentModel;
 using LOSA.FromAMS;
 using LOSA.MigracionACS.SAP;
+using LOSA.Reportes.ConsumosMateriaPrima;
 
 namespace LOSA
 {
@@ -5512,5 +5513,55 @@ namespace LOSA
 
             }
         }
+
+        private void nbButtonReporteUnificadoConsumo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        frmReporteUnificadoConsumosConsola frm = new frmReporteUnificadoConsumosConsola(this.UsuarioLogeado);
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!accesoprevio)
+                {
+                    if (UsuarioLogeado.ValidarNivelPermisos(101))
+                    {
+                        frmReporteUnificadoConsumosConsola frm = new frmReporteUnificadoConsumosConsola(this.UsuarioLogeado);
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("No tiene privilegios para esta función! Permiso requerido #101");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+
+
+
     }
 }

@@ -5935,6 +5935,12 @@
     <Compile Include="RecuentoInventario\frmReporteInvPorLoteA_LaFecha.Designer.cs">
       <DependentUpon>frmReporteInvPorLoteA_LaFecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ConsumosMateriaPrima\frmReporteUnificadoConsumosConsola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ConsumosMateriaPrima\frmReporteUnificadoConsumosConsola.Designer.cs">
+      <DependentUpon>frmReporteUnificadoConsumosConsola.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dsReportes.cs">
       <DependentUpon>dsReportes.xsd</DependentUpon>
     </Compile>
