@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDatosReportesConsumosMP" targetNamespace="http://tempuri.org/dsDatosReportesConsumosMP.xsd" xmlns:mstns="http://tempuri.org/dsDatosReportesConsumosMP.xsd" xmlns="http://tempuri.org/dsDatosReportesConsumosMP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDatosReportesConsumosMP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsDatosReportesConsumosMP" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDatosReportesConsumosMP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Resumen_unificado_consumoMP" msprop:Generator_RowClassName="Resumen_unificado_consumoMPRow" msprop:Generator_RowEvHandlerName="Resumen_unificado_consumoMPRowChangeEventHandler" msprop:Generator_RowDeletedName="Resumen_unificado_consumoMPRowDeleted" msprop:Generator_RowDeletingName="Resumen_unificado_consumoMPRowDeleting" msprop:Generator_RowEvArgName="Resumen_unificado_consumoMPRowChangeEvent" msprop:Generator_TablePropName="Resumen_unificado_consumoMP" msprop:Generator_RowChangedName="Resumen_unificado_consumoMPRowChanged" msprop:Generator_UserTableName="Resumen_unificado_consumoMP" msprop:Generator_RowChangingName="Resumen_unificado_consumoMPRowChanging" msprop:Generator_TableClassName="Resumen_unificado_consumoMPDataTable" msprop:Generator_TableVarName="tableResumen_unificado_consumoMP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="code_sap" msdata:Caption="ItemCode" msprop:Generator_UserColumnName="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="rw_id" msprop:Generator_UserColumnName="rw_id" msprop:Generator_ColumnPropNameInTable="rw_idColumn" msprop:Generator_ColumnPropNameInRow="rw_id" msprop:Generator_ColumnVarNameInTable="columnrw_id" type="xs:int" minOccurs="0" />
+              <xs:element name="nc_id" msprop:Generator_UserColumnName="nc_id" msprop:Generator_ColumnPropNameInTable="nc_idColumn" msprop:Generator_ColumnPropNameInRow="nc_id" msprop:Generator_ColumnVarNameInTable="columnnc_id" type="xs:int" minOccurs="0" />
+              <xs:element name="material_type" msdata:Caption="Tipo MP" msprop:Generator_UserColumnName="material_type" msprop:Generator_ColumnPropNameInTable="material_typeColumn" msprop:Generator_ColumnPropNameInRow="material_type" msprop:Generator_ColumnVarNameInTable="columnmaterial_type" type="xs:string" minOccurs="0" />
+              <xs:element name="material_name" msdata:Caption="ItemName" msprop:Generator_UserColumnName="material_name" msprop:Generator_ColumnPropNameInTable="material_nameColumn" msprop:Generator_ColumnPropNameInRow="material_name" msprop:Generator_ColumnVarNameInTable="columnmaterial_name" type="xs:string" minOccurs="0" />
+              <xs:element name="aplicado_en_mezcla" msdata:Caption="Kg Aplicado Mezcla" msprop:Generator_UserColumnName="aplicado_en_mezcla" msprop:Generator_ColumnPropNameInTable="aplicado_en_mezclaColumn" msprop:Generator_ColumnPropNameInRow="aplicado_en_mezcla" msprop:Generator_ColumnVarNameInTable="columnaplicado_en_mezcla" type="xs:decimal" minOccurs="0" />
+              <xs:element name="aplicado_en_couter" msdata:Caption="Kg Aplicado Post Pellet" msprop:Generator_UserColumnName="aplicado_en_couter" msprop:Generator_ColumnPropNameInTable="aplicado_en_couterColumn" msprop:Generator_ColumnPropNameInRow="aplicado_en_couter" msprop:Generator_ColumnVarNameInTable="columnaplicado_en_couter" type="xs:decimal" minOccurs="0" />
+              <xs:element name="aplicado_teorico" msdata:Caption="Kg Aplicado Teórico" msprop:Generator_UserColumnName="aplicado_teorico" msprop:Generator_ColumnPropNameInTable="aplicado_teoricoColumn" msprop:Generator_ColumnPropNameInRow="aplicado_teorico" msprop:Generator_ColumnVarNameInTable="columnaplicado_teorico" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_consumo" msdata:Caption="Kg Total Consumo" msprop:Generator_UserColumnName="total_consumo" msprop:Generator_ColumnPropNameInTable="total_consumoColumn" msprop:Generator_ColumnPropNameInRow="total_consumo" msprop:Generator_ColumnVarNameInTable="columntotal_consumo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="row_num" msdata:Caption="# Linea" msprop:Generator_ColumnPropNameInRow="row_num" msprop:Generator_ColumnPropNameInTable="row_numColumn" msprop:Generator_ColumnVarNameInTable="columnrow_num" msprop:Generator_UserColumnName="row_num" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

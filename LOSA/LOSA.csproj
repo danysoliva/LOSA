@@ -5935,6 +5935,11 @@
     <Compile Include="RecuentoInventario\frmReporteInvPorLoteA_LaFecha.Designer.cs">
       <DependentUpon>frmReporteInvPorLoteA_LaFecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ConsumosMateriaPrima\dsDatosReportesConsumosMP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDatosReportesConsumosMP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ConsumosMateriaPrima\frmReporteUnificadoConsumosConsola.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8920,6 +8925,9 @@
     <EmbeddedResource Include="RecuentoInventario\frmReporteInvPorLoteA_LaFecha.resx">
       <DependentUpon>frmReporteInvPorLoteA_LaFecha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ConsumosMateriaPrima\frmReporteUnificadoConsumosConsola.resx">
+      <DependentUpon>frmReporteUnificadoConsumosConsola.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmControlIngreso.resx">
       <DependentUpon>frmControlIngreso.cs</DependentUpon>
     </EmbeddedResource>
@@ -9521,6 +9529,17 @@
     </None>
     <None Include="RecuentoInventario\dsReportesRecuentosINV.xss">
       <DependentUpon>dsReportesRecuentosINV.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ConsumosMateriaPrima\dsDatosReportesConsumosMP.xsc">
+      <DependentUpon>dsDatosReportesConsumosMP.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ConsumosMateriaPrima\dsDatosReportesConsumosMP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDatosReportesConsumosMP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ConsumosMateriaPrima\dsDatosReportesConsumosMP.xss">
+      <DependentUpon>dsDatosReportesConsumosMP.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dsReportes.xsc">
       <DependentUpon>dsReportes.xsd</DependentUpon>
