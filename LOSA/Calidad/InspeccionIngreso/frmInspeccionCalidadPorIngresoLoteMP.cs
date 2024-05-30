@@ -2445,6 +2445,14 @@ namespace LOSA.Calidad
 
             try
             {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_delete_crieterio_trazabilidad", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", row.id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
                 gridView1.DeleteRow(gridView1.FocusedRowHandle);
                 dsMantenimientoC.AcceptChanges();
             }

@@ -10122,6 +10122,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnporce_tipo;
             
+            private global::System.Data.DataColumn columnid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public info_adicional_marinoDataTable() {
@@ -10229,6 +10231,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10264,7 +10274,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public info_adicional_marinoRow Addinfo_adicional_marinoRow(int id_especio, int id_zona_pesca, string planta_senasa, decimal sustentable, int pais_origen, string fishsource, string IUCN, int tipo, decimal porce_tipo) {
+            public info_adicional_marinoRow Addinfo_adicional_marinoRow(int id_especio, int id_zona_pesca, string planta_senasa, decimal sustentable, int pais_origen, string fishsource, string IUCN, int tipo, decimal porce_tipo, long id) {
                 info_adicional_marinoRow rowinfo_adicional_marinoRow = ((info_adicional_marinoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_especio,
@@ -10275,7 +10285,8 @@ namespace LOSA.Calidad {
                         fishsource,
                         IUCN,
                         tipo,
-                        porce_tipo};
+                        porce_tipo,
+                        id};
                 rowinfo_adicional_marinoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowinfo_adicional_marinoRow);
                 return rowinfo_adicional_marinoRow;
@@ -10307,6 +10318,7 @@ namespace LOSA.Calidad {
                 this.columnIUCN = base.Columns["IUCN"];
                 this.columntipo = base.Columns["tipo"];
                 this.columnporce_tipo = base.Columns["porce_tipo"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10330,6 +10342,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columntipo);
                 this.columnporce_tipo = new global::System.Data.DataColumn("porce_tipo", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnporce_tipo);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14616,6 +14630,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long id {
+                get {
+                    try {
+                        return ((long)(this[this.tableinfo_adicional_marino.idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'info_adicional_marino\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinfo_adicional_marino.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_especioNull() {
                 return this.IsNull(this.tableinfo_adicional_marino.id_especioColumn);
             }
@@ -14720,6 +14750,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setporce_tipoNull() {
                 this[this.tableinfo_adicional_marino.porce_tipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidNull() {
+                return this.IsNull(this.tableinfo_adicional_marino.idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidNull() {
+                this[this.tableinfo_adicional_marino.idColumn] = global::System.Convert.DBNull;
             }
         }
         
