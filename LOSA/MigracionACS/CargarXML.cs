@@ -299,7 +299,7 @@ namespace LOSA.MigracionACS
                 //cmd.Parameters["@lcl_name"].Value = FormName + " - " + dp.Now().ToString("MMMM yyyy");
                 cmd.Parameters["@lcl_loaded_by"].Value = ActiveUserCode;
                 cmd.Parameters["@lcl_last_mod_by"].Value = ActiveUserCode;
-                cmd.Parameters["@status"].Value = 35;
+                cmd.Parameters["@status"].Value = 30;
                 cmd.Parameters["@copy_number"].Value = 0;
                 cmd.Parameters["@approve_prod"].Value = DBNull.Value;
                 cmd.Parameters["@aprove_fin"].Value = DBNull.Value;

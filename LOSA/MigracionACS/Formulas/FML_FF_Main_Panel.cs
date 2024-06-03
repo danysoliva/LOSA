@@ -111,7 +111,6 @@ namespace LOSA.MigracionACS.Formulas
                             {
                                 string approver_type = null;
                                 int count = 0;
-
                                 
                                 switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
                                 {
