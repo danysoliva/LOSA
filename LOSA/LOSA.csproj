@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>682</ApplicationRevision>
+    <ApplicationRevision>683</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2629,6 +2629,12 @@
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Main_Panel.designer.cs">
       <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_PanelV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_PanelV2.Designer.cs">
+      <DependentUpon>FML_FF_Main_PanelV2.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Select.cs">
       <SubType>Form</SubType>
@@ -7881,6 +7887,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Main_Panel.resx">
       <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Main_PanelV2.resx">
+      <DependentUpon>FML_FF_Main_PanelV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Select.resx">
       <DependentUpon>FML_FF_Select.cs</DependentUpon>

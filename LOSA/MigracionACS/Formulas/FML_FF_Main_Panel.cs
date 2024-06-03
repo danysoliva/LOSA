@@ -172,28 +172,7 @@ namespace LOSA.MigracionACS.Formulas
                                     default:
                                         break;
                                 }
-
-
-                                if (UsuarioLogeado.ValidarNivelPermisos(92))
-                                {
-                                    //app_acs_fml_approver_prd
-                                    approver_type = "PRD";
-                                    count++;
-                                }
-
-                                //foreach (DataRow row in UserGroups.Rows)
-                                //{
-                                //    if (row["GroupName"].ToString().Trim() == "app_acs_fml_approver_fin")
-                                //    {
-                                //        approver_type = "FIN";
-                                //        count++;
-                                //    }
-                                //    else if (row["GroupName"].ToString().Trim() == "app_acs_fml_approver_prd")
-                                //    {
-                                //        approver_type = "PRD";
-                                //        count++;
-                                //    }
-                                //}
+    
                                 if (count == 1)
                                 {
                                     if (!fmop.ext_formula_exist_approve(int.Parse(row2["id"].ToString()), approver_type))
