@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>684</ApplicationRevision>
+    <ApplicationRevision>685</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2778,6 +2778,29 @@
     <Compile Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.designer.cs">
       <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\MP\DSMP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_MnY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_MnY.Designer.cs">
+      <DependentUpon>MP_MnY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto.Designer.cs">
+      <DependentUpon>MP_UltimoCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto_Prompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto_Prompt.Designer.cs">
+      <DependentUpon>MP_UltimoCosto_Prompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\MP\SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -5109,6 +5132,17 @@
     </None>
     <None Include="MigracionACS\IT\dsSolicitudes.xss">
       <DependentUpon>dsSolicitudes.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\MP\DSMP.xsc">
+      <DependentUpon>DSMP.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\MP\DSMP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\MP\DSMP.xss">
+      <DependentUpon>DSMP.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\OIL\dsAceites.xsc">
       <DependentUpon>dsAceites.xsd</DependentUpon>
@@ -7950,6 +7984,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.resx">
       <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_MnY.resx">
+      <DependentUpon>MP_MnY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_UltimoCosto.resx">
+      <DependentUpon>MP_UltimoCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_UltimoCosto_Prompt.resx">
+      <DependentUpon>MP_UltimoCosto_Prompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\MP\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>

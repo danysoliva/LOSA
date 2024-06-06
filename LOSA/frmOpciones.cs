@@ -89,6 +89,7 @@ using System.ComponentModel;
 using LOSA.FromAMS;
 using LOSA.MigracionACS.SAP;
 using LOSA.Reportes.ConsumosMateriaPrima;
+using ACS.MP;
 
 namespace LOSA
 {
@@ -309,12 +310,12 @@ namespace LOSA
                         case 4://Depth With Delta
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
+                            tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;//TabForecasting
                             tabOpciones.TabPages[8].PageVisible = true; 
                             tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
-                            tabOpciones.TabPages[1].PageVisible = true;
-                            tabOpciones.TabPages[7].PageVisible = true;//TabForecasting
                             tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
                         case 5://Depth Without Delta
@@ -5562,8 +5563,11 @@ namespace LOSA
             }
         }
 
-
-
-
+        private void btnUltimoCostoMP_Click(object sender, EventArgs e)
+        {
+            MP_UltimoCosto mp = new MP_UltimoCosto();
+            mp.MdiParent = this.MdiParent;
+            mp.Show();
+        }
     }
 }

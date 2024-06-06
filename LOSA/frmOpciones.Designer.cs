@@ -497,6 +497,7 @@
             this.nbButtonReporteUnificadoConsumo = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.btnUltimoCostoMP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -5652,6 +5653,7 @@
             // 
             // TabContabilidad
             // 
+            this.TabContabilidad.Controls.Add(this.btnUltimoCostoMP);
             this.TabContabilidad.Controls.Add(this.simpleButton76);
             this.TabContabilidad.Controls.Add(this.btnSolicitudDespachoConta);
             this.TabContabilidad.Controls.Add(this.btn_ExoneracionAQ);
@@ -7154,7 +7156,7 @@
             this.nbButtonReporteUnificadoConsumo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbButtonReporteUnificadoConsumo.AppearancePressed.Options.UseFont = true;
             this.nbButtonReporteUnificadoConsumo.Caption = "Unificado consumo MP Consola";
-            this.nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem1.ImageOptions.SvgImage")));
+            this.nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage")));
             this.nbButtonReporteUnificadoConsumo.Name = "nbButtonReporteUnificadoConsumo";
             this.nbButtonReporteUnificadoConsumo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbButtonReporteUnificadoConsumo_LinkClicked);
             // 
@@ -7177,6 +7179,19 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
+            // 
+            // btnUltimoCostoMP
+            // 
+            this.btnUltimoCostoMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimoCostoMP.Appearance.Options.UseFont = true;
+            this.btnUltimoCostoMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnUltimoCostoMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton77.ImageOptions.SvgImage")));
+            this.btnUltimoCostoMP.Location = new System.Drawing.Point(643, 278);
+            this.btnUltimoCostoMP.Name = "btnUltimoCostoMP";
+            this.btnUltimoCostoMP.Size = new System.Drawing.Size(182, 56);
+            this.btnUltimoCostoMP.TabIndex = 57;
+            this.btnUltimoCostoMP.Text = "Costo Actual MP";
+            this.btnUltimoCostoMP.Click += new System.EventHandler(this.btnUltimoCostoMP_Click);
             // 
             // frmOpciones
             // 
@@ -7703,5 +7718,6 @@
         private DevExpress.XtraNavBar.NavBarControl navBarControl7;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem nbButtonReporteUnificadoConsumo;
+        private DevExpress.XtraEditors.SimpleButton btnUltimoCostoMP;
     }
 }
