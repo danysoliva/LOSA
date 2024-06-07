@@ -391,7 +391,6 @@
             this.simpleButton77 = new DevExpress.XtraEditors.SimpleButton();
             this.btnUltimoCostoMP = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton76 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSolicitudDespachoConta = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ExoneracionAQ = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
@@ -5659,7 +5658,6 @@
             this.TabContabilidad.Controls.Add(this.simpleButton77);
             this.TabContabilidad.Controls.Add(this.btnUltimoCostoMP);
             this.TabContabilidad.Controls.Add(this.simpleButton76);
-            this.TabContabilidad.Controls.Add(this.btnSolicitudDespachoConta);
             this.TabContabilidad.Controls.Add(this.btn_ExoneracionAQ);
             this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
             this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
@@ -5690,7 +5688,7 @@
             this.simpleButton78.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton78.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton78.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton78.ImageOptions.Image")));
-            this.simpleButton78.Location = new System.Drawing.Point(643, 423);
+            this.simpleButton78.Location = new System.Drawing.Point(436, 356);
             this.simpleButton78.Name = "simpleButton78";
             this.simpleButton78.Size = new System.Drawing.Size(182, 47);
             this.simpleButton78.TabIndex = 59;
@@ -5738,21 +5736,6 @@
             this.simpleButton76.Text = "Partidas RRHH";
             this.simpleButton76.Click += new System.EventHandler(this.simpleButton76_Click);
             // 
-            // btnSolicitudDespachoConta
-            // 
-            this.btnSolicitudDespachoConta.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSolicitudDespachoConta.Appearance.Options.UseFont = true;
-            this.btnSolicitudDespachoConta.Appearance.Options.UseTextOptions = true;
-            this.btnSolicitudDespachoConta.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSolicitudDespachoConta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnSolicitudDespachoConta.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
-            this.btnSolicitudDespachoConta.Location = new System.Drawing.Point(227, 353);
-            this.btnSolicitudDespachoConta.Name = "btnSolicitudDespachoConta";
-            this.btnSolicitudDespachoConta.Size = new System.Drawing.Size(182, 56);
-            this.btnSolicitudDespachoConta.TabIndex = 55;
-            this.btnSolicitudDespachoConta.Text = "Solicitudes Despacho Lote PT";
-            this.btnSolicitudDespachoConta.Click += new System.EventHandler(this.btnSolicitudDespachoConta_Click);
-            // 
             // btn_ExoneracionAQ
             // 
             this.btn_ExoneracionAQ.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -5776,7 +5759,7 @@
             this.cmdAprobarAjustesInvALOSY.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdAprobarAjustesInvALOSY.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAprobarAjustesInvALOSY.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
-            this.cmdAprobarAjustesInvALOSY.Location = new System.Drawing.Point(436, 353);
+            this.cmdAprobarAjustesInvALOSY.Location = new System.Drawing.Point(227, 353);
             this.cmdAprobarAjustesInvALOSY.Name = "cmdAprobarAjustesInvALOSY";
             this.cmdAprobarAjustesInvALOSY.Size = new System.Drawing.Size(182, 56);
             this.cmdAprobarAjustesInvALOSY.TabIndex = 53;
@@ -7502,7 +7485,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_historic_inventario;
         private DevExpress.XtraEditors.SimpleButton btnSolicitudesDespachos;
         private DevExpress.XtraEditors.SimpleButton btnSolicitudDespachoCalidad;
-        private DevExpress.XtraEditors.SimpleButton btnSolicitudDespachoConta;
         private DevExpress.XtraEditors.SimpleButton btnCertidicadPTMain;
         private DevExpress.XtraTab.XtraTabControl TabOpcionesProduccion;
         private DevExpress.XtraTab.XtraTabPage TabProduccionAdmin;

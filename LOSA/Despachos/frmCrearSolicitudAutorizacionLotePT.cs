@@ -59,7 +59,6 @@ namespace LOSA.Despachos
                             memoComentario.Text = dr.GetString(0);
                             grdLotePT.EditValue = dr.GetInt32(1);
                             grdTipoSoli.EditValue = dr.GetInt32(2);
-                            
                         }
                         dr.Close();
                         conn.Close();

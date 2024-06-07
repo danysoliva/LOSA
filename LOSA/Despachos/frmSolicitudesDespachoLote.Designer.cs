@@ -29,12 +29,12 @@ namespace LOSA.Despachos
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitudesDespachoLote));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tsFiltro = new DevExpress.XtraEditors.ToggleSwitch();
@@ -243,8 +243,6 @@ namespace LOSA.Despachos
             this.colautorizado_finanzas.FieldName = "autorizado_finanzas";
             this.colautorizado_finanzas.Name = "colautorizado_finanzas";
             this.colautorizado_finanzas.OptionsColumn.ReadOnly = true;
-            this.colautorizado_finanzas.Visible = true;
-            this.colautorizado_finanzas.VisibleIndex = 8;
             this.colautorizado_finanzas.Width = 146;
             // 
             // colfecha_autorizacion_finanzas
@@ -255,8 +253,6 @@ namespace LOSA.Despachos
             this.colfecha_autorizacion_finanzas.FieldName = "fecha_autorizacion_finanzas";
             this.colfecha_autorizacion_finanzas.Name = "colfecha_autorizacion_finanzas";
             this.colfecha_autorizacion_finanzas.OptionsColumn.ReadOnly = true;
-            this.colfecha_autorizacion_finanzas.Visible = true;
-            this.colfecha_autorizacion_finanzas.VisibleIndex = 9;
             this.colfecha_autorizacion_finanzas.Width = 99;
             // 
             // collote_pt
@@ -286,15 +282,15 @@ namespace LOSA.Despachos
             this.gridColumn1.FieldName = "Gestionar";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 10;
+            this.gridColumn1.VisibleIndex = 8;
             this.gridColumn1.Width = 97;
             // 
             // btnGestionar
             // 
             this.btnGestionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnGestionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnGestionar.Name = "btnGestionar";
             this.btnGestionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnGestionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnGestionar_ButtonClick);
@@ -302,7 +298,7 @@ namespace LOSA.Despachos
             // cmdRefresh
             // 
             this.cmdRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdRefresh.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmdRefresh.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.cmdRefresh.Appearance.Options.UseFont = true;
             this.cmdRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
@@ -331,8 +327,10 @@ namespace LOSA.Despachos
             // 
             // btnAddSolicitud
             // 
-            this.btnAddSolicitud.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAddSolicitud.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSolicitud.Appearance.Options.UseFont = true;
+            this.btnAddSolicitud.Appearance.Options.UseTextOptions = true;
+            this.btnAddSolicitud.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnAddSolicitud.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAddSolicitud.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAddSolicitud.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddSolicitud.ImageOptions.SvgImage")));
