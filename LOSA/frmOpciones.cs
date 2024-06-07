@@ -5484,7 +5484,6 @@ namespace LOSA
                     case 2://Basic No Autorization
                         break;
                     case 3://Medium Autorization
-                        break;
                     case 4://Depth With Delta
                     case 5://Depth Without Delta
                         accesoprevio = true;

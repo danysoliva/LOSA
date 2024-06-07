@@ -387,6 +387,7 @@
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
             this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton78 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton77 = new DevExpress.XtraEditors.SimpleButton();
             this.btnUltimoCostoMP = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton76 = new DevExpress.XtraEditors.SimpleButton();
@@ -499,7 +500,6 @@
             this.nbButtonReporteUnificadoConsumo = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.simpleButton78 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -5682,6 +5682,21 @@
             this.TabContabilidad.Size = new System.Drawing.Size(835, 480);
             this.TabContabilidad.Text = "Contabilidad";
             // 
+            // simpleButton78
+            // 
+            this.simpleButton78.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton78.Appearance.Options.UseFont = true;
+            this.simpleButton78.Appearance.Options.UseTextOptions = true;
+            this.simpleButton78.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton78.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton78.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton78.ImageOptions.Image")));
+            this.simpleButton78.Location = new System.Drawing.Point(643, 423);
+            this.simpleButton78.Name = "simpleButton78";
+            this.simpleButton78.Size = new System.Drawing.Size(182, 47);
+            this.simpleButton78.TabIndex = 59;
+            this.simpleButton78.Text = "Mantenimiento Periodos";
+            this.simpleButton78.Click += new System.EventHandler(this.simpleButton78_Click);
+            // 
             // simpleButton77
             // 
             this.simpleButton77.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -7162,8 +7177,8 @@
             this.nbButtonReporteUnificadoConsumo});
             this.navBarControl7.Location = new System.Drawing.Point(0, 0);
             this.navBarControl7.Name = "navBarControl7";
-            this.navBarControl7.OptionsNavPane.ExpandedWidth = 334;
-            this.navBarControl7.Size = new System.Drawing.Size(334, 480);
+            this.navBarControl7.OptionsNavPane.ExpandedWidth = 451;
+            this.navBarControl7.Size = new System.Drawing.Size(451, 480);
             this.navBarControl7.TabIndex = 56;
             this.navBarControl7.Text = "navBarControl7";
             // 
@@ -7209,21 +7224,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // simpleButton78
-            // 
-            this.simpleButton78.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton78.Appearance.Options.UseFont = true;
-            this.simpleButton78.Appearance.Options.UseTextOptions = true;
-            this.simpleButton78.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton78.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton78.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton78.ImageOptions.SvgImage")));
-            this.simpleButton78.Location = new System.Drawing.Point(643, 421);
-            this.simpleButton78.Name = "simpleButton78";
-            this.simpleButton78.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton78.TabIndex = 59;
-            this.simpleButton78.Text = "Mantenimiento Periodos";
-            this.simpleButton78.Click += new System.EventHandler(this.simpleButton78_Click);
             // 
             // frmOpciones
             // 
