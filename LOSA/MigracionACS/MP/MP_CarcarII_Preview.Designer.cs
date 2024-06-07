@@ -230,7 +230,7 @@
             // 
             // btnProcesar
             // 
-            this.btnProcesar.ImageOptions.Image = global::LOSA.Properties.Resources.Procesar_Carga_32;
+            this.btnProcesar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProcesar.ImageOptions.Image")));
             this.btnProcesar.Location = new System.Drawing.Point(459, 324);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(121, 37);

@@ -5569,5 +5569,19 @@ namespace LOSA
             mp.MdiParent = this.MdiParent;
             mp.Show();
         }
+
+        private void simpleButton77_Click(object sender, EventArgs e)
+        {
+            MP_CargarII mp = new MP_CargarII();
+            mp.MdiParent = this.MdiParent;
+            mp.Show();
+        }
+
+        private void simpleButton78_Click(object sender, EventArgs e)
+        {
+            frmHomePeriodosContables mp = new frmHomePeriodosContables(UsuarioLogeado);
+            mp.MdiParent = this.MdiParent;
+            mp.Show();
+        }
     }
 }

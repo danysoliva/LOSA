@@ -31,18 +31,15 @@ namespace ACS.MP
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHomePeriodosContables));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.dsmp1 = new LOSA.MigracionACS.MP.DSMP();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechai = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,9 +51,12 @@ namespace ACS.MP
             this.coluser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsmp1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDelete)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,11 @@ namespace ACS.MP
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // dsmp1
+            // 
+            this.dsmp1.DataSetName = "DSMP";
+            this.dsmp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView1
             // 
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,52 +101,6 @@ namespace ACS.MP
             this.colEliminar});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(4, 48);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(178, 30);
-            this.labelControl1.TabIndex = 18;
-            this.labelControl1.Text = "Periodos Contables";
-            // 
-            // cmdHome
-            // 
-            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
-            this.cmdHome.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.cmdHome.Appearance.Options.UseBackColor = true;
-            this.cmdHome.Appearance.Options.UseFont = true;
-            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdHome.ImageOptions.SvgImage")));
-            this.cmdHome.Location = new System.Drawing.Point(630, 24);
-            this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(142, 51);
-            this.cmdHome.TabIndex = 26;
-            this.cmdHome.Text = "Cerrar";
-            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
-            // 
-            // cmdGuardar
-            // 
-            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.White;
-            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdGuardar.Appearance.Options.UseBackColor = true;
-            this.cmdGuardar.Appearance.Options.UseFont = true;
-            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdGuardar.ImageOptions.SvgImage")));
-            this.cmdGuardar.Location = new System.Drawing.Point(482, 24);
-            this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(142, 51);
-            this.cmdGuardar.TabIndex = 25;
-            this.cmdGuardar.Text = "Agregar";
-            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
-            // 
-            // dsmp1
-            // 
-            this.dsmp1.DataSetName = "DSMP";
-            this.dsmp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // coldescripcion
             // 
@@ -233,12 +192,54 @@ namespace ACS.MP
             // cmdDelete
             // 
             this.cmdDelete.AutoHeight = false;
-            editorButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions4.SvgImage")));
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
             this.cmdDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDelete.Name = "cmdDelete";
             this.cmdDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDelete_ButtonClick);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(304, 45);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(178, 30);
+            this.labelControl1.TabIndex = 18;
+            this.labelControl1.Text = "Periodos Contables";
+            // 
+            // cmdHome
+            // 
+            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdHome.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.cmdHome.Appearance.Options.UseBackColor = true;
+            this.cmdHome.Appearance.Options.UseFont = true;
+            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdHome.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdHome.ImageOptions.SvgImage")));
+            this.cmdHome.Location = new System.Drawing.Point(630, 24);
+            this.cmdHome.Name = "cmdHome";
+            this.cmdHome.Size = new System.Drawing.Size(142, 51);
+            this.cmdHome.TabIndex = 26;
+            this.cmdHome.Text = "Cerrar";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
+            // 
+            // cmdGuardar
+            // 
+            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGuardar.Appearance.Options.UseBackColor = true;
+            this.cmdGuardar.Appearance.Options.UseFont = true;
+            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdGuardar.ImageOptions.SvgImage")));
+            this.cmdGuardar.Location = new System.Drawing.Point(12, 24);
+            this.cmdGuardar.Name = "cmdGuardar";
+            this.cmdGuardar.Size = new System.Drawing.Size(142, 51);
+            this.cmdGuardar.TabIndex = 25;
+            this.cmdGuardar.Text = "Agregar";
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // frmHomePeriodosContables
             // 
@@ -252,8 +253,8 @@ namespace ACS.MP
             this.Name = "frmHomePeriodosContables";
             this.Text = "Periodos Contables";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsmp1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

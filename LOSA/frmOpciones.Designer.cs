@@ -387,6 +387,8 @@
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
             this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton77 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUltimoCostoMP = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton76 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSolicitudDespachoConta = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ExoneracionAQ = new DevExpress.XtraEditors.SimpleButton();
@@ -497,7 +499,7 @@
             this.nbButtonReporteUnificadoConsumo = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btnUltimoCostoMP = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton78 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -5653,6 +5655,8 @@
             // 
             // TabContabilidad
             // 
+            this.TabContabilidad.Controls.Add(this.simpleButton78);
+            this.TabContabilidad.Controls.Add(this.simpleButton77);
             this.TabContabilidad.Controls.Add(this.btnUltimoCostoMP);
             this.TabContabilidad.Controls.Add(this.simpleButton76);
             this.TabContabilidad.Controls.Add(this.btnSolicitudDespachoConta);
@@ -5677,6 +5681,32 @@
             this.TabContabilidad.PageVisible = false;
             this.TabContabilidad.Size = new System.Drawing.Size(835, 480);
             this.TabContabilidad.Text = "Contabilidad";
+            // 
+            // simpleButton77
+            // 
+            this.simpleButton77.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton77.Appearance.Options.UseFont = true;
+            this.simpleButton77.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton77.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton77.ImageOptions.SvgImage")));
+            this.simpleButton77.Location = new System.Drawing.Point(643, 353);
+            this.simpleButton77.Name = "simpleButton77";
+            this.simpleButton77.Size = new System.Drawing.Size(182, 56);
+            this.simpleButton77.TabIndex = 58;
+            this.simpleButton77.Text = "Carga Inventario Inicial";
+            this.simpleButton77.Click += new System.EventHandler(this.simpleButton77_Click);
+            // 
+            // btnUltimoCostoMP
+            // 
+            this.btnUltimoCostoMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimoCostoMP.Appearance.Options.UseFont = true;
+            this.btnUltimoCostoMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnUltimoCostoMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUltimoCostoMP.ImageOptions.SvgImage")));
+            this.btnUltimoCostoMP.Location = new System.Drawing.Point(643, 278);
+            this.btnUltimoCostoMP.Name = "btnUltimoCostoMP";
+            this.btnUltimoCostoMP.Size = new System.Drawing.Size(182, 56);
+            this.btnUltimoCostoMP.TabIndex = 57;
+            this.btnUltimoCostoMP.Text = "Costo Actual MP";
+            this.btnUltimoCostoMP.Click += new System.EventHandler(this.btnUltimoCostoMP_Click);
             // 
             // simpleButton76
             // 
@@ -7180,18 +7210,20 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btnUltimoCostoMP
+            // simpleButton78
             // 
-            this.btnUltimoCostoMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUltimoCostoMP.Appearance.Options.UseFont = true;
-            this.btnUltimoCostoMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnUltimoCostoMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton77.ImageOptions.SvgImage")));
-            this.btnUltimoCostoMP.Location = new System.Drawing.Point(643, 278);
-            this.btnUltimoCostoMP.Name = "btnUltimoCostoMP";
-            this.btnUltimoCostoMP.Size = new System.Drawing.Size(182, 56);
-            this.btnUltimoCostoMP.TabIndex = 57;
-            this.btnUltimoCostoMP.Text = "Costo Actual MP";
-            this.btnUltimoCostoMP.Click += new System.EventHandler(this.btnUltimoCostoMP_Click);
+            this.simpleButton78.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton78.Appearance.Options.UseFont = true;
+            this.simpleButton78.Appearance.Options.UseTextOptions = true;
+            this.simpleButton78.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton78.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton78.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton78.ImageOptions.SvgImage")));
+            this.simpleButton78.Location = new System.Drawing.Point(643, 421);
+            this.simpleButton78.Name = "simpleButton78";
+            this.simpleButton78.Size = new System.Drawing.Size(182, 56);
+            this.simpleButton78.TabIndex = 59;
+            this.simpleButton78.Text = "Mantenimiento Periodos";
+            this.simpleButton78.Click += new System.EventHandler(this.simpleButton78_Click);
             // 
             // frmOpciones
             // 
@@ -7719,5 +7751,7 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem nbButtonReporteUnificadoConsumo;
         private DevExpress.XtraEditors.SimpleButton btnUltimoCostoMP;
+        private DevExpress.XtraEditors.SimpleButton simpleButton77;
+        private DevExpress.XtraEditors.SimpleButton simpleButton78;
     }
 }

@@ -2783,6 +2783,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\MP\frmHomePeriodosContables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\frmHomePeriodosContables.Designer.cs">
+      <DependentUpon>frmHomePeriodosContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\frmMantoPeriodosContables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\frmMantoPeriodosContables.Designer.cs">
+      <DependentUpon>frmMantoPeriodosContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CarcarII_Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CarcarII_Preview.Designer.cs">
+      <DependentUpon>MP_CarcarII_Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CargarII.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CargarII.Designer.cs">
+      <DependentUpon>MP_CargarII.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\MP\MP_MnY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7985,6 +8009,18 @@
     <EmbeddedResource Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.resx">
       <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\frmHomePeriodosContables.resx">
+      <DependentUpon>frmHomePeriodosContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\frmMantoPeriodosContables.resx">
+      <DependentUpon>frmMantoPeriodosContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_CarcarII_Preview.resx">
+      <DependentUpon>MP_CarcarII_Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_CargarII.resx">
+      <DependentUpon>MP_CargarII.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\MP\MP_MnY.resx">
       <DependentUpon>MP_MnY.cs</DependentUpon>
     </EmbeddedResource>
@@ -9927,6 +9963,7 @@
     <None Include="Resources\label-icon32px.png" />
     <None Include="Resources\LogoLimp_x32.png" />
     <None Include="Resources\materia_prima x32.png" />
+    <None Include="Resources\kilograms1.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />

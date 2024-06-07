@@ -150,7 +150,7 @@
             // 
             // btnBajarPlantilla
             // 
-            this.btnBajarPlantilla.ImageOptions.Image = global::LOSA.Properties.Resources.Plantilla_48;
+            this.btnBajarPlantilla.ImageOptions.Image = global::LOSA.Properties.Resources.detail_32x32;
             this.btnBajarPlantilla.Location = new System.Drawing.Point(130, 3);
             this.btnBajarPlantilla.Name = "btnBajarPlantilla";
             this.btnBajarPlantilla.Size = new System.Drawing.Size(121, 53);
@@ -160,7 +160,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.ImageOptions.Image = global::LOSA.Properties.Resources.archivo;
+            this.btnCargar.ImageOptions.Image = global::LOSA.Properties.Resources.Upload_32x32;
             this.btnCargar.Location = new System.Drawing.Point(3, 3);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(121, 53);
@@ -171,7 +171,9 @@
             // 
             // grdDetalle
             // 
-            this.grdDetalle.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grdDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grdDetalle.Location = new System.Drawing.Point(0, 89);
             this.grdDetalle.MainView = this.gridView1;
             this.grdDetalle.MenuManager = this.barManager1;
