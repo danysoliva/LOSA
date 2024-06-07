@@ -5505,7 +5505,7 @@ namespace LOSA
                     }
                     else
                     {
-                        CajaDialogo.Error("No tiene privilegios para esta función! Permiso requerido #97");
+                        CajaDialogo.Error("No tiene privilegios para esta función! Permiso requerido #99");
                     }
                 }
             }
