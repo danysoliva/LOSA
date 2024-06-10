@@ -2912,22 +2912,7 @@ namespace LOSA
         
         }
 
-        private void simpleButton57_Click(object sender, EventArgs e)
-        {
-            //rd_OdooMenu.ShowPopup(new Point((this.Width / 2), (this.Height / 2)));
-            frmReportManager frm = new frmReportManager(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
         private void btnMP_BodsegaPRD_Click(object sender, EventArgs e)
-        {
-            frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
-        private void btn_mp_bodega_prd_finanzas_Click(object sender, EventArgs e)
         {
             frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
@@ -3390,11 +3375,6 @@ namespace LOSA
             }
         }
 
-        private void btnGestionMP_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_print_mp_remanente_Click(object sender, EventArgs e)
         {
             frmPrintTarimasRemanente frm = new frmPrintTarimasRemanente();
@@ -3524,49 +3504,6 @@ namespace LOSA
             {
                 CajaDialogo.Error(ex.Message);
 
-            }
-        }
-
-        private void btn_ExoneracionAQ_Click(object sender, EventArgs e)
-        {
-            //frmExoneracionAQ frm = new frmExoneracionAQ(UsuarioLogeado);
-            //frm.MdiParent = this.MdiParent;
-            //frm.Show();
-
-            bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
-            switch (idNivel)
-            {
-                case 1://Basic View
-                    break;
-                case 2://Basic No Autorization
-                    break;
-                case 3://Medium Autorization
-                    break;
-                case 4://Depth With Delta
-                    accesoprevio = true;
-                    frmExoneracionAQ frm5 = new frmExoneracionAQ(UsuarioLogeado);
-                    frm5.MdiParent = this.MdiParent;
-                    frm5.Show();
-                    break;
-                case 5://Depth Without Delta
-                    break;
-                default:
-                    break;
-            }
-
-            if (!accesoprevio)
-            {
-                if (UsuarioLogeado.ValidarNivelPermisos(94))
-                {
-                    frmExoneracionAQ frm1 = new frmExoneracionAQ(UsuarioLogeado);
-                    frm1.MdiParent = this.MdiParent;
-                    frm1.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #94");
-                }
             }
         }
 
@@ -5231,13 +5168,6 @@ namespace LOSA
             frm.Show();
         }
 
-        private void simpleButton76_Click(object sender, EventArgs e)
-        {
-            frmPartidasRRHH fmr = new frmPartidasRRHH(this.UsuarioLogeado);
-            fmr.MdiParent = this.MdiParent;
-            fmr.Show();
-        }
-
         private void navAprobacionDocumentos_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             try
@@ -5327,27 +5257,6 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
 
             }
-        }
-
-        private void btnUltimoCostoMP_Click(object sender, EventArgs e)
-        {
-            MP_UltimoCosto mp = new MP_UltimoCosto();
-            mp.MdiParent = this.MdiParent;
-            mp.Show();
-        }
-
-        private void simpleButton77_Click(object sender, EventArgs e)
-        {
-            MP_CargarII mp = new MP_CargarII();
-            mp.MdiParent = this.MdiParent;
-            mp.Show();
-        }
-
-        private void simpleButton78_Click(object sender, EventArgs e)
-        {
-            frmHomePeriodosContables mp = new frmHomePeriodosContables(UsuarioLogeado);
-            mp.MdiParent = this.MdiParent;
-            mp.Show();
         }
 
         private void navContaRptConsumo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -5581,6 +5490,93 @@ namespace LOSA
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void navUltimoCostoMP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            MP_UltimoCosto mp = new MP_UltimoCosto();
+            mp.MdiParent = this.MdiParent;
+            mp.Show();
+        }
+
+        private void navBarItem241_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+            MP_CargarII mp = new MP_CargarII();
+            mp.MdiParent = this.MdiParent;
+            mp.Show();
+        }
+
+        private void navMantPeriodos_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmHomePeriodosContables mp = new frmHomePeriodosContables(UsuarioLogeado);
+            mp.MdiParent = this.MdiParent;
+            mp.Show();
+        }
+
+        private void navReportManager_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            //rd_OdooMenu.ShowPopup(new Point((this.Width / 2), (this.Height / 2)));
+            frmReportManager frm = new frmReportManager(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navmp_bodega_prd_finanzas_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmPartidasRRHH fmr = new frmPartidasRRHH(this.UsuarioLogeado);
+            fmr.MdiParent = this.MdiParent;
+            fmr.Show();
+        }
+
+        private void navExofiscal_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmExoneracionAQ frm5 = new frmExoneracionAQ(UsuarioLogeado);
+                    frm5.MdiParent = this.MdiParent;
+                    frm5.Show();
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(94))
+                {
+                    frmExoneracionAQ frm1 = new frmExoneracionAQ(UsuarioLogeado);
+                    frm1.MdiParent = this.MdiParent;
+                    frm1.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #94");
+                }
+            }
+        }
+
+        private void navGestionMP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
         }
     }
 }
