@@ -390,124 +390,21 @@
             this.simpleButton78 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton77 = new DevExpress.XtraEditors.SimpleButton();
             this.btnUltimoCostoMP = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton76 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_ExoneracionAQ = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnGestionMP = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_mp_bodega_prd_finanzas = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton65 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton66 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton64 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton63 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton60 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton61 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton62 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton59 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton58 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
-            this.TabBascula = new DevExpress.XtraTab.XtraTabPage();
-            this.simpleButton71 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton70 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton69 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton68 = new DevExpress.XtraEditors.SimpleButton();
-            this.TabFormulacion = new DevExpress.XtraTab.XtraTabPage();
-            this.simpleButton73 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
-            this.TabTickets = new DevExpress.XtraTab.XtraTabPage();
-            this.navBarControl2 = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem20 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarProductoBorrador = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem26 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem27 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem28 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem29 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem30 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem31 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem32 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem33 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem34 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem35 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem36 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem37 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem39 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem40 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem41 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem43 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem42 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem38 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem46 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem47 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem48 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem49 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem50 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem51 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem52 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem53 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem54 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem44 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
-            this.TabCompras = new DevExpress.XtraTab.XtraTabPage();
-            this.navBarControl5 = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navOrdenCompra = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbarAprobacionOrdenesCompra = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarKardexSaldo = new DevExpress.XtraNavBar.NavBarItem();
-            this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
-            this.navAprobacionDocumentos = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem19 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem22 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem23 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem24 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem55 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem56 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem58 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem59 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem61 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem103 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem104 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem105 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem106 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem107 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem108 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem109 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem110 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem112 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem113 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem114 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem115 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem116 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
-            this.TabReportes_ = new DevExpress.XtraTab.XtraTabPage();
-            this.navBarControl7 = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbButtonReporteUnificadoConsumo = new DevExpress.XtraNavBar.NavBarItem();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
             this.contaTabReportes = new DevExpress.XtraTab.XtraTabPage();
+            this.btn_mp_bodega_prd_finanzas = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
             this.navBarControl8 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navContaRptConsumo = new DevExpress.XtraNavBar.NavBarItem();
             this.navContaVarianzacobro = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navRptNucleos = new DevExpress.XtraNavBar.NavBarItem();
+            this.navReporteBancosPlanilla = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem159 = new DevExpress.XtraNavBar.NavBarItem();
@@ -544,6 +441,8 @@
             this.navBarItem234 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem235 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem236 = new DevExpress.XtraNavBar.NavBarItem();
+            this.btn_ExoneracionAQ = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton76 = new DevExpress.XtraEditors.SimpleButton();
             this.contaTabCostos = new DevExpress.XtraTab.XtraTabPage();
             this.navBarControl9 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup7 = new DevExpress.XtraNavBar.NavBarGroup();
@@ -676,6 +575,101 @@
             this.navBarItem357 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem358 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem359 = new DevExpress.XtraNavBar.NavBarItem();
+            this.TabBascula = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton71 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton70 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton69 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton68 = new DevExpress.XtraEditors.SimpleButton();
+            this.TabFormulacion = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton73 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
+            this.TabTickets = new DevExpress.XtraTab.XtraTabPage();
+            this.navBarControl2 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem20 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarProductoBorrador = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem26 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem27 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem28 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem29 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem30 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem31 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem32 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem33 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem34 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem35 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem36 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem37 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem39 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem40 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem41 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem43 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem42 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem38 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem46 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem47 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem48 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem49 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem50 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem51 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem52 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem53 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem54 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem44 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
+            this.TabCompras = new DevExpress.XtraTab.XtraTabPage();
+            this.navBarControl5 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navOrdenCompra = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbarAprobacionOrdenesCompra = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarKardexSaldo = new DevExpress.XtraNavBar.NavBarItem();
+            this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
+            this.navAprobacionDocumentos = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem19 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem22 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem23 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem24 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem55 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem56 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem58 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem59 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem61 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem103 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem104 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem105 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem106 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem107 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem108 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem109 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem110 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem112 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem113 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem114 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem115 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem116 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem117 = new DevExpress.XtraNavBar.NavBarItem();
+            this.TabReportes_ = new DevExpress.XtraTab.XtraTabPage();
+            this.navBarControl7 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbButtonReporteUnificadoConsumo = new DevExpress.XtraNavBar.NavBarItem();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.navConsolaTeorico = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -707,15 +701,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.TabForecasting.SuspendLayout();
             this.TabContabilidad.SuspendLayout();
-            this.TabBascula.SuspendLayout();
-            this.TabFormulacion.SuspendLayout();
-            this.TabTickets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).BeginInit();
-            this.TabCompras.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).BeginInit();
-            this.TabReportes_.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).BeginInit();
             this.xtraTabControl2.SuspendLayout();
             this.contaTabReportes.SuspendLayout();
@@ -726,6 +711,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl10)).BeginInit();
             this.contaTabConfiguraciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl11)).BeginInit();
+            this.TabBascula.SuspendLayout();
+            this.TabFormulacion.SuspendLayout();
+            this.TabTickets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).BeginInit();
+            this.TabCompras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).BeginInit();
+            this.TabReportes_.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -5844,20 +5838,8 @@
             this.TabContabilidad.Controls.Add(this.simpleButton78);
             this.TabContabilidad.Controls.Add(this.simpleButton77);
             this.TabContabilidad.Controls.Add(this.btnUltimoCostoMP);
-            this.TabContabilidad.Controls.Add(this.simpleButton76);
-            this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
-            this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
             this.TabContabilidad.Controls.Add(this.btnGestionMP);
-            this.TabContabilidad.Controls.Add(this.btn_mp_bodega_prd_finanzas);
-            this.TabContabilidad.Controls.Add(this.simpleButton65);
-            this.TabContabilidad.Controls.Add(this.simpleButton66);
-            this.TabContabilidad.Controls.Add(this.simpleButton64);
-            this.TabContabilidad.Controls.Add(this.simpleButton63);
-            this.TabContabilidad.Controls.Add(this.simpleButton60);
-            this.TabContabilidad.Controls.Add(this.simpleButton61);
-            this.TabContabilidad.Controls.Add(this.simpleButton62);
             this.TabContabilidad.Controls.Add(this.simpleButton59);
-            this.TabContabilidad.Controls.Add(this.simpleButton58);
             this.TabContabilidad.Controls.Add(this.simpleButton57);
             this.TabContabilidad.Controls.Add(this.xtraTabControl2);
             this.TabContabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.calculo;
@@ -5887,9 +5869,9 @@
             this.simpleButton77.Appearance.Options.UseFont = true;
             this.simpleButton77.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton77.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton77.ImageOptions.SvgImage")));
-            this.simpleButton77.Location = new System.Drawing.Point(643, 353);
+            this.simpleButton77.Location = new System.Drawing.Point(643, 356);
             this.simpleButton77.Name = "simpleButton77";
-            this.simpleButton77.Size = new System.Drawing.Size(182, 56);
+            this.simpleButton77.Size = new System.Drawing.Size(182, 53);
             this.simpleButton77.TabIndex = 58;
             this.simpleButton77.Text = "Carga Inventario Inicial";
             this.simpleButton77.Click += new System.EventHandler(this.simpleButton77_Click);
@@ -5907,36 +5889,6 @@
             this.btnUltimoCostoMP.Text = "Costo Actual MP";
             this.btnUltimoCostoMP.Click += new System.EventHandler(this.btnUltimoCostoMP_Click);
             // 
-            // simpleButton76
-            // 
-            this.simpleButton76.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.simpleButton76.Appearance.Options.UseFont = true;
-            this.simpleButton76.Appearance.Options.UseTextOptions = true;
-            this.simpleButton76.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton76.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton76.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton76.ImageOptions.Image")));
-            this.simpleButton76.Location = new System.Drawing.Point(643, 198);
-            this.simpleButton76.Name = "simpleButton76";
-            this.simpleButton76.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton76.TabIndex = 56;
-            this.simpleButton76.Text = "Partidas RRHH";
-            this.simpleButton76.Click += new System.EventHandler(this.simpleButton76_Click);
-            // 
-            // btn_ExoneracionAQ
-            // 
-            this.btn_ExoneracionAQ.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ExoneracionAQ.Appearance.Options.UseFont = true;
-            this.btn_ExoneracionAQ.Appearance.Options.UseTextOptions = true;
-            this.btn_ExoneracionAQ.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btn_ExoneracionAQ.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_ExoneracionAQ.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ExoneracionAQ.ImageOptions.Image")));
-            this.btn_ExoneracionAQ.Location = new System.Drawing.Point(638, 8);
-            this.btn_ExoneracionAQ.Name = "btn_ExoneracionAQ";
-            this.btn_ExoneracionAQ.Size = new System.Drawing.Size(182, 56);
-            this.btn_ExoneracionAQ.TabIndex = 54;
-            this.btn_ExoneracionAQ.Text = "Exoneracion Fiscal";
-            this.btn_ExoneracionAQ.Click += new System.EventHandler(this.btn_ExoneracionAQ_Click);
-            // 
             // cmdAprobarAjustesInvALOSY
             // 
             this.cmdAprobarAjustesInvALOSY.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -5945,27 +5897,12 @@
             this.cmdAprobarAjustesInvALOSY.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdAprobarAjustesInvALOSY.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAprobarAjustesInvALOSY.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
-            this.cmdAprobarAjustesInvALOSY.Location = new System.Drawing.Point(413, 351);
+            this.cmdAprobarAjustesInvALOSY.Location = new System.Drawing.Point(310, 324);
             this.cmdAprobarAjustesInvALOSY.Name = "cmdAprobarAjustesInvALOSY";
-            this.cmdAprobarAjustesInvALOSY.Size = new System.Drawing.Size(182, 56);
+            this.cmdAprobarAjustesInvALOSY.Size = new System.Drawing.Size(182, 53);
             this.cmdAprobarAjustesInvALOSY.TabIndex = 53;
             this.cmdAprobarAjustesInvALOSY.Text = "Ajustes de Inventario Solicitudes";
             this.cmdAprobarAjustesInvALOSY.Click += new System.EventHandler(this.cmdAprobarAjustesInvALOSY_Click);
-            // 
-            // cmdReporteBancosPlanilla
-            // 
-            this.cmdReporteBancosPlanilla.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmdReporteBancosPlanilla.Appearance.Options.UseFont = true;
-            this.cmdReporteBancosPlanilla.Appearance.Options.UseTextOptions = true;
-            this.cmdReporteBancosPlanilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdReporteBancosPlanilla.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdReporteBancosPlanilla.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdReporteBancosPlanilla.ImageOptions.SvgImage")));
-            this.cmdReporteBancosPlanilla.Location = new System.Drawing.Point(297, 351);
-            this.cmdReporteBancosPlanilla.Name = "cmdReporteBancosPlanilla";
-            this.cmdReporteBancosPlanilla.Size = new System.Drawing.Size(182, 56);
-            this.cmdReporteBancosPlanilla.TabIndex = 52;
-            this.cmdReporteBancosPlanilla.Text = "Reporte Bancos Planilla";
-            this.cmdReporteBancosPlanilla.Click += new System.EventHandler(this.cmdReporteBancosPlanilla_Click);
             // 
             // btnGestionMP
             // 
@@ -5983,139 +5920,6 @@
             this.btnGestionMP.Visible = false;
             this.btnGestionMP.Click += new System.EventHandler(this.btnGestionMP_Click);
             // 
-            // btn_rutas_traza_contabilidad
-            // 
-            this.btn_rutas_traza_contabilidad.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rutas_traza_contabilidad.Appearance.Options.UseFont = true;
-            this.btn_rutas_traza_contabilidad.Appearance.Options.UseTextOptions = true;
-            this.btn_rutas_traza_contabilidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btn_rutas_traza_contabilidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_rutas_traza_contabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.signpost24X24;
-            this.btn_rutas_traza_contabilidad.Location = new System.Drawing.Point(513, 8);
-            this.btn_rutas_traza_contabilidad.Name = "btn_rutas_traza_contabilidad";
-            this.btn_rutas_traza_contabilidad.Size = new System.Drawing.Size(182, 56);
-            this.btn_rutas_traza_contabilidad.TabIndex = 50;
-            this.btn_rutas_traza_contabilidad.Text = "Rutas de Trazabilidad";
-            this.btn_rutas_traza_contabilidad.Click += new System.EventHandler(this.btn_rutas_traza_contabilidad_Click);
-            // 
-            // btn_mp_bodega_prd_finanzas
-            // 
-            this.btn_mp_bodega_prd_finanzas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mp_bodega_prd_finanzas.Appearance.Options.UseFont = true;
-            this.btn_mp_bodega_prd_finanzas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_mp_bodega_prd_finanzas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_mp_bodega_prd_finanzas.ImageOptions.Image")));
-            this.btn_mp_bodega_prd_finanzas.Location = new System.Drawing.Point(518, 198);
-            this.btn_mp_bodega_prd_finanzas.Name = "btn_mp_bodega_prd_finanzas";
-            this.btn_mp_bodega_prd_finanzas.Size = new System.Drawing.Size(182, 56);
-            this.btn_mp_bodega_prd_finanzas.TabIndex = 49;
-            this.btn_mp_bodega_prd_finanzas.Text = "MP en Bodega Prd";
-            this.btn_mp_bodega_prd_finanzas.Click += new System.EventHandler(this.btn_mp_bodega_prd_finanzas_Click);
-            // 
-            // simpleButton65
-            // 
-            this.simpleButton65.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.simpleButton65.Appearance.Options.UseFont = true;
-            this.simpleButton65.Appearance.Options.UseTextOptions = true;
-            this.simpleButton65.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton65.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton65.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton65.ImageOptions.Image")));
-            this.simpleButton65.Location = new System.Drawing.Point(297, 276);
-            this.simpleButton65.Name = "simpleButton65";
-            this.simpleButton65.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton65.TabIndex = 22;
-            this.simpleButton65.Text = "Reporte Nucleos";
-            this.simpleButton65.Click += new System.EventHandler(this.simpleButton65_Click);
-            // 
-            // simpleButton66
-            // 
-            this.simpleButton66.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton66.Appearance.Options.UseFont = true;
-            this.simpleButton66.Appearance.Options.UseTextOptions = true;
-            this.simpleButton66.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton66.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton66.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton66.ImageOptions.Image")));
-            this.simpleButton66.Location = new System.Drawing.Point(413, 116);
-            this.simpleButton66.Name = "simpleButton66";
-            this.simpleButton66.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton66.TabIndex = 21;
-            this.simpleButton66.Text = "Reportes Fiscales";
-            this.simpleButton66.Click += new System.EventHandler(this.simpleButton66_Click);
-            // 
-            // simpleButton64
-            // 
-            this.simpleButton64.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.simpleButton64.Appearance.Options.UseFont = true;
-            this.simpleButton64.Appearance.Options.UseTextOptions = true;
-            this.simpleButton64.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton64.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton64.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton64.ImageOptions.SvgImage")));
-            this.simpleButton64.Location = new System.Drawing.Point(413, 276);
-            this.simpleButton64.Name = "simpleButton64";
-            this.simpleButton64.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton64.TabIndex = 19;
-            this.simpleButton64.Text = "Base Consola Teórico";
-            this.simpleButton64.Click += new System.EventHandler(this.simpleButton64_Click);
-            // 
-            // simpleButton63
-            // 
-            this.simpleButton63.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton63.Appearance.Options.UseFont = true;
-            this.simpleButton63.Appearance.Options.UseTextOptions = true;
-            this.simpleButton63.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton63.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton63.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton63.ImageOptions.Image")));
-            this.simpleButton63.Location = new System.Drawing.Point(413, 196);
-            this.simpleButton63.Name = "simpleButton63";
-            this.simpleButton63.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton63.TabIndex = 18;
-            this.simpleButton63.Text = "Base Datos Consola";
-            this.simpleButton63.Click += new System.EventHandler(this.simpleButton63_Click);
-            // 
-            // simpleButton60
-            // 
-            this.simpleButton60.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton60.Appearance.Options.UseFont = true;
-            this.simpleButton60.Appearance.Options.UseTextOptions = true;
-            this.simpleButton60.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton60.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton60.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton60.ImageOptions.Image")));
-            this.simpleButton60.Location = new System.Drawing.Point(413, 40);
-            this.simpleButton60.Name = "simpleButton60";
-            this.simpleButton60.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton60.TabIndex = 17;
-            this.simpleButton60.Text = "Reportes 2.0";
-            this.simpleButton60.Click += new System.EventHandler(this.simpleButton60_Click);
-            // 
-            // simpleButton61
-            // 
-            this.simpleButton61.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton61.Appearance.Options.UseFont = true;
-            this.simpleButton61.Appearance.Options.UseTextOptions = true;
-            this.simpleButton61.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton61.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton61.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton61.ImageOptions.Image")));
-            this.simpleButton61.Location = new System.Drawing.Point(297, 116);
-            this.simpleButton61.Name = "simpleButton61";
-            this.simpleButton61.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton61.TabIndex = 16;
-            this.simpleButton61.Text = "Varianza de Costo";
-            this.simpleButton61.Click += new System.EventHandler(this.simpleButton61_Click);
-            // 
-            // simpleButton62
-            // 
-            this.simpleButton62.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton62.Appearance.Options.UseFont = true;
-            this.simpleButton62.Appearance.Options.UseTextOptions = true;
-            this.simpleButton62.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton62.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton62.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton62.ImageOptions.Image")));
-            this.simpleButton62.Location = new System.Drawing.Point(297, 196);
-            this.simpleButton62.Name = "simpleButton62";
-            this.simpleButton62.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton62.TabIndex = 15;
-            this.simpleButton62.Text = "Reportes Varios";
-            this.simpleButton62.Click += new System.EventHandler(this.simpleButton62_Click);
-            // 
             // simpleButton59
             // 
             this.simpleButton59.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -6132,21 +5936,6 @@
             this.simpleButton59.Visible = false;
             this.simpleButton59.Click += new System.EventHandler(this.simpleButton59_Click);
             // 
-            // simpleButton58
-            // 
-            this.simpleButton58.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton58.Appearance.Options.UseFont = true;
-            this.simpleButton58.Appearance.Options.UseTextOptions = true;
-            this.simpleButton58.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton58.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton58.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton58.ImageOptions.SvgImage")));
-            this.simpleButton58.Location = new System.Drawing.Point(297, 40);
-            this.simpleButton58.Name = "simpleButton58";
-            this.simpleButton58.Size = new System.Drawing.Size(182, 56);
-            this.simpleButton58.TabIndex = 13;
-            this.simpleButton58.Text = "Reporte Consumo Producción";
-            this.simpleButton58.Click += new System.EventHandler(this.simpleButton58_Click);
-            // 
             // simpleButton57
             // 
             this.simpleButton57.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -6161,1238 +5950,6 @@
             this.simpleButton57.TabIndex = 12;
             this.simpleButton57.Text = "Report Manager";
             this.simpleButton57.Click += new System.EventHandler(this.simpleButton57_Click);
-            // 
-            // TabBascula
-            // 
-            this.TabBascula.Controls.Add(this.simpleButton71);
-            this.TabBascula.Controls.Add(this.simpleButton70);
-            this.TabBascula.Controls.Add(this.simpleButton69);
-            this.TabBascula.Controls.Add(this.simpleButton68);
-            this.TabBascula.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
-            this.TabBascula.Name = "TabBascula";
-            this.TabBascula.PageVisible = false;
-            this.TabBascula.Size = new System.Drawing.Size(835, 480);
-            this.TabBascula.Text = "Báscula";
-            // 
-            // simpleButton71
-            // 
-            this.simpleButton71.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton71.Appearance.Options.UseFont = true;
-            this.simpleButton71.Appearance.Options.UseTextOptions = true;
-            this.simpleButton71.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton71.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton71.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton71.ImageOptions.Image")));
-            this.simpleButton71.Location = new System.Drawing.Point(60, 122);
-            this.simpleButton71.Name = "simpleButton71";
-            this.simpleButton71.Size = new System.Drawing.Size(223, 71);
-            this.simpleButton71.TabIndex = 54;
-            this.simpleButton71.Text = "Reporte de Báscula";
-            this.simpleButton71.Click += new System.EventHandler(this.simpleButton71_Click);
-            // 
-            // simpleButton70
-            // 
-            this.simpleButton70.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton70.Appearance.Options.UseFont = true;
-            this.simpleButton70.Appearance.Options.UseTextOptions = true;
-            this.simpleButton70.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton70.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton70.ImageOptions.Image = global::LOSA.Properties.Resources.hapag_4_icon48px;
-            this.simpleButton70.Location = new System.Drawing.Point(60, 206);
-            this.simpleButton70.Name = "simpleButton70";
-            this.simpleButton70.Size = new System.Drawing.Size(223, 71);
-            this.simpleButton70.TabIndex = 53;
-            this.simpleButton70.Text = "En Predio";
-            this.simpleButton70.Click += new System.EventHandler(this.simpleButton70_Click);
-            // 
-            // simpleButton69
-            // 
-            this.simpleButton69.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton69.Appearance.Options.UseFont = true;
-            this.simpleButton69.Appearance.Options.UseTextOptions = true;
-            this.simpleButton69.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton69.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton69.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton69.ImageOptions.SvgImage")));
-            this.simpleButton69.Location = new System.Drawing.Point(60, 290);
-            this.simpleButton69.Name = "simpleButton69";
-            this.simpleButton69.Size = new System.Drawing.Size(223, 71);
-            this.simpleButton69.TabIndex = 52;
-            this.simpleButton69.Text = "Reporte Salidas Desecho";
-            this.simpleButton69.Click += new System.EventHandler(this.simpleButton69_Click);
-            // 
-            // simpleButton68
-            // 
-            this.simpleButton68.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton68.Appearance.Options.UseFont = true;
-            this.simpleButton68.Appearance.Options.UseTextOptions = true;
-            this.simpleButton68.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton68.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton68.ImageOptions.Image = global::LOSA.Properties.Resources.plan_icon48X48;
-            this.simpleButton68.Location = new System.Drawing.Point(60, 38);
-            this.simpleButton68.Name = "simpleButton68";
-            this.simpleButton68.Size = new System.Drawing.Size(223, 71);
-            this.simpleButton68.TabIndex = 51;
-            this.simpleButton68.Text = "Plan de Arribos";
-            this.simpleButton68.Click += new System.EventHandler(this.simpleButton68_Click);
-            // 
-            // TabFormulacion
-            // 
-            this.TabFormulacion.Controls.Add(this.simpleButton73);
-            this.TabFormulacion.Controls.Add(this.simpleButton72);
-            this.TabFormulacion.ImageOptions.Image = global::LOSA.Properties.Resources.formula_market_research;
-            this.TabFormulacion.Name = "TabFormulacion";
-            this.TabFormulacion.PageVisible = false;
-            this.TabFormulacion.Size = new System.Drawing.Size(835, 480);
-            this.TabFormulacion.Text = "Formulación";
-            // 
-            // simpleButton73
-            // 
-            this.simpleButton73.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton73.Appearance.Options.UseFont = true;
-            this.simpleButton73.Appearance.Options.UseTextOptions = true;
-            this.simpleButton73.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton73.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton73.ImageOptions.Image = global::LOSA.Properties.Resources.formula_local_32;
-            this.simpleButton73.Location = new System.Drawing.Point(8, 107);
-            this.simpleButton73.Name = "simpleButton73";
-            this.simpleButton73.Size = new System.Drawing.Size(223, 71);
-            this.simpleButton73.TabIndex = 53;
-            this.simpleButton73.Text = "Fórmulas Aprobadas Para Planta";
-            this.simpleButton73.Click += new System.EventHandler(this.simpleButton73_Click);
-            // 
-            // simpleButton72
-            // 
-            this.simpleButton72.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton72.Appearance.Options.UseFont = true;
-            this.simpleButton72.Appearance.Options.UseTextOptions = true;
-            this.simpleButton72.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton72.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton72.ImageOptions.Image = global::LOSA.Properties.Resources.formula_external_32;
-            this.simpleButton72.Location = new System.Drawing.Point(8, 18);
-            this.simpleButton72.Name = "simpleButton72";
-            this.simpleButton72.Size = new System.Drawing.Size(223, 71);
-            this.simpleButton72.TabIndex = 52;
-            this.simpleButton72.Text = "Fórmulas Aprobadas por Finanzas";
-            this.simpleButton72.Click += new System.EventHandler(this.simpleButton72_Click);
-            // 
-            // TabTickets
-            // 
-            this.TabTickets.Controls.Add(this.navBarControl2);
-            this.TabTickets.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabTickets.ImageOptions.Image")));
-            this.TabTickets.Name = "TabTickets";
-            this.TabTickets.PageVisible = false;
-            this.TabTickets.Size = new System.Drawing.Size(835, 480);
-            this.TabTickets.Text = "Tickets";
-            // 
-            // navBarControl2
-            // 
-            this.navBarControl2.ActiveGroup = this.navBarGroup5;
-            this.navBarControl2.Appearance.Button.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarControl2.Appearance.Button.Options.UseFont = true;
-            this.navBarControl2.Appearance.ButtonPressed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarControl2.Appearance.ButtonPressed.Options.UseFont = true;
-            this.navBarControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl2.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup5});
-            this.navBarControl2.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.navBarItem11,
-            this.navBarItem13,
-            this.navBarItem14,
-            this.navBarItem15,
-            this.navBarItem20,
-            this.navBarItem25,
-            this.navBarItem26,
-            this.navBarItem27,
-            this.navBarItem28,
-            this.navBarItem29,
-            this.navBarItem30,
-            this.navBarItem31,
-            this.navBarItem32,
-            this.navBarItem33,
-            this.navBarItem34,
-            this.navBarItem35,
-            this.navBarItem36,
-            this.navBarItem37,
-            this.navBarItem39,
-            this.navBarItem40,
-            this.navBarItem41,
-            this.navBarItem43,
-            this.navBarItem42,
-            this.navBarItem38,
-            this.navBarItem46,
-            this.navBarItem47,
-            this.navBarItem48,
-            this.navBarItem49,
-            this.navBarItem50,
-            this.navBarItem51,
-            this.navBarItem52,
-            this.navBarItem53,
-            this.navBarItem54,
-            this.navBarItem44,
-            this.navBarItem45,
-            this.navBarProductoBorrador,
-            this.navBarItem2});
-            this.navBarControl2.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl2.Name = "navBarControl2";
-            this.navBarControl2.OptionsNavPane.ExpandedWidth = 454;
-            this.navBarControl2.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
-            this.navBarControl2.Size = new System.Drawing.Size(454, 480);
-            this.navBarControl2.TabIndex = 21;
-            this.navBarControl2.Text = "navBarControl2";
-            // 
-            // navBarGroup5
-            // 
-            this.navBarGroup5.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarGroup5.Appearance.Options.UseFont = true;
-            this.navBarGroup5.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup5.AppearancePressed.Options.UseFont = true;
-            this.navBarGroup5.Caption = "Asistencia de IT";
-            this.navBarGroup5.Expanded = true;
-            this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem20),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarProductoBorrador),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
-            this.navBarGroup5.Name = "navBarGroup5";
-            // 
-            // navBarItem11
-            // 
-            this.navBarItem11.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarItem11.Appearance.Options.UseFont = true;
-            this.navBarItem11.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem11.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem11.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem11.AppearancePressed.Options.UseFont = true;
-            this.navBarItem11.Caption = "Asistencia de IT";
-            this.navBarItem11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem11.ImageOptions.SvgImage")));
-            this.navBarItem11.Name = "navBarItem11";
-            this.navBarItem11.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkPressed);
-            // 
-            // navBarItem13
-            // 
-            this.navBarItem13.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem13.Appearance.Options.UseFont = true;
-            this.navBarItem13.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem13.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem13.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem13.AppearancePressed.Options.UseFont = true;
-            this.navBarItem13.Caption = "Administración de Tickets";
-            this.navBarItem13.ImageOptions.SmallImage = global::LOSA.Properties.Resources.checklist;
-            this.navBarItem13.Name = "navBarItem13";
-            this.navBarItem13.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkPressed);
-            // 
-            // navBarItem14
-            // 
-            this.navBarItem14.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem14.Appearance.Options.UseFont = true;
-            this.navBarItem14.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem14.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem14.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem14.AppearancePressed.Options.UseFont = true;
-            this.navBarItem14.Caption = "Solicitud Nuevos Usuarios";
-            this.navBarItem14.ImageOptions.SmallImage = global::LOSA.Properties.Resources.orders_production_24px;
-            this.navBarItem14.Name = "navBarItem14";
-            this.navBarItem14.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem14_LinkPressed);
-            // 
-            // navBarItem15
-            // 
-            this.navBarItem15.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem15.Appearance.Options.UseFont = true;
-            this.navBarItem15.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem15.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem15.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem15.AppearancePressed.Options.UseFont = true;
-            this.navBarItem15.Caption = "Tickets";
-            this.navBarItem15.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem15.ImageOptions.SvgImage")));
-            this.navBarItem15.Name = "navBarItem15";
-            this.navBarItem15.Visible = false;
-            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
-            // 
-            // navBarItem20
-            // 
-            this.navBarItem20.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem20.Appearance.Options.UseFont = true;
-            this.navBarItem20.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem20.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem20.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem20.AppearancePressed.Options.UseFont = true;
-            this.navBarItem20.Caption = "Seguimiento";
-            this.navBarItem20.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem20.ImageOptions.SvgImage")));
-            this.navBarItem20.Name = "navBarItem20";
-            this.navBarItem20.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem20_LinkClicked);
-            // 
-            // navBarProductoBorrador
-            // 
-            this.navBarProductoBorrador.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarProductoBorrador.Appearance.Options.UseFont = true;
-            this.navBarProductoBorrador.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarProductoBorrador.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarProductoBorrador.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarProductoBorrador.AppearancePressed.Options.UseFont = true;
-            this.navBarProductoBorrador.Caption = "Solicitud de Creacion Producto Terminado";
-            this.navBarProductoBorrador.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet;
-            this.navBarProductoBorrador.Name = "navBarProductoBorrador";
-            this.navBarProductoBorrador.Visible = false;
-            this.navBarProductoBorrador.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarProductoBorrador_LinkClicked);
-            // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem2.Appearance.Options.UseFont = true;
-            this.navBarItem2.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem2.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem2.AppearancePressed.Options.UseFont = true;
-            this.navBarItem2.Caption = "Solicitud de Creacion Materia Prima";
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.Visible = false;
-            // 
-            // navBarItem25
-            // 
-            this.navBarItem25.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem25.Appearance.Options.UseFont = true;
-            this.navBarItem25.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem25.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem25.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem25.AppearancePressed.Options.UseFont = true;
-            this.navBarItem25.Caption = "Reporte por Batch KepServer";
-            this.navBarItem25.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem25.ImageOptions.SvgImage")));
-            this.navBarItem25.Name = "navBarItem25";
-            // 
-            // navBarItem26
-            // 
-            this.navBarItem26.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem26.Appearance.Options.UseFont = true;
-            this.navBarItem26.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem26.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem26.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem26.AppearancePressed.Options.UseFont = true;
-            this.navBarItem26.Caption = "Reporte Ensacadora";
-            this.navBarItem26.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem26.ImageOptions.SvgImage")));
-            this.navBarItem26.Name = "navBarItem26";
-            // 
-            // navBarItem27
-            // 
-            this.navBarItem27.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem27.Appearance.Options.UseFont = true;
-            this.navBarItem27.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem27.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem27.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem27.AppearancePressed.Options.UseFont = true;
-            this.navBarItem27.Caption = "Reportes Sacos por Lote";
-            this.navBarItem27.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem27.ImageOptions.SvgImage")));
-            this.navBarItem27.Name = "navBarItem27";
-            // 
-            // navBarItem28
-            // 
-            this.navBarItem28.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem28.Appearance.Options.UseFont = true;
-            this.navBarItem28.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem28.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem28.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem28.AppearancePressed.Options.UseFont = true;
-            this.navBarItem28.Caption = "Eficiencia por Turno";
-            this.navBarItem28.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem28.ImageOptions.SvgImage")));
-            this.navBarItem28.Name = "navBarItem28";
-            // 
-            // navBarItem29
-            // 
-            this.navBarItem29.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem29.Appearance.Options.UseFont = true;
-            this.navBarItem29.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem29.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem29.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem29.AppearancePressed.Options.UseFont = true;
-            this.navBarItem29.Caption = "Gestion de Lotes";
-            this.navBarItem29.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem29.ImageOptions.SvgImage")));
-            this.navBarItem29.Name = "navBarItem29";
-            // 
-            // navBarItem30
-            // 
-            this.navBarItem30.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem30.Appearance.Options.UseFont = true;
-            this.navBarItem30.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem30.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem30.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem30.AppearancePressed.Options.UseFont = true;
-            this.navBarItem30.Caption = "Reporte Eficiencia";
-            this.navBarItem30.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem30.ImageOptions.SvgImage")));
-            this.navBarItem30.Name = "navBarItem30";
-            // 
-            // navBarItem31
-            // 
-            this.navBarItem31.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem31.Appearance.Options.UseFont = true;
-            this.navBarItem31.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem31.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem31.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem31.AppearancePressed.Options.UseFont = true;
-            this.navBarItem31.Caption = "Eficiencia de Molinos";
-            this.navBarItem31.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem31.ImageOptions.SvgImage")));
-            this.navBarItem31.Name = "navBarItem31";
-            // 
-            // navBarItem32
-            // 
-            this.navBarItem32.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem32.Appearance.Options.UseFont = true;
-            this.navBarItem32.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem32.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem32.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem32.AppearancePressed.Options.UseFont = true;
-            this.navBarItem32.Caption = "Banner TV";
-            this.navBarItem32.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tv;
-            this.navBarItem32.Name = "navBarItem32";
-            // 
-            // navBarItem33
-            // 
-            this.navBarItem33.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem33.Appearance.Options.UseFont = true;
-            this.navBarItem33.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem33.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem33.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem33.AppearancePressed.Options.UseFont = true;
-            this.navBarItem33.Caption = "Conf. Banner TV";
-            this.navBarItem33.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Dakirby309_Simply_Styled_Settings;
-            this.navBarItem33.Name = "navBarItem33";
-            // 
-            // navBarItem34
-            // 
-            this.navBarItem34.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem34.Appearance.Options.UseFont = true;
-            this.navBarItem34.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem34.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem34.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem34.AppearancePressed.Options.UseFont = true;
-            this.navBarItem34.Caption = "Temperatura Maquinas";
-            this.navBarItem34.ImageOptions.SmallImage = global::LOSA.Properties.Resources.thermometer32px;
-            this.navBarItem34.Name = "navBarItem34";
-            // 
-            // navBarItem35
-            // 
-            this.navBarItem35.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem35.Appearance.Options.UseFont = true;
-            this.navBarItem35.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem35.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem35.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem35.AppearancePressed.Options.UseFont = true;
-            this.navBarItem35.Caption = "Forecast PRD";
-            this.navBarItem35.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem35.ImageOptions.LargeImage")));
-            this.navBarItem35.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem35.ImageOptions.SmallImage")));
-            this.navBarItem35.Name = "navBarItem35";
-            // 
-            // navBarItem36
-            // 
-            this.navBarItem36.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem36.Appearance.Options.UseFont = true;
-            this.navBarItem36.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem36.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem36.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem36.AppearancePressed.Options.UseFont = true;
-            this.navBarItem36.Caption = "Configuraciones";
-            this.navBarItem36.ImageOptions.SmallImage = global::LOSA.Properties.Resources.config_32x32;
-            this.navBarItem36.Name = "navBarItem36";
-            // 
-            // navBarItem37
-            // 
-            this.navBarItem37.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem37.Appearance.Options.UseFont = true;
-            this.navBarItem37.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem37.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem37.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem37.AppearancePressed.Options.UseFont = true;
-            this.navBarItem37.Caption = "Intake Viewer";
-            this.navBarItem37.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_32x32;
-            this.navBarItem37.Name = "navBarItem37";
-            // 
-            // navBarItem39
-            // 
-            this.navBarItem39.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem39.Appearance.Options.UseFont = true;
-            this.navBarItem39.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem39.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem39.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem39.AppearancePressed.Options.UseFont = true;
-            this.navBarItem39.Caption = "Impresión de Tarimas";
-            this.navBarItem39.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px1;
-            this.navBarItem39.Name = "navBarItem39";
-            // 
-            // navBarItem40
-            // 
-            this.navBarItem40.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem40.Appearance.Options.UseFont = true;
-            this.navBarItem40.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem40.AppearanceDisabled.Options.UseFont = true;
-            this.navBarItem40.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem40.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem40.Caption = "Tarimas PT";
-            this.navBarItem40.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
-            this.navBarItem40.Name = "navBarItem40";
-            // 
-            // navBarItem41
-            // 
-            this.navBarItem41.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem41.Appearance.Options.UseFont = true;
-            this.navBarItem41.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem41.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem41.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem41.AppearancePressed.Options.UseFont = true;
-            this.navBarItem41.Caption = "Reporte de Alimentación";
-            this.navBarItem41.ImageOptions.SmallImage = global::LOSA.Properties.Resources.edit_table_1_;
-            this.navBarItem41.Name = "navBarItem41";
-            // 
-            // navBarItem43
-            // 
-            this.navBarItem43.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem43.Appearance.Options.UseFont = true;
-            this.navBarItem43.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem43.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem43.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem43.AppearancePressed.Options.UseFont = true;
-            this.navBarItem43.Caption = "Bin Activo";
-            this.navBarItem43.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tanque;
-            this.navBarItem43.Name = "navBarItem43";
-            // 
-            // navBarItem42
-            // 
-            this.navBarItem42.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem42.Appearance.Options.UseFont = true;
-            this.navBarItem42.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem42.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem42.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem42.AppearancePressed.Options.UseFont = true;
-            this.navBarItem42.Caption = "Tarimas de Reproceso";
-            this.navBarItem42.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
-            this.navBarItem42.Name = "navBarItem42";
-            // 
-            // navBarItem38
-            // 
-            this.navBarItem38.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem38.Appearance.Options.UseFont = true;
-            this.navBarItem38.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem38.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem38.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem38.AppearancePressed.Options.UseFont = true;
-            this.navBarItem38.Caption = "Alimentación Manual";
-            this.navBarItem38.ImageOptions.SmallImage = global::LOSA.Properties.Resources.alimentacion_manual;
-            this.navBarItem38.Name = "navBarItem38";
-            // 
-            // navBarItem46
-            // 
-            this.navBarItem46.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem46.Appearance.Options.UseFont = true;
-            this.navBarItem46.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem46.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem46.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem46.AppearancePressed.Options.UseFont = true;
-            this.navBarItem46.Caption = "Traslado de Aceite Externo";
-            this.navBarItem46.ImageOptions.SmallImage = global::LOSA.Properties.Resources.oil_pipe_line_icon32px;
-            this.navBarItem46.Name = "navBarItem46";
-            // 
-            // navBarItem47
-            // 
-            this.navBarItem47.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem47.Appearance.Options.UseFont = true;
-            this.navBarItem47.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem47.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem47.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem47.AppearancePressed.Options.UseFont = true;
-            this.navBarItem47.Caption = "Set Material";
-            this.navBarItem47.ImageOptions.SmallImage = global::LOSA.Properties.Resources.settings_icon24px;
-            this.navBarItem47.Name = "navBarItem47";
-            // 
-            // navBarItem48
-            // 
-            this.navBarItem48.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem48.Appearance.Options.UseFont = true;
-            this.navBarItem48.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem48.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem48.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem48.AppearancePressed.Options.UseFont = true;
-            this.navBarItem48.Caption = "Reporte Traslados Aceites";
-            this.navBarItem48.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Reports_icon24px;
-            this.navBarItem48.Name = "navBarItem48";
-            // 
-            // navBarItem49
-            // 
-            this.navBarItem49.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem49.Appearance.Options.UseFont = true;
-            this.navBarItem49.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem49.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem49.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem49.AppearancePressed.Options.UseFont = true;
-            this.navBarItem49.Caption = "R. Traslados Tanques Arriba";
-            this.navBarItem49.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem49.ImageOptions.LargeImage")));
-            this.navBarItem49.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem49.ImageOptions.SmallImage")));
-            this.navBarItem49.Name = "navBarItem49";
-            // 
-            // navBarItem50
-            // 
-            this.navBarItem50.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem50.Appearance.Options.UseFont = true;
-            this.navBarItem50.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem50.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem50.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem50.AppearancePressed.Options.UseFont = true;
-            this.navBarItem50.Caption = "Salida de Aceite";
-            this.navBarItem50.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem50.ImageOptions.SvgImage")));
-            this.navBarItem50.Name = "navBarItem50";
-            // 
-            // navBarItem51
-            // 
-            this.navBarItem51.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem51.Appearance.Options.UseFont = true;
-            this.navBarItem51.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem51.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem51.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem51.AppearancePressed.Options.UseFont = true;
-            this.navBarItem51.Caption = "Set Lote Granel";
-            this.navBarItem51.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem51.ImageOptions.LargeImage")));
-            this.navBarItem51.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem51.ImageOptions.SmallImage")));
-            this.navBarItem51.Name = "navBarItem51";
-            this.navBarItem51.Visible = false;
-            // 
-            // navBarItem52
-            // 
-            this.navBarItem52.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem52.Appearance.Options.UseFont = true;
-            this.navBarItem52.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem52.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem52.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem52.AppearancePressed.Options.UseFont = true;
-            this.navBarItem52.Caption = "Aceite Resumen";
-            this.navBarItem52.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem52.ImageOptions.SvgImage")));
-            this.navBarItem52.Name = "navBarItem52";
-            // 
-            // navBarItem53
-            // 
-            this.navBarItem53.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem53.Appearance.Options.UseFont = true;
-            this.navBarItem53.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem53.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem53.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem53.AppearancePressed.Options.UseFont = true;
-            this.navBarItem53.Caption = "Resumen Aceites Arriba";
-            this.navBarItem53.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem53.ImageOptions.SvgImage")));
-            this.navBarItem53.Name = "navBarItem53";
-            // 
-            // navBarItem54
-            // 
-            this.navBarItem54.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem54.Appearance.Options.UseFont = true;
-            this.navBarItem54.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem54.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem54.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem54.AppearancePressed.Options.UseFont = true;
-            this.navBarItem54.Caption = "Resumen Aceites por Lote";
-            this.navBarItem54.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem54.ImageOptions.SvgImage")));
-            this.navBarItem54.Name = "navBarItem54";
-            // 
-            // navBarItem44
-            // 
-            this.navBarItem44.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem44.Appearance.Options.UseFont = true;
-            this.navBarItem44.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem44.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem44.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem44.AppearancePressed.Options.UseFont = true;
-            this.navBarItem44.Caption = "Reporte de Lotes a Consumir";
-            this.navBarItem44.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem44.ImageOptions.LargeImage")));
-            this.navBarItem44.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
-            this.navBarItem44.Name = "navBarItem44";
-            // 
-            // navBarItem45
-            // 
-            this.navBarItem45.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem45.Appearance.Options.UseFont = true;
-            this.navBarItem45.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem45.AppearanceDisabled.Options.UseFont = true;
-            this.navBarItem45.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem45.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem45.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem45.AppearancePressed.Options.UseFont = true;
-            this.navBarItem45.Caption = "MP por BIN";
-            this.navBarItem45.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem45.ImageOptions.SvgImage")));
-            this.navBarItem45.Name = "navBarItem45";
-            // 
-            // TabCompras
-            // 
-            this.TabCompras.Controls.Add(this.navBarControl5);
-            this.TabCompras.ImageOptions.Image = global::LOSA.Properties.Resources.orden_de_compra;
-            this.TabCompras.Name = "TabCompras";
-            this.TabCompras.PageVisible = false;
-            this.TabCompras.Size = new System.Drawing.Size(835, 480);
-            this.TabCompras.Text = "Compras";
-            // 
-            // navBarControl5
-            // 
-            this.navBarControl5.ActiveGroup = this.navBarGroup2;
-            this.navBarControl5.Appearance.Button.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarControl5.Appearance.Button.Options.UseFont = true;
-            this.navBarControl5.Appearance.ButtonPressed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarControl5.Appearance.ButtonPressed.Options.UseFont = true;
-            this.navBarControl5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl5.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup2});
-            this.navBarControl5.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.navOrdenCompra,
-            this.navBarItem9,
-            this.navBarItem10,
-            this.navBarItem12,
-            this.navBarItem16,
-            this.navBarItem17,
-            this.navBarItem18,
-            this.navBarItem19,
-            this.navBarItem21,
-            this.navBarItem22,
-            this.navBarItem23,
-            this.navBarItem24,
-            this.navBarItem55,
-            this.navBarItem56,
-            this.navBarItem58,
-            this.navBarItem59,
-            this.navBarItem61,
-            this.navBarItem103,
-            this.navBarItem104,
-            this.navBarItem105,
-            this.navBarItem106,
-            this.navBarItem107,
-            this.navBarItem108,
-            this.navBarItem109,
-            this.navBarItem110,
-            this.navBarItem112,
-            this.navBarItem113,
-            this.navBarItem114,
-            this.navBarItem115,
-            this.navBarItem116,
-            this.navBarItem117,
-            this.nbarAprobacionOrdenesCompra,
-            this.navListaOC,
-            this.navBarKardexSaldo,
-            this.navAprobacionDocumentos});
-            this.navBarControl5.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl5.Name = "navBarControl5";
-            this.navBarControl5.OptionsNavPane.ExpandedWidth = 274;
-            this.navBarControl5.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
-            this.navBarControl5.Size = new System.Drawing.Size(274, 480);
-            this.navBarControl5.TabIndex = 22;
-            // 
-            // navBarGroup2
-            // 
-            this.navBarGroup2.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarGroup2.Appearance.Options.UseFont = true;
-            this.navBarGroup2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup2.AppearancePressed.Options.UseFont = true;
-            this.navBarGroup2.Caption = "General";
-            this.navBarGroup2.Expanded = true;
-            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navOrdenCompra),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbarAprobacionOrdenesCompra),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarKardexSaldo),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navListaOC),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navAprobacionDocumentos)});
-            this.navBarGroup2.Name = "navBarGroup2";
-            // 
-            // navOrdenCompra
-            // 
-            this.navOrdenCompra.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navOrdenCompra.Appearance.Options.UseFont = true;
-            this.navOrdenCompra.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navOrdenCompra.AppearanceHotTracked.Options.UseFont = true;
-            this.navOrdenCompra.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navOrdenCompra.AppearancePressed.Options.UseFont = true;
-            this.navOrdenCompra.Caption = "Ordenes de Compra";
-            this.navOrdenCompra.ImageOptions.SmallImage = global::LOSA.Properties.Resources.checklist;
-            this.navOrdenCompra.Name = "navOrdenCompra";
-            this.navOrdenCompra.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navOrdenCompra_LinkPressed);
-            // 
-            // nbarAprobacionOrdenesCompra
-            // 
-            this.nbarAprobacionOrdenesCompra.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.nbarAprobacionOrdenesCompra.Appearance.Options.UseFont = true;
-            this.nbarAprobacionOrdenesCompra.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.nbarAprobacionOrdenesCompra.AppearanceHotTracked.Options.UseFont = true;
-            this.nbarAprobacionOrdenesCompra.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.nbarAprobacionOrdenesCompra.AppearancePressed.Options.UseFont = true;
-            this.nbarAprobacionOrdenesCompra.Caption = "Aprobación de Ordenes";
-            this.nbarAprobacionOrdenesCompra.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbarAprobacionOrdenesCompra.ImageOptions.SmallImage")));
-            this.nbarAprobacionOrdenesCompra.Name = "nbarAprobacionOrdenesCompra";
-            this.nbarAprobacionOrdenesCompra.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbarAprobacionOrdenesCompra_LinkClicked);
-            // 
-            // navBarKardexSaldo
-            // 
-            this.navBarKardexSaldo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.Appearance.Options.UseFont = true;
-            this.navBarKardexSaldo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarKardexSaldo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navBarKardexSaldo.AppearancePressed.Options.UseFont = true;
-            this.navBarKardexSaldo.Caption = "Saldo Disponible";
-            this.navBarKardexSaldo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarKardexSaldo.ImageOptions.SvgImage")));
-            this.navBarKardexSaldo.Name = "navBarKardexSaldo";
-            this.navBarKardexSaldo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarKardexSaldo_LinkClicked);
-            // 
-            // navListaOC
-            // 
-            this.navListaOC.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navListaOC.Appearance.Options.UseFont = true;
-            this.navListaOC.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navListaOC.AppearanceHotTracked.Options.UseFont = true;
-            this.navListaOC.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navListaOC.AppearancePressed.Options.UseFont = true;
-            this.navListaOC.Caption = "Lista Ordenes de Compra";
-            this.navListaOC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navListaOC.ImageOptions.SvgImage")));
-            this.navListaOC.Name = "navListaOC";
-            this.navListaOC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navListaOC_LinkClicked);
-            // 
-            // navAprobacionDocumentos
-            // 
-            this.navAprobacionDocumentos.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navAprobacionDocumentos.Appearance.Options.UseFont = true;
-            this.navAprobacionDocumentos.Appearance.Options.UseTextOptions = true;
-            this.navAprobacionDocumentos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.navAprobacionDocumentos.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navAprobacionDocumentos.AppearanceHotTracked.Options.UseFont = true;
-            this.navAprobacionDocumentos.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.navAprobacionDocumentos.AppearancePressed.Options.UseFont = true;
-            this.navAprobacionDocumentos.Caption = "Aprobacion Salidas de Mercancia";
-            this.navAprobacionDocumentos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navAprobacionDocumentos.ImageOptions.SvgImage")));
-            this.navAprobacionDocumentos.Name = "navAprobacionDocumentos";
-            this.navAprobacionDocumentos.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navAprobacionDocumentos_LinkClicked);
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.Appearance.Options.UseFont = true;
-            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearancePressed.Options.UseFont = true;
-            this.navBarItem9.Caption = "Reporte por Batch KepServer";
-            this.navBarItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
-            this.navBarItem9.Name = "navBarItem9";
-            // 
-            // navBarItem10
-            // 
-            this.navBarItem10.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem10.Appearance.Options.UseFont = true;
-            this.navBarItem10.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem10.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem10.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem10.AppearancePressed.Options.UseFont = true;
-            this.navBarItem10.Caption = "Reporte Ensacadora";
-            this.navBarItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem10.ImageOptions.SvgImage")));
-            this.navBarItem10.Name = "navBarItem10";
-            // 
-            // navBarItem12
-            // 
-            this.navBarItem12.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem12.Appearance.Options.UseFont = true;
-            this.navBarItem12.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem12.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem12.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem12.AppearancePressed.Options.UseFont = true;
-            this.navBarItem12.Caption = "Reportes Sacos por Lote";
-            this.navBarItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem12.ImageOptions.SvgImage")));
-            this.navBarItem12.Name = "navBarItem12";
-            // 
-            // navBarItem16
-            // 
-            this.navBarItem16.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem16.Appearance.Options.UseFont = true;
-            this.navBarItem16.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem16.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem16.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem16.AppearancePressed.Options.UseFont = true;
-            this.navBarItem16.Caption = "Eficiencia por Turno";
-            this.navBarItem16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem16.ImageOptions.SvgImage")));
-            this.navBarItem16.Name = "navBarItem16";
-            // 
-            // navBarItem17
-            // 
-            this.navBarItem17.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem17.Appearance.Options.UseFont = true;
-            this.navBarItem17.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem17.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem17.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem17.AppearancePressed.Options.UseFont = true;
-            this.navBarItem17.Caption = "Gestion de Lotes";
-            this.navBarItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem17.ImageOptions.SvgImage")));
-            this.navBarItem17.Name = "navBarItem17";
-            // 
-            // navBarItem18
-            // 
-            this.navBarItem18.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem18.Appearance.Options.UseFont = true;
-            this.navBarItem18.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem18.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem18.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem18.AppearancePressed.Options.UseFont = true;
-            this.navBarItem18.Caption = "Reporte Eficiencia";
-            this.navBarItem18.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem18.ImageOptions.SvgImage")));
-            this.navBarItem18.Name = "navBarItem18";
-            // 
-            // navBarItem19
-            // 
-            this.navBarItem19.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem19.Appearance.Options.UseFont = true;
-            this.navBarItem19.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem19.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem19.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem19.AppearancePressed.Options.UseFont = true;
-            this.navBarItem19.Caption = "Eficiencia de Molinos";
-            this.navBarItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem19.ImageOptions.SvgImage")));
-            this.navBarItem19.Name = "navBarItem19";
-            // 
-            // navBarItem21
-            // 
-            this.navBarItem21.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.Appearance.Options.UseFont = true;
-            this.navBarItem21.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem21.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.AppearancePressed.Options.UseFont = true;
-            this.navBarItem21.Caption = "Banner TV";
-            this.navBarItem21.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tv;
-            this.navBarItem21.Name = "navBarItem21";
-            // 
-            // navBarItem22
-            // 
-            this.navBarItem22.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem22.Appearance.Options.UseFont = true;
-            this.navBarItem22.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem22.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem22.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem22.AppearancePressed.Options.UseFont = true;
-            this.navBarItem22.Caption = "Conf. Banner TV";
-            this.navBarItem22.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Dakirby309_Simply_Styled_Settings;
-            this.navBarItem22.Name = "navBarItem22";
-            // 
-            // navBarItem23
-            // 
-            this.navBarItem23.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem23.Appearance.Options.UseFont = true;
-            this.navBarItem23.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem23.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem23.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem23.AppearancePressed.Options.UseFont = true;
-            this.navBarItem23.Caption = "Temperatura Maquinas";
-            this.navBarItem23.ImageOptions.SmallImage = global::LOSA.Properties.Resources.thermometer32px;
-            this.navBarItem23.Name = "navBarItem23";
-            // 
-            // navBarItem24
-            // 
-            this.navBarItem24.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem24.Appearance.Options.UseFont = true;
-            this.navBarItem24.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem24.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem24.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem24.AppearancePressed.Options.UseFont = true;
-            this.navBarItem24.Caption = "Forecast PRD";
-            this.navBarItem24.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem24.ImageOptions.LargeImage")));
-            this.navBarItem24.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem24.ImageOptions.SmallImage")));
-            this.navBarItem24.Name = "navBarItem24";
-            // 
-            // navBarItem55
-            // 
-            this.navBarItem55.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem55.Appearance.Options.UseFont = true;
-            this.navBarItem55.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem55.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem55.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem55.AppearancePressed.Options.UseFont = true;
-            this.navBarItem55.Caption = "Configuraciones";
-            this.navBarItem55.ImageOptions.SmallImage = global::LOSA.Properties.Resources.config_32x32;
-            this.navBarItem55.Name = "navBarItem55";
-            // 
-            // navBarItem56
-            // 
-            this.navBarItem56.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem56.Appearance.Options.UseFont = true;
-            this.navBarItem56.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem56.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem56.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem56.AppearancePressed.Options.UseFont = true;
-            this.navBarItem56.Caption = "Intake Viewer";
-            this.navBarItem56.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_32x32;
-            this.navBarItem56.Name = "navBarItem56";
-            // 
-            // navBarItem58
-            // 
-            this.navBarItem58.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem58.Appearance.Options.UseFont = true;
-            this.navBarItem58.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem58.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem58.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem58.AppearancePressed.Options.UseFont = true;
-            this.navBarItem58.Caption = "Impresión de Tarimas";
-            this.navBarItem58.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px1;
-            this.navBarItem58.Name = "navBarItem58";
-            // 
-            // navBarItem59
-            // 
-            this.navBarItem59.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem59.Appearance.Options.UseFont = true;
-            this.navBarItem59.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem59.AppearanceDisabled.Options.UseFont = true;
-            this.navBarItem59.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem59.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem59.Caption = "Tarimas PT";
-            this.navBarItem59.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
-            this.navBarItem59.Name = "navBarItem59";
-            // 
-            // navBarItem61
-            // 
-            this.navBarItem61.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem61.Appearance.Options.UseFont = true;
-            this.navBarItem61.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem61.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem61.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem61.AppearancePressed.Options.UseFont = true;
-            this.navBarItem61.Caption = "Reporte de Alimentación";
-            this.navBarItem61.ImageOptions.SmallImage = global::LOSA.Properties.Resources.edit_table_1_;
-            this.navBarItem61.Name = "navBarItem61";
-            // 
-            // navBarItem103
-            // 
-            this.navBarItem103.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem103.Appearance.Options.UseFont = true;
-            this.navBarItem103.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem103.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem103.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem103.AppearancePressed.Options.UseFont = true;
-            this.navBarItem103.Caption = "Bin Activo";
-            this.navBarItem103.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tanque;
-            this.navBarItem103.Name = "navBarItem103";
-            // 
-            // navBarItem104
-            // 
-            this.navBarItem104.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem104.Appearance.Options.UseFont = true;
-            this.navBarItem104.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem104.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem104.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem104.AppearancePressed.Options.UseFont = true;
-            this.navBarItem104.Caption = "Tarimas de Reproceso";
-            this.navBarItem104.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
-            this.navBarItem104.Name = "navBarItem104";
-            // 
-            // navBarItem105
-            // 
-            this.navBarItem105.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem105.Appearance.Options.UseFont = true;
-            this.navBarItem105.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem105.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem105.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem105.AppearancePressed.Options.UseFont = true;
-            this.navBarItem105.Caption = "Alimentación Manual";
-            this.navBarItem105.ImageOptions.SmallImage = global::LOSA.Properties.Resources.alimentacion_manual;
-            this.navBarItem105.Name = "navBarItem105";
-            // 
-            // navBarItem106
-            // 
-            this.navBarItem106.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem106.Appearance.Options.UseFont = true;
-            this.navBarItem106.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem106.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem106.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem106.AppearancePressed.Options.UseFont = true;
-            this.navBarItem106.Caption = "Traslado de Aceite Externo";
-            this.navBarItem106.ImageOptions.SmallImage = global::LOSA.Properties.Resources.oil_pipe_line_icon32px;
-            this.navBarItem106.Name = "navBarItem106";
-            // 
-            // navBarItem107
-            // 
-            this.navBarItem107.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem107.Appearance.Options.UseFont = true;
-            this.navBarItem107.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem107.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem107.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem107.AppearancePressed.Options.UseFont = true;
-            this.navBarItem107.Caption = "Set Material";
-            this.navBarItem107.ImageOptions.SmallImage = global::LOSA.Properties.Resources.settings_icon24px;
-            this.navBarItem107.Name = "navBarItem107";
-            // 
-            // navBarItem108
-            // 
-            this.navBarItem108.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem108.Appearance.Options.UseFont = true;
-            this.navBarItem108.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem108.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem108.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem108.AppearancePressed.Options.UseFont = true;
-            this.navBarItem108.Caption = "Reporte Traslados Aceites";
-            this.navBarItem108.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Reports_icon24px;
-            this.navBarItem108.Name = "navBarItem108";
-            // 
-            // navBarItem109
-            // 
-            this.navBarItem109.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem109.Appearance.Options.UseFont = true;
-            this.navBarItem109.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem109.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem109.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem109.AppearancePressed.Options.UseFont = true;
-            this.navBarItem109.Caption = "R. Traslados Tanques Arriba";
-            this.navBarItem109.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem109.ImageOptions.LargeImage")));
-            this.navBarItem109.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem109.ImageOptions.SmallImage")));
-            this.navBarItem109.Name = "navBarItem109";
-            // 
-            // navBarItem110
-            // 
-            this.navBarItem110.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem110.Appearance.Options.UseFont = true;
-            this.navBarItem110.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem110.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem110.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem110.AppearancePressed.Options.UseFont = true;
-            this.navBarItem110.Caption = "Salida de Aceite";
-            this.navBarItem110.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem110.ImageOptions.SvgImage")));
-            this.navBarItem110.Name = "navBarItem110";
-            // 
-            // navBarItem112
-            // 
-            this.navBarItem112.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem112.Appearance.Options.UseFont = true;
-            this.navBarItem112.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem112.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem112.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem112.AppearancePressed.Options.UseFont = true;
-            this.navBarItem112.Caption = "Set Lote Granel";
-            this.navBarItem112.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem112.ImageOptions.LargeImage")));
-            this.navBarItem112.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem112.ImageOptions.SmallImage")));
-            this.navBarItem112.Name = "navBarItem112";
-            this.navBarItem112.Visible = false;
-            // 
-            // navBarItem113
-            // 
-            this.navBarItem113.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem113.Appearance.Options.UseFont = true;
-            this.navBarItem113.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem113.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem113.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem113.AppearancePressed.Options.UseFont = true;
-            this.navBarItem113.Caption = "Aceite Resumen";
-            this.navBarItem113.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem113.ImageOptions.SvgImage")));
-            this.navBarItem113.Name = "navBarItem113";
-            // 
-            // navBarItem114
-            // 
-            this.navBarItem114.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem114.Appearance.Options.UseFont = true;
-            this.navBarItem114.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem114.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem114.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem114.AppearancePressed.Options.UseFont = true;
-            this.navBarItem114.Caption = "Resumen Aceites Arriba";
-            this.navBarItem114.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem114.ImageOptions.SvgImage")));
-            this.navBarItem114.Name = "navBarItem114";
-            // 
-            // navBarItem115
-            // 
-            this.navBarItem115.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem115.Appearance.Options.UseFont = true;
-            this.navBarItem115.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem115.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem115.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem115.AppearancePressed.Options.UseFont = true;
-            this.navBarItem115.Caption = "Resumen Aceites por Lote";
-            this.navBarItem115.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem115.ImageOptions.SvgImage")));
-            this.navBarItem115.Name = "navBarItem115";
-            // 
-            // navBarItem116
-            // 
-            this.navBarItem116.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem116.Appearance.Options.UseFont = true;
-            this.navBarItem116.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem116.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem116.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem116.AppearancePressed.Options.UseFont = true;
-            this.navBarItem116.Caption = "Reporte de Lotes a Consumir";
-            this.navBarItem116.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem116.ImageOptions.LargeImage")));
-            this.navBarItem116.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
-            this.navBarItem116.Name = "navBarItem116";
-            // 
-            // navBarItem117
-            // 
-            this.navBarItem117.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem117.Appearance.Options.UseFont = true;
-            this.navBarItem117.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem117.AppearanceDisabled.Options.UseFont = true;
-            this.navBarItem117.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem117.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem117.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem117.AppearancePressed.Options.UseFont = true;
-            this.navBarItem117.Caption = "MP por BIN";
-            this.navBarItem117.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem117.ImageOptions.SvgImage")));
-            this.navBarItem117.Name = "navBarItem117";
-            // 
-            // TabReportes_
-            // 
-            this.TabReportes_.Controls.Add(this.navBarControl7);
-            this.TabReportes_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabReportes_.ImageOptions.Image")));
-            this.TabReportes_.Name = "TabReportes_";
-            this.TabReportes_.Size = new System.Drawing.Size(835, 480);
-            this.TabReportes_.Text = "Reportes";
-            // 
-            // navBarControl7
-            // 
-            this.navBarControl7.ActiveGroup = this.navBarGroup3;
-            this.navBarControl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl7.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup3});
-            this.navBarControl7.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.nbButtonReporteUnificadoConsumo});
-            this.navBarControl7.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl7.Name = "navBarControl7";
-            this.navBarControl7.OptionsNavPane.ExpandedWidth = 451;
-            this.navBarControl7.Size = new System.Drawing.Size(451, 480);
-            this.navBarControl7.TabIndex = 56;
-            this.navBarControl7.Text = "navBarControl7";
-            // 
-            // navBarGroup3
-            // 
-            this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup3.Appearance.Options.UseFont = true;
-            this.navBarGroup3.Caption = "Consumo MP";
-            this.navBarGroup3.Expanded = true;
-            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbButtonReporteUnificadoConsumo)});
-            this.navBarGroup3.Name = "navBarGroup3";
-            // 
-            // nbButtonReporteUnificadoConsumo
-            // 
-            this.nbButtonReporteUnificadoConsumo.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.nbButtonReporteUnificadoConsumo.Appearance.Options.UseFont = true;
-            this.nbButtonReporteUnificadoConsumo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.nbButtonReporteUnificadoConsumo.AppearanceHotTracked.Options.UseFont = true;
-            this.nbButtonReporteUnificadoConsumo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.nbButtonReporteUnificadoConsumo.AppearancePressed.Options.UseFont = true;
-            this.nbButtonReporteUnificadoConsumo.Caption = "Unificado consumo MP Consola";
-            this.nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage")));
-            this.nbButtonReporteUnificadoConsumo.Name = "nbButtonReporteUnificadoConsumo";
-            this.nbButtonReporteUnificadoConsumo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbButtonReporteUnificadoConsumo_LinkClicked);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(66, 44);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(578, 39);
-            this.labelControl3.TabIndex = 31;
-            this.labelControl3.Text = "Menu principal";
-            // 
-            // rd_OdooMenu
-            // 
-            this.rd_OdooMenu.AutoExpand = true;
-            this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
             // xtraTabControl2
             // 
@@ -7416,12 +5973,43 @@
             // 
             // contaTabReportes
             // 
+            this.contaTabReportes.Controls.Add(this.btn_mp_bodega_prd_finanzas);
             this.contaTabReportes.Controls.Add(this.btn_rutas_traza_contabilidad);
             this.contaTabReportes.Controls.Add(this.navBarControl8);
+            this.contaTabReportes.Controls.Add(this.cmdAprobarAjustesInvALOSY);
             this.contaTabReportes.Controls.Add(this.btn_ExoneracionAQ);
+            this.contaTabReportes.Controls.Add(this.simpleButton76);
             this.contaTabReportes.Name = "contaTabReportes";
             this.contaTabReportes.Size = new System.Drawing.Size(824, 444);
             this.contaTabReportes.Text = "Reportes";
+            // 
+            // btn_mp_bodega_prd_finanzas
+            // 
+            this.btn_mp_bodega_prd_finanzas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mp_bodega_prd_finanzas.Appearance.Options.UseFont = true;
+            this.btn_mp_bodega_prd_finanzas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_mp_bodega_prd_finanzas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_mp_bodega_prd_finanzas.ImageOptions.Image")));
+            this.btn_mp_bodega_prd_finanzas.Location = new System.Drawing.Point(513, 164);
+            this.btn_mp_bodega_prd_finanzas.Name = "btn_mp_bodega_prd_finanzas";
+            this.btn_mp_bodega_prd_finanzas.Size = new System.Drawing.Size(182, 56);
+            this.btn_mp_bodega_prd_finanzas.TabIndex = 49;
+            this.btn_mp_bodega_prd_finanzas.Text = "MP en Bodega Prd";
+            this.btn_mp_bodega_prd_finanzas.Click += new System.EventHandler(this.btn_mp_bodega_prd_finanzas_Click);
+            // 
+            // btn_rutas_traza_contabilidad
+            // 
+            this.btn_rutas_traza_contabilidad.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rutas_traza_contabilidad.Appearance.Options.UseFont = true;
+            this.btn_rutas_traza_contabilidad.Appearance.Options.UseTextOptions = true;
+            this.btn_rutas_traza_contabilidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btn_rutas_traza_contabilidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_rutas_traza_contabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.signpost24X24;
+            this.btn_rutas_traza_contabilidad.Location = new System.Drawing.Point(513, 8);
+            this.btn_rutas_traza_contabilidad.Name = "btn_rutas_traza_contabilidad";
+            this.btn_rutas_traza_contabilidad.Size = new System.Drawing.Size(182, 56);
+            this.btn_rutas_traza_contabilidad.TabIndex = 50;
+            this.btn_rutas_traza_contabilidad.Text = "Rutas de Trazabilidad";
+            this.btn_rutas_traza_contabilidad.Click += new System.EventHandler(this.btn_rutas_traza_contabilidad_Click);
             // 
             // navBarControl8
             // 
@@ -7437,8 +6025,8 @@
             this.navContaRptConsumo,
             this.navContaVarianzacobro,
             this.navBarItem4,
-            this.navBarItem5,
-            this.navBarItem6,
+            this.navRptNucleos,
+            this.navReporteBancosPlanilla,
             this.navBarItem7,
             this.navBarItem8,
             this.navBarItem159,
@@ -7474,7 +6062,9 @@
             this.navBarItem233,
             this.navBarItem234,
             this.navBarItem235,
-            this.navBarItem236});
+            this.navBarItem236,
+            this.navConsolaTeorico,
+            this.navBarItem3});
             this.navBarControl8.Location = new System.Drawing.Point(0, 0);
             this.navBarControl8.Name = "navBarControl8";
             this.navBarControl8.OptionsNavPane.ExpandedWidth = 255;
@@ -7495,11 +6085,13 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navContaRptConsumo),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navContaVarianzacobro),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navRptNucleos),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navReporteBancosPlanilla),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem159)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem159),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navConsolaTeorico),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroup4.Name = "navBarGroup4";
             // 
             // navContaRptConsumo
@@ -7511,7 +6103,7 @@
             this.navContaRptConsumo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navContaRptConsumo.AppearancePressed.Options.UseFont = true;
             this.navContaRptConsumo.Caption = "Reporte Consumo Producción";
-            this.navContaRptConsumo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem1.ImageOptions.SvgImage")));
+            this.navContaRptConsumo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navContaRptConsumo.ImageOptions.SvgImage")));
             this.navContaRptConsumo.Name = "navContaRptConsumo";
             this.navContaRptConsumo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navContaRptConsumo_LinkClicked);
             // 
@@ -7542,29 +6134,31 @@
             this.navBarItem4.Name = "navBarItem4";
             this.navBarItem4.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem4_LinkClicked_1);
             // 
-            // navBarItem5
+            // navRptNucleos
             // 
-            this.navBarItem5.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem5.Appearance.Options.UseFont = true;
-            this.navBarItem5.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem5.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem5.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem5.AppearancePressed.Options.UseFont = true;
-            this.navBarItem5.Caption = "Programa de Producción";
-            this.navBarItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem5.ImageOptions.SvgImage")));
-            this.navBarItem5.Name = "navBarItem5";
+            this.navRptNucleos.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navRptNucleos.Appearance.Options.UseFont = true;
+            this.navRptNucleos.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navRptNucleos.AppearanceHotTracked.Options.UseFont = true;
+            this.navRptNucleos.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navRptNucleos.AppearancePressed.Options.UseFont = true;
+            this.navRptNucleos.Caption = "Reporte Nucleos";
+            this.navRptNucleos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navRptNucleos.ImageOptions.SvgImage")));
+            this.navRptNucleos.Name = "navRptNucleos";
+            this.navRptNucleos.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navRptNucleos_LinkClicked);
             // 
-            // navBarItem6
+            // navReporteBancosPlanilla
             // 
-            this.navBarItem6.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem6.Appearance.Options.UseFont = true;
-            this.navBarItem6.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem6.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem6.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem6.AppearancePressed.Options.UseFont = true;
-            this.navBarItem6.Caption = "Portafolio";
-            this.navBarItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem6.ImageOptions.SvgImage")));
-            this.navBarItem6.Name = "navBarItem6";
+            this.navReporteBancosPlanilla.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navReporteBancosPlanilla.Appearance.Options.UseFont = true;
+            this.navReporteBancosPlanilla.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navReporteBancosPlanilla.AppearanceHotTracked.Options.UseFont = true;
+            this.navReporteBancosPlanilla.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navReporteBancosPlanilla.AppearancePressed.Options.UseFont = true;
+            this.navReporteBancosPlanilla.Caption = "Reporte Bancos Planilla";
+            this.navReporteBancosPlanilla.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navReporteBancosPlanilla.ImageOptions.SvgImage")));
+            this.navReporteBancosPlanilla.Name = "navReporteBancosPlanilla";
+            this.navReporteBancosPlanilla.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navReporteBancosPlanilla_LinkClicked);
             // 
             // navBarItem7
             // 
@@ -7574,9 +6168,10 @@
             this.navBarItem7.AppearanceHotTracked.Options.UseFont = true;
             this.navBarItem7.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem7.AppearancePressed.Options.UseFont = true;
-            this.navBarItem7.Caption = "Control de Producción";
+            this.navBarItem7.Caption = "Reportes 2.0";
             this.navBarItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem7.ImageOptions.SvgImage")));
             this.navBarItem7.Name = "navBarItem7";
+            this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked_1);
             // 
             // navBarItem8
             // 
@@ -7586,10 +6181,10 @@
             this.navBarItem8.AppearanceHotTracked.Options.UseFont = true;
             this.navBarItem8.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem8.AppearancePressed.Options.UseFont = true;
-            this.navBarItem8.Caption = "Bromatología en Proceso";
-            this.navBarItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem8.ImageOptions.LargeImage")));
-            this.navBarItem8.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem8.ImageOptions.SmallImage")));
+            this.navBarItem8.Caption = "Reportes Fiscales";
+            this.navBarItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem8.ImageOptions.SvgImage")));
             this.navBarItem8.Name = "navBarItem8";
+            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked_1);
             // 
             // navBarItem159
             // 
@@ -7599,9 +6194,10 @@
             this.navBarItem159.AppearanceHotTracked.Options.UseFont = true;
             this.navBarItem159.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem159.AppearancePressed.Options.UseFont = true;
-            this.navBarItem159.Caption = "Consulta Horas";
-            this.navBarItem159.ImageOptions.SmallImage = global::LOSA.Properties.Resources.clock_24;
+            this.navBarItem159.Caption = "Base Datos Consola";
+            this.navBarItem159.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem159.ImageOptions.SvgImage")));
             this.navBarItem159.Name = "navBarItem159";
+            this.navBarItem159.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem159_LinkClicked);
             // 
             // navBarItem160
             // 
@@ -8007,6 +6603,36 @@
             this.navBarItem236.Caption = "Pesaje Bascula Alimentacion";
             this.navBarItem236.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem236.ImageOptions.SmallImage")));
             this.navBarItem236.Name = "navBarItem236";
+            // 
+            // btn_ExoneracionAQ
+            // 
+            this.btn_ExoneracionAQ.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ExoneracionAQ.Appearance.Options.UseFont = true;
+            this.btn_ExoneracionAQ.Appearance.Options.UseTextOptions = true;
+            this.btn_ExoneracionAQ.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btn_ExoneracionAQ.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_ExoneracionAQ.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ExoneracionAQ.ImageOptions.Image")));
+            this.btn_ExoneracionAQ.Location = new System.Drawing.Point(638, 8);
+            this.btn_ExoneracionAQ.Name = "btn_ExoneracionAQ";
+            this.btn_ExoneracionAQ.Size = new System.Drawing.Size(182, 56);
+            this.btn_ExoneracionAQ.TabIndex = 54;
+            this.btn_ExoneracionAQ.Text = "Exoneracion Fiscal";
+            this.btn_ExoneracionAQ.Click += new System.EventHandler(this.btn_ExoneracionAQ_Click);
+            // 
+            // simpleButton76
+            // 
+            this.simpleButton76.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.simpleButton76.Appearance.Options.UseFont = true;
+            this.simpleButton76.Appearance.Options.UseTextOptions = true;
+            this.simpleButton76.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton76.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton76.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton76.ImageOptions.Image")));
+            this.simpleButton76.Location = new System.Drawing.Point(639, 164);
+            this.simpleButton76.Name = "simpleButton76";
+            this.simpleButton76.Size = new System.Drawing.Size(182, 56);
+            this.simpleButton76.TabIndex = 56;
+            this.simpleButton76.Text = "Partidas RRHH";
+            this.simpleButton76.Click += new System.EventHandler(this.simpleButton76_Click);
             // 
             // contaTabCostos
             // 
@@ -9788,6 +8414,1268 @@
             this.navBarItem359.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem359.ImageOptions.SmallImage")));
             this.navBarItem359.Name = "navBarItem359";
             // 
+            // TabBascula
+            // 
+            this.TabBascula.Controls.Add(this.simpleButton71);
+            this.TabBascula.Controls.Add(this.simpleButton70);
+            this.TabBascula.Controls.Add(this.simpleButton69);
+            this.TabBascula.Controls.Add(this.simpleButton68);
+            this.TabBascula.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
+            this.TabBascula.Name = "TabBascula";
+            this.TabBascula.PageVisible = false;
+            this.TabBascula.Size = new System.Drawing.Size(835, 480);
+            this.TabBascula.Text = "Báscula";
+            // 
+            // simpleButton71
+            // 
+            this.simpleButton71.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton71.Appearance.Options.UseFont = true;
+            this.simpleButton71.Appearance.Options.UseTextOptions = true;
+            this.simpleButton71.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton71.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton71.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton71.ImageOptions.Image")));
+            this.simpleButton71.Location = new System.Drawing.Point(60, 122);
+            this.simpleButton71.Name = "simpleButton71";
+            this.simpleButton71.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton71.TabIndex = 54;
+            this.simpleButton71.Text = "Reporte de Báscula";
+            this.simpleButton71.Click += new System.EventHandler(this.simpleButton71_Click);
+            // 
+            // simpleButton70
+            // 
+            this.simpleButton70.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton70.Appearance.Options.UseFont = true;
+            this.simpleButton70.Appearance.Options.UseTextOptions = true;
+            this.simpleButton70.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton70.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton70.ImageOptions.Image = global::LOSA.Properties.Resources.hapag_4_icon48px;
+            this.simpleButton70.Location = new System.Drawing.Point(60, 206);
+            this.simpleButton70.Name = "simpleButton70";
+            this.simpleButton70.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton70.TabIndex = 53;
+            this.simpleButton70.Text = "En Predio";
+            this.simpleButton70.Click += new System.EventHandler(this.simpleButton70_Click);
+            // 
+            // simpleButton69
+            // 
+            this.simpleButton69.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton69.Appearance.Options.UseFont = true;
+            this.simpleButton69.Appearance.Options.UseTextOptions = true;
+            this.simpleButton69.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton69.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton69.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton69.ImageOptions.SvgImage")));
+            this.simpleButton69.Location = new System.Drawing.Point(60, 290);
+            this.simpleButton69.Name = "simpleButton69";
+            this.simpleButton69.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton69.TabIndex = 52;
+            this.simpleButton69.Text = "Reporte Salidas Desecho";
+            this.simpleButton69.Click += new System.EventHandler(this.simpleButton69_Click);
+            // 
+            // simpleButton68
+            // 
+            this.simpleButton68.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton68.Appearance.Options.UseFont = true;
+            this.simpleButton68.Appearance.Options.UseTextOptions = true;
+            this.simpleButton68.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton68.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton68.ImageOptions.Image = global::LOSA.Properties.Resources.plan_icon48X48;
+            this.simpleButton68.Location = new System.Drawing.Point(60, 38);
+            this.simpleButton68.Name = "simpleButton68";
+            this.simpleButton68.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton68.TabIndex = 51;
+            this.simpleButton68.Text = "Plan de Arribos";
+            this.simpleButton68.Click += new System.EventHandler(this.simpleButton68_Click);
+            // 
+            // TabFormulacion
+            // 
+            this.TabFormulacion.Controls.Add(this.simpleButton73);
+            this.TabFormulacion.Controls.Add(this.simpleButton72);
+            this.TabFormulacion.ImageOptions.Image = global::LOSA.Properties.Resources.formula_market_research;
+            this.TabFormulacion.Name = "TabFormulacion";
+            this.TabFormulacion.PageVisible = false;
+            this.TabFormulacion.Size = new System.Drawing.Size(835, 480);
+            this.TabFormulacion.Text = "Formulación";
+            // 
+            // simpleButton73
+            // 
+            this.simpleButton73.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton73.Appearance.Options.UseFont = true;
+            this.simpleButton73.Appearance.Options.UseTextOptions = true;
+            this.simpleButton73.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton73.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton73.ImageOptions.Image = global::LOSA.Properties.Resources.formula_local_32;
+            this.simpleButton73.Location = new System.Drawing.Point(8, 107);
+            this.simpleButton73.Name = "simpleButton73";
+            this.simpleButton73.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton73.TabIndex = 53;
+            this.simpleButton73.Text = "Fórmulas Aprobadas Para Planta";
+            this.simpleButton73.Click += new System.EventHandler(this.simpleButton73_Click);
+            // 
+            // simpleButton72
+            // 
+            this.simpleButton72.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton72.Appearance.Options.UseFont = true;
+            this.simpleButton72.Appearance.Options.UseTextOptions = true;
+            this.simpleButton72.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton72.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton72.ImageOptions.Image = global::LOSA.Properties.Resources.formula_external_32;
+            this.simpleButton72.Location = new System.Drawing.Point(8, 18);
+            this.simpleButton72.Name = "simpleButton72";
+            this.simpleButton72.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton72.TabIndex = 52;
+            this.simpleButton72.Text = "Fórmulas Aprobadas por Finanzas";
+            this.simpleButton72.Click += new System.EventHandler(this.simpleButton72_Click);
+            // 
+            // TabTickets
+            // 
+            this.TabTickets.Controls.Add(this.navBarControl2);
+            this.TabTickets.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabTickets.ImageOptions.Image")));
+            this.TabTickets.Name = "TabTickets";
+            this.TabTickets.PageVisible = false;
+            this.TabTickets.Size = new System.Drawing.Size(835, 480);
+            this.TabTickets.Text = "Tickets";
+            // 
+            // navBarControl2
+            // 
+            this.navBarControl2.ActiveGroup = this.navBarGroup5;
+            this.navBarControl2.Appearance.Button.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarControl2.Appearance.Button.Options.UseFont = true;
+            this.navBarControl2.Appearance.ButtonPressed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarControl2.Appearance.ButtonPressed.Options.UseFont = true;
+            this.navBarControl2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.navBarControl2.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGroup5});
+            this.navBarControl2.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.navBarItem11,
+            this.navBarItem13,
+            this.navBarItem14,
+            this.navBarItem15,
+            this.navBarItem20,
+            this.navBarItem25,
+            this.navBarItem26,
+            this.navBarItem27,
+            this.navBarItem28,
+            this.navBarItem29,
+            this.navBarItem30,
+            this.navBarItem31,
+            this.navBarItem32,
+            this.navBarItem33,
+            this.navBarItem34,
+            this.navBarItem35,
+            this.navBarItem36,
+            this.navBarItem37,
+            this.navBarItem39,
+            this.navBarItem40,
+            this.navBarItem41,
+            this.navBarItem43,
+            this.navBarItem42,
+            this.navBarItem38,
+            this.navBarItem46,
+            this.navBarItem47,
+            this.navBarItem48,
+            this.navBarItem49,
+            this.navBarItem50,
+            this.navBarItem51,
+            this.navBarItem52,
+            this.navBarItem53,
+            this.navBarItem54,
+            this.navBarItem44,
+            this.navBarItem45,
+            this.navBarProductoBorrador,
+            this.navBarItem2});
+            this.navBarControl2.Location = new System.Drawing.Point(0, 0);
+            this.navBarControl2.Name = "navBarControl2";
+            this.navBarControl2.OptionsNavPane.ExpandedWidth = 454;
+            this.navBarControl2.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
+            this.navBarControl2.Size = new System.Drawing.Size(454, 480);
+            this.navBarControl2.TabIndex = 21;
+            this.navBarControl2.Text = "navBarControl2";
+            // 
+            // navBarGroup5
+            // 
+            this.navBarGroup5.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarGroup5.Appearance.Options.UseFont = true;
+            this.navBarGroup5.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup5.AppearancePressed.Options.UseFont = true;
+            this.navBarGroup5.Caption = "Asistencia de IT";
+            this.navBarGroup5.Expanded = true;
+            this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem20),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarProductoBorrador),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
+            this.navBarGroup5.Name = "navBarGroup5";
+            // 
+            // navBarItem11
+            // 
+            this.navBarItem11.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarItem11.Appearance.Options.UseFont = true;
+            this.navBarItem11.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem11.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem11.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem11.AppearancePressed.Options.UseFont = true;
+            this.navBarItem11.Caption = "Asistencia de IT";
+            this.navBarItem11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem11.ImageOptions.SvgImage")));
+            this.navBarItem11.Name = "navBarItem11";
+            this.navBarItem11.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkPressed);
+            // 
+            // navBarItem13
+            // 
+            this.navBarItem13.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem13.Appearance.Options.UseFont = true;
+            this.navBarItem13.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem13.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem13.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem13.AppearancePressed.Options.UseFont = true;
+            this.navBarItem13.Caption = "Administración de Tickets";
+            this.navBarItem13.ImageOptions.SmallImage = global::LOSA.Properties.Resources.checklist;
+            this.navBarItem13.Name = "navBarItem13";
+            this.navBarItem13.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkPressed);
+            // 
+            // navBarItem14
+            // 
+            this.navBarItem14.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem14.Appearance.Options.UseFont = true;
+            this.navBarItem14.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem14.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem14.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem14.AppearancePressed.Options.UseFont = true;
+            this.navBarItem14.Caption = "Solicitud Nuevos Usuarios";
+            this.navBarItem14.ImageOptions.SmallImage = global::LOSA.Properties.Resources.orders_production_24px;
+            this.navBarItem14.Name = "navBarItem14";
+            this.navBarItem14.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem14_LinkPressed);
+            // 
+            // navBarItem15
+            // 
+            this.navBarItem15.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem15.Appearance.Options.UseFont = true;
+            this.navBarItem15.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem15.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem15.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem15.AppearancePressed.Options.UseFont = true;
+            this.navBarItem15.Caption = "Tickets";
+            this.navBarItem15.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem15.ImageOptions.SvgImage")));
+            this.navBarItem15.Name = "navBarItem15";
+            this.navBarItem15.Visible = false;
+            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
+            // 
+            // navBarItem20
+            // 
+            this.navBarItem20.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem20.Appearance.Options.UseFont = true;
+            this.navBarItem20.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem20.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem20.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem20.AppearancePressed.Options.UseFont = true;
+            this.navBarItem20.Caption = "Seguimiento";
+            this.navBarItem20.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem20.ImageOptions.SvgImage")));
+            this.navBarItem20.Name = "navBarItem20";
+            this.navBarItem20.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem20_LinkClicked);
+            // 
+            // navBarProductoBorrador
+            // 
+            this.navBarProductoBorrador.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarProductoBorrador.Appearance.Options.UseFont = true;
+            this.navBarProductoBorrador.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarProductoBorrador.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarProductoBorrador.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarProductoBorrador.AppearancePressed.Options.UseFont = true;
+            this.navBarProductoBorrador.Caption = "Solicitud de Creacion Producto Terminado";
+            this.navBarProductoBorrador.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet;
+            this.navBarProductoBorrador.Name = "navBarProductoBorrador";
+            this.navBarProductoBorrador.Visible = false;
+            this.navBarProductoBorrador.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarProductoBorrador_LinkClicked);
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.Appearance.Options.UseFont = true;
+            this.navBarItem2.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.AppearancePressed.Options.UseFont = true;
+            this.navBarItem2.Caption = "Solicitud de Creacion Materia Prima";
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.Visible = false;
+            // 
+            // navBarItem25
+            // 
+            this.navBarItem25.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem25.Appearance.Options.UseFont = true;
+            this.navBarItem25.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem25.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem25.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem25.AppearancePressed.Options.UseFont = true;
+            this.navBarItem25.Caption = "Reporte por Batch KepServer";
+            this.navBarItem25.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem25.ImageOptions.SvgImage")));
+            this.navBarItem25.Name = "navBarItem25";
+            // 
+            // navBarItem26
+            // 
+            this.navBarItem26.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem26.Appearance.Options.UseFont = true;
+            this.navBarItem26.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem26.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem26.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem26.AppearancePressed.Options.UseFont = true;
+            this.navBarItem26.Caption = "Reporte Ensacadora";
+            this.navBarItem26.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem26.ImageOptions.SvgImage")));
+            this.navBarItem26.Name = "navBarItem26";
+            // 
+            // navBarItem27
+            // 
+            this.navBarItem27.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem27.Appearance.Options.UseFont = true;
+            this.navBarItem27.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem27.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem27.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem27.AppearancePressed.Options.UseFont = true;
+            this.navBarItem27.Caption = "Reportes Sacos por Lote";
+            this.navBarItem27.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem27.ImageOptions.SvgImage")));
+            this.navBarItem27.Name = "navBarItem27";
+            // 
+            // navBarItem28
+            // 
+            this.navBarItem28.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem28.Appearance.Options.UseFont = true;
+            this.navBarItem28.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem28.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem28.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem28.AppearancePressed.Options.UseFont = true;
+            this.navBarItem28.Caption = "Eficiencia por Turno";
+            this.navBarItem28.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem28.ImageOptions.SvgImage")));
+            this.navBarItem28.Name = "navBarItem28";
+            // 
+            // navBarItem29
+            // 
+            this.navBarItem29.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem29.Appearance.Options.UseFont = true;
+            this.navBarItem29.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem29.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem29.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem29.AppearancePressed.Options.UseFont = true;
+            this.navBarItem29.Caption = "Gestion de Lotes";
+            this.navBarItem29.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem29.ImageOptions.SvgImage")));
+            this.navBarItem29.Name = "navBarItem29";
+            // 
+            // navBarItem30
+            // 
+            this.navBarItem30.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem30.Appearance.Options.UseFont = true;
+            this.navBarItem30.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem30.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem30.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem30.AppearancePressed.Options.UseFont = true;
+            this.navBarItem30.Caption = "Reporte Eficiencia";
+            this.navBarItem30.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem30.ImageOptions.SvgImage")));
+            this.navBarItem30.Name = "navBarItem30";
+            // 
+            // navBarItem31
+            // 
+            this.navBarItem31.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem31.Appearance.Options.UseFont = true;
+            this.navBarItem31.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem31.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem31.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem31.AppearancePressed.Options.UseFont = true;
+            this.navBarItem31.Caption = "Eficiencia de Molinos";
+            this.navBarItem31.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem31.ImageOptions.SvgImage")));
+            this.navBarItem31.Name = "navBarItem31";
+            // 
+            // navBarItem32
+            // 
+            this.navBarItem32.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem32.Appearance.Options.UseFont = true;
+            this.navBarItem32.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem32.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem32.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem32.AppearancePressed.Options.UseFont = true;
+            this.navBarItem32.Caption = "Banner TV";
+            this.navBarItem32.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tv;
+            this.navBarItem32.Name = "navBarItem32";
+            // 
+            // navBarItem33
+            // 
+            this.navBarItem33.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem33.Appearance.Options.UseFont = true;
+            this.navBarItem33.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem33.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem33.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem33.AppearancePressed.Options.UseFont = true;
+            this.navBarItem33.Caption = "Conf. Banner TV";
+            this.navBarItem33.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Dakirby309_Simply_Styled_Settings;
+            this.navBarItem33.Name = "navBarItem33";
+            // 
+            // navBarItem34
+            // 
+            this.navBarItem34.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem34.Appearance.Options.UseFont = true;
+            this.navBarItem34.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem34.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem34.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem34.AppearancePressed.Options.UseFont = true;
+            this.navBarItem34.Caption = "Temperatura Maquinas";
+            this.navBarItem34.ImageOptions.SmallImage = global::LOSA.Properties.Resources.thermometer32px;
+            this.navBarItem34.Name = "navBarItem34";
+            // 
+            // navBarItem35
+            // 
+            this.navBarItem35.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem35.Appearance.Options.UseFont = true;
+            this.navBarItem35.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem35.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem35.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem35.AppearancePressed.Options.UseFont = true;
+            this.navBarItem35.Caption = "Forecast PRD";
+            this.navBarItem35.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem35.ImageOptions.LargeImage")));
+            this.navBarItem35.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem35.ImageOptions.SmallImage")));
+            this.navBarItem35.Name = "navBarItem35";
+            // 
+            // navBarItem36
+            // 
+            this.navBarItem36.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem36.Appearance.Options.UseFont = true;
+            this.navBarItem36.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem36.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem36.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem36.AppearancePressed.Options.UseFont = true;
+            this.navBarItem36.Caption = "Configuraciones";
+            this.navBarItem36.ImageOptions.SmallImage = global::LOSA.Properties.Resources.config_32x32;
+            this.navBarItem36.Name = "navBarItem36";
+            // 
+            // navBarItem37
+            // 
+            this.navBarItem37.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem37.Appearance.Options.UseFont = true;
+            this.navBarItem37.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem37.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem37.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem37.AppearancePressed.Options.UseFont = true;
+            this.navBarItem37.Caption = "Intake Viewer";
+            this.navBarItem37.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_32x32;
+            this.navBarItem37.Name = "navBarItem37";
+            // 
+            // navBarItem39
+            // 
+            this.navBarItem39.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem39.Appearance.Options.UseFont = true;
+            this.navBarItem39.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem39.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem39.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem39.AppearancePressed.Options.UseFont = true;
+            this.navBarItem39.Caption = "Impresión de Tarimas";
+            this.navBarItem39.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px1;
+            this.navBarItem39.Name = "navBarItem39";
+            // 
+            // navBarItem40
+            // 
+            this.navBarItem40.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem40.Appearance.Options.UseFont = true;
+            this.navBarItem40.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem40.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItem40.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem40.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem40.Caption = "Tarimas PT";
+            this.navBarItem40.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
+            this.navBarItem40.Name = "navBarItem40";
+            // 
+            // navBarItem41
+            // 
+            this.navBarItem41.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem41.Appearance.Options.UseFont = true;
+            this.navBarItem41.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem41.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem41.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem41.AppearancePressed.Options.UseFont = true;
+            this.navBarItem41.Caption = "Reporte de Alimentación";
+            this.navBarItem41.ImageOptions.SmallImage = global::LOSA.Properties.Resources.edit_table_1_;
+            this.navBarItem41.Name = "navBarItem41";
+            // 
+            // navBarItem43
+            // 
+            this.navBarItem43.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem43.Appearance.Options.UseFont = true;
+            this.navBarItem43.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem43.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem43.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem43.AppearancePressed.Options.UseFont = true;
+            this.navBarItem43.Caption = "Bin Activo";
+            this.navBarItem43.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tanque;
+            this.navBarItem43.Name = "navBarItem43";
+            // 
+            // navBarItem42
+            // 
+            this.navBarItem42.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem42.Appearance.Options.UseFont = true;
+            this.navBarItem42.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem42.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem42.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem42.AppearancePressed.Options.UseFont = true;
+            this.navBarItem42.Caption = "Tarimas de Reproceso";
+            this.navBarItem42.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
+            this.navBarItem42.Name = "navBarItem42";
+            // 
+            // navBarItem38
+            // 
+            this.navBarItem38.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem38.Appearance.Options.UseFont = true;
+            this.navBarItem38.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem38.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem38.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem38.AppearancePressed.Options.UseFont = true;
+            this.navBarItem38.Caption = "Alimentación Manual";
+            this.navBarItem38.ImageOptions.SmallImage = global::LOSA.Properties.Resources.alimentacion_manual;
+            this.navBarItem38.Name = "navBarItem38";
+            // 
+            // navBarItem46
+            // 
+            this.navBarItem46.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem46.Appearance.Options.UseFont = true;
+            this.navBarItem46.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem46.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem46.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem46.AppearancePressed.Options.UseFont = true;
+            this.navBarItem46.Caption = "Traslado de Aceite Externo";
+            this.navBarItem46.ImageOptions.SmallImage = global::LOSA.Properties.Resources.oil_pipe_line_icon32px;
+            this.navBarItem46.Name = "navBarItem46";
+            // 
+            // navBarItem47
+            // 
+            this.navBarItem47.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem47.Appearance.Options.UseFont = true;
+            this.navBarItem47.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem47.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem47.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem47.AppearancePressed.Options.UseFont = true;
+            this.navBarItem47.Caption = "Set Material";
+            this.navBarItem47.ImageOptions.SmallImage = global::LOSA.Properties.Resources.settings_icon24px;
+            this.navBarItem47.Name = "navBarItem47";
+            // 
+            // navBarItem48
+            // 
+            this.navBarItem48.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem48.Appearance.Options.UseFont = true;
+            this.navBarItem48.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem48.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem48.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem48.AppearancePressed.Options.UseFont = true;
+            this.navBarItem48.Caption = "Reporte Traslados Aceites";
+            this.navBarItem48.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Reports_icon24px;
+            this.navBarItem48.Name = "navBarItem48";
+            // 
+            // navBarItem49
+            // 
+            this.navBarItem49.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem49.Appearance.Options.UseFont = true;
+            this.navBarItem49.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem49.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem49.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem49.AppearancePressed.Options.UseFont = true;
+            this.navBarItem49.Caption = "R. Traslados Tanques Arriba";
+            this.navBarItem49.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem49.ImageOptions.LargeImage")));
+            this.navBarItem49.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem49.ImageOptions.SmallImage")));
+            this.navBarItem49.Name = "navBarItem49";
+            // 
+            // navBarItem50
+            // 
+            this.navBarItem50.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem50.Appearance.Options.UseFont = true;
+            this.navBarItem50.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem50.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem50.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem50.AppearancePressed.Options.UseFont = true;
+            this.navBarItem50.Caption = "Salida de Aceite";
+            this.navBarItem50.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem50.ImageOptions.SvgImage")));
+            this.navBarItem50.Name = "navBarItem50";
+            // 
+            // navBarItem51
+            // 
+            this.navBarItem51.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem51.Appearance.Options.UseFont = true;
+            this.navBarItem51.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem51.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem51.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem51.AppearancePressed.Options.UseFont = true;
+            this.navBarItem51.Caption = "Set Lote Granel";
+            this.navBarItem51.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem51.ImageOptions.LargeImage")));
+            this.navBarItem51.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem51.ImageOptions.SmallImage")));
+            this.navBarItem51.Name = "navBarItem51";
+            this.navBarItem51.Visible = false;
+            // 
+            // navBarItem52
+            // 
+            this.navBarItem52.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem52.Appearance.Options.UseFont = true;
+            this.navBarItem52.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem52.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem52.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem52.AppearancePressed.Options.UseFont = true;
+            this.navBarItem52.Caption = "Aceite Resumen";
+            this.navBarItem52.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem52.ImageOptions.SvgImage")));
+            this.navBarItem52.Name = "navBarItem52";
+            // 
+            // navBarItem53
+            // 
+            this.navBarItem53.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem53.Appearance.Options.UseFont = true;
+            this.navBarItem53.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem53.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem53.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem53.AppearancePressed.Options.UseFont = true;
+            this.navBarItem53.Caption = "Resumen Aceites Arriba";
+            this.navBarItem53.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem53.ImageOptions.SvgImage")));
+            this.navBarItem53.Name = "navBarItem53";
+            // 
+            // navBarItem54
+            // 
+            this.navBarItem54.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem54.Appearance.Options.UseFont = true;
+            this.navBarItem54.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem54.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem54.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem54.AppearancePressed.Options.UseFont = true;
+            this.navBarItem54.Caption = "Resumen Aceites por Lote";
+            this.navBarItem54.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem54.ImageOptions.SvgImage")));
+            this.navBarItem54.Name = "navBarItem54";
+            // 
+            // navBarItem44
+            // 
+            this.navBarItem44.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem44.Appearance.Options.UseFont = true;
+            this.navBarItem44.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem44.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem44.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem44.AppearancePressed.Options.UseFont = true;
+            this.navBarItem44.Caption = "Reporte de Lotes a Consumir";
+            this.navBarItem44.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem44.ImageOptions.LargeImage")));
+            this.navBarItem44.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
+            this.navBarItem44.Name = "navBarItem44";
+            // 
+            // navBarItem45
+            // 
+            this.navBarItem45.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem45.Appearance.Options.UseFont = true;
+            this.navBarItem45.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem45.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItem45.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem45.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem45.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem45.AppearancePressed.Options.UseFont = true;
+            this.navBarItem45.Caption = "MP por BIN";
+            this.navBarItem45.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem45.ImageOptions.SvgImage")));
+            this.navBarItem45.Name = "navBarItem45";
+            // 
+            // TabCompras
+            // 
+            this.TabCompras.Controls.Add(this.navBarControl5);
+            this.TabCompras.ImageOptions.Image = global::LOSA.Properties.Resources.orden_de_compra;
+            this.TabCompras.Name = "TabCompras";
+            this.TabCompras.PageVisible = false;
+            this.TabCompras.Size = new System.Drawing.Size(835, 480);
+            this.TabCompras.Text = "Compras";
+            // 
+            // navBarControl5
+            // 
+            this.navBarControl5.ActiveGroup = this.navBarGroup2;
+            this.navBarControl5.Appearance.Button.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarControl5.Appearance.Button.Options.UseFont = true;
+            this.navBarControl5.Appearance.ButtonPressed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarControl5.Appearance.ButtonPressed.Options.UseFont = true;
+            this.navBarControl5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.navBarControl5.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGroup2});
+            this.navBarControl5.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.navOrdenCompra,
+            this.navBarItem9,
+            this.navBarItem10,
+            this.navBarItem12,
+            this.navBarItem16,
+            this.navBarItem17,
+            this.navBarItem18,
+            this.navBarItem19,
+            this.navBarItem21,
+            this.navBarItem22,
+            this.navBarItem23,
+            this.navBarItem24,
+            this.navBarItem55,
+            this.navBarItem56,
+            this.navBarItem58,
+            this.navBarItem59,
+            this.navBarItem61,
+            this.navBarItem103,
+            this.navBarItem104,
+            this.navBarItem105,
+            this.navBarItem106,
+            this.navBarItem107,
+            this.navBarItem108,
+            this.navBarItem109,
+            this.navBarItem110,
+            this.navBarItem112,
+            this.navBarItem113,
+            this.navBarItem114,
+            this.navBarItem115,
+            this.navBarItem116,
+            this.navBarItem117,
+            this.nbarAprobacionOrdenesCompra,
+            this.navListaOC,
+            this.navBarKardexSaldo,
+            this.navAprobacionDocumentos});
+            this.navBarControl5.Location = new System.Drawing.Point(0, 0);
+            this.navBarControl5.Name = "navBarControl5";
+            this.navBarControl5.OptionsNavPane.ExpandedWidth = 274;
+            this.navBarControl5.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
+            this.navBarControl5.Size = new System.Drawing.Size(274, 480);
+            this.navBarControl5.TabIndex = 22;
+            // 
+            // navBarGroup2
+            // 
+            this.navBarGroup2.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarGroup2.Appearance.Options.UseFont = true;
+            this.navBarGroup2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup2.AppearancePressed.Options.UseFont = true;
+            this.navBarGroup2.Caption = "General";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navOrdenCompra),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbarAprobacionOrdenesCompra),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarKardexSaldo),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navListaOC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navAprobacionDocumentos)});
+            this.navBarGroup2.Name = "navBarGroup2";
+            // 
+            // navOrdenCompra
+            // 
+            this.navOrdenCompra.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navOrdenCompra.Appearance.Options.UseFont = true;
+            this.navOrdenCompra.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navOrdenCompra.AppearanceHotTracked.Options.UseFont = true;
+            this.navOrdenCompra.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navOrdenCompra.AppearancePressed.Options.UseFont = true;
+            this.navOrdenCompra.Caption = "Ordenes de Compra";
+            this.navOrdenCompra.ImageOptions.SmallImage = global::LOSA.Properties.Resources.checklist;
+            this.navOrdenCompra.Name = "navOrdenCompra";
+            this.navOrdenCompra.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navOrdenCompra_LinkPressed);
+            // 
+            // nbarAprobacionOrdenesCompra
+            // 
+            this.nbarAprobacionOrdenesCompra.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.nbarAprobacionOrdenesCompra.Appearance.Options.UseFont = true;
+            this.nbarAprobacionOrdenesCompra.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.nbarAprobacionOrdenesCompra.AppearanceHotTracked.Options.UseFont = true;
+            this.nbarAprobacionOrdenesCompra.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.nbarAprobacionOrdenesCompra.AppearancePressed.Options.UseFont = true;
+            this.nbarAprobacionOrdenesCompra.Caption = "Aprobación de Ordenes";
+            this.nbarAprobacionOrdenesCompra.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbarAprobacionOrdenesCompra.ImageOptions.SmallImage")));
+            this.nbarAprobacionOrdenesCompra.Name = "nbarAprobacionOrdenesCompra";
+            this.nbarAprobacionOrdenesCompra.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbarAprobacionOrdenesCompra_LinkClicked);
+            // 
+            // navBarKardexSaldo
+            // 
+            this.navBarKardexSaldo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.Appearance.Options.UseFont = true;
+            this.navBarKardexSaldo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarKardexSaldo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarKardexSaldo.AppearancePressed.Options.UseFont = true;
+            this.navBarKardexSaldo.Caption = "Saldo Disponible";
+            this.navBarKardexSaldo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarKardexSaldo.ImageOptions.SvgImage")));
+            this.navBarKardexSaldo.Name = "navBarKardexSaldo";
+            this.navBarKardexSaldo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarKardexSaldo_LinkClicked);
+            // 
+            // navListaOC
+            // 
+            this.navListaOC.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.Appearance.Options.UseFont = true;
+            this.navListaOC.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.AppearanceHotTracked.Options.UseFont = true;
+            this.navListaOC.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navListaOC.AppearancePressed.Options.UseFont = true;
+            this.navListaOC.Caption = "Lista Ordenes de Compra";
+            this.navListaOC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navListaOC.ImageOptions.SvgImage")));
+            this.navListaOC.Name = "navListaOC";
+            this.navListaOC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navListaOC_LinkClicked);
+            // 
+            // navAprobacionDocumentos
+            // 
+            this.navAprobacionDocumentos.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.Appearance.Options.UseFont = true;
+            this.navAprobacionDocumentos.Appearance.Options.UseTextOptions = true;
+            this.navAprobacionDocumentos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.navAprobacionDocumentos.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.AppearanceHotTracked.Options.UseFont = true;
+            this.navAprobacionDocumentos.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navAprobacionDocumentos.AppearancePressed.Options.UseFont = true;
+            this.navAprobacionDocumentos.Caption = "Aprobacion Salidas de Mercancia";
+            this.navAprobacionDocumentos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navAprobacionDocumentos.ImageOptions.SvgImage")));
+            this.navAprobacionDocumentos.Name = "navAprobacionDocumentos";
+            this.navAprobacionDocumentos.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navAprobacionDocumentos_LinkClicked);
+            // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.Appearance.Options.UseFont = true;
+            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearancePressed.Options.UseFont = true;
+            this.navBarItem9.Caption = "Reporte por Batch KepServer";
+            this.navBarItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
+            this.navBarItem9.Name = "navBarItem9";
+            // 
+            // navBarItem10
+            // 
+            this.navBarItem10.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem10.Appearance.Options.UseFont = true;
+            this.navBarItem10.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem10.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem10.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem10.AppearancePressed.Options.UseFont = true;
+            this.navBarItem10.Caption = "Reporte Ensacadora";
+            this.navBarItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem10.ImageOptions.SvgImage")));
+            this.navBarItem10.Name = "navBarItem10";
+            // 
+            // navBarItem12
+            // 
+            this.navBarItem12.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem12.Appearance.Options.UseFont = true;
+            this.navBarItem12.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem12.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem12.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem12.AppearancePressed.Options.UseFont = true;
+            this.navBarItem12.Caption = "Reportes Sacos por Lote";
+            this.navBarItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem12.ImageOptions.SvgImage")));
+            this.navBarItem12.Name = "navBarItem12";
+            // 
+            // navBarItem16
+            // 
+            this.navBarItem16.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem16.Appearance.Options.UseFont = true;
+            this.navBarItem16.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem16.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem16.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem16.AppearancePressed.Options.UseFont = true;
+            this.navBarItem16.Caption = "Eficiencia por Turno";
+            this.navBarItem16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem16.ImageOptions.SvgImage")));
+            this.navBarItem16.Name = "navBarItem16";
+            // 
+            // navBarItem17
+            // 
+            this.navBarItem17.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem17.Appearance.Options.UseFont = true;
+            this.navBarItem17.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem17.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem17.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem17.AppearancePressed.Options.UseFont = true;
+            this.navBarItem17.Caption = "Gestion de Lotes";
+            this.navBarItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem17.ImageOptions.SvgImage")));
+            this.navBarItem17.Name = "navBarItem17";
+            // 
+            // navBarItem18
+            // 
+            this.navBarItem18.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem18.Appearance.Options.UseFont = true;
+            this.navBarItem18.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem18.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem18.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem18.AppearancePressed.Options.UseFont = true;
+            this.navBarItem18.Caption = "Reporte Eficiencia";
+            this.navBarItem18.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem18.ImageOptions.SvgImage")));
+            this.navBarItem18.Name = "navBarItem18";
+            // 
+            // navBarItem19
+            // 
+            this.navBarItem19.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem19.Appearance.Options.UseFont = true;
+            this.navBarItem19.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem19.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem19.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem19.AppearancePressed.Options.UseFont = true;
+            this.navBarItem19.Caption = "Eficiencia de Molinos";
+            this.navBarItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem19.ImageOptions.SvgImage")));
+            this.navBarItem19.Name = "navBarItem19";
+            // 
+            // navBarItem21
+            // 
+            this.navBarItem21.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.Appearance.Options.UseFont = true;
+            this.navBarItem21.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem21.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.AppearancePressed.Options.UseFont = true;
+            this.navBarItem21.Caption = "Banner TV";
+            this.navBarItem21.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tv;
+            this.navBarItem21.Name = "navBarItem21";
+            // 
+            // navBarItem22
+            // 
+            this.navBarItem22.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem22.Appearance.Options.UseFont = true;
+            this.navBarItem22.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem22.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem22.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem22.AppearancePressed.Options.UseFont = true;
+            this.navBarItem22.Caption = "Conf. Banner TV";
+            this.navBarItem22.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Dakirby309_Simply_Styled_Settings;
+            this.navBarItem22.Name = "navBarItem22";
+            // 
+            // navBarItem23
+            // 
+            this.navBarItem23.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.Appearance.Options.UseFont = true;
+            this.navBarItem23.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem23.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearancePressed.Options.UseFont = true;
+            this.navBarItem23.Caption = "Temperatura Maquinas";
+            this.navBarItem23.ImageOptions.SmallImage = global::LOSA.Properties.Resources.thermometer32px;
+            this.navBarItem23.Name = "navBarItem23";
+            // 
+            // navBarItem24
+            // 
+            this.navBarItem24.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem24.Appearance.Options.UseFont = true;
+            this.navBarItem24.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem24.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem24.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem24.AppearancePressed.Options.UseFont = true;
+            this.navBarItem24.Caption = "Forecast PRD";
+            this.navBarItem24.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem24.ImageOptions.LargeImage")));
+            this.navBarItem24.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem24.ImageOptions.SmallImage")));
+            this.navBarItem24.Name = "navBarItem24";
+            // 
+            // navBarItem55
+            // 
+            this.navBarItem55.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem55.Appearance.Options.UseFont = true;
+            this.navBarItem55.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem55.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem55.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem55.AppearancePressed.Options.UseFont = true;
+            this.navBarItem55.Caption = "Configuraciones";
+            this.navBarItem55.ImageOptions.SmallImage = global::LOSA.Properties.Resources.config_32x32;
+            this.navBarItem55.Name = "navBarItem55";
+            // 
+            // navBarItem56
+            // 
+            this.navBarItem56.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem56.Appearance.Options.UseFont = true;
+            this.navBarItem56.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem56.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem56.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem56.AppearancePressed.Options.UseFont = true;
+            this.navBarItem56.Caption = "Intake Viewer";
+            this.navBarItem56.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_32x32;
+            this.navBarItem56.Name = "navBarItem56";
+            // 
+            // navBarItem58
+            // 
+            this.navBarItem58.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem58.Appearance.Options.UseFont = true;
+            this.navBarItem58.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem58.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem58.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem58.AppearancePressed.Options.UseFont = true;
+            this.navBarItem58.Caption = "Impresión de Tarimas";
+            this.navBarItem58.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px1;
+            this.navBarItem58.Name = "navBarItem58";
+            // 
+            // navBarItem59
+            // 
+            this.navBarItem59.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem59.Appearance.Options.UseFont = true;
+            this.navBarItem59.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem59.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItem59.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem59.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem59.Caption = "Tarimas PT";
+            this.navBarItem59.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
+            this.navBarItem59.Name = "navBarItem59";
+            // 
+            // navBarItem61
+            // 
+            this.navBarItem61.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem61.Appearance.Options.UseFont = true;
+            this.navBarItem61.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem61.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem61.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem61.AppearancePressed.Options.UseFont = true;
+            this.navBarItem61.Caption = "Reporte de Alimentación";
+            this.navBarItem61.ImageOptions.SmallImage = global::LOSA.Properties.Resources.edit_table_1_;
+            this.navBarItem61.Name = "navBarItem61";
+            // 
+            // navBarItem103
+            // 
+            this.navBarItem103.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem103.Appearance.Options.UseFont = true;
+            this.navBarItem103.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem103.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem103.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem103.AppearancePressed.Options.UseFont = true;
+            this.navBarItem103.Caption = "Bin Activo";
+            this.navBarItem103.ImageOptions.SmallImage = global::LOSA.Properties.Resources.tanque;
+            this.navBarItem103.Name = "navBarItem103";
+            // 
+            // navBarItem104
+            // 
+            this.navBarItem104.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem104.Appearance.Options.UseFont = true;
+            this.navBarItem104.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem104.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem104.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem104.AppearancePressed.Options.UseFont = true;
+            this.navBarItem104.Caption = "Tarimas de Reproceso";
+            this.navBarItem104.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet32px;
+            this.navBarItem104.Name = "navBarItem104";
+            // 
+            // navBarItem105
+            // 
+            this.navBarItem105.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem105.Appearance.Options.UseFont = true;
+            this.navBarItem105.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem105.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem105.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem105.AppearancePressed.Options.UseFont = true;
+            this.navBarItem105.Caption = "Alimentación Manual";
+            this.navBarItem105.ImageOptions.SmallImage = global::LOSA.Properties.Resources.alimentacion_manual;
+            this.navBarItem105.Name = "navBarItem105";
+            // 
+            // navBarItem106
+            // 
+            this.navBarItem106.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem106.Appearance.Options.UseFont = true;
+            this.navBarItem106.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem106.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem106.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem106.AppearancePressed.Options.UseFont = true;
+            this.navBarItem106.Caption = "Traslado de Aceite Externo";
+            this.navBarItem106.ImageOptions.SmallImage = global::LOSA.Properties.Resources.oil_pipe_line_icon32px;
+            this.navBarItem106.Name = "navBarItem106";
+            // 
+            // navBarItem107
+            // 
+            this.navBarItem107.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem107.Appearance.Options.UseFont = true;
+            this.navBarItem107.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem107.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem107.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem107.AppearancePressed.Options.UseFont = true;
+            this.navBarItem107.Caption = "Set Material";
+            this.navBarItem107.ImageOptions.SmallImage = global::LOSA.Properties.Resources.settings_icon24px;
+            this.navBarItem107.Name = "navBarItem107";
+            // 
+            // navBarItem108
+            // 
+            this.navBarItem108.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem108.Appearance.Options.UseFont = true;
+            this.navBarItem108.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem108.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem108.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem108.AppearancePressed.Options.UseFont = true;
+            this.navBarItem108.Caption = "Reporte Traslados Aceites";
+            this.navBarItem108.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Reports_icon24px;
+            this.navBarItem108.Name = "navBarItem108";
+            // 
+            // navBarItem109
+            // 
+            this.navBarItem109.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem109.Appearance.Options.UseFont = true;
+            this.navBarItem109.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem109.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem109.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem109.AppearancePressed.Options.UseFont = true;
+            this.navBarItem109.Caption = "R. Traslados Tanques Arriba";
+            this.navBarItem109.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem109.ImageOptions.LargeImage")));
+            this.navBarItem109.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem109.ImageOptions.SmallImage")));
+            this.navBarItem109.Name = "navBarItem109";
+            // 
+            // navBarItem110
+            // 
+            this.navBarItem110.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem110.Appearance.Options.UseFont = true;
+            this.navBarItem110.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem110.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem110.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem110.AppearancePressed.Options.UseFont = true;
+            this.navBarItem110.Caption = "Salida de Aceite";
+            this.navBarItem110.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem110.ImageOptions.SvgImage")));
+            this.navBarItem110.Name = "navBarItem110";
+            // 
+            // navBarItem112
+            // 
+            this.navBarItem112.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem112.Appearance.Options.UseFont = true;
+            this.navBarItem112.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem112.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem112.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem112.AppearancePressed.Options.UseFont = true;
+            this.navBarItem112.Caption = "Set Lote Granel";
+            this.navBarItem112.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem112.ImageOptions.LargeImage")));
+            this.navBarItem112.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem112.ImageOptions.SmallImage")));
+            this.navBarItem112.Name = "navBarItem112";
+            this.navBarItem112.Visible = false;
+            // 
+            // navBarItem113
+            // 
+            this.navBarItem113.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem113.Appearance.Options.UseFont = true;
+            this.navBarItem113.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem113.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem113.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem113.AppearancePressed.Options.UseFont = true;
+            this.navBarItem113.Caption = "Aceite Resumen";
+            this.navBarItem113.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem113.ImageOptions.SvgImage")));
+            this.navBarItem113.Name = "navBarItem113";
+            // 
+            // navBarItem114
+            // 
+            this.navBarItem114.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem114.Appearance.Options.UseFont = true;
+            this.navBarItem114.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem114.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem114.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem114.AppearancePressed.Options.UseFont = true;
+            this.navBarItem114.Caption = "Resumen Aceites Arriba";
+            this.navBarItem114.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem114.ImageOptions.SvgImage")));
+            this.navBarItem114.Name = "navBarItem114";
+            // 
+            // navBarItem115
+            // 
+            this.navBarItem115.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem115.Appearance.Options.UseFont = true;
+            this.navBarItem115.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem115.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem115.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem115.AppearancePressed.Options.UseFont = true;
+            this.navBarItem115.Caption = "Resumen Aceites por Lote";
+            this.navBarItem115.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem115.ImageOptions.SvgImage")));
+            this.navBarItem115.Name = "navBarItem115";
+            // 
+            // navBarItem116
+            // 
+            this.navBarItem116.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem116.Appearance.Options.UseFont = true;
+            this.navBarItem116.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem116.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem116.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem116.AppearancePressed.Options.UseFont = true;
+            this.navBarItem116.Caption = "Reporte de Lotes a Consumir";
+            this.navBarItem116.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem116.ImageOptions.LargeImage")));
+            this.navBarItem116.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
+            this.navBarItem116.Name = "navBarItem116";
+            // 
+            // navBarItem117
+            // 
+            this.navBarItem117.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem117.Appearance.Options.UseFont = true;
+            this.navBarItem117.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem117.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItem117.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem117.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem117.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem117.AppearancePressed.Options.UseFont = true;
+            this.navBarItem117.Caption = "MP por BIN";
+            this.navBarItem117.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem117.ImageOptions.SvgImage")));
+            this.navBarItem117.Name = "navBarItem117";
+            // 
+            // TabReportes_
+            // 
+            this.TabReportes_.Controls.Add(this.navBarControl7);
+            this.TabReportes_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabReportes_.ImageOptions.Image")));
+            this.TabReportes_.Name = "TabReportes_";
+            this.TabReportes_.Size = new System.Drawing.Size(835, 480);
+            this.TabReportes_.Text = "Reportes";
+            // 
+            // navBarControl7
+            // 
+            this.navBarControl7.ActiveGroup = this.navBarGroup3;
+            this.navBarControl7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.navBarControl7.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGroup3});
+            this.navBarControl7.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.nbButtonReporteUnificadoConsumo});
+            this.navBarControl7.Location = new System.Drawing.Point(0, 0);
+            this.navBarControl7.Name = "navBarControl7";
+            this.navBarControl7.OptionsNavPane.ExpandedWidth = 451;
+            this.navBarControl7.Size = new System.Drawing.Size(451, 480);
+            this.navBarControl7.TabIndex = 56;
+            this.navBarControl7.Text = "navBarControl7";
+            // 
+            // navBarGroup3
+            // 
+            this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup3.Appearance.Options.UseFont = true;
+            this.navBarGroup3.Caption = "Consumo MP";
+            this.navBarGroup3.Expanded = true;
+            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbButtonReporteUnificadoConsumo)});
+            this.navBarGroup3.Name = "navBarGroup3";
+            // 
+            // nbButtonReporteUnificadoConsumo
+            // 
+            this.nbButtonReporteUnificadoConsumo.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbButtonReporteUnificadoConsumo.Appearance.Options.UseFont = true;
+            this.nbButtonReporteUnificadoConsumo.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbButtonReporteUnificadoConsumo.AppearanceHotTracked.Options.UseFont = true;
+            this.nbButtonReporteUnificadoConsumo.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbButtonReporteUnificadoConsumo.AppearancePressed.Options.UseFont = true;
+            this.nbButtonReporteUnificadoConsumo.Caption = "Unificado consumo MP Consola";
+            this.nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("nbButtonReporteUnificadoConsumo.ImageOptions.SvgImage")));
+            this.nbButtonReporteUnificadoConsumo.Name = "nbButtonReporteUnificadoConsumo";
+            this.nbButtonReporteUnificadoConsumo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbButtonReporteUnificadoConsumo_LinkClicked);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(66, 44);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(578, 39);
+            this.labelControl3.TabIndex = 31;
+            this.labelControl3.Text = "Menu principal";
+            // 
+            // rd_OdooMenu
+            // 
+            this.rd_OdooMenu.AutoExpand = true;
+            this.rd_OdooMenu.Name = "rd_OdooMenu";
+            // 
+            // navConsolaTeorico
+            // 
+            this.navConsolaTeorico.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navConsolaTeorico.Appearance.Options.UseFont = true;
+            this.navConsolaTeorico.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navConsolaTeorico.AppearanceHotTracked.Options.UseFont = true;
+            this.navConsolaTeorico.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navConsolaTeorico.AppearancePressed.Options.UseFont = true;
+            this.navConsolaTeorico.Caption = "Base Consola Teórico";
+            this.navConsolaTeorico.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navConsolaTeorico.ImageOptions.SvgImage")));
+            this.navConsolaTeorico.Name = "navConsolaTeorico";
+            this.navConsolaTeorico.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navConsolaTeorico_LinkClicked);
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "navBarItem3";
+            this.navBarItem3.Name = "navBarItem3";
+            // 
+            // navBarItem5
+            // 
+            this.navBarItem5.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem5.Appearance.Options.UseFont = true;
+            this.navBarItem5.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem5.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem5.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem5.AppearancePressed.Options.UseFont = true;
+            this.navBarItem5.Caption = "Base Datos Consola";
+            this.navBarItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem5.ImageOptions.SvgImage")));
+            this.navBarItem5.Name = "navBarItem5";
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9832,15 +9720,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.TabForecasting.ResumeLayout(false);
             this.TabContabilidad.ResumeLayout(false);
-            this.TabBascula.ResumeLayout(false);
-            this.TabFormulacion.ResumeLayout(false);
-            this.TabTickets.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).EndInit();
-            this.TabCompras.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).EndInit();
-            this.TabReportes_.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).EndInit();
             this.xtraTabControl2.ResumeLayout(false);
             this.contaTabReportes.ResumeLayout(false);
@@ -9851,6 +9730,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl10)).EndInit();
             this.contaTabConfiguraciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl11)).EndInit();
+            this.TabBascula.ResumeLayout(false);
+            this.TabFormulacion.ResumeLayout(false);
+            this.TabTickets.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).EndInit();
+            this.TabCompras.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl5)).EndInit();
+            this.TabReportes_.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9987,16 +9875,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton48;
         private DevExpress.XtraEditors.SimpleButton simpleButton47;
         private DevExpress.XtraTab.XtraTabPage TabContabilidad;
-        private DevExpress.XtraEditors.SimpleButton simpleButton66;
-        private DevExpress.XtraEditors.SimpleButton simpleButton64;
-        private DevExpress.XtraEditors.SimpleButton simpleButton63;
-        private DevExpress.XtraEditors.SimpleButton simpleButton60;
-        private DevExpress.XtraEditors.SimpleButton simpleButton61;
-        private DevExpress.XtraEditors.SimpleButton simpleButton62;
         private DevExpress.XtraEditors.SimpleButton simpleButton59;
-        private DevExpress.XtraEditors.SimpleButton simpleButton58;
         private DevExpress.XtraEditors.SimpleButton simpleButton57;
-        private DevExpress.XtraEditors.SimpleButton simpleButton65;
         private DevExpress.XtraBars.Ribbon.RadialMenu rd_OdooMenu;
         private DevExpress.XtraEditors.SimpleButton btnMP_BodsegaPRD;
         private DevExpress.XtraEditors.SimpleButton btn_mp_bodega_prd_finanzas;
@@ -10017,7 +9897,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdCierreLotesPT;
         private DevExpress.XtraEditors.SimpleButton btnViewRequisasCalidad;
         private DevExpress.XtraEditors.SimpleButton btnValidacionTarimas;
-        private DevExpress.XtraEditors.SimpleButton cmdReporteBancosPlanilla;
         private DevExpress.XtraEditors.SimpleButton btnReqMEmpaque;
         private DevExpress.XtraEditors.SimpleButton btnMaterialEmpaquePT;
         private DevExpress.XtraEditors.SimpleButton btnCalidadMaterialEmpaque;
@@ -10332,8 +10211,8 @@
         private DevExpress.XtraNavBar.NavBarItem navContaRptConsumo;
         private DevExpress.XtraNavBar.NavBarItem navContaVarianzacobro;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarItem navRptNucleos;
+        private DevExpress.XtraNavBar.NavBarItem navReporteBancosPlanilla;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem159;
@@ -10502,5 +10381,8 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem357;
         private DevExpress.XtraNavBar.NavBarItem navBarItem358;
         private DevExpress.XtraNavBar.NavBarItem navBarItem359;
+        private DevExpress.XtraNavBar.NavBarItem navConsolaTeorico;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
     }
 }

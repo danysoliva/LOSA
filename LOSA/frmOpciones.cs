@@ -2897,11 +2897,6 @@ namespace LOSA
             }
         }
 
-        private void simpleButton58_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void simpleButton59_Click(object sender, EventArgs e)
         {
             try
@@ -2915,121 +2910,6 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
             }
         
-        }
-
-        private void simpleButton62_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void simpleButton65_Click(object sender, EventArgs e)
-        {
-            try
-            {
-            MigracionACS. Finanzas.Reports.RPT_FML_NC_MasterDetailReport form = new MigracionACS.Finanzas.Reports.RPT_FML_NC_MasterDetailReport();
-                form.MdiParent = this.MdiParent;
-            form.Show();
-
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
-        }
-
-        private void simpleButton61_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void simpleButton60_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int user_id = int.Parse(ActiveUserCode);
-                //user_id = GetUserID(ActiveUserName);
-
-                if (user_id == 1020 || user_id == 1035 || user_id == 1037)
-                {
-                    frm_Reporteador_Validate_byUser frm = new frm_Reporteador_Validate_byUser(ActiveUserCode, ActiveUserName, ActiveUserType);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene permisos para Abrir esta ventana");
-                }
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-                
-            }
-        }
-
-        private void simpleButton66_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (UsuarioLogeado.ValidarNivelPermisos(34))
-                {
-                   MigracionACS.SAR.SAR_Main frmAll = new MigracionACS.SAR.SAR_Main();
-                    frmAll.MdiParent = this.MdiParent;
-                    frmAll.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #34");
-                }
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-                throw;
-            }
-        }
-
-        private void simpleButton63_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (UsuarioLogeado.ValidarNivelPermisos(58))
-                {
-                    frmConsumoConsolaReal frm = new frmConsumoConsolaReal();
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
-                }
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-             
-            }
-        }
-
-        private void simpleButton64_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (UsuarioLogeado.ValidarNivelPermisos(58))
-                {
-                    frmConsumoConsolaTeorico frm = new frmConsumoConsolaTeorico();
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
-                }
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
         }
 
         private void simpleButton57_Click(object sender, EventArgs e)
@@ -3320,47 +3200,6 @@ namespace LOSA
             //    }
             //}
            
-        }
-
-        private void cmdReporteBancosPlanilla_Click(object sender, EventArgs e)
-        {
-            bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7); //7 = ALOSY
-
-            switch (idNivel)
-            {
-                case 1://BasicView
-                    break;
-
-                case 2: //Basic No Autorization
-                    break;
-
-                case 3://Medium Autorization
-                case 4://Depth With Delta
-                case 5://Depth Without Delta
-                    accesoprevio = true;
-                    frmReporteBancosODOO frm = new frmReporteBancosODOO(UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                    break;
-                default:
-                    break;
-
-            }
-
-            if (!accesoprevio)
-            {
-                if (UsuarioLogeado.ValidarNivelPermisos(88))
-                {
-                    frmReporteBancosODOO frm = new frmReporteBancosODOO(UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #88");
-                }
-            }
         }
 
         private void btnReqMEmpaque_Click(object sender, EventArgs e)
@@ -5591,6 +5430,152 @@ namespace LOSA
                 MigracionACS.Finanzas.Reports.RPT_Conta_Varios form = new MigracionACS.Finanzas.Reports.RPT_Conta_Varios(ActiveUserCode, ActiveUserType, ActiveADUser, UserGroups, this.UsuarioLogeado);
                 form.MdiParent = this.MdiParent;
                 form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navRptNucleos_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                MigracionACS.Finanzas.Reports.RPT_FML_NC_MasterDetailReport form = new MigracionACS.Finanzas.Reports.RPT_FML_NC_MasterDetailReport();
+                form.MdiParent = this.MdiParent;
+                form.Show();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navReporteBancosPlanilla_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7); //7 = ALOSY
+
+            switch (idNivel)
+            {
+                case 1://BasicView
+                    break;
+
+                case 2: //Basic No Autorization
+                    break;
+
+                case 3://Medium Autorization
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmReporteBancosODOO frm = new frmReporteBancosODOO(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(88))
+                {
+                    frmReporteBancosODOO frm = new frmReporteBancosODOO(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #88");
+                }
+            }
+        }
+
+        private void navBarItem7_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                int user_id = int.Parse(ActiveUserCode);
+                //user_id = GetUserID(ActiveUserName);
+
+                if (user_id == 1020 || user_id == 1035 || user_id == 1037)
+                {
+                    frm_Reporteador_Validate_byUser frm = new frm_Reporteador_Validate_byUser(ActiveUserCode, ActiveUserName, ActiveUserType);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene permisos para Abrir esta ventana");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void navBarItem8_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(34))
+                {
+                    MigracionACS.SAR.SAR_Main frmAll = new MigracionACS.SAR.SAR_Main();
+                    frmAll.MdiParent = this.MdiParent;
+                    frmAll.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #34");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                throw;
+            }
+        }
+
+        private void navBarItem159_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(58))
+                {
+                    frmConsumoConsolaReal frm = new frmConsumoConsolaReal();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void navConsolaTeorico_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(58))
+                {
+                    frmConsumoConsolaTeorico frm = new frmConsumoConsolaTeorico();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
+                }
             }
             catch (Exception ex)
             {
