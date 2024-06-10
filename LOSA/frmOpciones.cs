@@ -2899,16 +2899,7 @@ namespace LOSA
 
         private void simpleButton58_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MigracionACS.Produccion.Reports.Rep_Fml_Uso form = new MigracionACS.Produccion.Reports.Rep_Fml_Uso();
-                form.MdiParent = this.MdiParent;
-                form.Show();
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);               
-            }
+           
         }
 
         private void simpleButton59_Click(object sender, EventArgs e)
@@ -2928,16 +2919,7 @@ namespace LOSA
 
         private void simpleButton62_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MigracionACS.Finanzas.Reports.RPT_Conta_Varios form = new MigracionACS.Finanzas.Reports.RPT_Conta_Varios(ActiveUserCode, ActiveUserType, ActiveADUser, UserGroups, this.UsuarioLogeado);
-                form.MdiParent = this.MdiParent;
-                form.Show();
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
+           
         }
 
         private void simpleButton65_Click(object sender, EventArgs e)
@@ -2957,16 +2939,7 @@ namespace LOSA
 
         private void simpleButton61_Click(object sender, EventArgs e)
         {
-            try
-            {
-               MigracionACS.Finanzas.Reports.RPT_FML_FL_FF_CostVar_MasterDetailReport form = new MigracionACS.Finanzas.Reports.RPT_FML_FL_FF_CostVar_MasterDetailReport(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
-                form.MdiParent = this.MdiParent;
-                form.Show();
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
+           
         }
 
         private void simpleButton60_Click(object sender, EventArgs e)
@@ -5581,6 +5554,48 @@ namespace LOSA
             frmHomePeriodosContables mp = new frmHomePeriodosContables(UsuarioLogeado);
             mp.MdiParent = this.MdiParent;
             mp.Show();
+        }
+
+        private void navContaRptConsumo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                MigracionACS.Produccion.Reports.Rep_Fml_Uso form = new MigracionACS.Produccion.Reports.Rep_Fml_Uso();
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navContaVarianzacobro_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                MigracionACS.Finanzas.Reports.RPT_FML_FL_FF_CostVar_MasterDetailReport form = new MigracionACS.Finanzas.Reports.RPT_FML_FL_FF_CostVar_MasterDetailReport(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarItem4_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                MigracionACS.Finanzas.Reports.RPT_Conta_Varios form = new MigracionACS.Finanzas.Reports.RPT_Conta_Varios(ActiveUserCode, ActiveUserType, ActiveADUser, UserGroups, this.UsuarioLogeado);
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
