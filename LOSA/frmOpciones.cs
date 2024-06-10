@@ -2950,14 +2950,6 @@ namespace LOSA
             frm.Show();
         }
 
-        private void btn_rutas_traza_contabilidad_Click(object sender, EventArgs e)
-        {
-            frmRutasTrazabilidad frm = new frmRutasTrazabilidad(this.UsuarioLogeado);
-            if (this.MdiParent != null)
-                frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
         private void btn_add_tarimas_pt_Click(object sender, EventArgs e)
         {
 
@@ -3320,43 +3312,6 @@ namespace LOSA
             frmAlimentacionBasculasMacros frm = new frmAlimentacionBasculasMacros();
             frm.MdiParent = this.MdiParent;
             frm.Show();
-        }
-
-        private void cmdAprobarAjustesInvALOSY_Click(object sender, EventArgs e)
-        {
-            //frmSolicitudesAjustesInventario
-            bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
-            switch (idNivel)
-            {
-                case 1://Basic View
-                    break;
-                case 2://Basic No Autorization
-                case 3://Medium Autorization
-                case 4://Depth With Delta
-                case 5://Depth Without Delta
-                    accesoprevio = true;
-                    frmSolicitudesAjustesInventario frm = new frmSolicitudesAjustesInventario(this.UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                    break;
-                default:
-                    break;
-            }
-
-            if (!accesoprevio)
-            {
-                if (UsuarioLogeado.ValidarNivelPermisos(91))
-                {
-                    frmSolicitudesAjustesInventario frm = new frmSolicitudesAjustesInventario(this.UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #91");
-                }
-            }
         }
 
         private void cmdImprimirVouchers_Click(object sender, EventArgs e)
@@ -5581,6 +5536,51 @@ namespace LOSA
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void navAprobarAjustesInvALOSY_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            //frmSolicitudesAjustesInventario
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                case 3://Medium Autorization
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmSolicitudesAjustesInventario frm = new frmSolicitudesAjustesInventario(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(91))
+                {
+                    frmSolicitudesAjustesInventario frm = new frmSolicitudesAjustesInventario(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #91");
+                }
+            }
+        }
+
+        private void navrutas_traza_contabilidad_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmRutasTrazabilidad frm = new frmRutasTrazabilidad(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }
