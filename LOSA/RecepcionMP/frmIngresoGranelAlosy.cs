@@ -267,7 +267,6 @@ namespace LOSA.RecepcionMP
 
         private void cmdGenerarIngreso_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(txtCodigoMP.Text))
             {
                 CajaDialogo.Error("Es necesario saber la Materia Prima que se Registrara");
