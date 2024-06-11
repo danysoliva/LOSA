@@ -59,6 +59,7 @@ namespace LOSA.Finanzas
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaExoneracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsExoneracion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListaExoneracion)).BeginInit();
@@ -108,6 +109,7 @@ namespace LOSA.Finanzas
             this.grdvListaExoneracion.Name = "grdvListaExoneracion";
             this.grdvListaExoneracion.OptionsBehavior.ReadOnly = true;
             this.grdvListaExoneracion.OptionsView.ShowAutoFilterRow = true;
+            this.grdvListaExoneracion.OptionsView.ShowFooter = true;
             this.grdvListaExoneracion.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -176,7 +178,7 @@ namespace LOSA.Finanzas
             this.gridColumn1.ColumnEdit = this.reposCerrarPeriodo;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.VisibleIndex = 8;
             this.gridColumn1.Width = 126;
             // 
             // reposCerrarPeriodo
@@ -195,7 +197,7 @@ namespace LOSA.Finanzas
             this.gridColumn2.ColumnEdit = this.repostGestionPresupuesto;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 8;
+            this.gridColumn2.VisibleIndex = 7;
             this.gridColumn2.Width = 130;
             // 
             // repostGestionPresupuesto
@@ -226,6 +228,8 @@ namespace LOSA.Finanzas
             this.gridColumn4.FieldName = "presupuesto_total";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "presupuesto_total", "Total={0:##,###,##0.##} Lps.")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 5;
             this.gridColumn4.Width = 155;
@@ -255,13 +259,24 @@ namespace LOSA.Finanzas
             this.btnAtras.Appearance.Options.UseFont = true;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(1122, 25);
+            this.btnAtras.Location = new System.Drawing.Point(1094, 42);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(112, 45);
+            this.btnAtras.Size = new System.Drawing.Size(130, 40);
             this.btnAtras.TabIndex = 30;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(481, 42);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(227, 18);
+            this.labelControl1.TabIndex = 35;
+            this.labelControl1.Text = "Presupuesto para Exoneracion";
             // 
             // frmExoneracionAQ
             // 
@@ -269,6 +284,7 @@ namespace LOSA.Finanzas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 735);
             this.ControlBox = false;
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.grdListaExoneracion);
@@ -280,6 +296,7 @@ namespace LOSA.Finanzas
             ((System.ComponentModel.ISupportInitialize)(this.reposCerrarPeriodo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repostGestionPresupuesto)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -304,5 +321,6 @@ namespace LOSA.Finanzas
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repostGestionPresupuesto;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

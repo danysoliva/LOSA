@@ -26,6 +26,16 @@ namespace LOSA.Finanzas
             UsuarioLogueado = pUserLogin;
 
             id_header = pint_header;
+            DetalleExoneracion dh = new DetalleExoneracion();
+            dh.RecuperarHedaer(id_header);
+            txtRegExonerado.Text = dh.Resolucion_Ex;
+            if (dh.Cerrado)//True
+                txtEstado.Text = "Cerrado";
+            else
+                txtEstado.Text = "Abierto";
+            dtDesde.EditValue = dh.FInicio;
+            dtHasta.EditValue = dh.FFinal;
+
             cargar_detalle(id_header);
         }
 
@@ -33,10 +43,12 @@ namespace LOSA.Finanzas
         {
             try
             {
-                string query = @"sp_get_detalle_exoneracion";
-                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
+                //string query = @"sp_get_detalle_exoneracion";
+                string queryLOSA = @"[sp_get_detalle_exoneracion_por_id_h]";
+                //SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(queryLOSA, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_header", id_header);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);

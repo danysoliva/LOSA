@@ -128,7 +128,7 @@ namespace LOSA.Finanzas
             //O dejarlo en Espera, vamos a pensarlo
             if (true)
             {
-
+                    
             }
 
             frmExoneracionAQ_OP frm = new frmExoneracionAQ_OP(UsuarioLogueado, frmExoneracionAQ_OP.TipoOperacion.insert, 0);
