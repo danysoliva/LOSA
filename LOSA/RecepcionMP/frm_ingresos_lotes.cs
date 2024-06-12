@@ -561,8 +561,6 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
-            
-
             try
             {
                 if (MessageBox.Show("Desea eliminar la tarima?", "Desea eliminar la tarima?",MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.Cancel)
@@ -605,19 +603,6 @@ namespace LOSA.RecepcionMP
 
                 CajaDialogo.Error(ex.Message);
             } 
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-                
-            }
         }
 
         private void btnPrintSeleccionados_Click(object sender, EventArgs e)

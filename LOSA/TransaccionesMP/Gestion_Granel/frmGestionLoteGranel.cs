@@ -318,15 +318,5 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
     }
 }
