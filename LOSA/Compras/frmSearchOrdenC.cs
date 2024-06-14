@@ -99,8 +99,9 @@ namespace LOSA.Compras
 
                         break;
                     case 3: //Rechazado
-                        Proceder = false;
-                        CajaDialogo.Information("La Orden se encuentra Rechazada!");
+                        Proceder = true;
+                        //Proceder = false;
+                        //CajaDialogo.Information("La Orden se encuentra Rechazada!");
 
                         break;
 

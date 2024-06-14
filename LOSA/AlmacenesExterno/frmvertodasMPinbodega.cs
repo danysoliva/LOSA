@@ -24,7 +24,7 @@ namespace LOSA.AlmacenesExterno
             bodega = pBodega;
             CodigoBodega = pCodigo;
             txtBodega.Text = CodigoBodega;
-            txtbodegaName.Text = bodega; 
+            txtbodegaName.Text = bodega;
             load_data_con_parametro();
         }
         public void load_data_con_parametro()

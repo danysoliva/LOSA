@@ -30,11 +30,11 @@ namespace LOSA.AlmacenesExterno
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteExterno));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtmp = new DevExpress.XtraEditors.TextEdit();
@@ -177,12 +177,12 @@ namespace LOSA.AlmacenesExterno
             this.grd_resumen.DataMember = "InventarioEx";
             this.grd_resumen.DataSource = this.dsReporteAlmacenExterno;
             this.grd_resumen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_resumen.Location = new System.Drawing.Point(2, 27);
+            this.grd_resumen.Location = new System.Drawing.Point(2, 23);
             this.grd_resumen.MainView = this.grdv_resumen;
             this.grd_resumen.Name = "grd_resumen";
             this.grd_resumen.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnCambiodeBodega});
-            this.grd_resumen.Size = new System.Drawing.Size(493, 292);
+            this.grd_resumen.Size = new System.Drawing.Size(493, 296);
             this.grd_resumen.TabIndex = 6;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -295,9 +295,9 @@ namespace LOSA.AlmacenesExterno
             // btnCambiodeBodega
             // 
             this.btnCambiodeBodega.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnCambiodeBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnCambiodeBodega.Name = "btnCambiodeBodega";
             this.btnCambiodeBodega.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -306,10 +306,10 @@ namespace LOSA.AlmacenesExterno
             this.grd_transito.DataMember = "comprasTransito";
             this.grd_transito.DataSource = this.dsReporteAlmacenExterno;
             this.grd_transito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_transito.Location = new System.Drawing.Point(2, 27);
+            this.grd_transito.Location = new System.Drawing.Point(2, 23);
             this.grd_transito.MainView = this.grdv_transito;
             this.grd_transito.Name = "grd_transito";
-            this.grd_transito.Size = new System.Drawing.Size(395, 292);
+            this.grd_transito.Size = new System.Drawing.Size(395, 296);
             this.grd_transito.TabIndex = 7;
             this.grd_transito.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_transito});

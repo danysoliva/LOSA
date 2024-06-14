@@ -32,6 +32,5 @@ namespace LOSA.Clases
         public int id_ingreso_lote;
         public string BodegaIn;
         public int id_detalle;
-
     }
 }
