@@ -965,7 +965,7 @@ namespace LOSA.Compras
 
                 switch (IdEstadoOrdenCompra)
                 {
-                    case 1://Pendiente(Creada)
+                    case 1://Pendiente de Aprobacion
                         cmdNuevo.Enabled = true;
                         cmdAddDetalle.Enabled = true;
                         txtComentarios.Enabled = true;
@@ -982,7 +982,7 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
-                        gcFiles.Enabled = false;
+                        gcFiles.Enabled = true;
                         cmdGuardarArchivos.Enabled = false;
 
                         dtFechaContabilizacion.Enabled = false;
@@ -1003,7 +1003,7 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
-                        gcFiles.Enabled = false;
+                        gcFiles.Enabled = true;
                         cmdGuardarArchivos.Enabled = false;
 
                         dtFechaContabilizacion.Enabled = false;
@@ -1013,12 +1013,12 @@ namespace LOSA.Compras
                         btnCopiarDe.Enabled = false;
                         break;
 
-                    case 4:
+                    case 4://Cancelado
                         cmdNuevo.Enabled = true;
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false ;
-                        gcFiles.Enabled = false;
+                        gcFiles.Enabled = true;
                         cmdGuardarArchivos.Enabled=false;
 
                         dtFechaContabilizacion.Enabled = false;
@@ -1028,7 +1028,17 @@ namespace LOSA.Compras
                         btnCopiarDe.Enabled = false;
                         break;
 
+                    case 5: //Creada (Borrador) 
+                        cmdNuevo.Enabled = true;
+                        cmdAddDetalle.Enabled = true;
+                        txtComentarios.Enabled = true;
+                        grDetalle.Enabled = true;
+                        gcFiles.Enabled = true;
+                        cmdGuardarArchivos.Enabled = true;
+                        dtFechaContabilizacion.Enabled = true;
+                        cmdGuardar.Enabled = true;
 
+                        break;
                     default:
                         break;
                 }
@@ -1620,7 +1630,7 @@ namespace LOSA.Compras
                 case TipoOperacion.New:
                     bool Guardar = false;
                     SqlTransaction transaction = null;
-
+                    
                     SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
 
                     try
@@ -2733,38 +2743,78 @@ namespace LOSA.Compras
         {
             try
             {
-                FTP_Class fTP = new FTP_Class();
-                try
+                var row = (dsCompras.ordenes_compras_archivosRow)gvFiles.GetFocusedDataRow();
+
+                if (row.id == 0)//No existe detalle, solo como memoria
                 {
-                    var row = (dsCompras.ordenes_compras_archivosRow)gvFiles.GetFocusedDataRow();
-
-                    fTP.RemoveFile(row.path);
-
-                    DataOperations dp = new DataOperations();
-                    SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
-
-                    cnx.Open();
-
-                    SqlCommand cmd = new SqlCommand("dbo.CM_delete_archivos_adjuntos", cnx);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
-                    cmd.ExecuteNonQuery();
-
-
                     gvFiles.DeleteRow(gvFiles.FocusedRowHandle);
-
-
+                    dsCompras1.AcceptChanges();
                 }
-                catch (Exception ec)
+                else
                 {
+                    bool Proceder = false;
 
-                    CajaDialogo.Error(ec.Message);
+                    switch (IdEstadoOrdenCompra)
+                    {
+
+                        case 1://Pendiente de Aprobacion
+                            Proceder = true;
+                            break;
+
+                        case 2://Autorizado
+                            Proceder = false;
+                            break;
+
+                        case 3://Rechazado
+                            Proceder = false;
+                            break;
+
+                        case 4://Cancelado
+                            Proceder = false;
+                            break;
+
+                        case 5://Creada (Borrador)
+                            Proceder = true;
+                            break;
+
+                        default:
+                            Proceder = false;
+
+                            break;
+                    }
+
+
+                        if (Proceder)
+                        {
+                            FTP_Class fTP = new FTP_Class();
+
+
+                            fTP.RemoveFile(row.path);
+
+                            DataOperations dp = new DataOperations();
+                            SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
+
+                            cnx.Open();
+
+                            SqlCommand cmd = new SqlCommand("dbo.CM_delete_archivos_adjuntos", cnx);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
+                            cmd.ExecuteNonQuery();
+
+
+                            gvFiles.DeleteRow(gvFiles.FocusedRowHandle);
+                            dsCompras1.AcceptChanges();
+
+                        }
                 }
             }
             catch (Exception ex)
             {
                 CajaDialogo.Show(ex.Message);
             }
+
+
+
         }
 
         private void CargarOrdenCompraFromOrdenCompra(int idOrdenCompraSoloDetalle)

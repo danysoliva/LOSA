@@ -637,6 +637,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup13 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -8601,7 +8603,8 @@
             this.navBarControl5.Appearance.ButtonPressed.Options.UseFont = true;
             this.navBarControl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl5.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup2});
+            this.navBarGroup2,
+            this.navBarGroup13});
             this.navBarControl5.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navOrdenCompra,
             this.navBarItem9,
@@ -8637,7 +8640,8 @@
             this.nbarAprobacionOrdenesCompra,
             this.navListaOC,
             this.navBarKardexSaldo,
-            this.navAprobacionDocumentos});
+            this.navAprobacionDocumentos,
+            this.navBarItem3});
             this.navBarControl5.Location = new System.Drawing.Point(0, 0);
             this.navBarControl5.Name = "navBarControl5";
             this.navBarControl5.OptionsNavPane.ExpandedWidth = 274;
@@ -9172,6 +9176,30 @@
             this.navBarItem5.Caption = "Base Datos Consola";
             this.navBarItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem5.ImageOptions.SvgImage")));
             this.navBarItem5.Name = "navBarItem5";
+            // 
+            // navBarGroup13
+            // 
+            this.navBarGroup13.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup13.Appearance.Options.UseFont = true;
+            this.navBarGroup13.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup13.AppearancePressed.Options.UseFont = true;
+            this.navBarGroup13.Caption = "Presupesto";
+            this.navBarGroup13.Expanded = true;
+            this.navBarGroup13.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
+            this.navBarGroup13.Name = "navBarGroup13";
+            this.navBarGroup13.Visible = false;
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarItem3.Appearance.Options.UseFont = true;
+            this.navBarItem3.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarItem3.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.navBarItem3.AppearancePressed.Options.UseFont = true;
+            this.navBarItem3.Caption = "Configuracion Presupuesto";
+            this.navBarItem3.Name = "navBarItem3";
             // 
             // frmOpciones
             // 
@@ -9848,5 +9876,7 @@
         private DevExpress.XtraNavBar.NavBarItem navReportManager;
         private DevExpress.XtraNavBar.NavBarItem navmp_bodega_prd_finanzas;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup13;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
     }
 }

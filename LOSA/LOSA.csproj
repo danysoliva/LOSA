@@ -1427,6 +1427,12 @@
     <Compile Include="Compras\frmGestionAprobaciones.Designer.cs">
       <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmKardexDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmKardexDetalle.Designer.cs">
+      <DependentUpon>frmKardexDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\frmKardexSaldosDisponible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1444,6 +1450,12 @@
     </Compile>
     <Compile Include="Compras\frmOrdenesCompraMain.Designer.cs">
       <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmReportesOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmReportesOC.Designer.cs">
+      <DependentUpon>frmReportesOC.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frmSearchOrdenC.cs">
       <SubType>Form</SubType>
@@ -7440,6 +7452,9 @@
     <EmbeddedResource Include="Compras\frmGestionAprobaciones.resx">
       <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmKardexDetalle.resx">
+      <DependentUpon>frmKardexDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmKardexSaldosDisponible.resx">
       <DependentUpon>frmKardexSaldosDisponible.cs</DependentUpon>
     </EmbeddedResource>
@@ -7448,6 +7463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmOrdenesCompraMain.resx">
       <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmReportesOC.resx">
+      <DependentUpon>frmReportesOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmSearchOrdenC.resx">
       <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
@@ -10092,6 +10110,8 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presupuesto\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
