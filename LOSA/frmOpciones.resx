@@ -315,6 +315,31 @@
         +VGTJv8Bp5yws1V6YgEAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="navBarItem3.ImageOptions.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAOwAAADsAXkocb0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAEWElEQVRYR72XX2zTVRTHu9/6a7eWtrCNRbZ2wOZw60Q6nK5bi+xPy4gmG246H4AhwuYG5c+YGQgP
+        m0YSfDA+kGUgYiCR8ESIZhENxoARHzAmPBB9whclMSGajLXdVjaP53vbW7u6H11N7Tf55Hd/53d2z7n3
+        nHvT6bIkL3M0iazKx5xiPmDCDDFZl8pcjZH1BGTwCcbIZDWB5OBQ1hJYLPj/LgTaw+xlZM2RSHa0wmr8
+        0tdQFmp1O4IGvfIrm9IKrmf8zBHmrdhYYZYsVa/M/vnDPvrj9gBhHDMvSd5lZsP9p9cVTh7Y6YqAmsrC
+        yeVW4y/8zR11eawczKWcHN2jZrd9qrneHuTd+CL6KbW8FpManDi7jeZ+Pkw3P+0WYPz5mQ7iJCbZpy7q
+        KpTHoMZvMAXMO8yD2BPvsO9mltR4eqxcBn/002Hq2eakXS87xRi2z8Y7iH1+Y99c/AGv7Brq3Ox2TGHF
+        bLrEYAcWu3Jhe6z82HYEAh+95ydXdbHgHI+l3flkIXYBV+m4ouTMadR51FO2io5uelaAMWzRT9oaOthT
+        G5GBsNq1dqvYemkDB9iHfW8x+y1m9dsWtyO0SJ1HR5rrid49KMAYtugnbQ1hchkItT/W95xIAslIe2CH
+        CyvF6YDyGfRAcp3/UwJ+dLsMhBJsrCmmWmcxfXzynxJUVxSgBK3RP9E1MZg4EWHTSMDG9DLoiUDsPS79
+        MpPhvtxyNB4aMLEJr461owlxqeCegEY3rykVAQDGsAGZwMMT/dTprID9utGk3nFtXj370p5a2tC0esZk
+        MdzGJInymPkYyi3/6pNOgQxuzleD7NMYdRXSWmnc7qm0h2oa7DMIynY6f6ePLtztp7FbuylXVWYwSbIa
+        cdTQ7QG+hPbvcEWw7bGVJwaHUiZgNOjnPvxmpwiKJPAEh05vJbMt7187IIUtRp0HY2Astz1RKRPYXlcV
+        3rCpLCxXLnmhqyqsKMqQmCVBWk2lpZQJREYC1Fa9Zrr6+dLpVwfrSWKyGfGTzIlJEqXVVOl2+wL7eHvL
+        vKO8aOaVNz0kKV1bGFZUZYB9F0hzwlTdnuwv7b8P7yWL2Rg5PdFPE/dG6PVhn3iOXRsgQ54eTV3CxLWk
+        FaVj73JVhrt6G2cR9PyNQ/gunnjvZLvJYrzCtrgymsC9wV1ksebNXrl7XAQsesJKW7prqWiVVbzDnm82
+        oBfKGaGMJnCuo5VaOp4JIRioXF9CL26vo8s/Dot30NS+HmXATzehjCZw0tdA3fu88zIYl0IkgESkDd/Z
+        /wQjlNEELnb6ydPmDMpg2Pq21zbSyhJbPAG3r+oh+/cwQhlN4MGxXjLzCbj4/RERLN6EN6NNeOG7QTLm
+        qyG2FTNCGU0Atve3eiNlFSunz34dEEFxB8jg9vKiIB/F4+wfl+Z5T9fuq3DQKb9HUF5g+0tVc+cbtlQF
+        u/o8c27fU1NYOQd/m30XSOvGS9cu/wteDPig5vFt1+l0ur8BcCD53KGwiTQAAAAASUVORK5CYII=
+</value>
+  </data>
   <assembly alias="DevExpress.Data.v23.2" name="DevExpress.Data.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="navBarItem9.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

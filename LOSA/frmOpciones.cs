@@ -90,6 +90,7 @@ using LOSA.FromAMS;
 using LOSA.MigracionACS.SAP;
 using LOSA.Reportes.ConsumosMateriaPrima;
 using ACS.MP;
+using LOSA.Presupuesto;
 
 namespace LOSA
 {
@@ -5578,6 +5579,45 @@ namespace LOSA
         private void navGestionMP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
+        }
+
+        private void navBarItem3_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmPresupuestoHome frm5 = new frmPresupuestoHome(UsuarioLogeado);
+                    frm5.MdiParent = this.MdiParent;
+                    frm5.Show();
+
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(102))
+                {
+                    frmPresupuestoHome frm1 = new frmPresupuestoHome(UsuarioLogeado);
+                    frm1.MdiParent = this.MdiParent;
+                    frm1.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #102");
+                }
+            }
         }
     }
 }
