@@ -132,7 +132,7 @@ namespace LOSA.Presupuesto
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("",);
+                //cmd.Parameters.AddWithValue("",);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 cmd.Parameters.AddWithValue("@idDetalle", idDetalle);
                 dsPresupuesto1.presupuesto_detalle_lineas.Clear();
