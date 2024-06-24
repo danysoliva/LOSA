@@ -540,7 +540,6 @@ namespace LOSA.FromAMS
             this.Controls.Add(this.label1);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "frmAprobacionesSalidaMercancia";
-            this.Text = "frmAprobacionesSalidaMercancia";
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);

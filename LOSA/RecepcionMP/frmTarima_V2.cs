@@ -282,7 +282,7 @@ namespace LOSA.RecepcionMP
                     {
                         //SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", TransactionIngreso.Connection);
                         SqlCommand cmd = cn.CreateCommand();
-                        cmd.CommandText = "sp_insert_ingresos_lote_v2";
+                        cmd.CommandText = "sp_insert_ingresos_lote_v3";
                         cmd.Connection = cn;
                         cmd.Transaction = TransactionIngreso;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -301,8 +301,10 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(row.pesokgxtarima));//   //
                         cmd.Parameters.AddWithValue("@lote_externo", Istraslado ? Convert.ToDecimal(row.id_Externo) : 0);//   //
                         cmd.Parameters.AddWithValue("@idheader", IdHeaderInserted);//    //
-
+                        cmd.Parameters.AddWithValue("@id_lote_externo", row.id_lote_externo);
+                        cmd.Parameters.AddWithValue("@Bodega_Externa", Bodega_Externa);
                         IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
+
 
                         int vid_tarima = 0;
 

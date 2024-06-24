@@ -370,6 +370,8 @@ namespace LOSA.RecepcionMP
             this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
@@ -414,6 +416,8 @@ namespace LOSA.RecepcionMP
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsFilter.AllowFilterEditor = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid
             // 
@@ -515,6 +519,8 @@ namespace LOSA.RecepcionMP
             this.colNBoleta.FieldName = "NBoleta";
             this.colNBoleta.Name = "colNBoleta";
             this.colNBoleta.OptionsColumn.AllowEdit = false;
+            this.colNBoleta.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "NBoleta", "{0}")});
             this.colNBoleta.Visible = true;
             this.colNBoleta.VisibleIndex = 1;
             this.colNBoleta.Width = 73;

@@ -88,6 +88,7 @@ namespace LOSA.Compras
             this.colexistencia_ud,
             this.gridColumn1,
             this.gridColumn2});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(-757, 533, 259, 302);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -101,7 +102,7 @@ namespace LOSA.Compras
             this.colcapitulo.OptionsColumn.ReadOnly = true;
             this.colcapitulo.Visible = true;
             this.colcapitulo.VisibleIndex = 1;
-            this.colcapitulo.Width = 324;
+            this.colcapitulo.Width = 489;
             // 
             // colpartida_arancelaria
             // 
@@ -111,7 +112,7 @@ namespace LOSA.Compras
             this.colpartida_arancelaria.OptionsColumn.ReadOnly = true;
             this.colpartida_arancelaria.Visible = true;
             this.colpartida_arancelaria.VisibleIndex = 2;
-            this.colpartida_arancelaria.Width = 223;
+            this.colpartida_arancelaria.Width = 336;
             // 
             // colexistencia_saldo
             // 
@@ -123,7 +124,7 @@ namespace LOSA.Compras
             this.colexistencia_saldo.OptionsColumn.ReadOnly = true;
             this.colexistencia_saldo.Visible = true;
             this.colexistencia_saldo.VisibleIndex = 3;
-            this.colexistencia_saldo.Width = 119;
+            this.colexistencia_saldo.Width = 179;
             // 
             // colexistencia_ud
             // 
@@ -135,12 +136,16 @@ namespace LOSA.Compras
             this.colexistencia_ud.OptionsColumn.ReadOnly = true;
             this.colexistencia_ud.Visible = true;
             this.colexistencia_ud.VisibleIndex = 4;
+            this.colexistencia_ud.Width = 133;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Detalle Saldos";
             this.gridColumn1.ColumnEdit = this.reposDetalle;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 5;
+            this.gridColumn1.Width = 96;
             // 
             // reposDetalle
             // 
@@ -159,6 +164,7 @@ namespace LOSA.Compras
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 113;
             // 
             // cmdClose
             // 

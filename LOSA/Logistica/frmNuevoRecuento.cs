@@ -66,26 +66,35 @@ namespace LOSA.Logistica
             try
             {
                 cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd2 = new SqlCommand(query, cn);
+                cmd2.CommandType = CommandType.StoredProcedure;
                 dsCierreMes1.Recuento_mp.Clear();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                cmd.Parameters.AddWithValue("@id_bodega", pid_bodega);
+                SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                cmd2.Parameters.AddWithValue("@id_bodega", pid_bodega);
                 da.Fill(dsCierreMes1.Recuento_mp);
                 cn.Close();
-
-                query = @"sp_get_inizializar_grid_for_ptV2";
-                cn.Open();
-                 cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                dsCierreMes1.Recuento_pt.Clear();
-                 da = new SqlDataAdapter(cmd);
-                da.Fill(dsCierreMes1.Recuento_pt);
-                cn.Close();
-
             }
             catch (Exception ex)
             {
+                dsCierreMes1.Recuento_mp.Clear();
+                CajaDialogo.Error(ex.Message);
+            }
+
+            try
+            {
+                query = @"sp_get_inizializar_grid_for_ptV2";
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cn.Open();
+                cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsCierreMes1.Recuento_pt.Clear();
+                da.Fill(dsCierreMes1.Recuento_pt);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                dsCierreMes1.Recuento_pt.Clear();
                 CajaDialogo.Error(ex.Message);
             }
         }
@@ -386,6 +395,8 @@ namespace LOSA.Logistica
                 CajaDialogo.Error("Debe seleccionar el mes!");
                 return;
             }
+
+            
 
             int id_bodega = Convert.ToInt32(grdBodegas.EditValue);
             Boolean existe_recuento = false;
@@ -737,12 +748,22 @@ namespace LOSA.Logistica
         {
             Inicializar_productos(Convert.ToInt32(grdBodegas.EditValue));
 
+            int conteo = 0;
             foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
             {
+                if (item.ExistenciaAprox == 0)
+                    conteo = conteo + 1;
+
                 if (item.whs_equivalente == "N/D")
                 {
                     item.id_bodega = Convert.ToInt32(grdBodegas.EditValue);
                 }
+            }
+
+            if (grdv_dataMP.RowCount == conteo)
+            {
+                CajaDialogo.Error("Toda la Bodega tiene existencia 0 en Sistema!");
+                dsCierreMes1.Recuento_mp.Clear();
             }
         }
 

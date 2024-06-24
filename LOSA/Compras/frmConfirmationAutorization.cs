@@ -68,8 +68,16 @@ namespace LOSA.Compras
 
         private void cmdAplicar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (txtDecisionCase.Text.Length > 0)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                CajaDialogo.Error("Debe seleccionar Aprobar/Rechazar");
+                return;
+            }
         }
 
         private void btnVerDetalle_Click(object sender, EventArgs e)

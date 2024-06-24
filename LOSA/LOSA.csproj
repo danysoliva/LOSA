@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,9 +24,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>680</ApplicationRevision>
+    <ApplicationRevision>690</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -294,23 +294,53 @@
     <Reference Include="DevExpress.XtraWizard.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="EPPlus, Version=7.2.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.2.0\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Infragistics4.Shared.v22.2, Version=22.2.20222.49, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.UltraWinEditors.v22.2, Version=22.2.20222.49, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.v22.2, Version=22.2.20222.49, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Extensions" />
@@ -1427,6 +1457,12 @@
     <Compile Include="Compras\frmGestionAprobaciones.Designer.cs">
       <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmKardexDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmKardexDetalle.Designer.cs">
+      <DependentUpon>frmKardexDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\frmKardexSaldosDisponible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1444,6 +1480,12 @@
     </Compile>
     <Compile Include="Compras\frmOrdenesCompraMain.Designer.cs">
       <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmReportesOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmReportesOC.Designer.cs">
+      <DependentUpon>frmReportesOC.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frmSearchOrdenC.cs">
       <SubType>Form</SubType>
@@ -2630,6 +2672,12 @@
     <Compile Include="MigracionACS\Formulas\FML_FF_Main_Panel.designer.cs">
       <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_PanelV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_PanelV2.Designer.cs">
+      <DependentUpon>FML_FF_Main_PanelV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Select.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2771,6 +2819,53 @@
     </Compile>
     <Compile Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.designer.cs">
       <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\DSMP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\frmHomePeriodosContables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\frmHomePeriodosContables.Designer.cs">
+      <DependentUpon>frmHomePeriodosContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\frmMantoPeriodosContables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\frmMantoPeriodosContables.Designer.cs">
+      <DependentUpon>frmMantoPeriodosContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CarcarII_Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CarcarII_Preview.Designer.cs">
+      <DependentUpon>MP_CarcarII_Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CargarII.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_CargarII.Designer.cs">
+      <DependentUpon>MP_CargarII.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_MnY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_MnY.Designer.cs">
+      <DependentUpon>MP_MnY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto.Designer.cs">
+      <DependentUpon>MP_UltimoCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto_Prompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\MP\MP_UltimoCosto_Prompt.Designer.cs">
+      <DependentUpon>MP_UltimoCosto_Prompt.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\MP\SplashForm.cs">
       <SubType>Form</SubType>
@@ -4391,6 +4486,26 @@
     <Compile Include="PlanMPreque\frmverdetalleplan.Designer.cs">
       <DependentUpon>frmverdetalleplan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presupuesto\dsPresupuesto.cs">
+      <DependentUpon>dsPresupuesto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\dsPresupuesto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPresupuesto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoHome.Designer.cs">
+      <DependentUpon>frmPresupuestoHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoHomeOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoHomeOP.Designer.cs">
+      <DependentUpon>frmPresupuestoHomeOP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\BannerTV\frmBannerMainTV_PRD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -5104,6 +5219,17 @@
     <None Include="MigracionACS\IT\dsSolicitudes.xss">
       <DependentUpon>dsSolicitudes.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\MP\DSMP.xsc">
+      <DependentUpon>DSMP.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\MP\DSMP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\MP\DSMP.xss">
+      <DependentUpon>DSMP.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\OIL\dsAceites.xsc">
       <DependentUpon>dsAceites.xsd</DependentUpon>
     </None>
@@ -5521,6 +5647,17 @@
       <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Presupuesto\dsPresupuesto.xsc">
+      <DependentUpon>dsPresupuesto.xsd</DependentUpon>
+    </None>
+    <None Include="Presupuesto\dsPresupuesto.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPresupuesto.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Presupuesto\dsPresupuesto.xss">
+      <DependentUpon>dsPresupuesto.xsd</DependentUpon>
+    </None>
     <None Include="Produccion\CierreLote\dsCierreLotesPT.xsc">
       <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
     </None>
@@ -7376,6 +7513,9 @@
     <EmbeddedResource Include="Compras\frmGestionAprobaciones.resx">
       <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmKardexDetalle.resx">
+      <DependentUpon>frmKardexDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmKardexSaldosDisponible.resx">
       <DependentUpon>frmKardexSaldosDisponible.cs</DependentUpon>
     </EmbeddedResource>
@@ -7384,6 +7524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmOrdenesCompraMain.resx">
       <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmReportesOC.resx">
+      <DependentUpon>frmReportesOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmSearchOrdenC.resx">
       <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
@@ -7882,6 +8025,9 @@
     <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Main_Panel.resx">
       <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Main_PanelV2.resx">
+      <DependentUpon>FML_FF_Main_PanelV2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Select.resx">
       <DependentUpon>FML_FF_Select.cs</DependentUpon>
     </EmbeddedResource>
@@ -7941,6 +8087,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.resx">
       <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\frmHomePeriodosContables.resx">
+      <DependentUpon>frmHomePeriodosContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\frmMantoPeriodosContables.resx">
+      <DependentUpon>frmMantoPeriodosContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_CarcarII_Preview.resx">
+      <DependentUpon>MP_CarcarII_Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_CargarII.resx">
+      <DependentUpon>MP_CargarII.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_MnY.resx">
+      <DependentUpon>MP_MnY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_UltimoCosto.resx">
+      <DependentUpon>MP_UltimoCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\MP\MP_UltimoCosto_Prompt.resx">
+      <DependentUpon>MP_UltimoCosto_Prompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\MP\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
@@ -8649,6 +8816,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmverdetalleplan.resx">
       <DependentUpon>frmverdetalleplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmPresupuestoHome.resx">
+      <DependentUpon>frmPresupuestoHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmPresupuestoHomeOP.resx">
+      <DependentUpon>frmPresupuestoHomeOP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\BannerTV\frmBannerMainTV_PRD.resx">
       <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
@@ -9875,6 +10048,7 @@
     <None Include="Resources\label-icon32px.png" />
     <None Include="Resources\LogoLimp_x32.png" />
     <None Include="Resources\materia_prima x32.png" />
+    <None Include="Resources\kilograms1.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />

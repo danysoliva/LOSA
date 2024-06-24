@@ -1763,6 +1763,12 @@ namespace LOSA.Calidad
 
                     if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1) //1 Tipo Ingrediente Marino
                     {
+                        cmd = new SqlCommand("[sp_delete_crieterio_trazabilidad_for_lote]", cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_mp", IdMP);
+                        cmd.Parameters.AddWithValue("@lote", Lote);
+                        cmd.ExecuteNonQuery();
+
                         foreach (dsMantenimientoC.info_adicional_marinoRow item in dsMantenimientoC.info_adicional_marino.Rows)
                         {
                             Query = @"[sp_insert_trz_criterio_ingreso_calidad_adicionalesV3]";
@@ -2445,6 +2451,14 @@ namespace LOSA.Calidad
 
             try
             {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_delete_crieterio_trazabilidad", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", row.id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
                 gridView1.DeleteRow(gridView1.FocusedRowHandle);
                 dsMantenimientoC.AcceptChanges();
             }

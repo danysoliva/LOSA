@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ACS.Classes;
 using LOSA.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Compras
 {
@@ -47,8 +48,14 @@ namespace LOSA.Compras
 
         private void reposDetalle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            CajaDialogo.Information("En Construccion..");
-            return;
+            var gridview = (GridView)gridControl1.FocusedView;
+            var row = (dsCompras.kardexRow)gridview.GetFocusedDataRow();
+
+            frmKardexDetalle frm = new frmKardexDetalle(row.capitulo, row.partida_arancelaria);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
         }
 
         private void cmdClose_Click(object sender, EventArgs e)

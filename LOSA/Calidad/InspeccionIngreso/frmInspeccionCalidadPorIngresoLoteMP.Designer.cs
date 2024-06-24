@@ -46,6 +46,11 @@ namespace LOSA.Calidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -993,13 +998,14 @@ namespace LOSA.Calidad
             this.colabrir.Name = "colabrir";
             this.colabrir.Visible = true;
             this.colabrir.VisibleIndex = 3;
-            this.colabrir.Width = 50;
+            this.colabrir.Width = 59;
             // 
             // btnAbrirAdjunto
             // 
             this.btnAbrirAdjunto.AutoHeight = false;
+            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
             this.btnAbrirAdjunto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnAbrirAdjunto.Name = "btnAbrirAdjunto";
             this.btnAbrirAdjunto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnAbrirAdjunto.Click += new System.EventHandler(this.btnAbrirAdjunto_Click);
@@ -1021,14 +1027,14 @@ namespace LOSA.Calidad
             this.Desadjuntar.Name = "Desadjuntar";
             this.Desadjuntar.Visible = true;
             this.Desadjuntar.VisibleIndex = 4;
-            this.Desadjuntar.Width = 65;
+            this.Desadjuntar.Width = 56;
             // 
             // btnDesligar
             // 
             this.btnDesligar.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.po_delete_24;
+            editorButtonImageOptions4.Image = global::LOSA.Properties.Resources.po_delete_24;
             this.btnDesligar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDesligar.Name = "btnDesligar";
             this.btnDesligar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDesligar.Click += new System.EventHandler(this.btnDesligar_Click);
@@ -1109,6 +1115,7 @@ namespace LOSA.Calidad
             this.colid_especio.FieldName = "id_especio";
             this.colid_especio.Name = "colid_especio";
             this.colid_especio.OptionsColumn.AllowEdit = false;
+            this.colid_especio.OptionsColumn.ReadOnly = true;
             this.colid_especio.Visible = true;
             this.colid_especio.VisibleIndex = 0;
             this.colid_especio.Width = 85;
@@ -1171,6 +1178,7 @@ namespace LOSA.Calidad
             this.colid_zona_pesca.ColumnEdit = this.reposGrdZonaPesca;
             this.colid_zona_pesca.FieldName = "id_zona_pesca";
             this.colid_zona_pesca.Name = "colid_zona_pesca";
+            this.colid_zona_pesca.OptionsColumn.ReadOnly = true;
             this.colid_zona_pesca.Visible = true;
             this.colid_zona_pesca.VisibleIndex = 1;
             this.colid_zona_pesca.Width = 73;
@@ -1223,6 +1231,7 @@ namespace LOSA.Calidad
             this.colplanta_senasa.Caption = "Planta Senasa";
             this.colplanta_senasa.FieldName = "planta_senasa";
             this.colplanta_senasa.Name = "colplanta_senasa";
+            this.colplanta_senasa.OptionsColumn.ReadOnly = true;
             this.colplanta_senasa.Visible = true;
             this.colplanta_senasa.VisibleIndex = 2;
             this.colplanta_senasa.Width = 94;
@@ -1233,6 +1242,7 @@ namespace LOSA.Calidad
             this.colsustentable.ColumnEdit = this.repoSpinSustentable;
             this.colsustentable.FieldName = "sustentable";
             this.colsustentable.Name = "colsustentable";
+            this.colsustentable.OptionsColumn.ReadOnly = true;
             this.colsustentable.Visible = true;
             this.colsustentable.VisibleIndex = 3;
             this.colsustentable.Width = 77;
@@ -1250,6 +1260,7 @@ namespace LOSA.Calidad
             this.colpais_origen.ColumnEdit = this.reposGrdPaisOrigen;
             this.colpais_origen.FieldName = "pais_origen";
             this.colpais_origen.Name = "colpais_origen";
+            this.colpais_origen.OptionsColumn.ReadOnly = true;
             this.colpais_origen.Visible = true;
             this.colpais_origen.VisibleIndex = 4;
             this.colpais_origen.Width = 68;
@@ -1303,6 +1314,7 @@ namespace LOSA.Calidad
             this.colfishsource.ColumnEdit = this.reposHyperLinkFishSource;
             this.colfishsource.FieldName = "fishsource";
             this.colfishsource.Name = "colfishsource";
+            this.colfishsource.OptionsColumn.ReadOnly = true;
             this.colfishsource.Visible = true;
             this.colfishsource.VisibleIndex = 5;
             this.colfishsource.Width = 118;
@@ -1318,6 +1330,7 @@ namespace LOSA.Calidad
             this.colIUCN.ColumnEdit = this.reposHyperLinkIUCN;
             this.colIUCN.FieldName = "IUCN";
             this.colIUCN.Name = "colIUCN";
+            this.colIUCN.OptionsColumn.ReadOnly = true;
             this.colIUCN.Visible = true;
             this.colIUCN.VisibleIndex = 6;
             this.colIUCN.Width = 91;
@@ -1333,6 +1346,7 @@ namespace LOSA.Calidad
             this.coltipo.ColumnEdit = this.reposGrdTipo;
             this.coltipo.FieldName = "tipo";
             this.coltipo.Name = "coltipo";
+            this.coltipo.OptionsColumn.ReadOnly = true;
             this.coltipo.Visible = true;
             this.coltipo.VisibleIndex = 7;
             this.coltipo.Width = 51;
@@ -1384,6 +1398,7 @@ namespace LOSA.Calidad
             this.colporce_tipo.FieldName = "porce_tipo";
             this.colporce_tipo.Name = "colporce_tipo";
             this.colporce_tipo.OptionsColumn.AllowEdit = false;
+            this.colporce_tipo.OptionsColumn.ReadOnly = true;
             this.colporce_tipo.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "porce_tipo", "%={0:0.##}")});
             this.colporce_tipo.Visible = true;
@@ -1409,9 +1424,9 @@ namespace LOSA.Calidad
             // reposDelete
             // 
             this.reposDelete.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.reposDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposDelete.Name = "reposDelete";
             this.reposDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.reposDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposDelete_ButtonClick);

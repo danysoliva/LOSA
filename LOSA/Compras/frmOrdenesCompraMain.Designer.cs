@@ -176,6 +176,7 @@ namespace LOSA.Compras
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
@@ -1695,6 +1696,7 @@ namespace LOSA.Compras
             // 
             this.gridColumn4.Caption = "Borrar";
             this.gridColumn4.ColumnEdit = this.btnDelete;
+            this.gridColumn4.FieldName = "eliminar";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 5;
@@ -1758,6 +1760,10 @@ namespace LOSA.Compras
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // xtraSaveFileDialog1
+            // 
+            this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
             // 
             // frmOrdenesCompraMain
             // 
@@ -1978,5 +1984,6 @@ namespace LOSA.Compras
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnOpen;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.XtraSaveFileDialog xtraSaveFileDialog1;
     }
 }

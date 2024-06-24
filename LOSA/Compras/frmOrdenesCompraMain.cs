@@ -28,6 +28,7 @@ using DevExpress.Office.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.Utils.CommonDialogs;
+using System.Diagnostics;
 
 namespace LOSA.Compras
 {
@@ -77,7 +78,7 @@ namespace LOSA.Compras
                 case TipoOperacion.View:
                     CargarInfoOrden(IdOrdenCompraActual);
                     SoloVista(IdOrdenCompraActual);
-
+                    CargarArchivos();
                     break;
                 default:
                     break;
@@ -102,6 +103,11 @@ namespace LOSA.Compras
             glRutaAprobacionOC.Enabled = false;
             comboBoxIntercom.Enabled = false;
             comboBoxIntercom.Enabled = false;
+
+            //Bloqueo Grid -- Archivos
+            gvFiles.OptionsMenu.EnableColumnMenu = false;
+            gvFiles.Columns["eliminar"].Visible = false;
+            cmdGuardarArchivos.Enabled = false;
 
             //Bloqueo en Grid
             grdvDetalle.OptionsMenu.EnableColumnMenu = true;
@@ -866,6 +872,11 @@ namespace LOSA.Compras
             btnEditar.Enabled = false;
             btnCopiarDe.Enabled = true;
             EdicionEspecialActiva = false;
+
+            cmdGuardarArchivos.Enabled = true;
+            gvFiles.OptionsMenu.EnableColumnMenu = true;
+            gvFiles.Columns["eliminar"].Visible = true;
+            dsCompras1.ordenes_compras_archivos.Clear();
             //GetSigID();
 
         }
@@ -965,7 +976,7 @@ namespace LOSA.Compras
 
                 switch (IdEstadoOrdenCompra)
                 {
-                    case 1://Pendiente(Creada)
+                    case 1://Pendiente de Aprobacion
                         cmdNuevo.Enabled = true;
                         cmdAddDetalle.Enabled = true;
                         txtComentarios.Enabled = true;
@@ -982,7 +993,7 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
-                        gcFiles.Enabled = false;
+                        gcFiles.Enabled = true;
                         cmdGuardarArchivos.Enabled = false;
 
                         dtFechaContabilizacion.Enabled = false;
@@ -1003,7 +1014,7 @@ namespace LOSA.Compras
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false;
-                        gcFiles.Enabled = false;
+                        gcFiles.Enabled = true;
                         cmdGuardarArchivos.Enabled = false;
 
                         dtFechaContabilizacion.Enabled = false;
@@ -1011,14 +1022,15 @@ namespace LOSA.Compras
                         TsExoOIsv.ReadOnly = true;
                         //btnShowPopu.Enabled = false;
                         btnCopiarDe.Enabled = false;
+                        btnEditar.Enabled = true;
                         break;
 
-                    case 4:
+                    case 4://Cancelado
                         cmdNuevo.Enabled = true;
                         cmdAddDetalle.Enabled = false;
                         txtComentarios.Enabled = false;
                         grDetalle.Enabled = false ;
-                        gcFiles.Enabled = false;
+                        gcFiles.Enabled = true;
                         cmdGuardarArchivos.Enabled=false;
 
                         dtFechaContabilizacion.Enabled = false;
@@ -1028,7 +1040,17 @@ namespace LOSA.Compras
                         btnCopiarDe.Enabled = false;
                         break;
 
+                    case 5: //Creada (Borrador) 
+                        cmdNuevo.Enabled = true;
+                        cmdAddDetalle.Enabled = true;
+                        txtComentarios.Enabled = true;
+                        grDetalle.Enabled = true;
+                        gcFiles.Enabled = true;
+                        cmdGuardarArchivos.Enabled = true;
+                        dtFechaContabilizacion.Enabled = true;
+                        cmdGuardar.Enabled = true;
 
+                        break;
                     default:
                         break;
                 }
@@ -1047,11 +1069,21 @@ namespace LOSA.Compras
             switch (tipooperacion)
             {
                 case TipoOperacion.New:
-                    DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea salir sin Guardar?");
-                    if (r != System.Windows.Forms.DialogResult.Yes)
-                        return;
 
-                    this.Close();
+                    if (txtCodProv.Text.Length > 0 || grdvDetalle.RowCount > 0 || gvFiles.RowCount > 0)
+                    {
+                        DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea salir sin Guardar?");
+                        if (r != System.Windows.Forms.DialogResult.Yes)
+                            return;
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+
+                   
 
                     break;
                 case TipoOperacion.Update:
@@ -1620,7 +1652,7 @@ namespace LOSA.Compras
                 case TipoOperacion.New:
                     bool Guardar = false;
                     SqlTransaction transaction = null;
-
+                    
                     SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
 
                     try
@@ -2662,26 +2694,37 @@ namespace LOSA.Compras
                     else
                         Proceder = true;
                     break;
+
+                case 3: //Rechazada
+                    Proceder = true;
+                    break;
                 default:
                     Proceder = false;
                     break;
             }
-
-            cmdNuevo.Enabled = true;
-            cmdAddDetalle.Enabled = true;
-            txtComentarios.Enabled = true;
-            grDetalle.Enabled = true;
-            dtFechaContabilizacion.Enabled = false;
-            btnPrint.Enabled = false;
-            cmdGuardar.Enabled = true;
-            TsExoOIsv.ReadOnly = false;
-            btnCopiarDe.Enabled = false;
-            grdTipoOrden.Enabled = false;
-            glRutaAprobacionOC.Enabled = false;
-            comboBoxIntercom.Enabled = true;
-            txtNumAtCard.Enabled = true;
-            EdicionEspecialActiva = true;
-            btnCopiarDe.Enabled = false;
+           
+            if(Proceder)
+            {
+                cmdNuevo.Enabled = true;
+                cmdAddDetalle.Enabled = true;
+                txtComentarios.Enabled = true;
+                grDetalle.Enabled = true;
+                dtFechaContabilizacion.Enabled = false;
+                btnPrint.Enabled = false;
+                cmdGuardar.Enabled = true;
+                TsExoOIsv.ReadOnly = false;
+                btnCopiarDe.Enabled = false;
+                grdTipoOrden.Enabled = false;
+                glRutaAprobacionOC.Enabled = false;
+                comboBoxIntercom.Enabled = true;
+                txtNumAtCard.Enabled = true;
+                EdicionEspecialActiva = true;
+                btnCopiarDe.Enabled = false;
+                cmdGuardarArchivos.Enabled = true;
+            }
+                
+            
+            
         }
 
         int contador = 0;
@@ -2690,37 +2733,37 @@ namespace LOSA.Compras
             try
             {
 
-            openFileDialog1.InitialDirectory = "c:\\";
-                openFileDialog1.Filter = "Files|*.jpg;*.jpeg;*.png;*.pdf";
+                openFileDialog1.InitialDirectory = "c:\\";
+                openFileDialog1.Filter = "Files|*.jpg;*.jpeg;*.png;*.pdf;*.xlsx";
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-            contador = 0;
+                    contador = 0;
             
 
-                foreach (var item in openFileDialog1.SafeFileNames)
-                {
-                    // Create a new DataRow
-                    DataRow newRow = dsCompras1.ordenes_compras_archivos.NewRow();
+                    foreach (var item in openFileDialog1.SafeFileNames)
+                    {
+                        // Create a new DataRow
+                        DataRow newRow = dsCompras1.ordenes_compras_archivos.NewRow();
 
-                    // Populate the DataRow with values
-                    newRow["fecha_registro"] = DateTime.Now;
-                    newRow["file_name"] = item;
-                    newRow["user"] = UsuarioLogueado.NombreUser;
-                    newRow["path"] = openFileDialog1.FileNames[contador];
+                        // Populate the DataRow with values
+                        newRow["fecha_registro"] = DateTime.Now;
+                        newRow["file_name"] = item;
+                        newRow["user"] = UsuarioLogueado.NombreUser;
+                        newRow["path"] = openFileDialog1.FileNames[contador];
 
-                        if (IdOrdenCompraActual!=0)
-                        {
-                            newRow["id_orden_compra_h"] = IdOrdenCompraActual;
+                            if (IdOrdenCompraActual!=0)
+                            {
+                                newRow["id_orden_compra_h"] = IdOrdenCompraActual;
 
-                        }                      
+                            }                      
 
-                    // Add the DataRow to the DataTable
-                    dsCompras1.ordenes_compras_archivos.Rows.Add(newRow);
-                    contador++;
+                        // Add the DataRow to the DataTable
+                        dsCompras1.ordenes_compras_archivos.Rows.Add(newRow);
+                        contador++;
 
+                    }
                 }
-            }
             }
             catch (Exception ex)
             {
@@ -2733,38 +2776,78 @@ namespace LOSA.Compras
         {
             try
             {
-                FTP_Class fTP = new FTP_Class();
-                try
+                var row = (dsCompras.ordenes_compras_archivosRow)gvFiles.GetFocusedDataRow();
+
+                if (row.id == 0)//No existe detalle, solo como memoria
                 {
-                    var row = (dsCompras.ordenes_compras_archivosRow)gvFiles.GetFocusedDataRow();
-
-                    fTP.RemoveFile(row.path);
-
-                    DataOperations dp = new DataOperations();
-                    SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
-
-                    cnx.Open();
-
-                    SqlCommand cmd = new SqlCommand("dbo.CM_delete_archivos_adjuntos", cnx);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
-                    cmd.ExecuteNonQuery();
-
-
                     gvFiles.DeleteRow(gvFiles.FocusedRowHandle);
-
-
+                    dsCompras1.AcceptChanges();
                 }
-                catch (Exception ec)
+                else
                 {
+                    bool Proceder = false;
 
-                    CajaDialogo.Error(ec.Message);
+                    switch (IdEstadoOrdenCompra)
+                    {
+
+                        case 1://Pendiente de Aprobacion
+                            Proceder = true;
+                            break;
+
+                        case 2://Autorizado
+                            Proceder = false;
+                            break;
+
+                        case 3://Rechazado
+                            Proceder = false;
+                            break;
+
+                        case 4://Cancelado
+                            Proceder = false;
+                            break;
+
+                        case 5://Creada (Borrador)
+                            Proceder = true;
+                            break;
+
+                        default:
+                            Proceder = false;
+
+                            break;
+                    }
+
+
+                        if (Proceder)
+                        {
+                            FTP_Class fTP = new FTP_Class();
+
+
+                            fTP.RemoveFile(row.path);
+
+                            DataOperations dp = new DataOperations();
+                            SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
+
+                            cnx.Open();
+
+                            SqlCommand cmd = new SqlCommand("dbo.CM_delete_archivos_adjuntos", cnx);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
+                            cmd.ExecuteNonQuery();
+
+
+                            gvFiles.DeleteRow(gvFiles.FocusedRowHandle);
+                            dsCompras1.AcceptChanges();
+
+                        }
                 }
             }
             catch (Exception ex)
             {
                 CajaDialogo.Show(ex.Message);
             }
+
+
+
         }
 
         private void CargarOrdenCompraFromOrdenCompra(int idOrdenCompraSoloDetalle)
@@ -2827,12 +2910,14 @@ namespace LOSA.Compras
 
                         if (ftp_claass.DownloadFileFromCompras(row.path, Path.Combine(folderBrowserDialog1.SelectedPath, row.file_name), UsuarioLogueado))
                         {
-                            CajaDialogo.Information("Archivo descargado en la ruta: "+ folderBrowserDialog1.SelectedPath);
+                            CajaDialogo.Information("Archivo descargado en la ruta: " + folderBrowserDialog1.SelectedPath);
 
-                        }  
+                        }
 
                     }
                 }
+
+               
             }
             catch (Exception ex)
             {
@@ -2855,9 +2940,21 @@ namespace LOSA.Compras
             try
             {
                 FTP_Class ftp = new FTP_Class();
-                 var row = (dsCompras.ordenes_compras_archivosRow) gvFiles.GetFocusedDataRow();
+                var row = (dsCompras.ordenes_compras_archivosRow) gvFiles.GetFocusedDataRow();
 
-                ftp.OpenFile(row.path, row.file_name);
+                if (row.id != 0)
+                {
+                    ftp.OpenFile(row.path, row.file_name);
+                }
+                else
+                {
+                    if (System.IO.File.Exists(row.path))
+                    {
+                        Process.Start(row.path);
+                    }
+                }
+
+                
 
             }
             catch (Exception ex)

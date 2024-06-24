@@ -65,7 +65,7 @@ namespace LOSA.TransaccionesMP.Reportes
                 return;
             }
 
-            DialogResult r = CajaDialogo.Error("Esta seguro de cancelar este ajuste?");
+            DialogResult r = CajaDialogo.Pregunta("Esta seguro de cancelar este ajuste?");
             if(r != DialogResult.Yes)
                 return;
             
