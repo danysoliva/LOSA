@@ -38,6 +38,10 @@ namespace LOSA.Compras
             this.gridControlDetallePres = new DevExpress.XtraGrid.GridControl();
             this.dsPresupuesto1 = new LOSA.Presupuesto.dsPresupuesto();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmonto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grdPresipuesto = new DevExpress.XtraEditors.GridLookUpEdit();
             this.presupuestoActivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,10 +50,6 @@ namespace LOSA.Compras
             this.colanio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmonto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtParametroBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDetallePres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPresupuesto1)).BeginInit();
@@ -145,6 +145,47 @@ namespace LOSA.Compras
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
+            // colid1
+            // 
+            this.colid1.Caption = "Codigo";
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            this.colid1.OptionsColumn.ReadOnly = true;
+            this.colid1.Visible = true;
+            this.colid1.VisibleIndex = 0;
+            this.colid1.Width = 97;
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Descripcion";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.OptionsColumn.ReadOnly = true;
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 1;
+            this.coldescripcion1.Width = 657;
+            // 
+            // colmonto
+            // 
+            this.colmonto.Caption = "Monto";
+            this.colmonto.DisplayFormat.FormatString = "$ {0:#,###,##0.00}";
+            this.colmonto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colmonto.FieldName = "monto";
+            this.colmonto.Name = "colmonto";
+            this.colmonto.OptionsColumn.ReadOnly = true;
+            this.colmonto.Visible = true;
+            this.colmonto.VisibleIndex = 2;
+            this.colmonto.Width = 291;
+            // 
+            // colSeleccionado
+            // 
+            this.colSeleccionado.Caption = "Seleccionar";
+            this.colSeleccionado.FieldName = "Seleccionado";
+            this.colSeleccionado.Name = "colSeleccionado";
+            this.colSeleccionado.Visible = true;
+            this.colSeleccionado.VisibleIndex = 3;
+            this.colSeleccionado.Width = 133;
+            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
@@ -200,6 +241,7 @@ namespace LOSA.Compras
             this.colanio.Name = "colanio";
             this.colanio.Visible = true;
             this.colanio.VisibleIndex = 1;
+            this.colanio.Width = 20;
             // 
             // coldescripcion
             // 
@@ -208,6 +250,7 @@ namespace LOSA.Compras
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 0;
+            this.coldescripcion.Width = 1246;
             // 
             // labelControl3
             // 
@@ -218,43 +261,6 @@ namespace LOSA.Compras
             this.labelControl3.Size = new System.Drawing.Size(85, 18);
             this.labelControl3.TabIndex = 19;
             this.labelControl3.Text = "Presupuesto:";
-            // 
-            // colid1
-            // 
-            this.colid1.Caption = "Codigo";
-            this.colid1.FieldName = "id";
-            this.colid1.Name = "colid1";
-            this.colid1.Visible = true;
-            this.colid1.VisibleIndex = 0;
-            this.colid1.Width = 97;
-            // 
-            // coldescripcion1
-            // 
-            this.coldescripcion1.Caption = "Descripcion";
-            this.coldescripcion1.FieldName = "descripcion";
-            this.coldescripcion1.Name = "coldescripcion1";
-            this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 1;
-            this.coldescripcion1.Width = 657;
-            // 
-            // colmonto
-            // 
-            this.colmonto.Caption = "Monto";
-            this.colmonto.DisplayFormat.FormatString = "$ {0:#,###,##0.00}";
-            this.colmonto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colmonto.FieldName = "monto";
-            this.colmonto.Name = "colmonto";
-            this.colmonto.Visible = true;
-            this.colmonto.VisibleIndex = 2;
-            this.colmonto.Width = 291;
-            // 
-            // colSeleccionado
-            // 
-            this.colSeleccionado.Caption = "Seleccionar";
-            this.colSeleccionado.FieldName = "Seleccionado";
-            this.colSeleccionado.Name = "colSeleccionado";
-            this.colSeleccionado.Visible = true;
-            this.colSeleccionado.VisibleIndex = 3;
             // 
             // frmSeleccionPresupuestoLocal
             // 

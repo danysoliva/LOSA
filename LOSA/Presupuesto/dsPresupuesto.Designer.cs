@@ -2351,6 +2351,8 @@ namespace LOSA.Presupuesto {
             
             private global::System.Data.DataColumn columnSeleccionado;
             
+            private global::System.Data.DataColumn columnconcat_;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SelectPresupuestoDataTable() {
@@ -2418,6 +2420,14 @@ namespace LOSA.Presupuesto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn concat_Column {
+                get {
+                    return this.columnconcat_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2453,13 +2463,14 @@ namespace LOSA.Presupuesto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SelectPresupuestoRow AddSelectPresupuestoRow(int id, string descripcion, decimal monto, bool Seleccionado) {
+            public SelectPresupuestoRow AddSelectPresupuestoRow(int id, string descripcion, decimal monto, bool Seleccionado, string concat_) {
                 SelectPresupuestoRow rowSelectPresupuestoRow = ((SelectPresupuestoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         descripcion,
                         monto,
-                        Seleccionado};
+                        Seleccionado,
+                        concat_};
                 rowSelectPresupuestoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSelectPresupuestoRow);
                 return rowSelectPresupuestoRow;
@@ -2486,6 +2497,7 @@ namespace LOSA.Presupuesto {
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columnmonto = base.Columns["monto"];
                 this.columnSeleccionado = base.Columns["Seleccionado"];
+                this.columnconcat_ = base.Columns["concat_"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2499,6 +2511,8 @@ namespace LOSA.Presupuesto {
                 base.Columns.Add(this.columnmonto);
                 this.columnSeleccionado = new global::System.Data.DataColumn("Seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSeleccionado);
+                this.columnconcat_ = new global::System.Data.DataColumn("concat_", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconcat_);
                 this.columnSeleccionado.DefaultValue = ((bool)(false));
             }
             
@@ -3923,6 +3937,22 @@ namespace LOSA.Presupuesto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string concat_ {
+                get {
+                    try {
+                        return ((string)(this[this.tableSelectPresupuesto.concat_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'concat_\' de la tabla \'SelectPresupuesto\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSelectPresupuesto.concat_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSelectPresupuesto.idColumn);
             }
@@ -3967,6 +3997,18 @@ namespace LOSA.Presupuesto {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSeleccionadoNull() {
                 this[this.tableSelectPresupuesto.SeleccionadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isconcat_Null() {
+                return this.IsNull(this.tableSelectPresupuesto.concat_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setconcat_Null() {
+                this[this.tableSelectPresupuesto.concat_Column] = global::System.Convert.DBNull;
             }
         }
         

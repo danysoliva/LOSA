@@ -68,6 +68,7 @@ namespace LOSA.Compras
             //UsuarioLogueado = pUserLog;
             tipooperacion = ptipo;
             IdOrdenCompraActual = pIdOrdenCompraH;
+            TasaCambio = GetTasaCambio();
 
             switch (tipooperacion)
             {
@@ -877,6 +878,7 @@ namespace LOSA.Compras
             gvFiles.OptionsMenu.EnableColumnMenu = true;
             gvFiles.Columns["eliminar"].Visible = true;
             dsCompras1.ordenes_compras_archivos.Clear();
+            TasaCambio = GetTasaCambio();
             //GetSigID();
 
         }
@@ -1707,7 +1709,7 @@ namespace LOSA.Compras
                         foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada.Rows)
                         {
                             cmd.Parameters.Clear();
-                            cmd.CommandText = "sp_insert_detalle_orden_compra_SAP";
+                            cmd.CommandText = "[sp_insert_detalle_orden_compra_SAPV2]";
                             cmd.Connection = conn;
                             cmd.Transaction = transaction;
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -1732,6 +1734,19 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@base_ref", row.referencia_base);//Referencia de Solicitud de Compra
                             cmd.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                            if (row.id_detalle_presupuesto == 0)
+                            {
+                                cmd.Parameters.AddWithValue("@presupuesto_id_detalle", DBNull.Value);
+                                cmd.Parameters.AddWithValue("@presupuesto_descrip", DBNull.Value);
+                                cmd.Parameters.AddWithValue("@TasaCambioActual", TasaCambio);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@presupuesto_id_detalle", row.id_detalle_presupuesto);
+                                cmd.Parameters.AddWithValue("@presupuesto_descrip", row.presupuesto_descripcion);
+                                cmd.Parameters.AddWithValue("@TasaCambioActual", TasaCambio);
+                            }
+                                
                             cmd.ExecuteNonQuery();
                         }
 
@@ -2963,20 +2978,34 @@ namespace LOSA.Compras
             }
         }
 
-        private void simpleButton1_Click_1(object sender, EventArgs e)
+        private void reposLigarPresupuesto_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            var gridview = (GridView)grDetalle.FocusedView;
+            var row = (dsCompras.oc_detalle_exoneradaRow)gridview.GetFocusedDataRow();
+
             frmSeleccionPresupuestoLocal frm = new frmSeleccionPresupuestoLocal();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                //frm.ItemSeleccionado.id = 
-                //frm.ItemSeleccionado.ItemName =
+                row.id_detalle_presupuesto = frm.ItemSeleccionado.id;
+                row.presupuesto_descripcion = frm.ItemSeleccionado.ItemName;
             }
+
         }
 
-        private void reposLigarPresupuesto_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void btnPresupuesto_Click(object sender, EventArgs e)
         {
-            CajaDialogo.Information("Funciona");
-            
+
+            frmSeleccionPresupuestoLocal frm = new frmSeleccionPresupuestoLocal();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                btnPresupuesto.Text = frm.ItemSeleccionado.ItemName;
+
+                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                {
+                    item.id_detalle_presupuesto = frm.ItemSeleccionado.id;
+                    item.presupuesto_descripcion = frm.ItemSeleccionado.ItemName;
+                }
+            }
         }
 
         private void CargarArchivos()

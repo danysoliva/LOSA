@@ -96,6 +96,8 @@
               <xs:element name="referencia_base" msprop:Generator_ColumnVarNameInTable="columnreferencia_base" msprop:Generator_ColumnPropNameInRow="referencia_base" msprop:Generator_ColumnPropNameInTable="referencia_baseColumn" msprop:Generator_UserColumnName="referencia_base" type="xs:int" minOccurs="0" />
               <xs:element name="isv" msdata:Caption="ISV" msprop:Generator_ColumnVarNameInTable="columnisv" msprop:Generator_ColumnPropNameInRow="isv" msprop:Generator_ColumnPropNameInTable="isvColumn" msprop:Generator_UserColumnName="isv" type="xs:decimal" minOccurs="0" />
               <xs:element name="num_linea_solicitud_d" msprop:Generator_ColumnVarNameInTable="columnnum_linea_solicitud_d" msprop:Generator_ColumnPropNameInRow="num_linea_solicitud_d" msprop:Generator_ColumnPropNameInTable="num_linea_solicitud_dColumn" msprop:Generator_UserColumnName="num_linea_solicitud_d" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="id_detalle_presupuesto" msprop:Generator_ColumnVarNameInTable="columnid_detalle_presupuesto" msprop:Generator_ColumnPropNameInRow="id_detalle_presupuesto" msprop:Generator_ColumnPropNameInTable="id_detalle_presupuestoColumn" msprop:Generator_UserColumnName="id_detalle_presupuesto" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="presupuesto_descripcion" msprop:Generator_ColumnVarNameInTable="columnpresupuesto_descripcion" msprop:Generator_ColumnPropNameInRow="presupuesto_descripcion" msprop:Generator_ColumnPropNameInTable="presupuesto_descripcionColumn" msprop:Generator_UserColumnName="presupuesto_descripcion" type="xs:string" default="" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

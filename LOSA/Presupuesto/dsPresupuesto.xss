@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:presupuesto_detalle_lineas" ZOrder="5" X="995" Y="280" Height="124" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
     <Shape ID="DesignTable:departamentos" ZOrder="4" X="995" Y="506" Height="67" Width="154" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="63" />
     <Shape ID="DesignTable:generacion_automatica" ZOrder="3" X="1268" Y="432" Height="143" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
-    <Shape ID="DesignTable:SelectPresupuesto" ZOrder="2" X="672" Y="564" Height="105" Width="172" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
+    <Shape ID="DesignTable:SelectPresupuesto" ZOrder="2" X="672" Y="564" Height="124" Width="172" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
     <Shape ID="DesignTable:PresupuestoActivo" ZOrder="1" X="484" Y="566" Height="86" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
   </Shapes>
   <Connectors />

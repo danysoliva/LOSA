@@ -2879,6 +2879,10 @@ namespace LOSA.Compras {
             
             private global::System.Data.DataColumn columnnum_linea_solicitud_d;
             
+            private global::System.Data.DataColumn columnid_detalle_presupuesto;
+            
+            private global::System.Data.DataColumn columnpresupuesto_descripcion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public oc_detalle_exoneradaDataTable() {
@@ -3026,6 +3030,22 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_detalle_presupuestoColumn {
+                get {
+                    return this.columnid_detalle_presupuesto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn presupuesto_descripcionColumn {
+                get {
+                    return this.columnpresupuesto_descripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3061,7 +3081,23 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public oc_detalle_exoneradaRow Addoc_detalle_exoneradaRow(int id_d_orden, int id_h, string capitulo, string partida_arancelaria, string itemcode, string descripcion_articulo, decimal cantidad, decimal precio_por_unidad, string indicador_impuesto, string bodega, decimal total, int referencia_base, decimal isv, string num_linea_solicitud_d) {
+            public oc_detalle_exoneradaRow Addoc_detalle_exoneradaRow(
+                        int id_d_orden, 
+                        int id_h, 
+                        string capitulo, 
+                        string partida_arancelaria, 
+                        string itemcode, 
+                        string descripcion_articulo, 
+                        decimal cantidad, 
+                        decimal precio_por_unidad, 
+                        string indicador_impuesto, 
+                        string bodega, 
+                        decimal total, 
+                        int referencia_base, 
+                        decimal isv, 
+                        string num_linea_solicitud_d, 
+                        int id_detalle_presupuesto, 
+                        string presupuesto_descripcion) {
                 oc_detalle_exoneradaRow rowoc_detalle_exoneradaRow = ((oc_detalle_exoneradaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_d_orden,
@@ -3077,7 +3113,9 @@ namespace LOSA.Compras {
                         total,
                         referencia_base,
                         isv,
-                        num_linea_solicitud_d};
+                        num_linea_solicitud_d,
+                        id_detalle_presupuesto,
+                        presupuesto_descripcion};
                 rowoc_detalle_exoneradaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowoc_detalle_exoneradaRow);
                 return rowoc_detalle_exoneradaRow;
@@ -3114,6 +3152,8 @@ namespace LOSA.Compras {
                 this.columnreferencia_base = base.Columns["referencia_base"];
                 this.columnisv = base.Columns["isv"];
                 this.columnnum_linea_solicitud_d = base.Columns["num_linea_solicitud_d"];
+                this.columnid_detalle_presupuesto = base.Columns["id_detalle_presupuesto"];
+                this.columnpresupuesto_descripcion = base.Columns["presupuesto_descripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3147,8 +3187,14 @@ namespace LOSA.Compras {
                 base.Columns.Add(this.columnisv);
                 this.columnnum_linea_solicitud_d = new global::System.Data.DataColumn("num_linea_solicitud_d", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnum_linea_solicitud_d);
+                this.columnid_detalle_presupuesto = new global::System.Data.DataColumn("id_detalle_presupuesto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_detalle_presupuesto);
+                this.columnpresupuesto_descripcion = new global::System.Data.DataColumn("presupuesto_descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpresupuesto_descripcion);
                 this.columnisv.Caption = "ISV";
                 this.columnnum_linea_solicitud_d.DefaultValue = ((string)("0"));
+                this.columnid_detalle_presupuesto.DefaultValue = ((int)(0));
+                this.columnpresupuesto_descripcion.DefaultValue = ((string)(""));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9843,6 +9889,40 @@ namespace LOSA.Compras {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_detalle_presupuesto {
+                get {
+                    try {
+                        return ((int)(this[this.tableoc_detalle_exonerada.id_detalle_presupuestoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_detalle_presupuesto\' de la tabla \'oc_detalle_exonerada" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableoc_detalle_exonerada.id_detalle_presupuestoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string presupuesto_descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableoc_detalle_exonerada.presupuesto_descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'presupuesto_descripcion\' de la tabla \'oc_detalle_exonerad" +
+                                "a\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableoc_detalle_exonerada.presupuesto_descripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_d_ordenNull() {
                 return this.IsNull(this.tableoc_detalle_exonerada.id_d_ordenColumn);
             }
@@ -10007,6 +10087,30 @@ namespace LOSA.Compras {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setnum_linea_solicitud_dNull() {
                 this[this.tableoc_detalle_exonerada.num_linea_solicitud_dColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_detalle_presupuestoNull() {
+                return this.IsNull(this.tableoc_detalle_exonerada.id_detalle_presupuestoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_detalle_presupuestoNull() {
+                this[this.tableoc_detalle_exonerada.id_detalle_presupuestoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispresupuesto_descripcionNull() {
+                return this.IsNull(this.tableoc_detalle_exonerada.presupuesto_descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpresupuesto_descripcionNull() {
+                this[this.tableoc_detalle_exonerada.presupuesto_descripcionColumn] = global::System.Convert.DBNull;
             }
         }
         

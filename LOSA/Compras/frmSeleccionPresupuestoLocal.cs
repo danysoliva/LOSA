@@ -87,7 +87,7 @@ namespace LOSA.Compras
 
         private void txtParametroBusqueda_EditValueChanged(object sender, EventArgs e)
         {
-            dv.RowFilter = @"descripcion like '%" + txtParametroBusqueda.Text + "%'";
+            dv.RowFilter = @"concat_ like '%" + txtParametroBusqueda.Text + "%'";
             gridControlDetallePres.DataSource = dv;
         }
 
