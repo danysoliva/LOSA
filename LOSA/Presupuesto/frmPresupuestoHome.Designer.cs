@@ -29,17 +29,27 @@ namespace LOSA.Presupuesto
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPresupuestoHome));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.NvHeader = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.btnCloseHeader = new DevExpress.XtraEditors.SimpleButton();
@@ -77,6 +87,12 @@ namespace LOSA.Presupuesto
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.NvDetailLine = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.btnSaveDetallleLinea = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAgregarLineaPresupuesto = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImporPlantilla = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExportPlantilla = new DevExpress.XtraEditors.SimpleButton();
+            this.txtDepartamento = new DevExpress.XtraEditors.TextEdit();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnDetalleLineasCerrar = new DevExpress.XtraEditors.SimpleButton();
             this.btnDetalle_lineasBack = new DevExpress.XtraEditors.SimpleButton();
             this.gcDetalleLinea = new DevExpress.XtraGrid.GridControl();
@@ -86,11 +102,9 @@ namespace LOSA.Presupuesto
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmonto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmoneda = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDepartamento = new DevExpress.XtraEditors.TextEdit();
-            this.btnExportPlantilla = new DevExpress.XtraEditors.SimpleButton();
-            this.btnImporPlantilla = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposEliminarLinea = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.reposEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.NvHeader.SuspendLayout();
@@ -105,9 +119,11 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.NvDetailLine.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartamento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalleLinea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleLinea)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDepartamento.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposEliminarLinea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // navigationFrame1
@@ -132,7 +148,6 @@ namespace LOSA.Presupuesto
             // NvHeader
             // 
             this.NvHeader.AutoScroll = true;
-            this.NvHeader.Caption = "NvHeader";
             this.NvHeader.Controls.Add(this.btnCloseHeader);
             this.NvHeader.Controls.Add(this.btnAddHeader);
             this.NvHeader.Controls.Add(this.gcHeader);
@@ -145,7 +160,7 @@ namespace LOSA.Presupuesto
             this.btnCloseHeader.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnCloseHeader.Appearance.Options.UseFont = true;
             this.btnCloseHeader.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCloseHeader.ImageOptions.SvgImage")));
-            this.btnCloseHeader.Location = new System.Drawing.Point(1192, 23);
+            this.btnCloseHeader.Location = new System.Drawing.Point(1179, 23);
             this.btnCloseHeader.Name = "btnCloseHeader";
             this.btnCloseHeader.Size = new System.Drawing.Size(93, 36);
             this.btnCloseHeader.TabIndex = 113;
@@ -162,6 +177,7 @@ namespace LOSA.Presupuesto
             this.btnAddHeader.Size = new System.Drawing.Size(149, 36);
             this.btnAddHeader.TabIndex = 110;
             this.btnAddHeader.Text = "Crear Presupuesto";
+            this.btnAddHeader.Visible = false;
             this.btnAddHeader.Click += new System.EventHandler(this.btnAddHeader_Click);
             // 
             // gcHeader
@@ -282,15 +298,16 @@ namespace LOSA.Presupuesto
             // reposAddPresupuesto
             // 
             this.reposAddPresupuesto.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.reposAddPresupuesto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposAddPresupuesto.Name = "reposAddPresupuesto";
             this.reposAddPresupuesto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.reposAddPresupuesto.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposAddPresupuesto_ButtonClick);
             // 
             // NvDetail
             // 
+            this.NvDetail.Caption = "NvDetail";
             this.NvDetail.Controls.Add(this.btnAddDetalleAuto);
             this.NvDetail.Controls.Add(this.txtDescripcionDetalle);
             this.NvDetail.Controls.Add(this.comboAnio);
@@ -304,21 +321,20 @@ namespace LOSA.Presupuesto
             // 
             // btnAddDetalleAuto
             // 
-            this.btnAddDetalleAuto.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDetalleAuto.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDetalleAuto.Appearance.Options.UseFont = true;
             this.btnAddDetalleAuto.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddDetalleAuto.ImageOptions.SvgImage")));
-            this.btnAddDetalleAuto.Location = new System.Drawing.Point(11, 23);
+            this.btnAddDetalleAuto.Location = new System.Drawing.Point(196, 23);
             this.btnAddDetalleAuto.Name = "btnAddDetalleAuto";
-            this.btnAddDetalleAuto.Size = new System.Drawing.Size(166, 36);
+            this.btnAddDetalleAuto.Size = new System.Drawing.Size(151, 36);
             this.btnAddDetalleAuto.TabIndex = 120;
             this.btnAddDetalleAuto.Text = "Generar Automatico";
-            this.btnAddDetalleAuto.Visible = false;
             this.btnAddDetalleAuto.Click += new System.EventHandler(this.btnAddDetalleAuto_Click);
             // 
             // txtDescripcionDetalle
             // 
             this.txtDescripcionDetalle.Enabled = false;
-            this.txtDescripcionDetalle.Location = new System.Drawing.Point(788, 33);
+            this.txtDescripcionDetalle.Location = new System.Drawing.Point(724, 33);
             this.txtDescripcionDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcionDetalle.Name = "txtDescripcionDetalle";
             this.txtDescripcionDetalle.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,7 +345,7 @@ namespace LOSA.Presupuesto
             // comboAnio
             // 
             this.comboAnio.Enabled = false;
-            this.comboAnio.Location = new System.Drawing.Point(530, 33);
+            this.comboAnio.Location = new System.Drawing.Point(466, 33);
             this.comboAnio.Name = "comboAnio";
             this.comboAnio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.comboAnio.Properties.Appearance.Options.UseFont = true;
@@ -351,7 +367,7 @@ namespace LOSA.Presupuesto
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(669, 36);
+            this.label2.Location = new System.Drawing.Point(605, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 19);
             this.label2.TabIndex = 117;
@@ -361,7 +377,7 @@ namespace LOSA.Presupuesto
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(473, 36);
+            this.label1.Location = new System.Drawing.Point(409, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 19);
             this.label1.TabIndex = 116;
@@ -374,12 +390,11 @@ namespace LOSA.Presupuesto
             this.btnAddDetalle.Appearance.Options.UseTextOptions = true;
             this.btnAddDetalle.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnAddDetalle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddDetalle.ImageOptions.SvgImage")));
-            this.btnAddDetalle.Location = new System.Drawing.Point(224, 23);
+            this.btnAddDetalle.Location = new System.Drawing.Point(27, 23);
             this.btnAddDetalle.Name = "btnAddDetalle";
             this.btnAddDetalle.Size = new System.Drawing.Size(128, 36);
             this.btnAddDetalle.TabIndex = 115;
             this.btnAddDetalle.Text = "Detalle por Departamento ";
-            this.btnAddDetalle.Visible = false;
             this.btnAddDetalle.Click += new System.EventHandler(this.btnAddDetalle_Click);
             // 
             // btnDetalleAtras
@@ -495,16 +510,18 @@ namespace LOSA.Presupuesto
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 
             // NvDetailLine
             // 
-            this.NvDetailLine.Controls.Add(this.simpleButton3);
+            this.NvDetailLine.Caption = "NvDetailLine";
+            this.NvDetailLine.Controls.Add(this.btnSaveDetallleLinea);
+            this.NvDetailLine.Controls.Add(this.btnAgregarLineaPresupuesto);
             this.NvDetailLine.Controls.Add(this.btnImporPlantilla);
             this.NvDetailLine.Controls.Add(this.btnExportPlantilla);
             this.NvDetailLine.Controls.Add(this.txtDepartamento);
@@ -515,15 +532,94 @@ namespace LOSA.Presupuesto
             this.NvDetailLine.Name = "NvDetailLine";
             this.NvDetailLine.Size = new System.Drawing.Size(1295, 745);
             // 
+            // btnSaveDetallleLinea
+            // 
+            this.btnSaveDetallleLinea.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveDetallleLinea.Appearance.Options.UseFont = true;
+            this.btnSaveDetallleLinea.Appearance.Options.UseTextOptions = true;
+            this.btnSaveDetallleLinea.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSaveDetallleLinea.ImageOptions.Image = global::LOSA.Properties.Resources.saveChanges_24x24;
+            this.btnSaveDetallleLinea.Location = new System.Drawing.Point(315, 31);
+            this.btnSaveDetallleLinea.Name = "btnSaveDetallleLinea";
+            this.btnSaveDetallleLinea.Size = new System.Drawing.Size(103, 36);
+            this.btnSaveDetallleLinea.TabIndex = 128;
+            this.btnSaveDetallleLinea.Text = "Guardar";
+            this.btnSaveDetallleLinea.Click += new System.EventHandler(this.btnSaveDetallleLinea_Click);
+            // 
+            // btnAgregarLineaPresupuesto
+            // 
+            this.btnAgregarLineaPresupuesto.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarLineaPresupuesto.Appearance.Options.UseFont = true;
+            this.btnAgregarLineaPresupuesto.Appearance.Options.UseTextOptions = true;
+            this.btnAgregarLineaPresupuesto.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnAgregarLineaPresupuesto.ImageOptions.Image = global::LOSA.Properties.Resources.add_32x32;
+            this.btnAgregarLineaPresupuesto.Location = new System.Drawing.Point(30, 30);
+            this.btnAgregarLineaPresupuesto.Name = "btnAgregarLineaPresupuesto";
+            this.btnAgregarLineaPresupuesto.Size = new System.Drawing.Size(103, 36);
+            this.btnAgregarLineaPresupuesto.TabIndex = 127;
+            this.btnAgregarLineaPresupuesto.Text = "Agregar Linea";
+            this.btnAgregarLineaPresupuesto.Click += new System.EventHandler(this.btnAgregarLineaPresupuesto_Click);
+            // 
+            // btnImporPlantilla
+            // 
+            this.btnImporPlantilla.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImporPlantilla.Appearance.Options.UseFont = true;
+            this.btnImporPlantilla.Appearance.Options.UseTextOptions = true;
+            this.btnImporPlantilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnImporPlantilla.ImageOptions.Image = global::LOSA.Properties.Resources.Excel_2_icon32px1;
+            this.btnImporPlantilla.Location = new System.Drawing.Point(425, 31);
+            this.btnImporPlantilla.Name = "btnImporPlantilla";
+            this.btnImporPlantilla.Size = new System.Drawing.Size(103, 36);
+            this.btnImporPlantilla.TabIndex = 126;
+            this.btnImporPlantilla.Text = "Importar Plantilla";
+            this.btnImporPlantilla.Click += new System.EventHandler(this.btnImporPlantilla_Click);
+            // 
+            // btnExportPlantilla
+            // 
+            this.btnExportPlantilla.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportPlantilla.Appearance.Options.UseFont = true;
+            this.btnExportPlantilla.Appearance.Options.UseTextOptions = true;
+            this.btnExportPlantilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnExportPlantilla.ImageOptions.Image = global::LOSA.Properties.Resources.excel_32x32;
+            this.btnExportPlantilla.Location = new System.Drawing.Point(205, 30);
+            this.btnExportPlantilla.Name = "btnExportPlantilla";
+            this.btnExportPlantilla.Size = new System.Drawing.Size(103, 36);
+            this.btnExportPlantilla.TabIndex = 125;
+            this.btnExportPlantilla.Text = "Exportar Plantilla";
+            this.btnExportPlantilla.Click += new System.EventHandler(this.btnExportPlantilla_Click);
+            // 
+            // txtDepartamento
+            // 
+            this.txtDepartamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDepartamento.Enabled = false;
+            this.txtDepartamento.Location = new System.Drawing.Point(670, 36);
+            this.txtDepartamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartamento.Properties.Appearance.Options.UseFont = true;
+            this.txtDepartamento.Size = new System.Drawing.Size(238, 26);
+            this.txtDepartamento.TabIndex = 124;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(554, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(170, 19);
+            this.label4.TabIndex = 120;
+            this.label4.Text = "Departamento__________:";
+            // 
             // btnDetalleLineasCerrar
             // 
             this.btnDetalleLineasCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetalleLineasCerrar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnDetalleLineasCerrar.Appearance.Options.UseFont = true;
             this.btnDetalleLineasCerrar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleLineasCerrar.ImageOptions.Image")));
-            this.btnDetalleLineasCerrar.Location = new System.Drawing.Point(1172, 30);
+            this.btnDetalleLineasCerrar.Location = new System.Drawing.Point(1171, 29);
             this.btnDetalleLineasCerrar.Name = "btnDetalleLineasCerrar";
-            this.btnDetalleLineasCerrar.Size = new System.Drawing.Size(93, 36);
+            this.btnDetalleLineasCerrar.Size = new System.Drawing.Size(103, 36);
             this.btnDetalleLineasCerrar.TabIndex = 116;
             this.btnDetalleLineasCerrar.Text = "Cerrar";
             this.btnDetalleLineasCerrar.Click += new System.EventHandler(this.btnDetalleLineasCerrar_Click);
@@ -534,9 +630,9 @@ namespace LOSA.Presupuesto
             this.btnDetalle_lineasBack.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnDetalle_lineasBack.Appearance.Options.UseFont = true;
             this.btnDetalle_lineasBack.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalle_lineasBack.ImageOptions.Image")));
-            this.btnDetalle_lineasBack.Location = new System.Drawing.Point(1062, 30);
+            this.btnDetalle_lineasBack.Location = new System.Drawing.Point(1060, 29);
             this.btnDetalle_lineasBack.Name = "btnDetalle_lineasBack";
-            this.btnDetalle_lineasBack.Size = new System.Drawing.Size(93, 36);
+            this.btnDetalle_lineasBack.Size = new System.Drawing.Size(103, 36);
             this.btnDetalle_lineasBack.TabIndex = 115;
             this.btnDetalle_lineasBack.Text = "Atras";
             this.btnDetalle_lineasBack.Click += new System.EventHandler(this.btnDetalle_lineasBack_Click);
@@ -551,6 +647,9 @@ namespace LOSA.Presupuesto
             this.gcDetalleLinea.Location = new System.Drawing.Point(3, 84);
             this.gcDetalleLinea.MainView = this.gvDetalleLinea;
             this.gcDetalleLinea.Name = "gcDetalleLinea";
+            this.gcDetalleLinea.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.reposEliminarLinea,
+            this.reposEditar});
             this.gcDetalleLinea.Size = new System.Drawing.Size(1289, 658);
             this.gcDetalleLinea.TabIndex = 0;
             this.gcDetalleLinea.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -563,9 +662,11 @@ namespace LOSA.Presupuesto
             this.colid_detalle1,
             this.coldescripcion1,
             this.colmonto,
-            this.colmoneda});
+            this.colmoneda,
+            this.gridColumn3});
             this.gvDetalleLinea.GridControl = this.gcDetalleLinea;
             this.gvDetalleLinea.Name = "gvDetalleLinea";
+            this.gvDetalleLinea.OptionsView.ShowFooter = true;
             this.gvDetalleLinea.OptionsView.ShowGroupPanel = false;
             // 
             // colid_detalle_linea
@@ -575,21 +676,22 @@ namespace LOSA.Presupuesto
             this.colid_detalle_linea.Name = "colid_detalle_linea";
             this.colid_detalle_linea.Visible = true;
             this.colid_detalle_linea.VisibleIndex = 0;
-            this.colid_detalle_linea.Width = 107;
+            this.colid_detalle_linea.Width = 101;
             // 
             // colid_detalle1
             // 
+            this.colid_detalle1.Caption = "id_detalle";
             this.colid_detalle1.FieldName = "id_detalle";
             this.colid_detalle1.Name = "colid_detalle1";
             // 
             // coldescripcion1
             // 
             this.coldescripcion1.Caption = "Descripcion del Presupuesto";
-            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.FieldName = "descripcion_linea_presupuesto";
             this.coldescripcion1.Name = "coldescripcion1";
             this.coldescripcion1.Visible = true;
             this.coldescripcion1.VisibleIndex = 1;
-            this.coldescripcion1.Width = 837;
+            this.coldescripcion1.Width = 753;
             // 
             // colmonto
             // 
@@ -598,79 +700,46 @@ namespace LOSA.Presupuesto
             this.colmonto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colmonto.FieldName = "monto";
             this.colmonto.Name = "colmonto";
+            this.colmonto.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "monto", "Total = {0:#,###,##0.00}")});
             this.colmonto.Visible = true;
             this.colmonto.VisibleIndex = 2;
-            this.colmonto.Width = 320;
+            this.colmonto.Width = 301;
             // 
             // colmoneda
             // 
+            this.colmoneda.Caption = "moneda";
             this.colmoneda.FieldName = "moneda";
             this.colmoneda.Name = "colmoneda";
             // 
-            // label4
+            // gridColumn3
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(455, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 19);
-            this.label4.TabIndex = 120;
-            this.label4.Text = "Departamento__________:";
+            this.gridColumn3.Caption = "Eliminar";
+            this.gridColumn3.ColumnEdit = this.reposEliminarLinea;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 109;
             // 
-            // txtDepartamento
+            // reposEliminarLinea
             // 
-            this.txtDepartamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDepartamento.Enabled = false;
-            this.txtDepartamento.Location = new System.Drawing.Point(571, 36);
-            this.txtDepartamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDepartamento.Name = "txtDepartamento";
-            this.txtDepartamento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartamento.Properties.Appearance.Options.UseFont = true;
-            this.txtDepartamento.Size = new System.Drawing.Size(308, 26);
-            this.txtDepartamento.TabIndex = 124;
+            this.reposEliminarLinea.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.reposEliminarLinea.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposEliminarLinea.Name = "reposEliminarLinea";
+            this.reposEliminarLinea.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposEliminarLinea.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposEliminarLinea_ButtonClick);
             // 
-            // btnExportPlantilla
+            // reposEditar
             // 
-            this.btnExportPlantilla.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportPlantilla.Appearance.Options.UseFont = true;
-            this.btnExportPlantilla.Appearance.Options.UseTextOptions = true;
-            this.btnExportPlantilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnExportPlantilla.ImageOptions.Image = global::LOSA.Properties.Resources.excel_32x32;
-            this.btnExportPlantilla.Location = new System.Drawing.Point(199, 31);
-            this.btnExportPlantilla.Name = "btnExportPlantilla";
-            this.btnExportPlantilla.Size = new System.Drawing.Size(119, 36);
-            this.btnExportPlantilla.TabIndex = 125;
-            this.btnExportPlantilla.Text = "Exportar Plantilla";
-            this.btnExportPlantilla.Visible = false;
-            // 
-            // btnImporPlantilla
-            // 
-            this.btnImporPlantilla.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImporPlantilla.Appearance.Options.UseFont = true;
-            this.btnImporPlantilla.Appearance.Options.UseTextOptions = true;
-            this.btnImporPlantilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnImporPlantilla.ImageOptions.Image = global::LOSA.Properties.Resources.Excel_2_icon32px1;
-            this.btnImporPlantilla.Location = new System.Drawing.Point(324, 30);
-            this.btnImporPlantilla.Name = "btnImporPlantilla";
-            this.btnImporPlantilla.Size = new System.Drawing.Size(125, 36);
-            this.btnImporPlantilla.TabIndex = 126;
-            this.btnImporPlantilla.Text = "Importar Plantilla";
-            this.btnImporPlantilla.Visible = false;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.add_32x32;
-            this.simpleButton3.Location = new System.Drawing.Point(30, 30);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(107, 36);
-            this.simpleButton3.TabIndex = 127;
-            this.simpleButton3.Text = "Agregar Linea";
-            this.simpleButton3.Visible = false;
+            this.reposEditar.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.reposEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposEditar.Name = "reposEditar";
+            this.reposEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposEditar_ButtonClick);
             // 
             // frmPresupuestoHome
             // 
@@ -696,9 +765,11 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.NvDetailLine.ResumeLayout(false);
             this.NvDetailLine.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartamento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalleLinea)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleLinea)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDepartamento.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposEliminarLinea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposEditar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -753,8 +824,13 @@ namespace LOSA.Presupuesto
         private DevExpress.XtraGrid.Columns.GridColumn colmoneda;
         private DevExpress.XtraEditors.TextEdit txtDepartamento;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnAgregarLineaPresupuesto;
         private DevExpress.XtraEditors.SimpleButton btnImporPlantilla;
         private DevExpress.XtraEditors.SimpleButton btnExportPlantilla;
+        private DevExpress.XtraEditors.SimpleButton btnSaveDetallleLinea;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposEliminarLinea;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposEditar;
+        //private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

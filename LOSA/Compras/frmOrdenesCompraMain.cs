@@ -280,10 +280,10 @@ namespace LOSA.Compras
                     break;
                 case GrupoUser.GrupoUsuario.Contabilidad:
 
-                    lblSucursal.Visible = false;
+                    //lblSucursal.Visible = false;
                     break;
                 case GrupoUser.GrupoUsuario.Compras:
-                    lblSucursal.Visible = false;
+                    //lblSucursal.Visible = false;
                     break;
                 default:
                     break;
@@ -2961,6 +2961,22 @@ namespace LOSA.Compras
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            frmSeleccionPresupuestoLocal frm = new frmSeleccionPresupuestoLocal();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //frm.ItemSeleccionado.id = 
+                //frm.ItemSeleccionado.ItemName =
+            }
+        }
+
+        private void reposLigarPresupuesto_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            CajaDialogo.Information("Funciona");
+            
         }
 
         private void CargarArchivos()

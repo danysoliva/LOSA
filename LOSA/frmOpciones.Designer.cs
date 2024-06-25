@@ -601,8 +601,6 @@
             this.navListaOC = new DevExpress.XtraNavBar.NavBarItem();
             this.navAprobacionDocumentos = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup13 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem237 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
@@ -2408,7 +2406,7 @@
             this.TabOpcionesProduccion.Appearance.Options.UseFont = true;
             this.TabOpcionesProduccion.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabOpcionesProduccion.AppearancePage.Header.Options.UseFont = true;
-            this.TabOpcionesProduccion.Location = new System.Drawing.Point(6, 3);
+            this.TabOpcionesProduccion.Location = new System.Drawing.Point(7, 4);
             this.TabOpcionesProduccion.Name = "TabOpcionesProduccion";
             this.TabOpcionesProduccion.SelectedTabPage = this.TabProduccionAdmin;
             this.TabOpcionesProduccion.Size = new System.Drawing.Size(826, 474);
@@ -8102,7 +8100,7 @@
             this.navBarItem45,
             this.navBarProductoBorrador,
             this.navBarItem2});
-            this.navBarControl2.Location = new System.Drawing.Point(0, 0);
+            this.navBarControl2.Location = new System.Drawing.Point(1, 1);
             this.navBarControl2.Name = "navBarControl2";
             this.navBarControl2.OptionsNavPane.ExpandedWidth = 454;
             this.navBarControl2.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
@@ -8643,10 +8641,8 @@
             this.navListaOC,
             this.navBarKardexSaldo,
             this.navAprobacionDocumentos,
-            this.navBarItem3,
-            this.navBarItem6,
-            this.navBarItem237});
-            this.navBarControl5.Location = new System.Drawing.Point(0, 0);
+            this.navBarItem3});
+            this.navBarControl5.Location = new System.Drawing.Point(1, 1);
             this.navBarControl5.Name = "navBarControl5";
             this.navBarControl5.OptionsNavPane.ExpandedWidth = 274;
             this.navBarControl5.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
@@ -8745,20 +8741,8 @@
             this.navBarGroup13.Caption = "Presupesto";
             this.navBarGroup13.Expanded = true;
             this.navBarGroup13.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem237),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroup13.Name = "navBarGroup13";
-            // 
-            // navBarItem237
-            // 
-            this.navBarItem237.Caption = "navBarItem237";
-            this.navBarItem237.Name = "navBarItem237";
-            // 
-            // navBarItem6
-            // 
-            this.navBarItem6.Caption = "navBarItem6";
-            this.navBarItem6.Name = "navBarItem6";
             // 
             // navBarItem3
             // 
@@ -8768,7 +8752,7 @@
             this.navBarItem3.AppearanceHotTracked.Options.UseFont = true;
             this.navBarItem3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
             this.navBarItem3.AppearancePressed.Options.UseFont = true;
-            this.navBarItem3.Caption = "Configuracion Presupuesto";
+            this.navBarItem3.Caption = "Gestion de Presupuesto";
             this.navBarItem3.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.ImageOptions.SmallImage")));
             this.navBarItem3.Name = "navBarItem3";
             this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked_1);
@@ -9156,7 +9140,7 @@
             this.navBarGroup3});
             this.navBarControl7.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.nbButtonReporteUnificadoConsumo});
-            this.navBarControl7.Location = new System.Drawing.Point(0, 0);
+            this.navBarControl7.Location = new System.Drawing.Point(1, 1);
             this.navBarControl7.Name = "navBarControl7";
             this.navBarControl7.OptionsNavPane.ExpandedWidth = 451;
             this.navBarControl7.Size = new System.Drawing.Size(451, 480);
@@ -9895,7 +9879,5 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem237;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem6;
     }
 }

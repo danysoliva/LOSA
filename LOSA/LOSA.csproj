@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,9 +24,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>690</ApplicationRevision>
+    <ApplicationRevision>691</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1396,6 +1396,7 @@
     <Compile Include="Clases\PlantaPrvTrz.cs" />
     <Compile Include="Clases\Plan_Semanal.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
+    <Compile Include="Clases\Presupuesto.cs" />
     <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\ReporteProceso.cs" />
@@ -1492,6 +1493,12 @@
     </Compile>
     <Compile Include="Compras\frmSearchOrdenC.Designer.cs">
       <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmSeleccionPresupuestoLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmSeleccionPresupuestoLocal.Designer.cs">
+      <DependentUpon>frmSeleccionPresupuestoLocal.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\rptOrdenCompra.cs">
       <SubType>Component</SubType>
@@ -4494,6 +4501,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPresupuesto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presupuesto\frmGeneracionDetallePresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmGeneracionDetallePresupuesto.Designer.cs">
+      <DependentUpon>frmGeneracionDetallePresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleLineaOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleLineaOP.Designer.cs">
+      <DependentUpon>frmPresupuestoDetalleLineaOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleOP.Designer.cs">
+      <DependentUpon>frmPresupuestoDetalleOP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presupuesto\frmPresupuestoHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4705,6 +4730,25 @@
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Utileria\WaitFrmGeneric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utileria\WaitFrmGeneric.Designer.cs">
+      <DependentUpon>WaitFrmGeneric.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Compras\frmSeleccionPresupuestoLocal.resx">
+      <DependentUpon>frmSeleccionPresupuestoLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmGeneracionDetallePresupuesto.resx">
+      <DependentUpon>frmGeneracionDetallePresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmPresupuestoDetalleLineaOP.resx">
+      <DependentUpon>frmPresupuestoDetalleLineaOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Utileria\WaitFrmGeneric.resx">
+      <DependentUpon>WaitFrmGeneric.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -8817,6 +8861,9 @@
     <EmbeddedResource Include="PlanMPreque\frmverdetalleplan.resx">
       <DependentUpon>frmverdetalleplan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmPresupuestoDetalleOP.resx">
+      <DependentUpon>frmPresupuestoDetalleOP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presupuesto\frmPresupuestoHome.resx">
       <DependentUpon>frmPresupuestoHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -8913,7 +8960,6 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

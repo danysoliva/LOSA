@@ -3363,7 +3363,7 @@ namespace LOSA
 
             if (!accesoprevio)
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(81))
+                if (UsuarioLogeado.ValidarNivelPermisos(104))
                 {
                     frmGestionLoteGranel frm = new frmGestionLoteGranel(this.UsuarioLogeado);
                     frm.MdiParent = this.MdiParent;
@@ -3371,7 +3371,7 @@ namespace LOSA
                 }
                 else
                 {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #81");
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #104");
                 }
             }
         }
@@ -5592,7 +5592,6 @@ namespace LOSA
                 case 2://Basic No Autorization
                     break;
                 case 3://Medium Autorization
-                    break;
                 case 4://Depth With Delta
                 case 5://Depth Without Delta
                     accesoprevio = true;
