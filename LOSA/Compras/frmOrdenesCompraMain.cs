@@ -68,7 +68,7 @@ namespace LOSA.Compras
             //UsuarioLogueado = pUserLog;
             tipooperacion = ptipo;
             IdOrdenCompraActual = pIdOrdenCompraH;
-            TasaCambio = GetTasaCambio();
+            //TasaCambio = GetTasaCambio();
 
             switch (tipooperacion)
             {
@@ -122,6 +122,7 @@ namespace LOSA.Compras
             //grdvDetalle.Columns["indicador_impuesto"].ColumnEdit.ReadOnly = true;
             //grdvDetalle.Columns["bodega"].ColumnEdit.ReadOnly = true;
             txtComentarios.Enabled = false;
+            btnPresupuesto.Enabled = false;
             tipooperacion = TipoOperacion.View;
 
         }
@@ -324,6 +325,7 @@ namespace LOSA.Compras
                 }
                 else
                 {
+                    GetTasaCambio();
                     cbxMoneda.Text = "Moneda local";
                     txtTasaCambio.Visible = false;
                 }
@@ -434,7 +436,7 @@ namespace LOSA.Compras
             CargarPartidasArancelarias();
             try
             {
-                string query = @"[sp_get_compras_ordenes_detalleV2]";
+                string query = @"[sp_get_compras_ordenes_detalleV3]";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -688,67 +690,89 @@ namespace LOSA.Compras
         private void ButtonDeleteRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
 
-            switch (IdEstadoOrdenCompra)
-            {
-                case 1://Pendiente (Creada)
-                    break;
 
-                case 2://Autorizado
-                    CajaDialogo.Error("No se pueden realizar modificaciones en una Orden de Compra ya Autorizada!");
-                    break;
-                case 3://Rechazado
-                    CajaDialogo.Error("No se pueden realizar modificaciones en una Orden de Compra ya Rechazada!");
-                    break;
-                default:
-                    break;
+            bool Proceder = false;
+            if (EdicionEspecialActiva)
+            {
+                Proceder = true;
             }
-
-            DialogResult r = CajaDialogo.Pregunta("Confirma que desea elminar este registro?");
-            if (r != DialogResult.Yes)
+            else
             {
-                return;
+                switch (IdEstadoOrdenCompra)
+                {
+                    case 1://Pendiente de Aprobacion
+                        Proceder = false;
+                        break;
+
+                    case 2://Autorizado
+                        CajaDialogo.Error("No se pueden realizar modificaciones en una Orden de Compra ya Autorizada!");
+                        Proceder = false;
+                        break;
+
+                    case 3://Rechazado
+                        CajaDialogo.Error("No se pueden realizar modificaciones en una Orden de Compra ya Rechazada!");
+                        Proceder = false;
+                        break;
+
+                    case 5://Creada (Borrador)
+                        Proceder = true;
+                        break;
+
+                    default:
+                        Proceder = false;
+                        break;
+                }
+
             }
 
             var grdvDetalle = (GridView)grDetalle.FocusedView;
             var row = (dsCompras.oc_detalle_exoneradaRow)grdvDetalle.GetFocusedDataRow();
 
-            if (row.id_d_orden > 0 || string.IsNullOrEmpty(row.id_d_orden.ToString()))
+            if (Proceder)
             {
-                try
+                DialogResult r = CajaDialogo.Pregunta("Confirma que desea elminar este registro?");
+                if (r != DialogResult.Yes)
                 {
-                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("sp_cm_delete_linea_detalleV2", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_detalle_oc", row.id_d_orden);
-                    cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
-                    cmd.ExecuteNonQuery();
+                    return;
+                }
 
-                    grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
-                    dsCompras1.AcceptChanges();
-                    CalcularTotal();
+                if (row.id_d_orden > 0 || string.IsNullOrEmpty(row.id_d_orden.ToString()))
+                {
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_cm_delete_linea_detalle", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_detalle_oc", row.id_d_orden);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                        cmd.ExecuteNonQuery();
+
+                        grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
+                        dsCompras1.AcceptChanges();
+                        CalcularTotal();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
 
                 }
-                catch (Exception ex)
+                else
                 {
-                    CajaDialogo.Error(ex.Message);
+                    try
+                    {
+                        grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
+                        dsCompras1.AcceptChanges();
+                        CalcularTotal();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
                 }
-             
             }
-            else
-            {
-                try
-                {
-                    grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
-                    dsCompras1.AcceptChanges();
-                    CalcularTotal();
-                }
-                catch (Exception ec)
-                {
-                    CajaDialogo.Error(ec.Message);
-                }
-            }
-
         }
 
         private void CalcularTotal()
@@ -767,7 +791,6 @@ namespace LOSA.Compras
 
                     SubTotal = SubTotal + (Convert.ToDecimal(row["total"]));
                 }
-
 
                 txtSubtotal.EditValue = string.Format("{0:##,###,##0.##}", SubTotal);// decimal.Round(SubTotal, 2, MidpointRounding.AwayFromZero));
                 txtImpuesto.EditValue = 0.00;
@@ -879,6 +902,8 @@ namespace LOSA.Compras
             gvFiles.Columns["eliminar"].Visible = true;
             dsCompras1.ordenes_compras_archivos.Clear();
             TasaCambio = GetTasaCambio();
+            btnPresupuesto.Text = "";
+            btnPresupuesto.Enabled = true;
             //GetSigID();
 
         }
@@ -1663,7 +1688,7 @@ namespace LOSA.Compras
                         transaction = conn.BeginTransaction("Transaction Order");
 
                         SqlCommand cmd = conn.CreateCommand();
-                        cmd.CommandText = "[sp_CM_insert_ordencompra_h_v3]";
+                        cmd.CommandText = "[sp_CM_insert_ordencompra_h_v4]";
                         cmd.Connection = conn;
                         cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -1703,6 +1728,7 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
                         else
                             cmd.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
+                        cmd.Parameters.AddWithValue("@TasaCambio", Convert.ToDecimal(txtTasaCambio.EditValue));
 
                         int id_header = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -1803,7 +1829,7 @@ namespace LOSA.Compras
                         connUpdate.Open();
                         transactionUpdate = connUpdate.BeginTransaction("Transaction Order");
                         SqlCommand cmdUpdate = connUpdate.CreateCommand();
-                        cmdUpdate.CommandText = "[sp_CM_update_ordencompra_hV2]";
+                        cmdUpdate.CommandText = "[sp_CM_update_ordencompra_hV3]";
                         cmdUpdate.Connection = connUpdate;
                         cmdUpdate.Transaction = transactionUpdate;
                         cmdUpdate.CommandType = CommandType.StoredProcedure;
@@ -1841,13 +1867,14 @@ namespace LOSA.Compras
                         else
                             cmdUpdate.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
                         cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
+                        cmdUpdate.Parameters.AddWithValue("@TasaCambio", Convert.ToDecimal(txtTasaCambio.EditValue));
 
                         cmdUpdate.ExecuteNonQuery();
 
                         foreach (dsCompras.oc_detalle_exoneradaRow row in dsCompras1.oc_detalle_exonerada.Rows)
                         {
                             cmdUpdate.Parameters.Clear();
-                            cmdUpdate.CommandText = "sp_compras_ordenes_detalle_update_insert";
+                            cmdUpdate.CommandText = "[sp_compras_ordenes_detalle_update_insertV2]";
                             cmdUpdate.Connection = connUpdate;
                             cmdUpdate.Transaction = transactionUpdate;
                             cmdUpdate.CommandType = CommandType.StoredProcedure;
@@ -1873,7 +1900,20 @@ namespace LOSA.Compras
                             cmdUpdate.Parameters.AddWithValue("@base_ref", row.referencia_base);
                             cmdUpdate.Parameters.AddWithValue("@num_linea_solicitud_d", row.num_linea_solicitud_d);
                             cmdUpdate.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
-                            //cmdUpdate.Parameters.AddWithValue("@idEstadoCompra", IdEstadoOrdenCompra);
+                            if (row.id_detalle_presupuesto == 0)
+                            {
+                                cmdUpdate.Parameters.AddWithValue("@presupuesto_id_detalle", 0);
+                                cmdUpdate.Parameters.AddWithValue("@presupuesto_descrip",DBNull.Value);
+                                cmdUpdate.Parameters.AddWithValue("@TasaCambioActual",TasaCambio);
+                                cmdUpdate.Parameters.AddWithValue("@EdicionEspecialSAP", EdicionEspecialActiva);
+                            }
+                            else
+                            {
+                                cmdUpdate.Parameters.AddWithValue("@presupuesto_id_detalle",row.id_detalle_presupuesto);
+                                cmdUpdate.Parameters.AddWithValue("@presupuesto_descrip",row.presupuesto_descripcion);
+                                cmdUpdate.Parameters.AddWithValue("@TasaCambioActual",TasaCambio);
+                                cmdUpdate.Parameters.AddWithValue("@EdicionEspecialSAP", EdicionEspecialActiva);
+                            }
                             cmdUpdate.ExecuteNonQuery();
                         }
 
@@ -2462,7 +2502,7 @@ namespace LOSA.Compras
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fecha", dp.dNow());
+                cmd.Parameters.AddWithValue("@fecha", dtFechaContabilizacion.EditValue);
                 ret= Convert.ToDecimal(cmd.ExecuteScalar());
                 conn.Close();
             }
@@ -2988,24 +3028,35 @@ namespace LOSA.Compras
             {
                 row.id_detalle_presupuesto = frm.ItemSeleccionado.id;
                 row.presupuesto_descripcion = frm.ItemSeleccionado.ItemName;
+                dsCompras1.AcceptChanges();
             }
 
         }
 
         private void btnPresupuesto_Click(object sender, EventArgs e)
         {
-
-            frmSeleccionPresupuestoLocal frm = new frmSeleccionPresupuestoLocal();
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (grdvDetalle.RowCount == 0)
             {
-                btnPresupuesto.Text = frm.ItemSeleccionado.ItemName;
-
-                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                CajaDialogo.Error("No existe detalle en la Orden de Compra!");
+                return;
+            }
+            else
+            {
+                frmSeleccionPresupuestoLocal frm = new frmSeleccionPresupuestoLocal();
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    item.id_detalle_presupuesto = frm.ItemSeleccionado.id;
-                    item.presupuesto_descripcion = frm.ItemSeleccionado.ItemName;
+                    btnPresupuesto.Text = frm.ItemSeleccionado.ItemName;
+
+                    foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada)
+                    {
+                        item.id_detalle_presupuesto = frm.ItemSeleccionado.id;
+                        item.presupuesto_descripcion = frm.ItemSeleccionado.ItemName;
+                        dsCompras1.AcceptChanges();
+                    }
                 }
             }
+
+            
         }
 
         private void CargarArchivos()

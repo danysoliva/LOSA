@@ -29,9 +29,6 @@ namespace LOSA.Compras
             ObtenerPresupuestoActivos();
             ItemSeleccionado = new ItemBusqueda();
 
-           
-
-       
         }
 
         private void ObtenerDetallePresupuestos()

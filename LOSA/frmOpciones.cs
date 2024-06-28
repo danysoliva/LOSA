@@ -535,7 +535,8 @@ namespace LOSA
                             tabOpciones.TabPages[11].PageVisible = true;//Tickets
                             tabOpciones.TabPages[12].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
-                            tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            //tabOpciones.TabPages[9].PageVisible = true; ;//TabBascula
+                            TabBascula.PageVisible = true;
                             TabReportes_.PageVisible = true;
                             break;
                         default:
