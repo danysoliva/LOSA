@@ -1842,7 +1842,7 @@ namespace LOSA.Compras
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmOrdenesCompraMain";
-            this.Text = "t";
+            this.Text = "Ordenes de Compra";
             this.Load += new System.EventHandler(this.frmOrdenesCompraMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

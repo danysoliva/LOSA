@@ -303,7 +303,7 @@
             this.cmdExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdExportExcel.ImageOptions.Image")));
             this.cmdExportExcel.Location = new System.Drawing.Point(908, 26);
             this.cmdExportExcel.Name = "cmdExportExcel";
-            this.cmdExportExcel.Size = new System.Drawing.Size(74, 50);
+            this.cmdExportExcel.Size = new System.Drawing.Size(74, 42);
             this.cmdExportExcel.TabIndex = 6;
             this.cmdExportExcel.Text = "Excel";
             this.cmdExportExcel.Click += new System.EventHandler(this.cmdExportExcel_Click);
@@ -328,7 +328,7 @@
             this.TSPerfiles.Properties.Appearance.Options.UseFont = true;
             this.TSPerfiles.Properties.OffText = "Inactivos";
             this.TSPerfiles.Properties.OnText = "Activos";
-            this.TSPerfiles.Size = new System.Drawing.Size(141, 26);
+            this.TSPerfiles.Size = new System.Drawing.Size(141, 20);
             this.TSPerfiles.TabIndex = 4;
             this.TSPerfiles.Toggled += new System.EventHandler(this.TSPerfiles_Toggled);
             // 
@@ -338,7 +338,7 @@
             this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
             this.btnNew.Location = new System.Drawing.Point(39, 26);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(86, 50);
+            this.btnNew.Size = new System.Drawing.Size(78, 42);
             this.btnNew.TabIndex = 3;
             this.btnNew.Text = "Crear";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -351,7 +351,7 @@
             this.btnClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnClose.Location = new System.Drawing.Point(1013, 26);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(67, 50);
+            this.btnClose.Size = new System.Drawing.Size(63, 42);
             this.btnClose.TabIndex = 2;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 

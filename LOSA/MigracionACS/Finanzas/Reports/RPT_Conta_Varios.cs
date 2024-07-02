@@ -854,7 +854,7 @@ namespace LOSA.MigracionACS.Finanzas.Reports
 
                 if (cmb_reports.SelectedIndex == 28 )
                 {
-           
+                    #region Reporte de Gastos 2023
                     qry = @"sp_reporte_de_gastos";
                   
 
@@ -872,6 +872,8 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                     cmd.CommandTimeout = 500000;
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     adapter.Fill(dtDatos);
+
+                    #endregion
                 }
 
                 if (cmb_reports.SelectedIndex == 29)
