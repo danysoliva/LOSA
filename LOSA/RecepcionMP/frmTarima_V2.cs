@@ -182,9 +182,6 @@ namespace LOSA.RecepcionMP
                     totalpeso = totalpeso + row.totalKgLote;
                 }
 
-
-
-
                 SqlTransaction TransactionIngreso = null;
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 bool Guardo = false;
@@ -302,7 +299,10 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@lote_externo", Istraslado ? Convert.ToDecimal(row.id_Externo) : 0);//   //
                         cmd.Parameters.AddWithValue("@idheader", IdHeaderInserted);//    //
                         cmd.Parameters.AddWithValue("@id_lote_externo", row.id_lote_externo);
-                        cmd.Parameters.AddWithValue("@Bodega_Externa", Bodega_Externa);
+                        if (row.id_lote_externo == 0)
+                            cmd.Parameters.AddWithValue("@Bodega_Externa", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@Bodega_Externa", Bodega_Externa);
                         IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
 
 

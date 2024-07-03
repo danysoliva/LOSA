@@ -52,9 +52,49 @@
             <xs:sequence>
               <xs:element name="id_detalle_linea" msprop:Generator_ColumnVarNameInTable="columnid_detalle_linea" msprop:Generator_ColumnPropNameInRow="id_detalle_linea" msprop:Generator_ColumnPropNameInTable="id_detalle_lineaColumn" msprop:Generator_UserColumnName="id_detalle_linea" type="xs:int" minOccurs="0" />
               <xs:element name="id_detalle" msprop:Generator_ColumnVarNameInTable="columnid_detalle" msprop:Generator_ColumnPropNameInRow="id_detalle" msprop:Generator_ColumnPropNameInTable="id_detalleColumn" msprop:Generator_UserColumnName="id_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_linea_presupuesto" msprop:Generator_ColumnVarNameInTable="columndescripcion_linea_presupuesto" msprop:Generator_ColumnPropNameInRow="descripcion_linea_presupuesto" msprop:Generator_ColumnPropNameInTable="descripcion_linea_presupuestoColumn" msprop:Generator_UserColumnName="descripcion_linea_presupuesto" type="xs:string" minOccurs="0" />
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="moneda" msprop:Generator_ColumnVarNameInTable="columnmoneda" msprop:Generator_ColumnPropNameInRow="moneda" msprop:Generator_ColumnPropNameInTable="monedaColumn" msprop:Generator_UserColumnName="moneda" type="xs:string" default="$" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="departamentos" msprop:Generator_TableClassName="departamentosDataTable" msprop:Generator_TableVarName="tabledepartamentos" msprop:Generator_RowChangedName="departamentosRowChanged" msprop:Generator_TablePropName="departamentos" msprop:Generator_RowDeletingName="departamentosRowDeleting" msprop:Generator_RowChangingName="departamentosRowChanging" msprop:Generator_RowEvHandlerName="departamentosRowChangeEventHandler" msprop:Generator_RowDeletedName="departamentosRowDeleted" msprop:Generator_RowClassName="departamentosRow" msprop:Generator_UserTableName="departamentos" msprop:Generator_RowEvArgName="departamentosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="generacion_automatica" msprop:Generator_TableClassName="generacion_automaticaDataTable" msprop:Generator_TableVarName="tablegeneracion_automatica" msprop:Generator_RowChangedName="generacion_automaticaRowChanged" msprop:Generator_TablePropName="generacion_automatica" msprop:Generator_RowDeletingName="generacion_automaticaRowDeleting" msprop:Generator_RowChangingName="generacion_automaticaRowChanging" msprop:Generator_RowEvHandlerName="generacion_automaticaRowChangeEventHandler" msprop:Generator_RowDeletedName="generacion_automaticaRowDeleted" msprop:Generator_RowClassName="generacion_automaticaRow" msprop:Generator_UserTableName="generacion_automatica" msprop:Generator_RowEvArgName="generacion_automaticaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id_departamento" msprop:Generator_ColumnVarNameInTable="columnid_departamento" msprop:Generator_ColumnPropNameInRow="id_departamento" msprop:Generator_ColumnPropNameInTable="id_departamentoColumn" msprop:Generator_UserColumnName="id_departamento" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_departamento" msprop:Generator_ColumnVarNameInTable="columndescripcion_departamento" msprop:Generator_ColumnPropNameInRow="descripcion_departamento" msprop:Generator_ColumnPropNameInTable="descripcion_departamentoColumn" msprop:Generator_UserColumnName="descripcion_departamento" type="xs:string" minOccurs="0" />
+              <xs:element name="user_id" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_UserColumnName="user_id" type="xs:int" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="selected" msprop:Generator_ColumnVarNameInTable="columnselected" msprop:Generator_ColumnPropNameInRow="selected" msprop:Generator_ColumnPropNameInTable="selectedColumn" msprop:Generator_UserColumnName="selected" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SelectPresupuesto" msprop:Generator_TableClassName="SelectPresupuestoDataTable" msprop:Generator_TableVarName="tableSelectPresupuesto" msprop:Generator_RowChangedName="SelectPresupuestoRowChanged" msprop:Generator_TablePropName="SelectPresupuesto" msprop:Generator_RowDeletingName="SelectPresupuestoRowDeleting" msprop:Generator_RowChangingName="SelectPresupuestoRowChanging" msprop:Generator_RowEvHandlerName="SelectPresupuestoRowChangeEventHandler" msprop:Generator_RowDeletedName="SelectPresupuestoRowDeleted" msprop:Generator_RowClassName="SelectPresupuestoRow" msprop:Generator_UserTableName="SelectPresupuesto" msprop:Generator_RowEvArgName="SelectPresupuestoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
               <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" minOccurs="0" />
-              <xs:element name="moneda" msprop:Generator_ColumnVarNameInTable="columnmoneda" msprop:Generator_ColumnPropNameInRow="moneda" msprop:Generator_ColumnPropNameInTable="monedaColumn" msprop:Generator_UserColumnName="moneda" type="xs:string" minOccurs="0" />
+              <xs:element name="Seleccionado" msprop:Generator_ColumnVarNameInTable="columnSeleccionado" msprop:Generator_ColumnPropNameInRow="Seleccionado" msprop:Generator_ColumnPropNameInTable="SeleccionadoColumn" msprop:Generator_UserColumnName="Seleccionado" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="concat_" msprop:Generator_ColumnVarNameInTable="columnconcat_" msprop:Generator_ColumnPropNameInRow="concat_" msprop:Generator_ColumnPropNameInTable="concat_Column" msprop:Generator_UserColumnName="concat_" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PresupuestoActivo" msprop:Generator_TableClassName="PresupuestoActivoDataTable" msprop:Generator_TableVarName="tablePresupuestoActivo" msprop:Generator_RowChangedName="PresupuestoActivoRowChanged" msprop:Generator_TablePropName="PresupuestoActivo" msprop:Generator_RowDeletingName="PresupuestoActivoRowDeleting" msprop:Generator_RowChangingName="PresupuestoActivoRowChanging" msprop:Generator_RowEvHandlerName="PresupuestoActivoRowChangeEventHandler" msprop:Generator_RowDeletedName="PresupuestoActivoRowDeleted" msprop:Generator_RowClassName="PresupuestoActivoRow" msprop:Generator_UserTableName="PresupuestoActivo" msprop:Generator_RowEvArgName="PresupuestoActivoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

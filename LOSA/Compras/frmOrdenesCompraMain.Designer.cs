@@ -8,12 +8,17 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -34,9 +39,13 @@ namespace LOSA.Compras
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnEditar = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnPresupuesto = new DevExpress.XtraEditors.ButtonEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -52,6 +61,9 @@ namespace LOSA.Compras
             this.btnOrdenCompra = new DevExpress.XtraBars.BarButtonItem();
             this.btnCopiarDe = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.btnEditar = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBoxIntercom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNumAtCard = new System.Windows.Forms.TextBox();
@@ -144,7 +156,8 @@ namespace LOSA.Compras
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ButtonDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposLigarPresupuesto = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtComentarios = new DevExpress.XtraEditors.MemoEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
@@ -179,9 +192,10 @@ namespace LOSA.Compras
             this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPresupuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glRutaAprobacionOC.Properties)).BeginInit();
@@ -214,6 +228,7 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposLigarPresupuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtComentarios.Properties)).BeginInit();
@@ -236,6 +251,8 @@ namespace LOSA.Compras
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.btnPresupuesto);
+            this.panelControl1.Controls.Add(this.labelControl18);
             this.panelControl1.Controls.Add(this.btnEditar);
             this.panelControl1.Controls.Add(this.comboBoxIntercom);
             this.panelControl1.Controls.Add(this.labelControl17);
@@ -283,50 +300,22 @@ namespace LOSA.Compras
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             this.panelControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl1_MouseDown);
             // 
-            // btnEditar
+            // btnPresupuesto
             // 
-            this.btnEditar.Enabled = false;
-            this.btnEditar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.ImageOptions.Image")));
-            this.btnEditar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEditar.Location = new System.Drawing.Point(328, 12);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(47, 33);
-            this.btnEditar.TabIndex = 96;
-            this.btnEditar.ToolTip = "Guardar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // comboBoxIntercom
-            // 
-            this.comboBoxIntercom.Location = new System.Drawing.Point(1081, 183);
-            this.comboBoxIntercom.MenuManager = this.barManager1;
-            this.comboBoxIntercom.Name = "comboBoxIntercom";
-            this.comboBoxIntercom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.comboBoxIntercom.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxIntercom.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.comboBoxIntercom.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxIntercom.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.comboBoxIntercom.Properties.AppearanceItemSelected.Options.UseFont = true;
-            this.comboBoxIntercom.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.comboBoxIntercom.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.comboBoxIntercom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxIntercom.Properties.Items.AddRange(new object[] {
-            "Ninguno",
-            "FOB",
-            "EXW",
-            "CIF",
-            "CFR",
-            "FCA",
-            "CPT",
-            "CIP",
-            "DPU",
-            "DAP",
-            "DDP",
-            "FAS",
-            "DAT"});
-            this.comboBoxIntercom.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxIntercom.Size = new System.Drawing.Size(189, 22);
-            this.comboBoxIntercom.TabIndex = 95;
+            this.btnPresupuesto.Location = new System.Drawing.Point(1176, 186);
+            this.btnPresupuesto.MenuManager = this.barManager1;
+            this.btnPresupuesto.Name = "btnPresupuesto";
+            this.btnPresupuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPresupuesto.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.btnPresupuesto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, true, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnPresupuesto.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.btnPresupuesto.Properties.ReadOnly = true;
+            this.btnPresupuesto.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.btnPresupuesto.Size = new System.Drawing.Size(189, 22);
+            this.btnPresupuesto.TabIndex = 98;
+            this.btnPresupuesto.Click += new System.EventHandler(this.btnPresupuesto_Click);
             // 
             // barManager1
             // 
@@ -485,11 +474,66 @@ namespace LOSA.Compras
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Location = new System.Drawing.Point(1006, 192);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(268, 16);
+            this.labelControl18.TabIndex = 97;
+            this.labelControl18.Text = "LigarOC a Presupuesto_______________";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Enabled = false;
+            this.btnEditar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.ImageOptions.Image")));
+            this.btnEditar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnEditar.Location = new System.Drawing.Point(328, 12);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(47, 33);
+            this.btnEditar.TabIndex = 96;
+            this.btnEditar.ToolTip = "Guardar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // comboBoxIntercom
+            // 
+            this.comboBoxIntercom.Location = new System.Drawing.Point(1176, 161);
+            this.comboBoxIntercom.MenuManager = this.barManager1;
+            this.comboBoxIntercom.Name = "comboBoxIntercom";
+            this.comboBoxIntercom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.AppearanceItemSelected.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxIntercom.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.comboBoxIntercom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxIntercom.Properties.Items.AddRange(new object[] {
+            "Ninguno",
+            "FOB",
+            "EXW",
+            "CIF",
+            "CFR",
+            "FCA",
+            "CPT",
+            "CIP",
+            "DPU",
+            "DAP",
+            "DDP",
+            "FAS",
+            "DAT"});
+            this.comboBoxIntercom.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxIntercom.Size = new System.Drawing.Size(189, 22);
+            this.comboBoxIntercom.TabIndex = 95;
+            // 
             // labelControl17
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(911, 189);
+            this.labelControl17.Location = new System.Drawing.Point(1006, 167);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(209, 16);
             this.labelControl17.TabIndex = 94;
@@ -532,7 +576,7 @@ namespace LOSA.Compras
             // dtFechaContabilizacion
             // 
             this.dtFechaContabilizacion.EditValue = null;
-            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1081, 52);
+            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1176, 30);
             this.dtFechaContabilizacion.MenuManager = this.barManager1;
             this.dtFechaContabilizacion.Name = "dtFechaContabilizacion";
             this.dtFechaContabilizacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -547,7 +591,7 @@ namespace LOSA.Compras
             // 
             // glRutaAprobacionOC
             // 
-            this.glRutaAprobacionOC.Location = new System.Drawing.Point(1081, 159);
+            this.glRutaAprobacionOC.Location = new System.Drawing.Point(1176, 137);
             this.glRutaAprobacionOC.MenuManager = this.barManager1;
             this.glRutaAprobacionOC.Name = "glRutaAprobacionOC";
             this.glRutaAprobacionOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -604,7 +648,7 @@ namespace LOSA.Compras
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(911, 165);
+            this.labelControl15.Location = new System.Drawing.Point(1006, 143);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(262, 16);
             this.labelControl15.TabIndex = 88;
@@ -639,7 +683,7 @@ namespace LOSA.Compras
             this.txtExoneracion.Enabled = false;
             this.txtExoneracion.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtExoneracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtExoneracion.Location = new System.Drawing.Point(1081, 141);
+            this.txtExoneracion.Location = new System.Drawing.Point(1176, 119);
             this.txtExoneracion.Name = "txtExoneracion";
             this.txtExoneracion.Size = new System.Drawing.Size(189, 16);
             this.txtExoneracion.TabIndex = 85;
@@ -649,7 +693,7 @@ namespace LOSA.Compras
             // 
             this.lblExoneracion.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblExoneracion.Appearance.Options.UseFont = true;
-            this.lblExoneracion.Location = new System.Drawing.Point(911, 141);
+            this.lblExoneracion.Location = new System.Drawing.Point(1006, 119);
             this.lblExoneracion.Name = "lblExoneracion";
             this.lblExoneracion.Size = new System.Drawing.Size(204, 16);
             this.lblExoneracion.TabIndex = 84;
@@ -657,6 +701,7 @@ namespace LOSA.Compras
             // 
             // txtTasaCambio
             // 
+            this.txtTasaCambio.EditValue = "0";
             this.txtTasaCambio.Enabled = false;
             this.txtTasaCambio.Location = new System.Drawing.Point(326, 181);
             this.txtTasaCambio.MenuManager = this.barManager1;
@@ -704,7 +749,7 @@ namespace LOSA.Compras
             // TsExoOIsv
             // 
             this.TsExoOIsv.EditValue = true;
-            this.TsExoOIsv.Location = new System.Drawing.Point(1081, 119);
+            this.TsExoOIsv.Location = new System.Drawing.Point(1176, 97);
             this.TsExoOIsv.MenuManager = this.barManager1;
             this.TsExoOIsv.Name = "TsExoOIsv";
             this.TsExoOIsv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -719,7 +764,7 @@ namespace LOSA.Compras
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(911, 121);
+            this.labelControl13.Location = new System.Drawing.Point(1006, 99);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(238, 16);
             this.labelControl13.TabIndex = 80;
@@ -727,7 +772,7 @@ namespace LOSA.Compras
             // 
             // grdTipoOrden
             // 
-            this.grdTipoOrden.Location = new System.Drawing.Point(1081, 95);
+            this.grdTipoOrden.Location = new System.Drawing.Point(1176, 73);
             this.grdTipoOrden.MenuManager = this.barManager1;
             this.grdTipoOrden.Name = "grdTipoOrden";
             this.grdTipoOrden.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -803,7 +848,7 @@ namespace LOSA.Compras
             // 
             this.lblSucursal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblSucursal.Appearance.Options.UseFont = true;
-            this.lblSucursal.Location = new System.Drawing.Point(911, 101);
+            this.lblSucursal.Location = new System.Drawing.Point(1006, 79);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(234, 16);
             this.lblSucursal.TabIndex = 75;
@@ -826,9 +871,9 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(336, 22);
@@ -850,7 +895,7 @@ namespace LOSA.Compras
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(911, 58);
+            this.labelControl4.Location = new System.Drawing.Point(1006, 36);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(226, 16);
             this.labelControl4.TabIndex = 64;
@@ -861,7 +906,7 @@ namespace LOSA.Compras
             this.dtFechaRegistro.Enabled = false;
             this.dtFechaRegistro.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.dtFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaRegistro.Location = new System.Drawing.Point(1081, 28);
+            this.dtFechaRegistro.Location = new System.Drawing.Point(1176, 6);
             this.dtFechaRegistro.Name = "dtFechaRegistro";
             this.dtFechaRegistro.Size = new System.Drawing.Size(189, 23);
             this.dtFechaRegistro.TabIndex = 63;
@@ -870,7 +915,7 @@ namespace LOSA.Compras
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(911, 36);
+            this.labelControl3.Location = new System.Drawing.Point(1006, 14);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(185, 16);
             this.labelControl3.TabIndex = 62;
@@ -883,7 +928,7 @@ namespace LOSA.Compras
             this.txtEstado.Enabled = false;
             this.txtEstado.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtEstado.Location = new System.Drawing.Point(1081, 77);
+            this.txtEstado.Location = new System.Drawing.Point(1176, 55);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(189, 16);
             this.txtEstado.TabIndex = 61;
@@ -892,7 +937,7 @@ namespace LOSA.Compras
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(911, 78);
+            this.labelControl2.Location = new System.Drawing.Point(1006, 56);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(189, 16);
             this.labelControl2.TabIndex = 60;
@@ -1061,7 +1106,8 @@ namespace LOSA.Compras
             this.reposGrdCapitulo,
             this.reposPartidaArancelaria,
             this.reposGrdIndicadorIVA,
-            this.reposGrdBodega});
+            this.reposGrdBodega,
+            this.reposLigarPresupuesto});
             this.grDetalle.Size = new System.Drawing.Size(1504, 504);
             this.grDetalle.TabIndex = 52;
             this.grDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1090,7 +1136,7 @@ namespace LOSA.Compras
             this.colisv,
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gridColumn7});
             this.grdvDetalle.CustomizationFormBounds = new System.Drawing.Rectangle(774, 457, 260, 282);
             this.grdvDetalle.GridControl = this.grDetalle;
             this.grdvDetalle.Name = "grdvDetalle";
@@ -1117,7 +1163,7 @@ namespace LOSA.Compras
             this.colcapitulo.Name = "colcapitulo";
             this.colcapitulo.Visible = true;
             this.colcapitulo.VisibleIndex = 0;
-            this.colcapitulo.Width = 130;
+            this.colcapitulo.Width = 122;
             // 
             // reposGrdCapitulo
             // 
@@ -1182,7 +1228,7 @@ namespace LOSA.Compras
             this.colpartida_arancelaria.Name = "colpartida_arancelaria";
             this.colpartida_arancelaria.Visible = true;
             this.colpartida_arancelaria.VisibleIndex = 1;
-            this.colpartida_arancelaria.Width = 176;
+            this.colpartida_arancelaria.Width = 166;
             // 
             // reposPartidaArancelaria
             // 
@@ -1218,7 +1264,7 @@ namespace LOSA.Compras
             this.colitemcode.OptionsColumn.ReadOnly = true;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 2;
-            this.colitemcode.Width = 118;
+            this.colitemcode.Width = 111;
             // 
             // coldescripcion_articulo
             // 
@@ -1227,7 +1273,7 @@ namespace LOSA.Compras
             this.coldescripcion_articulo.Name = "coldescripcion_articulo";
             this.coldescripcion_articulo.Visible = true;
             this.coldescripcion_articulo.VisibleIndex = 3;
-            this.coldescripcion_articulo.Width = 301;
+            this.coldescripcion_articulo.Width = 283;
             // 
             // colcantidad
             // 
@@ -1238,7 +1284,7 @@ namespace LOSA.Compras
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 4;
-            this.colcantidad.Width = 82;
+            this.colcantidad.Width = 77;
             // 
             // colprecio_por_unidad
             // 
@@ -1249,7 +1295,7 @@ namespace LOSA.Compras
             this.colprecio_por_unidad.Name = "colprecio_por_unidad";
             this.colprecio_por_unidad.Visible = true;
             this.colprecio_por_unidad.VisibleIndex = 5;
-            this.colprecio_por_unidad.Width = 98;
+            this.colprecio_por_unidad.Width = 92;
             // 
             // colindicador_impuesto
             // 
@@ -1259,7 +1305,7 @@ namespace LOSA.Compras
             this.colindicador_impuesto.Name = "colindicador_impuesto";
             this.colindicador_impuesto.Visible = true;
             this.colindicador_impuesto.VisibleIndex = 7;
-            this.colindicador_impuesto.Width = 153;
+            this.colindicador_impuesto.Width = 144;
             // 
             // reposGrdIndicadorIVA
             // 
@@ -1319,7 +1365,7 @@ namespace LOSA.Compras
             this.colbodega.Name = "colbodega";
             this.colbodega.Visible = true;
             this.colbodega.VisibleIndex = 8;
-            this.colbodega.Width = 98;
+            this.colbodega.Width = 92;
             // 
             // reposGrdBodega
             // 
@@ -1376,17 +1422,17 @@ namespace LOSA.Compras
             this.coltotal.OptionsColumn.ReadOnly = true;
             this.coltotal.Visible = true;
             this.coltotal.VisibleIndex = 9;
-            this.coltotal.Width = 79;
+            this.coltotal.Width = 74;
             // 
             // colreferencia_base
             // 
-            this.colreferencia_base.Caption = "Referencia Base";
+            this.colreferencia_base.Caption = "Ref. Base";
             this.colreferencia_base.FieldName = "referencia_base";
             this.colreferencia_base.Name = "colreferencia_base";
             this.colreferencia_base.OptionsColumn.ReadOnly = true;
             this.colreferencia_base.Visible = true;
-            this.colreferencia_base.VisibleIndex = 10;
-            this.colreferencia_base.Width = 94;
+            this.colreferencia_base.VisibleIndex = 11;
+            this.colreferencia_base.Width = 68;
             // 
             // colisv
             // 
@@ -1399,7 +1445,7 @@ namespace LOSA.Compras
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "isv", "SUMA={0:##,###,##0.##}")});
             this.colisv.Visible = true;
             this.colisv.VisibleIndex = 6;
-            this.colisv.Width = 78;
+            this.colisv.Width = 73;
             // 
             // gridColumn1
             // 
@@ -1408,8 +1454,8 @@ namespace LOSA.Compras
             this.gridColumn1.FieldName = "eliminar";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 11;
-            this.gridColumn1.Width = 86;
+            this.gridColumn1.VisibleIndex = 12;
+            this.gridColumn1.Width = 55;
             // 
             // ButtonDeleteRow
             // 
@@ -1428,17 +1474,34 @@ namespace LOSA.Compras
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.ReadOnly = true;
             // 
-            // gridColumn3
+            // gridColumn7
             // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn7.Caption = "Presupuesto";
+            this.gridColumn7.ColumnEdit = this.reposLigarPresupuesto;
+            this.gridColumn7.FieldName = "presupuesto_descripcion";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.ReadOnly = true;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 10;
+            this.gridColumn7.Width = 122;
+            // 
+            // reposLigarPresupuesto
+            // 
+            this.reposLigarPresupuesto.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.reposLigarPresupuesto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Enter)), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposLigarPresupuesto.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.reposLigarPresupuesto.Name = "reposLigarPresupuesto";
+            this.reposLigarPresupuesto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.reposLigarPresupuesto.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposLigarPresupuesto_ButtonClick);
             // 
             // panelControl2
             // 
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl2.Controls.Add(this.btnCopiarDe);
             this.panelControl2.Controls.Add(this.txtUsuarioCreador);
+            this.panelControl2.Controls.Add(this.btnCopiarDe);
             this.panelControl2.Controls.Add(this.txtComentarios);
             this.panelControl2.Controls.Add(this.txtTotal);
             this.panelControl2.Controls.Add(this.txtImpuesto);
@@ -1705,9 +1768,9 @@ namespace LOSA.Compras
             // btnDelete
             // 
             this.btnDelete.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
@@ -1724,9 +1787,9 @@ namespace LOSA.Compras
             // btnDownload
             // 
             this.btnDownload.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnDownload.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDownload.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDownload_ButtonClick);
@@ -1742,9 +1805,9 @@ namespace LOSA.Compras
             // btnOpen
             // 
             this.btnOpen.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.btnOpen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnOpen.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOpen_ButtonPressed);
@@ -1784,9 +1847,10 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPresupuesto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxIntercom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaContabilizacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glRutaAprobacionOC.Properties)).EndInit();
@@ -1819,6 +1883,7 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposLigarPresupuesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -1960,7 +2025,6 @@ namespace LOSA.Compras
         private DevExpress.XtraTab.XtraTabPage tabArchivosAdjuntos;
         private DevExpress.XtraGrid.GridControl gcFiles;
         private DevExpress.XtraGrid.Views.Grid.GridView gvFiles;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraBars.Bar bar4;
         private DevExpress.XtraBars.Bar bar5;
         private DevExpress.XtraBars.BarButtonItem btnCopiarSolicitud;
@@ -1985,5 +2049,9 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnOpen;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.XtraSaveFileDialog xtraSaveFileDialog1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposLigarPresupuesto;
+        private DevExpress.XtraEditors.ButtonEdit btnPresupuesto;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
     }
 }

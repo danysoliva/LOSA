@@ -155,7 +155,7 @@ namespace LOSA.Compras
                         {
 
                             //Transaccion de aprobacion
-                            command.CommandText = "dbo.sp_set_insert_aprobacion_orden_compra_h";
+                            command.CommandText = "dbo.[sp_set_insert_aprobacion_orden_compra_h]";
                             command.CommandType = CommandType.StoredProcedure;
                             command.Parameters.Clear();
 

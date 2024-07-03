@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>690</ApplicationRevision>
+    <ApplicationRevision>692</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1396,6 +1396,7 @@
     <Compile Include="Clases\PlantaPrvTrz.cs" />
     <Compile Include="Clases\Plan_Semanal.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
+    <Compile Include="Clases\Presupuesto.cs" />
     <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\ReporteProceso.cs" />
@@ -1492,6 +1493,12 @@
     </Compile>
     <Compile Include="Compras\frmSearchOrdenC.Designer.cs">
       <DependentUpon>frmSearchOrdenC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmSeleccionPresupuestoLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmSeleccionPresupuestoLocal.Designer.cs">
+      <DependentUpon>frmSeleccionPresupuestoLocal.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\rptOrdenCompra.cs">
       <SubType>Component</SubType>
@@ -4498,6 +4505,12 @@
     <Compile Include="PlanMPreque\frmverdetalleplan.Designer.cs">
       <DependentUpon>frmverdetalleplan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presupuesto\dashPresupuesto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\dashPresupuesto.Designer.cs">
+      <DependentUpon>dashPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presupuesto\dsPresupuesto.cs">
       <DependentUpon>dsPresupuesto.xsd</DependentUpon>
     </Compile>
@@ -4505,6 +4518,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPresupuesto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmGeneracionDetallePresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmGeneracionDetallePresupuesto.Designer.cs">
+      <DependentUpon>frmGeneracionDetallePresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleLineaOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleLineaOP.Designer.cs">
+      <DependentUpon>frmPresupuestoDetalleLineaOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmPresupuestoDetalleOP.Designer.cs">
+      <DependentUpon>frmPresupuestoDetalleOP.cs</DependentUpon>
     </Compile>
     <Compile Include="Presupuesto\frmPresupuestoHome.cs">
       <SubType>Form</SubType>
@@ -4517,6 +4548,12 @@
     </Compile>
     <Compile Include="Presupuesto\frmPresupuestoHomeOP.Designer.cs">
       <DependentUpon>frmPresupuestoHomeOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\frmRptSaldosPresupuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmRptSaldosPresupuestos.Designer.cs">
+      <DependentUpon>frmRptSaldosPresupuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\BannerTV\frmBannerMainTV_PRD.cs">
       <SubType>Form</SubType>
@@ -4717,6 +4754,36 @@
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="RRHH_Planilla\XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRHH_Planilla\XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utileria\WaitFrmGeneric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utileria\WaitFrmGeneric.Designer.cs">
+      <DependentUpon>WaitFrmGeneric.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Compras\frmSeleccionPresupuestoLocal.resx">
+      <DependentUpon>frmSeleccionPresupuestoLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmGeneracionDetallePresupuesto.resx">
+      <DependentUpon>frmGeneracionDetallePresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmPresupuestoDetalleLineaOP.resx">
+      <DependentUpon>frmPresupuestoDetalleLineaOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmRptSaldosPresupuestos.resx">
+      <DependentUpon>frmRptSaldosPresupuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRHH_Planilla\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utileria\WaitFrmGeneric.resx">
+      <DependentUpon>WaitFrmGeneric.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -8835,6 +8902,9 @@
     <EmbeddedResource Include="PlanMPreque\frmverdetalleplan.resx">
       <DependentUpon>frmverdetalleplan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmPresupuestoDetalleOP.resx">
+      <DependentUpon>frmPresupuestoDetalleOP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presupuesto\frmPresupuestoHome.resx">
       <DependentUpon>frmPresupuestoHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -8931,7 +9001,6 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
