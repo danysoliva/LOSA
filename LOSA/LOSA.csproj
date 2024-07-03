@@ -2158,6 +2158,18 @@
     <Compile Include="MDIParentFormLOSA.Designer.cs">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\frmDetalleBatchAD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\frmDetalleBatchAD.Designer.cs">
+      <DependentUpon>frmDetalleBatchAD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.Designer.cs">
+      <DependentUpon>xfrmAdiciones3erNivel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\dsMicros.cs">
       <DependentUpon>dsMicros.xsd</DependentUpon>
     </Compile>
@@ -7826,6 +7838,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\frmDetalleBatchAD.resx">
+      <DependentUpon>frmDetalleBatchAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.resx">
+      <DependentUpon>xfrmAdiciones3erNivel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmAlimentacionPanelMicro_i.resx">
       <DependentUpon>frmAlimentacionPanelMicro_i.cs</DependentUpon>
