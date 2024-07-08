@@ -17,29 +17,46 @@ namespace LOSA.Presupuesto
 {
     public partial class frmDetalleOC : DevExpress.XtraEditors.XtraForm
     {
+        SqlCommand cmd;
+        SqlDataAdapter adat;
         int IDDetalle = 0;
         DataOperations dp = new DataOperations();
         public frmDetalleOC(int idLinea)
         {
             InitializeComponent();
+            cmd = new SqlCommand();
+            adat = new SqlDataAdapter();
             IDDetalle = idLinea;
             LoadDataDetalle();
+
+
         }
 
         private void LoadDataDetalle()
         {
             try
             {
-                //string query = @"";
-                //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                //conn.Open();
-                //SqlCommand cmd = new SqlCommand(query, conn);
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("", );
-                //SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                //dsPresupuesto1.rpt_consumo_saldos.Clear();
-                //adat.Fill(dsPresupuesto1.rpt_consumo_saldos);
-                //conn.Close();
+                string query = @"sp_presupuesto_get_oc_h";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_detalle", IDDetalle);
+                adat = new SqlDataAdapter(cmd);
+                dsPresupuesto1.ordenes_autorizadas.Clear();
+                adat.Fill(dsPresupuesto1.ordenes_autorizadas);
+
+                string queryDetalle = @"sp_presupuesto_get_detalle_oc";
+                cmd = new SqlCommand(queryDetalle, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_detalle", IDDetalle);
+                adat = new SqlDataAdapter(cmd);
+                dsPresupuesto1.oc_detalle_exonerada.Clear();
+                adat.Fill(dsPresupuesto1.oc_detalle_exonerada);
+
+                gridView2.ExpandAllGroups();
+
+                conn.Close();
             }
             catch (Exception ex)
             {

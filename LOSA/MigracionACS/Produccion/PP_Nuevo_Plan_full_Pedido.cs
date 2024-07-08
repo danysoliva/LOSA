@@ -65,6 +65,9 @@ namespace LOSA.MigracionACS.Produccion
             chk_AutoGen.Checked = false;
             chk_AutoGen.Checked = true;
             llenado_mp_all_Reck();
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
         }
         int Especie;
         public PP_Nuevo_Plan_full_Pedido(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
@@ -97,6 +100,9 @@ namespace LOSA.MigracionACS.Produccion
             chk_AutoGen.Checked = false;
             chk_AutoGen.Checked = true;
             Especie = PEspecie;
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
         }
 
         public class DatoOrdenFabricacion
