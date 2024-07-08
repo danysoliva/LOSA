@@ -4778,6 +4778,7 @@
     <EmbeddedResource Include="Presupuesto\frmRptSaldosPresupuestos.resx">
       <DependentUpon>frmRptSaldosPresupuestos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="RRHH_Planilla\XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>

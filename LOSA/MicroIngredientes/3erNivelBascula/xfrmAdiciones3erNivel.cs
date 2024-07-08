@@ -396,13 +396,13 @@ namespace LOSA.MicroIngredientes
                                 if (tipo_pesaje == 1)
                                 {
                                     //PESAJE DE NUCLEO
-                                    xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                                    //xtraTabControl1.SelectedTabPage = xtraTabPage1;
                                     LoadData2();
                                 }
                                 else
                                 {
                                     //PESAJE INDIVIDUAL
-                                    xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                                    //xtraTabControl1.SelectedTabPage = xtraTabPage2;
                                     LoadDataIndividual();
                                 }
                             }
