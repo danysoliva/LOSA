@@ -719,7 +719,7 @@ namespace LOSA.Compras
                         break;
 
                     default:
-                        Proceder = false;
+                        Proceder = true;
                         break;
                 }
 

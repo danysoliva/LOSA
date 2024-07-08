@@ -44,7 +44,7 @@
             this.cmdPerfiles = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGenerar = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.dsOrdenesCombustible1 = new MigracionACS.Ordenes_Combustible.dsOrdenesCombustible();
+            this.dsOrdenesCombustible1 = new LOSA.MigracionACS.Ordenes_Combustible.dsOrdenesCombustible();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -105,9 +105,9 @@
             this.cmdPrintAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdPrintAll.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdPrintAll.ImageOptions.Image")));
             this.cmdPrintAll.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdPrintAll.Location = new System.Drawing.Point(709, 25);
+            this.cmdPrintAll.Location = new System.Drawing.Point(660, 25);
             this.cmdPrintAll.Name = "cmdPrintAll";
-            this.cmdPrintAll.Size = new System.Drawing.Size(170, 57);
+            this.cmdPrintAll.Size = new System.Drawing.Size(178, 57);
             this.cmdPrintAll.TabIndex = 19;
             this.cmdPrintAll.Text = "Imprimir todas las ordenes";
             this.cmdPrintAll.Click += new System.EventHandler(this.cmdPrintAll_Click);

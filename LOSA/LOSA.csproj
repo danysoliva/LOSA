@@ -4519,6 +4519,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPresupuesto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presupuesto\frmDetalleOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmDetalleOC.Designer.cs">
+      <DependentUpon>frmDetalleOC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presupuesto\frmGeneracionDetallePresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4768,6 +4774,9 @@
     </Compile>
     <EmbeddedResource Include="Compras\frmSeleccionPresupuestoLocal.resx">
       <DependentUpon>frmSeleccionPresupuestoLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmDetalleOC.resx">
+      <DependentUpon>frmDetalleOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presupuesto\frmGeneracionDetallePresupuesto.resx">
       <DependentUpon>frmGeneracionDetallePresupuesto.cs</DependentUpon>
