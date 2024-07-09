@@ -150,6 +150,32 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="oc_cotizaciones" msprop:Generator_TableClassName="oc_cotizacionesDataTable" msprop:Generator_TableVarName="tableoc_cotizaciones" msprop:Generator_RowChangedName="oc_cotizacionesRowChanged" msprop:Generator_TablePropName="oc_cotizaciones" msprop:Generator_RowDeletingName="oc_cotizacionesRowDeleting" msprop:Generator_RowChangingName="oc_cotizacionesRowChanging" msprop:Generator_RowEvHandlerName="oc_cotizacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="oc_cotizacionesRowDeleted" msprop:Generator_RowClassName="oc_cotizacionesRow" msprop:Generator_UserTableName="oc_cotizaciones" msprop:Generator_RowEvArgName="oc_cotizacionesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipo_orden" msprop:Generator_ColumnVarNameInTable="columntipo_orden" msprop:Generator_ColumnPropNameInRow="tipo_orden" msprop:Generator_ColumnPropNameInTable="tipo_ordenColumn" msprop:Generator_UserColumnName="tipo_orden" type="xs:string" minOccurs="0" />
+              <xs:element name="CardCode" msprop:Generator_ColumnVarNameInTable="columnCardCode" msprop:Generator_ColumnPropNameInRow="CardCode" msprop:Generator_ColumnPropNameInTable="CardCodeColumn" msprop:Generator_UserColumnName="CardCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CardName" msprop:Generator_ColumnVarNameInTable="columnCardName" msprop:Generator_ColumnPropNameInRow="CardName" msprop:Generator_ColumnPropNameInTable="CardNameColumn" msprop:Generator_UserColumnName="CardName" type="xs:string" minOccurs="0" />
+              <xs:element name="DocNum" msprop:Generator_ColumnVarNameInTable="columnDocNum" msprop:Generator_ColumnPropNameInRow="DocNum" msprop:Generator_ColumnPropNameInTable="DocNumColumn" msprop:Generator_UserColumnName="DocNum" type="xs:string" minOccurs="0" />
+              <xs:element name="DocDate" msprop:Generator_ColumnVarNameInTable="columnDocDate" msprop:Generator_ColumnPropNameInRow="DocDate" msprop:Generator_ColumnPropNameInTable="DocDateColumn" msprop:Generator_UserColumnName="DocDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="regiExonerado" msprop:Generator_ColumnVarNameInTable="columnregiExonerado" msprop:Generator_ColumnPropNameInRow="regiExonerado" msprop:Generator_ColumnPropNameInTable="regiExoneradoColumn" msprop:Generator_UserColumnName="regiExonerado" type="xs:string" minOccurs="0" />
+              <xs:element name="moneda" msprop:Generator_ColumnVarNameInTable="columnmoneda" msprop:Generator_ColumnPropNameInRow="moneda" msprop:Generator_ColumnPropNameInTable="monedaColumn" msprop:Generator_UserColumnName="moneda" type="xs:string" minOccurs="0" />
+              <xs:element name="DocNumSolicitud" msprop:Generator_ColumnVarNameInTable="columnDocNumSolicitud" msprop:Generator_ColumnPropNameInRow="DocNumSolicitud" msprop:Generator_ColumnPropNameInTable="DocNumSolicitudColumn" msprop:Generator_UserColumnName="DocNumSolicitud" type="xs:int" minOccurs="0" />
+              <xs:element name="DocTotal" msprop:Generator_ColumnVarNameInTable="columnDocTotal" msprop:Generator_ColumnPropNameInRow="DocTotal" msprop:Generator_ColumnPropNameInTable="DocTotalColumn" msprop:Generator_UserColumnName="DocTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ISV" msprop:Generator_ColumnVarNameInTable="columnISV" msprop:Generator_ColumnPropNameInRow="ISV" msprop:Generator_ColumnPropNameInTable="ISVColumn" msprop:Generator_UserColumnName="ISV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="count_cotizacion" msprop:Generator_ColumnVarNameInTable="columncount_cotizacion" msprop:Generator_ColumnPropNameInRow="count_cotizacion" msprop:Generator_ColumnPropNameInTable="count_cotizacionColumn" msprop:Generator_UserColumnName="count_cotizacion" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="conteo_cotizacionesxoc" msprop:Generator_TableClassName="conteo_cotizacionesxocDataTable" msprop:Generator_TableVarName="tableconteo_cotizacionesxoc" msprop:Generator_TablePropName="conteo_cotizacionesxoc" msprop:Generator_RowDeletingName="conteo_cotizacionesxocRowDeleting" msprop:Generator_RowChangingName="conteo_cotizacionesxocRowChanging" msprop:Generator_RowEvHandlerName="conteo_cotizacionesxocRowChangeEventHandler" msprop:Generator_RowDeletedName="conteo_cotizacionesxocRowDeleted" msprop:Generator_UserTableName="conteo_cotizacionesxoc" msprop:Generator_RowChangedName="conteo_cotizacionesxocRowChanged" msprop:Generator_RowEvArgName="conteo_cotizacionesxocRowChangeEvent" msprop:Generator_RowClassName="conteo_cotizacionesxocRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCriterio" msprop:Generator_ColumnVarNameInTable="columnIdCriterio" msprop:Generator_ColumnPropNameInRow="IdCriterio" msprop:Generator_ColumnPropNameInTable="IdCriterioColumn" msprop:Generator_UserColumnName="IdCriterio" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="count_OC" msprop:Generator_ColumnVarNameInTable="columncount_OC" msprop:Generator_ColumnPropNameInRow="count_OC" msprop:Generator_ColumnPropNameInTable="count_OCColumn" msprop:Generator_UserColumnName="count_OC" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1">

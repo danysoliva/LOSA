@@ -31,11 +31,11 @@ namespace LOSA.Presupuesto
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRptSaldosPresupuestos));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grdPresipuesto = new DevExpress.XtraEditors.GridLookUpEdit();
             this.presupuestoActivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPresupuesto1 = new LOSA.Presupuesto.dsPresupuesto();
@@ -59,16 +59,16 @@ namespace LOSA.Presupuesto
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             this.item = new DevExpress.XtraLayout.LayoutControlItem();
-            this.xtraTabPage2item = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gridControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.xtraTabControl1item = new DevExpress.XtraLayout.TabbedControlGroup();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.TabConsumoSaldositem = new DevExpress.XtraLayout.LayoutControlGroup();
             this.grdPresipuestoitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.grdConsumoitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnCargarInfoitem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.xtraTabPage2item = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.gridControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresipuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestoActivoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPresupuesto1)).BeginInit();
@@ -81,16 +81,16 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabConsumoSaldositem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresipuestoitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsumoitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCargarInfoitem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).BeginInit();
             this.SuspendLayout();
             // 
             // grdPresipuesto
@@ -161,8 +161,7 @@ namespace LOSA.Presupuesto
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Controls.Add(this.btnExport);
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.item,
-            this.xtraTabPage2item});
+            this.item});
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Name = "frmRptSaldosPresupuestoslayoutControl1ConvertedLayout";
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(-1603, 359, 883, 400);
@@ -300,9 +299,9 @@ namespace LOSA.Presupuesto
             // repoVerDetalle
             // 
             this.repoVerDetalle.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repoVerDetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repoVerDetalle.Name = "repoVerDetalle";
             this.repoVerDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repoVerDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoVerDetalle_ButtonClick);
@@ -342,24 +341,6 @@ namespace LOSA.Presupuesto
             this.item.TextSize = new System.Drawing.Size(0, 0);
             this.item.TextVisible = false;
             // 
-            // xtraTabPage2item
-            // 
-            this.xtraTabPage2item.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.gridControl2item});
-            this.xtraTabPage2item.Location = new System.Drawing.Point(0, 0);
-            this.xtraTabPage2item.Name = "xtraTabPage2item";
-            this.xtraTabPage2item.Size = new System.Drawing.Size(1417, 755);
-            this.xtraTabPage2item.Text = "Reporte por Mes";
-            // 
-            // gridControl2item
-            // 
-            this.gridControl2item.Control = this.gridControl2;
-            this.gridControl2item.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2item.Name = "gridControl2item";
-            this.gridControl2item.Size = new System.Drawing.Size(1417, 755);
-            this.gridControl2item.TextSize = new System.Drawing.Size(0, 0);
-            this.gridControl2item.TextVisible = false;
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -374,11 +355,20 @@ namespace LOSA.Presupuesto
             // 
             this.xtraTabControl1item.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1item.Name = "xtraTabControl1item";
-            this.xtraTabControl1item.SelectedTabPage = this.layoutControlGroup2;
+            this.xtraTabControl1item.SelectedTabPage = this.TabConsumoSaldositem;
             this.xtraTabControl1item.Size = new System.Drawing.Size(1441, 802);
             this.xtraTabControl1item.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.TabConsumoSaldositem,
-            this.layoutControlGroup2});
+            this.layoutControlGroup2,
+            this.xtraTabPage2item});
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.CustomizationFormText = "Ordenes Compra segun Ofertas";
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1417, 755);
+            this.layoutControlGroup2.Text = "Reporte de Ordenes de Compra segun Presupuesto";
             // 
             // TabConsumoSaldositem
             // 
@@ -429,13 +419,23 @@ namespace LOSA.Presupuesto
             this.btnCargarInfoitem.TextSize = new System.Drawing.Size(0, 0);
             this.btnCargarInfoitem.TextVisible = false;
             // 
-            // layoutControlGroup2
+            // xtraTabPage2item
             // 
-            this.layoutControlGroup2.CustomizationFormText = "Ordenes Compra segun Ofertas";
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1417, 755);
-            this.layoutControlGroup2.Text = "Reporte de Ordenes de Compra segun Presupuesto";
+            this.xtraTabPage2item.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.gridControl2item});
+            this.xtraTabPage2item.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabPage2item.Name = "xtraTabPage2item";
+            this.xtraTabPage2item.Size = new System.Drawing.Size(1417, 755);
+            this.xtraTabPage2item.Text = "Reporte por Mes";
+            // 
+            // gridControl2item
+            // 
+            this.gridControl2item.Control = this.gridControl2;
+            this.gridControl2item.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2item.Name = "gridControl2item";
+            this.gridControl2item.Size = new System.Drawing.Size(1417, 755);
+            this.gridControl2item.TextSize = new System.Drawing.Size(0, 0);
+            this.gridControl2item.TextVisible = false;
             // 
             // frmRptSaldosPresupuestos
             // 
@@ -456,16 +456,16 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabConsumoSaldositem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresipuestoitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsumoitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCargarInfoitem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).EndInit();
             this.ResumeLayout(false);
 
         }
