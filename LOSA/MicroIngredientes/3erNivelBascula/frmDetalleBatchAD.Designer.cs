@@ -39,8 +39,12 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.teCodBarra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teCodBarra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl8
@@ -50,7 +54,7 @@
             this.labelControl8.Appearance.Options.UseTextOptions = true;
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(2, 20);
+            this.labelControl8.Location = new System.Drawing.Point(2, 45);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(153, 21);
             this.labelControl8.TabIndex = 108;
@@ -58,10 +62,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(2, 47);
+            this.gridControl1.Location = new System.Drawing.Point(2, 65);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(487, 342);
+            this.gridControl1.Size = new System.Drawing.Size(487, 324);
             this.gridControl1.TabIndex = 109;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -165,11 +169,53 @@
             this.simpleButton1.TabIndex = 116;
             this.simpleButton1.Text = "Confirmar Pesaje";
             // 
+            // teCodBarra
+            // 
+            this.teCodBarra.Location = new System.Drawing.Point(107, 0);
+            this.teCodBarra.Name = "teCodBarra";
+            this.teCodBarra.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.teCodBarra.Properties.Appearance.Options.UseFont = true;
+            this.teCodBarra.Size = new System.Drawing.Size(382, 32);
+            this.teCodBarra.TabIndex = 117;
+            this.teCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.teCodBarra_KeyDown);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Location = new System.Drawing.Point(2, 6);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(99, 21);
+            this.labelControl5.TabIndex = 118;
+            this.labelControl5.Text = "Cod. Barra:";
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Appearance.Options.UseBackColor = true;
+            this.btnAtras.Appearance.Options.UseFont = true;
+            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAtras.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAtras.ImageOptions.SvgImage")));
+            this.btnAtras.Location = new System.Drawing.Point(727, 1);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(130, 40);
+            this.btnAtras.TabIndex = 119;
+            this.btnAtras.Text = "Salir";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
             // frmDetalleBatchAD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 393);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.teCodBarra);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl4);
@@ -183,6 +229,7 @@
             this.Text = "Detalle Batch ";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teCodBarra.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +245,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit teCodBarra;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.SimpleButton btnAtras;
     }
 }

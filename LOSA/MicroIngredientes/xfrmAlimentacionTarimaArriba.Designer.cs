@@ -64,6 +64,7 @@ namespace LOSA.MicroIngredientes
             this.collot1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colacumulado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbatch_pendientes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkg_por_batch = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtLotePT1 = new System.Windows.Forms.TextBox();
             this.txtProducto1 = new System.Windows.Forms.TextBox();
@@ -79,7 +80,6 @@ namespace LOSA.MicroIngredientes
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.teCodBarra = new DevExpress.XtraEditors.TextEdit();
-            this.colkg_por_batch = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -101,7 +101,7 @@ namespace LOSA.MicroIngredientes
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1288, 363);
+            this.gridControl1.Size = new System.Drawing.Size(1292, 366);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -268,7 +268,7 @@ namespace LOSA.MicroIngredientes
             | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.AppearancePage.Header.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtraTabControl1.AppearancePage.Header.Options.UseFont = true;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 205);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 201);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.Size = new System.Drawing.Size(1294, 399);
@@ -281,14 +281,14 @@ namespace LOSA.MicroIngredientes
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1288, 363);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1292, 366);
             this.xtraTabPage1.Text = "Pesaje Nucleo";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1288, 363);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1292, 366);
             this.xtraTabPage2.Text = "Pesaje Individual";
             // 
             // gridControl2
@@ -299,7 +299,7 @@ namespace LOSA.MicroIngredientes
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1288, 363);
+            this.gridControl2.Size = new System.Drawing.Size(1292, 366);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -453,6 +453,16 @@ namespace LOSA.MicroIngredientes
             this.colbatch_pendientes.Visible = true;
             this.colbatch_pendientes.VisibleIndex = 9;
             this.colbatch_pendientes.Width = 155;
+            // 
+            // colkg_por_batch
+            // 
+            this.colkg_por_batch.Caption = "KG Por Batch";
+            this.colkg_por_batch.FieldName = "kg_por_batch";
+            this.colkg_por_batch.Name = "colkg_por_batch";
+            this.colkg_por_batch.OptionsColumn.AllowEdit = false;
+            this.colkg_por_batch.Visible = true;
+            this.colkg_por_batch.VisibleIndex = 5;
+            this.colkg_por_batch.Width = 130;
             // 
             // labelControl1
             // 
@@ -614,16 +624,6 @@ namespace LOSA.MicroIngredientes
             this.teCodBarra.Size = new System.Drawing.Size(332, 32);
             this.teCodBarra.TabIndex = 0;
             this.teCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.teCodBarra_KeyDown);
-            // 
-            // colkg_por_batch
-            // 
-            this.colkg_por_batch.Caption = "KG Por Batch";
-            this.colkg_por_batch.FieldName = "kg_por_batch";
-            this.colkg_por_batch.Name = "colkg_por_batch";
-            this.colkg_por_batch.OptionsColumn.AllowEdit = false;
-            this.colkg_por_batch.Visible = true;
-            this.colkg_por_batch.VisibleIndex = 5;
-            this.colkg_por_batch.Width = 130;
             // 
             // xfrmAlimentacionTarimaArriba
             // 

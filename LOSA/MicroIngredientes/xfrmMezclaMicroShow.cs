@@ -1,6 +1,8 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
+using LOSA.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +19,7 @@ namespace LOSA.MicroIngredientes
     public partial class xfrmMezclaMicroShow : DevExpress.XtraEditors.XtraForm
     {
         long order_id;
-        int mp_id;
+        public int mp_id;
         int ami_id;
         string CodigoBarra;
         AlimentacionTolvaMicrosPesaje PesajeIndividualConf;
@@ -73,6 +75,15 @@ namespace LOSA.MicroIngredientes
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void cmdSeleccionarRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsReportes.detalle_rpt_microsIndividualRow)gridView.GetFocusedDataRow();
+            mp_id = row.idmp;
+            this.DialogResult= DialogResult.OK;
             this.Close();
         }
     }

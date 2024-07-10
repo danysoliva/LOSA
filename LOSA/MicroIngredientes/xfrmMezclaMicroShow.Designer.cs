@@ -29,9 +29,15 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMezclaMicroShow));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsReportesBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsReportesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsReportes = new LOSA.Reportes.dsReportes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,10 +50,13 @@ namespace LOSA.MicroIngredientes
             this.btnSalir = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdSeleccionarRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionarRow)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -55,10 +64,12 @@ namespace LOSA.MicroIngredientes
             this.gridControl1.DataMember = "detalle_rpt_microsIndividual";
             this.gridControl1.DataSource = this.dsReportesBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1.Location = new System.Drawing.Point(0, 96);
+            this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(875, 204);
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdSeleccionarRow});
+            this.gridControl1.Size = new System.Drawing.Size(875, 254);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -102,7 +113,8 @@ namespace LOSA.MicroIngredientes
             this.colenable,
             this.colkg_por_batch,
             this.colItemCode,
-            this.colItemName});
+            this.colItemName,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -120,7 +132,7 @@ namespace LOSA.MicroIngredientes
             this.colid_orden.OptionsColumn.AllowEdit = false;
             this.colid_orden.Visible = true;
             this.colid_orden.VisibleIndex = 0;
-            this.colid_orden.Width = 129;
+            this.colid_orden.Width = 91;
             // 
             // colidmp
             // 
@@ -141,7 +153,7 @@ namespace LOSA.MicroIngredientes
             this.colkg_por_batch.OptionsColumn.AllowEdit = false;
             this.colkg_por_batch.Visible = true;
             this.colkg_por_batch.VisibleIndex = 3;
-            this.colkg_por_batch.Width = 421;
+            this.colkg_por_batch.Width = 263;
             // 
             // colItemCode
             // 
@@ -150,7 +162,7 @@ namespace LOSA.MicroIngredientes
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 1;
-            this.colItemCode.Width = 154;
+            this.colItemCode.Width = 109;
             // 
             // colItemName
             // 
@@ -159,7 +171,7 @@ namespace LOSA.MicroIngredientes
             this.colItemName.OptionsColumn.AllowEdit = false;
             this.colItemName.Visible = true;
             this.colItemName.VisibleIndex = 2;
-            this.colItemName.Width = 413;
+            this.colItemName.Width = 294;
             // 
             // btnSalir
             // 
@@ -206,6 +218,25 @@ namespace LOSA.MicroIngredientes
             this.simpleButton1.Text = "Continuar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Seleccionar";
+            this.gridColumn1.ColumnEdit = this.cmdSeleccionarRow;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 93;
+            // 
+            // cmdSeleccionarRow
+            // 
+            this.cmdSeleccionarRow.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.cmdSeleccionarRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdSeleccionarRow.Name = "cmdSeleccionarRow";
+            this.cmdSeleccionarRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdSeleccionarRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSeleccionarRow_ButtonClick);
+            // 
             // xfrmMezclaMicroShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +256,7 @@ namespace LOSA.MicroIngredientes
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionarRow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +277,7 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
         private DevExpress.XtraGrid.Columns.GridColumn colItemName;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdSeleccionarRow;
     }
 }
