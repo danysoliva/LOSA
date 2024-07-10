@@ -61,6 +61,7 @@ namespace LOSA.Compras
             ObtenerExoneracionVigente();
             CargarCapitulos();
             CargarIVA();
+            CargarTiposDocumentos();
             CargarBodegas();
             CargarRutasAprobacion();
             //CargarArchivos();
@@ -83,6 +84,27 @@ namespace LOSA.Compras
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void CargarTiposDocumentos()
+        {
+            try
+            {
+                string query = @"sp_compras_get_tipos_documentos_archivos";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("",);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCompras1.tipo_docs.Clear();
+                adat.Fill(dsCompras1.tipo_docs);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -134,6 +156,7 @@ namespace LOSA.Compras
             TsExoOIsv.IsOn = true;
             ObtenerExoneracionVigente();
             CargarCapitulos();
+            CargarTiposDocumentos();
             CargarIVA();
             CargarBodegas();
             CargarRutasAprobacion();
@@ -862,6 +885,7 @@ namespace LOSA.Compras
             dtFechaContabilizacion.EditValue = dp.Now();
             dtFechaRegistro.Value = dp.Now();
             txtEstado.Text = "Nueva";
+            IdEstadoOrdenCompra = 5;
             IdSolicitud = 0;
             IdOrdenCompraActual = 0;
             txtComentarios.Clear();
@@ -1466,7 +1490,57 @@ namespace LOSA.Compras
                     }
                 }
             }
-            
+
+            bool CotizacionSelected = false;
+            decimal TotalCotizacionSelected = 0;
+            //NUEVO: COTIZACIONES
+            foreach (dsCompras.ordenes_compras_archivosRow item in dsCompras1.ordenes_compras_archivos)
+            {
+                if (item.id_tipo_doc == 1) //Cotizaciones
+                {
+                    if (item.total <= 0)
+                    {
+                        CajaDialogo.Error("Las Cotizaciones adjuntadas, deben tener su Monto de Cotizacion");
+                        xtraTabControl1.SelectedTabPage = tabArchivosAdjuntos;
+                        return;
+                    }
+
+                    if (item.selected)
+                    {
+                        CotizacionSelected = true;
+                        TotalCotizacionSelected = item.total;
+                    }
+
+
+                }
+
+                if (item.id_tipo_doc == 2)//RESUMEN DE COTIZACIONES
+                {
+                    if (item.selected)
+                    {
+                        CajaDialogo.Error("No puede Seleccionar el Resumen de Cotizaciones!");
+                        xtraTabControl1.SelectedTabPage = tabArchivosAdjuntos;
+                        return;
+                    }
+                }
+            }
+
+            if (gvFiles.RowCount > 1)
+            {
+                if (!CotizacionSelected)
+                {
+                    CajaDialogo.Error("Debe marcar la cotizacion utilizada!");
+                    return;
+                }
+            }
+
+            //if (TotalCotizacionSelected != Convert.ToDecimal(txtTotal.EditValue))
+            //{
+            //    CajaDialogo.Error("La Cotizacion seleccionada, no coincide con el Monto de la Orden de Compra!");
+            //    return;
+            //}
+           
+
             //Consolidados de Saldos por Capitulo y Rubro
 
             bool PermitirGuardar = false;
@@ -1785,7 +1859,7 @@ namespace LOSA.Compras
                             if (Upload(row.path, file_name,row.id))
                             {
                                 cmd.Parameters.Clear();
-                                cmd.CommandText = "usp_UploadFileFromOrdenesCompras";
+                                cmd.CommandText = "usp_UploadFileFromOrdenesComprasV2";
                                 cmd.Connection = conn;
                                 cmd.Transaction = transaction;
                                 cmd.CommandType = CommandType.StoredProcedure;
@@ -1794,6 +1868,10 @@ namespace LOSA.Compras
                                 cmd.Parameters.AddWithValue("@file_name", row.file_name);
                                 cmd.Parameters.AddWithValue("@id_user", UsuarioLogueado.Id);
                                 cmd.Parameters.AddWithValue("@id", row.id);
+                                cmd.Parameters.AddWithValue("@id_tipo_doc",row.id_tipo_doc);
+                                cmd.Parameters.AddWithValue("@monto_cotizacion",row.monto_cotizacion);
+                                cmd.Parameters.AddWithValue("@descuento",row.descuento);
+                                cmd.Parameters.AddWithValue("@selected",row.selected);
                                 cmd.ExecuteNonQuery();
                             }
 
@@ -1921,13 +1999,17 @@ namespace LOSA.Compras
                         //Seccion para agregar los archivos
                         foreach (var row in dsCompras1.ordenes_compras_archivos)
                         {
+
+                            if (row.id > 0)
+                                ActualizarArchivosSelected(row.id, row.selected);
+
                             string ext = Path.GetExtension(row.file_name);
-                            file_name = DateTime.Now.ToString("ddMMyyyyhhmmss")+ext;
+                            file_name = DateTime.Now.ToString("ddMMyyyyhhmmss") + '_'+ row.file_name;//+ext;
                             //Luego de subir el archivo al FTP, que se guarde el registro
                             if (Upload(row.path, file_name,row.id))
                             {
                                 cmdUpdate.Parameters.Clear();
-                                cmdUpdate.CommandText = "usp_UploadFileFromOrdenesCompras";
+                                cmdUpdate.CommandText = "[usp_UploadFileFromOrdenesComprasV2]";
                                 cmdUpdate.Connection = connUpdate;
                                 cmdUpdate.Transaction = transactionUpdate;
                                 cmdUpdate.CommandType = CommandType.StoredProcedure;
@@ -1936,6 +2018,10 @@ namespace LOSA.Compras
                                 cmdUpdate.Parameters.AddWithValue("@file_name", row.file_name);
                                 cmdUpdate.Parameters.AddWithValue("@id_user", UsuarioLogueado.Id);
                                 cmdUpdate.Parameters.AddWithValue("@id", row.id);
+                                cmdUpdate.Parameters.AddWithValue("@id_tipo_doc", row.id_tipo_doc);
+                                cmdUpdate.Parameters.AddWithValue("@monto_cotizacion", row.monto_cotizacion);
+                                cmdUpdate.Parameters.AddWithValue("@descuento", row.descuento);
+                                cmdUpdate.Parameters.AddWithValue("@selected", row.selected);
                                 cmdUpdate.ExecuteNonQuery();
                             }
 
@@ -2806,8 +2892,17 @@ namespace LOSA.Compras
                         newRow["file_name"] = item;
                         newRow["user"] = UsuarioLogueado.NombreUser;
                         newRow["path"] = openFileDialog1.FileNames[contador];
+                        newRow["id_tipo_doc"] = 1;
+                        newRow["monto_cotizacion"] = 0.00;
+                        newRow["descuento"] = 0.00;
+                        newRow["total"] = 0.00;
 
-                            if (IdOrdenCompraActual!=0)
+                        if (gvFiles.RowCount == 0)
+                            newRow["selected"] = true;
+                        else
+                            newRow["selected"] = false;
+
+                        if (IdOrdenCompraActual!=0)
                             {
                                 newRow["id_orden_compra_h"] = IdOrdenCompraActual;
 
@@ -3057,6 +3152,117 @@ namespace LOSA.Compras
             }
 
             
+        }
+
+        private void gvFiles_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)gcFiles.FocusedView;
+            var row = (dsCompras.ordenes_compras_archivosRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                switch (e.Column.FieldName)
+                {
+                    case "monto_cotizacion":
+
+                        if (row.Ismonto_cotizacionNull())
+                            row.monto_cotizacion = 0;
+
+                        row.total = row.monto_cotizacion - row.descuento;
+                        break;
+
+                    case "descuento":
+
+                        if (row.IsdescuentoNull())
+                            row.monto_cotizacion = 0;
+                        row.total = row.monto_cotizacion - row.descuento;
+                        break;
+
+                    default:
+                        break;
+                }
+
+                if (row.id > 0)
+                {
+                    ActualizarDetalleArchivos(row.monto_cotizacion, row.descuento, row.id, row.id_tipo_doc);
+                }
+              
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void ActualizarDetalleArchivos(decimal monto_cotizacion, decimal descuento, int id, int idtipoDoc)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_compras_set_update_archivos_detalle_cotizaciones", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@monto_cotizacion", monto_cotizacion);
+                cmd.Parameters.AddWithValue("@descuento", descuento);
+                cmd.Parameters.AddWithValue("@id_tipo_doc", idtipoDoc);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void gvFiles_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)gcFiles.FocusedView;
+            var row = (dsCompras.ordenes_compras_archivosRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                switch (e.Column.FieldName)
+                {
+                    case "selected":
+
+                        foreach (dsCompras.ordenes_compras_archivosRow item in dsCompras1.ordenes_compras_archivos)
+                        {
+                            if (item.selected)
+                                item.selected = false;
+                        }
+
+                        row.selected = Convert.ToBoolean(e.Value);
+
+                        break;
+
+
+                    default:
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void ActualizarArchivosSelected(int pid, bool pselected)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("[sp_compras_set_update_archivos_detalle_cotizaciones_selected]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pid);
+                cmd.Parameters.AddWithValue("@selected", pselected);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void CargarArchivos()

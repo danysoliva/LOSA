@@ -5622,7 +5622,8 @@ namespace LOSA
 
         private void navBarItem6_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos();
+            //frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos();
+            DashboardCompras frm = new DashboardCompras();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

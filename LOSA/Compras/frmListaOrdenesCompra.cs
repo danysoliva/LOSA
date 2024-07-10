@@ -24,10 +24,10 @@ namespace LOSA.Compras
         {
             InitializeComponent();
             UsuarioLogueado = pUserLog;
-            dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-15);
+            dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-30);
             dtFechaHastaDisponibles.DateTime = dp.Now().AddDays(1);
 
-            dtDesdeHist.DateTime = dp.Now().AddDays(-20);
+            dtDesdeHist.DateTime = dp.Now().AddDays(-30);
             dtHastaHist.DateTime = dp.Now().AddDays(1);
 
             LoadOrdenAutorizadas();

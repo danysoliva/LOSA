@@ -186,10 +186,20 @@ namespace LOSA.Compras
             this.btnDownload = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnOpen = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
+            this.reposGridTipoDoc = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tipodocsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid_doc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPresupuesto.Properties)).BeginInit();
@@ -245,6 +255,9 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGridTipoDoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodocsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -302,6 +315,7 @@ namespace LOSA.Compras
             // 
             // btnPresupuesto
             // 
+            this.btnPresupuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPresupuesto.Location = new System.Drawing.Point(1160, 185);
             this.btnPresupuesto.MenuManager = this.barManager1;
             this.btnPresupuesto.Name = "btnPresupuesto";
@@ -476,6 +490,7 @@ namespace LOSA.Compras
             // 
             // labelControl18
             // 
+            this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl18.Appearance.Options.UseFont = true;
             this.labelControl18.Location = new System.Drawing.Point(990, 191);
@@ -493,11 +508,12 @@ namespace LOSA.Compras
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(47, 33);
             this.btnEditar.TabIndex = 96;
-            this.btnEditar.ToolTip = "Guardar";
+            this.btnEditar.ToolTip = "Editar";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // comboBoxIntercom
             // 
+            this.comboBoxIntercom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxIntercom.Location = new System.Drawing.Point(1160, 160);
             this.comboBoxIntercom.MenuManager = this.barManager1;
             this.comboBoxIntercom.Name = "comboBoxIntercom";
@@ -531,6 +547,7 @@ namespace LOSA.Compras
             // 
             // labelControl17
             // 
+            this.labelControl17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl17.Appearance.Options.UseFont = true;
             this.labelControl17.Location = new System.Drawing.Point(990, 166);
@@ -575,6 +592,7 @@ namespace LOSA.Compras
             // 
             // dtFechaContabilizacion
             // 
+            this.dtFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtFechaContabilizacion.EditValue = null;
             this.dtFechaContabilizacion.Location = new System.Drawing.Point(1160, 29);
             this.dtFechaContabilizacion.MenuManager = this.barManager1;
@@ -591,6 +609,7 @@ namespace LOSA.Compras
             // 
             // glRutaAprobacionOC
             // 
+            this.glRutaAprobacionOC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.glRutaAprobacionOC.Location = new System.Drawing.Point(1160, 136);
             this.glRutaAprobacionOC.MenuManager = this.barManager1;
             this.glRutaAprobacionOC.Name = "glRutaAprobacionOC";
@@ -646,6 +665,7 @@ namespace LOSA.Compras
             // 
             // labelControl15
             // 
+            this.labelControl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Location = new System.Drawing.Point(990, 142);
@@ -678,6 +698,7 @@ namespace LOSA.Compras
             // 
             // txtExoneracion
             // 
+            this.txtExoneracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtExoneracion.BackColor = System.Drawing.Color.White;
             this.txtExoneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtExoneracion.Enabled = false;
@@ -691,6 +712,7 @@ namespace LOSA.Compras
             // 
             // lblExoneracion
             // 
+            this.lblExoneracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExoneracion.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblExoneracion.Appearance.Options.UseFont = true;
             this.lblExoneracion.Location = new System.Drawing.Point(990, 118);
@@ -748,6 +770,7 @@ namespace LOSA.Compras
             // 
             // TsExoOIsv
             // 
+            this.TsExoOIsv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TsExoOIsv.EditValue = true;
             this.TsExoOIsv.Location = new System.Drawing.Point(1160, 96);
             this.TsExoOIsv.MenuManager = this.barManager1;
@@ -762,6 +785,7 @@ namespace LOSA.Compras
             // 
             // labelControl13
             // 
+            this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Location = new System.Drawing.Point(990, 98);
@@ -772,6 +796,7 @@ namespace LOSA.Compras
             // 
             // grdTipoOrden
             // 
+            this.grdTipoOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grdTipoOrden.Location = new System.Drawing.Point(1160, 72);
             this.grdTipoOrden.MenuManager = this.barManager1;
             this.grdTipoOrden.Name = "grdTipoOrden";
@@ -846,6 +871,7 @@ namespace LOSA.Compras
             // 
             // lblSucursal
             // 
+            this.lblSucursal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSucursal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblSucursal.Appearance.Options.UseFont = true;
             this.lblSucursal.Location = new System.Drawing.Point(990, 78);
@@ -893,6 +919,7 @@ namespace LOSA.Compras
             // 
             // labelControl4
             // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(990, 35);
@@ -903,6 +930,7 @@ namespace LOSA.Compras
             // 
             // dtFechaRegistro
             // 
+            this.dtFechaRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtFechaRegistro.Enabled = false;
             this.dtFechaRegistro.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.dtFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -913,6 +941,7 @@ namespace LOSA.Compras
             // 
             // labelControl3
             // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(990, 13);
@@ -923,6 +952,7 @@ namespace LOSA.Compras
             // 
             // txtEstado
             // 
+            this.txtEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEstado.BackColor = System.Drawing.Color.White;
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Enabled = false;
@@ -935,6 +965,7 @@ namespace LOSA.Compras
             // 
             // labelControl2
             // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(990, 55);
@@ -1682,7 +1713,8 @@ namespace LOSA.Compras
             this.gcFiles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnDelete,
             this.btnDownload,
-            this.btnOpen});
+            this.btnOpen,
+            this.reposGridTipoDoc});
             this.gcFiles.Size = new System.Drawing.Size(1506, 502);
             this.gcFiles.TabIndex = 0;
             this.gcFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1700,10 +1732,17 @@ namespace LOSA.Compras
             this.colid_orden_compra_h,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn3,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11});
             this.gvFiles.GridControl = this.gcFiles;
             this.gvFiles.Name = "gvFiles";
             this.gvFiles.OptionsView.ShowGroupPanel = false;
+            this.gvFiles.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvFiles_CellValueChanged);
+            this.gvFiles.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvFiles_CellValueChanging);
             // 
             // colid2
             // 
@@ -1712,13 +1751,13 @@ namespace LOSA.Compras
             // 
             // colfecha_registro
             // 
-            this.colfecha_registro.Caption = "Fecha Creacion";
+            this.colfecha_registro.Caption = "F. Creacion";
             this.colfecha_registro.FieldName = "fecha_registro";
             this.colfecha_registro.Name = "colfecha_registro";
             this.colfecha_registro.OptionsColumn.ReadOnly = true;
             this.colfecha_registro.Visible = true;
             this.colfecha_registro.VisibleIndex = 0;
-            this.colfecha_registro.Width = 104;
+            this.colfecha_registro.Width = 65;
             // 
             // colpath
             // 
@@ -1733,7 +1772,7 @@ namespace LOSA.Compras
             this.colfile_name.OptionsColumn.ReadOnly = true;
             this.colfile_name.Visible = true;
             this.colfile_name.VisibleIndex = 1;
-            this.colfile_name.Width = 412;
+            this.colfile_name.Width = 318;
             // 
             // colid_user
             // 
@@ -1748,7 +1787,7 @@ namespace LOSA.Compras
             this.coluser.OptionsColumn.ReadOnly = true;
             this.coluser.Visible = true;
             this.coluser.VisibleIndex = 2;
-            this.coluser.Width = 773;
+            this.coluser.Width = 188;
             // 
             // colid_orden_compra_h
             // 
@@ -1762,8 +1801,8 @@ namespace LOSA.Compras
             this.gridColumn4.FieldName = "eliminar";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
-            this.gridColumn4.Width = 105;
+            this.gridColumn4.VisibleIndex = 10;
+            this.gridColumn4.Width = 154;
             // 
             // btnDelete
             // 
@@ -1781,8 +1820,8 @@ namespace LOSA.Compras
             this.gridColumn5.ColumnEdit = this.btnDownload;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 87;
+            this.gridColumn5.VisibleIndex = 9;
+            this.gridColumn5.Width = 102;
             // 
             // btnDownload
             // 
@@ -1800,7 +1839,8 @@ namespace LOSA.Compras
             this.gridColumn6.ColumnEdit = this.btnOpen;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.VisibleIndex = 8;
+            this.gridColumn6.Width = 85;
             // 
             // btnOpen
             // 
@@ -1811,6 +1851,59 @@ namespace LOSA.Compras
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnOpen.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOpen_ButtonPressed);
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Tipo Documento";
+            this.gridColumn3.ColumnEdit = this.reposGridTipoDoc;
+            this.gridColumn3.FieldName = "id_tipo_doc";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 126;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Monto Cotizacion";
+            this.gridColumn8.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn8.FieldName = "monto_cotizacion";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.Width = 136;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Descuento";
+            this.gridColumn9.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn9.FieldName = "descuento";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 108;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Total";
+            this.gridColumn10.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn10.FieldName = "total";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 6;
+            this.gridColumn10.Width = 108;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Selec. Cotizacion";
+            this.gridColumn11.FieldName = "selected";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 7;
+            this.gridColumn11.Width = 91;
             // 
             // popupMenu2
             // 
@@ -1827,6 +1920,45 @@ namespace LOSA.Compras
             // xtraSaveFileDialog1
             // 
             this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
+            // 
+            // reposGridTipoDoc
+            // 
+            this.reposGridTipoDoc.AutoHeight = false;
+            this.reposGridTipoDoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGridTipoDoc.DataSource = this.tipodocsBindingSource;
+            this.reposGridTipoDoc.DisplayMember = "descripcion";
+            this.reposGridTipoDoc.Name = "reposGridTipoDoc";
+            this.reposGridTipoDoc.PopupView = this.gridView4;
+            this.reposGridTipoDoc.ValueMember = "id_doc";
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_doc,
+            this.coldescripcion2});
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // tipodocsBindingSource
+            // 
+            this.tipodocsBindingSource.DataMember = "tipo_docs";
+            this.tipodocsBindingSource.DataSource = this.dsCompras1;
+            // 
+            // colid_doc
+            // 
+            this.colid_doc.FieldName = "id_doc";
+            this.colid_doc.Name = "colid_doc";
+            // 
+            // coldescripcion2
+            // 
+            this.coldescripcion2.Caption = "Tipo";
+            this.coldescripcion2.FieldName = "descripcion";
+            this.coldescripcion2.Name = "coldescripcion2";
+            this.coldescripcion2.Visible = true;
+            this.coldescripcion2.VisibleIndex = 0;
             // 
             // frmOrdenesCompraMain
             // 
@@ -1900,6 +2032,9 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGridTipoDoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodocsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2052,5 +2187,15 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposLigarPresupuesto;
         private DevExpress.XtraEditors.ButtonEdit btnPresupuesto;
         private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGridTipoDoc;
+        private System.Windows.Forms.BindingSource tipodocsBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_doc;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion2;
     }
 }

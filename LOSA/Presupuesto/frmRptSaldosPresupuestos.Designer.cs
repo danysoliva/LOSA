@@ -61,13 +61,14 @@ namespace LOSA.Presupuesto
             this.item = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.xtraTabControl1item = new DevExpress.XtraLayout.TabbedControlGroup();
-            this.xtraTabPage2item = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gridControl2item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.TabConsumoSaldositem = new DevExpress.XtraLayout.LayoutControlGroup();
             this.grdPresipuestoitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.grdConsumoitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnCargarInfoitem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.xtraTabPage2item = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.gridControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresipuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestoActivoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPresupuesto1)).BeginInit();
@@ -82,13 +83,14 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabConsumoSaldositem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresipuestoitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsumoitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCargarInfoitem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).BeginInit();
             this.SuspendLayout();
             // 
             // grdPresipuesto
@@ -159,8 +161,7 @@ namespace LOSA.Presupuesto
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Controls.Add(this.btnExport);
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.item,
-            this.xtraTabPage2item});
+            this.item});
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.Name = "frmRptSaldosPresupuestoslayoutControl1ConvertedLayout";
             this.frmRptSaldosPresupuestoslayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(-1603, 359, 883, 400);
@@ -222,7 +223,7 @@ namespace LOSA.Presupuesto
             this.colid_d_linea.OptionsColumn.AllowEdit = false;
             this.colid_d_linea.Visible = true;
             this.colid_d_linea.VisibleIndex = 0;
-            this.colid_d_linea.Width = 64;
+            this.colid_d_linea.Width = 63;
             // 
             // coldepartamento
             // 
@@ -232,7 +233,7 @@ namespace LOSA.Presupuesto
             this.coldepartamento.OptionsColumn.AllowEdit = false;
             this.coldepartamento.Visible = true;
             this.coldepartamento.VisibleIndex = 1;
-            this.coldepartamento.Width = 210;
+            this.coldepartamento.Width = 208;
             // 
             // colconcepto_presupuesto
             // 
@@ -242,7 +243,7 @@ namespace LOSA.Presupuesto
             this.colconcepto_presupuesto.OptionsColumn.AllowEdit = false;
             this.colconcepto_presupuesto.Visible = true;
             this.colconcepto_presupuesto.VisibleIndex = 2;
-            this.colconcepto_presupuesto.Width = 313;
+            this.colconcepto_presupuesto.Width = 384;
             // 
             // colmonto_origen
             // 
@@ -256,7 +257,7 @@ namespace LOSA.Presupuesto
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "monto_origen", "$ {0:#,###,##0.00}")});
             this.colmonto_origen.Visible = true;
             this.colmonto_origen.VisibleIndex = 3;
-            this.colmonto_origen.Width = 208;
+            this.colmonto_origen.Width = 204;
             // 
             // colexistencia
             // 
@@ -270,7 +271,7 @@ namespace LOSA.Presupuesto
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "$ {0:#,###,##0.00}")});
             this.colexistencia.Visible = true;
             this.colexistencia.VisibleIndex = 4;
-            this.colexistencia.Width = 208;
+            this.colexistencia.Width = 196;
             // 
             // colconsumo
             // 
@@ -281,17 +282,19 @@ namespace LOSA.Presupuesto
             this.colconsumo.Name = "colconsumo";
             this.colconsumo.OptionsColumn.AllowEdit = false;
             this.colconsumo.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "consumo", "SUM=$ {0:#,###,##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "consumo", "$ {0:#,###,##0.00}")});
             this.colconsumo.Visible = true;
             this.colconsumo.VisibleIndex = 5;
-            this.colconsumo.Width = 208;
+            this.colconsumo.Width = 218;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Ver Detalle";
             this.gridColumn1.ColumnEdit = this.repoVerDetalle;
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Width = 217;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.Width = 115;
             // 
             // repoVerDetalle
             // 
@@ -355,25 +358,17 @@ namespace LOSA.Presupuesto
             this.xtraTabControl1item.SelectedTabPage = this.TabConsumoSaldositem;
             this.xtraTabControl1item.Size = new System.Drawing.Size(1441, 802);
             this.xtraTabControl1item.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.TabConsumoSaldositem});
+            this.TabConsumoSaldositem,
+            this.layoutControlGroup2,
+            this.xtraTabPage2item});
             // 
-            // xtraTabPage2item
+            // layoutControlGroup2
             // 
-            this.xtraTabPage2item.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.gridControl2item});
-            this.xtraTabPage2item.Location = new System.Drawing.Point(0, 0);
-            this.xtraTabPage2item.Name = "xtraTabPage2item";
-            this.xtraTabPage2item.Size = new System.Drawing.Size(1417, 755);
-            this.xtraTabPage2item.Text = "Reporte por Mes";
-            // 
-            // gridControl2item
-            // 
-            this.gridControl2item.Control = this.gridControl2;
-            this.gridControl2item.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2item.Name = "gridControl2item";
-            this.gridControl2item.Size = new System.Drawing.Size(1417, 755);
-            this.gridControl2item.TextSize = new System.Drawing.Size(0, 0);
-            this.gridControl2item.TextVisible = false;
+            this.layoutControlGroup2.CustomizationFormText = "Ordenes Compra segun Ofertas";
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1417, 755);
+            this.layoutControlGroup2.Text = "Reporte de Ordenes de Compra segun Presupuesto";
             // 
             // TabConsumoSaldositem
             // 
@@ -424,6 +419,24 @@ namespace LOSA.Presupuesto
             this.btnCargarInfoitem.TextSize = new System.Drawing.Size(0, 0);
             this.btnCargarInfoitem.TextVisible = false;
             // 
+            // xtraTabPage2item
+            // 
+            this.xtraTabPage2item.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.gridControl2item});
+            this.xtraTabPage2item.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabPage2item.Name = "xtraTabPage2item";
+            this.xtraTabPage2item.Size = new System.Drawing.Size(1417, 755);
+            this.xtraTabPage2item.Text = "Reporte por Mes";
+            // 
+            // gridControl2item
+            // 
+            this.gridControl2item.Control = this.gridControl2;
+            this.gridControl2item.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2item.Name = "gridControl2item";
+            this.gridControl2item.Size = new System.Drawing.Size(1417, 755);
+            this.gridControl2item.TextSize = new System.Drawing.Size(0, 0);
+            this.gridControl2item.TextVisible = false;
+            // 
             // frmRptSaldosPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,13 +458,14 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabConsumoSaldositem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresipuestoitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsumoitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCargarInfoitem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabPage2item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2item)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,5 +503,6 @@ namespace LOSA.Presupuesto
         private DevExpress.XtraLayout.LayoutControlItem grdConsumoitem;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem btnCargarInfoitem;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
     }
 }
