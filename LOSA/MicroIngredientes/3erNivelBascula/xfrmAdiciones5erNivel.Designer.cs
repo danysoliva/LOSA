@@ -1,7 +1,7 @@
 ﻿
 namespace LOSA.MicroIngredientes
 {
-    partial class xfrmAdiciones3erNivel
+    partial class xfrmAdiciones5erNivel
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace LOSA.MicroIngredientes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmAdiciones3erNivel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmAdiciones5erNivel));
             this.dsMicrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.txtOrden1 = new System.Windows.Forms.TextBox();
@@ -87,7 +87,6 @@ namespace LOSA.MicroIngredientes
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.timer_LecturaTolvaBascula = new System.Windows.Forms.Timer(this.components);
             this.cmdRefrescar = new DevExpress.XtraEditors.SimpleButton();
-            this.timerAlarmaBit = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCodBarra.Properties)).BeginInit();
@@ -524,7 +523,6 @@ namespace LOSA.MicroIngredientes
             this.cmdFinalizarBatch.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdFinalizarBatch.Appearance.Options.UseBackColor = true;
             this.cmdFinalizarBatch.Appearance.Options.UseFont = true;
-            this.cmdFinalizarBatch.Enabled = false;
             this.cmdFinalizarBatch.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.cmdFinalizarBatch.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdFinalizarBatch.ImageOptions.SvgImage")));
             this.cmdFinalizarBatch.Location = new System.Drawing.Point(1004, 117);
@@ -672,12 +670,7 @@ namespace LOSA.MicroIngredientes
             this.cmdRefrescar.Text = "Refrescar";
             this.cmdRefrescar.Click += new System.EventHandler(this.cmdRefrescar_Click);
             // 
-            // timerAlarmaBit
-            // 
-            this.timerAlarmaBit.Interval = 4500;
-            this.timerAlarmaBit.Tick += new System.EventHandler(this.timerAlarmaBit_Tick);
-            // 
-            // xfrmAdiciones3erNivel
+            // xfrmAdiciones5erNivel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -721,7 +714,7 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.txtOrden1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "xfrmAdiciones3erNivel";
+            this.Name = "xfrmAdiciones5erNivel";
             ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCodBarra.Properties)).EndInit();
@@ -791,6 +784,5 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private System.Windows.Forms.Timer timer_LecturaTolvaBascula;
         private DevExpress.XtraEditors.SimpleButton cmdRefrescar;
-        private System.Windows.Forms.Timer timerAlarmaBit;
     }
 }

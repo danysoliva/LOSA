@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace LOSA.MicroIngredientes
 {
-    public partial class xfrmAdiciones3erNivel : DevExpress.XtraEditors.XtraForm
+    public partial class xfrmAdiciones5erNivel : DevExpress.XtraEditors.XtraForm
     {
         long order_id;
         long order_id_first_mix;
@@ -30,7 +30,7 @@ namespace LOSA.MicroIngredientes
         string CodigoBarraLeido;
         int IdRwLeida;
 
-        public xfrmAdiciones3erNivel()
+        public xfrmAdiciones5erNivel()
         {
             InitializeComponent();
             //LoadHeader();
@@ -93,7 +93,7 @@ namespace LOSA.MicroIngredientes
                                 txtBatchTotal1.Text = dr.GetInt32(7).ToString();
 
                             if (!dr.IsDBNull(dr.GetOrdinal("order_id")))
-                                order_id_first_mix=order_id = dr.GetInt64(8);
+                                order_id = dr.GetInt64(8);
                         }
 
                         if (dr.GetInt32(4) == 0 && dr.GetInt32(0) == 1)
@@ -302,13 +302,16 @@ namespace LOSA.MicroIngredientes
                         return;
                     }
 
+                    xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, 0, teCodBarra.Text, alimentacionTolva.IdMP);
+
+                    bool batchCompletados;
                     int tipo_pesaje = alimentacionTolva.TipoPesaje;
 
-                    if (alimentacionTolva.TipoPesaje == 1)//1=Nucleo, 2=Individuales
-                    {
-                        CajaDialogo.Error("Solo se permite escanear materia prima individual para adicion en mezclado!");
-                        return;
-                    }
+                    //if(alimentacionTolva.TipoPesaje == 1)//1=Nucleo, 2=Individuales
+                    //{
+                    //    CajaDialogo.Error();
+                    //    return;
+                    //}
 
                     try
                     {
@@ -319,15 +322,20 @@ namespace LOSA.MicroIngredientes
                             return;
                         }
 
-                        MateriaPrima mp = new MateriaPrima();
-                        if (mp.RecuperarRegistro_MPACS_For_IDRM_APMS(alimentacionTolva.IdMP))
+
+                        if (frm.ShowDialog() == DialogResult.OK)
                         {
-                            txtMateriaPrimaEscaneada.Text = mp.CodeMP_SAP + " - " + mp.NameComercial;
-                            IdRwLeida = alimentacionTolva.IdMP;
+                            MateriaPrima mp = new MateriaPrima();
+                            if (mp.RecuperarRegistro_MPACS_For_IDRM_APMS(frm.mp_id))
+                            {
+                                txtMateriaPrimaEscaneada.Text = mp.CodeMP_SAP + " - " + mp.NameComercial;
+                                IdRwLeida = frm.mp_id;
+                            }
+                            CodigoBarraLeido = teCodBarra.Text;
+                            teCodBarra.Text = "";
+                            teCodBarra.Focus();
+
                         }
-                        CodigoBarraLeido = teCodBarra.Text;
-                        teCodBarra.Text = "";
-                        teCodBarra.Focus();
 
                     }
                     catch (Exception ex)
@@ -402,61 +410,29 @@ namespace LOSA.MicroIngredientes
                 {
                     if (IdRwLeida > 0)
                     {
-                        if (PesoActual > 0)
+                        DataOperations dp = new DataOperations();
+                        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
                         {
-                            DataOperations dp = new DataOperations();
-                            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                            cnx.Open();
+
+                            SqlCommand cmd = new SqlCommand("sp_insert_adicionMezclado_acumularBatch_v4", cnx);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            //cmd.Parameters.AddWithValue("@codigo_barra_pesaje_individual", alimentacionTolva.CodigoBarra);
+                            cmd.Parameters.AddWithValue("@codigo_barra_pesaje_individual", CodigoBarraLeido);
+                            cmd.ExecuteScalar();
+
+                            //batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
+                            cnx.Close();
+                        }
+
+
+                        //Gestion de batch
+                        if (IdBatchProceso == 0)
+                        {
+                            //Cremoas uno nuevo
+                            if (order_id_first_mix > 0)
                             {
-                                cnx.Open();
-
-                                SqlCommand cmd = new SqlCommand("sp_insert_adicionMezclado_acumularBatch_v4", cnx);
-                                cmd.CommandType = CommandType.StoredProcedure;
-                                //cmd.Parameters.AddWithValue("@codigo_barra_pesaje_individual", alimentacionTolva.CodigoBarra);
-                                cmd.Parameters.AddWithValue("@codigo_barra_pesaje_individual", CodigoBarraLeido);
-                                cmd.ExecuteScalar();
-
-                                //batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
-                                cnx.Close();
-                            }
-
-
-                            //Gestion de batch
-                            if (IdBatchProceso == 0)
-                            {
-                                //Cremoas uno nuevo
-                                if (order_id_first_mix > 0)
-                                {
-                                    //creamos el batch
-                                    try
-                                    {
-                                        //DataOperations dp = new DataOperations();
-                                        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
-                                        {
-                                            cnx.Open();
-                                            dsMicros.Micros.Clear();
-                                            SqlCommand cmd = new SqlCommand("sp_insert_new_batch_3er_nivel_micros", cnx);
-                                            cmd.CommandType = CommandType.StoredProcedure;
-                                            cmd.Parameters.AddWithValue("@order_id", order_id_first_mix);
-                                            //cmd.Parameters.AddWithValue("@id_usuario", this.colid_usuario);
-                                            IdBatchProceso = Convert.ToInt64(cmd.ExecuteScalar());
-                                            //LoadDataBatchEnProceso();
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        CajaDialogo.Error(ex.Message);
-                                    }
-                                }
-                                else
-                                {
-                                    CajaDialogo.Error("No hay una orden activa en Consola para poder realizar un pesaje!");
-                                    return;
-                                }
-                            }
-
-                            if (order_id_first_mix > 0 && IdBatchProceso > 0 && IdRwLeida > 0)
-                            {
-                                //Permitimos agregar pesajes
+                                //creamos el batch
                                 try
                                 {
                                     //DataOperations dp = new DataOperations();
@@ -464,14 +440,11 @@ namespace LOSA.MicroIngredientes
                                     {
                                         cnx.Open();
                                         dsMicros.Micros.Clear();
-                                        SqlCommand cmd = new SqlCommand("sp_insert_detalle_batch_pesaje_3er_nivel", cnx);
+                                        SqlCommand cmd = new SqlCommand("sp_insert_new_batch_3er_nivel_micros", cnx);
                                         cmd.CommandType = CommandType.StoredProcedure;
-                                        cmd.Parameters.AddWithValue("@id_h", IdBatchProceso);
-                                        cmd.Parameters.AddWithValue("@id_rw", IdRwLeida);
-                                        cmd.Parameters.AddWithValue("@cantidad", PesoActual);
-                                        cmd.Parameters.AddWithValue("@tara", TaraBascula);
+                                        cmd.Parameters.AddWithValue("@order_id", order_id_first_mix);
                                         //cmd.Parameters.AddWithValue("@id_usuario", this.colid_usuario);
-                                        cmd.ExecuteNonQuery();
+                                        IdBatchProceso = Convert.ToInt64(cmd.ExecuteScalar());
                                         //LoadDataBatchEnProceso();
                                     }
                                 }
@@ -485,21 +458,49 @@ namespace LOSA.MicroIngredientes
                                 CajaDialogo.Error("No hay una orden activa en Consola para poder realizar un pesaje!");
                                 return;
                             }
+                        }
 
-                            LoadDataBatchEnProceso();
-                            CodigoBarraLeido = teCodBarra.Text;
-                            teCodBarra.Text = "";
-                            txtMateriaPrimaEscaneada.Text = "";
-                            teCodBarra.Focus();
+                        if (order_id_first_mix > 0 && IdBatchProceso > 0 && IdRwLeida > 0)
+                        {
+                            //Permitimos agregar pesajes
+                            try
+                            {
+                                //DataOperations dp = new DataOperations();
+                                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                                {
+                                    cnx.Open();
+                                    dsMicros.Micros.Clear();
+                                    SqlCommand cmd = new SqlCommand("sp_insert_detalle_batch_pesaje_3er_nivel", cnx);
+                                    cmd.CommandType = CommandType.StoredProcedure;
+                                    cmd.Parameters.AddWithValue("@id_h", IdBatchProceso);
+                                    cmd.Parameters.AddWithValue("@id_rw", IdRwLeida);
+                                    cmd.Parameters.AddWithValue("@cantidad", PesoActual);
+                                    cmd.Parameters.AddWithValue("@tara", TaraBascula);
+                                    //cmd.Parameters.AddWithValue("@id_usuario", this.colid_usuario);
+                                    cmd.ExecuteNonQuery();
+                                    //LoadDataBatchEnProceso();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                CajaDialogo.Error(ex.Message);
+                            }
                         }
                         else
                         {
-                            CajaDialogo.Error("No se ha escaneado ninguna materia prima!");
+                            CajaDialogo.Error("No hay una orden activa en Consola para poder realizar un pesaje!");
+                            return;
                         }
+
+                        LoadDataBatchEnProceso();
+                        CodigoBarraLeido = teCodBarra.Text;
+                        teCodBarra.Text = "";
+                        txtMateriaPrimaEscaneada.Text = "";
+                        teCodBarra.Focus();
                     }
                     else
                     {
-                        CajaDialogo.Error("No se permite guardar lecturas o pesajes menores o iguales a cero!");
+                        CajaDialogo.Error("No se ha escaneado ninguna materia prima!");
                     }
                 }
                 else
@@ -556,11 +557,6 @@ namespace LOSA.MicroIngredientes
             {
                 CajaDialogo.Error("No hay un batch en proceso que se pueda finalizar!");
             }
-        }
-
-        private void timerAlarmaBit_Tick(object sender, EventArgs e)
-        {
-
         }
     }
 }

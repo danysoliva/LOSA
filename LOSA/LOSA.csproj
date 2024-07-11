@@ -2186,6 +2186,12 @@
     <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.Designer.cs">
       <DependentUpon>xfrmAdiciones3erNivel.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones5erNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones5erNivel.Designer.cs">
+      <DependentUpon>xfrmAdiciones5erNivel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\dsMicros.cs">
       <DependentUpon>dsMicros.xsd</DependentUpon>
     </Compile>
@@ -4789,6 +4795,9 @@
     </Compile>
     <EmbeddedResource Include="Compras\frmSeleccionPresupuestoLocal.resx">
       <DependentUpon>frmSeleccionPresupuestoLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.resx">
+      <DependentUpon>xfrmAdiciones3erNivel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presupuesto\DashboardCompras.resx">
       <DependentUpon>DashboardCompras.cs</DependentUpon>
@@ -7948,8 +7957,8 @@
     <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\frmDetalleBatchAD.resx">
       <DependentUpon>frmDetalleBatchAD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.resx">
-      <DependentUpon>xfrmAdiciones3erNivel.cs</DependentUpon>
+    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones5erNivel.resx">
+      <DependentUpon>xfrmAdiciones5erNivel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmAlimentacionPanelMicro_i.resx">
       <DependentUpon>frmAlimentacionPanelMicro_i.cs</DependentUpon>
