@@ -139,6 +139,7 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="ALOSY, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Devart.Data, Version=5.0.3075.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

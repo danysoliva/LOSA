@@ -20,6 +20,7 @@ namespace LOSA.Presupuesto
         SqlCommand cmd;
         SqlDataAdapter adat;
         int IDDetalle = 0;
+        public bool Data = false;
         DataOperations dp = new DataOperations();
         public frmDetalleOC(int idLinea)
         {
@@ -46,13 +47,22 @@ namespace LOSA.Presupuesto
                 dsPresupuesto1.ordenes_autorizadas.Clear();
                 adat.Fill(dsPresupuesto1.ordenes_autorizadas);
 
-                string queryDetalle = @"sp_presupuesto_get_detalle_oc";
-                cmd = new SqlCommand(queryDetalle, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_detalle", IDDetalle);
-                adat = new SqlDataAdapter(cmd);
-                dsPresupuesto1.oc_detalle_exonerada.Clear();
-                adat.Fill(dsPresupuesto1.oc_detalle_exonerada);
+                if (gridView1.RowCount != 0)
+                {
+                    string queryDetalle = @"sp_presupuesto_get_detalle_oc";
+                    cmd = new SqlCommand(queryDetalle, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_detalle", IDDetalle);
+                    adat = new SqlDataAdapter(cmd);
+                    dsPresupuesto1.oc_detalle_exonerada.Clear();
+                    adat.Fill(dsPresupuesto1.oc_detalle_exonerada);
+
+                    Data = true;
+                }
+                else
+                {
+                    Data = false;
+                }           
 
                 gridView2.ExpandAllGroups();
 

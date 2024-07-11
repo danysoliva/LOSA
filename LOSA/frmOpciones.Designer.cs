@@ -640,6 +640,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup14 = new DevExpress.XtraNavBar.NavBarGroup();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -8605,7 +8606,8 @@
             this.navBarControl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl5.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup2,
-            this.navBarGroup13});
+            this.navBarGroup13,
+            this.navBarGroup14});
             this.navBarControl5.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navOrdenCompra,
             this.navBarItem9,
@@ -8743,8 +8745,7 @@
             this.navBarGroup13.Caption = "Presupesto";
             this.navBarGroup13.Expanded = true;
             this.navBarGroup13.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroup13.Name = "navBarGroup13";
             // 
             // navBarItem3
@@ -8768,7 +8769,7 @@
             this.navBarItem6.AppearanceHotTracked.Options.UseFont = true;
             this.navBarItem6.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 12.25F);
             this.navBarItem6.AppearancePressed.Options.UseFont = true;
-            this.navBarItem6.Caption = "Presupuesto Reportes";
+            this.navBarItem6.Caption = "Dashboard Compras";
             this.navBarItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem6.ImageOptions.SvgImage")));
             this.navBarItem6.Name = "navBarItem6";
             this.navBarItem6.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem6_LinkClicked_1);
@@ -9217,6 +9218,18 @@
             this.navBarItem5.Caption = "Base Datos Consola";
             this.navBarItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem5.ImageOptions.SvgImage")));
             this.navBarItem5.Name = "navBarItem5";
+            // 
+            // navBarGroup14
+            // 
+            this.navBarGroup14.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup14.Appearance.Options.UseFont = true;
+            this.navBarGroup14.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup14.AppearancePressed.Options.UseFont = true;
+            this.navBarGroup14.Caption = "Reportes ";
+            this.navBarGroup14.Expanded = true;
+            this.navBarGroup14.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
+            this.navBarGroup14.Name = "navBarGroup14";
             // 
             // frmOpciones
             // 
@@ -9896,5 +9909,6 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup14;
     }
 }

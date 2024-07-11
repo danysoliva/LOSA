@@ -1802,7 +1802,10 @@ namespace LOSA.Compras
                             cmd.Parameters.AddWithValue("@U_incoterm", DBNull.Value);
                         else
                             cmd.Parameters.AddWithValue("@U_incoterm", comboBoxIntercom.Text.Trim());
-                        cmd.Parameters.AddWithValue("@TasaCambio", Convert.ToDecimal(txtTasaCambio.EditValue));
+                        if (Convert.ToDecimal(txtTasaCambio.EditValue) == 0)
+                            cmd.Parameters.AddWithValue("@TasaCambio", GetTasaCambio());
+                        else
+                            cmd.Parameters.AddWithValue("@TasaCambio", Convert.ToDecimal(txtTasaCambio.EditValue));
 
                         int id_header = Convert.ToInt32(cmd.ExecuteScalar());
 

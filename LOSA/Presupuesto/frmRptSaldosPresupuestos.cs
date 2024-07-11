@@ -55,7 +55,16 @@ namespace LOSA.Presupuesto
             if(row.id_d_linea > 0)
             {
                 frmDetalleOC frm = new frmDetalleOC(row.id_d_linea);
-                frm.ShowDialog();
+                if (frm.Data)
+                {
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    CajaDialogo.Information("No hay Informacion!");
+                    return;
+                }
+                
             }
         }
 

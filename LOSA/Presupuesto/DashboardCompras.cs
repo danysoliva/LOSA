@@ -35,13 +35,14 @@ namespace LOSA.Presupuesto
                 return;
             }
 
-            CargarCantidadCotizacionXOC();
+            CargarGraficas();
             
         }
 
-        private void CargarCantidadCotizacionXOC()
+        private void CargarGraficas()
         {
-            //Dashboard Pie
+
+            #region CargarPie - %OCconCotizaciones
             try
             {
                 DateTime Mes = Convert.ToDateTime(barEditItemMes.EditValue);
@@ -63,6 +64,44 @@ namespace LOSA.Presupuesto
             {
                 CajaDialogo.Error(ex.Message);
             }
+            #endregion
+
+            #region CargarDash - Ahorros Generados - Descuentos
+            try
+            {
+                DateTime Mes = Convert.ToDateTime(barEditItemMes.EditValue);
+                DateTime Anio = Convert.ToDateTime(barEditItemAnio.EditValue);
+
+                string query = @"sp_ahorros_get_ahorros_generados_Descuentos";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@anio", Anio.Year);
+                cmd.Parameters.AddWithValue("@mes", Mes.Month);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsPresupuesto1.ahorros_generados.Clear();
+                adat.Fill(dsPresupuesto1.ahorros_generados);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            #endregion
+        }
+
+        private void barButtonDetalleOC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos();
+            frm.ShowDialog();
+        }
+
+        private void barbtnConsumoSaldos_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos();
+            frm.ShowDialog();
         }
     }
 }
