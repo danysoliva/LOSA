@@ -2170,6 +2170,29 @@
     <Compile Include="MDIParentFormLOSA.Designer.cs">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\dsBatchActual.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBatchActual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\frmDetalleBatchAD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\frmDetalleBatchAD.Designer.cs">
+      <DependentUpon>frmDetalleBatchAD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.Designer.cs">
+      <DependentUpon>xfrmAdiciones3erNivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones5erNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones5erNivel.Designer.cs">
+      <DependentUpon>xfrmAdiciones5erNivel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\dsMicros.cs">
       <DependentUpon>dsMicros.xsd</DependentUpon>
     </Compile>
@@ -4774,6 +4797,9 @@
     <EmbeddedResource Include="Compras\frmSeleccionPresupuestoLocal.resx">
       <DependentUpon>frmSeleccionPresupuestoLocal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones3erNivel.resx">
+      <DependentUpon>xfrmAdiciones3erNivel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presupuesto\DashboardCompras.resx">
       <DependentUpon>DashboardCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -5089,6 +5115,17 @@
     </None>
     <None Include="Logistica\dsCierreMes.xss">
       <DependentUpon>dsCierreMes.xsd</DependentUpon>
+    </None>
+    <None Include="MicroIngredientes\3erNivelBascula\dsBatchActual.xsc">
+      <DependentUpon>dsBatchActual.xsd</DependentUpon>
+    </None>
+    <None Include="MicroIngredientes\3erNivelBascula\dsBatchActual.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBatchActual.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MicroIngredientes\3erNivelBascula\dsBatchActual.xss">
+      <DependentUpon>dsBatchActual.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\ACSDataSet2.xsc">
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
@@ -7917,6 +7954,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\frmDetalleBatchAD.resx">
+      <DependentUpon>frmDetalleBatchAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\3erNivelBascula\xfrmAdiciones5erNivel.resx">
+      <DependentUpon>xfrmAdiciones5erNivel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmAlimentacionPanelMicro_i.resx">
       <DependentUpon>frmAlimentacionPanelMicro_i.cs</DependentUpon>

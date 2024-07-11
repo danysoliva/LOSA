@@ -32,6 +32,7 @@ namespace LOSA.ACS.RRHH.Informes
             DevExpress.XtraPrinting.Shape.ShapeRectangle shapeRectangle1 = new DevExpress.XtraPrinting.Shape.ShapeRectangle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptVoucher14vo));
             DevExpress.XtraPrinting.Shape.ShapeRectangle shapeRectangle2 = new DevExpress.XtraPrinting.Shape.ShapeRectangle();
+            DevExpress.XtraReports.UI.XRWatermark xrWatermark1 = new DevExpress.XtraReports.UI.XRWatermark();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
@@ -641,7 +642,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel30.SizeF = new System.Drawing.SizeF(186.354F, 23.00002F);
             this.xrLabel30.StylePriority.UseFont = false;
             this.xrLabel30.StylePriority.UseTextAlignment = false;
-            this.xrLabel30.Text = "04/DIC/2023";
+            this.xrLabel30.Text = "07/JUN/2024";
             this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel29
@@ -798,7 +799,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel18.SizeF = new System.Drawing.SizeF(572.9165F, 20.5625F);
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
-            this.xrLabel18.Text = "PLANILLA DE DECIMO TERCER MES DE SALARIO";
+            this.xrLabel18.Text = "PLANILLA DE DECIMO CUARTO MES DE SALARIO";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLine2
@@ -1225,7 +1226,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel15.SizeF = new System.Drawing.SizeF(186.354F, 23.00002F);
             this.xrLabel15.StylePriority.UseFont = false;
             this.xrLabel15.StylePriority.UseTextAlignment = false;
-            this.xrLabel15.Text = "04/DIC/2023";
+            this.xrLabel15.Text = "07/JUN/2024";
             this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel14
@@ -1382,7 +1383,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel3.SizeF = new System.Drawing.SizeF(572.9165F, 20.56249F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "PLANILLA DE DECIMO TERCER MES DE SALARIO";
+            this.xrLabel3.Text = "PLANILLA DE DECIMO CUARTO MES DE SALARIO";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLine1
@@ -1448,7 +1449,9 @@ namespace LOSA.ACS.RRHH.Informes
             this.DataSource = this.dsInformesRRHH1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Margins = new DevExpress.Drawing.DXMargins(50F, 81F, 24.47917F, 0F);
-            this.Version = "23.1";
+            this.Version = "23.2";
+            xrWatermark1.Id = "Watermark1";
+            this.Watermarks.Add(xrWatermark1);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
