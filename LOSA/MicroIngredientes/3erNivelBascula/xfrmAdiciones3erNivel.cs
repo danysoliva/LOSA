@@ -560,6 +560,36 @@ namespace LOSA.MicroIngredientes
 
         private void timerAlarmaBit_Tick(object sender, EventArgs e)
         {
+            //Lectura del bit desde el PLC
+            bool BitInicio = false;
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    dsMicros.Micros.Clear();
+                    SqlCommand cmd = new SqlCommand("sp_get_recuperar_lectura_bit_alarma_3er_nivel", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@id_h", IdBatchProceso);
+                    BitInicio = Convert.ToBoolean(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            if(BitInicio && TaraBascula > 0)
+            {
+                cmdFinalizarBatch.Enabled = true;
+            }
+            else
+            {
+                cmdFinalizarBatch.Enabled = false;
+            }
+
 
         }
     }
