@@ -1157,7 +1157,7 @@ namespace LOSA.Presupuesto
             this.repositoryItemRadioGroup1.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Materia Prima", true, null, "filterMp"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Compras Nacionales", true, null, "filterNacional"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((long)(3)), "Todas", true, null, "filterAll")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(3, "Todas", true, null, "filterAll")});
             this.repositoryItemRadioGroup1.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
             this.repositoryItemRadioGroup1.Name = "repositoryItemRadioGroup1";
             // 

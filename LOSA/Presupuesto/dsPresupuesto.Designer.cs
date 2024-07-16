@@ -56,9 +56,7 @@ namespace LOSA.Presupuesto {
         
         private detalle_ahorroDataTable tabledetalle_ahorro;
         
-        private global::System.Data.DataRelation relationFK_ordenes_autorizadas_oc_detalle_exonerada;
-        
-        private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+        private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.ExcludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -556,7 +554,6 @@ namespace LOSA.Presupuesto {
                     this.tabledetalle_ahorro.InitVars();
                 }
             }
-            this.relationFK_ordenes_autorizadas_oc_detalle_exonerada = this.Relations["FK_ordenes_autorizadas_oc_detalle_exonerada"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -566,7 +563,7 @@ namespace LOSA.Presupuesto {
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/dsPresupuesto.xsd";
             this.EnforceConstraints = true;
-            this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.ExcludeSchema;
             this.tablepresupuestos_h = new presupuestos_hDataTable();
             base.Tables.Add(this.tablepresupuestos_h);
             this.tablepresupuesto_estados = new presupuesto_estadosDataTable();
@@ -604,13 +601,9 @@ namespace LOSA.Presupuesto {
                         this.tableordenes_autorizadas.id_hColumn}, new global::System.Data.DataColumn[] {
                         this.tableoc_detalle_exonerada.id_orden_hColumn});
             this.tableoc_detalle_exonerada.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_ordenes_autorizadas_oc_detalle_exonerada = new global::System.Data.DataRelation("FK_ordenes_autorizadas_oc_detalle_exonerada", new global::System.Data.DataColumn[] {
-                        this.tableordenes_autorizadas.id_hColumn}, new global::System.Data.DataColumn[] {
-                        this.tableoc_detalle_exonerada.id_orden_hColumn}, false);
-            this.Relations.Add(this.relationFK_ordenes_autorizadas_oc_detalle_exonerada);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4180,10 +4173,10 @@ namespace LOSA.Presupuesto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public oc_detalle_exoneradaRow Addoc_detalle_exoneradaRow(ordenes_autorizadasRow parentordenes_autorizadasRowByFK_ordenes_autorizadas_oc_detalle_exonerada, string capitulo, string partida_arancelaria, string itemcode, string descripcion_articulo, decimal cantidad, decimal precio_por_unidad, string indicador_impuesto, decimal total, decimal isv, int id_detalle_presupuesto, string presupuesto_descripcion, string moneda) {
+            public oc_detalle_exoneradaRow Addoc_detalle_exoneradaRow(int id_orden_h, string capitulo, string partida_arancelaria, string itemcode, string descripcion_articulo, decimal cantidad, decimal precio_por_unidad, string indicador_impuesto, decimal total, decimal isv, int id_detalle_presupuesto, string presupuesto_descripcion, string moneda) {
                 oc_detalle_exoneradaRow rowoc_detalle_exoneradaRow = ((oc_detalle_exoneradaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        id_orden_h,
                         capitulo,
                         partida_arancelaria,
                         itemcode,
@@ -4196,9 +4189,6 @@ namespace LOSA.Presupuesto {
                         id_detalle_presupuesto,
                         presupuesto_descripcion,
                         moneda};
-                if ((parentordenes_autorizadasRowByFK_ordenes_autorizadas_oc_detalle_exonerada != null)) {
-                    columnValuesArray[0] = parentordenes_autorizadasRowByFK_ordenes_autorizadas_oc_detalle_exonerada[0];
-                }
                 rowoc_detalle_exoneradaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowoc_detalle_exoneradaRow);
                 return rowoc_detalle_exoneradaRow;
@@ -7837,17 +7827,6 @@ namespace LOSA.Presupuesto {
             public void SetU_AquaExoneracionNull() {
                 this[this.tableordenes_autorizadas.U_AquaExoneracionColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public oc_detalle_exoneradaRow[] Getoc_detalle_exoneradaRows() {
-                if ((this.Table.ChildRelations["FK_ordenes_autorizadas_oc_detalle_exonerada"] == null)) {
-                    return new oc_detalle_exoneradaRow[0];
-                }
-                else {
-                    return ((oc_detalle_exoneradaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ordenes_autorizadas_oc_detalle_exonerada"])));
-                }
-            }
         }
         
         /// <summary>
@@ -8070,17 +8049,6 @@ namespace LOSA.Presupuesto {
                 }
                 set {
                     this[this.tableoc_detalle_exonerada.monedaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ordenes_autorizadasRow ordenes_autorizadasRow {
-                get {
-                    return ((ordenes_autorizadasRow)(this.GetParentRow(this.Table.ParentRelations["FK_ordenes_autorizadas_oc_detalle_exonerada"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ordenes_autorizadas_oc_detalle_exonerada"]);
                 }
             }
             

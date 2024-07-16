@@ -31,11 +31,11 @@ namespace LOSA.Presupuesto
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRptSaldosPresupuestos));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grdPresipuesto = new DevExpress.XtraEditors.GridLookUpEdit();
             this.presupuestoActivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPresupuesto1 = new LOSA.Presupuesto.dsPresupuesto();
@@ -67,6 +67,7 @@ namespace LOSA.Presupuesto
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltipo_orden = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescuentoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             this.btnCargarAhorros = new DevExpress.XtraEditors.SimpleButton();
             this.dtDesdeAhorros = new DevExpress.XtraEditors.DateEdit();
@@ -88,7 +89,6 @@ namespace LOSA.Presupuesto
             this.btnCargarInfoitem = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnCargarInfo1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnExport1 = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresipuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestoActivoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPresupuesto1)).BeginInit();
@@ -351,9 +351,9 @@ namespace LOSA.Presupuesto
             // repoVerDetalle
             // 
             this.repoVerDetalle.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repoVerDetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repoVerDetalle.Name = "repoVerDetalle";
             this.repoVerDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repoVerDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoVerDetalle_ButtonClick);
@@ -487,6 +487,15 @@ namespace LOSA.Presupuesto
             this.coldescuentoDolares.VisibleIndex = 7;
             this.coldescuentoDolares.Width = 157;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Fecha Conta.";
+            this.gridColumn2.FieldName = "DocDate";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 8;
+            // 
             // btnExport
             // 
             this.btnExport.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -580,7 +589,7 @@ namespace LOSA.Presupuesto
             // 
             this.xtraTabControl1item.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1item.Name = "xtraTabControl1item";
-            this.xtraTabControl1item.SelectedTabPage = this.TabAhorrosGenerados;
+            this.xtraTabControl1item.SelectedTabPage = this.TabConsumoSaldositem;
             this.xtraTabControl1item.Size = new System.Drawing.Size(1441, 797);
             this.xtraTabControl1item.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.TabConsumoSaldositem,
@@ -725,15 +734,6 @@ namespace LOSA.Presupuesto
             this.btnExport1.Size = new System.Drawing.Size(469, 36);
             this.btnExport1.TabIndex = 102;
             this.btnExport1.Text = "Exportar";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Fecha Conta.";
-            this.gridColumn2.FieldName = "DocDate";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.ReadOnly = true;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 8;
             // 
             // frmRptSaldosPresupuestos
             // 

@@ -67,7 +67,7 @@ namespace LOSA.Presupuesto
                     Data = false;
                 }           
 
-                gridView2.ExpandAllGroups();
+                gridView1.ExpandAllGroups();
 
                 conn.Close();
             }

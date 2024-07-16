@@ -149,7 +149,7 @@ namespace LOSA.AlmacenesExterno
             oc_h.Factura = txtfactura.Text;
             var gv = (GridView)gcIngreso.FocusedView;
 
-                       
+            bool Proceder = false;           
             foreach (dsAlmacenesExternos.RevisionOCRow element in dsAlmacenesExternos.RevisionOC)
             {
                 if (element.seleccionar == true)
@@ -203,13 +203,19 @@ namespace LOSA.AlmacenesExterno
 
                     }
 
-                   
+                    Proceder = true;
                 }
-                else
-                {
-                    CajaDialogo.Error("DEBE SELECCIONAR UN ITEM");
-                    return;
-                }
+                //else
+                //{
+                //    CajaDialogo.Error("DEBE SELECCIONAR UN ITEM");
+                //    return;
+                //}
+            }
+
+            if (!Proceder)
+            {
+                CajaDialogo.Error("Debe seleccionar 1 Item!");
+                return;
             }
             xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista, oc_h, UsuarioLogueado);
 
