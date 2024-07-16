@@ -21,10 +21,13 @@ namespace LOSA.Presupuesto
         DataOperations dp = new DataOperations();
         DateTime Mes;
         DateTime Anio;
+        int filtroDashboard = 3;//TODAS LAS OC
         public DashboardCompras()
         {
             InitializeComponent();
 
+            barRadioGroup.EditValue = filtroDashboard;
+            
             barEditItemAnio.EditValue = barEditItemMes.EditValue = dp.Now();
             Mes = Convert.ToDateTime(barEditItemMes.EditValue);
             Anio = Convert.ToDateTime(barEditItemAnio.EditValue);
@@ -48,15 +51,14 @@ namespace LOSA.Presupuesto
             #region CargarPie - %OCconCotizaciones
             try
             {
-                
-
-                string query = @"sp_get_dashboard_cotizaciones";
+                string query = @"sp_get_dashboard_cotizacionesv2";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@anio", Anio.Year);
                 cmd.Parameters.AddWithValue("@mes", Mes.Month);
+                cmd.Parameters.AddWithValue("@filtro", filtroDashboard);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsPresupuesto1.conteo_cotizacionesxoc.Clear();
                 adat.Fill(dsPresupuesto1.conteo_cotizacionesxoc);
@@ -74,13 +76,14 @@ namespace LOSA.Presupuesto
                 //DateTime Mes = Convert.ToDateTime(barEditItemMes.EditValue);
                 //DateTime Anio = Convert.ToDateTime(barEditItemAnio.EditValue);
 
-                string query = @"sp_ahorros_get_ahorros_generados_Descuentos";
+                string query = @"[sp_ahorros_get_ahorros_generados_DescuentosV2]";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@anio", Anio.Year);
                 cmd.Parameters.AddWithValue("@mes", Mes.Month);
+                cmd.Parameters.AddWithValue("@filtro", filtroDashboard);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsPresupuesto1.ahorros_generados.Clear();
                 adat.Fill(dsPresupuesto1.ahorros_generados);
@@ -104,6 +107,13 @@ namespace LOSA.Presupuesto
         {
             frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos(frmRptSaldosPresupuestos.TipoReporte.SaldosPresupuestos, Anio.Year, Mes.Month);
             frm.ShowDialog();
+        }
+
+        private void barRadioGroup_EditValueChanged(object sender, EventArgs e)
+        {
+            filtroDashboard = Convert.ToInt32(barRadioGroup.EditValue);
+
+            CargarGraficas();
         }
     }
 }

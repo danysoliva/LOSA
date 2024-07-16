@@ -205,6 +205,8 @@ namespace LOSA.Compras
             this.reposGridTipoRazon = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.tiposrazonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_tipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrazon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposProv = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -212,8 +214,6 @@ namespace LOSA.Compras
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
-            this.colid_tipo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colrazon = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPresupuesto.Properties)).BeginInit();
@@ -1105,9 +1105,9 @@ namespace LOSA.Compras
             // 
             this.cmdAddDetalle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAddDetalle.ImageOptions.Image")));
             this.cmdAddDetalle.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdAddDetalle.Location = new System.Drawing.Point(27, 0);
+            this.cmdAddDetalle.Location = new System.Drawing.Point(25, 2);
             this.cmdAddDetalle.Name = "cmdAddDetalle";
-            this.cmdAddDetalle.Size = new System.Drawing.Size(33, 28);
+            this.cmdAddDetalle.Size = new System.Drawing.Size(35, 25);
             this.cmdAddDetalle.TabIndex = 67;
             this.cmdAddDetalle.Tag = "Agregar Item o Servicio";
             this.cmdAddDetalle.ToolTip = "Guardar";
@@ -2000,6 +2000,19 @@ namespace LOSA.Compras
             this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
+            // colid_tipo
+            // 
+            this.colid_tipo.FieldName = "id_tipo";
+            this.colid_tipo.Name = "colid_tipo";
+            // 
+            // colrazon
+            // 
+            this.colrazon.Caption = "Seleccione";
+            this.colrazon.FieldName = "razon";
+            this.colrazon.Name = "colrazon";
+            this.colrazon.Visible = true;
+            this.colrazon.VisibleIndex = 0;
+            // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Proveedor";
@@ -2041,19 +2054,6 @@ namespace LOSA.Compras
             // xtraSaveFileDialog1
             // 
             this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
-            // 
-            // colid_tipo
-            // 
-            this.colid_tipo.FieldName = "id_tipo";
-            this.colid_tipo.Name = "colid_tipo";
-            // 
-            // colrazon
-            // 
-            this.colrazon.Caption = "Seleccione";
-            this.colrazon.FieldName = "razon";
-            this.colrazon.Name = "colrazon";
-            this.colrazon.Visible = true;
-            this.colrazon.VisibleIndex = 0;
             // 
             // frmOrdenesCompraMain
             // 
