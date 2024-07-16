@@ -39,6 +39,7 @@ namespace LOSA.MicroIngredientes
             LoadDataBatchEnProceso();
             LoadDataIndividual();
             timer1.Enabled = true;
+            timerAlarmaBit.Start();
         }
 
         public void LoadData()

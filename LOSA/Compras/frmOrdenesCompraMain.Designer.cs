@@ -8,16 +8,16 @@ namespace LOSA.Compras
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -44,6 +44,11 @@ namespace LOSA.Compras
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnPresupuesto = new DevExpress.XtraEditors.ButtonEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -187,19 +192,28 @@ namespace LOSA.Compras
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnOpen = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGridTipoDoc = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.tipodocsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_doc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGridTipoRazon = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.tiposrazonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposProv = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
-            this.reposGridTipoDoc = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tipodocsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colid_doc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrazon = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPresupuesto.Properties)).BeginInit();
@@ -254,10 +268,14 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposGridTipoDoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipodocsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGridTipoRazon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposrazonesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposProv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -321,9 +339,9 @@ namespace LOSA.Compras
             this.btnPresupuesto.Name = "btnPresupuesto";
             this.btnPresupuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnPresupuesto.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
             this.btnPresupuesto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, true, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, true, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnPresupuesto.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnPresupuesto.Properties.ReadOnly = true;
             this.btnPresupuesto.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -897,9 +915,9 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
+            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(336, 22);
@@ -1714,7 +1732,9 @@ namespace LOSA.Compras
             this.btnDelete,
             this.btnDownload,
             this.btnOpen,
-            this.reposGridTipoDoc});
+            this.reposGridTipoDoc,
+            this.reposGridTipoRazon,
+            this.reposProv});
             this.gcFiles.Size = new System.Drawing.Size(1506, 502);
             this.gcFiles.TabIndex = 0;
             this.gcFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1737,7 +1757,10 @@ namespace LOSA.Compras
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
-            this.gridColumn11});
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14});
             this.gvFiles.GridControl = this.gcFiles;
             this.gvFiles.Name = "gvFiles";
             this.gvFiles.OptionsView.ShowGroupPanel = false;
@@ -1757,7 +1780,7 @@ namespace LOSA.Compras
             this.colfecha_registro.OptionsColumn.ReadOnly = true;
             this.colfecha_registro.Visible = true;
             this.colfecha_registro.VisibleIndex = 0;
-            this.colfecha_registro.Width = 65;
+            this.colfecha_registro.Width = 68;
             // 
             // colpath
             // 
@@ -1772,7 +1795,7 @@ namespace LOSA.Compras
             this.colfile_name.OptionsColumn.ReadOnly = true;
             this.colfile_name.Visible = true;
             this.colfile_name.VisibleIndex = 1;
-            this.colfile_name.Width = 318;
+            this.colfile_name.Width = 169;
             // 
             // colid_user
             // 
@@ -1785,8 +1808,6 @@ namespace LOSA.Compras
             this.coluser.FieldName = "user";
             this.coluser.Name = "coluser";
             this.coluser.OptionsColumn.ReadOnly = true;
-            this.coluser.Visible = true;
-            this.coluser.VisibleIndex = 2;
             this.coluser.Width = 188;
             // 
             // colid_orden_compra_h
@@ -1802,7 +1823,7 @@ namespace LOSA.Compras
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 10;
-            this.gridColumn4.Width = 154;
+            this.gridColumn4.Width = 144;
             // 
             // btnDelete
             // 
@@ -1821,7 +1842,7 @@ namespace LOSA.Compras
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 9;
-            this.gridColumn5.Width = 102;
+            this.gridColumn5.Width = 114;
             // 
             // btnDownload
             // 
@@ -1840,7 +1861,7 @@ namespace LOSA.Compras
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 8;
-            this.gridColumn6.Width = 85;
+            this.gridColumn6.Width = 100;
             // 
             // btnOpen
             // 
@@ -1858,9 +1879,46 @@ namespace LOSA.Compras
             this.gridColumn3.ColumnEdit = this.reposGridTipoDoc;
             this.gridColumn3.FieldName = "id_tipo_doc";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 126;
+            // 
+            // reposGridTipoDoc
+            // 
+            this.reposGridTipoDoc.AutoHeight = false;
+            this.reposGridTipoDoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGridTipoDoc.DataSource = this.tipodocsBindingSource;
+            this.reposGridTipoDoc.DisplayMember = "descripcion";
+            this.reposGridTipoDoc.Name = "reposGridTipoDoc";
+            this.reposGridTipoDoc.PopupView = this.gridView4;
+            this.reposGridTipoDoc.ValueMember = "id_doc";
+            // 
+            // tipodocsBindingSource
+            // 
+            this.tipodocsBindingSource.DataMember = "tipo_docs";
+            this.tipodocsBindingSource.DataSource = this.dsCompras1;
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_doc,
+            this.coldescripcion2});
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_doc
+            // 
+            this.colid_doc.FieldName = "id_doc";
+            this.colid_doc.Name = "colid_doc";
+            // 
+            // coldescripcion2
+            // 
+            this.coldescripcion2.Caption = "Tipo";
+            this.coldescripcion2.FieldName = "descripcion";
+            this.coldescripcion2.Name = "coldescripcion2";
+            this.coldescripcion2.Visible = true;
+            this.coldescripcion2.VisibleIndex = 0;
             // 
             // gridColumn8
             // 
@@ -1871,7 +1929,7 @@ namespace LOSA.Compras
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 4;
-            this.gridColumn8.Width = 136;
+            this.gridColumn8.Width = 132;
             // 
             // gridColumn9
             // 
@@ -1882,7 +1940,7 @@ namespace LOSA.Compras
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
-            this.gridColumn9.Width = 108;
+            this.gridColumn9.Width = 104;
             // 
             // gridColumn10
             // 
@@ -1894,7 +1952,7 @@ namespace LOSA.Compras
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
-            this.gridColumn10.Width = 108;
+            this.gridColumn10.Width = 104;
             // 
             // gridColumn11
             // 
@@ -1903,7 +1961,70 @@ namespace LOSA.Compras
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 7;
-            this.gridColumn11.Width = 91;
+            this.gridColumn11.Width = 101;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Razon";
+            this.gridColumn12.ColumnEdit = this.reposGridTipoRazon;
+            this.gridColumn12.FieldName = "razon_seleccionCoti";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 3;
+            this.gridColumn12.Width = 144;
+            // 
+            // reposGridTipoRazon
+            // 
+            this.reposGridTipoRazon.AutoHeight = false;
+            this.reposGridTipoRazon.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGridTipoRazon.DataSource = this.tiposrazonesBindingSource;
+            this.reposGridTipoRazon.DisplayMember = "razon";
+            this.reposGridTipoRazon.Name = "reposGridTipoRazon";
+            this.reposGridTipoRazon.NullText = "";
+            this.reposGridTipoRazon.PopupView = this.gridView5;
+            this.reposGridTipoRazon.ValueMember = "id_tipo";
+            // 
+            // tiposrazonesBindingSource
+            // 
+            this.tiposrazonesBindingSource.DataMember = "tipos_razones";
+            this.tiposrazonesBindingSource.DataSource = this.dsCompras1;
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_tipo,
+            this.colrazon});
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Proveedor";
+            this.gridColumn13.ColumnEdit = this.reposProv;
+            this.gridColumn13.FieldName = "proveedorVista";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 2;
+            this.gridColumn13.Width = 301;
+            // 
+            // reposProv
+            // 
+            this.reposProv.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.reposProv.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposProv.Name = "reposProv";
+            this.reposProv.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposProv_ButtonClick);
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Cod Prov";
+            this.gridColumn14.FieldName = "proveedor";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.ReadOnly = true;
             // 
             // popupMenu2
             // 
@@ -1921,44 +2042,18 @@ namespace LOSA.Compras
             // 
             this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
             // 
-            // reposGridTipoDoc
+            // colid_tipo
             // 
-            this.reposGridTipoDoc.AutoHeight = false;
-            this.reposGridTipoDoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.reposGridTipoDoc.DataSource = this.tipodocsBindingSource;
-            this.reposGridTipoDoc.DisplayMember = "descripcion";
-            this.reposGridTipoDoc.Name = "reposGridTipoDoc";
-            this.reposGridTipoDoc.PopupView = this.gridView4;
-            this.reposGridTipoDoc.ValueMember = "id_doc";
+            this.colid_tipo.FieldName = "id_tipo";
+            this.colid_tipo.Name = "colid_tipo";
             // 
-            // gridView4
+            // colrazon
             // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid_doc,
-            this.coldescripcion2});
-            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
-            // tipodocsBindingSource
-            // 
-            this.tipodocsBindingSource.DataMember = "tipo_docs";
-            this.tipodocsBindingSource.DataSource = this.dsCompras1;
-            // 
-            // colid_doc
-            // 
-            this.colid_doc.FieldName = "id_doc";
-            this.colid_doc.Name = "colid_doc";
-            // 
-            // coldescripcion2
-            // 
-            this.coldescripcion2.Caption = "Tipo";
-            this.coldescripcion2.FieldName = "descripcion";
-            this.coldescripcion2.Name = "coldescripcion2";
-            this.coldescripcion2.Visible = true;
-            this.coldescripcion2.VisibleIndex = 0;
+            this.colrazon.Caption = "Seleccione";
+            this.colrazon.FieldName = "razon";
+            this.colrazon.Name = "colrazon";
+            this.colrazon.Visible = true;
+            this.colrazon.VisibleIndex = 0;
             // 
             // frmOrdenesCompraMain
             // 
@@ -2031,10 +2126,14 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposGridTipoDoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipodocsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGridTipoRazon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposrazonesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposProv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2197,5 +2296,14 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn colid_doc;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGridTipoRazon;
+        private System.Windows.Forms.BindingSource tiposrazonesBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposProv;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tipo;
+        private DevExpress.XtraGrid.Columns.GridColumn colrazon;
     }
 }

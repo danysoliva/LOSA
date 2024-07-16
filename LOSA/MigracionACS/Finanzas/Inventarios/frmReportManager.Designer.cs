@@ -226,7 +226,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
             this.grdv_data.GridControl = this.grdReporte;
             this.grdv_data.Name = "grdv_data";
-            this.grdv_data.OptionsBehavior.Editable = false;
+            this.grdv_data.OptionsBehavior.ReadOnly = true;
             this.grdv_data.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;

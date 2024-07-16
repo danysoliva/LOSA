@@ -106,8 +106,6 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
 
             grdReporte.DataSource = null;
             grdv_data.Columns.Clear();
-
-
             
         }
         void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

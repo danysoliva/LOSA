@@ -306,7 +306,9 @@ namespace LOSA
                             UsuarioLogeado.Idnivel = idNivel2;
                             tabOpciones.TabPages[8].PageVisible = true;
                             tabOpciones.TabPages[9].PageVisible = true;
+                            TabFormulacion.PageVisible = true;
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
+                            
                             break;
                         case 4://Depth With Delta
                             BasicView();
@@ -316,6 +318,7 @@ namespace LOSA
                             tabOpciones.TabPages[7].PageVisible = true;//TabForecasting
                             tabOpciones.TabPages[8].PageVisible = true; 
                             tabOpciones.TabPages[9].PageVisible = true;
+                            tabOpciones.TabPages[10].PageVisible = true;//formulacion
                             tabOpciones.TabPages[12].PageVisible = true;//TabCompras
                             tabOpciones.TabPages[13].PageVisible = true;//Tab de reportes
                             break;
@@ -3052,11 +3055,41 @@ namespace LOSA
         {
             try
             {
-                FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
-                //FML_FF_Main_PanelV2 form = new FML_FF_Main_PanelV2(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
+                        form.MdiParent = this.MdiParent;
+                        form.Show();
+                        break;
+                    default:
+                        break;
+                }
 
-                form.MdiParent = this.MdiParent;
-                form.Show();
+                if (!accesoprevio)
+                {
+                    if (UsuarioLogeado.ValidarNivelPermisos(92))
+                    {
+                        FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
+                        form.MdiParent = this.MdiParent;
+                        form.Show();
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #92");
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -3068,9 +3101,42 @@ namespace LOSA
         {
             try
             {
-                FML_Formulas_v2 fm = new FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
-                fm.MdiParent = this.MdiParent;
-                fm.Show();
+                //bool accesoprevio = false;
+                //int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);
+                //switch (idNivel)
+                //{
+                //    case 1://Basic View
+                //        break;
+                //    case 2://Basic No Autorization
+                //        break;
+                //    case 3://Medium Autorization
+                //        break;
+                //    case 4://Depth With Delta
+                //    case 5://Depth Without Delta
+                //        accesoprevio = true;
+                //        FML_Formulas_v2 fm = new FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
+                //        fm.MdiParent = this.MdiParent;
+                //        fm.Show();
+                //        break;
+                //    default:
+                //        break;
+                //}
+
+                //if (!accesoprevio)
+                //{
+                //    if (UsuarioLogeado.ValidarNivelPermisos(92))
+                //    {
+                        FML_Formulas_v2 fm = new FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
+                        fm.MdiParent = this.MdiParent;
+                        fm.Show();
+                //    }
+                //    else
+                //    {
+                //        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #92");
+                //    }
+                //}
+
+                
             }
             catch (Exception ex)
             {

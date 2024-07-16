@@ -171,10 +171,32 @@ namespace LOSA.RecepcionMP
 
         private void checkBoxSeleccionarTodas_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            var gridView = (GridView)gcMP.FocusedView;
+            int conta = dsRecepcionMPx1.granel.Count;
+
+            for (int i = 0; i < conta; i++)
             {
-                row.seleccionar = checkBoxSeleccionarTodas.Checked;
+                dsRecepcionMPx.granelRow row = (dsRecepcionMPx.granelRow)gridView.GetDataRow(i);
+
+                int r = gridView.GetVisibleRowHandle(i);
+                if (r >= 0)
+                {
+                    if (row != null)
+                    {
+                        row.seleccionar = checkBoxSeleccionarTodas.Checked;
+                    }
+                }
+                else
+                {
+                    if (row != null)
+                        row.seleccionar = false;
+                }
             }
+
+            //foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            //{
+            //    row.seleccionar = checkBoxSeleccionarTodas.Checked;
+            //}
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

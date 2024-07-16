@@ -137,6 +137,8 @@ namespace LOSA.Presupuesto
             // colcantidad
             // 
             this.colcantidad.Caption = "Cantidad";
+            this.colcantidad.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
@@ -168,7 +170,7 @@ namespace LOSA.Presupuesto
             // 
             // coltotal
             // 
-            this.coltotal.Caption = "Total";
+            this.coltotal.Caption = "Total Linea";
             this.coltotal.DisplayFormat.FormatString = "{0:#,###,##0.00}";
             this.coltotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotal.FieldName = "total";
@@ -256,11 +258,13 @@ namespace LOSA.Presupuesto
             // 
             this.colid_h.FieldName = "id_h";
             this.colid_h.Name = "colid_h";
+            this.colid_h.OptionsColumn.ReadOnly = true;
             // 
             // colCardCode
             // 
             this.colCardCode.FieldName = "CardCode";
             this.colCardCode.Name = "colCardCode";
+            this.colCardCode.OptionsColumn.ReadOnly = true;
             this.colCardCode.Visible = true;
             this.colCardCode.VisibleIndex = 1;
             this.colCardCode.Width = 85;
@@ -269,6 +273,7 @@ namespace LOSA.Presupuesto
             // 
             this.colCardName.FieldName = "CardName";
             this.colCardName.Name = "colCardName";
+            this.colCardName.OptionsColumn.ReadOnly = true;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 2;
             this.colCardName.Width = 255;
@@ -277,6 +282,7 @@ namespace LOSA.Presupuesto
             // 
             this.colDocNum.FieldName = "DocNum";
             this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.ReadOnly = true;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
             this.colDocNum.Width = 63;
@@ -285,6 +291,7 @@ namespace LOSA.Presupuesto
             // 
             this.colDocDate.FieldName = "DocDate";
             this.colDocDate.Name = "colDocDate";
+            this.colDocDate.OptionsColumn.ReadOnly = true;
             this.colDocDate.Visible = true;
             this.colDocDate.VisibleIndex = 3;
             this.colDocDate.Width = 67;
@@ -294,6 +301,7 @@ namespace LOSA.Presupuesto
             this.colU_TipoOrden.Caption = "Tipo Orden";
             this.colU_TipoOrden.FieldName = "U_TipoOrden";
             this.colU_TipoOrden.Name = "colU_TipoOrden";
+            this.colU_TipoOrden.OptionsColumn.ReadOnly = true;
             this.colU_TipoOrden.Visible = true;
             this.colU_TipoOrden.VisibleIndex = 4;
             this.colU_TipoOrden.Width = 121;
@@ -303,17 +311,20 @@ namespace LOSA.Presupuesto
             this.colComments.Caption = "Comentario";
             this.colComments.FieldName = "Comments";
             this.colComments.Name = "colComments";
+            this.colComments.OptionsColumn.ReadOnly = true;
             this.colComments.Visible = true;
             this.colComments.VisibleIndex = 5;
             this.colComments.Width = 283;
             // 
             // colDocTotal
             // 
-            this.colDocTotal.Caption = "Total";
+            this.colDocTotal.Caption = "Total OC";
             this.colDocTotal.DisplayFormat.FormatString = "{0:#,###,##0.00}";
             this.colDocTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDocTotal.FieldName = "DocTotal";
             this.colDocTotal.Name = "colDocTotal";
+            this.colDocTotal.OptionsColumn.AllowEdit = false;
+            this.colDocTotal.OptionsColumn.ReadOnly = true;
             this.colDocTotal.Visible = true;
             this.colDocTotal.VisibleIndex = 9;
             this.colDocTotal.Width = 69;
@@ -323,12 +334,14 @@ namespace LOSA.Presupuesto
             this.colsubido_sap.Caption = "Subido";
             this.colsubido_sap.FieldName = "subido_sap";
             this.colsubido_sap.Name = "colsubido_sap";
+            this.colsubido_sap.OptionsColumn.ReadOnly = true;
             // 
             // colestado_name
             // 
             this.colestado_name.Caption = "Estado OC";
             this.colestado_name.FieldName = "estado_name";
             this.colestado_name.Name = "colestado_name";
+            this.colestado_name.OptionsColumn.ReadOnly = true;
             this.colestado_name.Visible = true;
             this.colestado_name.VisibleIndex = 6;
             this.colestado_name.Width = 110;
@@ -337,17 +350,20 @@ namespace LOSA.Presupuesto
             // 
             this.colid_estado.FieldName = "id_estado";
             this.colid_estado.Name = "colid_estado";
+            this.colid_estado.OptionsColumn.ReadOnly = true;
             // 
             // colcreadopor
             // 
             this.colcreadopor.FieldName = "creadopor";
             this.colcreadopor.Name = "colcreadopor";
+            this.colcreadopor.OptionsColumn.ReadOnly = true;
             // 
             // colmoneda
             // 
             this.colmoneda.Caption = "Moneda";
             this.colmoneda.FieldName = "moneda";
             this.colmoneda.Name = "colmoneda";
+            this.colmoneda.OptionsColumn.ReadOnly = true;
             this.colmoneda.Visible = true;
             this.colmoneda.VisibleIndex = 8;
             this.colmoneda.Width = 81;
@@ -357,6 +373,7 @@ namespace LOSA.Presupuesto
             this.colU_AquaExoneracion.Caption = "Regist. Exonerado";
             this.colU_AquaExoneracion.FieldName = "U_AquaExoneracion";
             this.colU_AquaExoneracion.Name = "colU_AquaExoneracion";
+            this.colU_AquaExoneracion.OptionsColumn.ReadOnly = true;
             this.colU_AquaExoneracion.Visible = true;
             this.colU_AquaExoneracion.VisibleIndex = 7;
             this.colU_AquaExoneracion.Width = 110;

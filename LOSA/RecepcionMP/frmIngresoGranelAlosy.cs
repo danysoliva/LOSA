@@ -331,6 +331,8 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+            //
+
             //VALIDACION DE NOMBRE DE LOTE!
             try
             {

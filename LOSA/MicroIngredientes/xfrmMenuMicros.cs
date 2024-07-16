@@ -74,8 +74,8 @@ namespace LOSA.MicroIngredientes
 
         private void cmdAdicionEnMezcla_Click(object sender, EventArgs e)
         {
-            //xfrmAlimentacionTarimaArriba frm = new xfrmAlimentacionTarimaArriba();
-            xfrmAdiciones3erNivel frm = new xfrmAdiciones3erNivel();
+            xfrmAlimentacionTarimaArriba frm = new xfrmAlimentacionTarimaArriba();
+            //xfrmAdiciones3erNivel frm = new xfrmAdiciones3erNivel();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

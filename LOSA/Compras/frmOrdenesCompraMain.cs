@@ -100,6 +100,13 @@ namespace LOSA.Compras
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsCompras1.tipo_docs.Clear();
                 adat.Fill(dsCompras1.tipo_docs);
+
+                SqlCommand cmd1 = new SqlCommand("sp_compras_get_tipos_razones_cotizacion", conn);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("",);
+                SqlDataAdapter adat1 = new SqlDataAdapter(cmd1);
+                dsCompras1.tipos_razones.Clear();
+                adat1.Fill(dsCompras1.tipos_razones);
                 conn.Close();
             }
             catch (Exception ex)
@@ -1509,8 +1516,17 @@ namespace LOSA.Compras
                     {
                         CotizacionSelected = true;
                         TotalCotizacionSelected = item.total;
+                        if (item.razon_seleccionCoti == "0")
+                        {
+                            CajaDialogo.Error("Debe seleccionar una Razon de la seleccion de la Cotizacion!");
+                            return;
+                        }
                     }
-
+                    if (item.proveedor.Length <= 0)
+                    {
+                        CajaDialogo.Error("Debe seleccionar una Proveedor!");
+                        return;
+                    }
 
                 }
 
@@ -1862,7 +1878,7 @@ namespace LOSA.Compras
                             if (Upload(row.path, file_name,row.id))
                             {
                                 cmd.Parameters.Clear();
-                                cmd.CommandText = "usp_UploadFileFromOrdenesComprasV2";
+                                cmd.CommandText = "[usp_UploadFileFromOrdenesComprasV3]";
                                 cmd.Connection = conn;
                                 cmd.Transaction = transaction;
                                 cmd.CommandType = CommandType.StoredProcedure;
@@ -1875,6 +1891,8 @@ namespace LOSA.Compras
                                 cmd.Parameters.AddWithValue("@monto_cotizacion",row.monto_cotizacion);
                                 cmd.Parameters.AddWithValue("@descuento",row.descuento);
                                 cmd.Parameters.AddWithValue("@selected",row.selected);
+                                cmd.Parameters.AddWithValue("@proveedor", row.proveedor);
+                                cmd.Parameters.AddWithValue("@razonCoti", row.razon_seleccionCoti);
                                 cmd.ExecuteNonQuery();
                             }
 
@@ -2012,7 +2030,7 @@ namespace LOSA.Compras
                             if (Upload(row.path, file_name,row.id))
                             {
                                 cmdUpdate.Parameters.Clear();
-                                cmdUpdate.CommandText = "[usp_UploadFileFromOrdenesComprasV2]";
+                                cmdUpdate.CommandText = "usp_UploadFileFromOrdenesComprasV3";
                                 cmdUpdate.Connection = connUpdate;
                                 cmdUpdate.Transaction = transactionUpdate;
                                 cmdUpdate.CommandType = CommandType.StoredProcedure;
@@ -2025,6 +2043,28 @@ namespace LOSA.Compras
                                 cmdUpdate.Parameters.AddWithValue("@monto_cotizacion", row.monto_cotizacion);
                                 cmdUpdate.Parameters.AddWithValue("@descuento", row.descuento);
                                 cmdUpdate.Parameters.AddWithValue("@selected", row.selected);
+                                cmdUpdate.Parameters.AddWithValue("@proveedor", row.proveedor);
+                                cmdUpdate.Parameters.AddWithValue("@razonCoti", row.razon_seleccionCoti);
+                                cmdUpdate.ExecuteNonQuery();
+                            }
+
+                            if (row.id > 0)//Ya existe el registro solo modificaremos!
+                            {
+                                cmdUpdate.Parameters.Clear();
+                                cmdUpdate.CommandText = "usp_UpdateFileFromOrdenesCompras";
+                                cmdUpdate.Connection = connUpdate;
+                                cmdUpdate.Transaction = transactionUpdate;
+                                cmdUpdate.CommandType = CommandType.StoredProcedure;
+                                cmdUpdate.Parameters.AddWithValue("@id", row.id);
+                                cmdUpdate.Parameters.AddWithValue("@id_tipo_doc", row.id_tipo_doc);
+                                cmdUpdate.Parameters.AddWithValue("@monto_cotizacion", row.monto_cotizacion);
+                                cmdUpdate.Parameters.AddWithValue("@descuento", row.descuento);
+                                cmdUpdate.Parameters.AddWithValue("@selected", row.selected);
+                                cmdUpdate.Parameters.AddWithValue("@proveedor", row.proveedor);
+                                if (row.razon_seleccionCoti == "0")
+                                    cmdUpdate.Parameters.AddWithValue("@razonCoti", DBNull.Value);
+                                else
+                                    cmdUpdate.Parameters.AddWithValue("@razonCoti", row.razon_seleccionCoti);
                                 cmdUpdate.ExecuteNonQuery();
                             }
 
@@ -2899,6 +2939,8 @@ namespace LOSA.Compras
                         newRow["monto_cotizacion"] = 0.00;
                         newRow["descuento"] = 0.00;
                         newRow["total"] = 0.00;
+                        newRow["proveedor"] = "";
+                        newRow["razon_seleccionCoti"] = 6;
 
                         if (gvFiles.RowCount == 0)
                             newRow["selected"] = true;
@@ -3159,42 +3201,42 @@ namespace LOSA.Compras
 
         private void gvFiles_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            var gridView = (GridView)gcFiles.FocusedView;
-            var row = (dsCompras.ordenes_compras_archivosRow)gridView.GetFocusedDataRow();
+            //var gridView = (GridView)gcFiles.FocusedView;
+            //var row = (dsCompras.ordenes_compras_archivosRow)gridView.GetFocusedDataRow();
 
-            try
-            {
-                switch (e.Column.FieldName)
-                {
-                    case "monto_cotizacion":
+            //try
+            //{
+            //    switch (e.Column.FieldName)
+            //    {
+            //        case "monto_cotizacion":
 
-                        if (row.Ismonto_cotizacionNull())
-                            row.monto_cotizacion = 0;
+            //            if (row.Ismonto_cotizacionNull())
+            //                row.monto_cotizacion = 0;
 
-                        row.total = row.monto_cotizacion - row.descuento;
-                        break;
+            //            row.total = row.monto_cotizacion - row.descuento;
+            //            break;
 
-                    case "descuento":
+            //        case "descuento":
 
-                        if (row.IsdescuentoNull())
-                            row.monto_cotizacion = 0;
-                        row.total = row.monto_cotizacion - row.descuento;
-                        break;
+            //            if (row.IsdescuentoNull())
+            //                row.monto_cotizacion = 0;
+            //            row.total = row.monto_cotizacion - row.descuento;
+            //            break;
 
-                    default:
-                        break;
-                }
+            //        default:
+            //            break;
+            //    }
 
-                if (row.id > 0)
-                {
-                    ActualizarDetalleArchivos(row.monto_cotizacion, row.descuento, row.id, row.id_tipo_doc);
-                }
+            //    if (row.id > 0)
+            //    {
+            //        ActualizarDetalleArchivos(row.monto_cotizacion, row.descuento, row.id, row.id_tipo_doc);
+            //    }
               
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         private void ActualizarDetalleArchivos(decimal monto_cotizacion, decimal descuento, int id, int idtipoDoc)
@@ -3266,6 +3308,22 @@ namespace LOSA.Compras
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void reposProv_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gcFiles.FocusedView;
+            var row = (dsCompras.ordenes_compras_archivosRow)gridView.GetFocusedDataRow();
+
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.Proveedores);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Proveedor prov = new Proveedor();
+                prov.RecuperarRegistroWithRTN(frm.ItemSeleccionado.ItemCode);
+                row.proveedor = frm.ItemSeleccionado.ItemCode;
+                row.proveedorVista = prov.Nombre;
+            }
+
         }
 
         private void CargarArchivos()

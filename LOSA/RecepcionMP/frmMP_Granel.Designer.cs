@@ -208,6 +208,7 @@ namespace LOSA.RecepcionMP
             this.gvMP.OptionsCustomization.AllowFilter = false;
             this.gvMP.OptionsFilter.AllowFilterEditor = false;
             this.gvMP.OptionsView.ShowAutoFilterRow = true;
+            this.gvMP.OptionsView.ShowFooter = true;
             this.gvMP.OptionsView.ShowGroupPanel = false;
             this.gvMP.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvMP_RowClick);
             // 
@@ -307,6 +308,8 @@ namespace LOSA.RecepcionMP
             this.colNBoleta.FieldName = "NBoleta";
             this.colNBoleta.Name = "colNBoleta";
             this.colNBoleta.OptionsColumn.AllowEdit = false;
+            this.colNBoleta.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "NBoleta", "{0}")});
             this.colNBoleta.Visible = true;
             this.colNBoleta.VisibleIndex = 1;
             // 

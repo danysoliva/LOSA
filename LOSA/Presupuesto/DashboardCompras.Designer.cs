@@ -209,8 +209,8 @@ namespace LOSA.Presupuesto
             this.chartPrintExportRibbonPageGroup1 = new DevExpress.XtraCharts.UI.ChartPrintExportRibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
@@ -220,6 +220,11 @@ namespace LOSA.Presupuesto
             this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl4 = new DevExpress.XtraCharts.ChartControl();
             this.chartBarController1 = new DevExpress.XtraCharts.UI.ChartBarController(this.components);
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.filterRadioGroup = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemRadioGroup2 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.conteocotizacionesxocBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPresupuesto1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.occotizacionesBindingSource)).BeginInit();
@@ -265,6 +270,8 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarController1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterRadioGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).BeginInit();
             this.SuspendLayout();
             // 
             // conteocotizacionesxocBindingSource
@@ -318,9 +325,11 @@ namespace LOSA.Presupuesto
             this.createExportToImageBaseItem1,
             this.barButtonDetalleOC,
             this.barButtonDetalle,
-            this.barbtnConsumoSaldos});
+            this.barbtnConsumoSaldos,
+            this.barEditItem1,
+            this.barEditItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 33;
+            this.ribbon.MaxItemId = 35;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.chartRibbonPageCategory1});
@@ -328,7 +337,9 @@ namespace LOSA.Presupuesto
             this.ribbonPage1});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.reposDtAnio,
-            this.reposDtMes});
+            this.reposDtMes,
+            this.filterRadioGroup,
+            this.repositoryItemRadioGroup2});
             this.ribbon.Size = new System.Drawing.Size(1414, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -809,7 +820,7 @@ namespace LOSA.Presupuesto
             // 
             // barButtonDetalleOC
             // 
-            this.barButtonDetalleOC.Caption = "Ahorro Generado";
+            this.barButtonDetalleOC.Caption = "Ahorro Generado Detalle";
             this.barButtonDetalleOC.Id = 30;
             this.barButtonDetalleOC.Name = "barButtonDetalleOC";
             this.barButtonDetalleOC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonDetalleOC_ItemClick);
@@ -822,7 +833,7 @@ namespace LOSA.Presupuesto
             // 
             // barbtnConsumoSaldos
             // 
-            this.barbtnConsumoSaldos.Caption = "Saldos Presupuesto";
+            this.barbtnConsumoSaldos.Caption = "Saldos Presupuesto Detalle";
             this.barbtnConsumoSaldos.Id = 32;
             this.barbtnConsumoSaldos.Name = "barbtnConsumoSaldos";
             this.barbtnConsumoSaldos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnConsumoSaldos_ItemClick);
@@ -907,8 +918,9 @@ namespace LOSA.Presupuesto
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Compras";
             // 
@@ -920,18 +932,17 @@ namespace LOSA.Presupuesto
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Criterios";
             // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonDetalleOC);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Compras";
-            this.ribbonPageGroup2.Visible = false;
-            // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnConsumoSaldos);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Presupuesto";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonDetalleOC);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Compras";
             // 
             // ribbonStatusBar
             // 
@@ -984,7 +995,7 @@ namespace LOSA.Presupuesto
             this.chartControl2.SeriesTemplate.ValueDataMembersSerializable = "monto_ahorro";
             this.chartControl2.Size = new System.Drawing.Size(634, 312);
             this.chartControl2.TabIndex = 0;
-            chartTitle2.Text = "Descuentos Generados en OC ($)";
+            chartTitle2.Text = "Ahorros Generados en OC ($)";
             chartTitle2.TitleID = 0;
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle2});
@@ -1081,6 +1092,41 @@ namespace LOSA.Presupuesto
             this.chartBarController1.BarItems.Add(this.createExportBaseItem1);
             this.chartBarController1.Control = this.chartControl1;
             // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.AllowTextClipping = false;
+            this.ribbonPageGroup4.ItemLinks.Add(this.barEditItem2);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Filtros Dashboard";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.filterRadioGroup;
+            this.barEditItem1.Id = 33;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // filterRadioGroup
+            // 
+            this.filterRadioGroup.Columns = 2;
+            this.filterRadioGroup.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.filterRadioGroup.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Materia Prima", true, null, "filterMP"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Compras Nacionales", true, null, "filterCompNacionales"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(3, "Todos", true, null, "filterAll")});
+            this.filterRadioGroup.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
+            this.filterRadioGroup.Name = "filterRadioGroup";
+            // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Edit = this.filterRadioGroup;
+            this.barEditItem2.Id = 34;
+            this.barEditItem2.Name = "barEditItem2";
+            // 
+            // repositoryItemRadioGroup2
+            // 
+            this.repositoryItemRadioGroup2.Name = "repositoryItemRadioGroup2";
+            // 
             // DashboardCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1139,6 +1185,8 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarController1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filterRadioGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1210,5 +1258,10 @@ namespace LOSA.Presupuesto
         private DevExpress.XtraBars.BarButtonItem barButtonDetalle;
         private DevExpress.XtraBars.BarButtonItem barbtnConsumoSaldos;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup filterRadioGroup;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup2;
     }
 }

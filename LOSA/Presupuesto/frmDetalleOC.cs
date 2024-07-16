@@ -47,7 +47,12 @@ namespace LOSA.Presupuesto
                 dsPresupuesto1.ordenes_autorizadas.Clear();
                 adat.Fill(dsPresupuesto1.ordenes_autorizadas);
 
-                if (gridView1.RowCount != 0)
+                foreach (dsPresupuesto.ordenes_autorizadasRow item in dsPresupuesto1.ordenes_autorizadas.Rows)
+                {
+                    Data = true;
+                }
+
+                if (Data)
                 {
                     string queryDetalle = @"sp_presupuesto_get_detalle_oc";
                     cmd = new SqlCommand(queryDetalle, conn);
@@ -56,8 +61,6 @@ namespace LOSA.Presupuesto
                     adat = new SqlDataAdapter(cmd);
                     dsPresupuesto1.oc_detalle_exonerada.Clear();
                     adat.Fill(dsPresupuesto1.oc_detalle_exonerada);
-
-                    Data = true;
                 }
                 else
                 {

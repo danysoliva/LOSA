@@ -19,12 +19,15 @@ namespace LOSA.Presupuesto
     public partial class DashboardCompras : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         DataOperations dp = new DataOperations();
+        DateTime Mes;
+        DateTime Anio;
         public DashboardCompras()
         {
             InitializeComponent();
 
             barEditItemAnio.EditValue = barEditItemMes.EditValue = dp.Now();
-
+            Mes = Convert.ToDateTime(barEditItemMes.EditValue);
+            Anio = Convert.ToDateTime(barEditItemAnio.EditValue);
         }
 
         private void btnCargarDashboard_ItemClick(object sender, ItemClickEventArgs e)
@@ -45,8 +48,7 @@ namespace LOSA.Presupuesto
             #region CargarPie - %OCconCotizaciones
             try
             {
-                DateTime Mes = Convert.ToDateTime(barEditItemMes.EditValue);
-                DateTime Anio = Convert.ToDateTime(barEditItemAnio.EditValue);
+                
 
                 string query = @"sp_get_dashboard_cotizaciones";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -69,8 +71,8 @@ namespace LOSA.Presupuesto
             #region CargarDash - Ahorros Generados - Descuentos
             try
             {
-                DateTime Mes = Convert.ToDateTime(barEditItemMes.EditValue);
-                DateTime Anio = Convert.ToDateTime(barEditItemAnio.EditValue);
+                //DateTime Mes = Convert.ToDateTime(barEditItemMes.EditValue);
+                //DateTime Anio = Convert.ToDateTime(barEditItemAnio.EditValue);
 
                 string query = @"sp_ahorros_get_ahorros_generados_Descuentos";
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -94,13 +96,13 @@ namespace LOSA.Presupuesto
 
         private void barButtonDetalleOC_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos();
+            frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos(frmRptSaldosPresupuestos.TipoReporte.AhorrosGenerados,Anio.Year, Mes.Month);
             frm.ShowDialog();
         }
 
         private void barbtnConsumoSaldos_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos();
+            frmRptSaldosPresupuestos frm = new frmRptSaldosPresupuestos(frmRptSaldosPresupuestos.TipoReporte.SaldosPresupuestos, Anio.Year, Mes.Month);
             frm.ShowDialog();
         }
     }

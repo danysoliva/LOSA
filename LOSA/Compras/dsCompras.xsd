@@ -303,6 +303,9 @@
               <xs:element name="descuento" msprop:Generator_ColumnVarNameInTable="columndescuento" msprop:Generator_ColumnPropNameInRow="descuento" msprop:Generator_ColumnPropNameInTable="descuentoColumn" msprop:Generator_UserColumnName="descuento" type="xs:decimal" default="0" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" default="0" minOccurs="0" />
               <xs:element name="selected" msprop:Generator_ColumnVarNameInTable="columnselected" msprop:Generator_ColumnPropNameInRow="selected" msprop:Generator_ColumnPropNameInTable="selectedColumn" msprop:Generator_UserColumnName="selected" type="xs:boolean" minOccurs="0" />
+              <xs:element name="proveedor" msprop:Generator_ColumnVarNameInTable="columnproveedor" msprop:Generator_ColumnPropNameInRow="proveedor" msprop:Generator_ColumnPropNameInTable="proveedorColumn" msprop:Generator_UserColumnName="proveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="razon_seleccionCoti" msprop:Generator_ColumnVarNameInTable="columnrazon_seleccionCoti" msprop:Generator_ColumnPropNameInRow="razon_seleccionCoti" msprop:Generator_ColumnPropNameInTable="razon_seleccionCotiColumn" msprop:Generator_UserColumnName="razon_seleccionCoti" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="proveedorVista" msprop:Generator_ColumnVarNameInTable="columnproveedorVista" msprop:Generator_ColumnPropNameInRow="proveedorVista" msprop:Generator_ColumnPropNameInTable="proveedorVistaColumn" msprop:Generator_UserColumnName="proveedorVista" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -330,6 +333,14 @@
             <xs:sequence>
               <xs:element name="id_doc" msprop:Generator_ColumnVarNameInTable="columnid_doc" msprop:Generator_ColumnPropNameInRow="id_doc" msprop:Generator_ColumnPropNameInTable="id_docColumn" msprop:Generator_UserColumnName="id_doc" type="xs:int" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tipos_razones" msprop:Generator_TableClassName="tipos_razonesDataTable" msprop:Generator_TableVarName="tabletipos_razones" msprop:Generator_RowChangedName="tipos_razonesRowChanged" msprop:Generator_TablePropName="tipos_razones" msprop:Generator_RowDeletingName="tipos_razonesRowDeleting" msprop:Generator_RowChangingName="tipos_razonesRowChanging" msprop:Generator_RowEvHandlerName="tipos_razonesRowChangeEventHandler" msprop:Generator_RowDeletedName="tipos_razonesRowDeleted" msprop:Generator_RowClassName="tipos_razonesRow" msprop:Generator_UserTableName="tipos_razones" msprop:Generator_RowEvArgName="tipos_razonesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_tipo" msprop:Generator_ColumnVarNameInTable="columnid_tipo" msprop:Generator_ColumnPropNameInRow="id_tipo" msprop:Generator_ColumnPropNameInTable="id_tipoColumn" msprop:Generator_UserColumnName="id_tipo" type="xs:int" minOccurs="0" />
+              <xs:element name="razon" msprop:Generator_ColumnVarNameInTable="columnrazon" msprop:Generator_ColumnPropNameInRow="razon" msprop:Generator_ColumnPropNameInTable="razonColumn" msprop:Generator_UserColumnName="razon" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

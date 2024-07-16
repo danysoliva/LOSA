@@ -154,7 +154,6 @@ namespace LOSA.MigracionACS.Formulas
 
                                                 break;
                                             case 3://Medium Autorization
-                                                break;
                                             case 4://Depth With Delta
                                             case 5://Depth Without Delta
                                                 //app_acs_fml_approver_fin
