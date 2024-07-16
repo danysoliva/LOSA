@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Mantenimientos;
+using LOSA.Presupuesto;
 
 namespace LOSA.MigracionACS.RRHH.RelojFace
 {
@@ -302,6 +304,42 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             //{
             //    Cargar_reporte();
             //}
+        }
+
+        private void cmdDeleteButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Eliminar row del grid
+            DialogResult r = MessageBox.Show("¿Desea Eliminar ésta linea?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r != DialogResult.Yes)
+            {
+                return;
+            }
+
+            var gridView1 = (GridView)grd_Turnos.FocusedView;
+            var row = (dsFaceReloj.TurnosRow)gridView1.GetFocusedDataRow();
+
+            if (!row.IsserialNull())
+            {
+                try
+                {
+
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_update_horas_trabajadas_delete", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", row.serial);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
         }
     }
 }

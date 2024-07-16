@@ -51,11 +51,16 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grd_Admin = new DevExpress.XtraGrid.GridControl();
             this.administracionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFaceReloj = new MigracionACS.RRHH.RelojFace.dsFaceReloj();
+            this.dsFaceReloj = new LOSA.MigracionACS.RRHH.RelojFace.dsFaceReloj();
             this.grdv_Admin = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colserial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodeReloj = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -105,6 +110,8 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.btnexport = new DevExpress.XtraEditors.SimpleButton();
             this.dt_final = new DevExpress.XtraEditors.DateEdit();
             this.dt_inicial = new DevExpress.XtraEditors.DateEdit();
+            this.colDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdDeleteButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -126,10 +133,11 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdDeleteButton)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -165,7 +173,7 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.tabNavigationPage1.Caption = "Horas de Administracion";
             this.tabNavigationPage1.Controls.Add(this.grd_Admin);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1161, 538);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1161, 540);
             // 
             // grd_Admin
             // 
@@ -177,7 +185,7 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.grd_Admin.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btneditar,
             this.cmdMoreDetails});
-            this.grd_Admin.Size = new System.Drawing.Size(1161, 538);
+            this.grd_Admin.Size = new System.Drawing.Size(1161, 540);
             this.grd_Admin.TabIndex = 0;
             this.grd_Admin.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_Admin});
@@ -366,7 +374,7 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.tabNavigationPage2.Controls.Add(this.grd_Turnos);
             this.tabNavigationPage2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1161, 538);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1161, 540);
             // 
             // grd_Turnos
             // 
@@ -377,8 +385,9 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.grd_Turnos.Name = "grd_Turnos";
             this.grd_Turnos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnedit,
-            this.colVerMarcas});
-            this.grd_Turnos.Size = new System.Drawing.Size(1161, 538);
+            this.colVerMarcas,
+            this.cmdDeleteButton});
+            this.grd_Turnos.Size = new System.Drawing.Size(1161, 540);
             this.grd_Turnos.TabIndex = 0;
             this.grd_Turnos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_Turnos});
@@ -422,7 +431,8 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.coleditarTurno,
             this.coldepartamento,
             this.colDetalleMarcas,
-            this.colweek1});
+            this.colweek1,
+            this.colDelete});
             this.grdv_Turnos.GridControl = this.grd_Turnos;
             this.grdv_Turnos.Name = "grdv_Turnos";
             this.grdv_Turnos.OptionsView.ShowAutoFilterRow = true;
@@ -628,7 +638,7 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.tggTodos.Properties.Appearance.Options.UseFont = true;
             this.tggTodos.Properties.OffText = "Mostar Todos";
             this.tggTodos.Properties.OnText = "Seleccionar Un Empleado";
-            this.tggTodos.Size = new System.Drawing.Size(268, 30);
+            this.tggTodos.Size = new System.Drawing.Size(268, 24);
             this.tggTodos.TabIndex = 10;
             this.tggTodos.Toggled += new System.EventHandler(this.tggTodos_Toggled);
             // 
@@ -784,6 +794,24 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             this.dt_inicial.TabIndex = 12;
             this.dt_inicial.EditValueChanged += new System.EventHandler(this.dt_inicial_EditValueChanged);
             // 
+            // colDelete
+            // 
+            this.colDelete.Caption = "Delete";
+            this.colDelete.ColumnEdit = this.cmdDeleteButton;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Visible = true;
+            this.colDelete.VisibleIndex = 10;
+            // 
+            // cmdDeleteButton
+            // 
+            this.cmdDeleteButton.AutoHeight = false;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            this.cmdDeleteButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdDeleteButton.Name = "cmdDeleteButton";
+            this.cmdDeleteButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdDeleteButton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDeleteButton_ButtonClick);
+            // 
             // Frm_MantenimientoFace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,6 +848,7 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdDeleteButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -880,5 +909,7 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdMoreDetails;
         private DevExpress.XtraGrid.Columns.GridColumn colweek;
         private DevExpress.XtraGrid.Columns.GridColumn colweek1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDelete;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDeleteButton;
     }
 }
