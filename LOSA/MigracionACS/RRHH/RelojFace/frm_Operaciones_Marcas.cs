@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
+using LOSA.Presupuesto;
 
 namespace LOSA.MigracionACS.RRHH.RelojFace
 {
@@ -17,6 +18,9 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
     {
         DataOperations dp = new DataOperations();
         string codigo;
+        int idMarcaEntrada;
+        int idMarcaSalida;
+
         enum Tipo_op
         {
               Editar = 0,
@@ -246,6 +250,11 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
                         cmd.Parameters.AddWithValue("@id_inserted", serie);
                         cmd.ExecuteNonQuery();
 
+                        if(idMarcaEntrada>0)
+                            UpdateMarcasReloj(idMarcaEntrada);
+
+                        if (idMarcaSalida > 0)
+                            UpdateMarcasReloj(idMarcaSalida);
 
                         break;
                     case Tipo_op.Nuevo:
@@ -260,6 +269,12 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
                         cmd.Parameters.AddWithValue("@id_empleado", codigo);
                         cmd.Parameters.AddWithValue("@enable", 1);
                         cmd.ExecuteNonQuery();
+
+                        if (idMarcaEntrada > 0)
+                            UpdateMarcasReloj(idMarcaEntrada);
+
+                        if (idMarcaSalida > 0)
+                            UpdateMarcasReloj(idMarcaSalida);
 
                         break;
                     default:
@@ -276,9 +291,49 @@ namespace LOSA.MigracionACS.RRHH.RelojFace
             }
         }
 
+        private void UpdateMarcasReloj(int pIdMarca)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_set_update_marca_reloj_con_marca_manual", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pIdMarca);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
         private void grd_empleados_EditValueChanged(object sender, EventArgs e)
         {
             codigo = Convert.ToString(grd_empleados.EditValue);
+        }
+
+        private void cmdHoraEntrada_Click(object sender, EventArgs e)
+        {
+            frmMarcasReloj frm = new frmMarcasReloj(codigo);
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                dt_desde.EditValue = frm.FechaHoraSelected;
+                idMarcaEntrada = frm.IdMarca;
+            }
+        }
+
+        private void cmdHoraSalida_Click(object sender, EventArgs e)
+        {
+            frmMarcasReloj frm = new frmMarcasReloj(codigo);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                dt_hasta.EditValue = frm.FechaHoraSelected;
+                idMarcaEntrada = frm.IdMarca;
+            }
         }
     }
 }
