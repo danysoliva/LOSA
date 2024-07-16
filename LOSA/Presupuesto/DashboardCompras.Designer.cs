@@ -225,6 +225,9 @@ namespace LOSA.Presupuesto
             this.filterRadioGroup = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemRadioGroup2 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
+            this.barRadioGroup = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemRadioGroup1 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.conteocotizacionesxocBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPresupuesto1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.occotizacionesBindingSource)).BeginInit();
@@ -272,6 +275,7 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.chartBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filterRadioGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).BeginInit();
             this.SuspendLayout();
             // 
             // conteocotizacionesxocBindingSource
@@ -327,9 +331,10 @@ namespace LOSA.Presupuesto
             this.barButtonDetalle,
             this.barbtnConsumoSaldos,
             this.barEditItem1,
-            this.barEditItem2});
+            this.barEditItem2,
+            this.barRadioGroup});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 35;
+            this.ribbon.MaxItemId = 36;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.chartRibbonPageCategory1});
@@ -339,7 +344,8 @@ namespace LOSA.Presupuesto
             this.reposDtAnio,
             this.reposDtMes,
             this.filterRadioGroup,
-            this.repositoryItemRadioGroup2});
+            this.repositoryItemRadioGroup2,
+            this.repositoryItemRadioGroup1});
             this.ribbon.Size = new System.Drawing.Size(1414, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -920,7 +926,8 @@ namespace LOSA.Presupuesto
             this.ribbonPageGroup1,
             this.ribbonPageGroup4,
             this.ribbonPageGroup3,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup5});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Compras";
             // 
@@ -1095,7 +1102,7 @@ namespace LOSA.Presupuesto
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.AllowTextClipping = false;
-            this.ribbonPageGroup4.ItemLinks.Add(this.barEditItem2);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barRadioGroup);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Filtros Dashboard";
             // 
@@ -1126,6 +1133,38 @@ namespace LOSA.Presupuesto
             // repositoryItemRadioGroup2
             // 
             this.repositoryItemRadioGroup2.Name = "repositoryItemRadioGroup2";
+            // 
+            // barRadioGroup
+            // 
+            this.barRadioGroup.AutoFillWidthInMenu = DevExpress.Utils.DefaultBoolean.True;
+            this.barRadioGroup.CausesValidation = true;
+            this.barRadioGroup.Edit = this.repositoryItemRadioGroup1;
+            this.barRadioGroup.EditHeight = 60;
+            this.barRadioGroup.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.barRadioGroup.EditValue = 3;
+            this.barRadioGroup.EditWidth = 220;
+            this.barRadioGroup.Id = 35;
+            this.barRadioGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barEditItem3.ImageOptions.Image")));
+            this.barRadioGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barEditItem3.ImageOptions.LargeImage")));
+            this.barRadioGroup.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate;
+            this.barRadioGroup.Name = "barRadioGroup";
+            this.barRadioGroup.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.barRadioGroup.VisibleWhenVertical = true;
+            this.barRadioGroup.EditValueChanged += new System.EventHandler(this.barRadioGroup_EditValueChanged);
+            // 
+            // repositoryItemRadioGroup1
+            // 
+            this.repositoryItemRadioGroup1.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Materia Prima", true, null, "filterMp"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Compras Nacionales", true, null, "filterNacional"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((long)(3)), "Todas", true, null, "filterAll")});
+            this.repositoryItemRadioGroup1.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
+            this.repositoryItemRadioGroup1.Name = "repositoryItemRadioGroup1";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // DashboardCompras
             // 
@@ -1187,6 +1226,7 @@ namespace LOSA.Presupuesto
             ((System.ComponentModel.ISupportInitialize)(this.chartBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filterRadioGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1263,5 +1303,8 @@ namespace LOSA.Presupuesto
         private DevExpress.XtraBars.BarEditItem barEditItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        public DevExpress.XtraBars.BarEditItem barRadioGroup;
     }
 }
