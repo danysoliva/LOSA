@@ -42,6 +42,7 @@ namespace LOSA.Compras
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmonto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grdPresipuesto = new DevExpress.XtraEditors.GridLookUpEdit();
             this.presupuestoActivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -138,7 +139,8 @@ namespace LOSA.Compras
             this.colid1,
             this.coldescripcion1,
             this.colmonto,
-            this.colSeleccionado});
+            this.colSeleccionado,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControlDetallePres;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -153,16 +155,14 @@ namespace LOSA.Compras
             this.colid1.OptionsColumn.ReadOnly = true;
             this.colid1.Visible = true;
             this.colid1.VisibleIndex = 0;
-            this.colid1.Width = 97;
+            this.colid1.Width = 87;
             // 
             // coldescripcion1
             // 
-            this.coldescripcion1.Caption = "Descripcion";
+            this.coldescripcion1.Caption = "Descripcion ";
             this.coldescripcion1.FieldName = "descripcion";
             this.coldescripcion1.Name = "coldescripcion1";
             this.coldescripcion1.OptionsColumn.ReadOnly = true;
-            this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 1;
             this.coldescripcion1.Width = 657;
             // 
             // colmonto
@@ -172,10 +172,10 @@ namespace LOSA.Compras
             this.colmonto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colmonto.FieldName = "monto";
             this.colmonto.Name = "colmonto";
-            this.colmonto.OptionsColumn.ReadOnly = true;
+            this.colmonto.OptionsColumn.AllowEdit = false;
             this.colmonto.Visible = true;
             this.colmonto.VisibleIndex = 2;
-            this.colmonto.Width = 291;
+            this.colmonto.Width = 313;
             // 
             // colSeleccionado
             // 
@@ -184,7 +184,17 @@ namespace LOSA.Compras
             this.colSeleccionado.Name = "colSeleccionado";
             this.colSeleccionado.Visible = true;
             this.colSeleccionado.VisibleIndex = 3;
-            this.colSeleccionado.Width = 133;
+            this.colSeleccionado.Width = 148;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Descripcion ";
+            this.gridColumn1.FieldName = "concat_";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 630;
             // 
             // labelControl2
             // 
@@ -310,5 +320,6 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
         private DevExpress.XtraGrid.Columns.GridColumn colmonto;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionado;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }
