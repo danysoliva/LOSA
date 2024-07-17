@@ -422,5 +422,14 @@ namespace LOSA.Compras
         {
             LoadOrdenHistorico();
         }
+
+        private void reposVerOCvista_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)grdOCHistorico.FocusedView;
+            var row = (dsCompras.ordenes_compras_historicoRow)gridView.GetFocusedDataRow();
+
+            frmOrdenesCompraMain frm = new frmOrdenesCompraMain(frmOrdenesCompraMain.TipoOperacion.View, row.id_h);
+            frm.ShowDialog();
+        }
     }
 }

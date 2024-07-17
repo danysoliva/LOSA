@@ -3201,42 +3201,42 @@ namespace LOSA.Compras
 
         private void gvFiles_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //var gridView = (GridView)gcFiles.FocusedView;
-            //var row = (dsCompras.ordenes_compras_archivosRow)gridView.GetFocusedDataRow();
+            var gridView = (GridView)gcFiles.FocusedView;
+            var row = (dsCompras.ordenes_compras_archivosRow)gridView.GetFocusedDataRow();
 
-            //try
-            //{
-            //    switch (e.Column.FieldName)
-            //    {
-            //        case "monto_cotizacion":
+            try
+            {
+                switch (e.Column.FieldName)
+                {
+                    case "monto_cotizacion":
 
-            //            if (row.Ismonto_cotizacionNull())
-            //                row.monto_cotizacion = 0;
+                        if (row.Ismonto_cotizacionNull())
+                            row.monto_cotizacion = 0;
 
-            //            row.total = row.monto_cotizacion - row.descuento;
-            //            break;
+                        row.total = row.monto_cotizacion - row.descuento;
+                        break;
 
-            //        case "descuento":
+                    case "descuento":
 
-            //            if (row.IsdescuentoNull())
-            //                row.monto_cotizacion = 0;
-            //            row.total = row.monto_cotizacion - row.descuento;
-            //            break;
+                        if (row.IsdescuentoNull())
+                            row.monto_cotizacion = 0;
+                        row.total = row.monto_cotizacion - row.descuento;
+                        break;
 
-            //        default:
-            //            break;
-            //    }
+                    default:
+                        break;
+                }
 
-            //    if (row.id > 0)
-            //    {
-            //        ActualizarDetalleArchivos(row.monto_cotizacion, row.descuento, row.id, row.id_tipo_doc);
-            //    }
-              
-            //}
-            //catch (Exception ex)
-            //{
-            //    CajaDialogo.Error(ex.Message);
-            //}
+                //if (row.id > 0)
+                //{
+                //    ActualizarDetalleArchivos(row.monto_cotizacion, row.descuento, row.id, row.id_tipo_doc);
+                //}
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void ActualizarDetalleArchivos(decimal monto_cotizacion, decimal descuento, int id, int idtipoDoc)
