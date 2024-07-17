@@ -321,6 +321,8 @@ namespace LOSA.MicroIngredientes
                         }
                     }
 
+
+
                     if (CantidadVeces > 0)
                     {
                         CajaDialogo.Error("Esta materia prima ya fue pesada!");
