@@ -311,6 +311,22 @@ namespace LOSA.MicroIngredientes
                         return;
                     }
 
+                    int CantidadVeces = 0;
+                    foreach(dsBatchActual.batch_en_procesoRow row in dsBatchActual1.batch_en_proceso)
+                    {
+                        if(alimentacionTolva.IdMP == row.id_rw)
+                        {
+                            CantidadVeces++;
+                            break;
+                        }
+                    }
+
+                    if (CantidadVeces > 0)
+                    {
+                        CajaDialogo.Error("Esta materia prima ya fue pesada!");
+                        return;
+                    }
+
                     try
                     {
 
