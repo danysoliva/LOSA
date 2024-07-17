@@ -5696,7 +5696,9 @@ namespace LOSA
 
         private void navBarItemHorasExtraSemanales_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            frmResumenHorasSemanales_ frm = new frmResumenHorasSemanales_(this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

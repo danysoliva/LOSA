@@ -3953,6 +3953,12 @@
     <Compile Include="MigracionACS\RRHH\RelojFace\frmMarcasReloj.Designer.cs">
       <DependentUpon>frmMarcasReloj.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\frmResumenHorasSemanales_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\frmResumenHorasSemanales_.Designer.cs">
+      <DependentUpon>frmResumenHorasSemanales_.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\RRHH\RelojFace\Frm_MantenimientoFace.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4808,6 +4814,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\RelojFace\frmMarcasReloj.resx">
       <DependentUpon>frmMarcasReloj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\RelojFace\frmResumenHorasSemanales_.resx">
+      <DependentUpon>frmResumenHorasSemanales_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presupuesto\DashboardCompras.resx">
       <DependentUpon>DashboardCompras.cs</DependentUpon>
