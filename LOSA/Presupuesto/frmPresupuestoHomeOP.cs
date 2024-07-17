@@ -94,11 +94,34 @@ namespace LOSA.Presupuesto
             }
 
 
+
             bool Guardar = false;
 
             switch (tipoOP)
             {
                 case Operacion.Nuevo:
+
+
+                    if (!ValidarExistenciaAnio(Convert.ToInt32(comboAnio.EditValue)))
+                    {
+                        CajaDialogo.Error("Ya existe el Presupuesto del Año seleccionado!");
+                        return;
+                    }
+
+                    if(Convert.ToInt32(grdEstados.EditValue) == 2)
+                    {
+                        if (!ValidacionPresupuestoActivo(Convert.ToInt32(grdEstados.EditValue)))
+                        {
+                            DialogResult r = CajaDialogo.Pregunta("Ya existe un Presupuesto Activo!\nDesea Crearlo como Estado: Creado?");
+                            if (r != DialogResult.Yes)
+                                return;
+
+                            grdEstados.EditValue = 1;
+                        }
+                    }
+
+                   
+
 
                     try
                     {
@@ -134,6 +157,52 @@ namespace LOSA.Presupuesto
                 this.Close();
             }
             
+        }
+
+        private bool ValidacionPresupuestoActivo(int v)
+        {
+            bool Proceder = false;
+
+            try
+            {
+                string query = @"sp_presupuesto_valdiacion_presupuesto_activo";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idEstado", v);
+                Proceder = Convert.ToBoolean(cmd.ExecuteScalar());
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            return Proceder;
+        }
+
+        private bool ValidarExistenciaAnio(int pAnio)
+        {
+            bool Proceder = false;
+
+            try
+            {
+                string query = @"sp_presupuesto_valdiacion_creacion_h";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pAnio", pAnio);
+                Proceder = Convert.ToBoolean(cmd.ExecuteScalar());
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            return Proceder;
         }
     }
 }
