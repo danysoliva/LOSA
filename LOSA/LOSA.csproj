@@ -26,8 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>696</ApplicationRevision>
-    <ApplicationVersion>1.0.0.696</ApplicationVersion>
+    <ApplicationRevision>697</ApplicationRevision>
+    <ApplicationVersion>1.0.0.697</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -4824,7 +4824,7 @@
     <EmbeddedResource Include="Presupuesto\frmRptSaldosPresupuestos.resx">
       <DependentUpon>frmRptSaldosPresupuestos.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="RRHH_Planilla\XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>

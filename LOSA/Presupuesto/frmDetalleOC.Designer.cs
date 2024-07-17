@@ -214,7 +214,7 @@ namespace LOSA.Presupuesto
             this.gridControl1.DataMember = "ordenes_autorizadas";
             this.gridControl1.DataSource = this.dsPresupuesto1;
             gridLevelNode1.LevelTemplate = this.gridView2;
-            gridLevelNode1.RelationName = "FK_ordenes_autorizadas_oc_detalle_exonerada";
+            gridLevelNode1.RelationName = "ordenes_autorizadas_oc_detalle_exonerada";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(4, 44);
