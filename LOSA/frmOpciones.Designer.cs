@@ -602,6 +602,7 @@
             this.navAprobacionDocumentos = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup13 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup14 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
@@ -640,7 +641,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup14 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemHorasExtraSemanales = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -5196,7 +5197,8 @@
             this.nbRRHH10,
             this.nbRRHH11,
             this.nbRRHH12,
-            this.nbRRHH13});
+            this.nbRRHH13,
+            this.navBarItemHorasExtraSemanales});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 334;
@@ -5223,7 +5225,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbRRHH10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbRRHH11),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbRRHH12),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbRRHH13)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbRRHH13),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemHorasExtraSemanales)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // nbRRHH1
@@ -8761,6 +8764,18 @@
             this.navBarItem3.Name = "navBarItem3";
             this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked_1);
             // 
+            // navBarGroup14
+            // 
+            this.navBarGroup14.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup14.Appearance.Options.UseFont = true;
+            this.navBarGroup14.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup14.AppearancePressed.Options.UseFont = true;
+            this.navBarGroup14.Caption = "Reportes ";
+            this.navBarGroup14.Expanded = true;
+            this.navBarGroup14.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
+            this.navBarGroup14.Name = "navBarGroup14";
+            // 
             // navBarItem6
             // 
             this.navBarItem6.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
@@ -9219,17 +9234,20 @@
             this.navBarItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem5.ImageOptions.SvgImage")));
             this.navBarItem5.Name = "navBarItem5";
             // 
-            // navBarGroup14
+            // navBarItemHorasExtraSemanales
             // 
-            this.navBarGroup14.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup14.Appearance.Options.UseFont = true;
-            this.navBarGroup14.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup14.AppearancePressed.Options.UseFont = true;
-            this.navBarGroup14.Caption = "Reportes ";
-            this.navBarGroup14.Expanded = true;
-            this.navBarGroup14.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
-            this.navBarGroup14.Name = "navBarGroup14";
+            this.navBarItemHorasExtraSemanales.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItemHorasExtraSemanales.Appearance.Options.UseFont = true;
+            this.navBarItemHorasExtraSemanales.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItemHorasExtraSemanales.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItemHorasExtraSemanales.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItemHorasExtraSemanales.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItemHorasExtraSemanales.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItemHorasExtraSemanales.AppearancePressed.Options.UseFont = true;
+            this.navBarItemHorasExtraSemanales.Caption = "Resumen de Horas semanales";
+            this.navBarItemHorasExtraSemanales.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem237.ImageOptions.SmallImage")));
+            this.navBarItemHorasExtraSemanales.Name = "navBarItemHorasExtraSemanales";
+            this.navBarItemHorasExtraSemanales.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemHorasExtraSemanales_LinkClicked);
             // 
             // frmOpciones
             // 
@@ -9910,5 +9928,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup14;
+        private DevExpress.XtraNavBar.NavBarItem navBarItemHorasExtraSemanales;
     }
 }
