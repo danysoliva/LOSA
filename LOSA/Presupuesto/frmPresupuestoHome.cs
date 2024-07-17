@@ -43,12 +43,16 @@ namespace LOSA.Presupuesto
                 btnAddHeader.Visible = true;
                 //btnAddDetalle.Visible = true;
                 btnAddDetalleAuto.Visible = true;
+                gvHeader.Columns["GestionPresupuesto"].Visible = true;
+                gvHeader.OptionsMenu.EnableColumnMenu = true;
             }
             else
             {
                 btnAddHeader.Visible = false;
                 //btnAddDetalle.Visible = false;
                 btnAddDetalleAuto.Visible = false;
+                gvHeader.Columns["GestionPresupuesto"].Visible = false;
+                gvHeader.OptionsMenu.EnableColumnMenu = false;
             }
             CargarPresupuestos();
         }
@@ -86,13 +90,15 @@ namespace LOSA.Presupuesto
                 case 3://Medium Autorization
                     break;
                 case 4://Depth With Delta
-                    Admin = true;
-                    break;
                 case 5://Depth Without Delta
+                    Admin = true;
                     break;
                 default:
                     break;
             }
+
+            if (UsuarioLogeado.ValidarNivelPermisos(103))
+                Admin = true;
 
             try
             {
@@ -450,6 +456,11 @@ namespace LOSA.Presupuesto
         private void reposEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //creo que por ahora no lo ocupamos!
+        }
+
+        private void rposCambiarEstado_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
         }
     }
 }
