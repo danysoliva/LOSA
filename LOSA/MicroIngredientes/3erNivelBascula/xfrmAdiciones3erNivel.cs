@@ -556,7 +556,8 @@ namespace LOSA.MicroIngredientes
                         //LoadDataBatchEnProceso();
 
                         //escribir el bit en el PLC
-
+                        timerResetAlarma.Enabled = true;
+                        timerResetAlarma.Start();
                     }
                 }
                 catch (Exception ex)
@@ -610,6 +611,33 @@ namespace LOSA.MicroIngredientes
             }
 
 
+        }
+
+        private void timerResetAlarma_Tick(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    dsMicros.Micros.Clear();
+                    SqlCommand cmd = new SqlCommand("[sp_set_update_bit_finalizar]", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@id_h", IdBatchProceso);
+                    cmd.ExecuteNonQuery();
+                    //LoadDataBatchEnProceso();
+
+                    //escribir el bit en el PLC
+                    timerResetAlarma.Enabled = false;
+                    timerResetAlarma.Stop();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

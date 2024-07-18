@@ -88,6 +88,7 @@ namespace LOSA.MicroIngredientes
             this.timer_LecturaTolvaBascula = new System.Windows.Forms.Timer(this.components);
             this.cmdRefrescar = new DevExpress.XtraEditors.SimpleButton();
             this.timerAlarmaBit = new System.Windows.Forms.Timer(this.components);
+            this.timerResetAlarma = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCodBarra.Properties)).BeginInit();
@@ -674,8 +675,13 @@ namespace LOSA.MicroIngredientes
             // 
             // timerAlarmaBit
             // 
-            this.timerAlarmaBit.Interval = 4500;
+            this.timerAlarmaBit.Interval = 3800;
             this.timerAlarmaBit.Tick += new System.EventHandler(this.timerAlarmaBit_Tick);
+            // 
+            // timerResetAlarma
+            // 
+            this.timerResetAlarma.Interval = 5000;
+            this.timerResetAlarma.Tick += new System.EventHandler(this.timerResetAlarma_Tick);
             // 
             // xfrmAdiciones3erNivel
             // 
@@ -792,5 +798,6 @@ namespace LOSA.MicroIngredientes
         private System.Windows.Forms.Timer timer_LecturaTolvaBascula;
         private DevExpress.XtraEditors.SimpleButton cmdRefrescar;
         private System.Windows.Forms.Timer timerAlarmaBit;
+        private System.Windows.Forms.Timer timerResetAlarma;
     }
 }
