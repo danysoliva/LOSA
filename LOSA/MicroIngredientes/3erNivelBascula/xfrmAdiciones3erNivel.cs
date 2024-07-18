@@ -632,6 +632,7 @@ namespace LOSA.MicroIngredientes
                     //escribir el bit en el PLC
                     timerResetAlarma.Enabled = false;
                     timerResetAlarma.Stop();
+
                 }
             }
             catch (Exception ex)
