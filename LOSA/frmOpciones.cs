@@ -5700,5 +5700,20 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void navBaRptBaculaPRD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                TT_reporte_bascula rept = new TT_reporte_bascula();
+                rept.MdiParent = this.MdiParent;
+                rept.WindowState = FormWindowState.Maximized;
+                rept.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }
